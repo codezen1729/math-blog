@@ -13,62 +13,89 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: website
+  prepare:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    outputs:
+      revision: ${{ steps.source.outputs.revision }}
     steps:
-      - name: Check out the publishing package
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
+      - name: Introduce the editable posts once
+        id: source
+        run: |
+          if [ ! -f tools/manifest.json ]; then
+            if compgen -G '*.tex' > /dev/null || [ -e figures ] || [ -e styles ] || [ -e tools ]; then
+              echo 'Editable sources already exist, but the manifest is missing. Refusing to overwrite your writing.' >&2
+              exit 1
+            fi
+            unzip -o -q overleaf-source.zip
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -- '*.tex' figures styles tools README.md .gitignore
+            git commit -m 'Make the published posts independently editable in Overleaf'
+            git push origin HEAD:main
+          fi
+          printf 'revision=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
         with:
+          ref: ${{ needs.prepare.outputs.revision }}
           persist-credentials: false
-
-      - name: Unpack the public website source
-        working-directory: .
+      - name: Unpack the website application
         run: unzip -q site-source.zip -d website
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Install the LaTeX toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended texlive-pictures texlive-science dvisvgm ghostscript lmodern python3-pil
+          curl --fail --location --retry 3 -o /tmp/blog-pandoc.tar.gz https://github.com/jgm/pandoc/releases/download/3.9/pandoc-3.9-linux-amd64.tar.gz
+          printf '872a10c7ec29d5278831d855b11bd4ade0df4d5ec9a089a3197bc63a37eb4003  /tmp/blog-pandoc.tar.gz\n' | sha256sum --check
+          tar -xzf /tmp/blog-pandoc.tar.gz -C /tmp
+          sudo install /tmp/pandoc-3.9/bin/pandoc /usr/local/bin/pandoc
+      - name: Check the Overleaf PDFs
+        run: python3 tools/check-pdfs.py
+      - name: Convert the current blog writing
+        run: python3 tools/render.py --site website
+      - uses: pnpm/action-setup@v4
         with:
           version: 10
           run_install: false
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
           cache-dependency-path: website/pnpm-lock.yaml
-
-      - name: Install dependencies
+      - name: Install website dependencies
+        working-directory: website
         run: pnpm install --frozen-lockfile
-
-      - name: Check public content and simulations
+      - name: Check formulas, figures and simulations
+        working-directory: website
         run: |
           node scripts/check-content.mjs --public
           node --experimental-strip-types --test scripts/dynamics.test.mjs
-
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
-
-      - name: Build the static site
+      - name: Build the website
+        working-directory: website
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}
         run: pnpm build:pages
-
-      - name: Upload the static site
-        uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: website/dist-pages
 
   deploy:
+    needs: build
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     permissions:
       pages: write
       id-token: write
