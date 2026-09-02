@@ -1,13 +1,20 @@
-# The Iterated Plane
+# S. Viswanathan · Mathematics
 
-S. Viswanathan's mathematics weblog, with 21 selected essays, a research page, and interactive explorations of complex dynamics.
+[Visit the personal website](https://codezen1729.github.io/math-blog/)
 
-**Read the blog:** https://codezen1729.github.io/math-blog/
+Home, Vita (including Teaching), Research, Laboratory, and a mathematical Blog arranged in four series:
+
+- Structures
+- Dynamics
+- Surfaces and Curves
+- Standard Tools in Complex Analysis — twelve chapters from the updated notes
+
+The 28 selected pieces preserve the author's manuscript wording. Navigation, reading guides, source notices, and simulation descriptions are separately identified website material. Mathematical and image credits appear on the Sources & credits page.
 
 ## About this repository
 
-`site-source.zip` contains the complete public website source and the illustrations used by the selected essays. The original full TeX manuscripts and private editorial notes are not included.
+`site-source.zip` contains the public website source and its selected illustrations. The full TeX manuscripts and private editorial notes are not included.
 
-The GitHub Pages workflow unpacks the source, checks the content and simulations, builds the website, and publishes it. Updating `site-source.zip` on `main` automatically publishes a new edition. For local development, unpack it and follow its README.
+The GitHub Pages workflow unpacks the source, checks the content and simulations, builds the website, and publishes it. Updating `site-source.zip` on `main` publishes a new edition. For local development, unpack it and follow its README.
 
-Essay bodies preserve the author's wording. Reading guides and simulation explanations are separately identified website material. Figure credits and mathematical references appear on the site's Credits page. Dependencies retain their respective licences; this repository grants no blanket licence for manuscripts or supplied figures.
+Dependencies retain their respective licences. This repository grants no blanket licence for manuscripts or supplied figures.
