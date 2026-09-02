@@ -6,8 +6,8 @@ Research, Vita and Teaching, a complex-dynamics Laboratory, and a mathematical B
 
 ## Blog
 
-- Structures
-- Dynamics
+- K-theory
+- Complex Dynamics
 - Surfaces and Curves
 - Standard Tools in Complex Analysis
 
