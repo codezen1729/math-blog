@@ -1,0 +1,194 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\graphicspath{{figures/k-theory/}}
+\begin{document}
+\section*{Bott Periodicity and the Genesis of K-Theory}
+% BLOG-CONTENT-BEGIN
+\underline{\textbf{Bott Periodicity and the Genesis of K-Theory}}
+
+As $K$ is represented by the space $BU\times \mathbb{Z}$, any theorem about the homotopy type of $BU\times \mathbb{Z}$ could potentially be of extreme significance. Bott's Periodicity is in that sense the grandest of theorems one could prove. 
+\subsection*{Theorem 4.2 — Bott Periodicity} $BU\times \mathbb{Z} \sim \Omega^2(BU\times \mathbb{Z})$
+
+For proof, refer \cite{milnor2016morse}. An immediate consequence of Bott's theorem is the following theorem which shall subsequently also be referred to as Bott's Periodicity Theorem.
+\subsection*{Theorem 4.3}
+    $\widetilde{K}(\Sigma^2X) \cong \widetilde{K}(X)$
+
+\textit{Proof.}
+    Observe that,
+    $$\widetilde{K}(X) \cong [(X, x_0), (BU\times \mathbb{Z}, (y_0, 0))]$$
+    as it is the kernel of the map $[X, BU\times \mathbb{Z}] \rightarrow [x_0, BU\times \mathbb{Z}]$, which is precisely the set of homotopy classes of maps sending $x_0$ into $BU\times \{0\}$. Now, by Bott's Theorem,
+    $$\widetilde{K}(X) \cong [X, \Omega^2(BU\times \mathbb{Z})]_{\text{based}} \cong [\Sigma^2X, BU\times \mathbb{Z}]_{\text{based}}$$
+    giving us, 
+    $$\widetilde{K}(X) \cong \widetilde{K}(\Sigma^2X)$$
+
+
+An important consequence of the theorem above is that one can build a cohomology theory on $\tau_c$. Generally speaking, a \textbf{cohomology theory} on a category $\mathcal{C}$ of topological pairs is the following data:-
+$$F^k: \mathcal{C}^{\text{op}} \rightarrow \text{Ab (category of abelian groups)}$$
+$\{F^k\}_{k}$ a sequence of presheaves on $\mathcal{C}$ with natural transformations,
+$$\delta: F^k(A) := F^k(A, \emptyset) \rightarrow F^{k+1}(X, A)$$
+satisfying the following axioms \cite{eilenberg1945axiomatic} (due to Eilenberg and Steenrod):-
+
+\underline{Axiom 1} (Homotopy Axiom):- If $f$, $g$ $:(X, A) \rightarrow (Y,B)$ are homotopic as map of pairs, then $f^*, g^*$ $:F^k(Y, B) \rightarrow F^k(X, A)$ are equal, $\forall k\in \mathbb{Z}$, where $f^*:= F^k(f)$.
+
+\underline{Axiom 2} (Sequence Axiom):- For a pair $(X, A)$, the above maps induce a long exact sequence:-
+$$\cdots \rightarrow F^k(X, A)\rightarrow F^k(X) \rightarrow F^k(A) \rightarrow F^{k+1}(X, A)\rightarrow \cdots$$
+
+
+\underline{Axiom 3} (Excision Axiom):- If $U\subseteq \overline{U} \subset \text{Int}(A)$, then $F^k(X\backslash U, A\backslash U) \cong F^k(X, A)$, $\forall k$, $k\in \mathbb{Z}$.
+
+To build K-Theory on the category of pairs of compact Hausdorff spaces we need the following two propositions; proofs are taken from \cite{hatcher2003vector}.
+
+\subsection*{Proposition 4.1} Consider $A\xrightarrow{i} X \xrightarrow{q} X/A$, where $i$, $q$ are the canonical inclusion and quotient maps. Then, 
+$$\widetilde{K}(X/A) \xrightarrow{q^*} \widetilde{K}(X) \xhookrightarrow{i^*} \widetilde{K}(A)$$
+is an exact sequence of rings.
+
+\textit{Proof.}
+    Note that $i^*\circ q^* = (q\circ i)^*$, where $q\circ i$ is the composition $A\rightarrow A\subset X \rightarrow A/A$, and $\widetilde{K}(A/A) = \{0\}$. So, $\text{Im}(q^*) \subseteq \text{Ker}(i^*)$. Now we show $\text{Ker}(i^*)  \subseteq \text{Im}(q^*)$. If $[E] \in \text{Ker}(i^*)$, $\big[E\big|_{A}\big] = 0$, in other words, 
+    $$E\big|_{A}\oplus \epsilon^n(A) \cong \epsilon^{n+m}(A)$$
+    Therefore, we may WLOG assume that $E\big|_{A}$ is trivial, with trivialisation,
+    $$\psi: E\big|_{A} \rightarrow A\times \mathbb{C}^n$$
+    Let $E/\psi$ denote the quotient space, where $\psi^{-1}(x, v) \sim \psi^{-1}(y, v)$, for all $x, y\in A$. We claim that $E/\psi$ is a bundle over $X/A$, and that $q^*(E/\psi) \cong E$. To show the former, note that for a locally trivializing cover $\{U_{\alpha}\}_{\alpha}$ of $E$, the modified locally trivializing collection of open\footnote{The spaces $A$, $X$ being compact Hausdorff ensure that the modified collection is indeed a collection of open sets. Perhaps, this dependence of the compactness hypothesis in this proof may be lifted.} sets $\{U_{\alpha}\backslash A\}_{\alpha}$ erect a bundle over $X\backslash A$. Note that that bundle is a subbundle of $E$, and for that to extend to a bundle on $X/A$, one would need a local trivialization at the point $q\circ i(A)$. As $E\big|_{A}$ is trivial, one has a frame $\sigma_i$ over $A$ which can (by a partition of unity argument) be extended to a frame over an open set containing $A$; for the set of points $p$ satisfying,
+    $$\det(\sigma_1(p), \sigma_2(p),\ldots, \sigma_n(p)) \neq 0$$
+    is open, thereby facilitating the required extension. Now note that by definition, the natural map $E\rightarrow E/\psi$ lifts the quotient map, (i.e.) one has the following commutative diagram:-
+    \[\begin{tikzcd}
+	E & {E/\psi} \\
+	X & {X/A}
+	\arrow["q"', from=2-1, to=2-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=1-1, to=1-2]
+\end{tikzcd}\]
+which is also an isomorphism on the fibres. It is easy to see that $E$ satisfies the universal property of pullbacks.
+
+\textbf{Remark}:- Interpreting the proposition in terms of the classifying space perspective yields the following:- Given a classifying map $f$ of some bundle over $X$, such that $f\big|_A$ is nullhomotopic, then there exists an open neighbourhood $U$ of 
+$A$ such that $f\big|_{U}$ is nullhomotopic. Loosely speaking, the space $BU$ is such that around any compact set there are neighbourhoods with no holes. If you think about it, the above is not unexpected at all, for the spaces $BU(n)$ are locally contractible. 
+
+\subsection*{Proposition 4.2} If $A$ is contractible, then $q^*: \widetilde{K}(X/A) \rightarrow \widetilde{K}(X)$ is an isomorphism.
+
+\textit{Proof.}
+    We begin by identifying $\widetilde{K}(X)$ by $\pi_b(X, BU)$. Following the remark above, note that if $A$ is contractible then for any classifying map $f: X\rightarrow BU$, $f\big|_A$ is nullhomotopic, and that there exists an open neighbourhood $U$ of $A$ such that $f\big|_U$ is also nullhomotopic. Let,
+    $$F:U\times [0,1] \rightarrow BU$$
+    $$F_0\equiv f\big|_U, F_1 \equiv b_0$$ be the nullhomotopy. As compact Hausdorff spaces are normal, by Urysohn's lemma we have, $$\alpha :X \rightarrow [0,1]$$
+    $$\alpha\big|_A = 1, \supp{\alpha} \subset U$$
+    Define $Q(f): X \rightarrow BU$ by,
+
+        \begin{equation*}
+            Q(f) := 
+            \begin{cases}
+                F(x,\alpha(x)),& \text{ if } x\in U\\
+            f(x), & \text{ else}
+            \end{cases}
+        \end{equation*}
+        which is clearly continuous. As $Q(f)$ is constant on $A$, it factors through $X/A \rightarrow BU$. It is easy to see that  such factored maps give the inverse of $q^*$, so we call them $(q^*)^{-1}(f)$, for $f\in \pi_b(X, BU)$. It remains to check that the map $Q$ is well-defined, which essentially boils down to proving that $Q(f)$ depends only on the homotopy type of $f$. Let $f$, $g$ $:X \rightarrow BU$ be homotopic, with,
+        $$H: X\times [0,1] \rightarrow BU$$
+        $$H_0 \equiv f, H_1 \equiv g$$
+        the homotopy between them. Now as $A$ is contractible, so is $A\times [0,1]$, implying that, $H\big|_{A\times [0,1]}$ is nullhomotopic. Let the homotopy be given by the map $N$. Now, again apply Urysohn's lemma for the space $X\times [0,1]$ to get,
+        $$\beta: X\times [0,1] \rightarrow [0,1]$$
+        $$\beta\big|_{A\times [0,1]} \equiv 1, \supp{\beta} \subset V\times [0,1]$$
+        Repeat the construction above by defining, 
+        $$G(H_t):= \begin{cases}
+            N((x, t), \beta(x)), & \text{ if } x\in V\\
+            H_t(x), & \text{ else}
+        \end{cases}$$
+        To finish the proof, let's do away with one small yet essential detail: One can define a straightline homotopy between $\alpha$ and $\beta_t$, hence the function $Q$ is independent of the open sets nullhomotoping $f$ and $g$. 
+
+Let $n \in \mathbb{N}\cup \{0\}$, define,
+$$\widetilde{K}^{-n}(X, A):= \widetilde{K}(\Sigma^nX/\Sigma^n A)$$
+$$\widetilde{K}^{2n}(X, A) := \widetilde{K}(X/A)$$
+$$\widetilde{K}^{2n+1}(X, A) := \widetilde{K}(\Sigma(X/A))$$
+For the sequence of functors defined above, homotopy axiom follows from the representation of the functor $K$, and the excision axiom is just the trivial statement $(X\backslash U)/(A\backslash U) = X/A$. To investigate the sequence axiom, we need to define the requisite natural transformations; for this purpose, Proposition $4.2$ will come in handy. Given a pair $(X, A)$ we have the following sequence of spaces called the \textbf{Puppe sequence}:-
+\[\begin{tikzcd}
+	&& {(((X\cup CA)\cup CX)\cup C(X\cup CA))/C(X\cup A))\sim \color{red}{\Sigma} X} \\
+	A & \cdots & {((X\cup CA)\cup CX)\cup C(X\cup CA)} \\
+	X & {X\cup CA} & {(X\cup CA)\cup CX} \\
+	& {(X\cup CA)/CA \sim \color{red}{X/A}} & {((X\cup CA)\cup CX)/CX \sim \color{red}{\Sigma A}}
+	\arrow[hook, from=3-1, to=3-2]
+	\arrow[hook, from=3-2, to=3-3]
+	\arrow[two heads, from=3-2, to=4-2]
+	\arrow[hook', from=2-3, to=2-2]
+	\arrow[hook, from=2-1, to=3-1]
+	\arrow[two heads, from=2-3, to=1-3]
+	\arrow[two heads, from=3-3, to=4-3]
+\end{tikzcd}\]
+
+
+Note that as cones are contractible, we have the isomorphism:- 
+$$\widetilde{K}(X\cup CA) \cong \widetilde{K}((X\cup CA)/CA) \cong \widetilde{K}(X/A)$$
+which gives rise to a cofibration like complex:-
+$$\widetilde{K}(A) \xleftarrow{} \widetilde{K}(X) \xleftarrow{} \widetilde{K}(X/A) \xleftarrow{} \widetilde{K}(\Sigma A) \xleftarrow{} \widetilde{K}(\Sigma X) \xleftarrow{} \widetilde{K}(\Sigma X/\Sigma A) \xleftarrow{} \cdots$$
+Therefore by Bott's Theorem, the above induces the following:-
+\[\begin{tikzcd}
+	&&&&& {\widetilde{K}^{1}(X/A)} & {\widetilde{K}^{1}(X)} \\
+	\cdots & {\widetilde{K}^0(X/A)} & {\widetilde{K}^0(X)} & {\widetilde{K}^{0}(A)} & {\widetilde{K}^{-2}(A)} & {\widetilde{K}^{-1}(X/A)} & {\widetilde{K}^{-1}(X)} \\
+	&& \cdots & {\widetilde{K}^{0}(A)} & {\widetilde{K}^{0}(X)} & {\widetilde{K}^{0}(X/A)} & {\widetilde{K}^{-1}(A)} \\
+	&&& {\widetilde{K}^{2}(A)} & {\widetilde{K}^{2}(X)} & {\widetilde{K}^{2}(X/A)}
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow["\cong", from=2-4, to=2-5]
+	\arrow[from=2-5, to=2-6]
+	\arrow[from=2-6, to=2-7]
+	\arrow[from=2-7, to=3-7]
+	\arrow[from=3-7, to=3-6]
+	\arrow[from=3-6, to=3-5]
+	\arrow[from=3-5, to=3-4]
+	\arrow["\cong"', from=3-4, to=4-4]
+	\arrow["\cong"', from=3-5, to=4-5]
+	\arrow["\cong", from=2-7, to=1-7]
+	\arrow["\cong", from=2-6, to=1-6]
+	\arrow["\cong"', from=3-6, to=4-6]
+	\arrow[from=3-4, to=3-3]
+\end{tikzcd}\]
+which written in a more recognizable form, is, 
+$$\cdots \rightarrow \widetilde{K}^n(X, A)\rightarrow \widetilde{K}^n(X) \rightarrow \widetilde{K}^n(A) \rightarrow \widetilde{K}^{n+1}(X, A)\rightarrow \cdots$$
+
+The periodicity theorem essentially allows us to  wrap the sequence on itself. Exactness at various places will be given by Proposition $4.1$ applied to relevant sections of the Puppe sequence, along with the observation that $(X\cup CY)/CY \sim X/Y$. So, $\{K^n\}_{n}$ satisfies the sequence axiom for pairs. In other words, we have been successful in building what we initially called K-Theory for the category of pairs of compact Hausdorff spaces, which we compile in the theorem below:-
+\subsection*{Theorem 4.4}
+    The sequence of functors $\widetilde{K}^n$ define a generalized cohomology theory on the category of compact Hausdorff pairs.
+
+Having accomplished our main goal in the three sections, we shall compute $K$-groups of spheres and tori to give some concreteness to the mathematics developed thus far; and wrap up by leaving the reader with things to think about. Let $X$ and $Y$ be compact Hausdorff; one has the following exact sequence of pointed spaces:-
+\begin{equation}\tag{2}
+    X\vee Y \hookrightarrow X\times Y \rightarrow X\wedge Y:= (X\times Y)/(X\vee Y)
+\end{equation}
+\begin{equation}\tag{3}
+    X\hookrightarrow X\vee Y \rightarrow Y \cong (X\vee Y)/X
+\end{equation}
+Note that $(2)$ and $(3)$ yield the following split exact sequence:-
+$$0\rightarrow \widetilde{K}(X\wedge Y) \rightarrow \widetilde{K}(X\times Y) \rightarrow \widetilde{K}(X)\oplus \widetilde{K}(Y) \xrightarrow{} 0$$
+which gives the isomorphism,
+\begin{equation}\tag{4}
+    \widetilde{K}(X\times Y) \cong \widetilde{K}(X)\oplus \widetilde{K}(Y)\oplus \widetilde{K}(X\wedge Y)
+\end{equation}
+
+
+\textbf{Computations}:-
+\begin{enumerate}[(i)]
+    \item (K-Groups of Spheres): Note that, $\widetilde{K}(S^k) \cong \pi_k(BU) \cong \pi_{k+1}(U)$; here we exploit the fact implicit in Bott's Theorem that $U\sim \Omega BU$. Now, we need to compute two distinct homotopy groups of the stable unitary group $U$. Note,
+    $$\pi_1(U) = \pi_1(U(1)) = \pi_1(S^1) \cong \mathbb{Z}$$
+    $$\pi_2(U) = \pi_2(U(2)) \cong \pi_2(S^1\times SU(2)) \cong \pi_2(SU(2)) \cong \pi_2(S^3) = 0$$
+    By Bott periodicity, we have $\pi_{2n}(U) \cong 0$, and $\pi_{2n+1}(U) \cong \mathbb{Z}$, for $n\in \mathbb{N}$. This gives us that:-
+    $$\widetilde{K}(S^n) = \begin{cases}
+        \mathbb{Z}, &\text{ if }2|n\\
+        0, & \text{ else}
+    \end{cases}$$
+    \item (K-Groups of $n$-Torus): Apply $(4)$ to the spaces $T^{n-1}$ and $S^1$, to get:-
+    $$\widetilde{K}^i(T^n) \cong \widetilde{K}^i(T^{n-1})\oplus \widetilde{K}^i(S^1)\oplus \widetilde{K}^{i+1}(T^{n-1})$$
+    By induction one gets the following:-
+    $$\widetilde{K}^i(T^n)= \begin{cases}
+        \mathbb{Z}^{\oplus(2^{n-1} -1)}, & \text{ if } 2|i\\
+        \mathbb{Z}^{\oplus(2^{n-1})}, & \text{ else}
+    \end{cases}$$
+\end{enumerate}
+
+\textbf{Questions for the Reader}:-
+\begin{enumerate}
+    \item Is there a space whose K-group has torsion elements? If so, what feature of the space is responsible for it? 
+    \item Is there a way to connect K-groups to homotopy groups?
+    \item Note that as $\mathbb{D}^n$ is contractible, $\widetilde{K}^m(\mathbb{D}^n) = \{0\}$, can we use this and the values of the K-groups of $S^n$'s to compute K-groups of CW-complexes?
+    \item Is K-Theory related to other cohomology theories in any natural way?
+    \item Can analogous theories be build for the field of reals and quaternions? 
+\end{enumerate}
+% BLOG-CONTENT-END
+\bibliographystyle{amsalpha}
+\bibliography{tools/profiles/k-theory/references}
+\end{document}

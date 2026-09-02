@@ -1,0 +1,31 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage{graphicx,float,xcolor,multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage[margin=27mm]{geometry}
+\usepackage{microtype,needspace,placeins}
+\usepackage{tikz,tikz-cd}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathreplacing}
+\usepackage[colorlinks=true,linkcolor=teal,urlcolor=teal,citecolor=teal]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.6em}
+\setcounter{secnumdepth}{0}
+\allowdisplaybreaks
+\raggedbottom
+\providecommand{\cross}{\times}
+\DeclareUnicodeCharacter{2020}{\ensuremath{\dagger}}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator*{\esssup}{ess\,sup}
+\providecommand{\chapter}{\section}
+\newenvironment{tool}[2]{\subsection*{Tool #1 --- #2}}{}
+\newcommand{\ToolRef}[1]{Tool #1}
+\newcommand{\FigureTag}[2]{\textit{Figure #1}}
+\newcommand{\Result}[1]{\subsection*{#1}}
+\newcommand{\Application}[1]{\subsubsection*{Application\if\relax\detokenize{#1}\relax\else\space--- #1\fi}}
+\newcommand{\ProofHeading}{\par\textit{Proof.}\space}
+\newcommand{\ProofOf}[1]{\par\textit{Proof of #1.}\space}
+\newcommand{\RemarkHeading}{\par\textbf{Remark.}\space}
+\newcommand{\NoteHeading}{\par\textbf{Note.}\space}
+\newcommand{\ExerciseHeading}{\par\textbf{Exercise.}\space}

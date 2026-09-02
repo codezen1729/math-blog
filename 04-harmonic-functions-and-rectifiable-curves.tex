@@ -1,0 +1,370 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\graphicspath{{figures/complex-analysis/}}
+\begin{document}
+\section*{Harmonic Functions and Rectifiable Curves}
+% BLOG-CONTENT-BEGIN
+Now, let us get back to Tool 5.
+
+Let $u\colon U\to\mathbb R$ be harmonic, that is,
+\[
+\Delta u:=\frac{\partial^2u}{\partial x^2}
++\frac{\partial^2u}{\partial y^2}=0,
+\]
+and let $K\subset U$ be compact. Then
+\[
+\sup_{z\in K}u(z)=\sup_{z\in\partial K}u(z).
+\]
+This is the maximum modulus principle for harmonic functions.
+
+\textit{Proof.}
+Since $\partial K\subseteq K$, as $K$ is compact,
+\[
+\sup_{z\in K}u(z)\geq\sup_{z\in\partial K}u(z).
+\]
+We shall show that strict inequality can never occur. Suppose it does. Then $u$ attains a maximum in $\operatorname{int}(K)$, say at
+\[
+z_0\in\operatorname{int}(K).
+\]
+Let $B_\varepsilon(z_0)\subset\operatorname{int}(K)$. Consider the function
+\[
+u(x+iy_0)\colon[0,\varepsilon/2]\xrightarrow{\,+x_0\,}\mathbb R.
+\]
+(Typo: the interval is $[x_0,x_0+\varepsilon/2]$, where $z_0=x_0+iy_0$.) The second derivative test gives
+\[
+\frac{\partial^2u}{\partial x^2}(z_0)\leq0.
+\]
+Similarly, \(\frac{\partial^2u}{\partial y^2}(z_0)\leq0.\)
+Since $u$ is harmonic, both must be equalities. We intend to contradict this, so let us give $u$ some $\varepsilon$-room. Define
+\[
+\boxed{u_\varepsilon(x+iy):=u(x+iy)+\varepsilon(x^2+y^2).}
+\]
+
+
+Suppose
+\[
+\sup_{z\in K}u(z)>\sup_{z\in\partial K}u(z).
+\]
+Then there is an $\varepsilon'>0$ such that
+\[
+\sup_{z\in K}u(z)>
+\sup_{z\in\partial K}u(z)+\varepsilon'.
+\]
+The function $x^2+y^2$ is continuous on $K$. Let
+\[
+\sup_{x+iy\in K}(x^2+y^2)=M,
+\]
+and set $\varepsilon=\varepsilon'/M$. Then
+\[
+\sup_{z\in\partial K}u_\varepsilon(z)
+<\sup_{z\in\partial K}u(z)+\frac{\varepsilon'}{M}M
+<\sup_{z\in K}u(z)
+<\sup_{z\in K}u_\varepsilon(z).
+\]
+Thus $u_\varepsilon$ again has an interior maximum, and
+\[
+\frac{\partial^2u_\varepsilon}{\partial x^2}\leq0,
+\qquad
+\frac{\partial^2u_\varepsilon}{\partial y^2}\leq0.
+\]
+Adding these inequalities gives \(4\varepsilon\leq0,\)
+a contradiction. Therefore
+\[
+\boxed{
+\sup_{z\in K}u(z)=\sup_{z\in\partial K}u(z).}
+\]
+
+\textbf{Note.}
+If $f\colon U\to\mathbb C$ is holomorphic, then \(\operatorname{Re}(e^{i\theta}f)\)
+is harmonic, and
+\[
+\sup_{z\in K}\operatorname{Re}(e^{i\theta}f)
+=\sup_{z\in\partial K}\operatorname{Re}(e^{i\theta}f)
+\qquad(\forall\theta\in[0,2\pi)).
+\]
+Hence
+\[
+\sup_{z\in K}\sup_\theta\operatorname{Re}(e^{i\theta}f)
+=\sup_{z\in\partial K}\sup_\theta\operatorname{Re}(e^{i\theta}f).
+\]
+By Tool 2, this yields
+\[
+\sup_{z\in K}|f(z)|=\sup_{z\in\partial K}|f(z)|.
+\]
+As was stated, a fact about real-valued functions is lifted to a complex-valued function via Tool 2.
+
+\textbf{Exercise.}
+The only infima of $|f|$ attained in the interior for a holomorphic function occur at zeros of the function.
+
+
+The following is a generalized form of the $\varepsilon$-technique.
+
+The image of a rectifiable curve has measure $0$.
+
+\textit{Proof.}
+Let $+$ denote the usual concatenation of curves. Then
+\[
+\gamma\big|_{[0,T]}+\gamma\big|_{[T,T+h]}
+=\gamma\big|_{[0,T+h]}.
+\]
+We claim that
+\[
+g(t):=\left|\gamma\big|_{[0,t]}\right|
+\]
+is continuous. Suppose not. Then there is an $\varepsilon>0$ such that
+\[
+\left|\gamma\big|_{[t,t+h]}\right|>\varepsilon
+\qquad(\forall h>0).
+\]
+By the ``linearity'' of arc length, or rather its additivity,
+\[
+\left|\gamma\big|_{[0,T]}\right|
++\left|\gamma\big|_{[T,T+h]}\right|
+=\left|\gamma\big|_{[0,T+h]}\right|.
+\]
+Analyzing the oscillations under the assumption that $g$ is not continuous leaves us with the assertion above. Thus there is a partition $P$ of $[t,t+h]$ such that
+\[
+S(P,\overline\gamma)>\varepsilon,
+\qquad
+\overline\gamma=\gamma\big|_{[t,t+h]},
+\]
+where
+\[
+P:t=t_0<t_1<\cdots<t_n=t+h,
+\qquad
+S(P,\overline\gamma)=\sum_{i=0}^{n-1}
+|\gamma(t_{i+1})-\gamma(t_i)|.
+\]
+Since $\gamma$ is continuous, it has bounded oscillations, and that bound tends to $0$ as $h\to0$. Since $\gamma$ is continuous on a compact set, it is uniformly continuous. Choose $P$ so that \(|\gamma(t_i)-\gamma(t_0)|<\varepsilon/2.\)
+Then
+\[
+\sum_{i=1}^{n-1}|\gamma(t_{i+1})-\gamma(t_i)|>\varepsilon/2,
+\]
+and
+
+
+\[
+\left|\gamma\big|_{[t_2,t_3]}\right|>\varepsilon/2.
+\]
+Again we have an interval on which the arc length exceeds $\varepsilon/2$. Repeating the argument and using additivity, together with the fact that there is a partition $P$ for which
+\[
+S\left(P,\gamma\big|_{[t_i,t_j]}\right)>\varepsilon/2,
+\]
+would imply
+\[
+\left|\gamma\big|_{[0,1]}\right|=\infty.
+\]
+This contradicts rectifiability. Therefore $g(t)$ is continuous.
+
+Fix $\gamma(0)$. By definition, \(\gamma(1)\in\overline{B_{|\gamma|}(\gamma(0))}.\)
+By the intermediate value property, there is a $t\in[0,1]$ such that
+\[
+\left|\gamma\big|_{[0,t]}\right|
+=\left|\gamma\big|_{[t,1]}\right|
+=\frac{|\gamma|}{2}.
+\]
+Hence
+\[
+\gamma\big|_{[0,t]}\cup\gamma\big|_{[t,1]}
+\subseteq
+\overline{B_{|\gamma|/2}(\gamma(0))}
+\cup
+\overline{B_{|\gamma|/2}(\gamma(1))},
+\]
+and, denoting Lebesgue measure by $m$,
+\[
+m\left(
+B_{|\gamma|/2}(\gamma(0))
+\cup B_{|\gamma|/2}(\gamma(1))
+\right)
+\leq2\pi\left(\frac{|\gamma|}{2}\right)^2.
+\]
+Proceed inductively to obtain
+\[
+\gamma\big|_{[0,1]}
+\subseteq
+\bigcup_{i=1}^{2^{n-1}+2}
+B_{|\gamma|/2^n}(\gamma(i)),
+\]
+where the points $\{i,j\}_i$ are obtained by the intermediate value property so that
+\[
+\left|\gamma\big|_{[i,i+1]}\right|
+=\left|\gamma\big|_{[i+1,i+2]}\right|
+=\frac{|\gamma|}{2^n}.
+\]
+
+By monotonicity,
+\[
+m\left(\gamma\big|_{[0,1]}\right)
+\leq(2+2^{n-1})\pi
+\left(\frac{|\gamma|}{2^n}\right)^2
+\leq\frac{\pi|\gamma|}{2^n}.
+\]
+Thus
+\[
+\boxed{
+0\leq m\left(\gamma\big|_{[0,1]}\right)
+\leq\inf_n\frac{\pi|\gamma|}{2^n}=0.}
+\]
+Therefore images of rectifiable curves have measure $0$.
+
+\textbf{Remark.}
+Space-filling curves are not rectifiable. In fact, any curve with Hausdorff dimension greater than $1$ is unrectifiable.
+
+
+Note that this double induction gives a rather strong result. Observe instantly from the picture below that Riemann-integrable functions have graphs of measure $0$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.56\linewidth]{note2-fig-01.pdf}
+  \textit{Figure N2.1}
+\end{figure}
+
+In particular, graphs of continuous or almost-continuous functions also have measure $0$. If we invoke Littlewood's principle, namely Lusin's theorem, then the graph of any measurable function whose support is a set of finite measure has measure $0$, since such functions are ``almost'' continuous. Sadly, none of these capture the notion of rectifiability, since there is no implicit function theorem for continuous functions.
+
+We are not done with Tool 5, or for that matter with any of the tools; these shall keep coming back. So watch out.
+
+\subsection*{Tool 6 — Fundamental Theorem of Calculus}
+Let $f$ be Riemann integrable, and let $F$ satisfy $F'=f$. Then
+\[
+\int_a^b f(x)\,dx=F(b)-F(a).
+\]
+
+
+Let $u\colon O\to\mathbb R$ be harmonic. Then there is a harmonic function $v\colon O\to\mathbb R$, unique up to constants and called the harmonic conjugate, such that $u+iv$ is holomorphic in $O$, where $O$ is some region in $\mathbb C$.
+
+\textit{Proof.}
+Assume first that $v$ is the harmonic conjugate of $u$. Then
+\begin{align*}
+v(x+iy)-v(0)
+&=v(x+iy)-v(x)+v(x)-v(0)\\
+&=\int_0^x\frac{\partial v}{\partial x}(t)\,dt
++\int_0^y\frac{\partial v}{\partial y}(x+it)\,dt.
+\end{align*}
+
+
+By the Cauchy--Riemann equations,
+\[
+v(x+iy)=v(0)
+-\int_0^x\frac{\partial u}{\partial y}(t)\,dt
++\int_0^y\frac{\partial u}{\partial x}(x+it)\,dt.
+\]
+Denote the two integrals by $H(x,y)$. The function $u$ fixes $H(x,y)$, so another conjugate of $u$ can differ only by a constant.
+
+Now let us establish existence. Since $u$ fixes $H(x,y)$, define
+\[
+v(x+iy):=H(x,y)
+=-\int_0^x\frac{\partial u}{\partial y}(t)\,dt
++\int_0^y\frac{\partial u}{\partial x}(x+it)\,dt.
+\]
+Can we trace back and recover the Cauchy--Riemann equations? By the fundamental theorem of calculus,
+\begin{align*}
+\frac{\partial v}{\partial y}(x+iy)
+&=\lim_{h\to0}\frac1h
+\int_y^{y+h}\frac{\partial u}{\partial x}(x+it)\,dt\\
+&=\lim_{h\to0}
+\frac{u(x+i(y+h))-u(x+iy)}{h}\\
+&=\frac{\partial u}{\partial x}(z),
+\qquad z=x+iy.
+\end{align*}
+Thus
+\[
+\frac{\partial v}{\partial y}(z)
+=\frac{\partial u}{\partial x}(z).
+\]
+Also,
+\begin{align*}
+\frac{\partial v}{\partial x}(x+iy)
+&=-\frac{\partial u}{\partial y}(x)
++\frac{\partial}{\partial x}
+\left(\int_0^y\frac{\partial u}{\partial x}(x+it)\,dt\right)\\
+&=-\frac{\partial u}{\partial y}(x)
++\lim_{h\to0}\frac1h\int_0^y
+\left(
+\frac{\partial u}{\partial x}(x+h+it)
+-\frac{\partial u}{\partial x}(x+it)
+\right)dt\\
+&=-\frac{\partial u}{\partial y}(x)
++\lim_{h\to0}\int_0^y
+\frac{\partial^2u}{\partial x^2}(x'+it)\,dt,
+\end{align*}
+where $x'\in(x,x+h)$ by the mean value theorem, since $u\in C^2$.
+
+
+As $h\to0$, we have $x'\to x$. Therefore
+\[
+\frac{\partial v}{\partial x}(x+iy)
+=-\frac{\partial u}{\partial y}(x)
++\int_0^y\frac{\partial^2u}{\partial x^2}(x+it)\,dt.
+\]
+Since $u$ is harmonic,
+\[
+\frac{\partial^2u}{\partial x^2}
+=-\frac{\partial^2u}{\partial y^2}.
+\]
+Hence
+\begin{align*}
+\frac{\partial v}{\partial x}(x+iy)
+&=-\frac{\partial u}{\partial y}(x)
+-\int_0^y\frac{\partial^2u}{\partial y^2}(x+it)\,dt\\
+&=-\frac{\partial u}{\partial y}(x)
+-\left(
+\frac{\partial u}{\partial y}(x+iy)
+-\frac{\partial u}{\partial y}(x)
+\right)\\
+&=-\frac{\partial u}{\partial y}(x+iy).
+\end{align*}
+Thus
+\[
+\frac{\partial v}{\partial x}(z)
+=-\frac{\partial u}{\partial y}(z).
+\]
+
+Therefore $(u,v)$ is Fr\'echet differentiable and satisfies the Cauchy--Riemann equations, so $u+iv$ is holomorphic.
+
+\textbf{Remark.}
+This proof goes through even for a disk $D$, hence for any simply connected domain.
+
+\textbf{Remark.}
+Let $f\colon\mathbb C\to\mathbb R$ be harmonic. If $f\colon\mathbb C\to\mathbb C$ is holomorphic, then $0$ is a harmonic conjugate of $\operatorname{Re}(f)$. By the fundamental theorem of calculus, one concludes that $\operatorname{Re}(f)$ is constant, and hence $f$ is constant. Thus holomorphic functions demand more than one dimension to be harmonic, but, as it turns out, they do not merely demand it: they ensure that they get multidimensional freedom; they ensure harmony. In fact, they turn out to be smooth.
+
+
+If $u$ is harmonic, then \(u_x-iu_y\)
+is holomorphic, since
+\[
+u_{xx}=-u_{yy},
+\qquad
+u_{xy}=-(-u_{yx}).
+\]
+Now, if $u\colon U\to\mathbb C$ and $U$ is simply connected, then $g(z):=u_x-iu_y$ has a primitive. Let that primitive be $f(z)$. The Wirtinger derivative satisfies
+\begin{align*}
+\frac{\partial f}{\partial z}
+=f'(z)
+=g(z)
+&=u_x-iu_y\\
+&=\operatorname{Re}(f)_x-i\operatorname{Re}(f)_y.
+\end{align*}
+Therefore
+\[
+\operatorname{Re}(f)_x=u_x,
+\qquad
+\operatorname{Re}(f)_y=u_y,
+\]
+so \(u=\operatorname{Re}(f).\)
+Thus $\operatorname{Im}(f)$ is the required conjugate.
+
+
+\textbf{Remark.}
+Suppose $u$ and $v$ are harmonic and defined on all of $\mathbb C$. Let \(u\leq v+M.\)
+Then $u-v$ is harmonic and $u-v\leq M$. Let $w$ be its harmonic conjugate. Then
+\[
+(u-v)+iw
+\]
+is entire, so \(e^{(u-v)+iw}\)
+is entire and bounded. Hence
+\[
+u=v+k.
+\]
+If equality in $u\leq v+M$ is attained, then $u=v+M$. ``A function in harmony never dominates another of the same kind.'' Realize the consequence of this for entire functions.
+% BLOG-CONTENT-END
+\end{document}

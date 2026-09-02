@@ -1,0 +1,133 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\graphicspath{{figures/k-theory/}}
+\begin{document}
+\section*{Classification of Vector Bundles}
+% BLOG-CONTENT-BEGIN
+\underline{\textbf{Homotopy Theorem}}
+
+Of abundant importance to any theory is a robust classification theorem. With that interest in mind let us prove the following theorem pointing in that direction for vector bundles.
+\subsection*{Theorem 3.3}
+    Given a vector bundle $\eta = (E, B, V, p)$, and $f_0$, $f_1$ $: A \rightarrow B$ homotopic maps, where $A$ is paracompact Hausdorff, we have:-
+    $$f_0^*\eta \cong f_1^*\eta$$
+
+\textit{Proof.}
+    We shall again do it in three steps, each important in itself.
+
+    \underline{STEP 1}:- $\text{Hom}(E, E') \longleftrightarrow \Gamma(\text{HOM}(E, E'))$.
+
+    This is where specific description of the HOM bundle will play a role. Define,
+    $$\rho: \text{Aut}(V)\times \text{Aut}(V')\rightarrow \text{Aut}(\text{Hom}(V, V'))$$
+    \begin{equation}\tag{1}
+        \rho(T, S)(A) := SAT^{-1}
+    \end{equation}
+
+Following the functorial construction would yield the $\rho$ above, that is,
+$$\rho(E, E') = \text{HOM}(E, E')$$
+Now let $f\in \text{Hom}(E, E')$ and let $\{\varphi^1_{\alpha}\}_{\alpha}$ and $\{\varphi^2_{\alpha}\}_{\alpha}$ be local trivializations of $E$ and $E'$ (after passing to a common refinement in $B$). We have,
+$$\big((\varphi^2_{\alpha})^{-1}\circ f
+\circ \varphi^1_{\alpha}\big)(x, h) = (x, f_{\alpha}(x)h)$$
+$$\widetilde{\varphi}^2_{\beta\alpha}\circ f_{\alpha} \equiv f_{\beta}\circ \widetilde{\varphi}^1_{\beta\alpha}$$
+Clearly, $f_{\alpha}$ is a local section of HOM$(E, E')$ because if $\{\varphi_{\beta\alpha}\}_{\alpha, \beta}$ are transition functions of it, then by $(1)$,
+$$f_{\beta} = \varphi_{\beta\alpha}\circ f_{\alpha}$$
+which implies that $\{f_{\alpha}\}_{\alpha}$ can be glued together on $B$ to yield a global section.
+
+\underline{STEP 2}:- If $B$ is paracompact Hausdorff and $B\subseteq_{\text{closed}} B$ and let $E\big|_{B'} \rightarrow E'\big|_{B'}$ be an isomorphism. Then there exists $U\subseteq_{\text{open}} B$, $B'\subseteq U$ such that the isomorphism can be extended to $E\big|_{U} \rightarrow E'\big|_{U}$.
+
+We shall now make use of the following:-
+
+\underline{FACT}:- If $f: B\rightarrow X$ is continuous, $B\subseteq_{\text{closed}} \widetilde{B}$, where $\widetilde{B}$ is paracompact Hausdorff, then $f$ can be extended to $\widetilde{B}$
+
+By STEP 1, $f\in \Gamma\big(\text{HOM}(E\big|_{B'}, E'\big|_{B'}\big)$, and by the fact above, $f$ can be extended to $\widetilde{f}$ such that $\widetilde{f} \in \Gamma\big(\text{HOM}(E, E'\big)$. Also, the point $x\in B$ for which $\widetilde{f}(x)$ is an isomorphism is open in $B$.
+
+\underline{STEP 3}:- Let $F: A\times I\rightarrow B$ be the homotopy, let $F_t:= F(\cdot, t)$, and let $\pi:A\times I\rightarrow A$ be the projection.
+$$\implies F_t\circ \pi : A\times I \rightarrow B$$
+Consider the bundles $F^*E$ and $(F_t\circ \pi)^*E$, note that, $F_t\circ \pi = F\big|_{A\times \{t\}}$. Applying STEP 2 to $F^*E$ and $(F_t\circ \pi)^*E$ restricted to $A\times \{t\} \subseteq_{\text{closed}} A\times I$, we see that all bundles $F^*E\big|_{A\times \{\widetilde{t\}}}$, for $\widetilde{t} \in (t-\delta, t+\delta)$ are isomorphic for some $\delta$. As $[0,1]$ is connected, we get that:-
+$$f_0^*\eta \cong f_1^*\eta$$
+
+
+\textbf{Corollary.}
+    If $f:A\rightarrow B$ is a homotopy equivalence, then, $f^*: \text{Vect}^n(B)\rightarrow \text{Vect}^n(A)$ is a bijection. ((i.e.) vector bundles are homotopy invariant).
+\textit{Proof.}
+    Let $g:B\rightarrow A$ be such that $f\circ g \sim \text{id}_B$ and $g\circ f\sim \text{id}_A$, then $g^*$ is the required inverse for $f^*$, as $f^*g^* \cong \text{id}^*_A$ and $g^*f^* \cong \text{id}^*_B$
+
+\underline{\textbf{Classification of Vector Bundles} (over compact Hausdorff spaces)}
+
+Let $\tau_c$ be the category of compact Hausdorff spaces upto homotopy. Note that $\text{Vect}_{\mathbb{K}}^n: \tau_c^{\text{op}} \rightarrow \text{Sets}$, is a presheaf on $\tau_c$, and hence asking for a good classification theorem is akin to asking if $\text{Vect}_{\mathbb{K}}^n$ is representable. The answer:- Yes, by the infinite Grassmannian $\text{Gr}(n, \mathbb{K}^{\infty})$. More specifically, one can obtain all vector bundles over $X$ by pulling back via maps $X\rightarrow \text{Gr}(n , \mathbb{K}^{\infty})$ the bundle associated to the universal bundle over $\text{Gr}(n , \mathbb{K}^{\infty})$. For reasons apparent, $\text{Gr}(n , \mathbb{K}^{\infty})$ is called the classifying space of the gauge group $GL_n(\mathbb{K})$. 
+\subsection*{Theorem 3.4}
+    The map $\phi: [X, \text{Gr}(n , \mathbb{K}^{\infty})] \rightarrow \text{Vect}_{\mathbb{K}}^n$ is a bijective correspondence for compact Hausdorff spaces $X$, where $[X, Y]$ denotes the set of maps $X\rightarrow Y$ upto homotopy, and $\phi([f]):= f^*$.
+
+\textbf{Remark.} A more general result is true:- Given a group $G$, let $\mathcal{P}_G(B)$ denote the set of all principal $G$-bundles, where $B$ is compact Hausdorff, then there exists a $G$-bundle $EG\rightarrow BG$, with a contractible total space, such that the following is a bijective correspondence:-
+$$[X, BG] \longleftrightarrow \mathcal{P}_G(B)$$
+$EG$ is called the \textbf{universal bundle} and $BG$ the \textbf{classifying space} for the gauge group $G$. This generalizes the theorem above for $G= GL_n{(\mathbb{K})}$, because of the correspondence between $GL_n{(\mathbb{K})}$-bundles and vector bundles of dimension $n$ established before, and the fact that $BGL_n{(\mathbb{K})} \cong \text{Gr}(n, \mathbb{K}^{\infty})$ with $EG = V(n, \mathbb{K}^{\infty}) \sim \{*\}$ as its universal bundle. 
+
+\textbf{Primer}:- Note that the homotopy theorem ensures that the pullback of bundes via maps in $[X, \text{Gr}(n, \mathbb{K}^{\infty})]$ is well-defined. The reason we impose $X$ to be compact Hausdorff is largely because such spaces are compactly generated, in particular, they satisfy:-
+$$\text{Hom}(X\times Y, Z) \cong \text{Hom}(X, \text{Hom}(Y, Z))$$
+
+As a result, even if the hypothesis on $X$ can be loosened to admit paracompact Hasudorff spaces, one ignores. The hypothesis that $X$ is compact Hausdorff is only exploited to establish surjectivity. Therefore, the following is always an injective correspondence:-
+$$[X, \text{Gr}(n, \mathbb{K}^{\infty})] \hookrightarrow \text{Vect}_{\mathbb{K}}^n$$
+$$[f] \rightarrow f^*\big(V(n, \mathbb{K}^{\infty})\times_{O_{\mathbb{K}}(n)}\mathbb{K}^n\big)$$
+
+\textit{Proof.}
+    To establish injectivity we need the following lemma:-
+    \subsection*{Lemma 3.1}
+        Let $j_{\text{ev}}$, $j_{\text{odd}}$ $: \mathbb{R}^{\infty} \rightarrow \mathbb{R}^{\infty}$ be defined as follows:-
+        $$j_{\text{ev}}(x_1, x_2, \ldots) := (0, x_1, 0, x_2, 0, \ldots)$$
+        $$j_{\text{odd}}(x_1, x_2, \ldots) := (x_1, 0, x_2, 0, \ldots)$$
+        Then $j_{\text{ev}} \sim j_{\text{odd}} \sim \text{id}_{\mathbb{R}^{\infty}}$
+    
+    \textit{Proof.}
+        We prove it for $j_{\text{ev}}$, and for $j_{\text{odd}}$ the proof is analogous. Define,
+        $$H: \mathbb{R}^{\infty} \times [0,1] \rightarrow \mathbb{R}^{\infty}$$
+        $$H(x,t):= tj_{\text{ev}}(x) + (1-t)x$$
+        Clearly, $H$ is the required homotopy. Now suppose $t\in (0,1)$ and $H(x,t) = 0$, then,
+        $$\big(((1-t)x_1, tx_1 + (1-t)x_2, (1-t)x_3\big) = (0,0,0,\ldots)$$
+        which implies, $x=(0,0,\ldots)$. So, the homotopy is via linear embeddings
+    
+    
+    Let $f$, $g$ $: X\rightarrow \text{Gr}(n, \mathbb{K}^{\infty})$ be maps, denote the associated bundle $\big(V(n, \mathbb{K}^{\infty})\times_{GL_n{\mathbb{K}}} \mathbb{K}^n\big)$ by $\gamma_n$, and suppose $\alpha: f^*\gamma_n \xrightarrow{\cong} g^*\gamma_n$ is an isomorphism. Note that WLOG one can assume $f(x)$ and $g(x)$ to be distinct subspces in $\mathbb{R}^{\infty}$ or work with $j_{\text{ev}}\circ f$ and $j_{\text{odd}}\circ g$. We shall need the following fact about the topology of the Grassmannian:-
+    \begin{center}
+        
+\underline{FACT}:- $\text{Gr}(n, \mathbb{K}^{\infty}) \cong V(n, \mathbb{K}^{\infty})/O(n) \cong \{P\in \text{Hom}(\mathbb{K}^N, \mathbb{K}^n) |  P \text{ is orthogonal}\}$
+
+    \end{center}
+So, $f$, $g$ can be viewed as a family of orthogonal projections of $\mathbb{K}^{\infty}$ onto $\mathbb{K}^n$ varying continuously over $X$. Consider,
+\[\begin{tikzcd}
+	{\big(V(n, \mathbb{K}^{\infty})\times_{GL_n{\mathbb{K}}}\mathbb{K}^n\big)} & {\big(V(n, \mathbb{K}^{\infty})\times_{GL_n{\mathbb{K}}}\mathbb{K}^n\big)} \\
+	{f(x) \in Gr(n, \mathbb{K}^{\infty})} & {g(x) \in Gr(n, \mathbb{K}^{\infty})}
+	\arrow["{\text{zero section}, z}"', from=2-1, to=1-1]
+	\arrow["\alpha", from=1-1, to=1-2]
+	\arrow["{\text{projection}, p}", from=1-2, to=2-2]
+\end{tikzcd}\]
+$\alpha$ being an isomorphism between $f^*\gamma_n$ and $g^*\gamma_n$ is an isomorphism on the fibre over $f(x)$. Now define, 
+$$\widetilde{H}: X\times [0,1] \rightarrow Gr(n, \mathbb{K}^{\infty})$$
+$$\widetilde{H}(x, t):= (tf(x) + (1-t)[p\circ \alpha\circ z](f(x)))$$
+Clearly, $\widetilde{H}$ is continuous, $\widetilde{H}(x, 1) \equiv f$, $\widetilde{H}(x, 0) \equiv [p\circ \alpha\circ z](f(x)) = g(x)$ (as $\alpha$ is an isomorphism).
+
+Now let's establish surjectivity. Let $E\xrightarrow{p} X$ be a vector bundle of rank $n$. $E$ can be embedded in $X\times \mathbb{K}^N \subset X\times \mathbb{K}^{\infty}$. Let that embedding be $j$. Define,
+$$f:X \rightarrow Gr(n, \mathbb{K}^{\infty})$$
+$$f(x) := \text{Proj}(\mathbb{K}^{\infty} \rightarrow j(E_x)) = j(E_x) \sim \mathbb{K}^n$$
+where the last equality is written keeping the fact (above) in mind, and $j(E_x) \xhookrightarrow{\sim} x\times \mathbb{K}^N \hookrightarrow x\times \mathbb{K}^{\infty} \cong \mathbb{K}^{\infty}$. Using the local trivialization on $E\rightarrow X$, one can easily prove that $f$ is locally continuous, (i.e.) continuous. To establish $f^*\gamma_n \cong E$ we need to look at the associated bundle differently. Set,
+$$G_n:= \{(V, x)  |  v \in Gr(n, \mathbb{K}^{\infty}), x\in V\}$$
+Then, 
+$$\big(V(n, \mathbb{K}^{\infty})\times_{GL_n{\mathbb{K}}}\mathbb{K}^n\big) \rightarrow G_n$$
+$$\big((v_1, \ldots, v_n), (\lambda_1, \ldots, \lambda_n)\big) \rightarrow \bigg(\langle v_1,\ldots, v_n\rangle, \sum_i\lambda_i v_i\bigg)$$
+is an isomorphism on fibres, which implies one can transfer bundle strucutre of the former to the latter. Clearly, $f^*G_n \cong E$ via the map:-
+$$(V, v, x)\in G_n\times_{Gr(n, \mathbb{K}^{\infty})} X \rightarrow j(v)\in E$$
+with inverse, 
+$$v\in E \rightarrow \big(j(E_{p(v)}), j(v), p(v)\big) \in G_n\times_{Gr(n, \mathbb{K}^{\infty})} X$$
+which is continuous component-wise. $G_n$ is often referred to as the \textbf{tautological bundle}. 
+
+\textbf{Remark}:- If $p:E\rightarrow B$ is a vector bundle, then one has the fibre preserving sequence $\mathbb{K}^n \rightarrow E\rightarrow B$. This gives rise to a long exact sequence of homotopy groups:-
+$$\cdot\rightarrow\pi_k(\mathbb{K}^n) \rightarrow \pi_k(E) \rightarrow \pi_k(B) \rightarrow \pi_{k-1}(\mathbb{K}^{n-1})\rightarrow \cdots$$
+As $\mathbb{K}^n$ is contractible, we get the following:-
+$$\pi_k(E) \cong \pi_k(B)$$
+In other words, $E$ is weakly homotopic equivalent to $B$. The above is in fact true for any fibre bundle with contractible fibre, but for the case of vector bundles one can show that the weak equivalence is actually a homotopy equivalence, where the zero section is the prescribed inverse of $p$. This along with the corollary to the homotopy theorem and the classification theorem tells us that:-
+
+\begin{center}
+    
+$\text{Vect}_{\mathbb{K}}^n(B)$ holds homotopic information about $B$ in a linear fashion.
+
+\end{center}
+% BLOG-CONTENT-END
+\end{document}

@@ -1,0 +1,23 @@
+{
+  "\\topfraction": ".9",
+  "\\bottomfraction": ".8",
+  "\\textfraction": ".08",
+  "\\floatpagefraction": ".78",
+  "\\headrulewidth": "0.4pt",
+  "\\headrule": "\\hbox to\\headwidth{\\color{HandoutRule}\\leaders\\hrule height \\headrulewidth\\hfill}",
+  "\\footrulewidth": "0pt",
+  "\\ToolRef": "Tool~#1",
+  "\\FigureTag": "%\n  \\begingroup\n  \\renewcommand{\\thefigure}{#1}%\n  \\refstepcounter{figure}\\label{#2}%\n  \\par\\vspace{.38em}%\n  {\\centering\\sffamily\\footnotesize\\bfseries\\color{HandoutMuted}\n    Figure~#1\\par}%\n  \\endgroup\n",
+  "\\thefigure": "#1",
+  "\\Result": "%\n  \\Needspace{5\\baselineskip}%\n  \\par\\addvspace{1.0em}%\n  {\\large\\sffamily\\bfseries\\color{HandoutNavy}#1}\\par\\nobreak\\vspace{.12em}%\n",
+  "\\Application": "%\n  \\Needspace{4\\baselineskip}%\n  \\par\\addvspace{.8em}%\n  {\\sffamily\\bfseries\\color{HandoutTeal}Application\\ifstrempty{#1}{}{ --- #1}}\\par\\nobreak\\vspace{.1em}%\n",
+  "\\ProofHeading": "\\par\\smallskip\\noindent{\\itshape\\color{HandoutInk}Proof.}\\enspace",
+  "\\RemarkHeading": "\\par\\smallskip\\noindent{\\sffamily\\bfseries\\color{HandoutGold}Remark.}\\enspace",
+  "\\NoteHeading": "\\par\\smallskip\\noindent{\\sffamily\\bfseries\\color{HandoutBlue}Note.}\\enspace",
+  "\\ExerciseHeading": "\\par\\smallskip\\noindent{\\sffamily\\bfseries\\color{HandoutTeal}Exercise.}\\enspace",
+  "\\ProofOf": "\\par\\smallskip\\noindent{\\itshape\\color{HandoutInk}Proof of #1.}\\enspace",
+  "\\Res": "\\operatorname{Res}",
+  "\\dist": "\\operatorname{dist}",
+  "\\Int": "\\operatorname{int}",
+  "\\Ext": "\\operatorname{ext}"
+}

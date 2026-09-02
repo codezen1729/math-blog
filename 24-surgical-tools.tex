@@ -1,0 +1,357 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\graphicspath{{figures/surgeries/}}
+\begin{document}
+\section*{Scalpel, Forceps, and other Surgical Tools}
+% BLOG-CONTENT-BEGIN
+\chapter{Scalpel, Forceps, and other Surgical Tools}
+    
+        
+        In this chapter we shall glimpse over the relevant aspects of the theory of quasiconformal maps and see ways in which it features in holomorphic dynamics. The content over-viewed here is dealt with in depth in \cite{ahlfors2006lectures}, \cite{branner2014quasiconformal}, \cite{hubbard2016teichmuller}, and \cite{imayoshi2012introduction}. 
+
+        Dynamics of a given holomorphic self map $f$ on a Riemann surface $S$ is a topological invariant. For instance, fixed points, critical points, the nature of the periodic points - attracting, repelling, superattracting, parabolic, or non-linearizable, all remain the way it was upon one's change of coordinates on $S$ via a homeomorphism. The issue, as was expressed in Chapter $1$ is that of rigidity. Conformal maps are too rigid, that is, they preserve way too much information. A biholomorphic change of coordinate preserves all the analytic parameters of the dynamics of $f$, like the multipliers, conformal description of Fatou components, holomorphic degree, etc.
+
+        In the interest of having some flexibility we shall first introduce a way to measure how conformal a given map is, then we shall see what shall happen to the biholomorphic coordinate change function $\phi: S \rightarrow S'$, if we reduce the extent to which it is conformal. $\phi$ must certainly be a homeomorphism for we want the topological core of the dynamics to be preserved. But, we also expect some form of flexibility in the analytic parameters of the dynamics of $f$. We aspire to make the definition of this proposed almost conformal maps (i.e. quasiconformal maps) in such a way that the flexibility in its conformality is connected with the flexibility in changing the analytic quantifiers of the dynamics of $f$. Let us begin by putting a meter on a function's conformality.
+
+        Let $f: \mathbb{C} \rightarrow \mathbb{C}$, then $f$ being conformal is equivalent to saying that the linear map $df_{z_0}: T_{z_0}\mathbb{C} \rightarrow T_{z_0}\mathbb{C}$ as a $\mathbb{R}$-linear map is $\mathbb{C}$-linear (modulo appropriate identifications). If $f: \mathbb{C} \rightarrow \mathbb{C}$ were just continuously differentiable, then, in $(dz, d\overline{z})$ coordinate frame on $T_{z_0}\mathbb{C}$, we will have:-
+        $$df_{z_0} = {\frac{\partial f}{\partial z}}\bigg|_{z_0}dz + {\frac{\partial f}{\partial \overline{z}}}\bigg|_{z_0}d\overline{z}$$
+        Where $\left({\frac{\partial f}{\partial \overline{z}}}\bigg|_{z_0}d\overline{z}\right)$ is the extra luggage obstructing $f$ from being holomorphic. Denote the linear map given by the differential, by $T$, and let $T(x, y) = (X, Y)$. Fix a circle $\{(x, y)|$ $x^2 + y^2 = r,$ $r>0\}$. If $T$ is invertible we have:-
+        
+        $$\begin{pmatrix} x&y \end{pmatrix}\cdot \begin{pmatrix} x\\y \end{pmatrix}  = r^2 = \left(\begin{pmatrix} X&Y \end{pmatrix}(T^{-1})^T\right) \cdot \left(T^{-1} \begin{pmatrix} X\\Y \end{pmatrix}\right)$$
+        
+        $$\begin{pmatrix} X&Y \end{pmatrix}\begin{pmatrix} X\\Y \end{pmatrix} = r^2$$
+        
+        
+        Now, $(T^{-1})^T(T^{-1})$ being real symmetric, admits two eigenvalues (say $a$, $b$), hence $T$ can be diagonalized, and the equation above would take the form:-
+        $$aX^2 + bY^2 = r^2$$
+        
+        
+        Therefore, $df_{z_0}$ pulls back an ellipse from a circle in its co-domain. If we were to remove the extra luggage then $df_{z_0}$ would have pulled back a perfect circle. Sard's Theorem tells us that one can pull back ellipses from circles in $T_{f(z)}\mathbb{C}$ almost everywhere in $f(\mathbb{C})$. In fact, similarly, one can pullback ellipses too. Set $a = {\frac{\partial f}{\partial z}}\bigg|_{z_0}$, $b = {\frac{\partial f}{\partial \overline{z}}}\bigg|_{z_0}$, $\theta = $arg$(\frac{b}{a})$, $\alpha =$arg$(a)$, and $\mu_{z_0} = \frac{b}{a}$. With these, the differential takes the form:-
+        $$df_{z_0} = |a|e^{i\alpha}(z+|\mu_{z_0}|e^{i\theta}\overline{z})$$
+        
+        
+        Clearly, $e^{i\left(\frac{\theta}{2}\right)}$, $e^{i\left(\frac{\theta + \pi}{2}\right)}$ are eigenvectors of $df_{z_0}$ corresponding to eigenvalues $|a|(1+|\mu_{z_0}|)$ and $|a|(1-|\mu_{z_0}|)$. Here, $\theta$ sets the angle of inclination of the ellipse, as a result, $\mu(z) = \mu_z$ essentially captures the information of the ellipse (modulo scaling).
+        
+        \subsection*{Definition 3.1}{(Dilatation)}:- Let $df_{z_0}$ be non-singular, and say it pulled back an ellipse $\mathcal{E}$ at $z_0$, then define, $$K_{z_0}(f) =  \frac{1+|\mu_{z_0}|}{1- |\mu_{z_0}|}$$
+        to be the dilatation of $f$ at the point $z_0$. (Note: $K_{z_0}(f)$ is essentially the ratio of the major axis of $\mathcal{E}$ to its minor axis, thereby capturing by what measure $f$ deforms circles.)
+        
+        
+        
+        Let $\esssup_{z_0 \in \mathbb{C}}(K_{z_0}(f)) = K < \infty$. Then the value of $K$ controls how far $f$ is from being conformal. We propose to adopt this as the means to loosen conformality. This can be made formal by introducing Teichm\"uller distances and so on, but we better not. Notice that the imposition of $f$ being of class $C^1$ is not that motivated. It seems as if we let that in just so we could use Sard's Theorem. Of course there are other ways to ensure that one can pullback almost everywhere, and one such way shall lead us to the first definition of quasiconformal maps. 
+        
+        \subsection*{Definition 3.2}{(First Analytic Definition of Quasiconformal Maps)}:- A map $\phi: U \rightarrow V$ is said to be $K$-quasiconformal if:-
+        \begin{enumerate}
+            \item $\phi$ is a homeomorphism.
+            \item $\phi$ is ACL (absolutely continuous on lines).
+            \item $|\partial_{\overline{z}}\phi| \leq k|\partial_{z}\phi| $, almost everywhere, where $k = \frac{K-1}{K+1}$.
+        \end{enumerate}
+        
+        
+        
+        Let us briefly address why the above is sort of the right definition to make with the help of the following important lemma.
+        
+        \subsection*{Lemma 3.3}{(Gehring and Lehto)}:- If $\phi$ is an open map and has partial derivatives almost everywhere then it is differentiable almost everywhere.
+        
+        
+        
+        Notice that if $\phi$ is ACL, and $m = m_1 \times m_1$ (where $m, m_1$ are Lebesgue measures on $\mathbb{R}^2, \mathbb{R}$, respectively: An absolutely continuous function takes a measure $0$ set in an interval to a measure $0$ set. Let $A_x = \{x\} \times B_x$, be such that $m_1(B_x) = 0$ locally (say in $U$), where $B_x$ is the projection of $\{(x, y)\}_{y \in \mathbb{R}}$ $\cap$ (the local region, $U$). Then by Fubini's Theorem $m(f(\bigcup_{x\in \pi_1(U)}A_x)) = 0$, where $\pi_1$ is the canonical projection onto the first coordinate. Now, for absolutely continuous functions one firstly has that $\phi$ is locally $C^1$ (by Egoroff's Theorem), and secondly (exploiting Sard's Theorem for absolutely continuous functions) one has that the local images of critical points will have measure 0. $\mathbb{C}$ being Lindel\"off, can be covered by countably many such regions in which all the aforementioned niceties exist. In conjunction, these give us that $K$- quasiconformal maps pull back ellipses with dilatation atmost $K$, almost everywhere. Further, if you loosen the fact that $\phi$ is a homeomorphism, you can't preserve dynamics, if you loosen the fact that $\phi$ is ACL and replace it with something like - partial differentiability (almost everywhere), then you can't ensure that the image set of critical points have measure $0$. And finally, if you loosen the inequality $|\partial_{\overline{z}}\phi| \leq k|\partial_{z}\phi| $, well, then you would have essentially lost the meter. Therefore, we claim that Definition 3.2 is well justified. 
+
+        By Lebesgue Decomposition Theorem if $A(E) = m(\phi(E))$, $A$ is sigma finite and absolutely continuous with respect to the Lebesgue measure. Therefore, $$A(E) = \int_{E}J_{\phi}((z)dm + \int_{E}d\tilde{\mu}$$ Or, said differently, $dA = J_{\phi}dm + d\tilde{\mu}$, where $\tilde{\mu} \perp m$. This gives us,
+        $$\int_{E}J_{\phi}((x,y))dxdy \leq A(E)$$
+        where $J_{\phi} = |\phi_z|^2 + |\phi_{\overline{z}}|^2$ is the Jacobian of $\phi$. And we have, $|\phi_{\overline{z}}|^2 \leq |\phi_z|^2 \leq \frac{J_{\phi}}{1-k^2}$ $\implies$ $\phi_z$,  $\phi_{\overline{z}} \in \mathbf{L}^2_{loc}$. This yields the following equivalent definition of quasiconformal maps.
+        
+        \subsection*{Definition 3.4}{(Second Analytic Definition of K-Quasiconformal Maps)}:- A map $\phi: U \rightarrow V$ is said to be $K$-quasiconformal if:-
+        \begin{enumerate}
+            \item $\phi$ is a homeomorphism.
+            \item $\phi$ has locally integrable distributional derivatives\footnote{For relevant information from the theory of distributions refer \cite{leibowitz1966distribution}}.
+            \item $|\phi_{\overline{z}}| \leq k|\phi_z|$.
+        \end{enumerate}
+        
+        
+        
+        These analytic definitions are only useful to an extent. What's more promising (with its own limitations) is the geometric definition.
+        
+        \subsection*{Definition 3.5}{(Geometric Definition of K-Quasiconformal Map)}:-A map $\phi: U \rightarrow V$ is said to be $K$-quasiconformal if:-
+       \begin{enumerate}
+           \item $\phi$ is an orientation preserving homeomorphism.
+           \item $\frac{1}{K}$mod$(Q) \leq$ mod$(\phi(Q)) \leq K$mod$(Q)$, for all topological quadrilaterals $Q$ compactly contained in the domain. 
+       \end{enumerate}
+        
+       (Note: Here mod$(Q)$ usually changes from shape to shape, for a Euclidean quadrilateral it happens to be the ratio of its length to its breadth.) 
+       
+        
+        
+        Each of these definitions are relevant for different purposes. For instance, it's obvious from the analytic definition that quasiconformality is a local property, but is extremely non-trivial to derive purely from the geometric definition. Likewise, it is easy to see from the geometric point of view that the inverse of a $K$-quasiconformal map is also $K$-quasiconformal, but not from the analytic point of view. Hence the following equivalence is relevant.
+        
+        \subsection*{Theorem 3.6}{(Equivalence of Definitions)}:- $1$st Analytic Definition $\iff$ $2$nd Analytic Definition $\iff$ Geometric Definition.  
+        
+        
+        
+        It is was clear with the $C^1$ assumption on $f$ that we had indeed put a meter on conformality, for one can prove that if one were to readjust $K$ back to $0$, one would end back in the category of holomorphic maps. But to ensure that the same is true even in the case of quasiconformal maps, one must find one's way back to conformality adjusting back what one tweaked to begin with. Only then our venture will be of some meaning. The following extremely powerful lemma ensures that the right meter for conformility is dilatation. 
+        
+        \subsection*{Lemma 3.7}{(Weyl's Lemma)}:- A $1$-quasiconformal map is conformal.
+        
+        
+        
+        Clubbed below are some of the basic properties of the newly introduced class of maps that shall be of relevance to us later in this chapter.
+        
+        \subsection*{Proposition 3.8}{(Properties of Quasiconformal Maps)}:- The following are true:-
+        \begin{enumerate}
+            \item If $\phi$ is $K$-quasiconformal, then so is $\phi^{-1}$.
+            \item If $\phi_1$ is $K_1$-quasiconformal and $\phi_2$ is $K_2$-quasiconformal, then their composition is $K_1K_2$-quasiconformal.
+            \item $\phi$ is $K$-quasiconformal iff it is locally so.
+        \end{enumerate}
+        
+        
+        
+        By an ellipse field on a Riemann surface $S$, we mean a bounded measurable choice of ellipses (modulo scaling) on tangent spaces $T_zS$ (for almost all $z \in S$). Such a field, as was observed before, shall be given by an essentially bounded measurable function $\mu(z)$ (often referred to as the Beltrami form). Its modulus shall set the dilatation of the ellipses and argument the angle of inclinations. Pullbacks of the circle field from the tangent bundle of the codomain via quasiconformal maps are instances of ellipse fields, for $\frac{\partial \overline{z}}{\partial z}(f)(z) = \mu (z)$ is measurable. It is therefore natural to ask - Do all ellipse fields show up as pullbacks? Before pouncing on the answer to this question let us observe that ellipse fields determine the geometry of the surface. They control the shape of individual tangent spaces by linking it via a linear isomorphism to the standard Euclidean space $\mathbb{R}^2$. These deformed tangent spaces on the bundle shall also affect  Riemannian metrics on the surface $S$ thereby affecting geometry on $S$ as a whole. Since altering geometry of a surface alters the dynamics, we shall explore if ellipse fields can be obtained as pullbacks of quasiconformal maps, for then, the choice of what the dynamics should be altered to will be in our hands; in how we choose the ellipse field, and the altered maps will be quasiconformal conjugates of a given conformal self map (we shall illustrate this soon, in detail).
+        
+        
+        \subsection*{Theorem 3.9}{(Measurable Riemann Mapping Theorem)}:- Let $S$ be a simply connected Riemann surface ($\cong \mathbb{D}$, $\mathbb{C}$, or $\hat{\mathbb{C}}$) with a Beltrami form $\mu(z)$. There exists a quasiconformal map $\phi: S \rightarrow \mathbb{D}$ (or respectively onto $\mathbb{C}$ or $\hat{\mathbb{C}}$) such that the pullback of the circle field via $\phi$ is the ellipse field given by $\mu(z)$. The map $\phi$ shall be called the integrating map for the form $\mu$. (Circle fields are usually denoted by  $\mu_0$, and the statement about the pullback in the theorem shall be written concisely as $\phi^*\mu_0 = \mu$. We shall stick to this notation for pullbacks of any ellipse field henceforth). Further, given a parametrized family of Beltrami forms on $S$, $\{\mu_{\lambda}(z)\}_{\lambda \in \Lambda}$, such that $\lambda \rightarrow \mu_{\lambda}(z)$ is holomorphic, then one can arrange for a family of integrating maps, $\{\phi_{\lambda}(z)\}_{\lambda \in \Lambda}$, such that $\lambda \rightarrow \phi_{\lambda}(z)$ is holomorphic.  
+        
+        
+        
+        
+        The theorem above is sometimes also referred to as the Integrability Theorem or simply as the Mapping Theorem. Now, let us see an elementary example in which quasiconformal maps are used to change the analytic quantifiers of the dynamics of a conformal self map. Let us start with the map $(z \rightarrow \lambda_0z):\mathbb{D} \rightarrow \mathbb{D}$. See it as a map from $\mathbb{D}^* \rightarrow \mathbb{D}^*$ and lift it to its universal cover $\mathbb{H}_l$ (the left half plane). So, one has,
+        
+        $$\begin{tikzcd}[column sep = large, row sep = large]
+        \mathbb{H}_l \arrow[r, "z\rightarrow \lambda_0z"] \arrow[d, "e^z"']
+        & \mathbb{H}_l \arrow[d, "e^z"] \\
+        \mathbb{D}^* \arrow[r,"\zeta \rightarrow \zeta + v_0"']
+        & \mathbb{D}^*
+        \end{tikzcd}$$
+        
+        
+        Here, $v_0 =$log$(\lambda_0)$. Set $L_v$ to be a linear map on $\mathbb{H}_l$ given by the following expression:- 
+        
+        $$\zeta \rightarrow \left(\frac{v+\overline{v_0}}{v_0 + \overline{v_0}}\right)\zeta + \left(\frac{v-v_0}{v_0 + \overline{v_0}}\right)\overline{\zeta}$$
+        
+        
+        This gives us the following commutative diagram:-
+        
+        $$\begin{tikzcd}[column sep = large, row sep = large]
+        \mathbb{D}^* 
+        \arrow[r, "z\rightarrow \lambda_0z"] 
+        & 
+        \mathbb{D}^* 
+        \\ 
+        \mathbb{H}_l 
+        \arrow[u, "e^z"] 
+        \arrow[r, "\zeta \rightarrow \zeta + v_0"'] 
+        \arrow[d, "L_v"'] 
+        & 
+        \mathbb{H}_l 
+        \arrow[d, "L_v"]
+        \arrow[u, "e^z"']
+        \\ 
+        \mathbb{H}_l 
+        \arrow[r, "\zeta \rightarrow \zeta + v"'] 
+        & 
+        \mathbb{H}_l
+        \end{tikzcd}$$
+        
+        
+        
+        Now drop the map $\zeta \rightarrow \zeta + v$ to $\mathbb{D}^*$ to get,
+        
+        
+        
+        $$\begin{tikzcd}[row sep=huge, column sep=huge]
+        & \mathbb{H}_l \arrow[dl, "e^z" description] \arrow[rr, "\zeta \rightarrow \zeta + v_0" description] \arrow[dd, near start, "L_v" description] & & \mathbb{H}_l \arrow[dl, "e^z" description] \arrow[dd, "L_v" description] \\
+        \mathbb{D}^* \arrow[rr, crossing over, near end, "z\rightarrow \lambda_0z" description] \arrow[dd, dashed, "\phi_v" description] & & \mathbb{D}^* \\
+        & \mathbb{H}_l \arrow[dl, "e^z" description] \arrow[rr, near start, "\zeta \rightarrow \zeta + v" description] & & \mathbb{H}_l \arrow[dl, "e^z" description] \\
+        \mathbb{D}^* \arrow[rr, "\zeta \rightarrow e^vz" description] & & \mathbb{D}^* \arrow[from=uu, crossing over, near start, dashed, "\phi_v" description]\\
+        \end{tikzcd}$$
+        
+        
+        Since the whole punctured disk is evenly covered by the exponential map, one can construct a quasiconformal map $\phi_v$ which would conjugate $z \rightarrow \lambda_0z$ to $z \rightarrow e^vz$, thereby managing to change the multiplier of the fixed point $0$ from $\lambda_0$ to any $e^v \in \mathbb{D}^*$. The speciality of what we did is that we constructed the conjugate explicitly. One could have instead appealed to the mapping theorem that would integrate $\mu_v = \phi_v^*\mu_0$, but then it would have been a task to prove that $\phi_v \circ (z \rightarrow \lambda_0z) \circ \phi_v^{-1}$ is conformal. Often you don't end up with holomorphic maps after quasiconformal conjugation. In those unlucky situations the standard (if applicable) is to look for invariant Beltrami forms. For instance, say $g$ is a quasiconformal self map on a simply connected Riemann surface $S$ ($\cong \mathbb{D}, \mathbb{C}$, or $\hat{\mathbb{C}}$). If one can find a Beltrami form $\mu$ such that $g^*\mu = \mu$, then by the mapping theorem $\exists$  $\phi$, $\phi: S \rightarrow X = \mathbb{D}, \mathbb{C}$, or $\hat{\mathbb{C}}$ such that the following commutes:-
+        
+        $$\begin{tikzcd}[column sep = large, row sep = large]
+        (S, \mu) \arrow[r, "g"] \arrow[d, "\phi"']
+        & (S, \mu) \arrow[d, "\phi"] \\
+        (X, \mu_0) \arrow[r,"\phi \circ g \circ \phi^{-1}"']
+        & (X, \mu_0)
+        \end{tikzcd}$$
+        
+        
+        Notice that the circle field is invariant under $f = \phi \circ g \circ \phi^{-1}$ $\implies$ $f$ is $1$-quasiconformal, which by Weyl's lemma is forced to be conformal. In conclusion, looking for invariant Beltrami forms is one of the most rudimentary principles of surgery.
+
+        Quasiconformal surgery often involves gluing quasiconformal maps of different qualities and exploiting Mapping Theorem $+$ Weyl's Lemma to end back in the realm of holomorphic maps. So the actual surgery is primarily about appending two qc maps. (Refer Figure 1) For instance, if one wants to glue $f_1$ (a $K_1$-qc map) to $f_2$ (a $K_2$-qc map), it is natural to ask the following two questions:-
+        
+        \begin{enumerate}
+            \item Can $f_i$ (defined on $D_i)$ be extended with some regularity to $\partial D_i$?
+            \item Can the maps $\hat{f}_i$ (defined on $\partial D_i$) be extended with some regularity to a map $F$ on $D$?
+        \end{enumerate}
+        
+        
+        
+        \begin{figure}[ht!]
+        \begin{tikzpicture}
+        \draw (0,0) ellipse (8cm and 4cm);
+        \draw (0,0) ellipse (6cm and 3cm)[fill = gray];
+        \draw (0,0) ellipse (2cm and 1cm)[fill = white];
+        \node[text width=3cm] at (-0.3,0) {$\hat{f_1}$};
+        \node[text width=3cm] at (-5.9,0) {$f_2$};
+        \node[text width=3cm] at (-4.2,0) {$\hat{f_2}$};
+        \node[text width=3cm] at (1.5,0) {$f_1$};
+        \node[text width=3cm] at (-0.2,2) {$F$};
+        \draw [-{Stealth[length=1mm, width=2mm]}] (-0.1,0) -- (-1.4,0);
+        \draw [-{Stealth[length=1mm, width=2mm]}] (-7,0) -- (-5.8,0);
+        \draw [-{Stealth[length=1mm, width=2mm]}] (-5.3,0) -- (-1.9,1.9);
+        \draw [-{Stealth[length=1mm, width=2mm]}] (-1.85,0) -- (-1.65,1.6);
+        \end{tikzpicture}
+        \caption{The inner ellipse $D_1$ is the domain of $f_1$ and the outer annular ellipse $D_2$ is the domain of $f_2$. $\hat{f_i}$ is the boundary extension of $f_i$. The gray region $D$ is the domain of $F$ whose boundary extensions coincide with $\{\hat{f_i}\}_i$.}
+        \end{figure}
+        
+        If these two questions are answered appropriately and the boundaries are thin enough (i.e have Lebesgue measure $0$) then one can combine the qualities of $f_1$ and $f_2$ with the gluing map $F$ and turn it into a singular qc map on $D_1 \cup D_2 \cup D$. So, let us deal with the questions by first sketching Carath\'eodory's classical work on boundary extensions. Then we shall extend it to the case of qc maps; a thorough treatment of this can be found in \cite{pommerenke2013boundary}.
+
+        Suppose you have a simply connected domain $U \subset \mathbb{C}$, then by Riemann Mapping Theorem $\exists$ $\phi$, a conformal isomorphism $\phi: U \rightarrow \mathbb{D}$. To capture Carath\'eodory's strategy one must move away from hyperbolic geometry and adopt spherical geometry. Let $\rho(z)|dz|$ be the spherical metric on $\hat{\mathbb{C}}$. Impose the same on $\mathbb{D}$ and $U$. Consider $I^2 \subset \hat{\mathbb{C}}$, and let $A$ denote the area function, then, 
+        $$A(I^2) = \int_{I^2}{\rho(x+iy)^2dxdy}$$
+        
+        The length of a segment $y = C$ is given by,
+        
+        $$L(y) = \int_{x\in I}{\rho(x+iy)dx}$$
+        
+        
+        and by Cauchy-Schwarz inequality we have,
+        
+        $$\left(\int_{I}{\rho(+iy)dx}\right)^2 \leq \left(\int_{I}{1^2dx}\right)\left(\int_{I}{\rho(x+iy)^2dx}\right)$$
+        
+        $$\implies \int_{I}{L(y)^2dy} = \mathcal{O}(A(I^2))$$
+        
+        
+        Think of $I^2 \cong \mathbb{D}$ to conclude that for almost all radial lines $r \rightarrow re^{i\theta}$ ($r>0$) in $\mathbb{D}$,
+        
+        $$\lim_{r \rightarrow 1}{\phi^{-1}(re^{i\theta})} $$
+      
+        exists\footnote{Such limits are called radial limits. In general, for a curve $\gamma: [0,1) \rightarrow U$, the limit as the variable of this curve tends to $1$ shall be called the radial limit, if it exists. Further, if the limit exists, one says that the curve $\gamma$ lands at $\lim_{r\rightarrow1}{\gamma(r)}$. A point $a \in \partial U$ is called accessible from $U$ if some curve lands at $a$.} and belongs to $\partial U$, for oscillating curves can't have finite length.
+      
+      \subsection*{Theorem 3.10}{(Fatou, M. Riesz, F. Riesz)}:- For almost every point $e^{i\theta} \in \mathbb{D}$, the image of the radial line $r \rightarrow re^{i\theta}$ lands. However, for a fixed $u_0 \in \partial U$, the set of $\theta$ for which the image of the radial line $r \rightarrow re^{i\theta}$ lands at $u_0$ has Lebesgue measure $0$. 
+      
+      
+      
+      So far, for almost all $\theta \in (0, 2\pi]$, the function $\phi^{-1}$ gives us a good candidate for $\phi^{-1}(e^{i\theta})$. In fact, one also has the following interesting inverse statement. 
+      
+      \subsection*{Theorem 3.11}{(Accesses and Radial Limits)}:- Let $R$ be the Riemann map, $R:\mathbb{D} \rightarrow U$ and $\gamma: [0,1) \rightarrow U$ be a curve
+      which lands at a point $z_0$ in the boundary of $U$. Then the curve $R^{-1} \circ \gamma$ in $\mathbb{D}$ lands at some point $\zeta$ of $\partial\mathbb{D}$, and $R$ has the radial limit at $\zeta$ equal to $z_0$. Moreover, if $\gamma_1, \gamma_2: [0,1) \rightarrow U$ are curves landing at a common point $z_0 \in \partial U$, then $\gamma_1$ and $\gamma_2$ are in the same access to $z_0$ if and only if $R^{-1}(\gamma_1)$ and $R^{-1}(\gamma_2)$ land at the same point in $\partial \mathbb{D}$. 
+      
+      
+      
+      To ensure continuous extension to $\partial U$ or $\partial \mathbb{D}$ one must ensure that for any sequence $\{z_j\}_j$, $z_j \rightarrow e^{i\theta}$, one has $\phi^{-1}(z_j) \rightarrow \phi^{-1}(e^{i\theta})$. 
+      
+      \subsection*{Definition 3.12}{(Crosscuts)}:- By a crosscut for the pair $(U, \partial U)$ we mean a subset $A \subset U$ homeomorphic to $(0, 1)$ whose closure is homeomorphic to $[0,1]$ with only two endpoints in $\partial U$.
+      
+      
+      
+      Note that $U \cong \mathbb{D}$ and for all sequences $\{x_i\}_i$, $x_i \rightarrow x \in \partial U$, we have that the accumulation points of $\{\phi(x_i)\}_i$ belong to $\partial \mathbb{D}$. This leads to a homeomorphism,
+      $$\tilde{\phi}: \overline{U}/\partial U \rightarrow \overline{\mathbb{D}}/\partial \mathbb{D} \cong S^2$$
+      
+      
+      Let the crosscut $A$ be seen as a Jordan curve in $S^2$, then by the Jordan curve theorem $A$ will divide $U$ into two regions $U^+$ and $U^-$ (the signs are assigned depending on the orientation of $A$). The domains $U^+$ and $U^-$ shall be referred to as crosscut domains.
+      
+      \subsection*{Definition 3.13}{(Fundamental Chains and Prime Ends)}:- By a fundamental chain $\mathcal{N} = \{N_j\}_j$ in $U$, we mean a nested sequence of crosscut neighbourhoods $N_j \subset U$ such that their corresponding crosscut closures $\overline{A_j}$ are disjoint and such that their diameters tend to $0$. Two fundamental chains $\{N_j\}_j$ and $\{N_j'\}_j$ are said to be equivalent if every $N_j$ contains some $N_k'$ and vice versa. An equivalence class of fundamental chains is called a prime end for the pair $(\overline{U}, \partial U)$ (usually denoted by $\mathcal{E}$).  
+        
+      
+        
+        
+        The following propositions spill out some basic properties of fundamental chains.
+        
+        \subsection*{Proposition 3.14}{(Properties of Fundamental Chains I)}:- For any fundamental chain $\{N_j\}_j$, the intersection of open sets $N_j$ is empty. However, the impression, $\cap \overline{N_j}$ is a non-empty compact connected subset of $\partial U$.
+        
+        
+        \subsection*{Proposition 3.15}{(Properties of Fundamental Chains II)}:- Any two fundamental chains are either equivalent or eventually disjoint.
+        
+        
+        \subsection*{Proposition 3.16}{(Properties of Fundamental Chains III)}:- Fundamental chains are conformal invariants.
+        
+        
+        
+        In light of the propositions above the following is natural.
+        
+        \subsection*{Definition 3.17}{(Carath\'eodory Compactification)}:- Let $\mathcal{E}$ be the prime end for $(\overline{U}, \partial U)$, then $\hat{U}$, the compactification is defined to be:-
+        $$\hat{U}:= U\bigsqcup\left(\bigsqcup_{\mathcal{N} \in \mathcal{E}}{\mathcal{N}}\right)$$
+        
+        
+        
+        Having seen all this, clearly, $\overline{\mathbb{D}} \cong \hat{\mathbb{D}} \cong \hat{U}$. So, to be able to extend continuously to the boundary one merely has to compare the topology of $\hat{U}$ with that of $\overline{U}$. This enabled Carath\'eodory to establish a criterion for continuous boundary extensions dependent only on the topological structure of the boundary of $U$. In particular, it is independent of the map $\phi$.
+        
+        \subsection*{Theorem 3.18}{(Carath\'eodory's Theorem)}:- $\phi: \mathbb{D} \rightarrow U$ a conformal isomorphism, extends continuously to the boundary $\iff$ $\partial U$ is locally connected. 
+        
+        
+        
+        Carath\'eodory's theorem can be easily extended to the case of quasiconformal maps. 
+        
+        \subsection*{Theorem 3.19}{(Carath\'eodory's Theorem for Quasiconformal Maps)}:- $f: \mathbb{D} \rightarrow G$ be a qc map, $G$ a Jordan domain, then $f$ can be extended continuously to the boundary. 
+        
+        
+        
+        In fact, something stronger can be said about the regularity of the boundary extension in the theorem above. For that, let us introduce two objects.
+        
+        \subsection*{Definition 3.20}{(Quasisymmetric Maps)}:- A map $h: \mathbb{S}^1 \rightarrow \mathbb{C}$ is quasisymmetric if $h$ is injective, and if there exists a strictly increasing continuous function $\lambda: [0, \infty) \rightarrow [0, \infty)$ such that,
+        $$\frac{1}{\lambda \left(\left|\frac{z_2 - z_3}{z_1-z_2}\right|\right)} \leq \left|\frac{h(z_1)-h(z_2)}{h(z_2)-h(z_3)}\right| \leq \lambda \left(\left|\frac{z_1-z_2}{z_2-z_3
+        }\right|\right)$$
+        
+        $\forall$ $z_1, z_2, z_3 \in \mathbb{S}^1$.
+        
+        
+        \subsection*{Definition 3.21}{(Quasiarcs)}:- A Jordan curve $\gamma$ is called a quasiarc if $\exists$ $C>0$ such that the diameter of the smaller arc of $\gamma$ joining $z_1$ and $z_2$ is dominated by $C|z_1 - z_2|$ ($\forall$ $z_1, z_2 \in \gamma$). If the curve is closed, we shall call it a quasicircle, and the domains bounded by quasicircles shall be called quasidiscs. 
+        
+        
+        
+        \subsection*{Proposition 3.22}{(Composition of Quasisymmetric Maps)}:- Let $h_1, h_2$ be quasisymmetric maps. Then:-
+        \begin{enumerate}
+            \item If $h_1(\mathbb{S}^1) = \mathbb{S}^1$ $\implies$ $h_2 \circ h_1$ is quasisymmetric.
+            \item If $h_1(\mathbb{S}^1) = h_2(\mathbb{S}^1)$ $\implies$ $h_2^{-1}\circ h_1$ is quasisymmetric.
+        \end{enumerate}
+        
+        
+        
+        
+        Having introduced these objects let it be noted that the boundary extension in Theorem $3.19$ is quasisymmetric. This takes care of the first of the two questions raised before as satisfactorily as the answer given by Carath\'eodory for conformal boundary extensions did. In the interest of answering the second question and also connecting the two objects that were just introduced, let us state two theorems.
+        
+        \subsection*{Theorem 3.23}{(Domain to Boundary)}:- Let $G$ be a Jordan domain, $\gamma := \partial G$, and let $f: \mathbb{D} \rightarrow G$ be a conformal isomorphism, then $f$ admits a quasisymmetric extension to $\mathbb{S}^1$ $\iff$ $\gamma$ is a quasicircle.
+        
+        
+        
+        \subsection*{Theorem 3.24}{(Boundary to Domain)}:- Let $f:\mathbb{S}^1 \rightarrow \mathbb{S}^1$ be an orientation preserving quasisymmetric homeomorphism. Then $\exists \hat{f}$, $\hat{f}: \overline{\mathbb{D}} \rightarrow \overline{\mathbb{D}}$ such that $\hat{f}\big|_{\mathbb{D}}$ is quasiconformal. 
+        
+        
+        
+        
+        The problem of filling up domains quasiconformally by somehow interpolating boundary maps are essentially resolved by  theorems like Theorem $3.24$  for domains other than the unit disk. But saying something for a general domain is difficult, for we don't have the tools to capture all its analytic qualities. Most of these domain extensions use quite a lot of analytic properties of the domains, of them all, perhaps the most crucial is in making choices about certain covering spaces it admits. We however have annular versions of Theorem $3.23$ and Theorem $3.24$, and it shall suffice for our purposes. 
+        
+        \subsection*{Theorem 3.25}{(Annular Version of Theorem $3.23$)}:- Let $A$ be a Jordan annulus, $\mathbb{A}_r$, the standard annulus bounded by the unit circle and the circle of radius $r$, and $f:\mathbb{A}_r \rightarrow A$ a conformal isomorphism. Let $\gamma^i$ and $\gamma^o$ denote its inner and outer boundaries. Then $f$ has a quasisymmetric extension to $\mathbb{S}^1$, $S_r^1$ $:= \{z|$ $|z| = r\}$ $\iff$ $\gamma^i$ and $\gamma^o$ are both quasicircles. 
+        
+        
+        
+        \subsection*{Theorem 3.26}{(Annular Version of Theorem $3.24$)}:- For $0<r_1<r_2<1$, let $f_1:\mathbb{S}^1 \rightarrow \mathbb{S}^1$, $f_2:\mathbb{S}^1_{r_1} \rightarrow \mathbb{S}^1_{r_2}$ be two orientation preserving quasisymmetric homeomorphisms $\implies$ $\exists$ $f$, $f: \overline{\mathbb{A}}_{r_1}\rightarrow \overline{\mathbb{A}}_{r_2}$ such that its restriction on $\overline{\mathbb{A}}_{r_1}$ is quasiconformal.
+        
+        
+        
+        
+        Having laid out the theory necessary for surgical constructions let us briefly reiterate it by listing the essential tools one would need. In order, they are:-
+        \begin{enumerate}
+            \item \textbf{Measurable Riemann Mapping Theorem}. It shall play the role of a scalpel by instigating any surgical procedure.
+            \item \textbf{Invariant Beltrami Forms} will be our forceps, holding the incision for as many deformations as one would desire.
+            \item \textbf{Theorems on Boundary and Domain Extensions} shall be the actual tools that one would need to fundamentally change the nature of a self map.
+            \item \textbf{Weyl's Lemma} shall become sutures by helping us land back in the realm of holomorphic maps; putting an end to the alterations. 
+        \end{enumerate}
+       
+        
+        Now, there are certain rules to follow. One should know when these tools can successfully be applied, and that too in the order that they have been listed above. For that, we have the following theorems which shall in some sense be our principles. The theorems illustrate instances where some of these tools can be applied, hence we shall call them surgical principles\footnote{The ones presented here are different from Shishikura's Principles. We shall not talk about those for it is not relevant to the content of the remaining chapters.}. 
+        
+        \subsection*{Theorem 3.27}{(Principle I)}:- If $\Gamma$ is a quasiarc and $\phi: U \rightarrow V$, a homeomorphism that is $K$-qc on $U\backslash \Gamma$. Then $\phi$ is $K$-qc on $U$. (Note: As a consequence, if the boundary pieces are regular enough, one can construct global qc maps by gluing them along such boundary pieces). 
+        
+        
+        \subsection*{Theorem 3.28}{(Principle II)}:- Let $U \subset \mathbb{C}$ be open, $C \subset U$ compact, $\phi$ and $\Phi$ two mappings $U\rightarrow \mathbb{C}$ which are homeomorphisms. Suppose $\phi$ is qc, and so is $\Phi$ on $U\backslash C$, and that $\phi = \Phi$ on $C$. Then $\Phi$ is quasiconformal. (Note: This is referred to as Rickman's Lemma).
+        
+        
+        \subsection*{Theorem 3.29}{(Principle III)}:- $f: \hat{\mathbb{C}} \rightarrow \hat{\mathbb{C}}$ be quasiconformal. If $\exists$ $K$, such that $f^{\circ n}$ is $K$-qc, $\forall n$, $n \geq 1$. Then $f$ is quasiconformally conjugate to a rational map. (Note: In literature, this is called the Straightening Theorem. It informs us of when the incision done on $f$ can lead us to a situation where Weyl's Lemma can be applied).
+        
+        
+        
+        Here we conclude our discourse on the preliminaries. In the chapters to follow we shall see three fundamentally different instances of quasiconformal surgery in complex dynamics.
+% BLOG-CONTENT-END
+\bibliographystyle{amsalpha}
+\bibliography{tools/profiles/surgeries/MSc_Dissertation}
+\end{document}

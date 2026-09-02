@@ -1,0 +1,205 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\graphicspath{{figures/complex-analysis/}}
+\begin{document}
+\section*{Complex Differentiation}
+% BLOG-CONTENT-BEGIN
+\subsection*{Tool 5 — Epsilon-Room Method}
+This is called the ``creating an $\varepsilon$ of room'' method, a very standard technique one encounters in a graduate measure theory course. Often it is not easy to prove a sharp equality or inequality. Thus, to prove something of the form $A=B$ or $A\leq B$, one tries to prove
+\[
+A=B+\varepsilon\quad(\forall\varepsilon>0)
+\qquad\text{or}\qquad
+A\leq B+\varepsilon\quad(\forall\varepsilon>0).
+\]
+
+
+From this need for an $\varepsilon$ of room, we have the following recurring, famous statement in mathematics: ``Let $\varepsilon>0$.'' This idea is a special form of routine analysis:
+\[
+a<b_k\ (\forall k)\Longrightarrow a<\inf_k b_k,
+\qquad
+a_k<b\ (\forall k)\Longrightarrow\sup_k a_k<b.
+\]
+
+\subsubsection*{Application — Complex differentiation}
+Before seeing some good instances of Tool 5, let us have a brief exposition on complex differentiation.
+
+There are two notions of differentiability in play. One occurs when $f$ is seen as a map
+\[
+f\colon\mathbb R^2\longrightarrow\mathbb R^2.
+\]
+We say that $f$ is differentiable if there is a linear map
+\[
+A\colon\mathbb R^2\longrightarrow\mathbb R^2
+\]
+such that
+\[
+\lim_{h\to0}\frac{|f(x+h)-f(x)-Ah|}{|h|}=0
+\qquad(\forall x\in\mathbb R^2).
+\]
+This is a geometric notion of differentiation. There is another notion when $f$ is seen as a map
+\[
+f\colon\mathbb C\longrightarrow\mathbb C.
+\]
+We say that $f$ is complex differentiable if
+\[
+\lim_{h\to0}\frac{f(z+h)-f(z)}{h}
+\]
+exists for every $z\in\mathbb C$. This is an algebraic notion of differentiation, since it exploits the field structure of $\mathbb C$.
+
+As metric spaces, $\mathbb C$ and $\mathbb R^2$ are homeomorphic; as vector spaces, they are isomorphic. But do these two definitions match? They ought to because $\mathbb C\cong\mathbb R^2$, and functions on $\mathbb R^2$ can be seen as functions on $\mathbb C$ and vice versa. As it turns out, a differentiable function on $\mathbb R^2$ need not be complex differentiable. Why do they not match, and how do
+
+
+we reconcile them? Let \(f\colon\mathbb R^2\longrightarrow\mathbb R^2\)
+be differentiable, with $f'(x)=A$. Then $A$ can be realized as an $\mathbb R$-linear map from $\mathbb C$ to $\mathbb C$. But the derivative $f'(z)$ of a complex differentiable function $f\colon\mathbb C\to\mathbb C$ is a $\mathbb C$-linear map between copies of $\mathbb C$. Note that $\mathbb C$ is a field and hence a vector space over itself. Thus we demand much more from a complex differentiable function. What is it that we demand?
+
+Write
+\[
+A=f'(x)=\left(\frac{\partial f}{\partial x},
+\frac{\partial f}{\partial y}\right)
+=
+\begin{pmatrix}
+\dfrac{\partial f_1}{\partial x}&\dfrac{\partial f_1}{\partial y}\\[4pt]
+\dfrac{\partial f_2}{\partial x}&\dfrac{\partial f_2}{\partial y}
+\end{pmatrix}.
+\]
+If $A$ is $\mathbb C$-linear, then
+\begin{align*}
+A\binom{h_1}{h_2}
+&:=A(h_1+ih_2)
+=(h_1+ih_2)A(1)\\
+&=(h_1+ih_2)A\binom10.
+\end{align*}
+On the other hand, the matrix expression, viewed in $\mathbb C$, is
+\begin{align*}
+&\left(\frac{\partial f_1}{\partial x}h_1+
+\frac{\partial f_1}{\partial y}h_2\right)
++i\left(\frac{\partial f_2}{\partial x}h_1+
+\frac{\partial f_2}{\partial y}h_2\right)\\
+&\qquad=(h_1+ih_2)
+\left(\frac{\partial f_1}{\partial x}
++i\frac{\partial f_2}{\partial x}\right)\\
+&\qquad=\left(\frac{\partial f_1}{\partial x}h_1-
+\frac{\partial f_2}{\partial x}h_2\right)
++i\left(\frac{\partial f_1}{\partial x}h_2+
+\frac{\partial f_2}{\partial x}h_1\right).
+\end{align*}
+Therefore
+\[
+\boxed{
+\frac{\partial f_1}{\partial x}=\frac{\partial f_2}{\partial y},
+\qquad
+\frac{\partial f_1}{\partial y}=-\frac{\partial f_2}{\partial x}}
+\]
+These are precisely the Cauchy--Riemann equations. We demand that an $\mathbb R^2$-differentiable function satisfy the Cauchy--Riemann equations. Now that we know precisely what we demand, let us walk our way from
+
+
+$\mathbb R^2$-differentiability, or Fr\'echet differentiability, to complex differentiability.
+
+Let $f\colon\mathbb R^2\to\mathbb R^2$ be Fr\'echet differentiable and satisfy the Cauchy--Riemann equations. Then
+\[
+\lim_{(h_1,h_2)\to0}
+\frac{\left|f(x_0+h_1,y_0+h_2)-f(x_0,y_0)-A\binom{h_1}{h_2}\right|}
+{|(h_1,h_2)|}=0.
+\]
+Under the identifications $(x,y)\mapsto x+iy$ and $\binom xy\mapsto x+iy$, this limit is essentially
+\[
+\lim_{h_1+ih_2\to0}
+\frac{\left|f(x_0+h_1+i(y_0+h_2))-f(x_0+iy_0)
+-(h_1+ih_2)A\binom10\right|}
+{|h_1+ih_2|}=0.
+\]
+Note that $A\binom10$, viewed in $\mathbb C$, is
+\[
+\frac{\partial f}{\partial x}(z_0),
+\qquad z_0=x_0+iy_0.
+\]
+Therefore
+\[
+\lim_{z\to z_0}
+\frac{\left|f(z)-f(z_0)-(z-z_0)\dfrac{\partial f}{\partial x}(z_0)\right|}
+{|z-z_0|}=0.
+\]
+Since $\mathbb C$ is a field,
+\[
+\lim_{z\to z_0}
+\left|\frac{f(z)-f(z_0)}{z-z_0}-
+\frac{\partial f}{\partial x}(z_0)\right|=0.
+\]
+Thus
+\[
+\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}
+=\frac{\partial f}{\partial x}(z_0)
+\]
+exists. Hence $f$ is complex differentiable. One can trace back, too.
+
+
+\textbf{Remark.}
+As we saw with the construction of $\mathbb C$, the algebraic structure imposed rigidity on it. We shall see that exploiting the algebraic structure of $\mathbb C$ to define a notion of differentiability makes this class of functions, often called holomorphic functions, far more regular than Fr\'echet differentiable functions, or even real differentiable functions.
+
+\subsection*{Summary}
+A function $f$ is holomorphic if and only if, seen as a map from $\mathbb R^2$ to $\mathbb R^2$, it is Fr\'echet differentiable and satisfies the Cauchy--Riemann equations; equivalently, its derivative, viewed as an $\mathbb R$-linear map from $\mathbb C$ to $\mathbb C$, turns out to be $\mathbb C$-linear.
+
+\subsection*{General result: Looman--Menchoff theorem}
+If $f$ is continuous on $\Omega$ and obeys the Cauchy--Riemann equations, then \(f\in H(\Omega).\)
+This is just for fun.
+
+\textbf{Remark.}
+A quick realization of the fact that holomorphic functions are regular, far more than Fr\'echet differentiable functions, can be seen in their derivative. If $f=u+iv$, then
+\[
+f'(z_0)=
+\begin{pmatrix}
+u_x&u_y\\
+v_x&v_y
+\end{pmatrix}
+\binom{\operatorname{Re}(z_0)}{\operatorname{Im}(z_0)}.
+\]
+Note that the matrix is orthogonal, since \(u_xu_y+v_xv_y=0\)
+by the Cauchy--Riemann equations. Let us see what this orthogonality leaves us with.
+
+
+Let $\gamma_1(t)$ and $\gamma_2(t)$ be two curves in $\mathbb R^2$, and let them intersect at $t_0$. Suppose \(f'(\gamma_1(t_0))=f'(\gamma_2(t_0))\neq0.\)
+Then
+\[
+\langle\gamma_1'(t_0),\gamma_2'(t_0)\rangle
+=|\gamma_1'(t_0)|\,|\gamma_2'(t_0)|\cos\theta.
+\]
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.46\linewidth]{note1-fig-04.pdf}
+  \textit{Figure N1.4}
+\end{figure}
+
+Moreover,
+\begin{align*}
+\langle(f\circ\gamma_1)'(t_0),(f\circ\gamma_2)'(t_0)\rangle
+&=\left\langle
+f'(\gamma_1(t_0))\gamma_1'(t_0),
+f'(\gamma_2(t_0))\gamma_2'(t_0)
+\right\rangle.
+\end{align*}
+As $f'$ is orthogonal, it fixes inner products, so
+\[
+\langle(f\circ\gamma_1)'(t_0),(f\circ\gamma_2)'(t_0)\rangle
+=\langle\gamma_1'(t_0),\gamma_2'(t_0)\rangle.
+\]
+Consequently,
+\begin{align*}
+|\gamma_1'(t_0)|\,|\gamma_2'(t_0)|\cos\theta
+&=|f'(\gamma_1(t_0))\gamma_1'(t_0)|
+  |f'(\gamma_2(t_0))\gamma_2'(t_0)|\cos\psi,
+\end{align*}
+and hence
+\[
+\cos\theta=\cos\psi.
+\]
+Assuming $\theta$ and $\psi$ are both acute, we have
+\[
+\boxed{\theta=\psi.}
+\]
+
+Thus $f\in H(\Omega)$ does not deform curves haphazardly: it does so in such a manner that neither the rate of variance nor the angle of intersection changes. If $f\in H(\Omega)$ and $f'\neq0$ on $\Omega$, then $f$ is called a conformal map. Mind you, these maps are very rare. In this theme there is one result of relevance:
+
+The only smooth conformal maps on $\mathbb R^n\cup\{\infty\}$ are the M\"obius transformations.
+% BLOG-CONTENT-END
+\end{document}

@@ -1,0 +1,523 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\graphicspath{{figures/complex-analysis/}}
+\begin{document}
+\section*{Goursat's Theorem and Cauchy's Theorem}
+% BLOG-CONTENT-BEGIN
+\subsection*{Tool 8 — Linear Approximation}
+If $f$ is differentiable at $z_0$, then we have
+\[
+  f(z)=f(z_0)+f'(z_0)(z-z_0)+\psi(z),
+  \qquad \psi(z)=o(z-z_0).
+\]
+
+
+\subsection*{Goursat's Theorem}
+Let $T$ be the convex hull of $z_1,z_2,z_3$. Let $T\subset U$.
+Then, if $f\colon U\to\mathbb C$ is holomorphic,
+\[
+  \int_{\partial T} f(z)\,dz=0,
+\]
+where $\partial T$ is the polygonal path
+$\gamma_{z_1\to z_2\to z_3\to z_1}$.
+
+\textit{Proof.}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.42\textwidth]{note3-fig-01.pdf}
+  \textit{Figure N3.1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.36\textwidth]{note3-fig-02.pdf}
+  \textit{Figure N3.2}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.50\textwidth]{note3-fig-03.pdf}
+  \textit{Figure N3.3}
+  \emph{Annotation:} ``Orient it yourself!''
+\end{figure}
+
+
+As the picture suggests,
+\[
+  \left|\int_{T_0}f(z)\,dz\right|
+  \leq
+  4\sup_{i\in\{1,2,3,4\}}
+  \left|\int_{T_i}f(z)\,dz\right|,
+\]
+and, further, we can repeat the argument for $T_i$ (say $T_1$, without loss of
+generality) to obtain
+\[
+  \left|\int_{T_0}f(z)\,dz\right|
+  \leq 4\left|\int_{T_1}f(z)\,dz\right|
+  \leq 4^2\left|\int_{T_2}f(z)\,dz\right|
+  \leq\cdots\leq
+  4^n\left|\int_{T_n}f(z)\,dz\right|
+\]
+after $n$ stages. Now one has to compensate for the $4^n$.
+Note first that the $T_n$, seen as solid triangles, are compact sets and
+$T_n\supseteq T_{n+1}$, so
+\[
+  \bigcap_n T_n=\{z_0\}
+\]
+for some $z_0$ in the solid triangle $T_0$. Now let us approximate $f$ around
+$z_0$:
+\[
+  f(z)=f(z_0)+f'(z_0)(z-z_0)+\psi(z)(z-z_0),
+  \qquad \psi(z)\to0\quad\text{as }z\to z_0.
+\]
+Note that $f(z_0)$ and $f'(z_0)(z-z_0)$ have primitives. Therefore, we
+essentially have
+\[
+  \int_{T_n}f(z)\,dz
+  =\int_{T_n}\psi(z)(z-z_0)\,dz.
+\]
+Let $d_n$ be the diameter of $T_n$ and $p_n$ its perimeter. Then
+\[
+  d_n=\frac{d_0}{2^n},
+  \qquad
+  p_n=\frac{p_0}{2^n},
+\]
+and hence
+\[
+  \left|\int_{T_n}\psi(z)(z-z_0)\,dz\right|
+  \leq \int_{T_n}|\psi(z)(z-z_0)|\,|dz|
+  \leq \frac{\varepsilon_n d_0p_0}{4^n},
+  \qquad
+  \varepsilon_n=\sup_{z\in T_n}|\psi(z)|.
+\]
+Thus the error in the linear approximation helps us compensate for the $4^n$:
+\[
+  \left|\int_{T_0}f(z)\,dz\right|
+  \leq 4^n\left|\int_{T_n}f(z)\,dz\right|
+  \leq 4^n\left(\frac{\varepsilon_n d_0p_0}{4^n}\right)
+  \leq \varepsilon_n d_0p_0.
+\]
+Let $n\to\infty$. Since $\varepsilon_n\to0$,
+\[
+  \int_{T_0}f(z)\,dz=0.
+\]
+
+\textbf{Remark.}
+Here we do not need to assume holomorphicity everywhere. Suppose that at some
+point $z_0$ in the solid triangle the function
+
+
+is merely bounded. Then, without loss of generality, one can assume that $z_0$
+is one of the vertices of the triangle. Otherwise:
+
+\begin{figure}[H]
+  \begin{minipage}[t]{.48\textwidth}
+    If $z_0$ is in the interior of $T_0$,\par
+    \begin{minipage}[c][5.1cm][c]{\linewidth}
+      \centering
+      \includegraphics[width=.708\linewidth]{note3-fig-04.pdf}
+    \end{minipage}
+    \textit{Figure N3.4}
+    
+    
+    \emph{Annotation:} Integrate on $\langle T_i;\gamma\rangle$.
+  \end{minipage}
+  \begin{minipage}[t]{.48\textwidth}
+    If $z_0$ is on $T_0$,\par
+    \begin{minipage}[c][5.1cm][c]{\linewidth}
+      \centering
+      \includegraphics[width=.792\linewidth]{note3-fig-05.pdf}
+    \end{minipage}
+    \textit{Figure N3.5}
+    
+    
+    \emph{Annotation:} Integrate on $\langle T_i;\gamma\rangle$.
+  \end{minipage}
+\end{figure}
+
+Now we know that $z_0$ is a vertex:
+\begin{figure}[H]
+  \begin{minipage}[b]{.48\textwidth}
+    \begin{minipage}[c][5.0cm][c]{\linewidth}
+      \centering
+      \includegraphics[width=.708\linewidth]{note3-fig-06.pdf}
+    \end{minipage}
+    \textit{Figure N3.6}
+  \end{minipage}
+  \begin{minipage}[b]{.48\textwidth}
+    \begin{minipage}[c][5.0cm][c]{\linewidth}
+      \centering
+      \includegraphics[width=.792\linewidth]{note3-fig-07.pdf}
+    \end{minipage}
+    \textit{Figure N3.7}
+  \end{minipage}
+\end{figure}
+
+For all $a,b\neq z_0$, on $T_1$ and $T_2$ the integral will vanish; and, since
+$f$ is bounded near $z_0$, the integral on $T_3$ can be made arbitrarily small,
+as the perimeter can be made very small. Also note that what we essentially
+need to prove Goursat's Theorem is a linear form as given below. For every
+$z_0$,
+\[
+  f(z)=a_{z_0}+b_{z_0}(z-z_0)+\psi_{z_0}(z)(z-z_0)
+  \qquad\text{on }U\setminus\{z_0\},
+\]
+where $\psi_{z_0}(z)\to0$ as $z\to z_0$.
+
+Observe immediately that holomorphic functions except on a discrete set, where
+they have removable discontinuities, are candidates. Thus Goursat's Theorem
+works for a wider class of functions than merely holomorphic functions.
+
+
+\subsubsection*{Application — Holomorphic primitives on convex domains}
+Let $f$ be holomorphic on an open, connected, convex set.
+Then $f$ has a primitive; that is, there exists $F$, holomorphic on the same
+convex domain, such that $F'=f$.
+
+\textit{Proof.}
+Let $\Omega$ be the domain, and fix $z_0\in\Omega$. Define
+\[
+  F(z):=\int_{\gamma_{z_0\to z}}f(z)\,dz.
+\]
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.46\textwidth]{note3-fig-08.pdf}
+  \textit{Figure N3.8}
+\end{figure}
+
+By Goursat's Theorem, we have
+\[
+  F(z+h)-F(z)=\int_{\gamma_{z\to z+h}}f(z)\,dz.
+\]
+For $f$ at $z$, we have
+\[
+  f(w)=f(z)+f'(z)(w-z)+\psi(w).
+\]
+Therefore,
+\begin{align*}
+  F(z+h)-F(z)
+  &=\int_{\gamma_{z\to z+h}}f(z)\,dw
+    +\int_{\gamma_{z\to z+h}}f'(z)(w-z)\,dw
+    +\int_{\gamma_{z\to z+h}}\psi(w)\,dw\\
+  &=f(z)h+f'(z)\left(\frac{w^2}{2}-wz\right)\Big|_z^{z+h}
+    +\int_{\gamma_{z\to z+h}}\psi(w)\,dw\\
+  &=f(z)h+f'(z)\left(
+      \frac{(z+h)^2}{2}-(z+h)z-\left(\frac{z^2}{2}-z^2\right)
+    \right)
+    +\int_{\gamma_{z\to z+h}}\psi(w)\,dw\\
+  &=f(z)h+\frac{f'(z)h^2}{2}
+    +\int_{\gamma_{z\to z+h}}\psi(w)\,dw.
+\end{align*}
+This gives a second-order Taylor approximation for $F$. Note that
+\[
+  \left|\int_{\gamma_{z\to z+h}}\psi(w)\,dw\right|
+  \leq \sup_{w\in\gamma_{z\to z+h}}|\psi(w)|,
+\]
+which goes to $0$ as $h\to0$. Hence
+\[
+  \lim_{h\to0}\frac{F(z+h)-F(z)}{h}=f(z).
+\]
+
+
+\subsection*{Tool 9 — Complex Tube Lemma}
+Given any continuous curve in a domain $\Omega$, there exists a polygonal path
+``close'' to the curve.
+
+
+\textbf{Note.}
+These polygons are useful, for one can invoke Goursat's Theorem. In fact, we can
+say something more: if there is a convex set $U\subset\Omega$ such that the
+continuous curve and its polygonal ``approximation'' both lie in $U$, then the
+polygonal path and the curve form a closed continuous curve in $U$. If,
+moreover, we demand that $\gamma$ be rectifiable, then
+\[
+  \int_\gamma f(z)\,dz=\int_P f(z)\,dz
+  \qquad\bigl(\forall f, f\in H(\Omega)\bigr),
+\]
+where $P$ is the polygonal path. This is because $f$ has a primitive in $U$, as
+was seen previously.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.52\textwidth]{note3-fig-09.pdf}
+  \textit{Figure N3.9}
+\end{figure}
+
+\textit{Proof of Tool 9.}
+Let $\gamma\colon[0,1]\to\Omega$ be the curve. Then
+$\gamma|_{[0,1]}$ is compact. For every $z\in\gamma|_{[0,1]}$, there exists
+$\varepsilon_z$ such that $B_{\varepsilon_z}(z)\subset\Omega$, and
+\[
+  \gamma|_{[0,1]}\subseteq\bigcup_z B_{\varepsilon_z}(z).
+\]
+This has a finite cover. Also, as $[0,1]$ is connected, every open set in the
+finite cover will have nonempty intersection with at least one open set other
+than itself in the finite cover. Let $\{U_i\}_{i=1}^n$ be the finite balls that
+cover $\gamma|_{[0,1]}$. If it is not already present, add the ball
+$B_{\varepsilon_{\gamma(0)}}(\gamma(0))$ to the finite collection. Let
+$B_{\varepsilon_{\gamma(i)}}(\gamma(i))$ be such that
+\[
+  B_{\varepsilon_{\gamma(i)}}(\gamma(i))
+  \cap B_{\varepsilon_{\gamma(0)}}(\gamma(0))\neq\varnothing.
+\]
+Let $i$ be the smallest value in $[0,1]$ for which the first ball centered at
+$\gamma(i)$ is in $\{U_i\}$ and
+$B_{\varepsilon_{\gamma(i)}}(\gamma(i))
+\cap B_{\varepsilon_{\gamma(0)}}(\gamma(0))\neq\varnothing$.
+
+Note that, as $\gamma|_{[0,i]}$ is connected,
+\[
+  \gamma|_{[0,i]}
+  \subset
+  B_{\varepsilon_{\gamma(0)}}(\gamma(0))
+  \cup B_{\varepsilon_{\gamma(i)}}(\gamma(i));
+\]
+otherwise, the minimality would be contradicted. Arrange \(U_{i_n}=B_{\varepsilon_{\gamma(i_n)}}(\gamma(i_n))\)
+so that minimality is demanded consecutively; that is,
+\[
+  \gamma|_{[i_n,i_{n+1}]}
+  \subset
+  B_{\varepsilon_{\gamma(i_n)}}(\gamma(i_n))
+  \cup
+  B_{\varepsilon_{\gamma(i_{n+1})}}(\gamma(i_{n+1})),
+\]
+where $\{i_n\}$ partitions $[0,1]$. Again, if
+$B_{\varepsilon_{\gamma(1)}}(\gamma(1))$ does not belong to $\{U_i\}$, just
+add it. Now \(\gamma_{\gamma(0)\to\gamma(i_1)\to\cdots\to\gamma(1)}\)
+is the required polygonal path. The following figures illustrate the ideas in
+the proof.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.49\textwidth]{note3-fig-10.pdf}
+  \textit{Figure N3.10}
+\end{figure}
+
+Thus there exists
+$B_{\varepsilon_{\gamma(j)}}(\gamma(j))$, with $j<i$, such that
+\[
+  B_{\varepsilon_{\gamma(j)}}(\gamma(j))
+  \cap B_{\varepsilon_{\gamma(0)}}(\gamma(0))\neq\varnothing.
+\]
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.85\textwidth]{note3-fig-11.pdf}
+  \textit{Figure N3.11}
+\end{figure}
+
+One can ``see'' the polygonal paths here. After some stage we will have
+\[
+  B_{\varepsilon_{\gamma(i_n)}}(\gamma(i_n))
+  \cap B_{\varepsilon_{\gamma(1)}}(\gamma(1))\neq\varnothing.
+\]
+We stop there, piecewise.
+
+\textbf{Remark.}
+One can observe here that, by construction, $\gamma_p$ and $\gamma$ are
+piecewise homotopic.
+
+
+\textbf{Correction to the preceding minimality argument.}
+The minimality argument as presented will not work. One must tweak it. Let
+\[
+  i=\inf\left(
+    \gamma^{-1}\left(
+      \partial B_{\varepsilon_{\gamma(0)}}(\gamma(0))
+      \cap\gamma|_{[0,1]}
+    \right)
+  \right).
+\]
+Since
+$\partial B_{\varepsilon_{\gamma(0)}}(\gamma(0))\cap\gamma|_{[0,1]}$
+is closed, we would have
+\[
+  \gamma(i)\in
+  \partial B_{\varepsilon_{\gamma(0)}}(\gamma(0))
+  \cap\gamma|_{[0,1]}.
+\]
+Choose, among the $\{U_i\}$, a ball that covers $\gamma(i)$; let that be
+$B_{\varepsilon_{\gamma(j)}}(\gamma(j))$. Note that
+\[
+  \gamma|_{[0,i)}\subset B_{\varepsilon_{\gamma(0)}}(\gamma(0)).
+\]
+If not, there exists $j<i$ such that
+$\gamma(j)\notin B_{\varepsilon_{\gamma(0)}}(\gamma(0))$, and, for
+\[
+  B_{\varepsilon_{\gamma(0)}}(\gamma(0))\cap\gamma|_{[0,j]}
+  \quad\text{and}\quad
+  \overline{B_{\varepsilon_{\gamma(0)}}(\gamma(0))}^{\,c}
+  \cap\gamma|_{[0,j]}
+\]
+not to be a separation of $\gamma|_{[0,j]}$, there exists $l<j<i$ such that
+$l\in\partial B_{\varepsilon_{\gamma(0)}}(\gamma(0))$, thereby
+contradicting minimality. Now we have
+
+\[
+  \gamma|_{[0,i]}
+  \subset
+  B_{\varepsilon_{\gamma(0)}}(\gamma(0))
+  \cup B_{\varepsilon_{\gamma(j)}}(\gamma(j)).
+\]
+Proceed.
+
+
+Now it is an easy exercise to note that, if $\gamma$ is rectifiable, the
+polygonal path we obtained (denote it by $\gamma_p$) yields
+\[
+  \int_\gamma f(z)\,dz=\int_{\gamma_p}f(z)\,dz.
+\]
+Note the $\langle a_i\rangle$ and $\langle b_i\rangle$ marked in the figure
+above. Denote by $\operatorname{Tube}(\gamma)$ the quantity
+\[
+  \min_i|a_i-b_i|.
+\]
+
+\textbf{Exercise.}
+Construct a ``tube'' of ``width'' $\operatorname{Tube}(\gamma)$ around
+$\gamma$ in $\Omega$.
+
+\subsection*{Cauchy's Theorem}
+Let $f\in H(U)$, where $U$ is a domain, and let $\gamma_0$ and $\gamma_1$ be
+rectifiable and homotopic in $U$. Then
+\[
+  \int_{\gamma_0}f(z)\,dz=\int_{\gamma_1}f(z)\,dz.
+\]
+
+\textit{Proof.}
+By compactness of the homotopy
+$\gamma\colon[0,1]\times[0,1]\to U$, there exists $r$ such that
+\[
+  B_r(\gamma(s,t))\subset U
+  \qquad\forall(s,t)\in[0,1]\times[0,1].
+\]
+The map $\gamma$ is also uniformly continuous. Hence, whenever
+$|s-s'|<\delta$ and $|t-t'|<\delta$, \(|\gamma(s',t')-\gamma(s,t)|<\frac r4.\)
+With these two observations, the proof is in pictures.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.9\textwidth]{note3-fig-12.pdf}
+  \textit{Figure N3.12}
+\end{figure}
+
+
+Let
+\[
+  C_{ij}:=
+  \gamma_{\gamma(s_i,t_{j-1})\to\gamma(s_i,t_j)
+  \to\gamma(s_{i-1},t_j)\to\gamma(s_{i-1},t_{j-1})
+  \to\gamma(s_i,t_{j-1})}.
+\]
+Choose the stages $s_i$ such that $\gamma(s_{i+1},t)$ is in the tube of width
+$\operatorname{Tube}(\gamma(s_i,t))$. This will ensure that these polygonal
+paths are all in $\Omega$; that is, one can find an ``approximate'' homotopy or
+deformation and carry $\int_{\gamma_0}f(z)\,dz$ via convex sets to
+$\int_{\gamma_1}f(z)\,dz$.
+
+\textbf{Exercise.}
+Fill in the details.
+
+It is worth mentioning two important corollaries of Cauchy's Theorem, which are
+more useful than the theorem itself.
+
+\subsection*{Tool 10 — Cauchy Integral Formula}
+\[
+  f(z_0)=\frac{1}{2\pi i}\int_{C_R}\frac{f(z)}{z-z_0}\,dz.
+\]
+Here $f\in H(\Omega)$, and $C_R$ is a circle of radius $R$ such that
+$\operatorname{int}C_R\cup C_R\subset\Omega$.
+
+
+\subsection*{Tool 11 — Higher-Order Cauchy Integral Formula}
+\[
+  f^{(n)}(z_0)=\frac{n!}{2\pi i}
+  \int_{C_R}\frac{f(z)}{(z-z_0)^{n+1}}\,dz.
+\]
+
+
+\subsection*{Tool 12 — Local Analyticity}
+\[
+  f(z)=\sum_{n\geq0}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n
+  \qquad\bigl(\forall z_0, z\in\operatorname{int}C_R\bigr).
+\]
+
+Tool 12 is a consequence of the combination of Cauchy's Tool 10 and Tool 11.
+\subsubsection*{Application — Consequences of Cauchy's formulas}
+Let us see some applications of Tool 10, Tool 11, and Tool 12 which may seem
+too standard or classical to do. We shall do so because they are worth
+recalling and remembering.
+
+
+\subsection*{Tool 13 — Identity Theorem}
+(This is also a standard technique: to invoke the Identity Theorem.)
+Let $f\in H(\Omega)$. If $z_n\to z_0$ in $\Omega$ and $f(z_n)=0$, then
+$f\equiv0$.
+
+
+\textit{Proof.}
+Locally around $z_0$,
+\[
+  f(z)=\sum_n a_n(z-z_0)^n.
+\]
+Thus
+\[
+  f(z)=a_m(z-z_0)^m\bigl(1+g(z-z_0)\bigr),
+\]
+where $m$ is the least index such that $a_m\neq0$. Since
+$g(z-z_0)\to0$ as $z\to z_0$, there exists $K$ such that, for every $k\geq K$, \(|g(z_k-z_0)|<1.\)
+Therefore
+\[
+  a_m(z_k-z_0)^m\neq0
+  \quad\text{and}\quad
+  1+g(z_k-z_0)\neq0,
+\]
+but $f(z_k)=0$, a contradiction. Hence such an $m$ does not exist, so
+$f(z)\equiv0$ locally. Now note that the set of points
+$\{z\mid f(z)=0\}$ is closed. Hence the continuity method would force
+$f\equiv0$.
+
+\subsection*{Morera's Theorem}
+Let $f$ be a continuous function on $\Omega$, and suppose that, for every
+closed polygonal path $P$,
+\[
+  \int_P f(z)\,dz=0.
+\]
+Then $f\in H(\Omega)$.
+
+\textit{Proof.}
+Modify the ``existence of a primitive on a convex set'' proof and construct a
+primitive for $f$. Let $F'=f$. Since $F\in H(\Omega)$ is locally analytic,
+$f$ is locally analytic, and hence $f\in H(\Omega)$.
+
+\textbf{Remark.}
+Compare this with the Looman--Menchoff Theorem, which just demands the
+Cauchy--Riemann equations along with continuity. Which is stronger?
+
+
+\subsubsection*{Application — Polynomial characterization}
+Let $f$ be entire such that, for each $z_0$,
+$f^{(n)}(z_0)=0$ for some $n$. Then $f$ is a polynomial.
+
+\textit{Proof.}
+For every $z_0\in\mathbb C$, $f^{(n)}(z_0)=0$ for some $n$. By the
+Pigeonhole Principle, for a fixed $n$, $f^{(n)}(z_0)=0$ for uncountably many
+$z_0$. Thus $f^{(n)}$ must have a limit point if we restrict it to a disc, and
+hence \(f^{(n)}(z)\equiv0.\)
+Therefore $f$ is a polynomial, because
+\[
+  f(z)=\sum_{n=0}^{\infty}c_n(z-z_0)^n,
+  \qquad
+  c_n=\frac{f^{(n)}(z_0)}{n!},
+\]
+where $z_0$ is a zero of $f$. Hence, for every $m\geq n$, \(\frac{f^{(m)}(z_0)}{n!}=0.\)
+Thus $f$ is locally a polynomial, and, by the Identity Theorem, $f$ is globally
+a polynomial.
+
+\textbf{Remark.}
+Although we said that $f$ is a local power series, it can be extended up to the
+nearest point of singularity.
+% BLOG-CONTENT-END
+\end{document}

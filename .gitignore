@@ -1,0 +1,14 @@
+# Local builds and Overleaf auxiliary files, not the published source.
+website/
+node_modules/
+__pycache__/
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+.DS_Store

@@ -1,0 +1,254 @@
+[
+  {
+    "slug": "basis-fixing-reduction",
+    "title": "A Complex Vector Space",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "56796e20b094d4ea7a2011cec5d6ecc35b8db0ef014f93c43591f83240dded04",
+    "file": "01-basis-fixing-reduction.tex"
+  },
+  {
+    "slug": "connectedness-and-compactness",
+    "title": "Connectedness and Compactness",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "175201441c12a232524f051cb5db18222374ba20559184ead7dca57e9e7c10e8",
+    "file": "02-connectedness-and-compactness.tex"
+  },
+  {
+    "slug": "complex-differentiation",
+    "title": "Complex Differentiation",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "573fa5704388f7a2bdf8de075b8c9f457a120ab469b61bb821bee1e3343cc1b5",
+    "file": "03-complex-differentiation.tex"
+  },
+  {
+    "slug": "harmonic-functions-and-rectifiable-curves",
+    "title": "Harmonic Functions and Rectifiable Curves",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "2454c3ac34bc0d2ad3227395f82e27701f308b44eec6aefa0cd921b982265c85",
+    "file": "04-harmonic-functions-and-rectifiable-curves.tex"
+  },
+  {
+    "slug": "continuous-induction",
+    "title": "Continuous Induction",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "065dc35844fb34cc155a1c6dc8682500c30fd325f94332decebc1432cc300a97",
+    "file": "05-continuous-induction.tex"
+  },
+  {
+    "slug": "goursat-cauchy",
+    "title": "Goursat's Theorem and Cauchy's Theorem",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "ba9ed19d13a7021498755212d72c7e3794a525b7bef4192976afca88eaf57985",
+    "file": "06-goursat-cauchy.tex"
+  },
+  {
+    "slug": "liouville-and-morera",
+    "title": "Liouville and Morera",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "149ebba336904a8cb1771f8cd89ff616a9d18ce7dc80ab51df2e46a23a5f1e4e",
+    "file": "07-liouville-and-morera.tex"
+  },
+  {
+    "slug": "winding-number",
+    "title": "Winding Number",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "76da66b45a1e696d555bd5f3ed562d514c38dd752c753005204b3ba32dd43695",
+    "file": "08-winding-number.tex"
+  },
+  {
+    "slug": "homotopy-paths-and-jordan-curves",
+    "title": "Homotopy–Path Correspondence and the Jordan Curve Theorem",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "c62ccd8c8a4b743d8d608d67a77facf3e96ebcf599c720163bd0a9393dfa8a03",
+    "file": "09-homotopy-paths-and-jordan-curves.tex"
+  },
+  {
+    "slug": "keyhole-contour-construction",
+    "title": "Keyhole Contour Construction",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "b413f6b32194864821c6f9044d7a82630919dd785c59c00ed4066ac90399e0c0",
+    "file": "10-keyhole-contour-construction.tex"
+  },
+  {
+    "slug": "rouche-and-bloch",
+    "title": "Rouché's Theorem and Bloch's Theorem",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "c62139e0cb8a4d052917ac2b6aac5e57d2e6f43a266edc69c7696825d5f349b1",
+    "file": "11-rouche-and-bloch.tex"
+  },
+  {
+    "slug": "separation-and-holomorphic-lifting",
+    "title": "Separation by a Polygonal Path/Arc and Holomorphic Lifting",
+    "collection": "complex-analysis",
+    "phase": 1,
+    "phaseLabel": "Standard Tools in Complex Analysis",
+    "initialSha256": "509aed785cee4f381e51c15f250bdb1c03d2907305fac5be3a6ca722af21c86b",
+    "file": "12-separation-and-holomorphic-lifting.tex"
+  },
+  {
+    "slug": "topology-of-surfaces",
+    "title": "Topology of Surfaces",
+    "collection": "topology-of-surfaces",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "e09b8d2a04cace06d25bf5d16085d9bff6e42180ac5da9bcc40ff17d0c859e90",
+    "file": "13-topology-of-surfaces.tex"
+  },
+  {
+    "slug": "elliptic-curves-geometric",
+    "title": "Elliptic Curves — Geometric Perspective",
+    "collection": "elliptic-curves",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "deb85fa646e5623ada812e8affeba26fe57488fc19f51b2fcce33da2361c711b",
+    "file": "14-elliptic-curves-geometric.tex"
+  },
+  {
+    "slug": "elliptic-curves-algebraic",
+    "title": "Elliptic Curves — Algebraic Perspective",
+    "collection": "elliptic-curves",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "9d604e68583ff86e21a351495fe0168121cb96b4416a32a492966f64e52f73ea",
+    "file": "15-elliptic-curves-algebraic.tex"
+  },
+  {
+    "slug": "elliptic-curves-harmonic",
+    "title": "Elliptic Curves — Harmonic Perspective",
+    "collection": "elliptic-curves",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "69f67b82fbaaaa296baf0cb40b542ec2772e9bccb8a48660712b6896511bb3ff",
+    "file": "16-elliptic-curves-harmonic.tex"
+  },
+  {
+    "slug": "abels-theorem",
+    "title": "Abel's Theorem",
+    "collection": "abels-theorem",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "70b7b6ab682333d99846b7ff102f607f4dc1fac179b30ffa1fc85c18e3f57f60",
+    "file": "17-abels-theorem.tex"
+  },
+  {
+    "slug": "locally-trivial-bundles",
+    "title": "Locally Trivial Bundles",
+    "collection": "k-theory",
+    "phase": 3,
+    "phaseLabel": "K-theory",
+    "initialSha256": "ff766997572c85f373cc0dfd1d40c20ef096ef6f87824aa1208f488204646a57",
+    "file": "18-locally-trivial-bundles.tex"
+  },
+  {
+    "slug": "vector-bundles",
+    "title": "Vector Bundles",
+    "collection": "k-theory",
+    "phase": 3,
+    "phaseLabel": "K-theory",
+    "initialSha256": "105e2659a6c8f17866154cafcd4e49590257e62c0095c99404c27ebd391447de",
+    "file": "19-vector-bundles.tex"
+  },
+  {
+    "slug": "classification-vector-bundles",
+    "title": "Classification of Vector Bundles",
+    "collection": "k-theory",
+    "phase": 3,
+    "phaseLabel": "K-theory",
+    "initialSha256": "f4df7f5da43f1a3c116f488ae3019f2a2a4b82a88bf9965471c09b5dd4c3cc13",
+    "file": "20-classification-vector-bundles.tex"
+  },
+  {
+    "slug": "stable-isomorphism-vector-bundles",
+    "title": "Stable Isomorphism Classes of Vector Bundles",
+    "collection": "k-theory",
+    "phase": 3,
+    "phaseLabel": "K-theory",
+    "initialSha256": "f4f4965b31fef0092611546bc8e643f52c6ff767283471fed748197b7f0ae7a4",
+    "file": "21-stable-isomorphism-vector-bundles.tex"
+  },
+  {
+    "slug": "bott-periodicity-k-theory",
+    "title": "Bott Periodicity and the Genesis of K-Theory",
+    "collection": "k-theory",
+    "phase": 3,
+    "phaseLabel": "K-theory",
+    "initialSha256": "b667a1382663e0e8cb0b5b0caf1d27962247df854fc63124586ab46d6f29f01e",
+    "file": "22-bott-periodicity-k-theory.tex"
+  },
+  {
+    "slug": "classification-fatou-components",
+    "title": "Classification of Non-Wandering Fatou Components",
+    "collection": "surgeries",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "68f50a2064adc4768e721ff93b7a0d316ed90ba4327f7fec894a6281c4f38a65",
+    "file": "23-classification-fatou-components.tex"
+  },
+  {
+    "slug": "surgical-tools",
+    "title": "Scalpel, Forceps, and other Surgical Tools",
+    "collection": "surgeries",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "084831e2710d7d95693fdf63e1f4297c100f7d2dcca29cd6bbf01f0ad28b99a5",
+    "file": "24-surgical-tools.tex"
+  },
+  {
+    "slug": "first-surgery",
+    "title": "First Surgery",
+    "collection": "surgeries",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "c95d0918451efbe5ff7e638952f26718d02e66131866d21fd5491230b430c989",
+    "file": "25-first-surgery.tex"
+  },
+  {
+    "slug": "second-surgery",
+    "title": "Second Surgery",
+    "collection": "surgeries",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "24b56aa6378768607fbcf1325d406cecd9ac50bddf86e6a990d63df29a41159c",
+    "file": "26-second-surgery.tex"
+  },
+  {
+    "slug": "third-surgery",
+    "title": "Third Surgery",
+    "collection": "surgeries",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "20d113c86c29114a481c957cb8111a89cf6dc1cf5aabdbf5b1fbdb118cf232d8",
+    "file": "27-third-surgery.tex"
+  },
+  {
+    "slug": "thermodynamical-formalism-hausdorff-dimension",
+    "title": "Thermodynamical Formalism and Hausdorff Dimension",
+    "collection": "thermodynamic-formalism",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "b327bf698bc9ee1188ab89fd720e33cd59ee3d821a6faf7a7de3ec84a235c0fc",
+    "file": "28-thermodynamical-formalism-hausdorff-dimension.tex"
+  }
+]

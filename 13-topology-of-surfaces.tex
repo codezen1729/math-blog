@@ -1,0 +1,232 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\graphicspath{{figures/topology-of-surfaces/}}
+\begin{document}
+\section*{Topology of Surfaces}
+% BLOG-CONTENT-BEGIN
+The main focus of this section would be to understand Riemann surfaces via a very superficial lens - its topology. Historically speaking, these surfaces featured in as answers to the following question:-
+
+\textbf{Are there complex analytic surfaces $Y$ on which polynomials like $(X^2 - z)$ become reducible?} 
+
+We know that the polynomial $X^2-z \in \mathcal{M}(\mathbb{C})[X]$ (the polynomial ring over the field of meromorphic functions on $\mathbb{C}$) is irreducible because $\sqrt{z}$ can't be defined globally on $\mathbb{C}$. So, we seek appropriate replacements for the complex plane for a given irreducible polynomial in $\mathcal{M}(\mathbb{C})[X]$. A complete resolution of the question is given below. 
+
+\subsection*{Theorem 0.1} Let $X$, $Y$ be compact Riemann surfaces. The following are in bijective correspondence:-
+\begin{itemize}
+    \item $\pi:X\rightarrow Y$, a $n$-sheeted ramified cover (upto equivalence) with $\mathcal{M}(X) \cong L$.
+    \item $L/\mathcal{M}(Y)$ a finite field extension of degree $n$ (upto isomorphism).
+\end{itemize}
+
+
+Although the theorem answers the question in the affirmative (how?), raises further questions:-
+
+\begin{enumerate}
+    \item Are there holomorphic functions between two given compact Riemann surfaces? In particular, is $\mathcal{M}(X) \neq \emptyset$
+    \item If $\mathcal{M}(X) \neq \emptyset$, how many functions are there in it?
+\end{enumerate}
+These questions too have been somewhat answered and go by the names - Riemann's Existence Theorem and Riemann-Roch Theorem in the literature. The former says that $\mathcal{M}(X) \neq \emptyset$, and the latter helps count meromorphic functions whose orders of zeroes and poles are controlled by a certain measure. More precisely,
+\begin{equation*}
+    \text{dim}(H^0(X, \mathcal{O}_D)) = \text{dim}(H^1(X, \mathcal{O}_D)) + 1 - g + \text{deg}(D)
+\end{equation*}
+
+where $\text{dim}(H^0(X, \mathcal{O}_D))$ counts the number of linearly independent meromorphic functions constrained by the quantity deg$(D)$. Circling back to the intent of this section - although on one hand knowing the topology of a Riemann surface amounts to knowing almost nothing for one can erect many inequivalent complex structures on it; things like the Riemann-Roch Theorem or Gauss-Bonnet Theorem inform in their own minimal way how topology governs "purely" analytic things like curvature or holomorphic functions. Illustrating exactly how minimal would be hard because clever people tend to find clever ways of exploiting minimal facts; regardless here are two prototype propositions:-
+
+\begin{itemize}
+    \item If $M$ a compact orientable closed Riemannian $2$-manifold with $\chi(M) <0$, then locally around some point $p\in M$ the Gaussian curvature $K$ will be negative.
+    \item If deg$(D) > -\chi(X)$, then dim$(H^0(X, \mathcal{O}_D)) > g-1$.
+\end{itemize}
+
+With this short prologue let us introduce our objects of study - Riemann surfaces.
+
+\subsection*{Definition 0.1 — Objects} \textbf{Riemann surfaces} are $2$-manifolds whose transition functions are biholomorphic maps. In general, $n$-manifolds with biholomorphic transition maps are called \textbf{complex manifolds}. 
+
+
+\subsection*{Definition 0.2 — Morphisms} Given Riemann surfaces $X$ and $Y$, a map $F: X\rightarrow Y$ is said to be \textbf{holomorphic} if all its coordinate representations are so too.
+
+
+\subsection*{Example 1} $[\mathbb{C}, \{(\mathbb{C}, \text{id}_{\mathbb{C}})\}]$ $\longleftrightarrow$ The Complex Plane
+
+\subsection*{Example 2} $[\mathbb{D}, \{(\mathbb{D}, \text{id}_{\mathbb{D}})\}]$ $\longleftrightarrow$ The Unit Disc
+
+\subsection*{Example 3}
+    $[\mathbb{CP}^1, \{(\mathbb{CP}^1\backslash \{0\}, 1/z), (\mathbb{CP}^1\backslash \{\infty\}, z)\}]$ $\longleftrightarrow$ The Riemann Sphere
+
+
+A systematic way to study Riemann surfaces would be to invoke the following grand-daddy of theorems - The Uniformization Theorem.
+
+\subsection*{Theorem 0.2}
+    Given a Riemann surface $X$, $\pi_1(X) = 0$ implies that $X \cong \mathbb{C}$, $\mathbb{D}$, or $\mathbb{CP}^1$.
+
+
+With this theorem at our disposal we can streamline the study of our objects as follows:- 
+\begin{enumerate}
+    \item Every Riemann surface being semi-locally simply connected admits a universal cover $\widetilde{X} \rightarrow X$.
+    \item Universal covers are regular, which implies, $X\cong \widetilde{X}/\Gamma$, where $\Gamma < \text{Aut}(\widetilde{X})$ is a group with properly discontinuous and free action on $\widetilde{X}$.
+    \item We thus have three classes of Riemann surfaces:-
+    \begin{itemize}
+        \item Spherical Surfaces ($X\cong \mathbb{CP}^1/\Gamma$)
+        \item Euclidean Surfaces ($X\cong \mathbb{C}/\Gamma$)
+        \item Hyperbolic Surfaces ($X\cong \mathbb{D}/\Gamma$)
+    \end{itemize}
+\end{enumerate}
+
+
+In addition to this, projective spaces $\mathbb{CP}^n$ become relevant because all compact Riemann surfaces can be embedded in them. So, if the classification above doesn't cut the deal, then think of compact Riemann surfaces as embedded complex $1$-submanifolds of $\mathbb{CP}^n$. Let us now try to understand the topology of the objects of study: 
+
+
+\begin{enumerate}
+    \item Recall that $\mathbb{CP}^n$ is constructed inductively via the following pushout square:- 
+\[\begin{tikzcd}
+	{S^{2n+1}} & {\mathbb{CP}^n} \\
+	{D^{2n+1}} & {\mathbb{CP}^{n+1}}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=2-1, to=2-2]
+\end{tikzcd}\]
+
+
+So, $\mathbb{CP}^n$ has only even dimensional cells. This allows us to calculate its homology groups:-
+\begin{equation*}
+    H_k(\mathbb{CP}^n) = \begin{cases}
+            \mathbb{Z},& \text{ if } 2|k, \text{ }k\leq n\\
+            0, & \text{ else}
+            \end{cases}
+\end{equation*}
+Further, $\mathbb{CP}^n$ sits in the following fibre sequence:-
+\begin{equation*}
+    S^1 \rightarrow S^{2n+1} \rightarrow \mathbb{CP}^n
+\end{equation*}
+which yields the following long exact sequence of homotopy groups:-
+\begin{equation*}
+    \cdots \rightarrow \pi_n(S^1) \rightarrow \pi_n(S^{2m+1}) \rightarrow \pi_n(\mathbb{CP}^m) \rightarrow \pi_{n-1}(S^1) \rightarrow \ldots 
+\end{equation*}
+Now, using the fact that $\pi_n(S^1) = 0$ for $n>1$, one can know about projective spaces just as much as one knows about spheres.
+\item It can be shown via Cauchy-Riemann equations that Riemann surfaces are orientable. So, by the classification theorem for compact orientable surfaces we see that compact Riemann surfaces are topologically spheres with $g$ handles. More precisely, 
+\begin{equation*}
+    X \cong S^2 \# (T^2 \#\cdots \#T^2)
+\end{equation*}
+Let us now extrapolate more information about these using Uniformization Theorem:-
+\begin{itemize}
+    \item $\mathbb{CP}^1$ can't cover a surface of positive genus: If it so happens, then a $d$-fold cover of a positive genus surface by $\mathbb{CP}^1$ will force the Euler characteristics of these surfaces to fall in an equation like so - $\chi(\mathbb{CP}^1) = d\chi(S_g)$ (where $S_g$ denotes a surface of positive genus $g$) - because one can barycentrically subdivide a simplicial decomposition of $S_g$ so that each simplex falls entirely inside an evenly covered neighbourhood of $S_g$, which now in $\mathbb{CP}^1$ will have $d$ copies. So, for every edge, every vertex, and every face in $S_g$, one correspondingly has $d$ edges, $d$ vertices, and $d$ faces, yielding the equation above. This forces $g$ to satisfy: $2 = 2d(1-g)$, implying $g$ to be $0$.
+    \item $\mathbb{C}$ can't holomorphically cover any surface but the surface with genus 1: Clearly so, because if it covers $\mathbb{CP}^1$, it being universal would force it to be homeomorphic to $\mathbb{CP}^1$ which would be obstructed by the compactness of $\mathbb{CP}^1$. Further, as $\pi_1(S_g) \cong \text{Deck}(\mathbb{C}, S_g) < \text{Aut}(\mathbb{C}) = \{az+b$ $|$ $a\in \mathbb{C}^*$, $b\in \mathbb{C}\}$, $\pi_1(S_g)$ is non-abelian, and $\text{Aut}(\mathbb{C})$ abelian - we have a contradiction. So it can't cover a higher genus surface too.  
+\end{itemize}
+
+
+In conclusion, of all compact Riemann surfaces, $\mathbb{CP}^1$ and $T^2$ are the only Spherical and Euclidean surfaces, rest are all Hyperbolic. In fact, with a little more effort in analyzing the discrete subgroups of $\text{Aut}(\mathbb{C})$ and Maximum Modulus Principle one can write the following listical:-
+\begin{itemize}
+    \item Spherical Surfaces $\longleftrightarrow \mathbb{CP}^1$
+    \item Euclidean Surfaces $\longleftrightarrow$ $\mathbb{C}$, $\mathbb{C}^*$, $T^2$ 
+    \item Hyperbolic Surfaces $\longleftrightarrow$ all the remaining ones
+\end{itemize}
+Turns out that one can endow hyperbolic surfaces with a metric (called the Poincar\'e metric) which exhibits negative sectional curvature. As a result of this "inward bent" functions between any two hyperbolic surfaces become contraction mappings. So, two nearby points stay atleast that much apart upon iteration by a holomorphic self map. In other words, dynamics on hyperbolic surfaces show no chaotic behaviour and is understood thoroughly. With a couple of propositions one can do away with $T^2$ leaving essentially three surfaces - $\mathbb{C}$, $\mathbb{C}^*$, $\mathbb{CP}^1$ to do dynamics on. Dennis Sullivan was awarded the Abel Prize recently for his phenomenal work in understanding "stable" aspects of dynamics on $\mathbb{CP}^1$. This goes to show that Uniformization Theorem is extremely useful in streamlining any kind of study on Riemann surfaces and also tells us that Hyperbolic surfaces cater extra attention - for they are so abundant.
+\end{enumerate}
+
+
+Having studied the topology of Riemann surfaces, let's regroup our attention to the morphisms between them. We would particularly be interested in morphisms between compact Riemann surfaces mainly because one can say comparitively more interesting things about them (showcased by things like Riemann's Existence Theorem and Riemann-Roch Theorem) than one can about non-compact ones. For instance, as far as topology is concerned, any holomorphic map between compact Riemann surfaces $M$ and $N$,
+$$F: M\rightarrow N$$
+
+is almost a covering map!
+
+\subsection*{Definition 0.3}
+    Given two topological spaces $M$ and $N$, a map $F:M\rightarrow N$ is said to be a $d$-fold (or sheeted) \textbf{ramified cover} if there exists a discrete set $B$ such that:-
+    $$F\big|_{M-F^{-1}(B)}: M-F^{-1}(B) \rightarrow N - B$$
+    is a $d$-fold covering map. Further, the set $B$ is referred to as the set of \textbf{branch points}, and the set $F^{-1}(B)$ as the set of \textbf{ramification points}.
+
+
+Let us now try to understand ramified covers of compact orientable surfaces for doing so would inevitably lead us to information about morphisms between compact Riemann surfaces. Assume for the rest that all surfaces considered are connected.
+
+\subsection*{Theorem 0.3}
+    Let $X$ and $Y$ be surfaces. The following are in bijective correspondence:-
+    \begin{enumerate}
+        \item $\pi: X\rightarrow Y$, a $d$-fold ramified cover with $B$ a set of branch points upto equivalence.\footnote{The meaning of equivalence here is the same as in the case of a covering.}
+        \item $\rho: \pi_1(Y-B) \rightarrow S_d$, a group homomorphism (where $S_d$ is the symmetric group of size $d$) with transitive image\footnote{The image of the group homomorphism acts transitively on the set \{1,\ldots, d\}} upto conjugacy.
+        \end{enumerate}
+
+\textit{Proof.}
+Let $\pi:X \rightarrow Y$ be a $d$-fold ramified cover and let $y_0 \in Y-B$. The monodromy action of elements in $\pi_1(Y-B, y_0)$ on $\pi^{-1}(y_0)$ would give us a group homomorphism,
+$$\rho: \pi_1(Y-B, y_0) \rightarrow S_d$$
+with transitive image. Clearly, any equivalent $d$-fold ramified cover will yield a group homomorphism from the fundamental group of $Y-B$ with a different base point to $S_d$. Hence, equivalent ramified covers yield the prescribed group homomorphism with transitive image \textit{upto conjugacy}.
+
+Now suppose $\rho: \pi_1(Y-B, y_0) \rightarrow S_d$ with the said properties is given, consider, 
+$$H:= \big\{[\gamma] \in \pi_1(Y-B, y_0)   |  \rho([\gamma])(1) = 1\big\}$$
+then $H$ being the stabilizer of $1$ is an index $d$ subgroup of $\pi_1(Y-B, y_0)$ (why?). As $Y-B$ is semi-locally simply connected, there exists, 
+$$\pi: X \rightarrow Y-B$$
+a $d$-fold cover with $\pi_*(\pi_1(X)) \cong H$. We are now left with the job of plugging in points appropriately to get a ramified cover.
+
+Let $b\in B$ and $W_b$ be a small enough neighbourhood of $b$ to not contain any other point of $B$, and such that $W^*_b:= W_b\backslash \{b\}$ is a punctured disk. Clearly,
+$$\pi: \pi^{-1}(W^*_b) \rightarrow W^*_b$$
+is a covering map. As any connected cover of a punctured disk is equivalent to $(z\rightarrow z^d): \mathbb{D}^* \rightarrow \mathbb{D}^*$, we have that $\pi^{-1}(W^*_b)$ is a disjoint union of punctured disks $U_i$ such that $\pi\big|_{U_i}$ is equivalent to $(z \rightarrow z^{d_i}):\mathbb{D}^* \rightarrow \mathbb{D}^*$. For $c\in B$, we let $\{U_i\}_{i\in B_c}$ be the slices of $W^*_c$. We construct a surface $\widetilde{X}$ via the following pushout square:-
+\[\begin{tikzcd}
+	{\coprod\limits_{i\in B_c, \hspace{1mm}c\in B} U_i} & X \\
+	{\coprod\limits_{i\in B_c, \hspace{1mm}c\in B}\mathbb{D}} & {\widetilde{X}}
+	\arrow[from=1-1, to=2-1]
+	\arrow[hook, from=1-1, to=1-2]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=2-1, to=2-2]
+\end{tikzcd}\]
+Here the map $U_i \rightarrow \mathbb{D}$, is the homeomorphism of $U_i$ to the punctured disk followed by inclusion. Now suppose, $\pi\big|_{U_i}$ is equivalent to $(z\rightarrow z^{d_i})$, then we have by the universal property of pushouts, a map $\widetilde{\pi}$ such that the following commutes:-
+\[\begin{tikzcd}
+	{\coprod\limits_{j\in B_c, \hspace{1mm}c\in B} U_i} & X \\
+	{\coprod\limits_{j\in B_c, \hspace{1mm}c\in B}\mathbb{D}} & {\widetilde{X}} \\
+	&& Y
+	\arrow[from=1-1, to=2-1]
+	\arrow[hook, from=1-1, to=1-2]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=2-1, to=2-2]
+	\arrow["i\circ\pi"', bend left, from=1-2, to=3-3]
+	\arrow["{\widetilde{\pi}}"', from=2-2, to=3-3]
+	\arrow["{\coprod\limits_{j\in B_c, \hspace{1mm}c\in B}(z\rightarrow z^{d_i})}"', bend right, from=2-1, to=3-3]
+\end{tikzcd}\]
+where $i: (Y-B) \hookrightarrow Y$ is the canonical inclusion. The map,
+$$\widetilde{\pi}: \widetilde{X} \rightarrow Y$$
+is the required $d$
+-fold ramified cover with $B$ as the set of branch points.
+
+
+Let us now record certain observations implicit in the proof above:-
+\begin{enumerate}
+    \item \underline{Observation 1}:- If $B = \{b_1, b_2,\ldots, b_k\}$ is a finite set of branch points with inverse images $\{c_1, \ldots, c_l\}$, then there exists a neighbourhood around $c_i$ and $\pi(c_i)$ such that $\pi$ looks like the map $(z\rightarrow z^{d_i})$. 
+\subsection*{Definition 0.4}
+    In the same setting as the theorem before if the map $\pi$ around the point $c_i \in \pi^{-1}(B)$ is equivalent to the map $(z\rightarrow z^{d_i})$, then we shall say that $c_i$ has \textbf{ramification index} $d_i$.
+
+
+From the fact the group $\text{Deck}((z\rightarrow z^n):\mathbb{D}^* \rightarrow \mathbb{D}^*)$ is cyclic of order $n$ it follows that the loop $\gamma$ in $W_{b_i}$ around the puncture $b_i$ based at $y_i \in W_{b_i}^*$ cyclically permutes the preimages of $y_i$ in each component of $\pi^{-1}(W_{b_i}^*)$ (why?). Hence, $\rho([\gamma])$ will have a cycle type $(m_1, m_2,\ldots, m_k)$, where $m_i = |\pi^{-1}(b_i)|$. Now, fix $y_0 \in Y-B$, and consider $\alpha_i$ a path from $y_0$ to $y_i$. Note that $\rho([\alpha_i*\gamma*\overline{\alpha_i}])$ will have the same cycle type as $\rho([\gamma])$. For a lack of better word, we shall call the collection of all such cycle types the ramification type of $\pi:X \rightarrow Y$.
+\item \underline{Observation 2}:- If $Y = \mathbb{CP}^1$, then $\pi_1(\mathbb{CP}^1 - \{b_1, \ldots, b_k\}, y_0) \cong \langle a_1, \ldots, a_k  |  a_1a_2\cdots a_k = 1\rangle$ where $a_i$'s are loops around the puncture from the base point $y_0$. This implies, $\pi:Y\rightarrow \mathbb{CP}^1$, a $d$-sheeted ramified cover is determined by permutations $\sigma_i := \rho([a_i]) \in S_d$, such that:-
+\begin{itemize}
+    \item Group generated by $\{\sigma_i\}_i$ has transitive action on the set $\{1,\ldots,d\}$.
+    \item $\sigma_1\sigma_2\cdots \sigma_k = \text{id}_{\{1,\ldots d\}}$
+\end{itemize}
+Now by the classification theorem of ramified covers it is clear that any set of permutations satisfying the conditions above will determine a unique $d$-fold ramified cover upto equivalence because one can define the requisite group homomorphism like so,
+$$\rho:\pi_1(\mathbb{CP}^1 - \{b_1, \ldots, b_k\}, y_0) \rightarrow S_d$$
+$$\rho([a_i]):= \sigma _i$$
+\item \underline{Observation 3}:- For any $y_i \in W_{b_i}^*$, ${y_i}$ has $d$ preimages. If $b_i$ has preimages $c_1, c_2, \ldots, c_{m_i}$ with ramification indices $d_1, d_2, \ldots, d_{m_i}$, then $d_1 + d_2 + \cdots + d_{m_i} = d$. In other words, the preimages of $y_i$ are distributed among the components of $\pi^{-1}(W_{b_i}^*)$.
+\end{enumerate}
+
+Having understood ramified covers; pertaining to the flavour of our previous discussions, let us try to see if there are any topological restrictions to its existence.
+
+\subsection*{Theorem 0.4 — Riemann-Hurwitz Formula}:- Given a $d$-sheeted ramified cover $\pi:M\rightarrow N$ of compact orientable surfaces with $k$ branch points each having $m_1, m_2, \ldots, m_k$ preimages, the following holds:-
+\begin{equation*}
+    \chi(M) = d(\chi(N) \color{red}- {k}) + \sum_{i = 1}^{k}m_i
+\end{equation*}
+
+\textit{Proof.}
+    Let $B = \{b_1, \ldots, b_k\}$ be the branch points with small enough neighborhoods $W_i$ (from the proof of the theorem above). Set,
+    $$A = \bigcup\limits_{1\leq i\leq k} \overline{W_i}, \text{ and } B = \bigcup\limits_{1\leq i\leq k} \overline{(W_i)^c}$$
+    Note that $W_i$ can be chosen so that $A\cap B$ is a disjoint union of circles. By doing a barycentric subdivision appropriate number of times one can assume that the simplices in the simplicial decomposition of $N$ lies entirely in either $A$ or $B$. Then by inclusion-exclusion one has,
+    $$\chi(N) = \chi(A)+\chi(B) - \chi(A\cap B) = \chi(A)+\chi(B) \text{ (why?)}$$
+    $$\chi(M) = \chi(\pi^{-1}(A)) + \chi(\pi^{-1}(B)) + \chi(\pi^{-1}(A) \cap \pi^{-1}(B))$$
+    Now as $\pi$ is a covering on $B$, and as Euler characteristic of a disc is $1$, we get:-
+    $$\chi(M) = d(\chi(N) - {k}) + \sum_{i = 1}^{k}m_i$$
+
+
+Note that, 
+$$\sum_{i=1}^{l}(d_i-1) = \sum_{i=1}^{k}(d - m_i)$$
+where $\{d_i\}_i$ are the ramification indices. Therefore, Riemann-Hurwitz formula takes on the following more suggestive form:-
+$$\chi(M) = d\chi(N) - \color{red}\sum_{i=1}^{l}(d_i-1)$$
+
+The above says that $\pi:M\rightarrow N$ is obstructed by $\sum_{i=1}^{l}(d_i-1)$ from being a covering map. If a point in $\pi^{-1}(B)$ has ramification index $>1$ then it actively contributes in stopping $\pi$ from being a covering map, else, it doesn't. Let's record the above in the following definition.
+
+\subsection*{Definition 0.5}
+    In the same setting as in the theorem above. A point $p \in M$ is said to be \textbf{ramified} if its ramification index is $> 1$, else we say that it is \textbf{unramified}.
+% BLOG-CONTENT-END
+\end{document}
