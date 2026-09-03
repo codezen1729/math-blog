@@ -36,6 +36,63 @@ jobs:
             git commit -m 'Make the published posts independently editable in Overleaf'
             git push origin HEAD:main
           fi
+          if [ -f notes-source.zip ] && [ ! -f tools/notes-publication.json ]; then
+            python3 - <<'PY'
+          """One-time additive publication of approved notes; guard all existing writing."""
+          import hashlib
+          import json
+          from pathlib import Path, PurePosixPath
+          import sys
+          import zipfile
+          
+          project = Path(sys.argv[1] if len(sys.argv) > 1 else '.').resolve()
+          archive = project / 'notes-source.zip'
+          marker = project / 'tools/notes-publication.json'
+          if marker.exists():
+              print('The approved notes have already been introduced; current writing is retained.')
+              raise SystemExit(0)
+          
+          with zipfile.ZipFile(archive) as package:
+              plan = json.loads(package.read('publication-plan.json'))
+              assert plan['schema'] == 1
+              entries = plan['files']
+              names = [item['path'] for item in entries]
+              assert len(set(names)) == len(names)
+              assert set(package.namelist()) == {'publication-plan.json', *names}
+              prepared = []
+              for item in entries:
+                  name = item['path']
+                  path = PurePosixPath(name)
+                  assert not path.is_absolute() and '..' not in path.parts and str(path) == name
+                  assert path.parts[0] in {'tools', 'styles', 'figures'} or (len(path.parts) == 1 and (name.endswith('.tex') or name == 'README.md'))
+                  if len(path.parts) == 1 and name.endswith('.tex'):
+                      assert name.split('-', 1)[0].isdigit() and int(name.split('-', 1)[0]) >= 29, 'Existing manuscript files must not be replaced.'
+                  assert all(not part.startswith('.') for part in path.parts)
+                  target = project / name
+                  assert target.resolve().is_relative_to(project)
+                  assert not target.is_symlink()
+                  before = item['beforeSha256']
+                  if before is None:
+                      assert not target.exists(), f'Refusing to overwrite existing new-note path: {name}'
+                  else:
+                      assert target.is_file() and hashlib.sha256(target.read_bytes()).hexdigest() == before, f'Writing changed since preparation: {name}'
+                  data = package.read(name)
+                  assert hashlib.sha256(data).hexdigest() == item['sha256'], f'Archive checksum failed: {name}'
+                  prepared.append((target, data))
+              assert any(target == marker for target, _ in prepared)
+              # Validate everything before the first write, and write the completion marker last.
+              prepared.sort(key=lambda item: item[0] == marker)
+              for target, data in prepared:
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(data)
+              print(f'Introduced {plan["newPosts"]} approved posts; existing manuscript files were not replaced.')
+          PY
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -- '*.tex' figures styles tools README.md
+            git commit -m 'Introduce the approved new blog posts'
+            git push origin HEAD:main
+          fi
           printf 'revision=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
   build:
@@ -77,7 +134,7 @@ jobs:
         working-directory: website
         run: |
           node scripts/check-content.mjs --public
-          node --experimental-strip-types --test scripts/dynamics.test.mjs
+          node --experimental-strip-types --test scripts/dynamics.test.mjs scripts/correspondence.test.mjs scripts/laboratory.test.mjs scripts/blog-routes.test.mjs
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
