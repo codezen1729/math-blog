@@ -14,7 +14,8 @@ import latex_to_web as converter
 def render(project: Path, site: Path):
     manifest = json.loads((project / "tools/manifest.json").read_text())
     posts = json.loads((project / "tools/baseline-posts.json").read_text())
-    assert len(manifest) == len(posts) == 28
+    assert len(manifest) == len(posts) and len(posts) >= 28
+    assert len({item['slug'] for item in manifest}) == len(manifest)
     # External figures are fixed inputs in this first wording-editing workflow.
     # Reject changed uploads instead of silently reusing an old website picture.
     for name, digest in json.loads((project / "tools/figure-hashes.json").read_text()).items():

@@ -153,6 +153,24 @@
     "file": "17-abels-theorem.tex"
   },
   {
+    "slug": "orientation-and-covering-maps",
+    "title": "Orientation and Covering Maps",
+    "collection": "miscellaneous",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "888bc3a2f2e5d713ace4effbe4bad61250153058e9e809f44a9ef6d5b6f50d43",
+    "file": "61-orientation-and-covering-maps.tex"
+  },
+  {
+    "slug": "flat-structures-and-teichmuller-curves",
+    "title": "Flat Structures and Teichmüller Curves",
+    "collection": "miscellaneous",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "68c84d26abccf003ef86393e9794292208fd8e7ea711518667adce7c134e8338",
+    "file": "60-flat-structures-and-teichmuller-curves.tex"
+  },
+  {
     "slug": "locally-trivial-bundles",
     "title": "Locally Trivial Bundles",
     "collection": "k-theory",
@@ -196,6 +214,195 @@
     "phaseLabel": "K-theory",
     "initialSha256": "b667a1382663e0e8cb0b5b0caf1d27962247df854fc63124586ab46d6f29f01e",
     "file": "22-bott-periodicity-k-theory.tex"
+  },
+  {
+    "slug": "rings-ideals-and-prime-ideals",
+    "title": "Rings, Ideals, and Prime Ideals",
+    "collection": "commutative-algebra",
+    "phase": 5,
+    "phaseLabel": "Commutative Algebra",
+    "initialSha256": "75e1d4f7171add176efcc761c53a83a59e014bd31a97f727df4b1fe9bc96dd5d",
+    "file": "29-rings-ideals-and-prime-ideals.tex"
+  },
+  {
+    "slug": "modules-tensor-products-and-the-determinant-trick",
+    "title": "Modules, Tensor Products, and the Determinant Trick",
+    "collection": "commutative-algebra",
+    "phase": 5,
+    "phaseLabel": "Commutative Algebra",
+    "initialSha256": "7cdbae41618e6920b06a7fb201a358d1922be4a09e7e3df798ca053b614f31eb",
+    "file": "30-modules-tensor-products-and-the-determinant-trick.tex"
+  },
+  {
+    "slug": "localization-rings-modules-and-prime-ideals",
+    "title": "Localization: Rings, Modules, and Prime Ideals",
+    "collection": "commutative-algebra",
+    "phase": 5,
+    "phaseLabel": "Commutative Algebra",
+    "initialSha256": "a10cfe7c894ee5f5d47cabcb5a6d65a88edd25cd7b8ca2fdc2023a0934c458c7",
+    "file": "31-localization-rings-modules-and-prime-ideals.tex"
+  },
+  {
+    "slug": "primary-decomposition-and-uniqueness",
+    "title": "Primary Decomposition and Uniqueness",
+    "collection": "commutative-algebra",
+    "phase": 5,
+    "phaseLabel": "Commutative Algebra",
+    "initialSha256": "b213a76931f8cf86956945b74e8cf5a3074bc81b3a0384567515bc5609795c27",
+    "file": "32-primary-decomposition-and-uniqueness.tex"
+  },
+  {
+    "slug": "noetherian-and-artinian-rings",
+    "title": "Noetherian and Artinian Rings",
+    "collection": "commutative-algebra",
+    "phase": 5,
+    "phaseLabel": "Commutative Algebra",
+    "initialSha256": "b711c7154e5558828d3813c361ffa0bf99266fe75c444228a89b93111b46d924",
+    "file": "33-noetherian-and-artinian-rings.tex"
+  },
+  {
+    "slug": "integral-dependence",
+    "title": "Integral Dependence",
+    "collection": "commutative-algebra",
+    "phase": 5,
+    "phaseLabel": "Commutative Algebra",
+    "initialSha256": "e5b4a42d26a3c8980c7f16a1e9f74e243b8c5588b0c476d9b8cbbf0e21e313d6",
+    "file": "34-integral-dependence.tex"
+  },
+  {
+    "slug": "the-nullstellensatz-and-affine-geometry",
+    "title": "The Nullstellensatz and Affine Geometry",
+    "collection": "commutative-algebra",
+    "phase": 5,
+    "phaseLabel": "Commutative Algebra",
+    "initialSha256": "8ec9e39590eb2daf70d84394f14130e2bac8eef222a93dee850a98936c46276c",
+    "file": "35-the-nullstellensatz-and-affine-geometry.tex"
+  },
+  {
+    "slug": "the-spectrum-of-a-ring",
+    "title": "The Spectrum of a Ring",
+    "collection": "commutative-algebra",
+    "phase": 5,
+    "phaseLabel": "Commutative Algebra",
+    "initialSha256": "6896c2f106f7c055db2c3ca86f6c3f7a003cf8a80c9f60145c0c04498bb26c76",
+    "file": "36-the-spectrum-of-a-ring.tex"
+  },
+  {
+    "slug": "sheaves-stalks-and-ringed-spaces",
+    "title": "Sheaves and Stalks",
+    "collection": "commutative-algebra",
+    "phase": 5,
+    "phaseLabel": "Commutative Algebra",
+    "initialSha256": "ac9e4f22338445c1ddff61205206462d8ed80a49bc0415b28cdbd265e015a8e8",
+    "file": "37-sheaves-stalks-and-ringed-spaces.tex"
+  },
+  {
+    "slug": "hyperbolic-geometry",
+    "title": "Hyperbolic Geometry",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "169d40e3b2e8a74db8483b13090381a6d1bd0232f27c019c8d13d02f339974b6",
+    "file": "38-hyperbolic-geometry.tex"
+  },
+  {
+    "slug": "rational-dynamics-on-the-riemann-sphere",
+    "title": "Rational Dynamics on the Riemann Sphere",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "7ab5856d5f6aec305b401ddf60ce6454dfad8423a4bef1196e6adef9636ffa56",
+    "file": "39-rational-dynamics-on-the-riemann-sphere.tex"
+  },
+  {
+    "slug": "attracting-and-repelling-fixed-points",
+    "title": "Attracting and Repelling Fixed Points",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "b9daad837e1bd69bbbdd1173cb2b8b1d100c3954b9e1898bb61e339d4ae6db1d",
+    "file": "40-attracting-and-repelling-fixed-points.tex"
+  },
+  {
+    "slug": "parabolic-fixed-points-and-the-flower-theorem",
+    "title": "Parabolic Fixed Points and the Flower Theorem",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "85054f42c51617806b917231926335d715d158bab60c08eeb7ccb61735b997a9",
+    "file": "41-parabolic-fixed-points-and-the-flower-theorem.tex"
+  },
+  {
+    "slug": "dense-subsets-of-julia-sets",
+    "title": "Dense Subsets of Julia Sets",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "27bbf66591e61a259fe15e97b0b88afec58edf4bb113fd43ffc4be53003e6d31",
+    "file": "42-dense-subsets-of-julia-sets.tex"
+  },
+  {
+    "slug": "critical-points-and-julia-set-connectivity",
+    "title": "Critical Points and Julia-Set Connectivity",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "acc7b5659fb33e301f48380c40404adb9d2874ec2786dd0d847ad8191009e03e",
+    "file": "43-critical-points-and-julia-set-connectivity.tex"
+  },
+  {
+    "slug": "prime-ends-and-landing-of-external-rays",
+    "title": "Prime Ends and Landing of External Rays",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "8b08ce2e532322b6b43ce269d73862491f06c579e788c50e1948a7453853a5ec",
+    "file": "44-prime-ends-and-landing-of-external-rays.tex"
+  },
+  {
+    "slug": "the-chain-rule-and-a-family-of-complex-planes",
+    "title": "The Chain Rule and Complex Dilatation",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "5d20dfa7e3b3495f5a5c325bf0ac70cf4a1c22521a93950e3043f24d9b1086cd",
+    "file": "45-the-chain-rule-and-a-family-of-complex-planes.tex"
+  },
+  {
+    "slug": "quasiconformal-mappings",
+    "title": "Quasiconformal Mappings",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "25c829acd56c010f9399877f92dd2aa135625ed2924bb0add257af82246d7315",
+    "file": "46-quasiconformal-mappings.tex"
+  },
+  {
+    "slug": "the-mapping-theorem-and-invariant-complex-structures",
+    "title": "The Mapping Theorem and Invariant Complex Structures",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "35957768b46b077592dd7120d749fd53ce9fddc1964964dfb41c2404195f70a6",
+    "file": "47-the-mapping-theorem-and-invariant-complex-structures.tex"
+  },
+  {
+    "slug": "boundary-behaviour-of-quasiconformal-maps",
+    "title": "Boundary Behaviour of Quasiconformal Maps",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "34da6c0d0160d19f3fa071d7f0420376fa5c159549f381d2abf2f38547afc092",
+    "file": "48-boundary-behaviour-of-quasiconformal-maps.tex"
+  },
+  {
+    "slug": "shishikuras-surgery-principles",
+    "title": "Shishikura’s Surgery Principles",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "a3a768a03a9d453dde3f075b9af3941c0760d9596ae6e88e719c6d626aa8b40d",
+    "file": "49-shishikuras-surgery-principles.tex"
   },
   {
     "slug": "classification-fatou-components",
@@ -243,6 +450,69 @@
     "file": "27-third-surgery.tex"
   },
   {
+    "slug": "from-complex-dynamics-to-measure-preserving-systems",
+    "title": "From Complex Dynamics to Measure-Preserving Systems",
+    "collection": "ergodic-theory",
+    "phase": 6,
+    "phaseLabel": "Ergodic Theory",
+    "initialSha256": "3e81a9bb8950430f7d8da9fa2125763c23506a8806b77c9ad7628b7b91adb610",
+    "file": "51-from-complex-dynamics-to-measure-preserving-systems.tex"
+  },
+  {
+    "slug": "recurrence-and-three-views-of-ergodicity",
+    "title": "Recurrence and Ergodicity",
+    "collection": "ergodic-theory",
+    "phase": 6,
+    "phaseLabel": "Ergodic Theory",
+    "initialSha256": "ed33751a4b5cd76fd922fc7e841dfae1dbc72eaa6cd2908ff149b7092a32d00a",
+    "file": "52-recurrence-and-three-views-of-ergodicity.tex"
+  },
+  {
+    "slug": "mean-maximal-and-pointwise-ergodic-theorems",
+    "title": "Mean, Maximal, and Pointwise Ergodic Theorems",
+    "collection": "ergodic-theory",
+    "phase": 6,
+    "phaseLabel": "Ergodic Theory",
+    "initialSha256": "fff211006ae00d90d07dd0ef516b9448e544029d4176be6a4cb02b7116abe9c5",
+    "file": "53-mean-maximal-and-pointwise-ergodic-theorems.tex"
+  },
+  {
+    "slug": "mixing-products-and-spectral-criteria",
+    "title": "Mixing, Products, and Spectral Criteria",
+    "collection": "ergodic-theory",
+    "phase": 6,
+    "phaseLabel": "Ergodic Theory",
+    "initialSha256": "7100f19453c10190b3f4ac451fdf4b54cdc40d4a76cfc9fa9d72f2c29c683829",
+    "file": "54-mixing-products-and-spectral-criteria.tex"
+  },
+  {
+    "slug": "return-times-kakutani-skyscrapers-and-rokhlin-towers",
+    "title": "Return Times, Kakutani Skyscrapers, and Rokhlin Towers",
+    "collection": "ergodic-theory",
+    "phase": 6,
+    "phaseLabel": "Ergodic Theory",
+    "initialSha256": "37c5eac7490f7d5ff7d089db24e315974bcbd761134ddbf48848878b5370544d",
+    "file": "55-return-times-kakutani-skyscrapers-and-rokhlin-towers.tex"
+  },
+  {
+    "slug": "invariant-measures-and-the-geometry-of-ergodicity",
+    "title": "Invariant Measures and the Geometry of Ergodicity",
+    "collection": "ergodic-theory",
+    "phase": 6,
+    "phaseLabel": "Ergodic Theory",
+    "initialSha256": "a661bfb33b2efc7759c0b92c17d7d5b939d26282edc240e9dd36ad3f9ca30773",
+    "file": "56-invariant-measures-and-the-geometry-of-ergodicity.tex"
+  },
+  {
+    "slug": "unique-ergodicity-and-equidistribution",
+    "title": "Equidistribution",
+    "collection": "ergodic-theory",
+    "phase": 6,
+    "phaseLabel": "Ergodic Theory",
+    "initialSha256": "ea3788613724e3d5c17308e2e3fb3b544c2517268759682f16ae15693f0a81a6",
+    "file": "57-unique-ergodicity-and-equidistribution.tex"
+  },
+  {
     "slug": "thermodynamical-formalism-hausdorff-dimension",
     "title": "Thermodynamical Formalism and Hausdorff Dimension",
     "collection": "thermodynamic-formalism",
@@ -250,5 +520,185 @@
     "phaseLabel": "Complex Dynamics",
     "initialSha256": "b327bf698bc9ee1188ab89fd720e33cd59ee3d821a6faf7a7de3ec84a235c0fc",
     "file": "28-thermodynamical-formalism-hausdorff-dimension.tex"
+  },
+  {
+    "slug": "lemma-book-elementary-number-theory",
+    "title": "Elementary Number Theory",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "31fb81b5465c66def5f21158388bf10de08771eccefd02c34a8f2880267e94b9",
+    "file": "63-lemma-book-elementary-number-theory.tex"
+  },
+  {
+    "slug": "lemma-book-induction-contradiction-pigeonholes",
+    "title": "Proof Strategies: Induction, Contradiction, and Pigeonholes",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "5df726fcb7ebf2e4a38677c5db2142b6639de2b677ccd25f570f90be2cebdbe4",
+    "file": "69-lemma-book-induction-contradiction-pigeonholes.tex"
+  },
+  {
+    "slug": "lemma-book-polynomial-roots-identities-systems",
+    "title": "Polynomial Roots, Identities, and Algebraic Systems",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "532edae0d267155637cdfb98cd8f5672731f47347ac31cb98c0a96de1a79c3e8",
+    "file": "70-lemma-book-polynomial-roots-identities-systems.tex"
+  },
+  {
+    "slug": "lemma-book-congruences-diophantine-equations-descent",
+    "title": "Congruences and Diophantine Equations",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "8d98f7702f91d0a7a89da944789b326ecd8c1d260de4b1a4e5efb4214fbf070c",
+    "file": "71-lemma-book-congruences-diophantine-equations-descent.tex"
+  },
+  {
+    "slug": "lemma-book-standard-inequalities-cauchy-schwarz",
+    "title": "AM–GM and Cauchy–Schwarz Applications",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "2fc0eea5747feda4380f1ecb9983e2a55400c331dd5d4700cfaa0ecb0127b1b6",
+    "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex"
+  },
+  {
+    "slug": "lemma-book-inequality-toolkit",
+    "title": "An Inequality Toolkit: Jensen, Muirhead, and Sums of Squares",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "1406c9a9a270c6534a946063d15b06e8b1f7073eaa3350290dc3182d4b7585da",
+    "file": "64-lemma-book-inequality-toolkit.tex"
+  },
+  {
+    "slug": "lemma-book-rearrangement-convexity-power-means",
+    "title": "Rearrangement and Convexity",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "4279af03b1ac73688c23ae0f82711edb13d6659e6148b2f3eb4a4679e168a6ba",
+    "file": "73-lemma-book-rearrangement-convexity-power-means.tex"
+  },
+  {
+    "slug": "lemma-book-lagrange-multipliers-boundary-analysis",
+    "title": "Optimization, Normalization, and AM–GM",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "f6fb78b51c550323c59552d0c90abe00f9cf4fc83acc99f57329b27af104b0b4",
+    "file": "67-lemma-book-lagrange-multipliers-boundary-analysis.tex"
+  },
+  {
+    "slug": "lemma-book-circle-geometry",
+    "title": "Circle Geometry: Inversion, Radical Axes, and Special Circles",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "0eac8aaf6eee461be3e5f1f5da832987850ca8205b7d74c261bc91d078cccedb",
+    "file": "65-lemma-book-circle-geometry.tex"
+  },
+  {
+    "slug": "lemma-book-working-backwards-area-ratios",
+    "title": "Working Backwards, Area Ratios, and Geometric Constructions",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "615484d88e0620460645660e474b5ce4e1cdb5faa931b0a4c14a46ce1bf54334",
+    "file": "66-lemma-book-working-backwards-area-ratios.tex"
+  },
+  {
+    "slug": "lemma-book-triangle-inequalities-trigonometric-substitutions",
+    "title": "Triangle Inequalities and Trigonometric Substitutions",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "759852ee1ff9dbebf6c814c92aaa91091848000a914a669743ff9da4e70ea9d3",
+    "file": "68-lemma-book-triangle-inequalities-trigonometric-substitutions.tex"
+  },
+  {
+    "slug": "lemma-book-isogonal-conjugates-pole-polar",
+    "title": "Isogonal Conjugates and Pole–Polar Geometry",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "402c9e67bfe9c066a45ca91a5fc8e0fe9ed9ce65b6270fc8fd6d6c5dd45d6272",
+    "file": "75-lemma-book-isogonal-conjugates-pole-polar.tex"
+  },
+  {
+    "slug": "lemma-book-transformations",
+    "title": "Rotation in Geometry",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "24d102dadf2c48b0177719aaf1cf24c7f5267673f9dfc5af0d44916d03f881d1",
+    "file": "74-lemma-book-transformations.tex"
+  },
+  {
+    "slug": "lemma-book-puzzles-multiplication",
+    "title": "Puzzles, Surprises, and Marvellous Methods of Multiplication",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "2dd2a001884fe2d85a7b58cba2dfefdca1637545eafdfeb67f2654530ab3460d",
+    "file": "76-lemma-book-puzzles-multiplication.tex"
+  },
+  {
+    "slug": "lemma-book-ramanujan-problems",
+    "title": "Problems Proposed by S. Ramanujan",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "469554c924871b7e650099cde24aa56221a1d4ee5774a502b3d3832de0153725",
+    "file": "77-lemma-book-ramanujan-problems.tex"
+  },
+  {
+    "slug": "lemma-book-problems-for-anant-mudgal",
+    "title": "Problems for Anant Mudgal",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "20bb199ea093ec35ccf172092a177dd79758887fad0a928ab0733bef148c9f61",
+    "file": "78-lemma-book-problems-for-anant-mudgal.tex"
+  },
+  {
+    "slug": "lemma-book-thrilling-thirty-surviving-problems",
+    "title": "Thrilling Thirty: The Surviving Problems",
+    "collection": "lemma-book",
+    "phase": 7,
+    "phaseLabel": "The Lemma Book",
+    "initialSha256": "9b8d2aa22dc253c750576c385603bcb8e6fc64f3dc403939d6c353b0ba8579b0",
+    "file": "79-lemma-book-thrilling-thirty-surviving-problems.tex"
+  },
+  {
+    "slug": "the-language-of-category-theory-in-algebraic-topology",
+    "title": "The Language of Category Theory (in Algebraic Topology)",
+    "collection": "miscellaneous",
+    "phase": 8,
+    "phaseLabel": "Miscellaneous",
+    "initialSha256": "2139caff4d0a12bf7b16f6c4963abd44f0264432c3739dfbc358d8b870cda972",
+    "file": "58-the-language-of-category-theory-in-algebraic-topology.tex"
+  },
+  {
+    "slug": "erdos-distance-problem",
+    "title": "Erdős Distance Problem",
+    "collection": "miscellaneous",
+    "phase": 8,
+    "phaseLabel": "Miscellaneous",
+    "initialSha256": "21694d29ae1b199b7aac0b2d843d5d7990aa2fb00c5fa0c22351970de7c89a4e",
+    "file": "59-erdos-distance-problem.tex"
+  },
+  {
+    "slug": "small-gaps-between-primes",
+    "title": "Small Gaps between Primes",
+    "collection": "miscellaneous",
+    "phase": 8,
+    "phaseLabel": "Miscellaneous",
+    "initialSha256": "ba261673da514ef976dc5c9f88228d93034c8c98f4a93a29970e33396ee31c1c",
+    "file": "62-small-gaps-between-primes.tex"
   }
 ]

@@ -1,0 +1,221 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{AM–GM and Cauchy–Schwarz Applications}
+% BLOG-CONTENT-BEGIN
+\subsection{Challenge}
+Let $a,b,c>0$ satisfy $0<\sqrt a+\sqrt b+\sqrt c\leq3\sqrt2$.
+Establish
+\[
+\frac{a^2+2a-2}{a\sqrt b}+\frac{b^2+2b-2}{b\sqrt c}
++\frac{c^2+2c-2}{c\sqrt a}\leq3\sqrt2+\ln8.
+\]
+The second box in the source records $\sum_{\mathrm{cyc}}\dfrac{a^2+2a-2}{a\sqrt b}<6\sqrt2$.
+
+
+\setcounter{theorem}{70}\begin{lemma}[Arithmetic--geometric mean inequality]\label{lemma:lb1-74}
+For all positive reals $a_1,a_2,\ldots,a_n$,
+\[\frac{a_1+a_2+\cdots+a_n}{n}\geq\sqrt[n]{a_1a_2\cdots a_n},\]
+with equality if $a_1=a_2=\cdots=a_n$.
+\end{lemma}
+$(1,0,0,\ldots,0)\succ(1/n,1/n,\ldots,1/n)$: direct Muirhead!
+Alternatively, consider the constraint $\sum_{i=1}^n a_i=S$ and employ Lagrange's method to prove it.
+\paragraph{Application: Nesbitt's inequality.}
+\[\frac a{b+c}+\frac b{c+a}+\frac c{a+b}\geq\frac32.\]
+Set
+\[
+S=\frac a{b+c}+\frac b{c+a}+\frac c{a+b},\quad
+M=\frac b{b+c}+\frac c{c+a}+\frac a{a+b},\quad
+N=\frac c{b+c}+\frac a{c+a}+\frac b{a+b}.
+\]
+We are aware that $M+N=3$. By AM--GM,
+\[
+M+S=\frac{a+b}{b+c}+\frac{b+c}{c+a}+\frac{c+a}{a+b}\geq3,\qquad
+N+S=\frac{a+c}{b+c}+\frac{a+b}{c+a}+\frac{b+c}{a+b}\geq3.
+\]
+Thus $M+N+2S\geq6$, so $2S\geq3$ and $S\geq3/2$. Q.E.D.!
+
+% Source page 32 - left
+\paragraph{Application: RMO (1989).}
+Let $a,b,c$ be the side lengths of a triangle. Prove that
+\[(a+b-c)^a(b+c-a)^b(c+a-b)^c\leq a^ab^bc^c.\]
+Indeed,
+\[
+\begin{aligned}
+\left(\frac{a+b-c}{a}\right)^a
+\left(\frac{b+c-a}{b}\right)^b
+\left(\frac{c+a-b}{c}\right)^c
+&\leq\left(\frac{a\frac{a+b-c}{a}+b\frac{b+c-a}{b}+c\frac{c+a-b}{c}}{a+b+c}\right)^{a+b+c}\\
+&=\left(\frac{2(a+b+c)-(a+b+c)}{a+b+c}\right)^{a+b+c}
+=\left(\frac{a+b+c}{a+b+c}\right)^{a+b+c}=1.
+\end{aligned}
+\]
+Q.E.D.
+
+
+\paragraph{Problems.}
+\begin{enumerate}
+\setcounter{enumi}{0}\item $x^2/y^2+y^2/z^2+z^2/x^2\geq x/y+y/z+z/x$ (SAT, 2000).
+\setcounter{enumi}{1}\item Find all real triples $(x,y,z)$ satisfying
+\[3(x^2+y^2+z^2)=1,\qquad x^2y^2+y^2z^2+z^2x^2=xyz(x+y+z)^3\]
+(AMTI Inter, final, 2014).
+\setcounter{enumi}{2}\item $(1+a)^8+(1+b)^8\geq128ab(a+b)^2$ (IMOTC, 2014).
+\setcounter{enumi}{3}\item $R/r\geq b/c+c/b$ (favourite problem at CSL!).
+\end{enumerate}
+I will present the solution to problem 3 (IMOTC, 2014):
+\[
+(1+a)^8+(1+b)^8\mathrel{\stackrel{?}{\geq}}128ab(a+b)^2
+\quad\Longleftrightarrow\quad
+\left(\frac{1+a}{2}\right)^8+\left(\frac{1+b}{2}\right)^8
+\mathrel{\stackrel{?}{\geq}}\frac{ab(a+b)^2}{2}.
+\]
+Now
+\[
+\left(\frac{1+a}{2}\right)^8+\left(\frac{1+b}{2}\right)^8
+\geq a^4+b^4\mathrel{\stackrel{?}{\geq}}\frac{ab(a+b)^2}{2}
+\quad\Longleftrightarrow\quad
+\frac{a^4+b^4}{2}\mathrel{\stackrel{?}{\geq}}ab\left(\frac{a+b}{2}\right)^2.
+\]
+Since $(a^2+b^2)/2\geq((a+b)/2)^2$ and $ab\leq(a^2+b^2)/2$,
+\[
+\left(\frac{a^2+b^2}{2}\right)^2\geq ab\left(\frac{a+b}{2}\right)^2,
+\qquad
+\frac{a^4+b^4}{2}\geq\left(\frac{a^2+b^2}{2}\right)^2
+\geq ab\left(\frac{a+b}{2}\right)^2.
+\]
+The last step uses RMS $\geq$ AM. W$^5$; Q.E.D.
+% Source page 34 - right
+\setcounter{theorem}{74}\begin{lemma}[A sum and its reciprocal sum]\label{lemma:lb1-78}
+If $a_1,a_2,\ldots,a_n$ are positive reals, then
+\[(a_1+a_2+\cdots+a_n)\left(\frac1{a_1}+\frac1{a_2}+\cdots+\frac1{a_n}\right)\geq n^2.\]
+\end{lemma}
+To prove it, use AM $\geq$ HM.
+
+
+\subsection{Q.E.D.s using Cauchy--Schwarz}
+% Source page 36 - right
+\paragraph{Kvant: Vasile C\^irtoaje.}
+Prove that for any real numbers $a,b,c,x,y,z$,
+\[ax+by+cz+\sqrt{(a^2+b^2+c^2)(x^2+y^2+z^2)}
+\geq\frac23(a+b+c)(x+y+z).\]
+The usual temptation is to apply Cauchy to the big square-root term, but that is just a wild-goose chase.
+Rather, as usual, let us do something unusual.
+\[
+\begin{aligned}
+\frac23(a+b+c)(x+y+z)-(ax+by+cz)
+&=\sum_{\mathrm{cyc}}a\left(\frac{2y+2z-x}{3}\right)\\
+&\leq\sqrt{a^2+b^2+c^2}\,
+\sqrt{\sum_{\mathrm{cyc}}\left(\frac{2y+2z-x}{3}\right)^2}.
+\end{aligned}
+\]
+You know what? We have thus reached an unusual fact. Look below!
+\[\sum_{\mathrm{cyc}}\left(\frac{2x+2y-z}{3}\right)^2=\sum x^2.\]
+Wow! A.T.: always true. Q.E.D.!
+
+
+\paragraph{Usefulness of square-root heuristics (Lemma 66 in the manuscript): China (1982).}
+Let $a_1,a_2,\ldots,a_n$ be positive numbers such that $a_1+\cdots+a_n=1$.
+Prove that
+\[\frac{a_1}{\sqrt{1-a_1}}+\cdots+\frac{a_n}{\sqrt{1-a_n}}
+\geq\frac1{\sqrt{n-1}}(\sqrt{a_1}+\cdots+\sqrt{a_n}).\]
+By square-root heuristics,
+\[\sum_{\mathrm{cyc}}\sqrt{a_i}\leq\sqrt{n\sum a_i}=\sqrt n,
+\qquad\frac1{\sqrt{n-1}}\sum_{\mathrm{cyc}}\sqrt{a_i}\leq\sqrt{\frac n{n-1}}.\]
+We seek $\sum a_i/\sqrt{1-a_i}\geq\sqrt{n/(n-1)}$.
+Chebyshev's inequality gives
+\[\sum_{\mathrm{cyc}}\frac{a_i}{\sqrt{1-a_i}}
+\geq\frac1n\sum a_i\sum\frac1{\sqrt{1-a_i}}
+=\frac1n\sum\frac1{\sqrt{1-a_i}}.\]
+Therefore it is sufficient to prove
+$\frac1n\sum1/\sqrt{1-a_i}\geq\sqrt{n/(n-1)}$.
+By Cauchy--Schwarz,
+\[\sum\frac1{\sqrt{1-a_i}}\geq\frac{n^2}{\sum\sqrt{1-a_i}}
+\mathrel{\stackrel{?}{\geq}}\frac{n\sqrt n}{\sqrt{n-1}}.\]
+The latter reduces to $\sqrt{n(n-1)}\geq\sum\sqrt{1-a_i}$.
+By square-root heuristics,
+\[\sum_{\mathrm{cyc}}\sqrt{1-a_i}\leq\sqrt{n\sum_{\mathrm{cyc}}(1-a_i)}=\sqrt{n(n-1)}.\]
+W$^5$. Q.E.D.
+\paragraph{What an amazing argument (WAAA!!!).}
+For $x,y,z\in\mathbb R$,
+\[x^2+y^2+z^2\geq x\sqrt{y^2+z^2}+y\sqrt{x^2+z^2}.\]
+Indeed, AM $\geq$ GM gives
+\[
+\begin{aligned}
+x^2+y^2+z^2&=x^2+\left(\sqrt{y^2+z^2}\right)^2
+\geq2x\sqrt{y^2+z^2}, &&\text{I},\\
+x^2+y^2+z^2&=y^2+\left(\sqrt{x^2+z^2}\right)^2
+\geq2y\sqrt{x^2+z^2}, &&\text{II}.
+\end{aligned}
+\]
+If $x\sqrt{y^2+z^2}\geq y\sqrt{x^2+z^2}$, substitute in I and the result follows.
+But that inequality need not hold: if $y\sqrt{x^2+z^2}\geq x\sqrt{y^2+z^2}$, substitute in II.
+Aha! WAAA. Conclusion follows\ldots
+
+
+Vedant and I created the following problem.
+Define $x_k=(a^k+b^k+c^k)/3$, where $a,b,c>0$.
+Given $abc\geq3\sqrt3$, prove that
+\[
+x_1^6\left(\frac{x_1^2-x_1+1}{x_1^2+1}\right)
++x_2^3\left(\frac{x_2^2-x_2+1}{x_2^2+1}\right)
++x_3^2\left(\frac{x_3^2-x_3+1}{x_3^2+1}\right)>\frac32.
+\]
+The problem is really nice from an application point of view. Take it as a challenge from my side!
+
+% Source page 5 - left
+I recently made an inequality that is really awesome. Take this as another challenge!
+\paragraph{Mission impossible.}
+Define $x_k=a^k+b^k+c^k$ for positive $a,b,c$.
+Given $abc\geq e/\pi$, prove that
+$x_2^3+x_3^2+x_6\geq10^4/1999$.
+\emph{Dangerous stuff.}
+Oops, a little misprint: the inequality is strict. Can you find why equality cannot be achieved?
+Anyway, it is very difficult. It is beautiful because my date of birth is 10-4-1999;
+also, $abc\geq e/\pi$ has nothing to do with $e$, $\pi$, or any of their high-tech properties. Just chill!
+
+
+Vedant had another history period today, and guess what? That crazy boy created another problem!
+Given $2a^2+4b^3+8c^4=1$ and $a,b,c>0$, prove
+\[
+\frac{2+64a^4c^4+2a^4}{a^4+1}
++\frac{1+32b^8+b^4}{1+b^4}\leq\frac{10}{3}.
+\]
+He did not stop there; he created another classical inequality. This one is obvious!
+Let $A,B,C\in[0,\pi/2)$ satisfy $\tan^2A+\tan^2B+\tan^2C=9$.
+If $A,B,C$ are the angles of a triangle, prove that it is equilateral.
+This is too obvious, so add a restriction: use only RMS $\geq$ AM $\geq$ HM.
+
+
+
+
+\paragraph{Clever AM--GM: AMTI inter-final.}
+Let $a,b,c,d>0$ satisfy
+$\dfrac1{1+a^4}+\dfrac1{1+b^4}+\dfrac1{1+c^4}+\dfrac1{1+d^4}=1$.
+Prove $abcd\geq3$.
+\paragraph{Solution 1, due to Pranjal Warade.}
+\[
+\frac1{1+a^4}+\frac1{1+b^4}+\frac1{1+c^4}
+=1-\frac1{1+d^4}=\frac{d^4}{1+d^4}
+\geq3\sqrt[3]{\frac1{(1+a^4)(1+b^4)(1+c^4)}}.
+\]
+Obtain analogous inequalities for $a,b,c$ and multiply them to get $(abcd)^4\geq3^4$, hence $abcd\geq3$.
+% Source page 14 - right
+\paragraph{Solution 2, due to the author.}
+Put $A=1/(1+a^4)$, $B=1/(1+b^4)$, $C=1/(1+c^4)$, $D=1/(1+d^4)$.
+Then $a^4=(1-A)/A$, and similarly for the others.
+Using $A+B+C+D=1$,
+\begin{align*}
+\frac{1-A}{A}\frac{1-B}{B}\frac{1-C}{C}\frac{1-D}{D}
+&=\frac{B+C+D}{A}\frac{A+C+D}{B}\frac{A+B+D}{C}\frac{A+B+C}{D}\\
+&\geq\frac{3(BCD)^{1/3}\,3(ACD)^{1/3}\,3(ABD)^{1/3}\,3(ABC)^{1/3}}{ABCD}
+=3^4.
+\end{align*}
+Thus $abcd\geq3$.
+
+
+
+
+% BLOG-CONTENT-END
+\end{document}

@@ -1,0 +1,173 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Circle Geometry: Inversion, Radical Axes, and Special Circles}
+% BLOG-CONTENT-BEGIN
+\subsection{Geometry and problem-solving strategies}
+% Source page 10 - left
+\setcounter{theorem}{29}\begin{lemma}[Inversion]
+Inversion is a powerful technique for geometry problems. It is a magical spell that converts a complex geometry problem into an obvious fact, if one gets lucky.
+Refer to BMC or Kiran Kedlaya's notes.
+\end{lemma}
+Let $C_1,C_2,C_3,C_4$ be four circles in the plane.
+Suppose $C_1,C_2$ meet at $P_1,Q_1$; $C_2,C_3$ at $P_2,Q_2$;
+$C_3,C_4$ at $P_3,Q_3$; and $C_4,C_1$ at $P_4,Q_4$.
+Show that, if $P_1,P_2,P_3,P_4$ lie on a line or circle, then $Q_1,Q_2,Q_3,Q_4$ also lie on a line or circle.
+\begin{figure}[H]\centering
+\includegraphics[width=.60\linewidth]{lb1-fig-01.pdf}
+\FigureTag{LB1.1}{fig:lb1-01}
+\end{figure}
+This can be resolved using coordinates!
+Now let us perform the magic; say with me these words: ``Problema invert\'o!''
+% Source page 10 - right
+Apply $I(P_1,R)$.
+\begin{figure}[H]\centering
+\includegraphics[width=.58\linewidth]{lb1-fig-02.pdf}
+\FigureTag{LB1.2}{fig:lb1-02}
+\end{figure}
+Our magic worked! It remains to prove that $Q_1Q_2Q_3Q_4$ is concyclic.
+Since $P_1P_2P_3P_4$ is concyclic, it inverts into a straight line; now $P_2,P_3,P_4$ are collinear.
+It remains to chase three angles:
+\[
+\angle Q_3Q_4Q_1=\angle Q_3P_3P_4=\angle Q_3Q_2P_2
+\Longrightarrow\angle Q_1Q_4Q_3=\angle Q_3Q_2P_2.
+\]
+This implies that $Q_1Q_2Q_3Q_4$ is concyclic. ``Finished!''
+
+\setcounter{theorem}{30}\begin{lemma}[Distance formula for inversion]
+If segment $AB$ inverts to $A_1B_1$ under $I(O,r)$, then
+$A_1B_1=\dfrac{AB\,r^2}{OA\cdot OB}$.
+\end{lemma}
+This is helpful: it gives a two-line proof of Ptolemy's theorem.
+\begin{figure}[H]\centering
+\includegraphics[width=.71\linewidth]{lb1-fig-03.pdf}
+\FigureTag{LB1.3}{fig:lb1-03}
+\end{figure}
+% Source page 11 - left
+I thought the proof would fit on the previous page, but it did not. Overconfidence is lethal!
+From $A_1C_1=A_1B_1+B_1C_1$, inversion about $D$ gives
+\[
+\frac{AB\,r^2}{DA\cdot DB}+\frac{BC\,r^2}{DB\cdot DC}
+=\frac{AC\,r^2}{DA\cdot DC}.
+\]
+Cancelling $r^2$ and multiplying through,
+\[
+\frac{AB\cdot CD+BC\cdot AD}{DA\cdot DB\cdot DC}
+=\frac{AC}{DA\cdot DC}
+\Longrightarrow AB\cdot CD+BC\cdot AD=AC\cdot BD.
+\]
+
+
+
+
+\subsection{Radical-axis theorem}
+Let us begin by defining what is meant by the power of a point.
+The idea was first discovered by ancient Greeks; Euclid wrote it in his \textit{Elements}.
+The name ``power of a point'' (P.O.P.) was given by the world-renowned geometer Jacob Steiner.
+\setcounter{theorem}{81}\begin{lemma}[Power of a point]\label{lemma:lb1-84}
+Given a circle and a point $P$, draw a line through $P$ intersecting the circle at $A$ and $B$.
+Then the product $PA\cdot PB$ stays constant.
+\end{lemma}
+\setcounter{theorem}{82}\begin{lemma}[Radical-axis theorem I]\label{lemma:lb1-85}
+The locus of points whose powers with respect to two nonconcentric circles are equal is a line perpendicular to the line of centres of the two circles.
+\end{lemma}
+\paragraph{Application: USAMO (1997), problem 2.}
+Let $ABC$ be a triangle, and draw isosceles triangles $DBC$, $AEC$, and $ABF$ external to $ABC$, with $BC$, $CA$, and $AB$ as their respective bases.
+Prove that the lines through $A,B,C$ perpendicular to $EF,FD,DE$, respectively, are concurrent.
+(There are 25 solutions to this problem!)
+% Source page 43 - left
+\begin{figure}[H]\centering
+\includegraphics[width=.73\linewidth]{lb1-fig-21.pdf}
+\FigureTag{LB1.21}{fig:lb1-21}
+\end{figure}
+It must be clear that we should somehow show $X$ to be the radical centre of three circles.
+But where are the circles? Okay, be patient!
+We have $\ell\perp EF$. In order for $\ell$ to be a radical axis, we must prove---no, not prove: construct---circles with centres $F,E$.
+So let's exploit the fact that $FA=FB$ and $EA=EC$ by erecting circles with centres $F,E$ and radii $FA,EA$, respectively.
+Argue similarly for point $D$, and don't forget to write Q.E.D.!
+
+
+
+
+
+\setcounter{theorem}{88}\begin{lemma}[Simson's line]\label{lemma:lb1-91}
+The feet of the perpendiculars drawn from any point on the circumcircle of a triangle to its sides are collinear.
+The converse is also true.
+\end{lemma}
+\paragraph{Application.}
+The sides $AB,BC,AC$ of $\triangle ABC$ are cut by a transversal at $Q,R,S$, respectively.
+The circumcircles of $\triangle ABC$ and $\triangle SCR$ intersect at $P$.
+Prove that $ASPQ$ is cyclic.
+% Source page 51 - left
+\begin{figure}[H]\centering
+\includegraphics[width=.74\linewidth]{lb1-fig-27.pdf}
+\FigureTag{LB1.27}{fig:lb1-27}
+\end{figure}
+Draw $PX,PY,PZ,PW$ perpendicular to $AB,AC,QR,BC$, respectively, as shown in the figure.
+Since $P$ is on the circumcircle of $\triangle ABC$, the points $X,Y,W$ are collinear.
+Since $P$ is on the circumcircle of $\triangle SCR$, the points $Y,Z,W$ are collinear.
+It follows that $X,Y,Z$ are collinear. Thus $P$ lies on the circumcircle of $\triangle AQS$, and $APQS$ is cyclic.
+Q.E.D.
+\setcounter{theorem}{89}\begin{lemma}[Nine-point circle]\label{lemma:lb1-92}
+The midpoints of the sides, the feet of the altitudes, and the midpoints of the segments joining the orthocentre to the vertices all lie on a circle, called the nine-point circle.
+\end{lemma}
+\setcounter{theorem}{90}\begin{lemma}[Excentre]\label{lemma:lb1-93}
+The external bisectors of two angles and the internal bisector of the third concur at a point, called the excentre.
+\end{lemma}
+\paragraph{Application.}
+In a triangle $ABC$, the lines formed by reflecting $BC$ across $AB$ and $AC$ intersect at $D$.
+Prove that the circumcentre of $\triangle ABC$ lies on the circumcircle of $\triangle BCD$.
+There is one more problem: take this one as an application of Ravi substitutions.
+The bisector of $\angle A$ intersects $BC$ and the circumcircle of $\triangle ABC$ at $D,E$.
+Show that $\triangle BDE$ and $\triangle CDE$ have the same circumradius.
+
+% Source page 52 - left (rotated notebook page: Proofathon problem 3)
+% Source page 52 - right (rotated notebook page: Proofathon problem 4)
+\paragraph{Proofathon, problem 4.}\leavevmode\par
+\begin{figure}[H]\centering
+\includegraphics[width=.70\linewidth]{lb1-fig-29.pdf}
+\FigureTag{LB1.29}{fig:lb1-29}
+\end{figure}
+We have $ABEC$ cyclic. Thus $A/2=\angle BCE=\angle BAD$, and $\angle CBE=\angle CAD=A/2$.
+Since $AD$ bisects $\angle A$, we get $\angle BCE=\angle CBE=A/2$.
+Hence $\triangle BEC$ is isosceles, so $BE=CE$; call this $\star$.
+\paragraph{Facts.}
+$R=abc/(4\Delta)$, where $\Delta$ is the area;
+$\sin\theta=\sin(180^\circ-\theta)$; and $[ABC]=\tfrac12ab\sin\angle A$.
+We have
+\[R(\triangle BDE)=\frac{BD\cdot DE\cdot BE}{4[BDE]},
+\qquad R(\triangle CDE)=\frac{DE\cdot CE\cdot DC}{4[CDE]}.\]
+We seek $BD\cdot DE\cdot BE/(4[BDE])=DE\cdot CE\cdot DC/(4[CDE])$; call this I.
+Since $BE=CE$, this reduces to $BD/[BDE]=CD/[CDE]$, or $BD/CD=[BDE]/[CDE]$.
+Now
+\[[BDE]=\tfrac12BD\cdot DE\sin\angle BDE,
+\qquad[CDE]=\tfrac12DE\cdot CD\sin\angle CDE.\]
+Consequently
+\[\frac{[BDE]}{[CDE]}=
+\frac{\tfrac12BD\cdot DE\sin\angle BDE}{\tfrac12DE\cdot CD\sin\angle CDE}
+=\frac{BD}{CD},\]
+because $\angle BDE=180^\circ-\angle CDE$.
+This establishes I, hence $R(\triangle BDE)=R(\triangle CDE)$.
+\emph{GeoGebra.}
+% Source scan: some left-margin formula prefixes on this rotated page are clipped; the readable displayed repeated equality fixes their unambiguous continuation.
+
+
+
+
+
+\setcounter{theorem}{106}\begin{lemma}[The arc midpoint and the incentre]
+In the configuration of Figure~\href{https://codezen1729.github.io/math-blog/\#/post/lemma-book-circle-geometry}{LB2.14}, $MI=MB=MC$.
+\end{lemma}
+\begin{figure}[H]
+\centering\includegraphics[width=.58\linewidth]{lb2-fig-14.pdf}
+\FigureTag{LB2.14}{fig:lb2-14}
+\end{figure}
+\paragraph{Application: IMO 2006.}
+Let $ABC$ have incentre $I$, and let $P$ be an interior point satisfying
+$\angle PBA+\angle PCA=\angle PBC+\angle PCB$.
+Show that $AP\geq AI$, with equality if and only if $P=I$.
+This can be taken as an exercise: it is trivial once you notice that $BPIC$ is cyclic!
+% BLOG-CONTENT-END
+\end{document}

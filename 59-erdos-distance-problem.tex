@@ -1,0 +1,73 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/miscellaneous/}}
+\begin{document}
+\section*{Erdős Distance Problem}
+% BLOG-CONTENT-BEGIN
+\begin{center}\small S. Viswanathan\end{center}
+% Source page 1
+According to Paul Erd\H{o}s, his most important contribution to geometry is
+his distance conjecture. The formulation of the problem is quite innocuous
+and recreational in nature. Let me begin by stating the problem explicitly.
+
+Let $P$ be a set of $n$ points in $\mathbb R^2$, and let
+$\Delta(P):=\{|p-p'|:p,p'\in P,\ p\ne p'\}$. Thus $\Delta(P)$ is essentially
+the set of possible distinct distances between distinct points.
+For instance, if $P$ is the set described pictorially below, then
+$\Delta(P)=\{10,2\}$.
+\begin{figure}[H]
+ \centering\includegraphics[width=.50\textwidth]{m2-fig-01.pdf}
+ \FigureTag{M2.1}{fig:m2-fig-01}
+\end{figure}
+But wait! What about $|p_2-p_4|$? Is there a way to salvage this blunder?
+Is there a configuration of four points such that three of them form an
+equilateral triangle and the fourth one is at a distance $10$?
+If you think about it for a minute, it is immediate that such a
+configuration is impossible, for the fourth point $p_4$ must be the
+% Source page 2
+centroid of $\triangle p_1p_2p_3$, so $|p_4-p_i|<2$ for every $1\le i\le3$.
+As interesting as it may be to ask which sets of distances can be realised
+in $\mathbb R^2$, let us begin by asking the following.
+\begin{question}
+What is $\inf_{|P|=n}|\Delta(P)|$? If $g(n):=\inf_{|P|=n}|\Delta(P)|$ is
+the minimum number of possible distances, describe $g(n)$.
+\end{question}
+We know $g(0)=0$, $g(1)=0$, $g(2)=1$, $g(3)=1$ (an equilateral triangle),
+$g(4)=2$, $g(5)=2$ (a pentagon), and so on.
+Erd\H{o}s was particularly interested in trying to find bounds for $g(n)$,
+both upper and lower bounds; he was not optimistic enough to look for
+asymptotes.
+
+% Source page 3
+\setcounter{theorem}{1}\begin{theorem}[Two Squares Theorem]
+$n$ is a sum of two squares if and only if, for every prime $p\mid n$
+such that $p\equiv3\pmod4$, we have $2\mid\nu_p(n)$.
+\end{theorem}
+\setcounter{theorem}{3}\begin{conjecture}[Lower bound]
+For some $c>0$ and large $n$, $g(n)\ge cn/\sqrt{\log n}$.
+\end{conjecture}
+Erd\H{o}s did quite poorly in trying to come up with lower bounds, and
+perhaps he did not care enough at that point to announce prize money for
+this problem. I guess one can imagine him being content with just this much.
+\setcounter{theorem}{4}\begin{theorem}[Erd\H{o}s, 1946]
+$g(n)\ge c\sqrt n$.
+\end{theorem}
+Let us now look at a slight improvement of Erd\H{o}s's lazy result.
+\setcounter{theorem}{5}\begin{theorem}[Moser, 1952]
+$g(n)\ge cn^{2/3}$ for some $c>0$.
+\end{theorem}
+Since Moser enhanced Erd\H{o}s's argument with quite a clever construction
+of foliated annuli, many joined the race to get to the bound $cn/\sqrt{\log n}$.
+\begin{figure}[H]
+ \centering\includegraphics[width=.80\textwidth]{m2-fig-04.pdf}
+ \FigureTag{M2.4}{fig:m2-fig-04}
+\end{figure}
+% Author check: historical names, dates, and bounds follow the handwritten timeline, without updating it.
+% Source page 12
+Tools from Fourier analysis, number theory, graph theory, and even information
+theory have gone into the formulation and resolution of this conjecture,
+culminating in Guth's near-optimal result! We are just $1/\sqrt{\log n}$
+away from Erd\H{o}s's conjecture. The future certainly shall bring hope.
+% BLOG-CONTENT-END
+\end{document}

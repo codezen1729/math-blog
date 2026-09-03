@@ -1,0 +1,194 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Elementary Number Theory}
+% BLOG-CONTENT-BEGIN
+\subsection{Elementary number theory}
+\paragraph{Application: AMTI, inter-final round (2014).}
+If $\gcd(a+b,a-b)=1$, find
+\[
+\gcd\bigl(2a+(2a+1)(a^2-b^2),\;2a(a^2-b^2+2a)(a^2-b^2)\bigr).
+\]
+We have
+\begin{align*}
+\gcd(a+b,a-b)=1
+&\Longrightarrow\gcd\bigl(2a,(a+b)(a-b)\bigr)=1\\
+&\Longrightarrow\gcd\bigl(2a+a^2-b^2,2a(a^2-b^2)\bigr)=1\\
+&\Longrightarrow\gcd\bigl(2a+a^2-b^2+2a(a^2-b^2),
+ 2a(a^2-b^2+2a)(a^2-b^2)\bigr)=1.
+\end{align*}
+Thus the required GCD is $1$.
+
+\paragraph{Application: British Mathematical Olympiad, round 2 (2009).}
+Find all solutions in nonnegative integers $(a,b)$ of
+$\sqrt a+\sqrt b=\sqrt{2009}$.
+Since $2009=49\cdot41=7^2\cdot41$, we have $\sqrt{2009}=7\sqrt{41}$.
+Split seven as a sum of two nonnegative integers to obtain
+\[
+(a,b)\in\{(656,369),(1025,164),(1476,41),(2009,0),
+(369,656),(164,1025),(41,1476),(0,2009)\}.
+\]
+\emph{Quite elegantly done.}
+
+\setcounter{theorem}{2}\begin{lemma}[Consecutive composite integers]
+$n!+2,n!+3,n!+4,\ldots,n!+n$ are $n-1$ consecutive composite integers.
+\end{lemma}
+No special use or application.
+
+\setcounter{theorem}{3}\begin{lemma}[A small prime factor]
+The smallest prime factor of a nonprime $n$ is at most $\sqrt n$.
+\end{lemma}
+% Source page 3 - left
+The fourth lemma can save some time when factorizing a number.
+
+\setcounter{theorem}{4}\begin{lemma}[Primes modulo six]
+All primes $p>3$ have the form $6n\pm1$.
+\end{lemma}
+\paragraph{Application: RMO (1998).}
+Let $p_1,p_2,\ldots,p_n$ be $n$ primes, all greater than $5$, such that
+$6$ divides $p_1^2+\cdots+p_n^2$. Prove that $6\mid n$.
+For every $i$, $p_i^2\equiv1\pmod6$. Hence
+$\sum_{i=1}^n p_i^2\equiv n\pmod6$, and the divisibility assumption gives $n\equiv0\pmod6$.
+
+\setcounter{theorem}{5}\begin{lemma}[Fermat's congruence]
+Let $a$ be a positive integer and $p$ a prime. Then $a^p\equiv a\pmod p$.
+If $\gcd(a,p)=1$, then $a^{p-1}\equiv1\pmod p$.
+\end{lemma}
+
+\setcounter{theorem}{6}\begin{lemma}[Wilson's theorem]
+If $p$ is prime, then $(p-1)!\equiv-1\pmod p$.
+\end{lemma}
+
+% Source page 3 - right
+\setcounter{theorem}{7}\begin{lemma}[Euler's totient]
+Euler's $\varphi$-function counts the numbers less than $m$ and relatively prime to it.
+If $m=\prod_{i=1}^n p_i^{k_i}$, then
+\[
+\varphi(m)=m\left(1-\frac1{p_1}\right)\cdots\left(1-\frac1{p_n}\right).
+\]
+If $(a,m)=1$, then $a^{\varphi(m)}\equiv1\pmod m$.
+\end{lemma}
+This has quite a lot of applications.
+
+
+\setcounter{theorem}{9}\begin{lemma}[Sophie Germain's identity]
+$a^4+4b^4=(a^2+2b^2+2ab)(a^2+2b^2-2ab)$.
+\end{lemma}
+
+\setcounter{theorem}{10}\begin{lemma}[A polynomial factorization]
+\begin{align*}
+x^5+x^4+1
+&=\bigl((x+1)^3-3(x+1)^2+2(x+1)+1\bigr)
+  \bigl((x+1)^2-(x+1)+1\bigr)\\
+&=(x^2+x+1)(x^3-x+1).
+\end{align*}
+\end{lemma}
+\paragraph{Application.}
+Show that $n(n-1)^4+1$ is composite for $n>2$.
+\[
+n(n-1)^4+1=(n-1)^5+(n-1)^4+1
+=(n^3-3n^2+2n+1)(n^2-n+1).
+\]
+Since $n^3-3n^2+2n=n(n-1)(n-2)>1$ and $n^2-n=n(n-1)>1$, the result follows.
+
+
+% Source page 4 - left
+\setcounter{theorem}{12}\begin{lemma}[A cubic identity]
+$(a+b+c)^3=a^3+b^3+c^3+3(a+b)(b+c)(c+a)$.
+\end{lemma}
+\paragraph{Application.}
+If $6\mid a+b+c$, then $6\mid a^3+b^3+c^3$.
+Indeed, divisibility of $a^3+b^3+c^3$ by $6$ is equivalent to divisibility of
+$(a+b+c)^3-3(a+b)(b+c)(c+a)$, hence to that of $3(a+b)(b+c)(c+a)$.
+By the box principle, two of $a,b,c$ have the same parity, so the latter product is divisible by $6$.
+
+\subsection{A beautiful application of modular arithmetic}
+Prove that $641\mid2^{32}+1$.
+Since $640\equiv-1\pmod{641}$,
+\[
+5\cdot2^7\equiv-1\pmod{641}
+\Longrightarrow(5\cdot2^7)^4\equiv1\pmod{641}
+\Longrightarrow625\cdot2^{28}\equiv1\pmod{641}.
+\]
+But $625\equiv-16\pmod{641}$, so
+$625\cdot2^{28}\equiv-16\cdot2^{28}=-2^{32}\equiv1\pmod{641}$.
+Consequently $2^{32}+1\equiv0\pmod{641}$.
+
+
+
+\setcounter{theorem}{15}\begin{lemma}[Squarefree factor]
+If $n^2=ab$, where $a<b$ and $a$ is not divisible by a perfect square greater than $1$, then $a\mid b$.
+\end{lemma}
+\paragraph{Application.}
+The sum of the squares of five successive positive integers is not a square.
+\[
+(n-2)^2+(n-1)^2+n^2+(n+1)^2+(n+2)^2=5(n^2+2).
+\]
+If this is a square, $5\mid n^2+2$, so $n^2\equiv-2\pmod5$, a contradiction.
+
+\setcounter{theorem}{16}\begin{lemma}[Inspect when the hypothesis holds]
+In a problem where one is given a condition and asked to prove a result from it, first examine when the condition is satisfied, rather than trying to prove the result in a general case.
+\end{lemma}
+\paragraph{Application.}
+If $p$ and $p^2+2$ are primes, then $p^3+2$ is also prime.
+The prime $p$ must be odd. If $p>3$, then $p^2\equiv1\pmod3$, so $p^2+2$ is not prime.
+Thus $p=3$.
+
+Prove that the only integer solution of $x^2+y^2=x^2y^2$ is $x=y=0$.
+\paragraph{Proof 1.}
+$1=x^2y^2-x^2-y^2+1=(x^2-1)(y^2-1)$.
+Thus $x^2-1=\pm1$ and $y^2-1=\pm1$, implying $x=y=0$.
+\paragraph{Proof 3.}
+From $x^2+y^2=x^2y^2$ the notes obtain $x=2x_1$ and $y=2y_1$, and then
+\[
+4x_1^2+4y_1^2=16x_1^2y_1^2
+\Longrightarrow x_1^2+y_1^2=(2x_1y_1)^2
+\Longrightarrow x_1=2x_2,\quad y_1=2y_2.
+\]
+% Source page 5 - right
+Thus $x=2x_1=4x_2=\cdots=2^nx_n=\cdots$, so $(x_n)$ is strictly decreasing in magnitude.
+Fermat's infinite descent principle gives the conclusion.
+
+\setcounter{theorem}{17}\begin{lemma}[Pell's equation]
+For $x^2-Dy^2=1$, if $(x_1,y_1)$ is a solution, then
+\[
+x_{n+1}=x_1x_n+Dy_1y_n,\qquad y_{n+1}=y_1x_n+x_1y_n.
+\]
+Equivalently,
+\[
+x_n=\frac12\bigl[(x_1+y_1\sqrt D)^n+(x_1-y_1\sqrt D)^n\bigr],\quad
+y_n=\frac1{2\sqrt D}\bigl[(x_1+y_1\sqrt D)^n-(x_1-y_1\sqrt D)^n\bigr].
+\]
+\end{lemma}
+\paragraph{Application: Romanian International Mathematical Olympiad (2000).}
+Show that $x^3+y^3+z^2=t^4$ has infinitely many positive integer solutions.
+The notes use
+$(1+2^3+3^3+\cdots+n^3)=\bigl(n(n+1)/2\bigr)^2$, and hence
+\[
+\left(\frac{(n-2)(n-1)}2\right)^2+(n-1)^3+n^3
+=\left(\frac{n(n+1)}2\right)^2.
+\]
+Requiring $n(n+1)/2=x^2$ gives
+$n^2+n=2x^2$, or $(2n+1)^2-2(2x)^2=1$.
+This is Pell's equation, with the recorded fundamental solution $(n,x)=(1,1)$.
+
+\setcounter{theorem}{18}\begin{lemma}[Fermat's infinite descent principle]
+There is no strictly decreasing sequence of positive integers.
+This idea seems elementary but has many beautiful consequences.
+\end{lemma}
+
+% Source page 6 - left
+\setcounter{theorem}{19}\begin{lemma}[Choose a modulus suited to the power]
+Using an appropriate modulus for perfect powers often yields elegant solutions:
+for cubes, modulo $7$ or $9$; for fourth powers, modulo $5$ or $16$;
+for fifth powers, modulo $5$ or $11$. For instance, $x^5\equiv0,\pm1\pmod{11}$, and so on.
+\end{lemma}
+
+% Source page 6 - right
+\setcounter{theorem}{20}\begin{lemma}[Factorization]
+Some problems are resolved using simple factorization techniques; it is important to acquire skill in factorization.
+\end{lemma}
+% BLOG-CONTENT-END
+\end{document}

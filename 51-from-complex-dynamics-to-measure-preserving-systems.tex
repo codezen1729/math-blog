@@ -1,0 +1,204 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/ergodic-theory/}}
+\begin{document}
+\section*{From Complex Dynamics to Measure-Preserving Systems}
+% BLOG-CONTENT-BEGIN
+\subsection{Motivation from Complex Dynamics}
+Let me present to you one of my reasons for learning ergodic theory. Consider
+\[
+  f\colon S\longrightarrow S,
+  \qquad f\in\operatorname{Hol}(S),\quad S\text{ a Riemann surface}.
+\]
+
+One is interested in studying how $f$, and the iterates of $f$, deform the space
+$S$, which amounts to studying $\{f^{\circ n}(z)\}_{n\geq0}$ for a given $z\in S$.
+In light of this, one asks:
+\begin{itemize}
+  \item What is the topological structure of sets $U$ that deform via $f$ in a
+  stable manner?
+  \item What is the topological structure of sets $J$ that deform via $f$ in a
+  chaotic manner?
+\end{itemize}
+More precisely:
+
+% Source page 2
+\setcounter{definition}{0}\begin{definition}[Fatou set]
+\[
+F(f):=\left\{x\in S:\text{there is a neighbourhood }U_x\text{ of }x
+\text{ such that }\{f^{\circ n}|_{U_x}\}_n\text{ is a normal family}\right\}.
+\]
+$F(f)$ is called the \emph{Fatou set} of $S$, which is open by definition.
+It corresponds to stability.
+\end{definition}
+
+\setcounter{definition}{1}\begin{definition}[Julia set]
+$J(f):=S\setminus F(f)$ is called the \emph{Julia set}. It corresponds to chaos.
+\end{definition}
+
+When one says one wants to study the dynamics of $f$, among other things one
+usually means studying stable and chaotic sets (or Fatou and Julia sets).
+The following is the general philosophy for undertaking such a study.
+
+\paragraph{Philosophy of complex dynamics.}
+Orbits of critical points, i.e. $\{f^{\circ n}(z)\}_{n\geq1}$ with $f'(z)=0$,
+and fixed points determine stable sets entirely, and chaotic sets to a large
+extent.
+
+
+Now, here is why this should not surprise you. Let
+$\varphi\colon S\to S'$ be a biholomorphism.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.32\textwidth]{lecture1-fig-02.pdf}
+  \FigureTag{L1.2}{fig:lecture1-fig-02}
+\end{figure}
+
+% Source page 4
+\begin{itemize}
+  \item $\widetilde f^{\circ n}=(\varphi\circ f\circ\varphi^{-1})^{\circ n}
+  =\varphi\circ f^{\circ n}\circ\varphi^{-1}=\widetilde{f^{\circ n}}$.
+  \item If $\{f^{\circ n}|_U\}_n$ is normal, then
+  $\{\widetilde f^{\circ n}|_{\varphi(U)}\}_n$ shall be normal.
+\end{itemize}
+Thus, to study dynamics one must naturally look for things that are invariant
+under coordinate transformations. Zeros and poles are not among such
+invariants, as can easily be seen. If $f(z_0)=0$, then
+$\widetilde f(\varphi(z_0))=\varphi(0)$, which need not be $0$.
+Therefore, saying that one wants to study zeros
+% Source page 5
+and poles of $f$ is equivalent to saying that one has a preferred set of
+coordinates. This, mind you, is extremely useful while doing analysis, but
+irrelevant for dynamics. One of the many ways we propose to study dynamics is
+by reducing the function to a simpler one, in the right set of coordinates.
+In particular, if $U\subset S$ and there is
+$\varphi\colon U\to\varphi(U)\subseteq\mathbb C$, then among all such
+$\varphi$'s we shall hunt for one that makes
+$\varphi\circ f\circ\varphi^{-1}$ simplest to study. For instance:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.49\textwidth]{lecture1-fig-04.pdf}
+  \FigureTag{L1.4}{fig:lecture1-fig-04}
+\end{figure}
+Then we know that, under this changed set of coordinates, $f$ is an irrational
+rotation by the angle $\theta$ on $\mathbb D$.
+
+% Source page 6
+Such results are called \emph{linearization theorems}: one turns the function
+into as linear a function as possible, and the orbits of critical points bound
+the largest possible domain $U$ in which $f$ behaves like a polynomial.
+Usually these domains are considered to be neighbourhoods of fixed points of
+$f$. In addition, orbits of critical points reveal a lot of the topological
+structure of Julia sets (or chaotic sets). Therefore, the following question
+is fundamental to complex dynamics.
+
+\paragraph{Question.}
+How is $\{f^{\circ n}(\widehat z)\}_n$ distributed on $S$, where $\widehat z$
+is a critical point of $f$?
+
+Ergodic theory comes along with many qualitative answers to such questions.
+In this course we shall focus only on those that shall lead us to the proof
+of Szemer\'edi's theorem. Having motivated the need for ergodic theory for me,
+I encourage you to find a need of your own that would help you cling on to
+the kind of mathematics we shall be doing.
+
+\subsection{Introduction to Measure-Preserving Systems}
+Let $X$ be a set and $T\colon X\to X$ a map. We shall refer to $X$ as the
+\emph{state space} and $T$ as the \emph{transformation} (or deformation).
+
+% Source page 7
+If, in addition, you impose some structure on $X$, then we end up with the
+following.
+\begin{description}[style=nextline,leftmargin=1.5em,labelindent=0pt]
+  \item[Group structure.]
+  If $\Gamma\triangleleft G$, or $\Gamma<G$, then there is a transitive
+  $G$-action on $G/\Gamma$, a homogeneous space of $G$. If $X\cong G/\Gamma$,
+  then one has the transformation $T_g\colon X\to X$, $T_g(x):=g\cdot x$.
+  One can study the dynamics of $T_g$: a classical dynamical system.
+  \item[Topological structure.]
+  We study the dynamics of $T\colon X\to X$, with $T$ a continuous map. If,
+  in addition, $X$ is compact and metrizable and $T$ is a homeomorphism, one
+  is in the realm of topological dynamical systems.
+  \item[Measure structure.]
+  If it is a probability measure, one ends up with ergodic theory.
+\end{description}
+Of the three basic structures one can impose on a set, we shall impose the
+structure of a probability space. I will end by introducing the setup of
+ergodic theory.
+
+% Source page 8
+
+\begin{remark}
+\leavevmode\par
+\begin{itemize}
+  \item To obtain qualitative results, we need some means to compare, so we
+  introduce a measure-theoretic structure on our state space $X$. We shall
+  address the need for it to be a probability measure later.
+  \item Probabilistically, $\varphi\colon X\to Y$ being measurable means that
+  events of $Y$ relate to events of $X$.
+  \item $(X,\mathcal B,\mu,T)$ is a space of events with a deterministic link
+  function $T$.
+
+% Source page 9
+  \item The reason we define $\mu(T^{-1}(B))=\nu(B)$, and not
+  $\mu(B)=\nu(T(B))$, is that the following properties do not hold for $T$
+  in place of $T^{-1}$:
+  \begin{align*}
+    \chi_A(T(x))&=\chi_{T^{-1}(A)}(x), &&\text{the link},\\
+    T^{-1}(A\cap B)&=T^{-1}(A)\cap T^{-1}(B),\\
+    T^{-1}(A\cup B)&=T^{-1}(A)\cup T^{-1}(B),\\
+    T^{-1}(A\mathbin\triangle B)&=T^{-1}(A)\mathbin\triangle T^{-1}(B).
+  \end{align*}
+  If $A$ and $B$ occur, then $T^{-1}$ forces $T^{-1}(A)$ and $T^{-1}(B)$ to
+  occur. $T$ does not respect set-theoretic operations, so working with $T$
+  would imply that the measure-preserving map is too special!
+\end{itemize}
+\end{remark}
+
+Having seen this, let us see what it means to preserve the structure of a
+measure-preserving system on $X$.
+\setcounter{definition}{3}\begin{definition}[Measurable isomorphism]
+We write
+\[
+  (X,\mathcal B_X,\mu_X,T)\cong(Y,\mathcal B_Y,\mu_Y,S)
+\]
+if there exists a measure-preserving map $\varphi\colon X\to Y$ with
+$\varphi^{-1}\colon Y\to X$, where $\varphi$ and $\varphi^{-1}$ are defined
+almost everywhere, such that the following diagram commutes.
+\end{definition}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.30\textwidth]{lecture1-fig-06.pdf}
+  \FigureTag{L1.6}{fig:lecture1-fig-06}
+\end{figure}
+
+% Source page 10
+
+
+\subsection{Our Goals and Motives}
+We have a means to measure, hence a way to compare, and we wish to compare
+$E$ with its iterates $T^{\circ n}(E)$. As $T$ is measure-preserving, we are
+justified in asking how $\{T^{\circ n}(E)\}_n$ behaves, because $T$ preserves
+measure, so $E$ and $T(E)$ belong to the same structural space; hence
+comparison is natural.
+
+% Source page 12
+\Needspace{9\baselineskip}
+With that in mind, we ask the following questions:
+\begin{itemize}
+  \item What happens to $\{T^{\circ n}x\}$ as $n\to\infty$?
+  \item What happens to $T^{\circ n}(E)$ as $n\to\infty$, for $E\in\mathcal B$?
+  \item What happens to $f\circ T^n$ as $n\to\infty$, for measurable
+  $f\colon X\to\mathbb R$ (or $\mathbb C$)?
+\end{itemize}
+\setcounter{theorem}{2}\begin{theorem}[Szemer\'edi's theorem]
+Let $E\subset\mathbb Z$ satisfy
+\[
+  \limsup_{N\to\infty}\frac{|E\cap[-N,N]|}{2N+1}>0.
+\]
+Then $E$ has arbitrarily large arithmetic progressions.
+\end{theorem}
+And declare victory!
+% BLOG-CONTENT-END
+\end{document}

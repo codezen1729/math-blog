@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/complex-dynamics-notes/}}
+\begin{document}
+\section*{The Mapping Theorem and Invariant Complex Structures}
+% BLOG-CONTENT-BEGIN
+An ellipse field on a Riemann surface is essentially an ellipse, modulo scaling, chosen in the tangent plane $T_zS$ for almost every $z\in S$. It is the pullback of a circle field via the expression $\mu(z)\,d\overline z/dz$.
+
+
+We shall see an elementary example in which the mapping theorem joins forces with Weyl's lemma to change the quantitative features of dynamics while keeping its topology
+% Source page 2
+the same. Start with $M_0\colon\mathbb D\to\mathbb D$, $z\mapsto\lambda_0z$. View this as a map $\mathbb D^*\to\mathbb D^*$ and lift it to the universal cover $\mathbb H_\ell$.
+\begin{figure}[H]\centering
+\includegraphics[width=.42\textwidth]{cd6-fig-01.pdf}
+\FigureTag{CD6.1}{fig:cd6-01}
+\end{figure}
+Here $v_0=\log\lambda_0$. Let $L_v$ be the real-linear map on $\mathbb H_\ell$ given by $a\zeta+b\overline\zeta$, where
+\[
+a=\frac{v+\overline v_0}{v_0+\overline v_0},\qquad
+b=\frac{v-v_0}{v_0+\overline v_0}.
+\]
+The map $L_v$ conjugates $\zeta\mapsto\zeta+v_0$ to $\zeta\mapsto\zeta+v$.
+\begin{figure}[H]\centering
+\includegraphics[width=.43\textwidth]{cd6-fig-02.pdf}
+\FigureTag{CD6.2}{fig:cd6-02}
+\end{figure}
+% Source page 3
+Finally descend $\zeta\mapsto\zeta+v$ to $\mathbb D^*$, obtaining the following diagram.
+\begin{figure}[H]\centering
+\includegraphics[width=.62\textwidth]{cd6-fig-03.pdf}
+\FigureTag{CD6.3}{fig:cd6-03}
+\end{figure}
+This is an instance in which a holomorphic map is quasiconformally conjugate to another holomorphic map. Here we constructed the conjugacy explicitly. Alternatively, pull back the circle field $\mu_0$ on the bottom copy of $\mathbb D^*$ to obtain $\mu_v=\phi_v^*\mu_0$, then appeal to the mapping theorem. It gives a $K$-quasiconformal map $\phi_v\colon\mathbb D\to\mathbb D$ pulling back the circle field. But how can we ensure that $\phi_v\circ(z\mapsto\lambda_0z)\circ\phi_v^{-1}$ is conformal?
+% Source page 4
+Usually quasiconformal conjugation does not yield a holomorphic map. It does yield a dynamical conjugate: a map with essentially the same dynamics, but with quantities of our choosing. In the preceding example we changed the multiplier from $\lambda_0$ to $e^v$! In some lucky cases the following is prescribed.
+\setcounter{definition}{14}\begin{definition}[$K$-quasiregular map]
+A map $g\colon U\to\mathbb C$, $U\subseteq\mathbb C$, is $K$-quasiregular if $g=f\circ\phi$, where $\phi\colon U\to\phi(U)$ is $K$-quasiconformal and $f\colon\phi(U)\to g(U)$ is holomorphic.
+\end{definition}
+\setcounter{theorem}{24}\begin{lemma}[Surgery lemma]\label{cd6:surgery}
+Let $g\colon S\to S$, where $S\cong\mathbb C$ or $\widehat{\mathbb C}$, be quasiregular. If $\mu$ is a $g$-invariant Beltrami form with $\|\mu\|_\infty=k<1$, then there is $f\in\Hol(X)$, with $X=\mathbb C$ or $\widehat{\mathbb C}$, quasiconformally conjugate to $g$.
+\end{lemma}
+% Source page 5
+Taking our cue from this lemma, after surgically altering the dynamics quantitatively we want to retain a holomorphic map so that complex analysis remains available. For that, the conjugate $\phi\circ g\circ\phi^{-1}$ must be a Beltrami-form-preserving quasiregular map.
+
+In our original example, $\phi_v\circ(z\mapsto\lambda_0z)\circ\phi_v^{-1}$ was conformal, hence circle-field-preserving and $1$-quasiregular. To stitch the incision after changing the quantitative dynamics, we must hope for an ellipse-field-preserving quasiregular map. Otherwise it is surgery gone wrong! More perspective on quasiregular maps may shed light on this.
+\setcounter{definition}{15}\begin{definition}[Second definition of $K$-quasiregularity]
+A map $g\colon U\to\mathbb C$ is $K$-quasiregular if it is locally $K$-quasiconformal except on a discrete set.
+\end{definition}
+\setcounter{definition}{16}\begin{definition}[Third definition of $K$-quasiregularity]
+For every $z\in U$, there are neighbourhoods $N_z,N_{g(z)}$ of $z,g(z)$, a $K$-quasiconformal map $\psi\colon N_z\to\mathbb D$, and a conformal map $\varphi\colon N_{g(z)}\to\mathbb D$ such that
+\[
+\varphi\circ g\circ\psi^{-1}(z)=z^d\qquad\text{for some }d\ge1.
+\]
+\end{definition}
+% Source page 6
+We show that the three definitions are equivalent; this reveals enough content to perform a good surgery. The implication $(1)\Rightarrow(2)$ is clear.
+
+For $(2)\Rightarrow(1)$, the Lindel\"of property gives a countable family $\{U_i\}_{i\in\mathbb N}$ on each of which $g$ is $K$-quasiconformal except at a discrete set. Then $\partial_zg,\partial_{\overline z}g\in L^2_{\mathrm{loc}}$. Define $\widehat\mu(z)=0$ outside $U_i$, and $\mu(z)=\partial_{\overline z}g(z)/\partial_zg(z)$ inside. There is a map $\widehat\phi\colon\mathbb C\to\mathbb C$ pulling back the circle field to this ellipse field. Put $\phi=\widehat\phi|_{U_i}$ and $f=g\circ\phi^{-1}$.
+\begin{figure}[H]\centering
+\includegraphics[width=.51\textwidth]{cd6-fig-05.pdf}
+\FigureTag{CD6.5}{fig:cd6-05}
+\end{figure}
+By Weyl's lemma, $f$ is conformal except on a discrete set; continuity makes the singularities there removable.
+
+For $(3)\Rightarrow(1)$, if $\varphi\circ g\circ\psi^{-1}=z^d$ and $d=1$, we are done. If $d>1$, the map is a local homeomorphism except at discrete points, because $0$ is the only point where this fails.
+% Source page 7
+Those points are isolated, so $(3)\Rightarrow(2)\Rightarrow(1)$.
+
+For $(1)\Rightarrow(3)$, suppose $g=f\circ\phi$. If $\phi(z)\notin\operatorname{Crit}(f)$, there are neighbourhoods $N_{\phi(z)},N_{g(z)}$ such that $f\colon N_{\phi(z)}\to N_{g(z)}$ is conformally invertible, and $f^{-1}\circ g\circ\phi^{-1}=z^1$.
+
+If $\phi(z)\in\operatorname{Crit}(f)$, choose these neighbourhoods so that $f$ is a branched covering of degree $d$, branched only at $\phi(z)$.
+\begin{figure}[H]\centering
+\includegraphics[width=.74\textwidth]{cd6-fig-06.pdf}
+\FigureTag{CD6.6}{fig:cd6-06}
+\end{figure}
+Now consider the following self-explanatory diagram. Shrink $N_{g(z)}$ to be simply connected, take its Riemann map $R$, and lift $R$ to $\widetilde R$ (basically a deck transformation).
+\begin{figure}[H]\centering
+\includegraphics[width=.54\textwidth]{cd6-fig-07.pdf}
+\FigureTag{CD6.7}{fig:cd6-07}
+\end{figure}
+Then $R\circ g\circ(\widetilde R\circ\phi)^{-1}$ is the required map.
+% Source page 8
+Among the many things one must look out for in a good surgery, knowing one's way around quasiregularity is important. There are deeper principles and schemes, due to Shishikura, governing how and when surgery can be performed. We will see them later. This exposition is a peek into the role of quasiconformality in loosening dynamics. As promised, the flexibility in conformality is deeply connected with flexibility in the resulting dynamics.
+\begin{enumerate}
+\setcounter{enumi}{0}\item H\"older's inequality:
+$|\varphi(z_1)-\varphi(z_2)|\le C|z_1-z_2|^{1/K}$.
+\end{enumerate}
+% Source page 9
+% BLOG-CONTENT-END
+\end{document}

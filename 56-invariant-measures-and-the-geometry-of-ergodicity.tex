@@ -1,0 +1,84 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/ergodic-theory/}}
+\begin{document}
+\section*{Invariant Measures and the Geometry of Ergodicity}
+% BLOG-CONTENT-BEGIN
+From now on we shall impose the structures of both a topological space and a measure space on our state space $X$.
+
+Let $(X,d)$ be a compact metric space and $T\colon X\to X$ be a continuous map. This is the setup of a \emph{topological dynamical system}. It turns out that, the moment you have this, there are some measures you can impose on $X$ naturally, which is precisely why we studied measure-preserving systems first. We want our measures to capture the ``size'' of sets, so we require our measures to be positive. Riesz's representation theorem tells you that all positive linear functionals in $C(X)^*$ are in one-to-one correspondence with bounded Borel measures on $X$:
+\[
+ \boxed{\Lambda\in C(X)^*\ \sim\ \int_X d\mu,
+ \qquad \mu\text{ a bounded Borel measure}.}
+\]
+Thus, the set of all possible Borel probability measures that one can impose on $X$ can be naturally obtained from the structure imposed on $X$, i.e. the structure of a compact metric space.
+
+Denote by $\mathcal M(X)$ the space of Borel probability measures on $X$. Our
+% Source page 2
+attempts at building a geometric perspective on ergodicity begin by endowing $\mathcal M(X)$, again, with a natural metric-space structure.
+
+Give $C(X)^*$ the weak-$*$ topology. Notice first that the set
+\[
+ \mathcal M(X):=\left\{\mu\in C(X)^*\ \middle|\
+ \int_X1\,d\mu=1,\quad
+ \int_Xf\,d\mu\geq0\text{ for every }f\in C(X),\ f\geq0\right\}
+\]
+is closed in $C(X)^*$, under the natural identification, because we have:
+\begin{itemize}
+ \item If $\mu_n\to\mu$, then $\int_X f\,d\mu_n\to\int_X f\,d\mu$ for every $f\in C(X)$. Set $f=1$ to get $\int_X1\,d\mu=1$.
+ \item Since $\int_Xf\,d\mu_n\geq0$ and $\int_Xf\,d\mu_n\to\int_Xf\,d\mu$, we get $\int_Xf\,d\mu\geq0$ for every $f\in C(X)$ with $f\geq0$.
+\end{itemize}
+
+\begin{remark}
+$\mathcal M(X)$ can also be metrizable, but that aspect of it is not relevant
+% Source page 3
+to us as of now.
+\end{remark}
+
+Given a topological dynamical system $(X,d,T)$, we have a way to associate probability measures on $X$ using the topological structure imposed on $X$. Of these, let us now look at those measures $\mu\in\mathcal M(X)$ such that $\mu$ is $T$-invariant. Then we shall have a measure-preserving system to which we can export our knowledge developed so far.
+
+The map $T$ induces a continuous map $T_*\colon\mathcal M(X)\to\mathcal M(X)$, defined by
+\[
+ T_*(\mu)(A):=\mu(T^{-1}(A)).
+\]
+It is continuous because $\int_Xf\,d(T_*\mu)=\int_Xf\circ T\,d\mu$. If $\mu_n\xrightarrow{*}\mu$, then $\int_Xf\circ T\,d\mu_n\to\int_Xf\circ T\,d\mu$, so
+\[
+ \int_Xf\,d(T_*\mu_n)\longrightarrow\int_Xf\circ T\,d\mu
+ =\int_Xf\,d(T_*\mu)
+ \qquad\text{for every }f\in C(X).
+\]
+Hence $T_*\mu_n\to T_*\mu$.
+
+If $\mathcal M^T(X):=\{\mu\in\mathcal M(X)\mid\mu\text{ is $T$-invariant}\}$, the continuity of $T_*$ implies that $\mathcal M^T(X)$ is closed, hence compact, in $\mathcal M(X)$. Also, $\mathcal M^T(X)$ is convex. 
+
+% Source page 4
+\setcounter{theorem}{18}\begin{theorem}[Krylov--Bogolyubov]\label{thm:l6-kb}
+We can do ergodic theory on $(X,d,T)$: given a topological dynamical system $(X,d,T)$, we have $\mathcal M^T(X)\neq\varnothing$.
+\end{theorem}
+
+Now recall that $\mathcal M^T(X)$ is convex, so one can talk about its extreme points: points in $\mathcal M^T(X)$ which cannot be further broken down into linear, convex combinations of other elements in $\mathcal M^T(X)$. Denote the set of extreme points by $\mathcal E^T(X)$. 
+
+
+% Source page 7
+\setcounter{theorem}{20}\begin{theorem}[Extremal Ergodicity]
+The ergodic elements of $\mathcal M^T(X)$ are precisely $\mathcal E^T(X)$.
+\end{theorem}
+
+
+\setcounter{theorem}{21}\begin{theorem}[Ergodic Decomposition]
+Given a topological dynamical system $(X,T)$ and any $\mu\in\mathcal M^T(X)$, there exists a unique probability measure $\lambda$ on the Borel sets of $\mathcal M^T(X)$ such that
+\[
+ \lambda(\mathcal E^T(X))=1,
+ \qquad
+ \int_Xf\,d\mu=\int_{\mathcal E^T(X)}\left(\int_Xf\,d\nu\right)d\lambda(\nu)
+ \quad\text{for all }f\in C(X).
+\]
+These correspond, respectively, to the finite expressions $\sum_{i=1}^n c_i=1$ and $\mu=\sum_{i=1}^n c_i\nu_i$.
+\end{theorem}
+
+\begin{remark}
+Notice also that the uniqueness of $\lambda$ tells you that the decomposition is unique!
+\end{remark}
+% BLOG-CONTENT-END
+\end{document}

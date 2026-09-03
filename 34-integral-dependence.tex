@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/commutative-algebra/}}
+\begin{document}
+\section*{Integral Dependence}
+% BLOG-CONTENT-BEGIN
+We introduced rings and modules and various operations on them: sums, products, intersections, quotients, radicals, and localizations. We then introduced certain functors on $\AMod$ and outlined their features. Two essential theorems to keep in mind are Cayley--Hamilton for finitely generated modules and Nakayama's lemma.
+
+If $\varphi\in\End_{\AMod}(M)$ and $\varphi(M)\subseteq\aa M$ for an ideal $\aa<A$, then there exist $a_i\in\aa$ such that $\varphi^n+a_1\varphi^{n-1}+\cdots+a_n=0$. For $\varphi=\id$, there exists $x\in A$ with $x\equiv1\pmod\aa$ and $xM=0$. Further, if $\varphi=\id$, $\varphi(M)=\aa M$, and $\aa$ is contained in the Jacobson radical, then $x$ divides $1$; thus $x^{-1}(xM)=M=0$.
+
+We also introduced primary ideals and saw how ideals in Noetherian rings can be factorized, or decomposed, into primary ideals. In this lecture we aim to introduce a little geometry.
+Let $A$ be a subring of $B$.
+\setcounter{theorem}{20}\begin{proposition}
+For rings $A,B$ as above, the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item $x\in B$ is integral over $A$.
+\setcounter{enumi}{1}\item $A[x]$ is a finitely generated $A$-module.
+\setcounter{enumi}{2}\item $A[x]$ is contained in a subring $C$ of $B$ that is a finitely generated $A$-module.
+\end{enumerate}
+This is essentially a consequence of Cayley--Hamilton.
+\end{proposition}
+\begin{proof}
+(i)$\Rightarrow$(ii): There exist $a_i\in A$ with $x^n+a_1x^{n-1}+\cdots+a_n=0$. Thus $1,x,\ldots,x^{n-1}$ generate $A[x]$, since $x^{n+r}=-(a_1x^{n+r-1}+\cdots+a_nx^r)$.
+
+(ii)$\Rightarrow$(iii): Set $C=A[x]$.
+
+(iii)$\Rightarrow$(i): Let $\varphi\in\End_{\AMod}(C)$ be $\varphi(y):=xy$ for $y\in C$. Then $\varphi(C)\subseteq C$, so Cayley--Hamilton gives $a_1,\ldots,a_n$ such that $\varphi^n+a_1\varphi^{n-1}+\cdots+a_n\equiv0$. Evaluating at $1\in C$ yields
+% Source page 3
+$x^n+a_1x^{n-1}+\cdots+a_n=0$.
+\end{proof}
+\setcounter{theorem}{21}\begin{corollary}
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item If $x_1,\ldots,x_n\in B$ are integral over $A$, then $A[x_1,\ldots,x_n]$ is a finitely generated $A$-module, by induction on $n$.
+\setcounter{enumi}{1}\item Let $\overline A:=\{x\in B\mid x\text{ is integral over }A\}$. Then $\overline A$ is a subring of $B$, called the \emph{integral closure} of $A$ in $B$. Indeed, for $x,y\in\overline A$, $A[x,y]$ is a finitely generated $A$-module by (i), and $A[x\pm y]$ and $A[xy]$ are contained in it.
+\setcounter{enumi}{2}\item If $A\subseteq B\subseteq C$ are rings, $B$ is integral over $A$, and $C$ is integral over $B$, then $C$ is integral over $A$.
+\setcounter{enumi}{3}\item For rings $A\subseteq B$, one has $\overline{\overline A}=\overline A$.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+For (iii), let $x\in C$. There exist $b_i\in B$ such that $x^n+b_1x^{n-1}+\cdots+b_n=0$. Now $A[b_1,\ldots,b_n]$ is a finitely generated $A$-module, and $A[b_1,\ldots,b_n,x]$ is a finitely generated $A[b_1,\ldots,b_n]$-module. Thus it is a finitely generated $A$-module, and it contains $A[x]$.
+
+For (iv), if $x\in B$ is integral over $\overline A$, apply (iii) to $A\subseteq\overline A\subseteq B$ to conclude that $x$ is integral over $A$.
+\end{proof}
+
+Now we see how integrality behaves under a few operations on rings.
+\setcounter{theorem}{22}\begin{proposition}
+Let $A\subseteq B$ be rings, with $B$ integral over $A$.
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item If $\bb<B$ is an ideal and $\aa=\bb^c=A\cap\bb$, then $B/\bb$ is integral over $A/\aa$.
+% Source page 4
+\setcounter{enumi}{1}\item If $S$ is multiplicatively closed, then $S^{-1}B$ is integral over $S^{-1}A$. In fact, $S^{-1}\overline A=\overline{S^{-1}A}$.
+\setcounter{enumi}{2}\item For an integral domain $A$, being integrally closed is a local property.
+\end{enumerate}
+\end{proposition}
+% BLOG-CONTENT-END
+\end{document}

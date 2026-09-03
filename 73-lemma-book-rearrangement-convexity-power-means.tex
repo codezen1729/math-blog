@@ -1,0 +1,62 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Rearrangement and Convexity}
+% BLOG-CONTENT-BEGIN
+\setcounter{theorem}{54}\begin{lemma}[Popoviciu's theorem]
+Let $f:\mathbb R\to\mathbb R$ be convex on an interval $I$, and let $x_1,x_2,x_3\in I$.
+Then
+\begin{align*}
+f(x_1)+f(x_2)+f(x_3)+3f\left(\frac{x_1+x_2+x_3}{3}\right)
+\geq{}&2f\left(\frac{x_1+x_2}{2}\right)+2f\left(\frac{x_2+x_3}{2}\right)\\
+&+2f\left(\frac{x_3+x_1}{2}\right).
+\end{align*}
+\end{lemma}
+This classic was formulated by the Romanian mathematician Tiberiu Popoviciu.
+\paragraph{Application.}
+For real $x,y,z$, prove
+$|x|+|y|+|z|-|x+y|-|y+z|-|z+x|+|x+y+z|\geq0$.
+Let $f(a)=|a|$, convex on $(-\infty,\infty)$.
+By Popoviciu's theorem,
+\[
+|x|+|y|+|z|+3\left|\frac{x+y+z}{3}\right|
+\geq2\left|\frac{x+y}{2}\right|+2\left|\frac{y+z}{2}\right|+2\left|\frac{z+x}{2}\right|.
+\]
+This is exactly the desired inequality.
+
+
+\subsection{Rearrangement and convexity}
+\setcounter{theorem}{84}\begin{lemma}[Rearrangement inequality]\label{lemma:lb1-87}
+Consider two collections of real numbers in increasing order,
+$a_1\leq a_2\leq\cdots\leq a_n$ and $b_1\leq b_2\leq\cdots\leq b_n$.
+For any permutation $(a'_1,\ldots,a'_n)$ of $(a_1,\ldots,a_n)$,
+\[a_1b_1+a_2b_2+\cdots+a_nb_n\geq a'_1b_1+a'_2b_2+\cdots+a'_nb_n.\]
+\end{lemma}
+\paragraph{Application.}
+Let $a,b,c$ be positive numbers with $abc=1$. Prove that
+\[\frac ab+\frac bc+\frac ca\geq a+b+c.\]
+\paragraph{Solution 1.}
+Apply the rearrangement inequality to
+\[(a_1,a_2,a_3)=\left(\sqrt[3]{\frac ab},\sqrt[3]{\frac bc},\sqrt[3]{\frac ca}\right),
+\quad(b_1,b_2,b_3)=\left(\sqrt[3]{\left(\frac ab\right)^2},\sqrt[3]{\left(\frac bc\right)^2},\sqrt[3]{\left(\frac ca\right)^2}\right),\]
+and the permutation $(a'_1,b'_1,c'_1)=(\sqrt[3]{b/c},\sqrt[3]{c/a},\sqrt[3]{a/b})$, to derive
+\[\frac ab+\frac bc+\frac ca\geq\sqrt[3]{\frac{a^2}{bc}}
++\sqrt[3]{\frac{b^2}{ca}}+\sqrt[3]{\frac{c^2}{ab}}=a+b+c,\]
+since $abc=1$. Q.E.D.!
+\paragraph{Solution 2.}
+\[
+\begin{aligned}
+\frac13\left(\frac ab+\frac ab+\frac bc\right)&\geq\sqrt[3]{\frac{a\cdot a\cdot b}{b\cdot b\cdot c}}=\sqrt[3]{\frac{a^2}{bc}}=a,\\
+\frac13\left(\frac bc+\frac bc+\frac ca\right)&\geq\sqrt[3]{\frac{b\cdot b\cdot c}{c\cdot c\cdot a}}=\sqrt[3]{\frac{b^2}{ca}}=b,\\
+\frac13\left(\frac ca+\frac ca+\frac ab\right)&\geq\sqrt[3]{\frac{c\cdot c\cdot a}{a\cdot a\cdot b}}=\sqrt[3]{\frac{c^2}{ab}}=c.
+\end{aligned}
+\]
+Add all three to obtain $a/b+b/c+c/a\geq a+b+c$.
+
+
+
+
+% BLOG-CONTENT-END
+\end{document}

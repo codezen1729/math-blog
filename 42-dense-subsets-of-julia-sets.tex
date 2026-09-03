@@ -1,0 +1,36 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/complex-dynamics-notes/}}
+\begin{document}
+\section*{Dense Subsets of Julia Sets}
+% BLOG-CONTENT-BEGIN
+In this short exposition we ask how many periodic points there are for a rational map $f=P/Q\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ with $\deg(f)=d\ge2$. It turns out that
+\begin{enumerate}
+\setcounter{enumi}{0}\item the number of attracting periodic orbits is at most $2d-2$;
+\setcounter{enumi}{1}\item the number of indifferent periodic orbits is at most $4d-4$ ($\lambda\ne1$);
+\setcounter{enumi}{2}\item there are infinitely many repelling periodic orbits.
+\end{enumerate}
+The first assertion is elementary: every attracting basin has a critical point, and
+\begin{align*}
+\#\{\text{critical points of }P/Q\}
+&=\#\{\text{zeros of }(P/Q)'\}\\
+&=\#\left\{\text{zeros of }\frac{P'}Q-\frac{Q'P}{Q^2}\right\}
+=\#\{\text{zeros of }QP'-Q'P\}\\
+&\le\deg(QP'-Q'P)\le2d-2.
+\end{align*}
+Compare the leading coefficients in the worst case, $\deg P=\deg Q=d$.
+\setcounter{theorem}{19}\begin{proposition}\label{cd4:indifferent}
+The number of indifferent, nonparabolic cycles is at most $4d-4$.
+\end{proposition}
+% Source page 5
+\begin{remark}
+Parabolic points may be included with attracting cycles, because their basins also contain critical points, or accommodated in the list of indifferent cycles.
+\end{remark}
+The assertion we use to deduce this quantitative result is qualitative.
+\setcounter{theorem}{21}\begin{proposition}\label{cd4:density}
+The closure of the set of repelling periodic points is the Julia set.
+\end{proposition}
+There are therefore infinitely many repelling periodic points. A small topological argument is needed.
+% BLOG-CONTENT-END
+\end{document}

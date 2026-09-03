@@ -1,0 +1,168 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/ergodic-theory/}}
+\begin{document}
+\section*{Mixing, Products, and Spectral Criteria}
+% BLOG-CONTENT-BEGIN
+\subsection{Mixing}
+Ergodic theorems give you all the equidistribution theorems one would hope
+for, so let us now abandon the study of orbits. Recall that we studied
+ergodicity (the contents of Lecture 2):
+\begin{itemize}
+ \item Measure-theoretic: to obtain dynamical information.
+ \item Operator-theoretic: to obtain equidistribution theorems.
+\end{itemize}
+Now let us focus on the study of ``set-orbits''
+$\{T^{\circ n}(E)\}_{n\in\mathbb Z}$. The measure-theoretic perspective
+gave us information about $\{T^{\circ n}(x)\}_{n\in\mathbb Z}$, namely
+recurrence theorems; the operator-theoretic perspective told us about
+$\{f\circ T^n\}_{n\in\mathbb Z}$. Now it is time to give up these
+perspectives and look at it for what it is: a probability space.
+Let us view the system $(X,\mathcal B,\mu,T)$ probabilistically.
+Before we jump into that, here is a small observation. We saw that
+\[
+ \frac1N\sum_{n=0}^{N-1}f\circ T^n\longrightarrow\int f\,d\mu
+ \quad\text{in $L^2_\mu$, as $N\to\infty$.}
+\]
+One can restate this slightly to obtain a probabilistic interpretation
+% Source page 2
+of ergodicity:
+\[
+ T\text{ is ergodic}
+ \quad\Longleftrightarrow\quad
+ \frac1N\sum_{n=0}^{N-1}\mu(A\cap T^{-n}(B))
+ \longrightarrow\mu(A)\mu(B).
+\]
+\begin{itemize}
+ \item If $T$ is ergodic, then, by the dominated convergence theorem,
+ \[
+  \frac1N\sum_{n=0}^{N-1}\langle f\circ T^n,g\rangle
+  \longrightarrow\left(\int f\,d\mu\right)\left(\int g\,d\mu\right).
+ \]
+ Set $f=\chi_B$ and $g=\chi_A$ to obtain the desired result.
+ \item Conversely, if $T^{-1}(A)=A$, set $B=X\setminus A$. We obtain
+ $\mu(A)\mu(X\setminus A)=0$, so $\mu(A)\in\{0,1\}$.
+\end{itemize}
+Thus, on average, $T$ pulls back an event and \emph{tries} to make it
+independent of $A$. If $T^{-n}(B)$ and $A$ were independent, then
+\[
+ \mu(A\cap T^{-n}(B))
+ =\mu(A)\mu(T^{-n}(B))=\mu(A)\mu(B),
+\]
+and convergence would be assured. In general, however, an ergodic map just
+tries to separate events and is not always successful. Keeping this in
+mind, let us look at maps that asymptotically make $T^{-n}(B)$ and $A$
+independent.
+
+\setcounter{definition}{5}\begin{definition}[Mixing]
+A system $(X,\mathcal B,\mu,T)$ is \emph{mixing} if, for all
+$A,B\in\mathcal B$,
+\[
+ \mu(A\cap T^{-n}(B))\longrightarrow\mu(A)\mu(B)
+ =\mu(A)\mu(T^{-n}(B))\qquad(n\to\infty).
+\]
+\end{definition}
+\setcounter{definition}{6}\begin{definition}[Weak mixing]
+A system $(X,\mathcal B,\mu,T)$ is \emph{weakly mixing} if, for all
+$A,B\in\mathcal B$,
+\[
+ \frac1N\sum_{n=0}^{N-1}
+ \bigl|\mu(A\cap T^{-n}(B))-\mu(A)\mu(B)\bigr|
+ \longrightarrow0\qquad(N\to\infty).
+\]
+\end{definition}
+
+% Source page 3
+\begin{remark}
+For a sequence $\{a_n\}_n$ (for example, $a_n$ may be
+$\mu(A\cap T^{-n}B)$),
+\[
+ \lim_{n\to\infty}a_n=0
+ \quad\Longrightarrow\quad
+ \lim_{n\to\infty}\frac1n\sum_{i=0}^{n-1}|a_i|=0,
+\]
+but not conversely. Thus mixing implies weak mixing. Further, given a
+weakly mixing system $(X,\mathcal B,\mu,T)$ and $T^{-1}B=B$, we have
+\[
+ \frac1N\sum_{n=0}^{N-1}|\mu(A\cap B)-\mu(A)\mu(B)|\longrightarrow0.
+\]
+Set $A=X\setminus B$. Then $\mu(A)\mu(B)\to0$, so $\mu(A)=0$ or
+$\mu(B)=0$, and $T$ is ergodic. Consequently,
+\[
+ \text{Mixing}\ \subset\ \text{Weak mixing}\ \subset\ \text{Ergodicity}.
+\]
+Said differently:
+\begin{itemize}
+ \item $T^{-1}$ makes $A$ and $B$ asymptotically independent:
+ this is mixing.
+ \item $T^{-1}$ makes $A$ and $B$ asymptotically independent except on
+ a zero-density set: this is weak mixing.
+ \item $T^{-1}$ \emph{tries} to make $A$ and $B$ independent on average:
+ this is ergodicity.
+\end{itemize}
+\end{remark}
+\begin{remark}
+Since $T^{-1}$ tries to separate events in whatever manner we prescribe,
+we say that the inverse of $T^{-1}$, namely $T$, mixes events. Hence we
+call such systems mixing or weakly mixing. It turns out that weak mixing
+(a formulation due to von Neumann) is quite a natural thing, as it has so
+many equivalent formulations. A generalisation of this concept will be
+crucial for us in establishing Szemer\'edi's theorem.
+\end{remark}
+Now let us see other equivalent formulations of weak mixing, to find
+% Source page 4
+connections between the probabilistic interpretation and the others.
+
+\setcounter{theorem}{14}\begin{theorem}[Mixing equivalences]
+\label{thm:l4-mixing-equivalences}
+Given a system $(X,\mathcal B,\mu,T)$, the following are equivalent:
+\begin{enumerate}[label=(\arabic*)]
+ \setcounter{enumi}{0}\item $T$ is weakly mixing.
+ \setcounter{enumi}{1}\item $T\times T$ is ergodic with respect to $\mu\times\mu$.
+ \setcounter{enumi}{2}\item $T\times T$ is weakly mixing with respect to $\mu\times\mu$.
+ \setcounter{enumi}{3}\item If $(Y,\mathcal B',\nu,S)$ is ergodic, then
+ $(X\times Y,\mathcal B\times\mathcal B',\mu\times\nu,T\times S)$
+ is ergodic.
+ \setcounter{enumi}{4}\item $U_T$ has \emph{continuous spectrum}: its only eigenvalue is $1$,
+ and the corresponding eigenspace consists of constant functions.
+\end{enumerate}
+\end{theorem}
+
+\setcounter{theorem}{15}\begin{lemma}[Koopman--Neumann]
+\label{lem:l4-koopman-neumann}
+Let $\{a_n\}$ be a sequence of bounded nonnegative real numbers.
+The following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+ \setcounter{enumi}{0}\item $\displaystyle\lim_{n\to\infty}\frac1n\sum_{j=0}^{n-1}a_j=0$.
+ \setcounter{enumi}{1}\item There exists $J\subseteq\mathbb N$ of density zero, where
+ \[
+  \operatorname{density}(J):=
+  \lim_{n\to\infty}\frac1n|J\cap[1,n]|,
+ \]
+ such that $a_n\to0$ as $n\to\infty$ with $n\notin J$.
+ \setcounter{enumi}{2}\item $\displaystyle\lim_{n\to\infty}\frac1n\sum_{j=0}^{n-1}a_j^2=0$.
+\end{enumerate}
+\end{lemma}
+
+% Source page 5
+
+
+Let us stop this session by setting up the premise for the infamous
+Rokhlin problem.
+\setcounter{definition}{7}\begin{definition}[$k$-fold mixing]
+A system $(X,\mathcal B,\mu,T)$ is \emph{$k$-fold mixing} if
+\[
+ \mu(A_0\cap T^{-n_1}A_1\cap\cdots\cap T^{-n_k}A_k)
+ \longrightarrow\mu(A_0)\cdots\mu(A_k)
+\]
+as $n_1,n_2-n_1,n_3-n_2,\ldots,n_k-n_{k-1}\to\infty$, for all
+$A_i\in\mathcal B$, $0\leq i\leq k$.
+\end{definition}
+\begin{question}[Rokhlin problem (open)]
+If $(X,\mathcal B,\mu,T)$ is mixing, is it $k$-fold mixing for every
+$k\geq1$?
+\end{question}
+% The source calls this problem open; no attempt has been made to update its mathematical status.
+% BLOG-CONTENT-END
+\end{document}

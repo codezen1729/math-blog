@@ -1,0 +1,106 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Puzzles, Surprises, and Marvellous Methods of Multiplication}
+% BLOG-CONTENT-BEGIN
+\setcounter{theorem}{44}\begin{lemma}[ASA lemma]
+Always stay alert, always stay awake.
+\end{lemma}
+Do not take me for a fool: I mean what I state. Let me show examples where an Olympiad student solves without presence of mind.
+Find $a^2+b^2+c^2$ where
+$a^2+2b=6$, $b^2+4c=-7$, and $c^2+6a=-13$.
+Adding gives
+\begin{align*}
+(a^2+2b)+(b^2+4c)+(c^2+6a)&=-14,\\
+(a^2+6a)+(b^2+2b)+(c^2+4c)&=-14,\\
+(a^2+6a+9)+(b^2+2b+1)+(c^2+4c+4)&=0,\\
+(a+3)^2+(b+1)^2+(c+2)^2&=0.
+\end{align*}
+Thus $a=-3,b=-1,c=-2$, and $a^2+b^2+c^2=9+1+4=14$.
+If this sounds perfect, ``slap yourself and wake up!''
+Notice that $a=-3,b=-1,c=-2$ do not satisfy the first and last equations.
+Where did we go wrong? ``We blindly assumed $a,b,c$ to be real numbers!''
+
+\paragraph{Average speed.}
+A plane travels from $A$ to $B$ at $160$ mph and returns from $B$ to $A$ at $240$ mph.
+Find its average speed.
+The usual temptation is $(160+240)/2=200$ mph, giving a wrong answer.
+The two trips do not take the same time. If their common distance is $L$, then
+$T_1=L/160$ and $T_2=L/240$.
+The average time is $(T_1+T_2)/2$, while total time is
+$T_1+T_2=L/160+L/240=L/96$.
+Total distance is $2L$, so average speed is $2L/(L/96)=192$ mph.
+
+
+\paragraph{Ramanujan's problem.}
+Find $\sqrt{1+2\sqrt{1+3\sqrt{1+4\sqrt{1+5\sqrt{1+\cdots}}}}}$.
+Use
+\[
+x+1=\sqrt{1+x(x+2)}
+=\sqrt{1+x\sqrt{1+(x+1)(x+3)}}
+=\sqrt{1+x\sqrt{1+(x+1)\sqrt{1+\cdots}}}.
+\]
+Put $x=2$.
+
+Without calculating $\sqrt2$, show that $7/5$ is closer to it than $3/2$.
+We do not know $\sqrt2$, but we do know $(\sqrt2)^2$.
+
+
+
+
+
+
+\begin{quote}Common sense is like a deodorant: those who need it the most lack it!\end{quote}
+\paragraph{1. Proportional angles.}\leavevmode\par
+\begin{figure}[H]\centering
+\includegraphics[width=.78\linewidth]{lb1-fig-30.pdf}
+\FigureTag{LB1.30}{fig:lb1-30}
+\end{figure}
+Is $\triangle ABC\sim\triangle PQR$?
+You might be wondering: if the sides are proportional, the triangles are similar, but what if the angles are proportional?
+To tell you the reality, it's all a big dumbass!
+Since $\alpha+\beta+\gamma=180^\circ$ and $\alpha k+\beta k+\gamma k=180^\circ$, we have $k=1$.
+Thus the angles of $\triangle PQR$ are also $\alpha,\beta,\gamma$, so $\triangle ABC\sim\triangle PQR$.
+Q.E.D.!
+\paragraph{2. Solve the puzzle.}
+$1=5$, $2=25$, $3=325$, $4=4325$. Then $5={}?$
+\paragraph{Answers.}
+2. If $1=5$, then $5=1$. Q.E.D.!
+
+\subsection{Mission impossible}
+\paragraph{2. Equilateral triangle.}
+Inscribe an equilateral triangle inside an arbitrary triangle $ABC$. Challenge!
+\subsection{Marvellous methods of multiplication: triple M}
+\paragraph{The way Egyptian nerds did it!}
+Suppose you want to multiply $11\times17$. They do the following:
+\begin{center}
+\begin{tabular}{lrrrrl}
+Half sequence & $\boxed{11}$ & $\boxed5$ & $2$ & $\boxed1$ & $\lfloor n/2\rfloor$ in general\\
+Double it & $17$ & $34$ & $68$ & $136$ & $2n$ in general
+\end{tabular}
+\end{center}
+Identify the odd entries in the half sequence, and add the corresponding numbers from the double sequence.
+We have $11\mapsto17$, $5\mapsto34$, and $1\mapsto136$, so the sum is $17+34+136=187=11\times17$.
+\paragraph{Parabolic multiplication.}\leavevmode\par
+\begin{figure}[H]\centering
+\includegraphics[width=.79\linewidth]{lb1-fig-32.pdf}
+\FigureTag{LB1.32}{fig:lb1-32}
+\end{figure}
+Suppose you want $4\times3$. Take $A(4,16)$ and $B(-3,9)$.
+Join $AB$: its intersection with the $Y$-axis gives the product!
+Why does this happen? Use your knowledge of coordinates to find out why.
+% Source page 55 - right
+
+
+\paragraph{Out of the box.}
+Place one of $+,-,\times,\div$ in each blank of $8\ \underline{\hspace{.5cm}}\ 8\ \underline{\hspace{.5cm}}\ 8=6$.
+The answer, due to Shovan, is $(8\div8)+8=6$.
+Think it is wrong? Turn the page upside down, then decide!
+
+
+
+
+% BLOG-CONTENT-END
+\end{document}

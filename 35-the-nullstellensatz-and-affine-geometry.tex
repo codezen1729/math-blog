@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/commutative-algebra/}}
+\begin{document}
+\section*{The Nullstellensatz and Affine Geometry}
+% BLOG-CONTENT-BEGIN
+\subsection{Hilbert's Nullstellensatz}
+% Source page 5
+\setcounter{definition}{14}\begin{definition}
+A ring $R$ is \emph{Jacobson} if, for every prime $\pp$,
+\[\pp=\bigcap_{\substack{\mm\supseteq\pp\\\mm\text{ maximal}}}\mm.\]
+\end{definition}
+\setcounter{example}{8}\begin{example}
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item A field $\kk$ is a Jacobson ring.
+\setcounter{enumi}{1}\item $\Z$ is Jacobson: every nonzero prime ideal is maximal, and $(0)=\operatorname{nilradical}(\Z)=\bigcap_{\mm\text{ maximal}}\mm=\bigcap_{\pp\text{ prime}}\pp$.
+\end{enumerate}
+\end{example}
+The following lemma characterizes Jacobson rings.
+\setcounter{theorem}{23}\begin{lemma}
+$R$ is Jacobson if and only if, for prime $\pp$ and $0\ne b\in R/\pp$, whenever $(R/\pp)_{(b)}$ is a field, $R/\pp$ is a field.
+\end{lemma}
+\setcounter{theorem}{24}\begin{theorem}
+Let $R$ be a Jacobson ring and $S$ a finitely generated $R$-algebra. Then:
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item $S$ is a Jacobson ring.
+\setcounter{enumi}{1}\item If $\nn<S$ is maximal, then $\mm:=\nn\cap R$ is maximal in $R$, and $S/\nn$ is a finite field extension of $R/\mm$.
+\end{enumerate}
+\end{theorem}
+\setcounter{theorem}{25}\begin{lemma}
+Let $A\subseteq B$ be domains, with $B$ integral over $A$. Then $B$ is a field if and only if $A$ is a field.
+\end{lemma}
+\setcounter{theorem}{27}\begin{corollary}
+Let $\kk$ be algebraically closed. Every maximal ideal of $\kk[x_1,\ldots,x_n]$ has the form $\mm_P=(x_1-a_1,\ldots,x_n-a_n)$ for $P=(a_1,\ldots,a_n)\in\kk^n$.
+\end{corollary}
+\begin{proof}
+Since $\kk[x_1,\ldots,x_n]/\mm_P\cong\kk$, $\mm_P$ is maximal. If $\nn$ is maximal in $\kk[x_1,\ldots,x_n]$, then $\kk[x_1,\ldots,x_n]/\nn$ is algebraic over $\kk/(\nn\cap\kk)=\kk$. Since $\kk$ is algebraically closed, $\kk[x_1,\ldots,x_n]/\nn=\kk$. Let $a_i=[x_i]$ in this quotient and $P=(a_1,\ldots,a_n)$. Then $\mm_P\subseteq\nn$. Since $\mm_P$ is maximal, $\nn=\mm_P$.
+\end{proof}
+\subsection{A little geometry}
+Consider the two objects $\kk^n$ and $\kk[x_1,\ldots,x_n]$. To $I\subseteq\kk[x_1,\ldots,x_n]$ associate
+\[Z(I):=\{P\in\kk^n\mid f(P)=0\text{ for every }f\in I\}.\]
+% Source page 10
+Clearly $Z(I)=Z((I))$. Sets of this form are \emph{algebraic sets} of $\kk^n$. For ideals $\{J_i\}_i$ of $\kk[x_1,\ldots,x_n]$,
+\[
+\bigcap_i Z(J_i)=Z\left(\bigcup_i J_i\right),\qquad
+\bigcup_{i=1}^n Z(J_i)=Z\left(\prod_{i=1}^n J_i\right).
+\]
+On an algebraic set $X$, declaring algebraic subsets of $X$ to be closed defines the \emph{Zariski topology}.
+
+For a subset $X\subseteq\kk^n$, set $I(X):=\{f\in\kk[x_1,\ldots,x_n]\mid f(P)=0\text{ for every }P\in X\}$. Clearly $I(X)$ is an ideal. For algebraic $X$, define its \emph{coordinate ring}, also called an \emph{affine ring}, by $A(X):=\kk[x_1,\ldots,x_n]/I(X)$.
+
+If $f\in A(X)$ and $f^n\equiv0$, then $f^n(P)=0$ for all $P\in X$. Since $\kk$ is a domain, $f\equiv0$. Thus $\{0\}$ is the only nilpotent element in $A(X)$, and $I(X)=\rad(I(X))$. Such ideals are called \emph{radical ideals}.
+\begin{remark}
+Clearly $Z(I(X))=X$. Thus we have the correspondences
+\[
+\begin{aligned}
+\text{algebraic sets}&\longleftrightarrow\text{radical ideals}\\
+&\longleftrightarrow\text{quotients of }\kk[x_1,\ldots,x_n]\text{ by radical ideals}\\
+&\longleftrightarrow\text{coordinate rings}.
+\end{aligned}
+\]
+\end{remark}
+\setcounter{definition}{15}\begin{definition}
+Let $X\subseteq\kk^m$ and $Y\subseteq\kk^n$ be algebraic sets. A map
+\[
+F:\kk^m\to\kk^n,\qquad
+(a_1,\ldots,a_m)\mapsto(f_1(a_1,\ldots,a_m),\ldots,f_n(a_1,\ldots,a_m)),
+\]
+where $f_i\in\kk[x_1,\ldots,x_m]$, is a \emph{morphism of $X$ to $Y$} if $F|_X:X\to Y$.
+\end{definition}
+Given $F:X\to Y$, we have
+\[
+F^{\#}:\kk[y_1,\ldots,y_n]\longrightarrow\kk[x_1,\ldots,x_m],
+\qquad y_i\longmapsto f_i(x_1,\ldots,x_m).
+\]
+% BLOG-CONTENT-END
+\end{document}

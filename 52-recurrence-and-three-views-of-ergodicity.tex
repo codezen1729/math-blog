@@ -1,0 +1,156 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/ergodic-theory/}}
+\begin{document}
+\section*{Recurrence and Ergodicity}
+% BLOG-CONTENT-BEGIN
+\subsection{Recurrence Theorems}
+Of all the impositions on a measure-preserving system, the one that is perhaps
+ill-motivated is the demand that $\mu(X)<\infty$. We shall address that today,
+in this section.
+
+\setcounter{theorem}{3}\begin{theorem}[Poincar\'e recurrence]
+Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system and let
+$E\in\mathcal B$. Then there exists $F\subseteq E$, $F\in\mathcal B$, such that
+$\mu(F)=\mu(E)$ and, for every $x\in F$, $T^n(x)\in E$ for infinitely many
+$n\geq1$.
+\end{theorem}
+\begin{proof}
+Let us first look at sets that escape $E$ in one go:
+\[
+  B:=\{x\in E:T^nx\notin E\text{ for every }n\geq1\}.
+\]
+Note that
+\begin{align*}
+  B&=E\cap T^{-1}(X\setminus E)\cap T^{-2}(X\setminus E)\cap\cdots,\\
+  T^{-n}(B)&=T^{-n}(E)\cap T^{-n-1}(X\setminus E)
+  \cap T^{-n-2}(X\setminus E)\cap\cdots.
+\end{align*}
+If $n>m$, then
+\[
+  T^{-m}(B)=\left(\bigcap_{k\geq1}T^{-m-k}(X\setminus E)\right)\cap T^{-m}(E),
+\]
+and there exists $k_0$
+% Source page 2
+such that $n=m+k_0$. Thus
+$T^{-m}(B)\subseteq T^{-m-k_0}(X\setminus E)=T^{-n}(X\setminus E)$, and we
+have $T^{-n}(B)\subseteq T^{-n}(E)$. Hence
+\[
+  T^{-n}(B)\cap T^{-m}(B)=\varnothing\qquad(n\neq m).
+\]
+As $T$ is $\mu$-invariant and $\mu(X)=1$, it follows that $\mu(B)=0$.
+Consequently, for almost every $x\in E$, $T^{\circ n}(x)\in E$ for some $n$.
+Thus there exists $F_1\subseteq E$ with $\mu(F_1)=\mu(E)$, where
+\[
+  F_1=\{x\in E:T^{\circ n}(x)\in E\text{ for some }n\}.
+\]
+One can similarly get $F_2,F_3,\ldots$, working with $T^2,T^3,\ldots$.
+Since $\mu(E\setminus F_i)=0$ for every $i$, the set $F=\bigcap_i F_i\subseteq E$
+satisfies $\mu(F)=\mu(E)$.
+
+In $F$, for every $x$ and every $n$, there exists $k$ such that $T^{nk}(x)\in E$.
+To prove that, for every $x\in F$, $T^nx\in E$ for infinitely many $n$, note
+that $x\in F$ implies $x\in F_1$, so there is an $n_1$ such that
+$T^{n_1}(x)\in E$. Also, $x\in F_{n_1+1}$ implies that there is an
+$n_2>n_1$ such that $T^{n_2}(x)\in E$, and so on. Hence $T^nx\in E$ for
+infinitely many $n$, for almost every $x\in E$.
+\end{proof}
+
+\begin{remark}
+Notice that this implies the pigeonhole principle if $X=\{1,2,3,\ldots,n\}$,
+$\mu$ is the uniform probability measure on $2^X$, and $T$ is any bijective
+map. What we essentially did is lift the pigeonhole principle from the
+category of sets to that of measure-preserving systems. Here, we do not call
+such results PHP (pigeonhole principle); we call them recurrence theorems.
+\end{remark}
+
+% Source page 3
+\begin{remark}
+We crucially used the fact that $\mu$ is a bounded measure. This turns out to
+be the right analogue of a compact metric-space structure on $X$ in a
+topological dynamical system. Recurrence is an important feature, because
+recurrence is the first emergence of a pattern in a measure-preserving
+system. Thus $\mu$ being a probability measure ensures that no information is
+lost under the transformation $T$ of $X$.
+\end{remark}
+
+
+\setcounter{theorem}{4}\begin{lemma}[Litmus test for measure-preserving systems]
+$(X,T,\mu)$ is a measure-preserving system if and only if
+\[
+  \int f\,d\mu=\int f\circ T\,d\mu
+  \qquad\text{for every }f\in L^\infty(\mu).
+\]
+\end{lemma}
+
+% Source page 4
+
+
+% Source page 5
+\subsection{Ergodicity}
+As far as the behaviour of orbits goes, we know that if $E$ is measurable in
+$X$, then, for almost every $x\in E$, $\{T^{\circ n}(x)\}_n$ returns to $E$
+infinitely often. Let us extend this madness further. Say $x\in X$ and
+$E\subset X$ is measurable: can we have some sort of recurrence for the orbit
+of $x$, $\{T^{\circ n}(x)\}_n$, if $x\notin E$?
+
+There are some set-theoretic obstructions to such a recurrence, because if
+$T^{-1}(E)=E$, the orbit of $x$ shall not intersect $E$. So let us replace
+$X$ by $E$ and $E$ by some measurable $F\subseteq E$. Notice immediately that
+we are looking for some sort of irreducibility criterion here.
+
+\setcounter{definition}{4}\begin{definition}[Ergodicity]
+Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. We say $T$ is
+\emph{ergodic} if, for every $B\in\mathcal B$ such that $T^{-1}(B)=B$, we have
+$\mu(B)=0$ or $\mu(B)=1$.
+\end{definition}
+
+\Needspace{14\baselineskip}
+\subsubsection{Measure-Theoretic Ergodicity}
+
+% Source page 6
+\setcounter{theorem}{5}\begin{proposition}\label{prop:ergodicity-measure}
+Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. The following are
+equivalent:
+\begin{enumerate}[label=(\arabic*)]
+  \setcounter{enumi}{0}\item $T$ is ergodic.
+  \setcounter{enumi}{1}\item For $B\in\mathcal B$, $\mu(T^{-1}(B)\mathbin\triangle B)=0$ implies
+  $\mu(B)=0$ or $\mu(B)=1$ (almost ergodic).
+  \setcounter{enumi}{2}\item $\mu(A)>0$ implies
+  $\mu\bigl(\bigcup_{n=1}^{\infty}T^{-n}(A)\bigr)=1$
+  (recurrence theorem).
+  \setcounter{enumi}{3}\item $\mu(A)\mu(B)>0$ implies that there exists $n\geq1$ such that
+  $\mu(T^{-n}A\cap B)>0$ (mixing criterion).
+\end{enumerate}
+\end{proposition}
+
+\subsubsection{Operator-Theoretic Ergodicity}
+Let us begin by associating an operator $U_T$ to $T$ as follows:
+\[
+  U_T\colon L^2(\mu)\longrightarrow L^2(\mu),\qquad U_T(f):=f\circ T.
+\]
+Now $L^2(\mu)$ is a Hilbert space with inner product $\langle\cdot,\cdot\rangle$.
+
+\setcounter{theorem}{6}\begin{proposition}\label{prop:ergodicity-operator}
+$T$ is ergodic if and only if the eigenvectors of $U_T$ associated to $1$ are
+constants in $L^2_\mu(X)$.
+\end{proposition}
+
+\begin{remark}
+Thus ergodicity can be rephrased in operator theory too. Properties possessing
+such translations are called \emph{unitary properties}.
+\end{remark}
+
+% Source page 10
+Here we impose a compact abelian group structure on $X$. Then it has a unique
+translation-invariant measure $m_X$, called the \emph{Haar measure} of $X$.
+We will not prove the existence of $m_X$ here. We shall further assume that,
+given $f\in L^2_{m_X}(X)$, we have the following character-theoretic expansion:
+\[
+  f(x)=\sum_{\chi\in\widehat X}c_\chi\chi(x),
+  \qquad \sum_{\chi\in\widehat X}|c_\chi|^2=\|f\|^2.
+\]
+
+% BLOG-CONTENT-END
+\end{document}

@@ -16,12 +16,13 @@ The PDF is a writing preview; the website keeps its own typography and layout. O
 
 ## Project contents
 
-- Numbered `.tex` files: the 28 editable blog posts.
+- Numbered `.tex` files: the 78 editable blog posts.
 - `main.tex`: the default preview selection.
 - `styles/`: PDF formatting and notation.
 - `figures/`: the figures used in the selected posts.
 - `tools/`: website conversion and checks; normally leave these alone.
 - `site-source.zip`: the website application, not a manuscript. Leave it unchanged in Overleaf.
+- `notes-source.zip`: the approved new-post import; it is applied only once and never replaces existing manuscripts.
 - `overleaf-source.zip`: the initial migration backup. Once the numbered files exist, the build never reapplies this archive.
 
 Changes pushed to this public repository, including their history, are public. Drafts kept only in Overleaf are not published until pushed. Pull GitHub changes before editing if the website was updated elsewhere.

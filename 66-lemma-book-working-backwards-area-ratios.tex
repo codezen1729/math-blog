@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Working Backwards, Area Ratios, and Geometric Constructions}
+% BLOG-CONTENT-BEGIN
+% Source page 13 - left
+Many combinatorial geometry problems are based on very elementary geometry.
+To excel in the IMO, at least give a glance to lesser theorems.
+\setcounter{theorem}{35}\begin{lemma}[Pascal's theorem]
+If $A,X,A'$ and $B,Y,B'$ are collinear in the two-circle configuration, then $AB\parallel A'B'$.
+\end{lemma}
+\begin{figure}[H]\centering
+\includegraphics[width=.76\linewidth]{lb1-fig-07.pdf}
+\FigureTag{LB1.7}{fig:lb1-07}
+\end{figure}
+
+% Source page 13 - right
+\setcounter{theorem}{36}\begin{lemma}[Express side ratios as area ratios]
+In a geometry problem, expressing ratios of sides as ratios of areas is often a nice, clean technique.
+\end{lemma}
+\paragraph{Application: British Mathematical Olympiad.}
+Suppose the cevians $AP,BQ,CR$ meet at $T$. Prove that
+$\dfrac{TP}{AP}+\dfrac{TQ}{BQ}+\dfrac{TR}{CR}=1$.
+\begin{figure}[H]\centering
+\includegraphics[width=.57\linewidth]{lb1-fig-09.pdf}
+\FigureTag{LB1.9}{fig:lb1-09}
+\end{figure}
+Using brackets for areas,
+\[
+\frac{TP}{AP}=\frac{[BTP]}{[ABP]}=\frac{[TPC]}{[APC]}
+=\frac{[BTP]+[TPC]}{[ABP]+[APC]}=\frac{[BTC]}{[ABC]}.
+\]
+Similarly,
+$\dfrac{TP}{AP}+\dfrac{TQ}{BQ}+\dfrac{TR}{CR}
+=\dfrac{[ATB]+[BTC]+[CTA]}{[ABC]}=1$.
+
+There is yet another application of this lemma.
+\paragraph{BAMO (2007).}
+In triangle $ABC$, $D,E$ are interior points of side $BC$ with $BD=CE$ and $\angle BAD=\angle CAE$.
+Prove that $ABC$ is isosceles.
+We use two elementary facts: triangles with equal bases and the same height have equal areas, and
+$[ABC]=\frac12ab\sin A$.
+
+% Source page 14 - left
+Since $[ABD]=[AEC]$, we have
+$\frac12\sin x\,AB\cdot AD=\frac12\sin x\,AC\cdot AE$, so $AB/AC=AE/AD$.
+Also $BE=CD$ and $\angle BAE=\angle DAC$, whence $[ABE]=[ADC]$.
+Thus
+\[
+\frac12\sin(x+z)\,AB\cdot AE=\frac12\sin(x+z)\,AC\cdot AD
+\Longrightarrow\frac{AB}{AC}=\frac{AD}{AE}.
+\]
+It follows that $AD/AE=AE/AD$, so $AD=AE$ and $AB/AC=1$.
+Therefore $ABC$ is isosceles.
+\begin{figure}[H]\centering
+\includegraphics[width=.53\linewidth]{lb1-fig-10.pdf}
+\FigureTag{LB1.10}{fig:lb1-10}
+\end{figure}
+\begin{remark}
+Another major approach to geometry problems assigns masses to points and is sometimes called ``mass-point geometry.''
+In my opinion, problems solved using these elementary operations on masses can be resolved using Ceva's theorem or Menelaus's theorem.
+\end{remark}
+The following is a nice application of Menelaus's theorem and can itself be considered a lemma.
+\setcounter{theorem}{37}\begin{lemma}[Two concurrency conditions]
+Let $ABC$ be a triangle, and let $D,E,F$ lie on $BC,CA,AB$, respectively, with $AD,BE,CF$ concurrent.
+If $M,N,P$ lie on $EF,FD,DE$, then $AM,BN,CP$ concur if and only if $DM,EN,FP$ concur.
+\end{lemma}
+% Source page 14 - right
+\begin{figure}[H]\centering
+\includegraphics[width=.93\linewidth]{lb1-fig-11.pdf}
+\FigureTag{LB1.11}{fig:lb1-11}
+\end{figure}
+\emph{``The secret of resolving any difficult geometric problem is drawing a clean figure.''}
+The original figure is headed ``Good application of Menelaus'' and signed Viswanathan.
+
+
+\paragraph{Innovative solution.}
+Let $D,E,F$ lie on the sides $BC,CA,AB$ of triangle $ABC$, respectively,
+with $BD=CE=AF$ and $\angle BDF=\angle CED=\angle AFE$.
+Prove that $ABC$ is equilateral.
+\begin{figure}[H]\centering
+\includegraphics[width=.70\linewidth]{lb1-fig-17.pdf}
+\FigureTag{LB1.17}{fig:lb1-17}
+\end{figure}
+Triangles $AFE,BFD,CED$ have equal bases and an equal angle.
+If $A\geq B\geq C$, then $FE\geq FD\geq DE$.
+Inside triangle $DEF$, $FD\geq DE\geq EF$.
+Together these imply $FD=DE=EF$, hence $AB=BC=AC$.
+
+
+\paragraph{Strategy: the poet's way.}
+If you are expected to prove something, assume that the statement to be proved is true.
+Deduce all possibilities, and then try to prove any one of those deductions independently, that is, without assuming the statement to be true.
+
+% Source page 33 - left
+Let us look at an example of the previous strategy!
+\paragraph{Application: RMO (1995).}
+In $\triangle ABC$, $K,L$ are points on $BC$ such that $BC\cdot KL=BK\cdot CL$, and $AL$ bisects $\angle KAC$.
+Prove that $AL\perp AB$.
+\begin{figure}[H]\centering
+\includegraphics[width=.70\linewidth]{lb1-fig-18.pdf}
+\FigureTag{LB1.18}{fig:lb1-18}
+\end{figure}
+(Apologies for such a mind-blowing figure!)
+Let us assume the result is true: $AL\perp AB$.
+Now perform a little angle chase, because that is the only thing we are capable of doing!
+Since $AL$ bisects $\angle KAC$, let $\angle LAK=\angle LAC=\alpha$.
+Then $\angle KAB=90^\circ-\alpha$ and
+$\angle BAD=180^\circ-(90^\circ-\alpha+\alpha+\alpha)=90^\circ-\alpha$.
+Aha! Thus $\angle KAB=\angle BAD=90^\circ-\alpha$, so $AB$ is an exterior angle bisector of $\triangle KAC$.
+Let us prove this fact independently. How should we proceed?
+You know what? That is a stupid question to ask; rather, you should be asking, ``Did I use all the data?''
+The answer is an obvious no!
+We are given $BC\cdot KL=BK\cdot CL$, so $BC/BK=CL/KL$: a fact!
+What can we possibly do with $CL/KL$?
+We immediately notice that $AL$ bisects $\angle KAC$, giving $CL/KL=AC/AK$.
+Thus $BC/BK=AC/AK$, another fact!
+This should immediately tell you that $AB$ is an exterior angle bisector of $\angle KAC$ in $\triangle KAC$.
+W$^5$: which was what we wanted!
+% Source page 33 - right
+Employ the same strategy to resolve the following problem!
+In $\triangle ABC$, $AM$ is a median that divides $\angle BAC$ in the ratio $1:2$.
+Extend $AM$ through $M$ to $D$ so that $\angle DBA=90^\circ$.
+Prove that $AC=\tfrac12 AD$.
+
+
+\subsection{Two magical constructions}
+In $\triangle ABC$, $\angle A=120^\circ$.
+Express the length of the internal angle bisector of $\angle A$ in terms of the two adjacent sides. (With any trigonometry, of course!)
+\begin{figure}[H]\centering
+\includegraphics[width=.82\linewidth]{lb1-fig-25.pdf}
+\FigureTag{LB1.25}{fig:lb1-25}
+\end{figure}
+What a superb figure! $X,A,C$ are collinear; $Y,A,B$ are collinear; and $XB\parallel AM\parallel YC$.
+The construction we made might have been clear.
+The figure itself represents the situation so nicely that it leaves me speechless.
+Okay! Let us not exaggerate too much. Now the solution is two lines:
+\[\frac1{BX}+\frac1{CY}=\frac1{AM}
+\quad\Longrightarrow\quad\frac1{AB}+\frac1{AC}=\frac1{AM}
+\quad\Longrightarrow\quad AM=\frac{AB\cdot AC}{AB+AC}.\]
+Q.E.D.!
+% Source page 50 - right
+In $\triangle ABC$, $CD$ is the altitude to $AB$, and $P$ is a point on $DC$.
+$AP$ meets $CB$ at $Q$, and $BP$ meets $CA$ at $R$.
+Prove that $\angle RDC=\angle QDC$ using Ceva's theorem.
+\begin{figure}[H]\centering
+\includegraphics[width=.70\linewidth]{lb1-fig-26.pdf}
+\FigureTag{LB1.26}{fig:lb1-26}
+\end{figure}
+Since $\triangle GRC\sim\triangle DRA$, we have $CR/RA=GC/AD$.
+Also $\triangle CQH\sim\triangle BQD$, giving $BQ/CQ=BD/CH$.
+Now Ceva's theorem yields
+\[\frac{CR}{RA}\frac{AD}{DB}\frac{BQ}{QC}=1
+\quad\Longrightarrow\quad\frac{GC}{AD}\frac{AD}{DB}\frac{BD}{CH}=1
+\quad\Longrightarrow\quad CG=CH.\]
+In $\triangle GCD$ and $\triangle HCD$, we have $GC=CH$ and $\angle GCD=\angle HCD=90^\circ$.
+Thus $\triangle GDC\cong\triangle HDC$, so $\angle RDC=\angle QDC$.
+Q.E.D.!
+% BLOG-CONTENT-END
+\end{document}

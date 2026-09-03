@@ -1,0 +1,26 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/complex-dynamics-notes/}}
+\begin{document}
+\section*{Critical Points and Julia-Set Connectivity}
+% BLOG-CONTENT-BEGIN
+In this exposition we see how the critical points of polynomials on $\widehat{\mathbb C}$ determine the shape and structure of the Julia set. The following is a well-known fact.
+\setcounter{theorem}{22}\begin{theorem}\label{cd5:components}
+If $\mathcal A_0$ is an immediate basin of attraction, then $\widehat{\mathbb C}\setminus\mathcal A_0$ is either connected or has uncountably many components.
+\end{theorem}
+% Source page 3
+We now ask when $\widehat{\mathbb C}\setminus\mathcal A_0$ is connected. This reveals the topological shape of polynomial Julia sets. Let us see the role of critical points, working in the ambient plane $\mathbb C\subset\widehat{\mathbb C}$.
+\setcounter{definition}{13}\begin{definition}[Filled Julia set]
+The filled Julia set is $K=\{z\in\mathbb C:\text{the orbit of }z\text{ is bounded}\}$.
+\end{definition}
+\subsection{Description of the filled Julia set}
+For $f(z)=\sum_{k=0}^{d}a_kz^k$ of degree $d\ge2$, first normalise by $cf(z/c)$ to make $f$ monic. There is $r$ with $B_r(\infty)\subseteq\mathcal A(\infty)$, so the filled Julia set is $\mathcal A(\infty)^c$. Recall that if $J$ has interior, then $J=\widehat{\mathbb C}$, which is not the case here. Thus $J=\partial K$, and all bounded Fatou components belong to $\operatorname{Int}(K)$.
+
+By the maximum modulus principle, $|f(z)|\le r$ for every $z\in\operatorname{Int}(K)$. All bounded Fatou components are simply connected: pick any Jordan curve in a Fatou component; by the Jordan curve theorem, its bounded complementary component is simply connected. Now let us see how critical points enter the picture.
+% Source page 4
+\setcounter{theorem}{23}\begin{theorem}\label{cd5:connectedness}
+The sets $K$ and $\partial K$ are connected if and only if every critical point has a bounded orbit.
+\end{theorem}
+% BLOG-CONTENT-END
+\end{document}

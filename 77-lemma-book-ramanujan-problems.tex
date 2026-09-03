@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Problems Proposed by S. Ramanujan}
+% BLOG-CONTENT-BEGIN
+\subsection{Problems proposed by S. Ramanujan}
+Let us compile some problems proposed by the mathematical god, S.~Ramanujan.
+\begin{enumerate}[label=\arabic*.]
+\item Prove without calculus that
+$\frac32\log2=1+\frac2{4^3-4}+\frac2{8^3-8}+\frac2{12^3-12}+\cdots$.
+\item Show that it is possible to solve the equations
+\[
+\begin{array}{ll}
+x+y+z=a,&px+qy+rz=b,\\
+p^2x+q^2y+r^2z=c,&p^3x+q^3y+r^3z=d,\\
+p^4x+q^4y+r^4z=e,&p^5x+q^5y+r^5z=f.
+\end{array}
+\]
+\item Find $\sqrt{1+2\sqrt{1+3\sqrt{1+4\sqrt{1+\cdots}}}}$ and
+$\sqrt{6+2\sqrt{7+3\sqrt{8+\cdots}}}$.
+% Source page 19 - left
+\item If $\alpha\beta=\pi$, show that
+$\sqrt\alpha\int_0^\infty e^{-x^2}/\cosh(\alpha x)\,dx
+=\sqrt\beta\int_0^\infty e^{-x^2}/\cosh(\beta x)\,dx$.
+\item Show that Euler's constant
+$\gamma=\lim_{n\to\infty}(1+1/2+\cdots+1/n-\log n)$ equals
+\[
+\log2-1\left(\frac2{3^3-3}\right)
+-2\left(\frac2{6^3-6}+\frac2{9^3-9}+\frac2{12^3-12}\right)-\cdots,
+\]
+the first term in the $n$th group being
+$2/\bigl(((3^n+3)/2)^3-(3^n+3)/2\bigr)$.
+\item Show that
+\[
+\prod_{n=1}^\infty\left(1+\frac1{n^3}\right)=\frac1\pi\cosh\frac{\pi\sqrt3}{2},
+\qquad
+\prod_{n=2}^\infty\left(1-\frac1{n^3}\right)=\frac1{3\pi}\cosh\frac{\pi\sqrt3}{2}.
+\]
+\item For any odd positive integer $n$, show that
+$\int_0^\infty\sin(nx)/\bigl((\cosh x+\cos x)x\bigr)\,dx=\pi/4$, and hence prove
+\[
+\frac\pi8=\frac1{\cosh(\pi/(2n))+\cos(\pi/(2n))}
+-\frac1{3\bigl(\cosh(3\pi/(2n))+\cos(3\pi/(2n))\bigr)}+\cdots.
+\]
+% Source page 19 - right
+\item If $\sin(x+y)=2\sin((x-y)/2)$ and $\sin(y+z)=2\sin((y-z)/2)$, prove
+\[
+\sqrt[4]{\tfrac12\sin x\cos z}+\sqrt[4]{\tfrac12\cos x\sin z}
+=\sqrt[12]{\sin2y}.
+\]
+Verify this when $\sin2x=(\sqrt5-2)^3(4+\sqrt{15})^2$,
+$\sin2y=\sqrt5-2$, and $\sin2z=(\sqrt5-2)^3(4-\sqrt{15})^2$.
+\item Show that $\sum_{n=1}^\infty n/(e^{2n\pi}-1)=1/24-1/(8\pi)$.
+
+
+\setcounter{enumi}{10}
+\item $2^n-7$ is a perfect square for $n=3,4,5,7,15$. Find other values.
+\item Show that
+\[
+\prod_{j=0}^\infty\bigl(1+e^{-(2j+1)\pi\sqrt{55}}\bigr)
+=\left(\frac{1+\sqrt{3+2\sqrt5}}{\sqrt2}\right)
+\bigl(e^{-\pi\sqrt{55}}\bigr)^{1/24}.
+\]
+\end{enumerate}
+% BLOG-CONTENT-END
+\end{document}

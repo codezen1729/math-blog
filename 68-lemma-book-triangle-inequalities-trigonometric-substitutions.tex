@@ -1,0 +1,189 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Triangle Inequalities and Trigonometric Substitutions}
+% BLOG-CONTENT-BEGIN
+\setcounter{theorem}{41}\begin{lemma}[Triangle inequality]
+If $ABC$ is a triangle, then $a+b>c$, where $c=\max(a,b,c)$.
+\end{lemma}
+This elegant inequality has two nontrivial applications.
+\paragraph{Classical application.}
+Let $A,B$ be two points on the same side of a line $XY$.
+Find $M$ on that line such that $AM+MB$ is minimal.
+This gives an alternative proof of the law of reflection. How?
+\begin{figure}[H]\centering
+\includegraphics[width=.80\linewidth]{lb1-fig-13.pdf}
+\FigureTag{LB1.13}{fig:lb1-13}
+\end{figure}
+The figure itself is the solution: $A'M'+M'B\geq A'B$.
+I like the following explanation. Since $AM+MB$ must be the shortest path,
+light sent from $A$ to $B$ after reflection must meet the line at the required $M$.
+It should satisfy the law of reflection, which we proved.
+Thus choose $M$ so that $\angle AMX=\angle BMY$. ``Finished!''
+
+% Source page 19 - left
+The second application is the following lemma.
+\setcounter{theorem}{42}\begin{lemma}[Triangle-side substitution]
+If $a,b,c$ are the sides of a triangle, then $a=x+y$, $b=y+z$, and $c=z+x$.
+\end{lemma}
+\paragraph{Application.}
+For the sides $a,b,c$ of a triangle, prove that $\sum_{\mathrm{cyc}}a(b^2+c^2-a^2)\leq3abc$.
+The desired inequality becomes
+\begin{align*}
+a(b^2+c^2-a^2)+b(c^2+a^2-b^2)+c(a^2+b^2-c^2)&\leq3abc,\\
+a^2(b+c-a)+b^2(c+a-b)+c^2(a+b-c)&\leq3abc.
+\end{align*}
+Substituting gives
+\begin{align*}
+(x+y)^2(2z)+(y+z)^2(2x)+(z+x)^2(2y)
+&\leq3(x+y)(y+z)(z+x),\\
+2\bigl((x^2+2xy+y^2)z+(y^2+2yz+z^2)x+(z^2+2zx+x^2)y\bigr)
+&\leq3(x+y)(y+z)(z+x),\\
+2\bigl(x^2(y+z)+y^2(z+x)+z^2(x+y)+6xyz\bigr)
+&\leq3(x+y)(y+z)(z+x),\\
+2\bigl((x+y)(y+z)(z+x)+4xyz\bigr)
+&\leq3(x+y)(y+z)(z+x).
+\end{align*}
+This reduces to $8xyz\leq(x+y)(y+z)(z+x)$.
+\begin{remark}
+The cosine formula also proves the inequality. Put $b^2+c^2-a^2=2bc\cos A$.
+Then $\sum_{\mathrm{cyc}}2abc\cos A\leq3abc$ becomes
+$\sum_{\mathrm{cyc}}\cos A\leq3/2$, obvious after applying Jensen's inequality.
+This is the intuitive way to solve it!
+\end{remark}
+
+
+I will soon write an extensive explanation of trigonometric substitution. Have a look at the trailer.
+\setcounter{theorem}{51}\begin{lemma}[Trigonometric substitution]
+If $x^2+y^2=1$, then $x=\sin\theta$ and $y=\cos\theta$.
+\end{lemma}
+
+
+
+
+
+
+\paragraph{Two ingenious trigonometric substitutions.}
+\[a^2+b^2+c^2\geq4\Delta\sqrt3
+\qquad\text{(IMO 1961; Weitzenb\"ock's inequality).}\]
+Put $\Delta=\tfrac12 ab\sin C$, so $4\sqrt3\Delta=2\sqrt3ab\sin C$.
+The desired inequality is equivalent to
+\[\frac ab+\frac ba+\frac{c^2}{ab}\mathrel{\stackrel{?}{\geq}}2\sqrt3\sin C.\]
+Apply the cosine rule $c^2=a^2+b^2-2ab\cos C$. Then
+\[
+\frac{2a}{b}+\frac{2b}{a}\mathrel{\stackrel{?}{\geq}}2(\sqrt3\sin C+\cos C)
+\quad\Longrightarrow\quad
+\frac{a^2+b^2}{2ab}\mathrel{\stackrel{?}{\geq}}
+\sin C\frac{\sqrt3}{2}+\cos C\frac12=\sin(C+30^\circ).
+\]
+We have $(a^2+b^2)/(2ab)\geq1\geq\sin(C+30^\circ)$. Q.E.D.!
+This can also be resolved using Ravi substitutions. Do it!
+(There are 12 more solutions to the above problem; refer to P.S.T.)
+
+
+\paragraph{Clever AM--GM.}
+If $a,b,c$ are positive reals satisfying $a+b+c=1$, prove that
+\[\sqrt{a+bc}+\sqrt{b+ca}+\sqrt{c+ab}\leq2.\]
+We cannot do much with the nonhomogeneous expression inside the radical.
+So let's homogenize!
+% Source page 49 - right
+\[\sqrt{a+bc}=\sqrt{a(a+b+c)+bc}=\sqrt{(a+b)(a+c)}\leq\frac{2a+b+c}{2}.\]
+Add the three similar inequalities to obtain
+$\sum\sqrt{a+bc}\leq4(a+b+c)/2=2$. Q.E.D.!
+
+
+\setcounter{theorem}{94}\begin{lemma}[Erd\H{o}s--Mordell inequality]\label{lemma:lb1-97}
+Let $P$ be an arbitrary point in or on $\triangle ABC$.
+If $p_a,p_b,p_c$ are its distances from the sides, then
+\[PA+PB+PC\geq2(p_a+p_b+p_c),\]
+with equality if and only if $AB=BC=CA$ and $P$ is the circumcentre.
+\end{lemma}
+\paragraph{Application: IMO (1991).}
+Let $P$ be a point inside $\triangle ABC$.
+Prove that at least one of $\angle PAB,\angle PBC,\angle PCA$ is at most $30^\circ$.
+\begin{figure}[H]\centering
+\includegraphics[width=.58\linewidth]{lb1-fig-38.pdf}
+\FigureTag{LB1.38}{fig:lb1-38}
+\end{figure}
+Project $P$ onto $AB,BC,AC$.
+We have $PA+PB+PC\geq2(PA'+PB'+PC')$, so at least one of
+$PA\geq2PC'$, $PB\geq2PA'$, or $PC\geq2PB'$ holds.
+Without loss of generality, take $PA\geq2PC'$.
+Then $1/2\geq PC'/PA=\sin\angle PAB$, giving $\angle PAB\leq30^\circ$ or $\angle PAB\geq150^\circ$.
+If $\angle PAB\geq150^\circ$, then $\angle PBC<30^\circ$. Q.E.D.!
+
+% Source page 58 - left
+% Source page 58 - right
+Let $x,y,z>1$ be real numbers such that $1/x+1/y+1/z=2$.
+Prove that $\sqrt{x-1}+\sqrt{y-1}+\sqrt{z-1}\leq\sqrt{x+y+z}$.
+Let $x=a+1$, $y=b+1$, and $z=c+1$.
+Then $1/(a+1)+1/(b+1)+1/(c+1)=2$, that is, $ab+bc+ca+2abc=1$.
+Substitute $ab=\sin^2(\alpha/2)$, $bc=\sin^2(\beta/2)$, and $ac=\sin^2(\gamma/2)$.
+We require $\sqrt{ab}+\sqrt{bc}+\sqrt{ca}\leq3/2$, which follows by squaring the original inequality
+$\sqrt a+\sqrt b+\sqrt c\leq\sqrt{a+b+c+3}$ and cancelling terms.
+It becomes $\sin(\alpha/2)+\sin(\beta/2)+\sin(\gamma/2)\leq3/2$, which follows from Jensen's inequality.
+Q.E.D.!
+\paragraph{Ingenious trigonometric substitution!}
+Let $a,b,c$ be positive reals with $a+b+c=1$. Prove that
+\[\sqrt{\frac{ab}{c+ab}}+\sqrt{\frac{bc}{a+bc}}+\sqrt{\frac{ca}{b+ca}}\leq\frac32.\]
+Once you get that sparkling idea, the solution is two lines!
+\[\sum_{\mathrm{cyc}}\sqrt{\frac{ab}{c+ab}}
+=\sum_{\mathrm{cyc}}\sqrt{\frac{ab}{c(a+b+c)+ab}}
+=\sum_{\mathrm{cyc}}\sqrt{\frac{ab}{(c+a)(c+b)}}.\]
+We know that $a+b,b+c,c+a$ are the sides of a triangle.
+Therefore the last sum is $\sin(\alpha/2)+\sin(\beta/2)+\sin(\gamma/2)\leq3/2$.
+Q.E.D.!
+
+% Source page 59 - left (upside-down content in the scan)
+
+
+
+
+
+
+\paragraph{Ingenious trigonometric substitution.}
+Let $x,y,z>0$ satisfy $xy+yz+zx=3xyz$. Prove $(2y+2z+x)^2>12xyz$.
+% Source page 4 - right
+Let us pull the trigger!
+From the condition,
+$1/(3x)+1/(3y)+1/(3z)=1$, hence $1/(3x)+(y+z)/(3yz)=1$.
+Put $1/(3x)=\cos^2\theta$ and $(y+z)/(3yz)=\sin^2\theta$.
+Then $\cos\theta=1/\sqrt{3x}$ and $\sin\theta=\sqrt{(y+z)/(3yz)}$.
+Using the obvious fact $\sin\theta+\cos\theta>1$, we obtain
+\begin{align*}
+\frac1{\sqrt{3x}}+\frac{\sqrt{y+z}}{\sqrt{3yz}}>1
+&\Longrightarrow \sqrt{3yz}+\sqrt{3x(y+z)}>3\sqrt{xyz}\\
+&\Longrightarrow\sqrt{yz}+\sqrt{x(y+z)}>\sqrt{3xyz}.
+\end{align*}
+Since $\sqrt{yz}\leq(y+z)/2$ and $\sqrt{x(y+z)}\leq(x+y+z)/2$,
+we get $y+z+x/2>\sqrt{3xyz}$, proving the result.
+\emph{Quite innovatively done.}
+
+
+That inequality using trigonometric substitution was all pure dumbass; sorry I did not realize it.
+Pranjal pointed out that one should substitute $12xyz=4xy+4yz+4zx$ and prove it directly.
+It was that obvious! Let me rephrase it.
+Let $x,y,z$ be positive integers satisfying $xy+yz+zx=3xyz$.
+Prove $27xyz>8(x+y+z)$ in two different ways.
+
+
+
+
+\paragraph{APMO 1996: a wonder.}
+For the side lengths $a,b,c$ of a triangle, prove
+$\sqrt{a+b-c}+\sqrt{b+c-a}+\sqrt{c+a-b}\leq\sqrt a+\sqrt b+\sqrt c$.
+
+% Source page 17 - left
+Write the left-hand side as
+$\sum_{\mathrm{cyc}}(\sqrt{c+a-b}+\sqrt{a+b-c})/2$.
+Now use $(\sqrt x+\sqrt y)/2\leq\sqrt{(x+y)/2}$ to obtain
+\[
+\frac{\sqrt{c+a-b}+\sqrt{a+b-c}}2\leq\sqrt a,\qquad
+\frac{\sqrt{a+b-c}+\sqrt{b+c-a}}2\leq\sqrt b,\qquad
+\frac{\sqrt{b+c-a}+\sqrt{c+a-b}}2\leq\sqrt c.
+\]
+Now what? Q.E.D.!
+% BLOG-CONTENT-END
+\end{document}

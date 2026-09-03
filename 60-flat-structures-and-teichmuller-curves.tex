@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/miscellaneous/}}
+\begin{document}
+\section*{Flat Structures and Teichmüller Curves}
+% BLOG-CONTENT-BEGIN
+\subsection{Teichm\"uller Curves}
+% Source page 1
+Let $T_g$ denote the Teichm\"uller space of closed genus-$g$ surfaces.
+We have the well-known identification $M_g\approx T_g/\MCG(g)$.
+The action $\MCG(g)\curvearrowright T_g$ is properly discontinuous.
+\setcounter{definition}{3}\begin{definition}[Teichm\"uller curve]
+We say that $V\subset M_g$ is a Teichm\"uller curve if the inclusion
+$(V\cong\mathbb H/\Gamma)\hookrightarrow M_g$ is an isometry. The inclusion
+is assumed to be in the regular set. On $V$ we have the usual hyperbolic
+metric coming from a torsion-free discrete subgroup
+$\Gamma\subset\PSL_2(\mathbb R)$.
+\end{definition}
+\setcounter{definition}{4}\begin{definition}[Complex geodesic]
+If $f\colon\mathbb H\to M_g$ is an isometry, then $f$, or $f(\mathbb H)$,
+is called a complex geodesic in $M_g$.
+\end{definition}
+
+% Source page 4
+\subsection{Translation Structure}
+Let $X\in M_g$ be a Riemann surface and $\omega\in\Omega X$ a holomorphic
+$1$-form. Set $D=(\omega)$; then $(\omega)=D+0$.
+By Brill--Noether duality,
+\[
+ L(D)=\{f\in R(X):(f)+D\ge0\}\approx I(0),\qquad
+ I(D)=\{\eta\in M(X):(\eta)\ge D\}\approx L(0),
+\]
+with the pairing $(\eta,f)$. By Riemann--Roch,
+\[
+ \dim L(D)-\dim I(D)=\deg D+1-g,\qquad
+ \underbrace{\dim I(0)}_{g}-\underbrace{\dim L(0)}_{1}
+ =\deg D+1-g.
+\]
+Therefore $\deg(\omega)=2g-2$. Let $\Sigma$ be the zeros of $\omega$;
+Let $p\in X\setminus\Sigma$. There is a chart $(U_p,x_p)$ such that
+$U_p\cap\Sigma=\varnothing$ and $\omega\ne0$ on $U_p$.
+If $\omega=\phi_{x_p}\,dx_p$, define, for $q\in U_p$,
+\[
+ z_p[x_p(q)]:=\int_0^{x_p(q)}
+ \phi_{x_p}\bigl(x_p(\gamma(t))\bigr)\,dx_p(\gamma(t)).
+\]
+Since $\pi_1(U_p)=0$, the map $z_p\circ x_p$ is well-defined.
+\begin{figure}[H]
+ \centering\includegraphics[width=.38\textwidth]{m3-fig-05.pdf}
+ \FigureTag{M3.5}{fig:m3-fig-05}
+\end{figure}
+% Source page 5
+By the Fundamental Theorem of Calculus,
+$\frac{dz_p}{dx_p}(x_p(q))=\phi_p(x_p(q))$.
+Define $\widetilde z_p:=z_p\circ x_p$. Then $\omega=d\widetilde z_p$.
+This is an elaborate way of saying: work with $\phi_{x_p}\circ x_p$.
+But we notice that
+\[
+ \frac{d\widetilde z_p}{d\widetilde z_q}=1
+ \quad\Longrightarrow\quad
+ \widetilde z_p=\widetilde z_q+c
+ \qquad\text{(translation charts).}
+\]
+
+% Source page 7
+Now consider the space
+$\Omega M_g:=\{(X,\omega):\omega\in\Omega X,\ \omega\ne0\}$.
+The projection $\Omega M_g\xrightarrow{\pi}M_g$ is a holomorphic vector
+bundle of rank $g$, since $\operatorname{rank}(\Omega X)=g$, with its zero
+section removed.
+\subsection{\texorpdfstring{$\SL_2(\mathbb R)$}{SL2(R)} Action}
+Let $(X,\omega)\in\Omega M_g$. We have a translation structure
+$(U_p,\widetilde z_p)$ on $X$. For $A\in\SL_2(\mathbb R)$, define
+$A\cdot(X,\omega):=(U_p,A\circ\widetilde z_p)$. Then
+\[
+ \begin{aligned}
+ (A\circ\widetilde z_q)\circ(A\circ\widetilde z_p)^{-1}(z)
+ &=A\circ(\widetilde z_q\circ\widetilde z_p^{-1})(A^{-1}(z))\\
+ &=A(A^{-1}(z)+c)=z+A(c).
+ \end{aligned}
+\]
+Thus $\SL_2(\mathbb R)\curvearrowright\Omega M_g$ by stretching and
+rotating the translation structure.
+% Source page 8
+If $A\in\operatorname{SO}_2(\mathbb R)$, that is, a rotation, then
+$A\cdot(X,\omega)$ is just $(X,e^{i\theta}\omega)$. We thus have
+\begin{figure}[H]
+ \centering\includegraphics[width=.64\textwidth]{m3-fig-08.pdf}
+ \FigureTag{M3.8}{fig:m3-fig-08}
+\end{figure}
+Here $F(A):=A\cdot(X,\omega)$ for some fixed $(X,\omega)\in\Omega M_g$.
+The map $\pi\circ F$ factors through
+$\SL_2(\mathbb R)/\operatorname{SO}_2(\mathbb R)$.
+The action $\SL_2(\mathbb R)\curvearrowright\mathbb H$ is by fractional
+linear transformations, with
+$\operatorname{Stab}(i)=\operatorname{SO}_2(\mathbb R)$ and
+$\operatorname{Orb}(i)=\mathbb H$.
+% Source page 9
+Let $\operatorname{Stab}(X,\omega)=:\SL(X,\omega)$, the \emph{Veech group}.
+Then
+\[
+ \SL(X,\omega)\curvearrowright
+ \SL_2(\mathbb R)/\operatorname{SO}_2(\mathbb R)\cong\mathbb H.
+\]
+% Source page 11
+\setcounter{theorem}{8}\begin{proposition}
+$\SL(X,\omega)$ is a discrete subgroup of $\SL_2(\mathbb R)$, and the
+quotient is never compact.
+\end{proposition}
+\paragraph{Remarks.}
+\begin{enumerate}
+ \setcounter{enumi}{0}\item If $\omega\in\Omega X$, then in a chart $(U_p,x_p)_p$,
+ $\omega=\phi_{x_p}\,dx_p$. Hence
+ $\phi_{x_p}\frac{dx_p}{dx_q}=\phi_{x_q}$.
+ In $(U_p,\widetilde z_p)$, we have $\phi_{x_p}\equiv1$ for
+ $p\in X\setminus\Sigma$. Thus
+ $\frac{d\widetilde z_p}{d\widetilde z_q}=1$, so
+ $\widetilde z_p=\widetilde z_q+c$.
+\end{enumerate}
+% Source page 16
+\subsection{Broad Goals}
+\begin{enumerate}
+ \setcounter{enumi}{0}\item Understand the $\SL_2(\mathbb R)$ action on the strata
+ $\Omega M_g(p_1,\ldots,p_n)$: ergodicity, equidistribution, and so on.
+ \setcounter{enumi}{1}\item Classify $\SL(X,\omega)$ and $\mathbb H/\SL(X,\omega)$ when
+ $\SL(X,\omega)$ is a lattice.
+ \setcounter{enumi}{2}\item Understand the geometry of the strata of $\Omega M_g$.
+\end{enumerate}
+
+% Source page 18
+Let $P$ be a polygon with angles in $\mathbb Q\pi$, that is, rational
+multiples of $\pi$, such that every edge has a pairing with another
+parallel edge of the same length.
+\begin{figure}[H]
+ \centering\includegraphics[width=.90\textwidth]{m3-fig-15.pdf}
+ \FigureTag{M3.15}{fig:m3-fig-15}
+\end{figure}
+% Source page 19
+This immediately gives a translation structure on $P/{\sim}$ because the
+charts are given by translations away from singular points.
+\begin{figure}[H]
+ \centering\includegraphics[width=.84\textwidth]{m3-fig-16.pdf}
+ \FigureTag{M3.16}{fig:m3-fig-16}
+\end{figure}
+\setcounter{theorem}{9}\begin{proposition}
+The angle at a cone singularity is a multiple of $2\pi$.
+\end{proposition}
+\begin{proof}
+How do you compute cone angles from $P/{\sim}$?
+\begin{figure}[H]
+ \centering\includegraphics[width=.85\textwidth]{m3-fig-17.pdf}
+ \FigureTag{M3.17}{fig:m3-fig-17}
+\end{figure}
+The cone angle at $e$ is $\sum_{i=1}^n\theta_i$. For every $v_i$ in the
+sequence above, there is a $v_j\parallel v_i$. To come back to $v_1$,
+one must have completed several rounds of the circle. Consequently
+$2\pi\mid\sum_{i=1}^n\theta_i$.
+\end{proof}
+% Source page 21
+% BLOG-CONTENT-END
+\end{document}

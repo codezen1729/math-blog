@@ -1,0 +1,181 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Congruences and Diophantine Equations}
+% BLOG-CONTENT-BEGIN
+\setcounter{theorem}{45}\begin{lemma}[Two obvious congruences]
+$x\equiv x\pmod n$ and $x\equiv0\pmod x$ have surprisingly ingenious applications.
+\end{lemma}
+Find the largest positive integer $n$ such that $n+10\mid n^3+100$.
+Since $n+10\equiv0\pmod{n+10}$, we have $n\equiv-10\pmod{n+10}$.
+Thus $n^3+100\equiv-900\equiv0\pmod{n+10}$, so $n+10\mid900$.
+The maximum value is $n=890$.
+
+\setcounter{theorem}{46}\begin{lemma}[Lagrange's identity]
+$(a^2+b^2)(c^2+d^2)=(ac\pm bd)^2+(ad\mp bc)^2$.
+\end{lemma}
+Represent $m^6+n^6$ as a sum of two squares other than $(m^3)^2+(n^3)^2$.
+\[
+m^6+n^6=(m^2)^3+(n^2)^3
+=(m^2+n^2)(m^4-m^2n^2+n^4)
+=(m^2+n^2)\bigl((m^2-n^2)^2+(mn)^2\bigr).
+\]
+This tells us to call Lagrange for help. Set $a=m$, $b=n$, $c=m^2-n^2$, $d=mn$.
+Then $m^6+n^6=(m^3-2mn^2)^2+(n^3-2nm^2)^2$.
+
+\setcounter{theorem}{47}\begin{lemma}[A prime in one denominator]
+If $\sum_i a_i/b_i=N/D$, $p\mid b_k$, $p\nmid a_i$ for every $i$, and $p\nmid b_i$ for $i\ne k$, then $p\mid D$ and $p\nmid N$.
+\end{lemma}
+
+% Source page 23 - left
+\setcounter{theorem}{48}\begin{lemma}[Products of perfect powers]
+If $a_i$ is a perfect $n$th power for every $1\leq i\leq k$, then $\prod_{i=1}^k a_i$ is a perfect $n$th power.
+\end{lemma}
+For $n\geq0$, prove that $n+2$ and $n^2+n+1$ cannot both be perfect cubes.
+If they were, $(n+2)(n^2+n+1)=a^3$ for some $a$. But
+\[
+n^3+n^2+n+2n^2+2n+2=a^3
+\Longrightarrow(n+1)^3+1=a^3,
+\]
+a contradiction.
+
+
+
+
+
+
+\subsection{Ramanujan's ingenious idea}
+\setcounter{theorem}{53}\begin{lemma}[Adjusting a sum with ones]
+To arrange
+\[
+A+B+C+D+\cdots=P+Q+R+S+\cdots,\qquad
+A^AB^BC^CD^D\cdots=P^PQ^QR^RS^S\cdots,
+\]
+first find quantities satisfying the product equation, then multiply by enough $1^1$ terms to satisfy the sum equation.
+For example, $2^2\cdot6^6=3^3\cdot3^3\cdot4^4$ becomes
+$1^1\cdot1^1\cdot2^2\cdot6^6=3^3\cdot3^3\cdot4^4$,
+and $1+1+2+6=3+3+4$.
+\end{lemma}
+
+
+\setcounter{theorem}{55}\begin{lemma}[Subtract the two sides]
+To show $A(x)=B(x)$, define $f(x)=A(x)-B(x)$ and try to prove $f(x)=0$ everywhere.
+\end{lemma}
+\paragraph{Application: Hermite's identity.}
+% Source page 25 - right
+Prove that
+$\lfloor nx\rfloor=\lfloor x\rfloor+\lfloor x+1/n\rfloor+\cdots+\lfloor x+(n-1)/n\rfloor$.
+Define $f(x)=\sum_{k=0}^{n-1}\lfloor x+k/n\rfloor-\lfloor nx\rfloor$.
+Then
+\[
+f(x+1/n)=\lfloor x+1/n\rfloor+\cdots+\lfloor x+(n-1)/n\rfloor
++\lfloor x+1\rfloor-\lfloor nx+1\rfloor.
+\]
+Since $\lfloor x+k\rfloor=\lfloor x\rfloor+k$ for integer $k$, we get $f(x+1/n)=f(x)$.
+Thus $f$ has period $1/n$. For $0\leq x\leq1/n$, $f(x)=0$; therefore it vanishes everywhere, proving the identity.
+
+
+
+
+Now let me present some problems and their standout solutions!
+Find $a,b,c>0$ such that $1/2014=1/a+1/b+1/c$.
+This was asked in class. One student boldly gave the unexpected solution:
+``We know $1=1/2+1/3+1/6$; now divide this by $2014$ to obtain $a,b,c$!''
+
+
+\setcounter{theorem}{66}\begin{lemma}[Transform one solution into another]
+In some Diophantine equations, it helps to observe that if $(a,b,c)$ is a solution, then $(f(a),f(b),f(c))$ is also a solution.
+\end{lemma}
+
+\emph{What a mind-blowing guess, buddy!}
+Prove that $x^2=y^3+z^5$ has infinitely many positive integer solutions.
+The solution is like magic. Have a look.
+% Source page 30 - right
+\[
+x_n=n^{10}(n+1)^8,\qquad y_n=n^7(n+1)^5,\qquad z_n=n^4(n+1)^3,
+\qquad n\in\mathbb Z_+.
+\]
+
+
+\subsection{Diophantine equations}
+\setcounter{theorem}{79}\begin{lemma}[A greatest-common-divisor strategy]\label{lemma:lb1-82}
+When solving some Diophantine equations in two variables, case-by-case analysis using $\gcd(x,y)=d$ turns out to be useful.
+\end{lemma}
+There are tons of problems that are killed by this strategy, mostly national-contest problems.
+
+
+
+
+\subsection{Euler's formula}
+\setcounter{theorem}{92}\begin{lemma}[Euler's formula]\label{lemma:lb1-95}
+$a^{\phi(m)}\equiv1\pmod m$ if $\gcd(a,m)=1$.
+\end{lemma}
+
+
+\subsection{Fractional congruences}
+\setcounter{theorem}{99}\begin{lemma}[Fractional congruences]\label{lemma:lb2-103}
+If $a\equiv b\pmod n$ and $(b,n)=1$, define $a/b\equiv1\pmod n$.
+\end{lemma}
+
+
+Solve the following using Zsigmondy.
+\paragraph{Round 1: Fight. Japanese MO (2011).}
+Find all positive integer quintuples $(a,n,p,q,r)$ such that
+$a^n-1=(a^p-1)(a^q-1)(a^r-1)$.
+\paragraph{Round 2: Fight.}
+Prove Fermat's last theorem, asserting that $x^n+y^n=z^n$ has no solutions with $xyz\ne0$.
+Take $z$ to be prime!
+\paragraph{Final round: Fight. Balkan MO (2009).}
+Solve $5^x-3^y=z^2$ for $x,y,z\in\mathbb N$.
+
+% Source page 9 - left
+
+
+I recently created another problem for you!
+\paragraph{Challenge.}
+For $a_1,\ldots,a_n,x,y\in\mathbb N$, prove the following system has solutions if and only if $x=y$:
+% Source page 10 - right
+\[
+a_1^x+\cdots+a_n^x=b^x,\qquad a_1^y+\cdots+a_n^y=b^y,
+\]
+where $b$ is a natural number.
+
+
+
+
+\subsection{Number-theoretic inequalities}
+Here is a legendary problem due to Paul Erd\H{o}s.
+Each positive integer $a_1,\ldots,a_n$ is less than $1951$, and the least common multiple of any two exceeds $1951$.
+Show $1/a_1+\cdots+1/a_n<1+n/1951$.
+The solution is magical!
+The number of multiples of $a_i$ in $\{1,\ldots,1951\}$ is $\lfloor1951/a_i\rfloor$, so
+$\sum_i\lfloor1951/a_i\rfloor\leq1951$.
+Since $x-1<\lfloor x\rfloor$, we obtain
+$\sum_i(1951/a_i-1)<1951$, proving the claim.
+
+% Source page 15 - left
+Only Paul Erd\H{o}s could pose these problems! Here is another.
+\paragraph{Magical solution: Erd\H{o}s--Straus problem.}
+Given $3\mid n+1$, prove that there are integers $x,y,z$ with $4xyz=n(xy+yz+zx)$.
+Take $x=n$, $y=(n-2)/3+1$, and $z=n(n+1)/3$.
+The source celebrates with ``$(\text{Q.E.D.})^\infty$!''
+Solve the problem when $4\mid n+1$. Homework!
+
+Let me show more problems with magical solutions. I hope you have understood what that means.
+\paragraph{Problem 1.}
+Given $\alpha,\beta\in\mathbb Z^+$ and primes $p_1,\ldots,p_n,q$, show that, for every $\alpha$, there exists an $n$ such that
+$p_1^\alpha+p_2^\alpha+\cdots+p_n^\alpha=q^\beta$.
+% Source page 15 - right
+\paragraph{Problem 2.}
+Find infinitely many families of solutions in nine distinct integers
+$x_1,x_2,x_3,y_1,y_2,y_3,z_1,z_2,z_3$ of
+\[
+(x_1^2+x_2^2+x_3^2)+(y_1^2+y_2^2+y_3^2)=z_1^2+z_2^2+z_3^2,
+\]
+even if no three of the numbers form a Pythagorean triple.
+I posed these two problems long ago, and both have magical solutions.
+I will not spoil the eagerness and curiosity by revealing them now; perhaps in a later volume. Try them!
+% BLOG-CONTENT-END
+\end{document}

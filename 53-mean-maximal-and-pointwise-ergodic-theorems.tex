@@ -1,0 +1,174 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/ergodic-theory/}}
+\begin{document}
+\section*{Mean, Maximal, and Pointwise Ergodic Theorems}
+% BLOG-CONTENT-BEGIN
+In our attempt to get a hold on the nature of $\{T^{\circ n}(x)\}_n$ or
+$\{T^{\circ n}(E)\}_n$, we saw that $\{T^{\circ n}(x)\}_n$ is recurrent.
+Further, if $T$ is ergodic, then $\{T^{\circ n}(x)\}_n$ is recurrent on all
+positive-measure subsets of $X$ (for almost every $x\in X$). The next natural
+question to ask is: how recurrent are they? Mathematically speaking, we ask
+what happens, as $N\to\infty$, to
+\[
+  A_N^f:=\frac1N\sum_{n=0}^{N-1}U_T^n f
+  \qquad\text{(the $T$-average of $f$).}
+\]
+In answering what happens to $\frac1{N+1}\sum_{n=0}^{N}U_T^n f$ as
+$N\to\infty$, ergodic theorems will, in some sense, establish a duality
+between space and time.
+
+\setcounter{theorem}{8}\begin{theorem}[Birkhoff]
+Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system, with $T$ ergodic.
+If $f\in L^1_\mu$, then
+\[
+  \lim_{n\to\infty}\frac1n\sum_{j=0}^{n-1}U_T^j f=\int f\,d\mu.
+\]
+\end{theorem}
+
+% Source page 2
+The left-hand side is an average over time, and the right-hand side, being
+an integral, is an average over space. If $f=\chi_B$, then the ergodic
+theorem is telling you that the probability of $T^n(x)\in B$ is given by
+the size of $B$ (or the measure of $B$). The independence of the theorem
+from $x\in X$ is the remarkable thing to observe, and the imposition that
+$T$ be ergodic is essential; otherwise, there may be $x\in X$ such that
+$T^n(x)\notin B$ for all $n\geq1$. But as soon as you remove that
+set-theoretic hindrance, recurrence of orbits is governed by the sizes of
+sets.
+
+
+Thus certain spatial information can be translated into temporal information,
+and vice versa.
+
+% Source page 3
+
+\setcounter{theorem}{9}\begin{theorem}[von Neumann's mean ergodic theorem: $L^2_\mu$ version]
+\label{thm:l3-mean-l2}
+Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. Let $P_T$ be the
+orthogonal projection of $L^2_\mu$ onto
+\[
+  I=\{g\in L^2_\mu:U_Tg=g\}.
+\]
+Then, for every $f\in L^2_\mu$,
+\[
+  \frac1N\sum_{n=0}^{N-1}U_T^nf\longrightarrow P_Tf
+  \quad\text{in the $L^2_\mu$ norm.}
+\]
+\end{theorem}
+
+\setcounter{theorem}{10}\begin{theorem}[von Neumann's mean ergodic theorem: $L^1_\mu$ version]
+\label{thm:l3-mean-l1}
+Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. For every
+$f\in L^1_\mu$,
+\[
+ \frac1N\sum_{n=0}^{N-1}U_T^nf\longrightarrow f'\in L^1_\mu
+ \quad\text{in $L^1_\mu$,}\qquad U_Tf'=f'.
+\]
+\end{theorem}
+
+% Source page 6
+\begin{remark}
+\label{rem:l3-frequency}
+If $T$ is ergodic, then, for $f=\chi_B$, we only know so far that the
+frequency of orbit visits of $f$ is a fixed number, independent of $x$.
+\end{remark}
+
+\setcounter{theorem}{11}\begin{theorem}[Maximal ergodic theorem]
+\label{thm:l3-maximal}
+Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system, and let
+$g:X\to\mathbb R$, $g\in L^1_\mu$. Define, for $\alpha\in\mathbb R$,
+\[
+ E_\alpha:=\left\{x\in X:
+ \sup_{n\geq1}\frac1n\sum_{i=0}^{n-1}g(T^ix)>\alpha\right\}.
+\]
+Then
+\[
+ \alpha\mu(E_\alpha)\leq\int_{E_\alpha}g\,d\mu\leq\|g\|_1,
+ \qquad
+ \alpha\mu(E_\alpha\cap A)\leq\int_{E_\alpha\cap A}g\,d\mu
+ \quad\text{if }T^{-1}(A)=A.
+\]
+\end{theorem}
+
+% Source page 7
+We shall first prove a technical lemma and derive the theorem from it in a snap.
+\setcounter{theorem}{12}\begin{lemma}
+\label{lem:l3-positive}
+Let $U:L^1_\mu\to L^1_\mu$ be a positive linear operator with
+$\|U\|\leq1$. Given $f\in L^1_\mu$, set
+\[
+ f_k=\sum_{\ell=0}^{k-1}U^\ell f,\qquad f_0=0,
+ \qquad F_N=\max\{f_n:0\leq n\leq N\}.
+\]
+Then $\int_{\{x:F_N(x)>0\}}f\,d\mu\geq0$ for every $N\geq1$.
+\end{lemma}
+\begin{proof}
+We have $F_N\in L^1_\mu$, since $F_N\leq\sum_{n=0}^N|f_n|$.
+Also, $F_N\geq f_n$ for $0\leq n\leq N$, so positivity and linearity give
+$UF_N+f\geq Uf_n+f=f_{n+1}$. Thus
+$UF_N+f\geq\max_{1\leq n\leq N}f_n$.
+Set $P=\{x:F_N(x)>0\}$. For $x\in P$,
+\[
+ F_N(x)=\max_{0\leq n\leq N}f_n(x)
+       =\max_{1\leq n\leq N}f_n(x),
+\]
+since $f_0=0$. Hence $UF_N(x)+f(x)\geq F_N(x)$, or
+$f(x)\geq F_N(x)-UF_N(x)$. By positivity, $UF_N(x)\geq0$, as
+$F_N(x)\geq0$. It follows that
+\[
+ \int_P f\,d\mu
+ \geq\int_P F_N\,d\mu-\int_P UF_N\,d\mu
+ =\int_XF_N\,d\mu-\int_PUF_N\,d\mu,
+\]
+% Source page 8
+because $F_N(x)=0$ if $x\notin P$. Therefore
+\[
+ \int_Pf\,d\mu\geq\int_XF_N\,d\mu-\int_XUF_N\,d\mu
+ =\|F_N\|_1-\|UF_N\|_1\geq0.
+\]
+Here the equality uses positivity, and the last inequality uses $\|U\|\leq1$.
+\end{proof}
+\begin{proof}[Proof of Theorem~\href{https://codezen1729.github.io/math-blog/\#/post/mean-maximal-and-pointwise-ergodic-theorems}{12}]
+Set $f=g-\alpha$ and $Uf:=f\circ T$. This is a unitary positive operator,
+so $\|U\|\leq1$. We have
+\[
+ E_\alpha=\bigcup_{N=0}^\infty\{x:F_N(x)>0\}.
+\]
+By the lemma,
+$\int_{E_\alpha}f\,d\mu\geq0$, so
+$\int_{E_\alpha}g\,d\mu\geq\alpha\mu(E_\alpha)$.
+To obtain the other inequality, look at
+\[
+ \bigl(A,\mathcal B|_A,\mu(A)^{-1}\mu|_A,T|_A\bigr).\qedhere
+\]
+\end{proof}
+
+
+\setcounter{theorem}{13}\begin{theorem}[Birkhoff's ergodic theorem]
+\label{thm:l3-birkhoff}
+If $f\in L^1_\mu$, then
+\[
+ \lim_{n\to\infty}\frac1n\sum_{j=0}^{n-1}f(T^j(x))=f^*(x).
+\]
+The function $f^*$ is $T$-invariant, and $\int f^*\,d\mu=\int f\,d\mu$.
+\end{theorem}
+
+% Source page 9
+
+\begin{remark}[Final remark]
+If $T$ is ergodic, then $f^*$ must be constant, since it is $T$-invariant
+(the eigenfunctions of $U_T$ corresponding to $1$ are only the constants).
+Thus
+\[
+ \int f^*\,d\mu=f^*\mu(X)=f^*=\int f\,d\mu,
+\]
+and we finally get the link between space and time averages:
+\[
+ \boxed{\lim_{n\to\infty}\frac1n\sum_{i=0}^{n-1}f(T^i(x))
+ =\int_Xf\,d\mu.}
+\]
+\end{remark}
+% BLOG-CONTENT-END
+\end{document}

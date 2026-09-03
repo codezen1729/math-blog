@@ -1,0 +1,41 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/complex-dynamics-notes/}}
+\begin{document}
+\section*{Parabolic Fixed Points and the Flower Theorem}
+% BLOG-CONTENT-BEGIN
+In this exposition we consider a fixed point $f(\widehat p)=\widehat p$ whose multiplier satisfies $\lambda^q=1$. Such points are called parabolic fixed points. It is immediately clear that the expected dynamics should be different. For instance, consider the orbits of $\pm1$ and $\pm i$ under $f(z)=z+z^3$.
+\begin{figure}[H]\centering
+\includegraphics[width=.55\textwidth]{cd3-fig-01.pdf}
+\FigureTag{CD3.1}{fig:cd3-01}
+\end{figure}
+The map $f$ throws $1,-1$ violently away, while pulling $i,-i$ violently towards $\widehat p=0$. Notice that it pushes and pulls from two directions. The following theorem tells us that such patterns reappear. For now, no neighbourhood of $\widehat p=0$ can be expected to be a ``basin'', since $\widehat p$ is a sink only in certain directions.
+% Source page 2
+Let $f(z)=z+az^{n+1}+O(z^{n+2})$.
+\setcounter{theorem}{16}\begin{theorem}\label{cd3:asymptotic}
+If an orbit $\{z_k\}_k$ of $z_0$ tends to $0$ and $z_k\ne0$ for every $k$, then $z_k\sim v_j/k^{1/n}$ as $k\to\infty$ for some attracting vector $v_j$. The analogous assertion holds for orbits converging to $0$ under $f^{-1}$.
+\end{theorem}
+% Source page 3
+\setcounter{definition}{12}\begin{definition}[Attracting and repelling petals]
+Let $N$ be a neighbourhood of $\widehat p$ on which $f$ is univalent. A set $P\subset N$ is an attracting petal for $f$ at $\widehat p$, associated with an attracting vector $v_j$, if
+\begin{itemize}
+\item $f(P)\subseteq P$;
+\item an orbit $\{z_k\}_k$ enters $P$ eventually if and only if $z_k\to\widehat p$ along $v_j$.
+\end{itemize}
+Repelling petals are defined similarly by considering $f^{-1}$ on $f(N)$.
+\end{definition}
+\setcounter{theorem}{17}\begin{theorem}[Flower theorem]\label{cd3:flower}
+There are petals $\{P_j\}_{j=0}^{2n-1}$, each attracting or repelling, such that $\{\widehat p\}\cup P_0\cup\cdots\cup P_{2n-1}$ is an open neighbourhood of $\widehat p$. The sets $P_j$ and $P_j\cap P_{j\pm1}$ are simply connected regions, except when $n=1$.
+\end{theorem}
+% Source page 10
+We now ask the question suggested by the case $0<|\lambda|<1$: can we understand the dynamics separately in at least each of the $2n$ petals? The next theorem addresses this completely.
+\setcounter{theorem}{18}\begin{theorem}[Parabolic linearisation]\label{cd3:linearisation}
+For any petal $P$, there is a conformal embedding $\alpha\colon P\to\mathbb C$, unique up to translation, making the following diagram commute. In the literature, $\alpha$ is called a \emph{Fatou coordinate}.
+\begin{figure}[H]\centering
+\includegraphics[width=.34\textwidth]{cd3-fig-07.pdf}
+\FigureTag{CD3.7}{fig:cd3-07}
+\end{figure}
+\end{theorem}
+% BLOG-CONTENT-END
+\end{document}

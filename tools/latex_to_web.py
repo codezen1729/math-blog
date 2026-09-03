@@ -158,6 +158,9 @@ def render_diagrams(text: str, collection: str) -> str:
 
 
 def convert_fragment(text: str, collection: str, asset_map: dict[tuple[str, str], str], pandoc: str) -> str:
+    if (SOURCE / collection / 'notes-format.json').exists():
+        from notes_to_web import prepare
+        text = prepare(text)
     cleaned = clean_tex(render_diagrams(text, collection))
     arguments = [pandoc, "--from=latex+raw_tex", "--to=html5", "--mathjax", "--wrap=none"]
     bibliographies = sorted((SOURCE / collection).glob("*.bib"))
@@ -168,4 +171,3 @@ def convert_fragment(text: str, collection: str, asset_map: dict[tuple[str, str]
     completed = subprocess.run(arguments, input=cleaned, text=True, capture_output=True, check=True, timeout=90)
     fragment = sanitize_fragment(completed.stdout.strip())
     return rewrite_assets(fragment, collection, asset_map)
-

@@ -1,0 +1,41 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/commutative-algebra/}}
+\begin{document}
+\section*{Sheaves and Stalks}
+% BLOG-CONTENT-BEGIN
+\subsection{Sheaves}
+\setcounter{definition}{18}\begin{definition}
+A presheaf $\mathcal F$ is a \emph{sheaf} if, for $U=\bigcup_i U_i$, the sequence
+\[
+0\longrightarrow\mathcal F(U)\xrightarrow{d_0}\prod_i\mathcal F(U_i)
+\xrightarrow{d_1}\prod_{i,j}\mathcal F(U_i\cap U_j)
+\]
+is exact, where $d_0:s\mapsto s|_{U_i}$ and
+% Source page 5
+$d_1:\prod_i s_i\mapsto s_i|_{U_i\cap U_j}-s_j|_{U_i\cap U_j}$.
+Here $\ker d_0=0$ is \emph{uniqueness}, and $\operatorname{im}d_0=\ker d_1$ is \emph{gluing}.
+\end{definition}
+\setcounter{definition}{19}\begin{definition}
+The \emph{stalk} of $\mathcal F$ at $p$, denoted $\mathcal F_p$, is
+\[\{(f,U)\mid p\in U,\ f\in\mathcal F(U)\}/{\sim},\]
+where $(f,U)\sim(g,V)$ if there exists $W\subset U,V$, $p\in W$, with $\rho_{UW}f=\rho_{VW}g$. These are \emph{germs at $p$}.
+% The source repeats f on the right-hand side; corrected to the already named g.
+\end{definition}
+\begin{remark}
+One can also set $\mathcal F_p:=\operatorname{colim}_{p\in U}\mathcal F(U)$.
+\end{remark}
+For a sheaf $\mathcal F$, one has $\mathcal F(U)\to\mathcal F_p$, $s\mapsto s_p$, for $p\in U$.
+\setcounter{theorem}{31}\begin{lemma}
+If $s,t\in\mathcal F(X)$ and $s_x=t_x$ for every $x\in X$, then $s=t$.
+\end{lemma}
+\begin{proof}
+Without loss of generality, assume $t=0$. For every $x\in X$, there exists $U_x$ such that $s|_{U_x}=0$. Hence $s\equiv0$ by the uniqueness axiom of $\mathcal F$.
+\end{proof}
+% Source page 7
+\setcounter{theorem}{32}\begin{lemma}
+$V(I)\subseteq V(J)$ if and only if $J\subseteq\sqrt I$.
+\end{lemma}
+% BLOG-CONTENT-END
+\end{document}

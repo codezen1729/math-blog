@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Optimization, Normalization, and AM–GM}
+% BLOG-CONTENT-BEGIN
+If $a,b,c$ are the sides of a triangle of perimeter $2$, prove that $a^2+b^2+c^2+2abc<2$.
+We have $a+b+c=p=2$, so $s=(a+b+c)/2=1$.
+The desired inequality can be rewritten successively as
+\begin{align*}
+(a+b+c)^2-2(ab+bc+ac)+2abc&<2,\\
+2-2(ab+bc+ac)+2abc&<0,\\
+1-ab-bc-ac+abc&<0,\\
+-(-1+ab+bc+ac-abc)&<0,\\
+-(1-2+ab+bc+ac-abc)&<0,\\
+-(1-a-b-c+ab+bc+ac-abc)&<0,\\
+-(1-a)(1-b)(1-c)&<0,\\
+-(s-a)(s-b)(s-c)&<0.
+\end{align*}
+This proves $a^2+b^2+c^2+2abc<2$.
+
+\paragraph{Prove the law of reflection.}
+First reaction: ``Are you kidding? Come on, be serious!''
+\begin{figure}[H]\centering
+\includegraphics[width=.70\linewidth]{lb1-fig-12.pdf}
+\FigureTag{LB1.12}{fig:lb1-12}
+\end{figure}
+It suffices to show $\angle APA'=\angle BPB'$.
+We additionally use the fact that light travels along the shortest path.
+The constraint is $g(x,y)=x+y=A'B'$, and $f(x,y)=AP+BP$.
+Since $AP=\sqrt{x^2+(AA')^2}$ and $BP=\sqrt{y^2+(BB')^2}$,
+\[
+f(x,y)=\sqrt{x^2+(AA')^2}+\sqrt{y^2+(BB')^2},\qquad
+\nabla f=\lambda\nabla g.
+\]
+Thus
+\[
+\left(\frac{x}{\sqrt{x^2+(AA')^2}},\frac{y}{\sqrt{y^2+(BB')^2}}\right)
+=(\lambda,\lambda),\qquad
+\frac{A'P}{AP}=\frac{B'P}{BP}.
+\]
+Also $\angle AA'P=\angle BB'P$.
+% Source page 18 - right
+Therefore $\triangle APA'\sim\triangle BPB'$, giving $\angle APA'=\angle BPB'$.
+
+
+\setcounter{theorem}{80}\begin{lemma}[Normalization]\label{lemma:lb1-83}
+Given a homogeneous inequality, such as
+\[\sum_{\mathrm{cyc}}\frac{(a+b)^2+(b+c)^2}{(a+b)(a+b+c)}>\frac{2014}{1024},\]
+you can assume $a+b+c$ equals any number you feel like! Surprised?
+\end{lemma}
+Don't expect me to explain the reason for this, since we crossed these things a few pages ago.
+\paragraph{Application.}
+``What do you think? Every time I'll write applications for you? Go find one for yourself!'' $\longrightarrow$ ``Shu, shu\ldots!''
+Sorry! I am not that rude; I did this just for a change.
+Anyway, I have already applied this in this book. Go search!
+
+
+\paragraph{Magic of 3.}
+Find the maximum value of $x(1-x^3)$ for $0\leq x\leq1$.
+We cannot do much with the product unless you have a nice command of calculus; then you can use methods such as second-derivative analysis, blah, blah, blah\ldots
+But can we think of something else? Yes! Of course.
+Let $y=x(1-x^3)$. Then $3y^3=3x^3(1-x^3)(1-x^3)(1-x^3)$.
+Did you notice that our magic worked?
+\[3y^3\leq\left(\frac{3x^3+(1-x^3)+(1-x^3)+(1-x^3)}4\right)^4
+=\left(\frac34\right)^4.\]
+Thus $y\leq3/(4\sqrt[3]4)$; the maximum value is $3/(4\sqrt[3]4)$.
+It is attained when $3x^3=1-x^3$, that is, $x=1/\sqrt[3]4$. Q.E.D.!
+
+
+
+
+
+\paragraph{Game 1, round 1: fight!}
+The nonnegative numbers $a,b,c,A,B,C,k$ satisfy $a+A=b+B=c+C=k$.
+Prove that $aB+bC+cA\leq k^2$.
+\paragraph{Round 2: fight!}
+Prove that for $a,b,c\in[0,1]$,
+\[\frac a{b+c+1}+\frac b{c+a+1}+\frac c{a+b+1}+(1-a)(1-b)(1-c)\leq1.\]
+\paragraph{Final round: fight!}
+Prove that if $1\leq x_k\leq2$ for all $k=1,2,\ldots,n$, then
+\[\left(\sum_{k=1}^n x_k\right)\left(\sum_{k=1}^n\frac1{x_k}\right)^2\leq n^3.\]
+I know you might have hit a K.O. in the first two and got your ass kicked in the last one.
+I know it is comparatively difficult. Let us solve the last one.
+\[\sqrt[3]{\left(\sum_{k=1}^n x_k\right)\left(\sum_{k=1}^n\frac1{x_k}\right)^2}
+\leq\frac13\left(\sum_{k=1}^n x_k+\sum_{k=1}^n\frac1{x_k}+\sum_{k=1}^n\frac1{x_k}\right)
+=\sum_{k=1}^n\frac{x_k+2/x_k}{3}.\]
+The function $x+2/x$ is convex, with its maximum at an endpoint of the interval, that is, $x_k=1$ or $2$.
+In both cases we end up with $3$, so $(x_k+2/x_k)/3\leq1$.
+Thus $\sum_{k=1}^n(x_k+2/x_k)/3\leq n$.
+W$^5$ $\longrightarrow$ K.O. $\longrightarrow$ You win!!
+% BLOG-CONTENT-END
+\end{document}

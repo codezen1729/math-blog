@@ -1,0 +1,148 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/complex-dynamics-notes/}}
+\begin{document}
+\section*{Boundary Behaviour of Quasiconformal Maps}
+% BLOG-CONTENT-BEGIN
+Quasiconformal surgery involves, among other things, gluing together quasiconformal maps of different qualities and then returning to conformal maps via the mapping theorem and Weyl's lemma. The surgery mostly alters maps by adding other qualities. One essential construction is appending two quasiconformal maps. Suppose we want to glue \(f_1\), a \(K_1\)-quasiconformal map, to \(f_2\), a \(K_2\)-quasiconformal map, as below.
+\begin{figure}[H]\centering
+\includegraphics[width=.72\textwidth]{cd11-fig-01.pdf}
+\FigureTag{CD11.1}{fig:cd11-01}
+\end{figure}
+% Source page 2
+Two questions arise:
+\begin{enumerate}
+\setcounter{enumi}{0}\item Can \(f_i\), defined on \(D_i\), be extended with some regularity to \(\partial D_i\)? (Called Question 2 in the source.)
+\setcounter{enumi}{1}\item Can the maps \(\widehat f_i\) on \(\partial D_i\) be extended to a quasiconformal map \(F\) on \(D\), whose boundary is \(\partial D_1\cup\partial D_2\)? (Called Question 1 in the source.)
+\end{enumerate}
+If both can be answered, we can combine the qualities of \(f_1,f_2\) with the gluing map \(F\) into a single quasiconformal map, provided \(\partial D_1\cup\partial D_2\) is thin, that is, has Lebesgue measure zero.
+We introduce the objects that describe the regularity expected of boundaries and their maps in such surgery.
+\setcounter{example}{0}\begin{example}
+A \(C^1\)-diffeomorphism \(h:S^1\to\mathbb C\) is quasisymmetric.
+\end{example}
+
+% Source page 4
+\setcounter{theorem}{40}\begin{proposition}
+Let \(h_1,h_2\) be quasisymmetric maps.
+\begin{enumerate}[label=(\alph*)]
+\setcounter{enumi}{0}\item If \(h_1(S^1)=S^1\), then \(h_2\circ h_1\) is quasisymmetric.
+\setcounter{enumi}{1}\item If \(h_1(S^1)=h_2(S^1)\), then \(h=h_2^{-1}\circ h_1\) is quasisymmetric.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+It is enough to prove the inequality on one side; exchange variables for the other. For (a),
+\[
+\left|\frac{h_2(h_1(x))-h_2(h_1(y))}
+{h_2(h_1(y))-h_2(h_1(z))}\right|
+\le\lambda_2\left(\left|\frac{h_1(x)-h_1(y)}
+{h_1(y)-h_1(z)}\right|\right),
+\]
+and the inner ratio is at most \(\lambda_1(|(x-y)/(y-z)|)\). Combining the bounds proves (a).
+
+For (b), set
+\(\lambda=(1/z)\circ\lambda_2^{-1}\circ(1/z)\circ\lambda_1\), or
+\[
+\lambda(t)=\frac1{\lambda_2^{-1}(1/\lambda_1(t))}.
+\]
+This function is strictly increasing. The inequalities for \(h_2\), and its injectivity, give
+\[
+\frac1{\lambda_2\!\left(
+\left|\frac{h_2^{-1}(x)-h_2^{-1}(y)}
+{h_2^{-1}(y)-h_2^{-1}(z)}\right|^{-1}\right)}
+\le\left|\frac{x-y}{y-z}\right|
+\le\lambda_2\!\left(
+\left|\frac{h_2^{-1}(x)-h_2^{-1}(y)}
+{h_2^{-1}(y)-h_2^{-1}(z)}\right|\right).
+\]
+Substituting \(h_1(x),h_1(y),h_1(z)\) yields
+\[
+\frac1{\lambda_2\!\left(
+\left|\frac{h(x)-h(y)}{h(y)-h(z)}\right|^{-1}\right)}
+\le\left|\frac{h_1(x)-h_1(y)}{h_1(y)-h_1(z)}\right|
+\le\lambda_2\!\left(\left|\frac{h(x)-h(y)}{h(y)-h(z)}\right|\right).
+\]
+% Source page 5
+In particular,
+\[
+\frac1{\lambda_2\!\left(
+\left|\frac{h(y)-h(z)}{h(x)-h(y)}\right|\right)}
+\le\left|\frac{h_1(x)-h_1(y)}{h_1(y)-h_1(z)}\right|
+\le\lambda_1\left(\left|\frac{x-y}{y-z}\right|\right).
+\]
+Hence
+\[
+\frac1{\lambda_1(|(x-y)/(y-z)|)}
+\le\lambda_2\left(\left|\frac{h(y)-h(z)}{h(x)-h(y)}\right|\right).
+\]
+Since \(\lambda_2\) is increasing, applying its inverse gives
+\[
+\lambda_2^{-1}\left(\frac1{\lambda_1(|(x-y)/(y-z)|)}\right)
+\le\left|\frac{h(y)-h(z)}{h(x)-h(y)}\right|,
+\]
+which is equivalent to the required upper bound by \(\lambda\).
+\end{proof}
+\setcounter{definition}{25}\begin{definition}[Quasiarcs]
+A Jordan curve \(\gamma\) is a \emph{quasiarc} if there is \(c>0\) such that
+\[
+\diam\bigl(\gamma([z_1,z_2])\bigr)\le c|z_1-z_2|
+\qquad(z_1,z_2\in\gamma).
+\]
+If \(\gamma\) is closed, it is called a \emph{quasicircle}.
+\end{definition}
+We now state two theorems connecting these objects for the unit disc. The remaining exposition exploits this special case in other settings.
+
+% Source page 6
+\setcounter{theorem}{41}\begin{theorem}[Domain to boundary]\label{thm:cd11-domain-boundary}
+Let \(G\) be a Jordan domain, \(\gamma=\partial G\), and \(f:\mathbb D\to G\) a conformal isomorphism. Then \(f\) has a quasisymmetric extension to \(S^1\) if and only if \(\gamma\) is a quasicircle.
+\end{theorem}
+\setcounter{theorem}{42}\begin{theorem}[Boundary to domain]\label{thm:cd11-boundary-domain}
+Every orientation-preserving quasisymmetric homeomorphism \(f:S^1\to S^1\) extends to \(\widehat f:\overline{\mathbb D}\to\overline{\mathbb D}\) whose restriction to \(\mathbb D\) is quasiconformal.
+\end{theorem}
+These theorems guide the quasiconformal filling of a domain by interpolation of its boundary maps. First we address the boundary-extension question, whose answer is as satisfying as Carath\'eodory's conformal extension theorem.
+\setcounter{theorem}{43}\begin{proposition}
+A quasiconformal map \(f:\mathbb H\to\mathbb H\) extends continuously to its boundary.
+\end{proposition}
+% Source page 7
+
+% Source page 8
+We can therefore formulate Carath\'eodory's theorem for quasiconformal maps.
+\setcounter{theorem}{44}\begin{theorem}
+If \(f:\mathbb D\to G\) is quasiconformal and \(G\) is a Jordan domain, then \(f\) extends continuously to the boundary.
+\end{theorem}
+\begin{proof}
+A Riemann map \(\varphi:\mathbb D\to G\) extends continuously to \(S^1\) by Carath\'eodory's theorem. By the preceding proposition, \(\varphi^{-1}\circ f\) also extends to \(S^1\). Combining the extensions proves the claim.
+\end{proof}
+
+We need analogues of Theorems~\href{https://codezen1729.github.io/math-blog/\#/post/boundary-behaviour-of-quasiconformal-maps}{42} and~\href{https://codezen1729.github.io/math-blog/\#/post/boundary-behaviour-of-quasiconformal-maps}{43} for domains other than \(\mathbb D\). General domains are difficult because we lack tools to capture all their analytic qualities. Extension constructions use many of those qualities, especially in choosing covering spaces. We illustrate the ideas for an annulus; such results provide partial answers to the initial questions.
+
+% Source page 9
+\setcounter{theorem}{45}\begin{theorem}[Annulus: domain to boundary]
+Put \(A_r=\{z:r<|z|<1\}\). Let \(A\) be a Jordan annulus and \(f:A_r\to A\) a conformal isomorphism. If \(\gamma^i,\gamma^o\) are its inner and outer boundaries, then \(f\) extends quasisymmetrically to both \(S^1\) and \(S_r^1=\{z:|z|=r\}\) if and only if both \(\gamma^i,\gamma^o\) are quasicircles.
+\end{theorem}
+\begin{proof}
+First, the picture:
+\begin{figure}[H]\centering
+\includegraphics[width=.83\textwidth]{cd11-fig-02.pdf}
+\FigureTag{CD11.2}{fig:cd11-02}
+\end{figure}
+Let \(R:\mathbb D\to\operatorname{Int}(\gamma^o)\) be a Riemann map. Then \(R^{-1}\circ f:A_r\to\mathbb D\).
+% Source page 10
+Schwarz reflection extends this to \(A_{r,1/r}=\{z:r<|z|<1/r\}\), so its restriction to \(S^1\) is analytic.
+Set \(\widehat f=\widehat R\circ\widehat{R^{-1}\circ f}\), where \(\widehat R\) is the boundary extension of \(R\), and the second hat denotes restriction to \(S^1\). Then
+\[
+\widehat f\text{ is quasisymmetric}
+\ \Longleftrightarrow\ 
+\widehat R\text{ is quasisymmetric}
+\ \Longleftrightarrow\ 
+\gamma^o\text{ is a quasicircle}.
+\]
+Using the exterior domain of \(\gamma^i\) in \(\widehat{\mathbb C}\) similarly proves the corresponding statement for the inner boundary.
+\end{proof}
+\setcounter{theorem}{46}\begin{theorem}[Annulus: boundary to domain]
+Let \(0<r_1,r_2<1\). Two orientation-preserving quasisymmetric homeomorphisms
+\(f_1:S^1\to S^1\) and \(f_2:S_{r_1}^1\to S_{r_2}^1\) extend to a map
+\(f:\overline{A_{r_1}}\to\overline{A_{r_2}}\) whose restriction to \(A_{r_1}\) is quasiconformal.
+\end{theorem}
+% BLOG-CONTENT-END
+\end{document}

@@ -1,0 +1,13 @@
+{
+  "\\supp": "\\operatorname{supp}",
+  "\\dist": "\\operatorname{dist}",
+  "\\id": "\\operatorname{id}",
+  "\\Hol": "\\operatorname{Hol}",
+  "\\Per": "\\operatorname{Per}",
+  "\\Fix": "\\operatorname{Fix}",
+  "\\diam": "\\operatorname{diam}",
+  "\\Var": "\\operatorname{Var}",
+  "\\Leb": "\\operatorname{Leb}",
+  "\\esssup": "\\operatorname*{ess\\,sup}",
+  "\\qedhere": "\\square"
+}

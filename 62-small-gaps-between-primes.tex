@@ -1,0 +1,146 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/miscellaneous/}}
+\begin{document}
+\section*{Small Gaps between Primes}
+% BLOG-CONTENT-BEGIN
+\begin{center}\small S. Viswanathan\end{center}
+% Source page 1
+Let $\mathbb P$ denote the set of primes. Enumerate them in increasing
+order as $p_1,p_2,p_3,\ldots,p_n,\ldots$, where $p_n$ denotes the $n$th prime.
+We ask a very basic question about the additive distribution of $\mathbb P$.
+Fix a width parameter $h$. How many primes can you find in the interval
+$[x,x+h]$, and how often?
+
+It would suffice to study $H_m:=\liminf_{n\to\infty}(p_{n+m}-p_n)$.
+Set $\widehat H_m:=\{p_{n+m}-p_n:p_n\in\mathbb P\}$.
+Studying $\{H_m\}_m$, assuming that its terms are indeed numbers, is
+extremely hard because of the additive nature of the problem.
+Primes appear naturally only as factors, so they are suited for
+multiplicative studies. Regardless, there are deep conjectures about this.
+Of them all, the
+% Source page 2
+famous, perhaps even mythical, one is the Twin Prime Conjecture.
+\setcounter{theorem}{17}\begin{conjecture}[Twin Prime Conjecture]
+$H_1=2$, or equivalently, there are infinitely many twin primes.
+\end{conjecture}
+Recently, by deploying advanced sieve-theoretic tools, highly nontrivial
+bounds for $H_m$ have been found, establishing that they are indeed numbers!
+The first breakthrough came from Goldston, Pintz, and Y{\i}ld{\i}r{\i}m,
+who developed a sieve technique to find at least two primes in an interval
+$[a,b]$.
+\paragraph{2005: Goldston, Pintz, and Y{\i}ld{\i}r{\i}m.}
+They proved
+\[
+ \liminf_{n\to\infty}\frac{p_{n+1}-p_n}{\log p_n}=0.
+\]
+In fact, they proved the stronger version
+$p_{n+1}-p_n\le(\log p_n)^{1/2+\varepsilon}$ infinitely often.
+\paragraph{2013: Yitang Zhang.}
+$\liminf_{n\to\infty}(p_{n+1}-p_n)=H_1\le70{,}000{,}000$.
+\paragraph{2013: Polymath.}
+$H_1\le4{,}680$. Tao organised a Polymath project, inviting mathematicians
+from all over to optimise Zhang's technique.
+It turns out that Zhang, and subsequently the Polymath group, used
+Deligne's theorem, which proves the Riemann hypothesis for finite fields.
+% Source page 3
+A postdoc named James Maynard found a shortcut and surprised everyone.
+He used elementary sieve methods.
+\paragraph{2013: J. Maynard, independently.}
+$H_1\le600$. Subsequently, Maynard and Tao's group joined forces.
+\paragraph{2014: Maynard and Polymath.}
+$H_1\le246$.
+They were also able to prove the following bound for $H_m$.
+\paragraph{2015: Maynard and Tao's group.}
+$H_m\ll m^3e^{4m}$, asserting for the first time that $\{H_m\}_m$ is a
+sequence of integers.
+% Author check: the historical narrative and dated claims are reproduced, not updated.
+This talk is about the 2005 work of Goldston, Pintz, and Y{\i}ld{\i}r{\i}m.
+\setcounter{theorem}{18}\begin{conjecture}
+$\displaystyle\liminf_{n\to\infty}\frac{p_{n+1}-p_n}{\log p_n}=0$.
+\end{conjecture}
+Erd\H{o}s was the first to make nontrivial progress. He proved
+$\liminf_{n\to\infty}(p_{n+1}-p_n)/\log p_n\le1$.
+This was improved to $0.24$. Finally, in 2005, Goldston, Pintz, and
+Y{\i}ld{\i}r{\i}m proved the following.
+% Source page 6
+\setcounter{theorem}{19}\begin{theorem}[Goldston, Pintz, and Y{\i}ld{\i}r{\i}m]
+\label{thm:m5-gpy}
+$\displaystyle\liminf_{n\to\infty}\frac{p_{n+1}-p_n}{\log p_n}=0$.
+\end{theorem}
+The quantity $\log p$ is usually called the \emph{average gap} because,
+according to the Prime Number Theorem, there is at least one prime on
+average in each interval
+$(k\log n,(k+1)\log n)$, where $0\le k\le n/\log n$.
+With Theorem~\href{https://codezen1729.github.io/math-blog/\#/post/small-gaps-between-primes}{20}, one can ask whether
+$\liminf_{p\to\infty}(p_{\mathrm{next}}-p)<\infty$, that is, whether
+bounded gaps between primes exist.
+
+\setcounter{theorem}{20}\begin{conjecture}
+$\displaystyle\limsup_{p\to\infty}
+\frac{p_{\mathrm{next}}-p}{(\log p)^2}=1$.
+\end{conjecture}
+Consider the sequence of consecutive numbers $m!+2,m!+3,\ldots,m!+m$.
+If $m!\sim x$, then the length of $(m!+2,m!+m)$ is
+$\sim\log x/\log\log x$, which is far less than $(\log x)^2$.
+In fact, it is dominated even by the average gap.
+
+% Source page 7
+Regardless, one must be ambitious. Goldston, Pintz, and Y{\i}ld{\i}r{\i}m
+were! They wanted to prove $\boxed{H_1\le16}$.
+Their idea is rather benign.
+Let $\mathcal H=\{h_1,h_2,\ldots,h_k\}$, where $h_1<h_2<\cdots<h_k$.
+Suppose one can find a sequence $\{a(n)\}_n$ of nonnegative numbers such
+that, for every $j=1,2,\ldots,k$,
+\begin{equation}
+ \sum_{\substack{x\le n\le2x\\n+h_j\in\mathbb P}}a(n)
+ >\frac1k\sum_{x\le n\le2x}a(n).
+ \tag{$\star$}\label{eq:m5-star}
+\end{equation}
+Then
+\[
+ \sum_{j=1}^k\left(\sum_{\substack{x\le n\le2x\\n+h_j\in\mathbb P}}a(n)\right)
+ =\sum_{x\le n\le2x}\#\{1\le j\le k:n+h_j\in\mathbb P\}\,a(n)
+ >\sum_{x\le n\le2x}a(n).
+\]
+Hence $\#\{1\le j\le k:n+h_j\in\mathbb P\}\ge2$, giving
+$p_{n+1}-p_n\le\diam(\{h_j\}_{j=1}^k)$.
+Inspired by Selberg, their choice of $\{a(n)\}_n$ is as follows.
+The idea is to choose $a(n)=1$ if the numbers
+$\{n+h_j\}_{j=1}^k$ are all prime, because, even without
+\href{https://codezen1729.github.io/math-blog/\#/post/small-gaps-between-primes}{($\star$)}, we would at least have an upper bound on the number
+of prime $k$-tuples.
+% Source page 8
+Let $\{\lambda_d\}_d$ be a sequence of real numbers such that
+$\lambda_1=1$ and $\lambda_d=0$ for all $d>R$. Set
+\[
+ a(n):=\left(\sum_{d\mid(n+h_1)\cdots(n+h_k)}\lambda_d\right)^2.
+\]
+If $R<x\le n$ and all the $n+h_j$ are prime, then $a(n)=1$.
+Expanding the square, one has
+\[
+ \sum_{d_1,d_2}\lambda_{d_1}\lambda_{d_2}
+ \left(\sum_{\substack{x\le n\le2x\\
+ d_1\mid(n+h_1)\cdots(n+h_k)\\d_2\mid(n+h_1)\cdots(n+h_k)}}1\right)
+ =
+ \sum_{d_1,d_2}\lambda_{d_1}\lambda_{d_2}
+ \left(\sum_{\substack{x\le n\le2x\\{}[d_1,d_2]\mid(n+h_1)\cdots(n+h_k)}}1\right),
+\]
+since $[d_1,d_2]\mid m$ if and only if $d_1\mid m$ and $d_2\mid m$.
+\setcounter{theorem}{21}\begin{theorem}[Assuming the Elliott--Halberstam conjecture]
+$H_1\le16$.
+\end{theorem}
+% Source page 11
+This failed attempt to get $H_1\le16$ led to decades of fascinating
+progress, leading up to the following state-of-the-art theorem.
+\setcounter{theorem}{22}\begin{theorem}[Polymath]
+$H_1\le246$.
+\end{theorem}
+It was argued that one cannot beat $6$ using sieve-theoretic tools because
+of something called the \emph{parity obstruction}. Thus this theory is,
+at the moment, stagnant. Tao remarks that progress is one or two clever
+ideas away!
+% The historical "at the moment" and conditional hypothesis are retained as source content, not current claims.
+% BLOG-CONTENT-END
+\end{document}

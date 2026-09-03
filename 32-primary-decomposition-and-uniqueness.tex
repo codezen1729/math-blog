@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/commutative-algebra/}}
+\begin{document}
+\section*{Primary Decomposition and Uniqueness}
+% BLOG-CONTENT-BEGIN
+\subsection{Primary decomposition}
+\setcounter{example}{6}\begin{example}
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item In $A=\Z$, $(0)$ and $(p^n)$ are primary ideals.
+\setcounter{enumi}{1}\item In $A=\kk[x,y]$, let $\qq=(x,y^2)$. Then $A/\qq\cong\kk[y]/(y^2)$, whose zero-divisors are multiples of $y$. Hence $\qq$ is primary. Moreover, $\rad(\qq)=(x,y)=\pp$ is prime, and $\pp^2\subset\qq\subset\pp$. Thus not all primary ideals are powers of prime ideals.
+\setcounter{enumi}{2}\item If $\rad(\aa)$ is maximal, then $\aa$ is primary. In particular, $\mm^n$ is $\mm$-primary. Here $A/\aa$ has only one prime ideal: $\rad(\aa)=\mm$ implies that $A/\aa\setminus\mm$ consists of units.
+\end{enumerate}
+\end{example}
+% Source page 7
+\setcounter{definition}{9}\begin{definition}
+For an ideal $\aa<A$, an expression
+\[\aa=\bigcap_{i=1}^n\qq_i,\qquad\qq_i\text{ is }\pp_i\text{-primary},\tag{*}\]
+is a \emph{primary decomposition} of $\aa$. The set $\{\pp_i\}_{i=1}^n$ is the set of \emph{primes associated to $\aa$}.
+\end{definition}
+\begin{remark}
+If $\qq_j\supseteq\bigcap_{k=1}^{\ell}\qq_{i_k}$, then $\qq_j$ is redundant in (*). Henceforth we assume our primary decomposition is \emph{irredundant}, or minimal.
+\end{remark}
+\setcounter{theorem}{9}\begin{lemma}
+Let $\qq$ be $\pp$-primary and $x\in A$.
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item If $x\in\qq$, then $(\qq:x)=A$.
+\setcounter{enumi}{1}\item If $x\notin\qq$, then $(\qq:x)$ is $\pp$-primary, and consequently $\rad((\qq:x))=\pp$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(i) is clear. For (ii), $y\in(\qq:x)\Rightarrow xy\in\qq$. As $x\notin\qq$, we get $y\in\pp$. Thus
+\[
+\qq\subseteq(\qq:x)\subseteq\pp
+\ \Longrightarrow\ \rad(\qq)\subseteq\rad((\qq:x))\subseteq\rad(\pp)
+\ \Longrightarrow\ \rad((\qq:x))=\pp.
+\]
+If $yz\in(\qq:x)$ and $y\notin\pp$, then $xyz\in\qq$, so $xz\in\qq$ and hence $z\in(\qq:x)$.
+\end{proof}
+% Source page 9
+\setcounter{theorem}{10}\begin{theorem}[First uniqueness theorem]
+The associated primes in an irredundant primary decomposition depend only on $\aa$.
+\end{theorem}
+\begin{proof}
+Note that
+\[\rad((\aa:x))=\bigcap_i\rad((\qq_i:x))=\bigcap_{x\notin\qq_i}\pp_i.\]
+If $\rad((\aa:x))$ is prime, then it equals $\pp_j$ for some $j$. Since the decomposition is irredundant, for every $1\le i\le n$ there exists $x_i\notin\qq_i$ with $x_i\in\bigcap_{j\ne i}\qq_j$. This yields $\rad((\aa:x_i))=\pp_i$. Therefore the $\pp_i$ are precisely the primes of the form $\rad((\aa:x))$, and hence depend on $\aa$.
+\end{proof}
+% Source page 10
+\setcounter{theorem}{11}\begin{lemma}
+Let $S$ be a multiplicatively closed subset of $A$ and $\qq$ a $\pp$-primary ideal.
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item If $S\cap\pp\ne\varnothing$, then $S^{-1}\qq=S^{-1}A$.
+\setcounter{enumi}{1}\item If $S\cap\pp=\varnothing$, then $S^{-1}\pp$-primary ideals of $S^{-1}A$ correspond to $\pp$-primary ideals of $A$.
+\end{enumerate}
+\end{lemma}
+% Source page 11
+\begin{remark}
+One can generalize this to modules and prove analogous results. Briefly, for an $A$-module $M$, set
+\[
+\Ass(M):=\{\pp<A\text{ prime}\mid\pp=\Ann(m),\ m\in M\}.
+\]
+The primes associated to $\aa<A$ are elements of $\Ass(A/\aa)$. We say $N$ is a $\pp$-primary submodule of $M$ if $\Ass(M/N)=\{\pp\}$.
+\end{remark}
+Lasker proved, using methods from elimination theory, that affine rings admit primary decomposition for all ideals. Noether later developed the notion of chain conditions and extended Lasker's result to a wide range of rings satisfying these conditions. In her honour, these rings are named \emph{Noetherian rings}.
+% BLOG-CONTENT-END
+\end{document}

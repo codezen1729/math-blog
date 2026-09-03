@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/ergodic-theory/}}
+\begin{document}
+\section*{Equidistribution}
+% BLOG-CONTENT-BEGIN
+
+\begin{remark}[1]
+Notice that Choquet's theorem implies that $\lvert\mathcal M^T(X)\rvert=1$
+if $\lvert\mathcal E^T(X)\rvert=1$, for $\mathcal M^T(X)$ consists of
+``convex linear combinations'' of elements of $\mathcal E^T(X)$.
+\end{remark}
+
+
+\setcounter{definition}{9}\begin{definition}[Equidistribution]
+We say that $(x_n)_n$, with $x_n\in X$, is \emph{equidistributed} in $(X,T)$
+if, for every $f\in C(X)$, we have
+\[
+  \lim_{n\to\infty}\frac1n\sum_{j=1}^n f(x_j)
+  =\int_X f(x)\,d\mu(x).
+\]
+\end{definition}
+
+
+
+% Source page 5
+To see what equidistribution means probabilistically, one must go to $[0,1]$.
+There we have the following.
+
+\setcounter{theorem}{24}\begin{lemma}
+Let $[0,1]$, equipped with Lebesgue measure, be our setting. If $(x_n)_{n\geq1}$
+is equidistributed, then
+\[
+  \lim_{n\to\infty}\frac1n
+  \bigl|\{j:1\leq j\leq n,\ x_j\in[a,b]\}\bigr|=b-a.
+\]
+\end{lemma}
+
+In other words, equidistribution means being uniformly distributed over
+$[0,1]$. We have the same for ergodic orbits in the more general setting of
+a probability measure space, but those are special sequences regardless of
+how general the setting is: notice that $\mathcal E^T(X)$ is merely the set
+of extremal points of $\mathcal M^T(X)$.
+
+\Needspace{7cm}
+\begin{proof}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.62\textwidth]{lecture7-fig-01.pdf}
+  \FigureTag{L7.1}{fig:lecture7-fig-01}
+\end{figure}
+Let $f^-$ and $f^+$ be as shown in the figure. Note that
+$f^-\leq\chi_{[a,b]}\leq f^+$, and one can arrange $f^\pm$ so that
+\[
+  \int_0^1(f^+-f^-)(x)\,dx\leq2\varepsilon.
+\]
+
+% Source page 6
+\begin{align*}
+  b-a-2\varepsilon
+  &\leq\int_0^1f^-\,dx
+  \leq\liminf_{N\to\infty}A_N^{\chi_{[a,b]}}
+  \leq\limsup_{N\to\infty}A_N^{\chi_{[a,b]}}\\
+  &\leq\int_0^1f^+\,dx\leq b-a+2\varepsilon.
+\end{align*}
+Thus $\liminf_{N\to\infty}A_N^{\chi_{[a,b]}}
+=\limsup_{N\to\infty}A_N^{\chi_{[a,b]}}=b-a$.
+\end{proof}
+
+
+We have dealt with one of the problems raised in Lecture 5, that of ergodic
+decomposition. In the next few lectures, let us deal with the problem of
+classifying systems up to measurable isomorphisms.
+% BLOG-CONTENT-END
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\graphicspath{{figures/lemma-book/}}
+\begin{document}
+\section*{Rotation in Geometry}
+% BLOG-CONTENT-BEGIN
+\subsection{Transformations}
+\setcounter{theorem}{91}\begin{lemma}[Transformation techniques]\label{lemma:lb1-94}
+We can rotate figures, reflect figures, and invert figures.
+Let's see some examples. Transformation techniques are a powerful tool that you must have in your arsenal.
+\end{lemma}
+\paragraph{Transformation I.}
+$AB=BC=CA$, $PA=3$, $PB=4$, and $PC=5$. Find $[ABC]$.
+\begin{figure}[H]\centering
+\includegraphics[width=.68\linewidth]{lb1-fig-34.pdf}
+\FigureTag{LB1.34}{fig:lb1-34}
+\end{figure}
+Rotate $\triangle APB$ by $60^\circ$ to $AP'C$.
+Similarly obtain $BP''C$ and $BP'''A$.
+Now $[APB]=[AP'C]$, $[BPC]=[BP'''A]$, and $[APC]=[BP''C]$.
+Thus $[\text{hexagon}]=2[ABC]$.
+That hexagon consists of three quadrilaterals, each consisting of a $3$--$4$--$5$ right triangle and an equilateral triangle.
+Hence
+\[[\text{hexagon}]=3\left(\frac12\cdot3\cdot4\right)
++\frac{\sqrt3}{4}(3^2+4^2+5^2),
+\qquad[ABC]=9+\frac{25\sqrt3}{4}.\]
+
+
+% BLOG-CONTENT-END
+\end{document}
