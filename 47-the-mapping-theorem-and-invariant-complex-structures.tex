@@ -7,8 +7,10 @@
 % BLOG-CONTENT-BEGIN
 An ellipse field on a Riemann surface is essentially an ellipse, modulo scaling, chosen in the tangent plane $T_zS$ for almost every $z\in S$. It is the pullback of a circle field via the expression $\mu(z)\,d\overline z/dz$.
 
+The mapping theorem says that if $S$ is simply connected, hence by uniformisation one of $\mathbb C$, $\widehat{\mathbb C}$, or $\mathbb D$, then there is a quasiconformal map $\phi\colon S\to\mathbb D$. This does not say much by itself. But once an ellipse field on $S$ is fixed by a measurable complex dilatation $\mu$ (the Beltrami coefficient), with $\esssup_{z\in S}|\mu(z)|<\infty$, the map $\phi$ is the unique such map pulling back the circle field on $\mathbb C$, $\widehat{\mathbb C}$, or $\mathbb D$ to the ellipse field given by $\mu$.
+% Author check: source states target D in the first sentence, bounds ||mu|| by infinity rather than 1, and claims uniqueness without normalisation.
 
-We shall see an elementary example in which the mapping theorem joins forces with Weyl's lemma to change the quantitative features of dynamics while keeping its topology
+This is also called the integrability theorem or measurable Riemann mapping theorem. We shall see an elementary example in which the mapping theorem joins forces with Weyl's lemma to change the quantitative features of dynamics while keeping its topology
 % Source page 2
 the same. Start with $M_0\colon\mathbb D\to\mathbb D$, $z\mapsto\lambda_0z$. View this as a map $\mathbb D^*\to\mathbb D^*$ and lift it to the universal cover $\mathbb H_\ell$.
 \begin{figure}[H]\centering
@@ -40,6 +42,15 @@ A map $g\colon U\to\mathbb C$, $U\subseteq\mathbb C$, is $K$-quasiregular if $g=
 \setcounter{theorem}{24}\begin{lemma}[Surgery lemma]\label{cd6:surgery}
 Let $g\colon S\to S$, where $S\cong\mathbb C$ or $\widehat{\mathbb C}$, be quasiregular. If $\mu$ is a $g$-invariant Beltrami form with $\|\mu\|_\infty=k<1$, then there is $f\in\Hol(X)$, with $X=\mathbb C$ or $\widehat{\mathbb C}$, quasiconformally conjugate to $g$.
 \end{lemma}
+\begin{proof}
+The mapping theorem supplies $\phi\colon S\to X$ in the following diagram; $\mu_0$ denotes the circle field.
+\begin{figure}[H]\centering
+\includegraphics[width=.50\textwidth]{cd6-fig-04.pdf}
+\FigureTag{CD6.4}{fig:cd6-04}
+\end{figure}
+Then $f^*\mu_0=\mu_0$, so $f$ is $1$-quasiconformal and therefore conformal by Weyl's lemma.
+\end{proof}
+% Author check: source calls the resulting potentially branched map 1-quasiconformal/conformal, rather than 1-quasiregular/holomorphic.
 % Source page 5
 Taking our cue from this lemma, after surgically altering the dynamics quantitatively we want to retain a holomorphic map so that complex analysis remains available. For that, the conjugate $\phi\circ g\circ\phi^{-1}$ must be a Beltrami-form-preserving quasiregular map.
 
@@ -81,11 +92,46 @@ Now consider the following self-explanatory diagram. Shrink $N_{g(z)}$ to be sim
 \end{figure}
 Then $R\circ g\circ(\widetilde R\circ\phi)^{-1}$ is the required map.
 % Source page 8
-Among the many things one must look out for in a good surgery, knowing one's way around quasiregularity is important. There are deeper principles and schemes, due to Shishikura, governing how and when surgery can be performed. We will see them later. This exposition is a peek into the role of quasiconformality in loosening dynamics. As promised, the flexibility in conformality is deeply connected with flexibility in the resulting dynamics.
+Among the many things one must look out for in a good surgery, knowing one's way around quasiregularity is important. There are deeper principles and schemes, due to Shishikura, governing how and when surgery can be performed. We will see them later. This gives a peek into the role of quasiconformality in loosening dynamics. As promised, the flexibility in conformality is deeply connected with flexibility in the resulting dynamics.
+\subsection{Addendum: two properties of quasiconformal maps}
 \begin{enumerate}
 \setcounter{enumi}{0}\item H\"older's inequality:
 $|\varphi(z_1)-\varphi(z_2)|\le C|z_1-z_2|^{1/K}$.
+\setcounter{enumi}{1}\item A $K$-quasiconformal family $\{\varphi_n\}_{n\in\Lambda}$ is closed in the $C^0$ topology, and in fact compact. For a sequence $\{\varphi_n\}_{n\in\mathbb N}$, equicontinuity and boundedness on a compact set give sequential compactness by Arzel\`a--Ascoli. Applying the same argument to $\varphi_n^{-1}$ shows that the limit $\varphi$ is a homeomorphism. Its $K$-quasiconformality follows from the analytic definition.
 \end{enumerate}
+% Author check: the compactness assertion lacks normalisation or nondegeneracy assumptions in the source.
 % Source page 9
+\subsection{Addendum: full proof of Weyl's lemma}
+Consider a domain $D$ and a compact set $K\subset D$. Since $\mathbb C$ is normal, choose a neighbourhood $U_K$ with $K\subset U_K\subset\overline{U_K}\subset D$. Let $\eta\in C_0^\infty(D)$ be identically one on $U_K$ and supported in $D$. Then $(\eta f)_{\overline z}\in L^2_{\mathrm{loc}}$.
+
+Set
+\[
+\varphi(z)=\begin{cases}
+C\exp\!\left(-\dfrac1{1-|z|^2}\right),&z\in\mathbb D,\\
+0,&\text{otherwise},
+\end{cases}
+\qquad\iint_{\mathbb D}\varphi(z)\,dx\,dy=1,
+\]
+choosing $C$ accordingly. Define $\varphi_n(z)=n^2\varphi(nz)$ and
+\[
+f_n(w)=\varphi_n*(\eta f)(w)
+=\iint_{\mathbb C}\varphi_n(w-z)\eta(z)f(z)\,dx\,dy.
+\]
+Then $(f_n)_{\overline z}=(\varphi_n*(\eta f))_{\overline z}=\varphi_n*(\eta f)_{\overline z}=0$, and for large $n$, $f_n$ is holomorphic in $D$, being smooth with $\partial f_n/\partial\overline z=0$.
+% Author check: source claims this equality on D; the cutoff derivative generally restricts the conclusion to compact interior neighbourhoods.
+
+For large $n$, $\supp(\varphi_n)=\mathbb D_{1/n}=\{z:|z|<1/n\}$. Compactness of $K$ gives $n$ such that $B(w,1/n)\subset U_K$ for every $w\in K$.
+% Source page 10
+Since $\eta=1$ on $U_K$,
+\begin{align*}
+f_n(w)&=\iint_{|w-z|<1/n}\varphi_n(w-z)f(z)\,dx\,dy\\
+&=\int_0^{2\pi}\int_0^{1/n}
+\frac{n^2f(w+re^{i\theta})r}{\exp(1/(1-n^2r^2))}\,dr\,d\theta,
+\end{align*}
+while $f(w)=\iint_{\mathbb D}f(w)\varphi(z)\,dx\,dy$. Thus $|f_n-f|\to0$ uniformly on $K$, independently of the input by continuity of $f$. Hence $f_n\to f$ uniformly on compact sets and $f$ is holomorphic.
+% Author check: the source omits the normalising constant C in the polar-coordinate integral and uses the open disc for the support.
+\begin{remark}
+This immediately implies the Looman--Menchoff theorem.
+\end{remark}
 % BLOG-CONTENT-END
 \end{document}

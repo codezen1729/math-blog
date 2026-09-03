@@ -5,12 +5,21 @@
 \begin{document}
 \section*{Hyperbolic Geometry}
 % BLOG-CONTENT-BEGIN
-We quickly review some preliminaries essential for complex dynamics by answering questions:
+Four questions lead us into hyperbolic geometry and its role in complex dynamics:
 \begin{enumerate}
 \setcounter{enumi}{0}\item What are hyperbolic surfaces?
 \setcounter{enumi}{1}\item Why care about them?
 \setcounter{enumi}{2}\item What is so special about them?
+\setcounter{enumi}{3}\item What does this have to do with complex dynamics?
 \end{enumerate}
+Let us address these one by one. Riemann's brilliant insight is that geometry on a manifold requires a smoothly varying symmetric positive-definite bilinear form $\langle\cdot,\cdot\rangle_p$ on $T_pM$. This inner product leads to geodesics (lines), distances, angles, area, volume, curvature, and so on. In parallelisable spaces, defining length looks natural: glide along a curve and sum infinitesimal distances $|\gamma'(t)|$, using $\langle\cdot,\cdot\rangle_{\gamma(t)}$.
+\begin{figure}[H]\centering
+\includegraphics[width=.52\textwidth]{cd7-fig-01.pdf}
+\FigureTag{CD7.1}{fig:cd7-01}
+\end{figure}
+Constructing smooth sections of $T^*M\otimes T^*M$ is also easy, since $TM\cong M\times\mathbb R^n$.
+% Source page 2
+Hyperbolic spaces are not like that. Moreover, we ask for more than just some metric: that can always be obtained by locally pushing the Euclidean metric to $M$ and patching with a partition of unity, however abstract this may be. First, some context.
 \setcounter{theorem}{25}\begin{theorem}[Uniformisation]
 Every simply connected Riemann surface is conformally isomorphic to one of
 $\widehat{\mathbb C}$ (spherical), $\mathbb C$ (Euclidean), or $\mathbb H\cong\mathbb D$ (hyperbolic).
@@ -20,6 +29,11 @@ Thus a hyperbolic surface is a Riemann surface whose universal cover is $\mathbb
 Up to multiplication by a constant, there is a unique Riemannian metric on $\mathbb H$ invariant under every element of $\operatorname{Aut}(\mathbb H)$.
 \end{theorem}
 % Source page 3
+In other words, every $g\in\operatorname{Aut}(\mathbb H)$ is an isometry. This construction is a special case of a general correspondence.
+\begin{figure}[H]\centering
+\includegraphics[width=.74\textwidth]{cd7-fig-02.pdf}
+\FigureTag{CD7.2}{fig:cd7-02}
+\end{figure}
 A symmetric Riemannian metric has the form
 $g_{11}\,dx\otimes dx+2g_{12}\,dx\otimes dy+g_{22}\,dy\otimes dy$.
 For a conformal map $f=u+iv$, taking the $(dx,dy)$ tangent plane to the $(du,dv)$ tangent plane,
@@ -41,6 +55,37 @@ Conformality gives $u_xu_y+v_xv_y=0$ and $u_x^2+v_x^2=u_y^2+v_y^2$, motivating t
 \setcounter{definition}{17}\begin{definition}[Conformal metric]
 A metric $ds^2=g_{11}dx^2+2g_{12}dx\,dy+g_{22}dy^2$, where $ds^2$ denotes $ds\otimes ds$, is conformal if $g_{11}=g_{22}$ and $g_{12}=0$.
 \end{definition}
+\begin{proof}[Proof of Theorem~\ref{cd7:poincare}]
+We know $\operatorname{Aut}(\mathbb H)\cong\operatorname{PSL}_2(\mathbb R)$. Given $w_0\in\mathbb H$, choose $(az+b)/(cz+d)$ such that
+\[
+cw_0^2+(d-a)w_0-b=0,\qquad
+\left.\left(\frac{az+b}{cz+d}\right)'\right|_{w_0}=i.
+\]
+For such an automorphism, the derivative at $w_0$ as a real-linear map is $\begin{pmatrix}0&-1\\1&0\end{pmatrix}$. Thus
+\[
+df_{w_0}\left(c\frac\partial{\partial x}+d\frac\partial{\partial y}\right)
+=-d\frac\partial{\partial x}+c\frac\partial{\partial y}.
+\]
+Let $g_0=g_{11}du^2+2g_{12}du\,dv+g_{22}dv^2$ be an invariant metric. Then
+\begin{align*}
+g_{w_0}\left(c\partial_x+d\partial_y,a\partial_x+b\partial_y\right)
+&=acg_{11}+bdg_{22}+2bcg_{12}\\
+&=\widehat g_{w_0}\left(-d\partial_x+c\partial_y,-b\partial_x+a\partial_y\right),
+\end{align*}
+where $\widehat g$ is the pushforward. Thus
+$\widehat g_{w_0}=g_{22}dv^2-2g_{12}dv\,du+g_{11}du^2$, forcing $g_{12}=0$ and $g_{11}=g_{22}$. An invariant metric is therefore conformal, and unique up to constant multiplication.
+% Author check: source cross coefficient 2bc and the displayed pushed-forward diagonal terms are retained.
+% Source page 5
+A conformal metric is $ds^2=\gamma(x+iy)^2(dx^2+dy^2)$, positive definite, so its norm is $ds=\gamma(z)|dz|$. Invariance under $f$ reads $\gamma(f(z))|df(z)|=\gamma(z)|dz|$. Evaluate this on $\partial_x$, which maps to $v=u_x\partial_x+v_x\partial_y$:
+\[
+\gamma(z)\sqrt{dx^2(\partial_x,\partial_x)+dy^2(\partial_x,\partial_x)}
+=\gamma(f(z))\sqrt{dx^2(v,v)+dy^2(v,v)}.
+\]
+We obtain $\gamma(f(z))=|f'(z)|^{-1}\gamma(z)$. It is a simple computational exercise to verify that $\gamma(x+iy)=1/y$ satisfies this for all $f\in\operatorname{PSL}_2(\mathbb R)$.
+\end{proof}
+Using the Cayley transform $(z+i)/(z-i)$ transfers this to the invariant metric
+$ds=2|dz|/(1-|z|^2)$ on $\mathbb D$. Let us use it to construct a metric on $\mathbb D/\Gamma$, with $\Gamma<\operatorname{PSL}_2(\mathbb R)$ discrete.
+% Author check: source Cayley transform is the reciprocal of the usual upper-half-plane-to-disc map.
 
 Let $S$ be hyperbolic, with universal cover $P\colon\mathbb D\to S$. For $y\in S$, let $U_y$ be evenly covered. Choose $V_a\subset\mathbb D$ so that $P|_{V_a}\colon V_a\to U_y$ is biholomorphic, and set
 \[
@@ -52,6 +97,13 @@ $\{U_y\}_{y\in S}$. Patch by setting
 \[
 g=ds^2=\sum_y\psi_y\bigl(\gamma_a(P|_{V_a}(z))\bigr)^2(dx^2+dy^2).
 \]
+It remains to check that the pushforward is well-defined. Given $x,a\in P^{-1}(y)$, normality of the covering gives a deck transformation $\phi\colon\mathbb D\to\mathbb D$ with $P=\phi\circ P$ and $\phi(x)=a$. Thus $P'(a)=P'(x)\phi'(a)$. As $\phi$ is a M\"obius transformation in $\operatorname{Aut}(\mathbb D)$,
+\[
+|\phi'(a)|=\frac{1-|x|^2}{1-|a|^2}=\frac{\rho(a)}{\rho(x)},\qquad
+\frac{\rho(a)}{|P'(a)|}=\frac{\rho(x)}{|P'(x)|}.
+\]
+Therefore $\gamma_a(P|_{V_a}(z))=\gamma_x(P|_{V_x}(z))$, as required.
+% Author check: source reverses the deck-transformation composition and the corresponding derivative/base-point formulas.
 
 This metric defines distances. For a smooth or piecewise smooth path $p\colon[0,1]\to S$,
 \[
@@ -62,10 +114,39 @@ The formula for smooth paths extends in the same way to piecewise smooth paths.
 \setcounter{definition}{18}\begin{definition}[Poincar\'e distance]
 For $z_0,z_1\in S$, let $\mathcal Z$ be the smooth or piecewise smooth paths joining them. Define $\dist_S(z_0,z_1)=\inf_{p\in\mathcal Z}\operatorname{length}(p)$.
 \end{definition}
+Let us prove an important fact about hyperbolic spaces with this newly endowed distance.
 % Source page 7
 \setcounter{theorem}{27}\begin{lemma}[Completeness]\label{cd7:complete}
 The space $(S,\dist_S)$ is complete. Given any $z_0,z_1\in S$, there is a path $p$ with $\operatorname{length}(p)=\dist_S(z_0,z_1)$; in other words, there is at least one geodesic.
 \end{lemma}
+\begin{proof}
+First take $S=\mathbb D$. We may assume $z_0=0$ and $z_1=r\in\mathbb R$, with $0<r<1$, by applying an automorphism of $\mathbb D$. Let $p\colon[0,1]\to\mathbb D$ join $0$ to $r$, and write $p(t)=(x(t),y(t))$. Then
+\[
+\sqrt{\frac4{(1-|p(t)|^2)^2}\bigl(dx^2(p',p')+dy^2(p',p')\bigr)}
+\ge\sqrt{\frac4{(1-x(t)^2)^2}\,dx^2(p',p')}.
+\]
+Thus
+\[
+\int_pds=\int_p\frac{2|dz|}{1-|z|^2}
+\ge\int_p\frac{2|dx|}{1-x^2}
+\ge\int_0^r\frac{2\,dx}{1-x^2}
+=\log\frac{1+r}{1-r}.
+\]
+Equality holds if and only if $y(t)=0$. If $\psi$ takes $z_0,z_1$ to $0,r$, then
+\[
+\dist_{\mathbb D}(z_0,z_1)
+=\dist_{\mathbb D}(\psi(z_0),\psi(z_1))
+=\log\frac{1+|\psi(z_1)|}{1-|\psi(z_0)|}.
+\]
+% Author check: source denominator is 1-|psi(z_0)|, inconsistent with its preceding radial formula.
+Hyperbolic balls in $\mathbb D$ are Euclidean balls, generally with different centres. Thus on $\widetilde S=\overline{B_r(0)}$, $r<1$, the hyperbolic and Euclidean metrics give the same topology. Therefore $\mathbb D$ is complete, and geodesics exist and are uniquely determined by two distinct points.
+% Source page 8
+Now let $S$ be any hyperbolic surface. For small enough $\varepsilon$, the set $\{z\in S:\dist_S(z,z_0)\le\varepsilon\}$ is compact. In fact, if $P\colon\mathbb D\to S$ is the covering map with $P(0)=z_0$, then the restriction of $P$ over a sufficiently small ball is an isometry. Also
+\[
+\dist_S(P(z_0),P(z_1))\le\dist_{\mathbb D}(z_0,z_1),
+\]
+since a path in $\mathbb D$ of length $\ell$ projects to a path of the same length. A closed metric ball of radius $r$ is compact, being a closed subset in $\overline{B_{2r}(0)}$. For a Cauchy sequence $\{x_n\}$, there is $N$ such that its tail lies in $\{z:\dist_S(x_N,z)\le\varepsilon\}$. It therefore converges.
+\end{proof}
 \begin{remark}
 Heine--Borel holds for hyperbolic spaces: $N_r(z_0)=\{z\in S:\dist_S(z,z_0)\le r\}$ is compact for every $r>0$.
 \end{remark}
@@ -98,6 +179,48 @@ Liouville's theorem makes $\widetilde f$ constant. Here we regard $\mathbb D\sub
 % Source page 10
 In fact, hyperbolic surfaces are embedded as submanifolds in every Riemann surface. If $\mathbb C$ or $\widehat{\mathbb C}$ covers $S$, it only remains to consider the cylinder and torus. Removing one point there removes infinitely many points in $\mathbb C$; the resulting cover sits in $\mathbb C\setminus\{p,q\}$, or in $\widehat{\mathbb C}\setminus\{p,q,r\}$.
 
+The following theorem makes hyperbolic surfaces special.
+\setcounter{theorem}{30}\begin{theorem}[Pick's theorem]\label{cd7:pick}
+Let $f\colon S\to S'$ be holomorphic between hyperbolic surfaces. Then:
+\begin{enumerate}
+\setcounter{enumi}{0}\item $f$ is a conformal isomorphism;
+\setcounter{enumi}{1}\item $f$ is a covering map;
+\setcounter{enumi}{2}\item on every compact subset $K$, $f|_K$ is a contraction mapping.
+\end{enumerate}
+\end{theorem}
+% Author check: the source lists these cases without explicitly saying "one of"; the first is contained in the second.
+\begin{proof}
+For $p\in S$, the differential is $df_p\colon T_pS\to T_{f(p)}S'$. Distances depend on $\|v\|$ and $\|df_p(v)\|$, so it is natural to study the operator norm $\|df_p\|$. Lift $f$ to $F$ as follows, with $F(0)=0$, $\pi_1(0)=p$, and $\pi_2(0)=f(\pi_1(0))=f(p)=p'$.
+\begin{figure}[H]\centering
+\includegraphics[width=.36\textwidth]{cd7-fig-05.pdf}
+\FigureTag{CD7.5}{fig:cd7-05}
+\end{figure}
+% Source page 11
+Schwarz's lemma gives $|F'(0)|\le1$, hence $\|DF_0\|\le1$. Indeed,
+\[
+\|DF_0\|=\sup_{\|v\|=1}\|DF_0(v)\|
+=\sup_{\|a+ib\|=1}\|F'(z)(a+ib)\|=|F'(z)|.
+\]
+Here $F'(z)$ is a real-linear map $\mathbb R^2\to\mathbb R^2$, identified with a complex-linear map $\mathbb C\to\mathbb C$. Therefore $\|Df_p\|\le1$. If $F$ is a conformal isomorphism, $\pi_2\circ F$ is a covering map, so $f$ is a covering map and $\|Df_p\|=1$. Thus $f$ is a local isometry; if $\pi_1,\pi_2$ are biholomorphisms, it is a global isometry.
+
+If $f$ is not a covering map, then $\|df_p\|<1$. The ratio $\|df_p(v)\|/\|v\|$ is continuous in $p,v$, being locally smooth in $p$ and bounded linear in $v$. Thus
+\[
+\sup_{p\in K,\ \|v\|=1}\|df_p(v)\|\le c_K<1.
+\]
+Enlarge $K$ if necessary, for example to $\overline{B_{2\diam(K)}(z_0)}$. For a path $p$,
+\[
+\operatorname{length}(p)=\int_0^1\|p'(t)\|\,dt,\qquad
+\operatorname{length}(f\circ p)=\int_0^1\|Df_{p(t)}(p'(t))\|\,dt
+\le c_K\operatorname{length}(p).
+\]
+Hence $\dist_{S'}(f(p),f(q))\le c_K\dist_S(p,q)$.
+\end{proof}
 % Source page 12
+Hyperbolic surfaces matter in complex dynamics because they help identify spaces on which a family of functions is stable. More precisely:
+\setcounter{theorem}{31}\begin{lemma}
+A family $\mathcal F$ of holomorphic functions from $S$ to $T$ is normal.
+\end{lemma}
+% Author check: the source leaves the hypotheses on S,T and the convention allowing compact divergence implicit.
+We defer the proof of this lemma and other Montel-like lemmas. We will soon see how hyperbolic surfaces are integral to complex dynamics.
 % BLOG-CONTENT-END
 \end{document}

@@ -298,7 +298,7 @@
   },
   {
     "slug": "sheaves-stalks-and-ringed-spaces",
-    "title": "Sheaves and Stalks",
+    "title": "Sheaves, Stalks, and Ringed Spaces",
     "collection": "commutative-algebra",
     "phase": 5,
     "phaseLabel": "Commutative Algebra",
@@ -379,7 +379,7 @@
   },
   {
     "slug": "the-chain-rule-and-a-family-of-complex-planes",
-    "title": "The Chain Rule and Complex Dilatation",
+    "title": "The Chain Rule and a Family of Complex Planes",
     "collection": "complex-dynamics-notes",
     "phase": 4,
     "phaseLabel": "Complex Dynamics",
@@ -432,6 +432,15 @@
     "file": "49-shishikuras-surgery-principles.tex"
   },
   {
+    "slug": "polynomial-like-maps-and-the-straightening-theorem",
+    "title": "Polynomial-Like Maps and the Straightening Theorem",
+    "collection": "complex-dynamics-notes",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "2d4d12fd50f68ad9ef5cb1c0c1b53ce5ae0ffea8a8fbcdffdf823b5d389a7d52",
+    "file": "50-polynomial-like-maps-and-the-straightening-theorem.tex"
+  },
+  {
     "slug": "classification-fatou-components",
     "title": "Classification of Non-Wandering Fatou Components",
     "collection": "surgeries",
@@ -451,7 +460,7 @@
   },
   {
     "slug": "first-surgery",
-    "title": "First Surgery",
+    "title": "Sullivan's No Wandering Theorem",
     "collection": "surgeries",
     "phase": 4,
     "phaseLabel": "Complex Dynamics",
@@ -460,7 +469,7 @@
   },
   {
     "slug": "second-surgery",
-    "title": "Second Surgery",
+    "title": "The Multiplier Map",
     "collection": "surgeries",
     "phase": 4,
     "phaseLabel": "Complex Dynamics",
@@ -496,7 +505,7 @@
   },
   {
     "slug": "recurrence-and-three-views-of-ergodicity",
-    "title": "Recurrence and Ergodicity",
+    "title": "Recurrence and Three Views of Ergodicity",
     "collection": "ergodic-theory",
     "phase": 6,
     "phaseLabel": "Ergodic Theory",
@@ -541,7 +550,7 @@
   },
   {
     "slug": "unique-ergodicity-and-equidistribution",
-    "title": "Equidistribution",
+    "title": "Unique Ergodicity and Equidistribution",
     "collection": "ergodic-theory",
     "phase": 6,
     "phaseLabel": "Ergodic Theory",
@@ -586,7 +595,7 @@
   },
   {
     "slug": "lemma-book-congruences-diophantine-equations-descent",
-    "title": "Congruences and Diophantine Equations",
+    "title": "Congruences, Diophantine Equations, and Infinite Descent",
     "collection": "lemma-book",
     "phase": 7,
     "phaseLabel": "The Lemma Book",
@@ -595,7 +604,7 @@
   },
   {
     "slug": "lemma-book-standard-inequalities-cauchy-schwarz",
-    "title": "AM–GM and Cauchy–Schwarz Applications",
+    "title": "Standard Inequalities and Ingenious Cauchy–Schwarz Applications",
     "collection": "lemma-book",
     "phase": 7,
     "phaseLabel": "The Lemma Book",
@@ -604,7 +613,7 @@
   },
   {
     "slug": "lemma-book-inequality-toolkit",
-    "title": "An Inequality Toolkit: Jensen, Muirhead, and Sums of Squares",
+    "title": "An Inequality Toolkit: Jensen, Muirhead, and Schur",
     "collection": "lemma-book",
     "phase": 7,
     "phaseLabel": "The Lemma Book",
@@ -613,7 +622,7 @@
   },
   {
     "slug": "lemma-book-rearrangement-convexity-power-means",
-    "title": "Rearrangement and Convexity",
+    "title": "Rearrangement, Convexity, and Power Means",
     "collection": "lemma-book",
     "phase": 7,
     "phaseLabel": "The Lemma Book",
@@ -622,7 +631,7 @@
   },
   {
     "slug": "lemma-book-lagrange-multipliers-boundary-analysis",
-    "title": "Optimization, Normalization, and AM–GM",
+    "title": "Lagrange Multipliers and Boundary Analysis",
     "collection": "lemma-book",
     "phase": 7,
     "phaseLabel": "The Lemma Book",
@@ -667,7 +676,7 @@
   },
   {
     "slug": "lemma-book-transformations",
-    "title": "Rotation in Geometry",
+    "title": "Transformations: Rotating, Reflecting, and Cutting Figures",
     "collection": "lemma-book",
     "phase": 7,
     "phaseLabel": "The Lemma Book",

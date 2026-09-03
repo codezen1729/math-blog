@@ -47,10 +47,31 @@ There is a natural dilemma at this juncture. The dynamics of $f$ and $f^{\circ n
 \setcounter{theorem}{0}\begin{lemma}[Invariance lemma]\label{cd1:invariance}
 $z\in J$ if and only if $f(z)\in J$.
 \end{lemma}
+\begin{proof}
+It is enough to show $z\in F\Longleftrightarrow f(z)\in F$. If $z\in F$, then $\{f^{\circ n}|_U\}_n$ is normal, so it is contained in a compact set $K\subset\Hol(U,S)$.
+% Source page 4
+Notice that $f\circ K$ is compact in $\Hol(U,S)$. For if $C\subseteq S$ is compact and $\{g_k\}_k\subset K$ converges uniformly on $C$, then, since $f$ is uniformly continuous on compact sets, an estimate $|g_{k_0}(x)-g(x)|<\varepsilon$ for every $k_0\ge N$ and $x\in C$ ensures, after increasing $N$ if necessary, that
+\[
+|f\circ g_{k_0'}(x)-f\circ g(x)|<\varepsilon
+\quad(k_0'\ge N',\ x\in C).
+\]
+Indeed, $f$ is uniformly continuous on the compact set $\overline{B_\varepsilon(g(C))}$. Thus $\{f^{\circ(n+1)}|_U\}_n$ is normal, and hence $f(z)\in F$.
+% Author check: the forward implication is transcribed as written; normality on U alone does not directly establish normality near f(z).
+
+Conversely, if $f(z)\in F$, there is a neighbourhood $V$ of $f(z)$ on which $\{f^{\circ n}|_V\}_n$ is normal. Since $f$ is open, there is a neighbourhood $U$ of $z$ with $f(U)\subseteq V$. Hence $\{f^{\circ n}|_U\}_n$ is also normal, and $z\in F$.
+\end{proof}
 The Fatou and Julia sets are invariant under orbits. The next lemma makes this more explicit.
 \setcounter{theorem}{1}\begin{lemma}\label{cd1:iterate}
 $J(f^{\circ n})=J(f)$.
 \end{lemma}
+\begin{proof}
+By the previous lemma, it suffices to show $F(f^{\circ n})=F(f)$. Certainly $z\in F(f)$ implies $z\in F(f^{\circ n})$. If $z\in F(f^{\circ n})$, there is a neighbourhood $U$ of $z$ such that $\{f^{\circ nm}|_U\}_m\subset K\subseteq\Hol(U,S)$, with $K$ compact. Then
+\[
+\{f^{\circ m}|_U\}_m\subseteq\bigcup_{i=0}^{n-1}(f^{\circ i}\circ K)
+\subseteq\Hol(U,S),
+\]
+and this finite union is again compact.
+\end{proof}
 % Source page 5
 It therefore does not matter which iterate of $f$ one chooses to work with: the dynamics loses no information, so there is no compromise. What does it mean to work with fixed points of $f^{\circ m}$?
 \setcounter{definition}{3}\begin{definition}[Periodic orbits]
@@ -62,7 +83,7 @@ with all $z_i$ distinct before returning to $z_0$, is called a periodic orbit of
 \]
 often called the multiplier of the orbit.
 \end{definition}
-In this exposition we shall not deal separately with periodic orbits of different periods. We shall prove theorems for fixed points and expect the reader to extend the argument to their favourite iterate of $f$. As far as we are concerned, our study, as proposed, will be complete by looking at period-$1$ orbits (fixed points) and critical points. Before proceeding further, we explain the classification topologically.
+We shall not deal separately with periodic orbits of different periods. We shall prove theorems for fixed points and expect the reader to extend the argument to their favourite iterate of $f$. As far as we are concerned, our study, as proposed, will be complete by looking at period-$1$ orbits (fixed points) and critical points. Before proceeding further, we explain the classification topologically.
 % Source page 6
 \subsection{Attraction, repulsion, and indifference}
 \paragraph{Attraction: multiplier $|\lambda|<1$.}
@@ -88,26 +109,56 @@ Conversely, if $\widehat p$ is attracting, there is $\varepsilon>0$ such that $f
 Notice that we need holomorphicity of $f$ to conclude that $|\lambda|<1$ is geometrically attracting.
 
 \paragraph{Repulsion: multiplier $|\lambda|>1$.}
+This is usually called topological repulsion. Let $f(\widehat p)=\widehat p$. The point $\widehat p$ is repelling if there is a neighbourhood $U$ of $\widehat p$ such that, for every $p\in U\setminus\{\widehat p\}$, there is $N_p$ with $f^{\circ n}(p)\notin U$ for every $n\ge N_p$. In other words, all orbits except that of $\widehat p$ eventually escape $U$.
+% Author check: the source requires all sufficiently late iterates to stay outside U, rather than merely eventual first exit.
+\begin{figure}[H]\centering
+\includegraphics[width=.40\textwidth]{cd1-fig-04.pdf}
+\FigureTag{CD1.4}{fig:cd1-04}
+\end{figure}
 \setcounter{theorem}{3}\begin{lemma}\label{cd1:repulsion}
 $|f'(\widehat p)|>1$ if and only if $\widehat p$ is repelling.
 \end{lemma}
 % Source page 8
+\begin{proof}
+If $|\lambda|=|f'(\widehat p)|>1$, the Taylor expansion $f(z)=\lambda z+O(z^2)$ gives $f^{\circ k}(z)=\lambda^kz+O(z^2)$. Thus, for the corresponding open set in $S$, the orbits of its elements eventually escape.
+
+Conversely, if $\widehat p$ is topologically repelling, the previous lemma implies $|f'(\widehat p)|\not<1$, and hence $|f'(\widehat p)|\ge1$. Thus $f$ is locally univalent. There is a compact neighbourhood $N$ of $\widehat p$ such that all orbits of that neighbourhood escape $N$, and $f\colon N\to f(N)$ is a homeomorphism. Set
+\[
+N_k=\bigcap_{i=0}^{k}f^{-i}(N).
+\]
+This is the set of all points whose iterates up to $k$ do not escape $N$. By our choice of $N$, $\diam(N_k)\to0$ as $k\to\infty$, and $f(N_k)=N_{k-1}\cap f(N)$. For large $k$, $N_{k-1}\subset f(N)$, so $f(N_k)=N_{k-1}$. Since $f|_N$ is univalent, $f\colon N_k\to N_{k-1}$ is a biholomorphism.
+
+Let $U_k$ be the component of $N_k$ containing $\widehat p$. Then $f^{-1}\colon U_{k-1}\to U_k$ is a biholomorphism. Clearly $U_k,U_{k-1}$ are hyperbolic, so by Pick's theorem $f^{-1}$ is a contraction mapping. Thus $\widehat p$ is attracting for $f^{-1}$, giving $|\lambda^{-1}|<1$, and hence $|\lambda|>1$.
+\end{proof}
 % Source page 9
 \paragraph{Indifference: $|\lambda|=1$.}
-This does not have an easy-to-visualise topological picture. We will deal with this case in detail in the exposition on parabolic points.
+This does not have an easy-to-visualise topological picture. We will deal with this case in detail in the post on parabolic points.
 
 Having seen this, let us collect all points $z\in S$ such that $\{f^{\circ n}(z)\}_n$ converges to an attracting point $\widehat p$. This set is called the \emph{basin of attraction} of $\widehat p$. Such basins belong to the Fatou set; repelling points belong to the Julia set, as do indifferent points of certain kinds. Checking that basins of attraction belong to the Fatou set is a rather generic analysis.
 
 If $z\in\mathcal A(\widehat p)$, the basin of attraction, then $\{f^{\circ n}(z)\}_n\to z_0$. There is a neighbourhood $U$ of $z_0$ with $U\subset F(f)$, and some $N$ such that $f^{\circ N}(z)\in U$. Hence $f^{\circ N}(z)\in F(f)$, and the invariance lemma gives $z\in F(f)$.
 
-Repelling points are to be placed in the Julia set.
+Repelling points are to be placed in the Julia set. Let us introduce a subclass of fixed points, to be taken up in detail later.
+\setcounter{definition}{4}\begin{definition}[Parabolic fixed point]
+A fixed point $f(\widehat p)=\widehat p$ is parabolic if $|f'(\widehat p)|$ is a root of unity and $f^{\circ n}\ne\id$ for every $n$.
+\end{definition}
+% Author check: the source writes the modulus |f'(p)|, not the multiplier f'(p), in this definition.
 % Source page 10
 \setcounter{theorem}{4}\begin{lemma}\label{cd1:parabolic}
 Parabolic points belong to the Julia set.
 \end{lemma}
+\begin{proof}
+Locally, $f(w)=w+a_qw^q+a_{q+1}w^{q+1}+\cdots$, so $f^{\circ k}(w)=w+ka_qw^q+\cdots$. Consequently,
+\[
+\left.\frac{d^q(f^{\circ k})}{dz^q}\right|_0=q!\,ka_q\longrightarrow\infty
+\qquad(k\to\infty).
+\]
+Thus $\{f^{\circ n}\}_n$ cannot converge locally uniformly, for then the sequence of $q$th derivatives at $0$ would also converge.
+\end{proof}
+% Author check: source implicitly uses an iterate with multiplier 1 and divergence in modulus.
 Therefore attracting basins lie in the Fatou set, while repelling and parabolic points belong to the Julia set.
 
-In the next few expositions we shall see our initial proposal---studying dynamics through fixed and critical points---in action. For now, let us briefly illustrate it when $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ is rational with $\deg(f)\ge2$.
+In the next few posts we shall see our initial proposal---studying dynamics through fixed and critical points---in action. For now, let us briefly illustrate it when $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ is rational with $\deg(f)\ge2$.
 \subsection{Dynamics of rational maps on the Riemann sphere}
 We shall see how the Julia set spreads across the sphere, its topological structure, and more.
 % Source page 11
@@ -189,7 +240,9 @@ Let us analyse the topological structure of $J$ further, for the nature of a bou
 J=\overline{\bigcup_{n\ge0}f^{-n}(z_0)}.
 \]
 Let $N$ be a neighbourhood of a point $z\in J$. Expand $N$ until it hits a point $w\in\widehat{\mathbb C}$. We may take $w=z_0$, since $z_0\notin\mathcal E(f)$. Thus $f^{-n}(w)\cap N\ne\varnothing$, giving $\overline{\bigcup_n f^{-n}(w)}\supseteq J(f)$. The reverse inclusion follows from invariance.
+\item $J$ has no isolated points. If $J$ were finite, then $J\subseteq\mathcal E(f)$, which is impossible since exceptional points are superattracting. If it is infinite, take a limit point $z_0$. The set $\bigcup_{n\ge0}f^{-n}(z_0)$ is dense in $J$, hence $J$ has no isolated points. If $w\in J$ is isolated, take $z_0\in J$ to be a limit point of $\{f^n(w)\}_n$. This set cannot be perfect, since $S$ is a locally compact, compact metric space. Choose $z_0\notin\{f^n(w)\}_n$.
 \end{itemize}
+% Author check: the final isolated-point argument is retained in its abbreviated source form.
 % Source page 16
 \begin{remark}
 Since $\bigcup_n f^{-n}(z_0)$ is dense in $J$, for a neighbourhood $N$ of $z_0$ the set $V=\bigcup_n f^{-n}(N)$ is dense and open. As the closed set $J\subseteq\widehat{\mathbb C}$ is compact, choose a finite open cover $\{N_{ij}\}_{i=1}^{M}$. Set $V_{ij}=\bigcup_n f^{-n}(N_{ij})$; these sets are dense and open. Then $\bigl(\bigcap_{i=1}^{M}V_{ij}\bigr)\cap J$ is a dense open subset of $J$. Choose the sets $N_{ij}$ with diameter less than $1/j$. If

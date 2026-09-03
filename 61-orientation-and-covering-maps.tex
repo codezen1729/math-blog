@@ -7,6 +7,27 @@
 % BLOG-CONTENT-BEGIN
 \begin{center}\small S. Viswanathan\end{center}
 % Source page 1
+Here is an intuition illustrating the need for orientability of a manifold.
+Suppose you want to measure the volume of a M\"obius band or a cylinder,
+that is, the set $[0,1]\times[0,1]$ with $(0,t)\sim(1,1-t)$, or with
+$(0,t)\sim(1,t)$, respectively. In the absence of an ambient manifold
+such as $\mathbb R^3$, these surfaces, as abstract objects, do not have faces.
+Thus the volume of a page, as a manifold with boundary in its own right,
+does not have to account for the two sides. It is essentially the area
+of a page as a whole.
+To measure the volume of a cylinder, draw a loop around it and measure
+how much area you sweep as you traverse it. To keep track of the area
+you have already swept, flag it.
+\begin{figure}[H]
+ \centering\includegraphics[width=.27\textwidth]{m4-fig-01.pdf}
+ \FigureTag{M4.1}{fig:m4-fig-01}
+\end{figure}
+But if your manifold is such that, even when you end back where you
+started, you do not see your flag, as would happen for the M\"obius band,
+you would end up overcounting. More precisely, the amount you overcount
+will depend on the charts you choose. Therefore, having a consistent
+sense of direction is crucial to being able to integrate on a manifold.
+% Author check: the source's intuitive integration/overcounting discussion is retained.
 % Source page 2
 In this exposition we shall see some covering-space-theoretic implications
 of orientability. We have seen covering space theory in calculating
@@ -25,6 +46,34 @@ connected, oriented smooth manifold and $M$ is a smooth manifold.
 Then $M$ is orientable if and only if the action of $\Aut_\pi(E)$ on $E$
 is orientation-preserving.
 \end{theorem}
+\begin{proof}
+Since $E$ is connected, $M$ is connected. Let $O_E$ be the orientation on $E$.
+Since $M$ is connected, there are exactly two orientations of $M$.
+Fix $q\in E$. One of the orientations of $M$ is such that
+$d\pi_q\colon T_qE\to T_{\pi(q)}M$ is orientation-preserving.
+% Source page 3
+Let $O_M$ be that orientation. We have $\pi^*O_M=O_E$ at $q$; since $E$
+is connected, $\pi^*O_M=O_E$.
+For $\varphi\in\Aut_\pi(E)$, we have $\pi\circ\varphi=\pi$, so
+\[
+ \varphi^*O_E=\varphi^*(\pi^*O_M)
+ =(\pi\circ\varphi)^*O_M=\pi^*O_M=O_E.
+\]
+Thus $\varphi$ is orientation-preserving.
+
+Conversely, suppose $\Aut_\pi(E)$ is orientation-preserving.
+Fix $p\in M$, and let $U$ be an evenly covered neighbourhood of $p$.
+Let $\sigma\colon U\to E$ be a smooth section, and induce the orientation
+$\sigma^*O_E$. If we prove that this is a well-defined way of orienting
+$M$, we are done. Let $\sigma_1\colon U\to E$ be another smooth section.
+Since $\pi$ is normal, there is a $\varphi\in\Aut_\pi(E)$ such that
+$\sigma_1(p)=\varphi(\sigma(p))$ and $\sigma_1=\varphi\circ\sigma$.
+The latter follows from uniqueness of local sections of smooth covering
+maps, that is, inverses of $\pi|_{\sigma(U)}$.
+Since $\varphi$ is orientation-preserving,
+$\sigma_1^*O_E=\sigma^*\varphi^*O_E=\sigma^*O_E$. Hence the orientation
+is well-defined.
+\end{proof}
 From the action of $\Aut_\pi(E)$, a Lie group in its own right, one can
 determine the orientability of $M$. But one can do better by considering
 a particular covering space. Before we do that, here is an example.
@@ -58,6 +107,54 @@ give $\widehat M$ a smooth structure such that:
  $\widehat\pi$ if and only if $U$ is orientable.
 \end{enumerate}
 \end{proposition}
+\begin{proof}
+Let $U\subset M$ be an orientable open set with orientation $O$. Set
+\[
+ \widehat U_O:=
+ \{(p,O_p)\in\widehat M:p\in U,\ O_p\text{ orients }T_pM
+ \text{ and is determined by }O\},
+ \qquad O|_p=O_p.
+\]
+We show that $\{\widehat U_O\}_{(U,O)}$ forms a basis for $\widehat M$.
+Let $(p,O_p)\in\widehat M$. One can find a chart at $p$, which by default
+has an orientation induced from a domain in $\mathbb R^n$. Thus there is
+a pair $(U,O)$ with $O|_p=O_p$. Consequently $(p,O_p)\in\widehat U_O$, so
+$\bigcup_{(U,O)}\widehat U_O=\widehat M$.
+
+Let $(p,O_p)\in\widehat U_O\cap\widehat U'_{O'}$.
+Then $O|_p=O'|_p=O_p$. Let $V$ be the component of $U\cap U'$ containing
+$p$. The orientations $O|_V$ and $O'|_V$ agree at $p$, so $O|_V=O'|_V$.
+Hence $\widehat V_{O|_V}\subset\widehat U_O\cap\widehat U'_{O'}$.
+The restriction $\widehat\pi|_{\widehat U_O}$ is bijective onto $U$,
+and $\{\widehat U_O\}_{(U,O)}$ forms a
+% Source page 6
+basis for $\widehat M$, while these $U$ form a basis for $M$, since charts
+are orientable. Therefore $\widehat\pi$ is a local homeomorphism.
+
+Let $(U,O)$ be such that $U$ is connected. Then $U$ can have only two
+orientations, and
+$\widehat\pi^{-1}(U)=\widehat U_O\sqcup\widehat U_{-O}$.
+Both restrictions
+$\widehat\pi|_{\widehat U_O}\colon\widehat U_O\cong U$ and
+$\widehat\pi|_{\widehat U_{-O}}\colon\widehat U_{-O}\cong U$
+are homeomorphisms. Thus $\widehat\pi$ is a covering map, and an orientable
+connected open set is evenly covered.
+There is a unique smooth structure on $\widehat M$ for which
+$\widehat\pi\colon\widehat M\to M$ is a smooth covering map.
+The space $\widehat M$ can further be given a unique orientation, called
+the pullback orientation, since $\widehat\pi$ is a local diffeomorphism.
+% Author check: the source calls the orientation unique without specifying the pointwise tautological convention.
+To prove (b), it remains to show that if $U\subset M$ is an evenly covered
+domain, then $U$ is orientable. Indeed, let
+$\sigma\colon U\to\widehat M$ be an injective smooth local section.
+Then $U$ can be endowed with the pullback orientation.
+\end{proof}
+We now state our main theorem, the reason for studying these orientation
+covers. Since $\widehat\pi$ is a covering map, its restriction
+$\widehat\pi|_W$ to a component $W$ of $\widehat M$ is surjective.
+The fibres of $\widehat\pi$ have cardinality $2$, so $\widehat M$ is either
+connected or has two components.
+% Author check: this preparatory statement uses connectedness of the base, supplied in the theorem below.
 % Source page 7
 \setcounter{theorem}{15}\begin{theorem}[Orientation Covering Theorem]
 Let $M$ be a connected smooth manifold and
@@ -67,7 +164,7 @@ If $M$ is not orientable, then $\widehat M$ is connected.
 \end{theorem}
 \begin{proof}
 If $M$ is orientable, then, being connected and open, it is evenly covered
-by Proposition~\href{https://codezen1729.github.io/math-blog/\#/post/orientation-and-covering-maps}{15}. Since
+by Proposition~\ref{prop:m4-smooth-cover}. Since
 $|\widehat\pi^{-1}(\{p\})|=2$, we have
 \[
  \widehat\pi^{-1}(M)=M^+\sqcup M^-=\widehat M,\qquad
@@ -110,6 +207,42 @@ If $M$ were simply connected and covered something orientable, say
 $\pi\colon M\to M/{\sim}$ with $M/{\sim}$ orientable, then $\pi$, being
 a smooth covering map, is a local diffeomorphism. Hence $M$ is orientable.
 \end{remark}
+\begin{proof}
+Suppose $M$ is not orientable. Then $\widehat M$ is connected.
+Let $\widehat\pi\colon\widehat M\to M$ be its orientation cover.
+Choose $q\in\widehat M$, and let $p=\widehat\pi(q)\in M$.
+Let $\alpha\colon\widehat M\to\widehat M$ interchange points in the same
+fibre: if $\widehat\pi(q)=\widehat\pi(r)=p$, then $\alpha(q)=r$ and
+$\alpha(r)=q$.
+\begin{figure}[H]
+ \centering\includegraphics[width=.42\textwidth]{m4-fig-03.pdf}
+ \FigureTag{M4.3}{fig:m4-fig-03}
+\end{figure}
+Note that $\alpha$ is smooth. Let $U$ be evenly covered, with
+$\widehat\pi^{-1}(U)=U_0\sqcup U_1$. Then
+\[
+ \alpha|_{U_0}=(\widehat\pi|_{U_1})^{-1}\circ(\widehat\pi|_{U_0}),
+ \qquad
+ \alpha|_{U_1}=(\widehat\pi|_{U_0})^{-1}\circ(\widehat\pi|_{U_1}).
+\]
+Such $U_i$ cover $\widehat M$, so $\alpha$ is smooth on $M$, and
+$\widehat\pi\circ\alpha=\widehat\pi$. By definition,
+$\alpha\in\Aut_{\widehat\pi}(\widehat M)$.
+If $\beta\in\Aut_{\widehat\pi}(\widehat M)$, then $\beta$ separates
+$\widehat M$ into points that $\alpha$ swaps fibrewise and points that
+$\alpha$ does not.
+% Author check: the source says "smooth on M" and refers to alpha rather than beta in the last sentence.
+% Source page 10
+But $\widehat M$ is connected, so
+$\Aut_{\widehat\pi}(\widehat M)=\{\id_{\widehat M},\alpha\}$.
+Since the action of $\Aut_{\widehat\pi}(\widehat M)$ is transitive,
+$\widehat\pi$ is a normal covering, and
+\[
+ \pi_1(M)/\widehat\pi_*(\pi_1(\widehat M))
+ \cong\Aut_{\widehat\pi}(\widehat M).
+\]
+Thus $\widehat\pi_*(\pi_1(\widehat M))$ is an index-$2$ subgroup of $\pi_1(M)$.
+\end{proof}
 With this, we conclude.
 % BLOG-CONTENT-END
 \end{document}

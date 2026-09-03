@@ -1,4 +1,4 @@
-# S. Viswanathan — blog writing
+# The Iteration Café — blog writing
 
 [My website](https://codezen1729.github.io/math-blog/)
 
@@ -16,18 +16,21 @@ The PDF is a writing preview; the website keeps its own typography and layout. O
 
 ## Project contents
 
-- Numbered `.tex` files: the 82 editable blog posts.
+- Numbered `.tex` files: the 83 editable blog posts.
 - `main.tex`: the default preview selection.
 - `styles/`: PDF formatting and notation.
-- `figures/`: the figures used in the selected posts.
+- `figures/`: the figures used in the posts.
 - `tools/`: website conversion and checks; normally leave these alone.
 - `site-source.zip`: the website application, not a manuscript. Leave it unchanged in Overleaf.
 - `notes-source.zip`: the approved new-post import; it is applied only once and never replaces existing manuscripts.
 - `three-notes-source.zip`: the subsequent four-post import; it is also applied only once and never replaces existing manuscripts.
+- `content-revision.zip`: the full-content restoration. It is applied once, after checking that every file being updated still matches the version used to prepare the revision. Later edits are not overwritten by this archive.
 - `overleaf-source.zip`: the initial migration backup. Once the numbered files exist, the build never reapplies this archive.
 
 Changes pushed to this public repository, including their history, are public. Drafts kept only in Overleaf are not published until pushed. Pull GitHub changes before editing if the website was updated elsewhere.
 
-Equation and theorem labels retain the numbering from the source manuscripts; they are not automatically renumbered between posts. For new notation, put definitions in the post body so both converters see them. Dependencies and bundled figures/fonts retain their existing rights and licences.
+The numbered posts include the mathematical content of the supplied `main.tex` documents and the chapters they load. `handout-style.tex` is formatting, not post content. Original Lemma Book lemmas 27–34 remain excluded. Unfinished passages already present in the supplied sources remain as written; no replacement proofs were added.
+
+Equation and theorem labels retain the numbering from the source manuscripts; they are not automatically renumbered between posts. References and citations link to their exact destinations in the blog. For new notation, put definitions in the post body so both converters see them. Dependencies and bundled figures/fonts retain their existing rights and licences.
 
 Existing external figure files are protected by a source-hash check. Changing an uploaded PDF/PNG/JPEG requires re-exporting its matching website figure; the build stops rather than publishing a stale illustration. Inline TikZ diagrams in the posts are rebuilt automatically.

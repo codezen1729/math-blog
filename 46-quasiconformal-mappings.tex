@@ -5,10 +5,12 @@
 \begin{document}
 \section*{Quasiconformal Mappings}
 % BLOG-CONTENT-BEGIN
+The dynamics of a map \(f:S\to S\) is a topological invariant. Fixed points, critical points, and the nature of periodic orbits---attracting, repelling, superattracting, parabolic, or non-linearizable---remain as they were when coordinates on \(S\) are changed by a biholomorphism.
 But conformal maps are too rigid. If the rate of attraction near a fixed point is \(\lambda\), then a biholomorphic change of coordinates preserves \(\lambda\), the multiplier; it similarly preserves the essence of other invariants.
 
 For flexibility, we shall first introduce a way to measure how conformal a map is. Then we shall see what happens to a biholomorphism \(\varphi:S\to S'\) when we reduce the extent to which it is conformal. Certainly \(\varphi\) must be a homeomorphism, since we want the dynamics preserved. We want quantities describing the dynamics, such as multipliers, to have some flexibility. The proposed almost-conformal maps should connect flexibility in conformality with flexibility in the analytic aspects of the dynamics.
-This exposition puts a meter on a function's conformality and lists ways of studying it; the next discusses its implementation in dynamics.
+Let's put a meter on a function's conformality and look at ways of studying it; the next post turns to its use in dynamics.
+% Author check: Source page 1 calls all the listed dynamical properties topological invariants, then discusses biholomorphic changes. The wording has not been strengthened or corrected.
 
 % Source page 2
 \subsection{A meter on conformality}
@@ -25,6 +27,9 @@ Denote this linear map by \(T:\mathbb R^2\to\mathbb R^2\), and write
 \quad\Longleftrightarrow\quad
 (X,Y)(T^{-1})^{\mathsf T}T^{-1}\binom XY=r^2.
 \]
+As \(T\) is real symmetric, it has two eigenvalues \(a,b\) and can be diagonalized, giving \(aX^2+bY^2=r^2\).
+Thus \(df_{z_0}\) pulls an ellipse back from a circle in its codomain. Removing the extra luggage makes it pull back a perfectly round circle.
+% Author check: Source page 2 calls T real symmetric; the displayed symmetric matrix is (T^{-1})^T T^{-1}. The assertion and the source's image/pullback description are retained.
 
 % Source page 3
 The differential is not invertible everywhere, but Sard's theorem tells us that circles can be pulled back from \(T_{f(z)}\mathbb C\) almost everywhere in \(f(\mathbb C)\). Set
@@ -37,6 +42,13 @@ Writing \(a=|a|e^{i\alpha}\), we get
 df_{z_0}(z)=|a|e^{i\alpha}
 \bigl(z+|\mu|e^{i\theta}\bar z\bigr).
 \]
+Then \(e^{i\theta/2}\) and \(e^{i(\theta+\pi)/2}\) are eigenvectors of \(df_{z_0}\), corresponding to \(|a|(1+|\mu_{z_0}|)\) and \(|a|(1-|\mu_{z_0}|)\).
+% Author check: Source page 3 omits removal of the rotation e^{i alpha} in its eigenvector statement.
+\begin{figure}[H]\centering
+\includegraphics[width=.85\textwidth]{cd10-fig-01.pdf}
+\FigureTag{CD10.1}{fig:cd10-01}
+\end{figure}
+% Author check: The short-axis endpoint in the source drawing is labelled e^{i theta}/(|a|(1+|mu|)), while the angle and preceding text give theta/2; label retained.
 The \emph{dilatation} at \(z_0\) is
 \[
 K_{z_0}(f):=\frac{\text{major axis}}{\text{minor axis}}
@@ -58,12 +70,123 @@ Why is this the right definition? First, how does one differentiate continuous f
 \setcounter{definition}{21}\begin{definition}[Absolutely continuous on lines]
 A function \(f:U\to\mathbb C\) is \emph{ACL} if, for every family of parallel lines in every disc \(D\Subset U\), it is absolutely continuous on almost all of them.
 \end{definition}
+\begin{remark}
+Standard Lebesgue differentiation theory tells us that an ACL function has derivatives almost everywhere. It therefore suffices to require absolute continuity on lines parallel to the \(x\)- and \(y\)-axes.
+% Source page 5
+Almost-everywhere differentiability along these axes gives directional derivatives almost everywhere, hence absolute continuity almost everywhere in all directions. Thus \(\partial_zf\) and \(\partial_{\bar z}f\) make sense.
+\end{remark}
+% Author check: Source pages 4--5 infer absolute continuity in all directions from coordinatewise differentiation; this implication is retained.
+The definition therefore makes sense. Why it is the right one is the content of what follows.
 \setcounter{theorem}{38}\begin{lemma}[Gehring--Lehto]
 If \(\varphi\) has partial derivatives almost everywhere and is an open map, then it is differentiable almost everywhere.
 \end{lemma}
+\begin{proof}
+Consider a bounded measurable region \(\Omega\), of finite measure, and the sequence
+\[
+\varphi_n(z):=\sup_{0<|h|<1/n}
+\left|\frac{\varphi(z+h)-\varphi(z)}h-\varphi_x(z)\right|.
+\]
+By Egoroff's theorem, \(\varphi_n\) converges uniformly to zero on \(E\), where \(E=\Omega\) almost everywhere. Thus \(\varphi_x,\varphi_y\) are continuous on \(E\), since the difference quotients converge uniformly. Almost every line contains almost every point in \(E\).
+% Author check: Source page 5 uses Egoroff to obtain uniform convergence on a single full-measure E and continuity of the derivatives there; retained.
+For almost every \((x_0,y_0)\in E\), Lebesgue's differentiation theorem gives
+\[
+\lim_{\substack{m(R)\to0\\(x_0,y_0)\in R}}
+\frac1{m(R)}\int_R\mathbf1_E\,dm=1,
+\]
+where \(R\) is a square of side \(2h\).
+
+% Source page 6
+By Fubini's theorem, this becomes
+\[
+\lim_{\substack{m(R)\to0\\(x_0,y_0)\in R}}
+\frac1{m(R)}\int_{y_0-h}^{y_0+h}
+\int_{x_0-h}^{x_0+h}\mathbf1_{E_y}(x)\,dx\,dy=1.
+\]
+Choose \(x_0,y_0\) such that the horizontal and vertical lines through \((x_0,0)\) and \((0,y_0)\) contain almost every point of \(E\) in \(\Omega\). Such points satisfying the limit occur almost everywhere in \(E\). Then
+\[
+\lim_{h\to0}\frac1{2h}\int_{x_0-h}^{x_0+h}
+\mathbf1_{E_{y_0}}(x)\,dx=1.
+\]
+Thus \(x_0\) is a density point of \(E_{y_0}\), and vice versa. Translate so that \((x_0,y_0)=(0,0)\).
+Uniform convergence gives, for \(\varepsilon>0\), a \(\delta>0\) such that
+\[
+\begin{gathered}
+|\varphi_x(z)-\varphi_x(0)|<\varepsilon,\qquad
+|\varphi_y(z)-\varphi_y(0)|<\varepsilon,\\
+\left|\frac{\varphi(z+h)-\varphi(z)}h-\varphi_x(z)\right|<\varepsilon,\qquad
+\left|\frac{\varphi(z+ik)-\varphi(z)}k-\varphi_y(z)\right|<\varepsilon
+\end{gathered}
+\]
+whenever \(|x|,|y|,|h|,|k|<\delta\) and \(z\in E\). The triangle inequality gives
+\[
+\begin{aligned}
+|\varphi(x+iy)-\varphi(0)-x\varphi_x(0)-y\varphi_y(0)|
+&\le|\varphi(x+iy)-\varphi(x)-y\varphi_y(x)|\\
+&\quad+|\varphi(x)-\varphi(0)-x\varphi_x(0)|\\
+&\quad+|y(\varphi_y(x)-\varphi_y(0))|
+\le3\varepsilon|z|.
+\end{aligned}\tag{*}
+\]
+
+% Source page 7
+The final inequality holds if
+\(|y(\varphi_y(x)-\varphi_y(0))|<\varepsilon|z|\), which holds if \(x\in E\).
+We want differentiability at zero, but have shown only
+\[
+\left|\varphi(z)-\varphi(0)
+-(\varphi_x(0),\varphi_y(0))\binom xy\right|\longrightarrow0
+\]
+as \(x,y\to0\) with \(x\in E\); similarly with \(y\in E\).
+Exploit the fact that zero is a coordinatewise density point of \(E\):
+\[
+\frac{m(E\cap(-x,x))}{2|x|}\longrightarrow0\quad(x\to0).
+\]
+There is a \(\delta\) such that, for \(|x|<\delta\),
+\[
+m(E\cap(-x,x))>\frac{2+\varepsilon}{1+\varepsilon}|x|.
+\]
+% Author check: Source page 7 gives a limit of 0 for the density quotient, then uses density 1. It also omits division by |z| in the preceding differentiability limit; both retained.
+Consequently \((x/(1+\varepsilon),x)\cap E\ne\varnothing\); otherwise
+\[
+m(E\cap(-x,x))<m((-x,x/(1+\varepsilon)))
+=|x|+\frac{|x|}{1+\varepsilon}
+=\frac{2+\varepsilon}{1+\varepsilon}|x|.
+\]
+For \(|z|<\delta/(1+\varepsilon)\), repeat the argument for \((x,(1+\varepsilon)x)\). We may arrange \(x_1,x_2,y_1,y_2\in E\) with
+\[
+\frac{x}{1+\varepsilon}<x_1<x<x_2<(1+\varepsilon)x,\qquad
+\frac{y}{1+\varepsilon}<y_1<y<y_2<(1+\varepsilon)y.
+\]
+The estimate \((*)\) holds on \(\partial R\), where \(R=(x_1,x_2)\times(y_1,y_2)\).
+% Author check: Source page 7 uses these ordered inequalities without a sign restriction on x,y.
+
+% Source page 8
+Since \(\varphi\) is open, it satisfies the maximum modulus principle. For \((x,y)\in R\), choose \(z^*=x^*+iy^*\in\partial R\) such that
+\[
+\begin{aligned}
+|\varphi(x+iy)-\varphi(0)-x\varphi_x(0)-y\varphi_y(0)|
+&\le|\varphi(z^*)-\varphi(0)-x\varphi_x(0)-y\varphi_y(0)|\\
+&\le3\varepsilon|z^*|+|x-x^*|\,|\varphi_x(0)|
++|y-y^*|\,|\varphi_y(0)|\\
+&\le3\varepsilon(1+\varepsilon)|z|
++\varepsilon|\varphi_x(0)||z|
++\varepsilon|\varphi_y(0)||z|\\
+&=\varepsilon|z|M.
+\end{aligned}
+\]
+This bound is independent of \(z^*\). Therefore \(\varphi\) is differentiable at \((x_0,y_0)\), hence almost everywhere.
+\end{proof}
 
 This lemma tells us that quasiconformal maps can pull back circles because they are differentiable almost everywhere. Let \(m=m_1\times m_1\), where \(m_1\) is Lebesgue measure on \(\mathbb R\); naturally \(m\) is Lebesgue measure on \(\mathbb R^2\).
 An absolutely continuous function takes a measure-zero subset of an interval to a measure-zero set in its image, directly from the definition.
+Locally, let \(\{x\}\times B_x\) have \(m_1\)-measure zero.
+
+% Source page 9
+Here \(B_x\) is the projection of the relevant vertical slice of the local region where the measure is zero. Set \(A_x=\{x\}\times B_x\).
+Then \(f(\bigcup_{x\in\pi_1(U)}A_x)\) again has measure zero by Fubini, where \(U\) is the local region and \(\pi_1\) is projection onto the first coordinate.
+Locally, \(\varphi\) is \(C^1\) almost everywhere by Egoroff and takes measure-zero sets to measure-zero sets. The image of the critical set has measure zero by Sard's theorem for absolutely continuous functions.
+Cover \(\mathbb C\) by countably many such local regions. The points where these properties fail still form a measure-zero set, since \(\mathbb C\) is Lindel\"of.
+% Author check: Source pages 8--9 give an informal Fubini/Egoroff/Sard argument for the null-set and critical-image claims; no missing regularity arguments have been supplied.
 
 Thus \(K\)-quasiconformal maps pull circles back to ellipses of dilatation at most \(K\). Modulo technical details, this is the right definition: dropping any condition loses something we want. Without a homeomorphism we cannot preserve dynamics. Replacing ACL by existence of partial derivatives almost everywhere does not ensure that critical values form a measure-zero set. Dropping
 \(|\partial_{\bar z}\varphi|\le k|\partial_z\varphi|\) loses the meter itself.
@@ -104,6 +227,15 @@ To ensure that our meter measures conformality and is not an artificial monster,
 \setcounter{theorem}{39}\begin{lemma}[Weyl's lemma]
 A \(1\)-quasiconformal map is conformal.
 \end{lemma}
+\begin{proof}[Proof sketch]
+By the equivalence of definitions, it suffices to prove that a map \(\varphi\) with \(\partial\varphi/\partial\bar z=0\) in the sense of distributions is conformal. Construct
+\(f_n=\varphi_n*(\eta f)\), where \(\varphi_n\) is a scaled mollifier on \(\mathbb D\) and \(\eta\) is a test function. Then \(f_n\) is smooth and \(f_n\to f\) uniformly on compact sets. Since
+\[
+(f_n)_{\bar z}=(\eta f)_{\bar z}=0,
+\]
+the smooth functions \(f_n\) are holomorphic, and hence so is \(f\).
+\end{proof}
+% Author check: Source page 11 asserts that the cutoff product has zero bar-derivative without restricting to where the cutoff is constant; retained.
 
 % Source page 12
 This ensures that the meter for conformality is dilatation! Next we shall see why we need to loosen the conformality condition.

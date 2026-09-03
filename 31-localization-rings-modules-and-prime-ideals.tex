@@ -6,7 +6,20 @@
 \section*{Localization: Rings, Modules, and Prime Ideals}
 % BLOG-CONTENT-BEGIN
 \subsection{Motivations for localization}
-If $X$ is a variety and $x\in X$, then a neighbourhood $U$ of $x$ corresponds to a localization of the coordinate ring $A(X)$. Thus localization is the geometric equivalent of seeing a point locally.
+Recall the construction of $\Q$ from $\Z$:
+\[
+\Q:=\{(x,y)\in\Z\times\Z\}/{\sim},\qquad
+(x_1,y_1)\sim(x_2,y_2)\ \Longleftrightarrow\ x_1y_2-y_1x_2=0.
+\]
+% Author check: the source does not exclude zero denominators in this recollection.
+We want to generalize this to arbitrary commutative rings. If $X$ is a variety and $x\in X$, then a neighbourhood $U$ of $x$ corresponds to a localization of the coordinate ring $A(X)$. Thus localization is the geometric equivalent of seeing a point locally.
+\setcounter{definition}{7}\begin{definition}
+Let $S\subseteq A$ be a multiplicatively closed set in a commutative ring. Consider the equivalence relation on $A\times S$ given by
+\[
+(a,s)\sim(b,t)\ \Longleftrightarrow\ (at-bs)u=0\quad\text{for some }u\in S.
+\]
+Set $S^{-1}A:=(A\times S)/{\sim}$, the \emph{localization of $A$ by $S$}.
+\end{definition}
 \begin{remark}
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item $S^{-1}A$ has a ring structure:
@@ -29,12 +42,19 @@ For every $g$, there is a unique $h$ as drawn below; pointwise, $h(a/s):=g(a)g(s
 \begin{itemize}
 \item If $s\in S$, then $f(s)$ is a unit in $S^{-1}A$.
 \item $f(a)=0$ implies $as=0$ for some $s\in S$.
+\item Every element of $S^{-1}A$ is of the form $f(a)+f(s)^{-1}$.
+% Author check: the plus sign is present in the handwritten source.
 \end{itemize}
+These properties determine the initial object in (iii) uniquely up to isomorphism.
 \end{enumerate}
 \end{remark}
 \setcounter{example}{4}\begin{example}
 If $\pp<A$ is prime, then $S=A\setminus\pp$ is multiplicatively closed. We write $S^{-1}A$ as $A_{\pp}$. The set $\mm:=\{a/s\mid a\in\pp,\ s\in S\}$ is an ideal. If $\aa\nsubseteq\mm$, there exists $b/t\in\aa$ with $b/t\notin\mm$. Hence $b\notin\pp$, so $b$ is a unit. Thus $A_{\pp}$ is a local ring.
 \end{example}
+Localization can be attempted on $A$-modules in exactly the same way. For an $A$-module $M$, let
+\[S^{-1}M:=\{(m,s)\mid m\in M,\ s\in S\}/{\sim}.\]
+% Source page 3
+For $f:M\to N$, one has $S^{-1}f:S^{-1}M\to S^{-1}N$, $m/s\mapsto f(m)/s$.
 \setcounter{theorem}{5}\begin{proposition}
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item $S^{-1}$ is an exact functor.
@@ -49,6 +69,13 @@ A property $P$ of an $A$-module $M$ is a \emph{local property} if
 (M\text{ satisfies }P)\ \Longleftrightarrow\
 (M_{\pp}\text{ satisfies }P\text{ for every prime }\pp).
 \]
+\setcounter{example}{5}\begin{example}[Local properties]
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item $M=0\Longleftrightarrow M_{\pp}=0\Longleftrightarrow M_{\mm}=0$ for every maximal $\mm$. To see this, let $x\in M$, $x\ne0$, and $\aa=\Ann(x)$, say $\aa\subseteq\mm$. Then $x/1\in M_{\mm}$ and $x/1=0$, so $x$ is killed by some element in $A\setminus\mm$.
+\setcounter{enumi}{1}\item A map $\varphi:M\to N$ is injective if and only if $\varphi_{\pp}:M_{\pp}\to N_{\pp}$ is injective, if and only if $\varphi_{\mm}:M_{\mm}\to N_{\mm}$ is injective. Indeed, $\ker\varphi=0\Longleftrightarrow\ker\varphi_{\pp}=0\Longleftrightarrow\ker\varphi_{\mm}=0$.
+\setcounter{enumi}{2}\item Surjectivity of $\varphi:M\to N$ is also a local property.
+\end{enumerate}
+\end{example}
 \subsection{Extended and contracted ideals}
 \setcounter{theorem}{6}\begin{proposition}
 \begin{enumerate}[label=(\roman*)]

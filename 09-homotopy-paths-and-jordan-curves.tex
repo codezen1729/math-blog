@@ -48,7 +48,7 @@ Set \(H(t,s):=H''(t,s)+H_0(t,s).\)
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=.21\linewidth]{note6-fig-01.pdf}
-  \textit{Figure N6.1}
+
 \end{figure}
 
 Therefore, \(\gamma_0\sim\gamma_1\), with fixed endpoints, if and only if \(\gamma_0+(-\gamma_1)\) is homotopic to a point.
@@ -84,7 +84,7 @@ The following figures illustrate these deformations.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=.45\linewidth]{note6-fig-02.pdf}
-  \textit{Figure N6.2}
+
 \end{figure}
 
 Here, \(\gamma_2\) is the curve formed by initial points in the family of curves belonging to the homotopy between \(\gamma_0\) and \(\gamma_1\), and
@@ -108,13 +108,13 @@ Also,
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=.30\linewidth]{note6-fig-03.pdf}
-  \textit{Figure N6.3}
+
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=.40\linewidth]{note6-fig-04.pdf}
-  \textit{Figure N6.4}
+
 \end{figure}
 
 Here,
@@ -167,6 +167,82 @@ After suitable normalization, one obtains what is needed.
 \textbf{Remark.}
 Because of these slides, which make the demand of a deformation rather trivial, we impose conditions such as \(H(s,0)=H(s,1)\qquad(\forall s),\)
 which give us the notion of homotopy under closed curves, or the stronger condition that \(H(s,0)\) and \(H(s,1)\) are constants.
+
+\subsection*{Tool 22 — Morera Technique}
+We have seen two instances of this, one in the Schwarz Reflection Principle and the other in a variant of it. So, we shall briefly expound on it.
+
+Suppose you are given a ``free'' homotopy \(H(t,s)\), a collection of curves \(\gamma_t(s):=H(t,s)\)
+for a given \(t\). Let
+\[
+  H:[0,1]\times[0,1]\to\Omega,
+\]
+where \(\Omega\) is a domain. Then, by compactness of \([0,1]\times[0,1]\), we know \(H\) is uniformly continuous. Here we impose no particular conditions on \(H(t,0)\) and \(H(t,1)\). Let \(f\in C(\Omega)\). Then notice
+\[
+  \int_{\gamma_t(s)}f\sim\int_{\gamma_{t'}(s)}f
+  \qquad\text{if }|t-t'|<\varepsilon.
+\]
+
+For every \(\varepsilon\), there exists \(\delta\) such that
+\[
+  |\gamma_t(s)-\gamma_{t'}(s)|<\varepsilon
+  \quad\Longleftrightarrow\quad
+  |t-t'|<\delta.
+\]
+Now note that
+\[
+  \int_{\gamma_t(s)}f
+  :=\lim_{P}
+  \sum_P f(\gamma_t(s_j^*))
+  |\gamma_t(s_j)-\gamma_t(s_{j-1})|,
+\]
+where \(P\) is a partition of \([0,1]\). The restriction \(\left.f\right|_{H([0,1]\times[0,1])}\)
+is also uniformly continuous, and so are \(\gamma_t(s)\) and \(\gamma_{t'}(s)\).
+
+Given \(\varepsilon\),
+\begin{align*}
+  \left|\sum_{j=1}^n f(\gamma_t(s_j^*))
+  |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right|
+  &\le
+  \left|\sum_{j=1}^n
+    \bigl(f(\gamma_t(s_j^*))-f(\gamma_{t'}(s_j^*))\bigr)
+    |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right| \tag{1}\\
+  &\quad+
+  \left|\sum_{j=1}^n f(\gamma_{t'}(s_j^*))
+    |\gamma_{t'}(s_j)-\gamma_{t'}(s_{j-1})|\right| \tag{2}\\
+  &\quad+
+  \left|\sum_{j=1}^n f(\gamma_{t'}(s_j^*))
+    |\gamma_{t'}(s_{j-1})-\gamma_t(s_{j-1})|\right|. \tag{3}
+\end{align*}
+Note that \((1)<\varepsilon/3\), \((2)<\varepsilon/3\), and \((3)<\varepsilon/3\) if the mesh size of the partition and \(|t-t'|\) are small enough. Hence,
+\[
+  \left|\sum_{j=1}^n f(\gamma_t(s_j^*))
+  |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right|
+  <\left|\int_{\gamma_{t'}}f\right|+\varepsilon.
+\]
+
+Therefore,
+\[
+  \left|\int_{\gamma_t}f-
+  \sum_{j=1}^n f(\gamma_t(s_j^*))
+  |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right|<\varepsilon,
+\]
+and
+\[
+  \left|\int_{\gamma_t}f\right|
+  <\left|\int_{\gamma_{t'}}f\right|+\varepsilon
+  \qquad(\forall\varepsilon).
+\]
+Thus,
+\[
+  \left|\int_{\gamma_t}f\right|
+  =\left|\int_{\gamma_{t'}}f\right|.
+\]
+In particular, if one is \(0\), the other too is bound to be \(0\).
+
+The technique is this: if \(f\in H(\Omega)\) and \(f\in C(\partial\Omega)\), then one can, as in the Reflection Principle, ``push down'' triangles past \(\partial\Omega\) and conclude that \(f\) can be extended.
+
+\textbf{Exercise.}
+Fill in the gaps, and remove the modulus.
 
 % BLOG-PART
 \subsection*{Tool 23 — Two-Ears Theorem}
@@ -360,7 +436,7 @@ them until they meet some other point on the polygon \(\gamma_P\). This will spl
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=.35\linewidth]{note6-fig-05.pdf}
-  \textit{Figure N6.5}
+
 \end{figure}
 
 Regardless, it is worthy that we explore the proof of the Two-Ears Theorem. But, for our silly purposes, there is no need for any black boxes.
@@ -399,7 +475,7 @@ Note that \([b_0,a_1]\) is not in \(\operatorname{int}(\gamma)\). One can argue 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=.74\linewidth]{note6-fig-06.pdf}
-  \textit{Figure N6.6}
+
 \end{figure}
 
 Using the meaning of angle which we just mentioned, one can conclude that the angle at \(c\) is greater than \(\pi\). So now one can have a topological view on convexity. We say that \(\gamma\), a simple closed curve, is convex if, for all \(z_0,z_1\in\operatorname{int}(\gamma)\), there exists a convex polygon \(\gamma_P\) such that
@@ -429,10 +505,10 @@ is continuous. Therefore, \(\arg(\gamma'(t))\) is continuous in \(B_\varepsilon(
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=.38\linewidth]{note6-fig-07.pdf}
-  \textit{Figure N6.7}
+
 \end{figure}
 
-Although this was given as an exercise, we would like to resolve it; initiated readers may want to skip this part.
+Let us work through the details; readers familiar with the argument may wish to skip ahead.
 
 \subsection*{Jordan Curve Theorem (for simple closed polygonal paths)}
 \textit{Proof.}
@@ -453,5 +529,56 @@ Two disjoint regions cannot have the same winding number, for near the boundary 
   \qquad \sigma=\pm1,
 \]
 are connected. Now the claim of contractibility is already dealt with. QED.
+
+
+\subsection*{Problems}
+\emph{The motto of a problem is that it should make your life problematic.}
+
+\begin{enumerate}
+  \item Can you cover \(\mathbb R^2\) with curves joining \(z_1,z_2\in\mathbb R^2\) that are mutually disjoint, except that they have common endpoints?
+
+  \item Let \(\gamma\) be a Jordan curve. Let \(f\in H(\operatorname{int}(\gamma))\) and \(g\in H(\operatorname{ext}(\gamma))\). Suppose that
+  \[
+    f\in C(\operatorname{int}(\gamma)\cup\gamma),
+    \qquad
+    g\in C(\operatorname{ext}(\gamma)\cup\gamma),
+  \]
+  so they extend continuously to their common boundary. Does there exist an entire function \(h\) such that \(h\) extends \(f\) and \(g\)?
+
+  \item Let \(\gamma_1\) and \(\gamma_2\) be two Jordan curves, and let
+  \[
+    z_0\in\operatorname{int}(\gamma_1)\cap\operatorname{int}(\gamma_2)\ne\varnothing.
+  \]
+  If
+  \[
+    |z_0-\gamma_1(t)|<|z_0-\gamma_2(t)|,
+  \]
+  then does \(\gamma_1\) belong in \(\operatorname{int}(\gamma_2)\)?
+
+  \item Given four discs around \(\{z_i\}_{i=1}^4\), say \(\{D_i\}_{i=1}^4\), with
+  \[
+    D_1\cap D_3\ne\varnothing,
+    \qquad
+    D_2\cap D_4\ne\varnothing,
+    \qquad
+    \overline{z_1z_3}\cap\overline{z_2z_4}\ne\varnothing,
+  \]
+  prove that if \(\gamma_{13}\) is a continuous curve joining \(z_1\) to \(z_3\), with
+  \[
+    \gamma_{13}^*\subset D_1\cup D_3,
+  \]
+  and similarly for \(\gamma_{24}\), then
+  \[
+    \gamma_{13}^*\cap\gamma_{24}^*\ne\varnothing.
+  \]
+
+  \item Let \(f:D\to\mathbb C\) be entire. If
+  \[
+    2|f'(0)|=\sup_{z,w\in D}|H(z)-H(w)|,
+  \]
+  then \(f\) is linear. (Shakarchi.)
+
+  \item Using (4), or somehow devising a method, get a simple polygon homotopically close to a given simple closed curve. Let \(\gamma\) be any non-simple closed curve; again find a simple polygon homotopically close to it.
+\end{enumerate}
 % BLOG-CONTENT-END
 \end{document}

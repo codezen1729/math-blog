@@ -1,0 +1,11 @@
+{
+  "revision": "full-main-tex-2026-09-03",
+  "date": "2026-09-03",
+  "baseRevision": "d49f679744f14d528d74514614b74eb0add7c492",
+  "totalPosts": 83,
+  "introducedSlugs": [
+    "polynomial-like-maps-and-the-straightening-theorem"
+  ],
+  "contentPolicy": "Mathematical content of the supplied main.tex documents and all their included chapters; formatting files are not articles.",
+  "retainedExclusion": "Original Lemma Book lemmas 27–34"
+}

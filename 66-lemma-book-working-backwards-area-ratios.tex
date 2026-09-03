@@ -5,6 +5,54 @@
 \begin{document}
 \section*{Working Backwards, Area Ratios, and Geometric Constructions}
 % BLOG-CONTENT-BEGIN
+% Source page 12 - left
+\setcounter{theorem}{33}\begin{lemma}[A working-backwards strategy]\label{lemma:lb1-39}
+Another major lemma is the strategy of working backwards, in a slightly different version used here to resolve problems.
+First read the statement. If it asks to prove that ``$A$ holds if and only if $B$ is true,'' then, for this type of problem, just show that if $A$ holds, $B$ follows.
+\end{lemma}
+% Author check: this proposed strategy does not establish both implications in general; source argument retained.
+Consider the following geometry problem from IMO 1994, problem 2.
+Let $ABC$ be an isosceles triangle with $AB=AC$.
+Let $M$ be the midpoint of $BC$, and let $O$ lie on line $AM$ with $OB\perp AB$.
+Let $Q$ be on segment $BC$, distinct from $B,C$.
+Let $E$ lie on line $AB$ and $F$ on line $AC$, with $E,Q,F$ distinct and collinear.
+Prove that $OQ\perp EF$ if and only if $QE=QF$.
+
+\paragraph{Trailer.}
+Let $E$ and $F$ lie on the same side of $Q$, as shown.
+\begin{figure}[H]\centering
+\includegraphics[width=.56\linewidth]{lb1-fig-05.pdf}
+\FigureTag{LB1.5}{fig:lb1-05}
+\end{figure}
+Write $\angle EQM=x+z$ and $\angle OQM=y+w$.
+Then $\angle EQO=(x+y)+(z+w)=\pi/2+k$.
+For $OQ\perp EQ$, $k=0$, so $z=w=0$.
+But this requires $Q=B$ or $Q=C$, contrary to the assumption.
+Thus $E,F$ cannot both lie on the same side of $Q$.
+% Source page 12 - right
+\Needspace{30\baselineskip}
+\paragraph{Movie.}
+According to Lemma~\ref{lemma:lb1-39}, we intend to show that $OQ\perp EF$ implies $QE=QF$.
+\begin{figure}[H]\centering
+\includegraphics[width=.62\linewidth]{lb1-fig-06.pdf}
+\FigureTag{LB1.6}{fig:lb1-06}
+\end{figure}
+$OQBE$ is cyclic, so $\angle QOE=\angle QBA=x$, say.
+Then $\angle MBA=\angle BOM=x$. By symmetry of the figure, $\angle BOM=\angle MOC=x$.
+Also $\angle MBA=\angle MCA=x$, so $\angle MCO=\pi/2-\angle MOC=\pi/2-x$.
+Thus $\angle ACO=(\pi/2-x)+x=90^\circ$.
+Consequently $QOCF$ is cyclic, and $\angle QCF=\angle QOF=x=\angle QOE$.
+This establishes $QE=QF$.
+
+To finish, argue as follows. Suppose the contrary of the result were true, that there were a point $Q$ for which $QE\ne QF$ even though $OQ\perp EF$.
+But we proved that $OQ\perp EF$ implies $QE=QF$, establishing the nonexistence of such a point.
+
+\setcounter{theorem}{34}\begin{lemma}[Caution with the strategy]
+Lemma~\ref{lemma:lb1-39} cannot be applied very easily. Since it is a new technique, it can lead to a major error if the final argument is not formed correctly.
+Here we exploited the fact that a statement $B$ in mathematical logic has only two truth values, true or false.
+There are statements with more than two truth values; anyway, for Olympiad business it is well and good.
+\end{lemma}
+
 % Source page 13 - left
 Many combinatorial geometry problems are based on very elementary geometry.
 To excel in the IMO, at least give a glance to lesser theorems.
@@ -15,6 +63,18 @@ If $A,X,A'$ and $B,Y,B'$ are collinear in the two-circle configuration, then $AB
 \includegraphics[width=.76\linewidth]{lb1-fig-07.pdf}
 \FigureTag{LB1.7}{fig:lb1-07}
 \end{figure}
+This simple theorem is often neglected by Olympiad students; as a result, they have difficulty solving the following problem.
+
+Two circles intersect at $X,Y$. Draw a chord $AB$ in the first circle.
+Extend $AX,BY$ to meet the second circle at $A',B'$.
+Construct a circle through $A',B'$, and extend $XA',YB'$ to meet the third circle at $A^2,B^2$.
+Iterate this $2014$ times. Determine the number of trapeziums in the resulting configuration.
+\emph{Edit in the source: ``parallelograms'' is replaced by ``trapeziums.''}
+\begin{figure}[H]\centering
+\includegraphics[width=.90\linewidth]{lb1-fig-08.pdf}
+\FigureTag{LB1.8}{fig:lb1-08}
+\end{figure}
+% Author check: final diagram labels use exponent2012 although statement says2014.
 
 % Source page 13 - right
 \setcounter{theorem}{36}\begin{lemma}[Express side ratios as area ratios]
@@ -67,6 +127,7 @@ The following is a nice application of Menelaus's theorem and can itself be cons
 Let $ABC$ be a triangle, and let $D,E,F$ lie on $BC,CA,AB$, respectively, with $AD,BE,CF$ concurrent.
 If $M,N,P$ lie on $EF,FD,DE$, then $AM,BN,CP$ concur if and only if $DM,EN,FP$ concur.
 \end{lemma}
+I used GeoGebra to draw a nice, neat figure of this problem. Do not forget Lemma~\ref{lemma:lb1-39} for if-and-only-if problems.
 % Source page 14 - right
 \begin{figure}[H]\centering
 \includegraphics[width=.93\linewidth]{lb1-fig-11.pdf}
@@ -74,7 +135,6 @@ If $M,N,P$ lie on $EF,FD,DE$, then $AM,BN,CP$ concur if and only if $DM,EN,FP$ c
 \end{figure}
 \emph{``The secret of resolving any difficult geometric problem is drawing a clean figure.''}
 The original figure is headed ``Good application of Menelaus'' and signed Viswanathan.
-
 
 \paragraph{Innovative solution.}
 Let $D,E,F$ lie on the sides $BC,CA,AB$ of triangle $ABC$, respectively,
@@ -88,7 +148,6 @@ Triangles $AFE,BFD,CED$ have equal bases and an equal angle.
 If $A\geq B\geq C$, then $FE\geq FD\geq DE$.
 Inside triangle $DEF$, $FD\geq DE\geq EF$.
 Together these imply $FD=DE=EF$, hence $AB=BC=AC$.
-
 
 \paragraph{Strategy: the poet's way.}
 If you are expected to prove something, assume that the statement to be proved is true.
@@ -125,6 +184,28 @@ In $\triangle ABC$, $AM$ is a median that divides $\angle BAC$ in the ratio $1:2
 Extend $AM$ through $M$ to $D$ so that $\angle DBA=90^\circ$.
 Prove that $AC=\tfrac12 AD$.
 
+\subsection{Solving geometry problems using scissors rather than theorems}
+\paragraph{C.A.P.: Cut and Paste problem (IMO, 1996).}
+Let $P$ be a point inside $\triangle ABC$ such that
+\[\angle APB-\angle C=\angle APC-\angle B.\]
+Let $D,E$ be the incentres of $\triangle APB,\triangle APC$, respectively.
+Show that $AP,BE,CD$ concur.
+% Source page 45 - left
+\begin{figure}[H]\centering
+\includegraphics[width=.95\linewidth]{lb1-fig-23.pdf}
+\FigureTag{LB1.23}{fig:lb1-23}
+\end{figure}
+Multiply the sides of triangle I by $z$, those of II by $x$, and those of III by $y$.
+Anybody got some glue?! Okay, let's repaste.
+\begin{figure}[H]\centering
+\includegraphics[width=.72\linewidth]{lb1-fig-24.pdf}
+\FigureTag{LB1.24}{fig:lb1-24}
+\end{figure}
+The angle condition on $P$ gives $\alpha+\theta=\beta+\gamma$, so $cz=by$.
+Thus $c/b=y/z$, giving $AB/AC=BP/CP$, and hence $AB/BP=AC/CP$.
+W$^5$. Q.E.D.!
+% Author check: the final ratio is the last written step; the source does not supply the remaining concurrency argument involving the incentres D,E.
+% Source page 45 - right
 
 \subsection{Two magical constructions}
 In $\triangle ABC$, $\angle A=120^\circ$.

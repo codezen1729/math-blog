@@ -76,7 +76,7 @@ def prepare(text):
     text=expand(text,'unclear',lambda value:r'\textit{[unclear: '+value+']}')
     text=text.replace(r'\sourcegap',r'\textit{[unfinished in the source]}')
     text=expand(text,'SourceChapter',lambda key,title:r'\section*{'+title+'}',2)
-    text=expand(text,'Lecture',lambda number,title:r'\section*{Lecture '+number+': '+title+'}',2)
+    text=expand(text,'Lecture',lambda number,title:r'\section*{'+title+'}',2)
     text=preserve_lists(text)
     names={'theorem':'theorem','lemma':'theorem','proposition':'theorem','corollary':'theorem','conjecture':'theorem','definition':'definition','example':'example','namedtool':'namedtoolcounter'}
     unnumbered=['claim','remark','exercise','question','observation','proof']

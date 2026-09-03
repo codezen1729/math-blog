@@ -3,17 +3,62 @@
 \input{styles/notes-preamble.tex}
 \graphicspath{{figures/lemma-book/}}
 \begin{document}
-\section*{An Inequality Toolkit: Jensen, Muirhead, and Sums of Squares}
+\section*{An Inequality Toolkit: Jensen, Muirhead, and Schur}
 % BLOG-CONTENT-BEGIN
+Prove that $\dfrac a{1+bc}+\dfrac b{1+ca}+\dfrac c{1+ab}\leq2$ if
+$0\leq a,b,c\leq1$.
+Without loss of generality, let $a\geq b\geq c$.
+Since $(1-a)(1-b)\geq0$, we have $1+ab\geq a+b$, so $1+2ab\geq a+b$.
+% Source page 4 - right
+Now $a+b+c\leq1+1+2ab=2(1+ab)$, and hence
+\[
+\frac a{1+bc}+\frac b{1+ca}+\frac c{1+ab}
+\leq\frac a{1+ab}+\frac b{1+ab}+\frac c{1+ab}\leq2.
+\]
+% Author check: the denominator comparison is retained as written, despite its direction.
 
-
-
+\setcounter{theorem}{14}\begin{lemma}[Cauchy's inequality application]
+$\dfrac{x^4}{(y-1)^2}+\dfrac{y^4}{(z-1)^2}+\dfrac{z^4}{(x-1)^2}\geq48$.
+\end{lemma}
+% Author check: no restrictions on x,y,z are recorded in the statement.
+Cauchy's inequality reduces the desired assertion to
+\[
+\left(\frac{x^2}{y-1}+\frac{y^2}{z-1}+\frac{z^2}{x-1}\right)^2\geq144,
+\quad\text{and then to}\quad
+\frac{x^2}{y-1}+\frac{y^2}{z-1}+\frac{z^2}{x-1}\geq12.
+\]
+It remains to show
+$\dfrac{(x+y+z)^2}{x+y+z-3}\geq12$.
+Writing $a=x+y+z$, this becomes
+$a^2\geq12a-36$, or $(a-6)^2\geq0$.
 
 % Source page 7 - left
 \setcounter{theorem}{21}\begin{lemma}[Catalan's identity]
 $1-\frac12+\frac13-\frac14+\cdots+\frac1{2n-1}-\frac1{2n}
 =\sum_{k=1}^n\frac1{n+k}$.
 \end{lemma}
+\paragraph{Application.}
+Prove that
+\[
+\frac1{n+1}\left(1+\frac13+\frac15+\cdots+\frac1{2n-1}\right)
+>\frac1n\left(\frac12+\frac14+\cdots+\frac1{2n}\right).
+\]
+Multiplying through, the desired inequality becomes
+\[
+1+\frac13+\cdots+\frac1{2n-1}
+>\left(1+\frac1n\right)\left(\frac12+\frac14+\cdots+\frac1{2n}\right),
+\]
+or
+\[
+1-\frac12+\frac13-\frac14+\cdots+\frac1{2n-1}-\frac1{2n}
+>\frac1{2n}+\frac1{4n}+\frac1{6n}+\cdots+\frac1{2n^2}.
+\]
+By the identity, it is enough to compare
+$\frac1{n+1}+\cdots+\frac1{2n}$ with $\frac1{2n}+\frac1{4n}+\cdots+\frac1{2n^2}$.
+Add the inequalities
+$\frac1{2n}\geq\frac1{2n}$, $\frac1{2n-1}>\frac1{4n}$, $\ldots$,
+$\frac1{n+1}>\frac1{2n^2}$ to finish.
+% Author check: source does not exclude n=1, where equality holds.
 
 \setcounter{theorem}{22}\begin{lemma}[Homogenization]
 Homogenization is a useful technique for solving problems: apply the technique of ``jugaad'' to make the degrees the same.
@@ -32,6 +77,12 @@ a^{4/3}b^{1/3}c^{1/3}+a^{1/3}b^{4/3}c^{1/3}+a^{1/3}b^{1/3}c^{4/3}
 Since $(4/3,1/3,1/3)\prec(2,0,0)$, the notes invoke Muirhead's theorem to obtain
 $\sum_{\mathrm{cyc}}a^{4/3}b^{1/3}c^{1/3}\leq\sum_{\mathrm{cyc}}a^2$.
 
+\setcounter{theorem}{23}\begin{lemma}[Second-derivative test]
+The best test for convexity or concavity is the second-derivative test:
+if $f''(x)\geq0$, then $f$ is convex; otherwise $f$ is concave.
+\end{lemma}
+% Author check: the source's blanket ``otherwise'' is retained.
+This technique, combined with Jensen's inequality or a maxima-minima argument, yields many beautiful and elegant solutions.
 
 \setcounter{theorem}{24}\begin{lemma}[Jensen's inequality]
 Let $f:I\to\mathbb R$ be convex. For any $x_1,\ldots,x_n\in I$ and nonnegative reals $\omega_1,\ldots,\omega_n$,
@@ -69,10 +120,26 @@ If $(a_1,\ldots,a_n)\succ(b_1,\ldots,b_n)$, then for positive $x_1,\ldots,x_n$,
 For majorization, let $f:I\to\mathbb R$ be convex and suppose $(x_n)\succ(y_n)$.
 Then $\sum_{i=1}^n f(x_i)\geq\sum_{i=1}^n f(y_i)$ (Karamata's inequality).
 \end{lemma}
-
-
-
-
+\emph{Warning: Like Jensen's, do not flip the sign if $f$ is concave!}
+% Author check: warning says not to reverse for concave f; retained verbatim in mathematical meaning.
+Let me show some beautiful applications of these ideas.
+% Source page 8 - right
+Prove that, for positive reals $a,b,c$,
+$(a^2b+b^2c+c^2a)(ab^2+bc^2+ca^2)\geq9a^2b^2c^2$.
+Let us expand this ``dumbass'' to obtain another ``dumbass'':
+\begin{align*}
+(a^2b+b^2c+c^2a)(ab^2+bc^2+ca^2)
+={}&a^3b^3+b^3c^3+c^3a^3+3a^2b^2c^2\\
+&+a^4bc+ab^4c+abc^4.
+\end{align*}
+Notice $(3,3,0)\succ(2,2,2)$ and $(4,1,1)\succ(2,2,2)$.
+Thus Muirhead gives
+\[
+\sum_{\mathrm{sym}}a^3b^3c^0\geq\sum_{\mathrm{sym}}a^2b^2c^2,
+\qquad \sum_{\mathrm{sym}}a^4bc^0\geq\sum_{\mathrm{sym}}a^2b^2c^2.
+\]
+The conclusion follows.
+% Author check: source's last monomial is a^4 b c^0 despite preceding (4,1,1); retained.
 
 \setcounter{theorem}{52}\begin{lemma}[Sum-of-squares strategy]\label{lemma:lb1-58}
 If none of the standard techniques proves an inequality, try expressing it as a sum of squares greater than or equal to zero.
@@ -87,7 +154,42 @@ The solution is like magic! Have a look.
 \]
 The source celebrates this with ``$(\text{Q.E.D.})^\infty$.''
 
+\setcounter{theorem}{59}\begin{lemma}[Schur's inequality]
+Define $T(a_1,\ldots,a_n)=\sum_{\mathrm{cyc}}x_1^{a_1}\cdots x_n^{a_n}$.
+For $\alpha\in\mathbb R$ and $\beta>0$, the following inequalities hold:
+\begin{align*}
+T(\alpha+2\beta,0,0)+T(\alpha,\beta,\beta)&\geq2T(\alpha+\beta,0,0),&&\text{first form},\\
+T(\alpha+\beta,\alpha+\beta,0)+T(2\alpha,\beta,\beta)&\geq2T(\alpha+\beta,\beta,\alpha),&&\text{second form}.
+\end{align*}
+\end{lemma}
+\emph{Important.}
+% Author check: first RHS exponents are alpha+beta,0,0 in source (degree mismatch); domain of x_i unspecified.
+\paragraph{Applications.}
+Prove that
+$a^4+b^4+c^4+a^2bc+b^2ca+c^2ab\geq2(a^3b+b^3c+c^3a)$.
+First realize that standard Muirhead fails; with Schur, the solution is two lines:
+\[
+T(2+2\cdot1,0,0)+T(2,1,1)\geq2T(3,0,0),
+\]
+which follows by setting $\alpha=2$, $\beta=1$.
+% Author check: displayed encoding T(3,0,0) is retained, not corrected to match the polynomial.
 
+Prove $3(x^2y+y^2z+z^2x)(xy^2+yz^2+zx^2)\geq xyz(x+y+z)^3$.
+First try all the nonsense tricks and conclude that the problem is impenetrable.
+Then gather courage to expand that big bull, obtaining
+\[
+2T(4,1,1)+3T(3,3,0)+T(2,2,2)\geq6T(3,2,1).
+\]
+We have
+\begin{align*}
+[3,3,0]+[2,2,2]&\geq2[3,2,1],&&\text{I},\\
+2[4,1,1]&\geq2[3,2,1],&&\text{II},\\
+2[3,3,0]&\geq2[3,2,1],&&\text{III}.
+\end{align*}
+I follows from Schur's second form with $\alpha=2$, $\beta=1$.
+Add I, II, and III to finish.
+% Author check: source switches between cyclic T and bracket notation without defining its normalization.
+% Author check: source annotates the second-form application with alpha=2, beta=1; retained even though this does not encode the displayed I.
 
 % Source page 27 - left
 There are true villains on the IMO jury who pose problems like this one.
@@ -97,7 +199,8 @@ x^4+y^4+z^4+3(x^2y^2+y^2z^2+z^2x^2)
 \geq2\bigl(x^3(y+z)+y^3(z+x)+z^3(x+y)\bigr).
 \]
 It is homogeneous and symmetric, but none of the standard techniques works.
-Recall Lemma~\href{https://codezen1729.github.io/math-blog/\#/post/lemma-book-inequality-toolkit}{53}, where we learned that magical spell.
+Recall Lemma~\ref{lemma:lb1-58}, where we learned that magical spell.
+Write $[4,0,0]+3[2,2,0]\geq4[3,1,0]$.
 Bring everything to the left and rearrange to obtain
 $(x-y)^4+(y-z)^4+(z-x)^4\geq0$.
 
@@ -125,7 +228,6 @@ This is analogous to the power-mean inequality.
 \paragraph{Application.}
 Prove $\sqrt x+\sqrt y+\sqrt z\leq\sqrt{3(x+y+z)}$.
 Apply the square-root heuristic with $f(a)=a$.
-
 
 \paragraph{What was that! P. K. Hung.}
 For positive $a,b,c$ with $a+b+c=1$, prove

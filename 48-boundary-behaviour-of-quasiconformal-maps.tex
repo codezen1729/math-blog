@@ -17,10 +17,49 @@ Two questions arise:
 \setcounter{enumi}{1}\item Can the maps \(\widehat f_i\) on \(\partial D_i\) be extended to a quasiconformal map \(F\) on \(D\), whose boundary is \(\partial D_1\cup\partial D_2\)? (Called Question 1 in the source.)
 \end{enumerate}
 If both can be answered, we can combine the qualities of \(f_1,f_2\) with the gluing map \(F\) into a single quasiconformal map, provided \(\partial D_1\cup\partial D_2\) is thin, that is, has Lebesgue measure zero.
+This last criterion tells us that the boundaries must be sufficiently nice---at least rectifiable curves.
+% Author check: Source page 2 treats rectifiability as a necessary minimum for a measure-zero boundary; retained.
 We introduce the objects that describe the regularity expected of boundaries and their maps in such surgery.
+\setcounter{definition}{24}\begin{definition}[Quasisymmetric maps]
+A map \(h:S^1\to\mathbb C\) is \emph{quasisymmetric} if it is injective and there is a strictly increasing continuous function
+% Source page 3
+\(\lambda:[0,\infty)\to[0,\infty)\) such that
+\[
+\frac{1}{\lambda\bigl(|(z_2-z_3)/(z_1-z_2)|\bigr)}
+\le\left|\frac{h(z_1)-h(z_2)}{h(z_2)-h(z_3)}\right|
+\le\lambda\left(\left|\frac{z_1-z_2}{z_2-z_3}\right|\right)
+\]
+for all \(z_1,z_2,z_3\in S^1\).
+\end{definition}
+% Author check: Source page 3 states the ratios for all triples without requiring distinct points; retained.
 \setcounter{example}{0}\begin{example}
-A \(C^1\)-diffeomorphism \(h:S^1\to\mathbb C\) is quasisymmetric.
+A \(C^1\)-diffeomorphism \(h:S^1\to\mathbb C\) is quasisymmetric. It is enough to prove that \(H(t):=h(e^{2\pi it})\) is bi-Lipschitz. If
+\[
+\frac1{k|x-y|^{-1}}\le|H(x)-H(y)|\le k|x-y|,
+\]
+then
+\[
+\left|\frac{H(x)-H(y)}{H(y)-H(z)}\right|
+\le(k|x-y|)\frac{k}{|y-z|}
+=k^2\left|\frac{x-y}{y-z}\right|,
+\]
+and similarly the ratio is at least \(k^{-2}|(x-y)/(y-z)|\). Take \(\lambda(t)=k^2t\).
+Since \(h\) is \(C^1\), \(H\) is \(C^1\); \(H'\) is continuous on \(S^1\), hence uniformly continuous, so \(H\) is uniformly differentiable. In the source's abuse of notation,
+\[
+\lim_{x\to y}\left|\frac{H(x)-H(y)}{x-y}\right|=H'(x)=H'(y).
+\]
+Thus the function
+\[
+G(x,y)=
+\begin{cases}
+\left|\dfrac{H(x)-H(y)}{x-y}\right|,&x\ne y,\\
+H'(x),&x=y,
+\end{cases}
+\qquad G:S^1\times S^1\to\mathbb R,
+\]
+is continuous and attains its extreme values.
 \end{example}
+% Author check: Source page 3 treats the periodic parametrization H as globally bi-Lipschitz and switches between real and circle coordinates; it also omits the modulus on H' in G. Retained.
 
 % Source page 4
 \setcounter{theorem}{40}\begin{proposition}
@@ -90,12 +129,13 @@ A Jordan curve \(\gamma\) is a \emph{quasiarc} if there is \(c>0\) such that
 \]
 If \(\gamma\) is closed, it is called a \emph{quasicircle}.
 \end{definition}
-We now state two theorems connecting these objects for the unit disc. The remaining exposition exploits this special case in other settings.
+We now state two theorems connecting these objects for the unit disc. Let's use this special case in other settings.
 
 % Source page 6
 \setcounter{theorem}{41}\begin{theorem}[Domain to boundary]\label{thm:cd11-domain-boundary}
-Let \(G\) be a Jordan domain, \(\gamma=\partial G\), and \(f:\mathbb D\to G\) a conformal isomorphism. Then \(f\) has a quasisymmetric extension to \(S^1\) if and only if \(\gamma\) is a quasicircle.
+Let \(G\) be a Jordan domain, \(\gamma=\partial G\), and \(f:\mathbb D\to G\) a conformal isomorphism. Then \(f\) has a quasisymmetric extension to \(S^1\) if and only if \(\gamma\) is a quasicircle. That is, there exists \(\widetilde f:\overline{\mathbb D}\to G\) with \(\widetilde f|_{\mathbb D}=f\) and \(\widetilde f|_{S^1}=\widehat f\) quasisymmetric.
 \end{theorem}
+% Author check: Source page 6 gives target G, not its closure, for the boundary extension; retained.
 \setcounter{theorem}{42}\begin{theorem}[Boundary to domain]\label{thm:cd11-boundary-domain}
 Every orientation-preserving quasisymmetric homeomorphism \(f:S^1\to S^1\) extends to \(\widehat f:\overline{\mathbb D}\to\overline{\mathbb D}\) whose restriction to \(\mathbb D\) is quasiconformal.
 \end{theorem}
@@ -104,6 +144,26 @@ These theorems guide the quasiconformal filling of a domain by interpolation of 
 A quasiconformal map \(f:\mathbb H\to\mathbb H\) extends continuously to its boundary.
 \end{proposition}
 % Source page 7
+\begin{proof}
+Let \(\mu_f\) be the pullback of the circle field on \(\mathbb H\) via \(f\). Define
+\[
+\mu(z)=
+\begin{cases}
+\mu_f(z),&z\in\mathbb H,\\
+\overline{\mu_f(\bar z)},&z\in\overline{\mathbb H}.
+\end{cases}
+\]
+This is measurable and essentially bounded since \(\mu_f\in L^\infty\).
+By the measurable Riemann mapping theorem, there is \(\varphi:\mathbb C\to\mathbb C\) pulling \(\mu\) back from the circle field. Normalize \(\varphi(0)=0\), \(\varphi(1)=1\), and put \(g(z)=\overline{\varphi(\bar z)}\). Then
+\[
+\frac{\partial_{\bar z}(\varphi\circ g^{-1})}
+{\partial_z(\varphi\circ g^{-1})}=0,
+\]
+either by explicitly computing the complex dilatation or by following the circle field.
+Thus \(\varphi\circ g^{-1}\) is holomorphic and a homeomorphism: a conformal isomorphism fixing zero and one. It equals the identity, so \(\varphi=g\), and \(\varphi(\mathbb R)=\mathbb R\).
+Now \(f\circ\varphi^{-1}\) is conformal by Weyl's lemma. Set \(g=f\circ\varphi^{-1}:\mathbb H\to\mathbb H\). Schwarz reflection extends it analytically to \(\mathbb R\); let \(\widehat g:\mathbb C\to\mathbb C\) be that extension. Then \(\widehat f=\widehat g\circ\varphi\) is the required extension.
+\end{proof}
+% Author check: Source page 7 uses overline{H} for the reflected half-plane and states a global C-to-C Schwarz extension; both are retained rather than silently repaired.
 
 % Source page 8
 We can therefore formulate Carath\'eodory's theorem for quasiconformal maps.
@@ -113,8 +173,10 @@ If \(f:\mathbb D\to G\) is quasiconformal and \(G\) is a Jordan domain, then \(f
 \begin{proof}
 A Riemann map \(\varphi:\mathbb D\to G\) extends continuously to \(S^1\) by Carath\'eodory's theorem. By the preceding proposition, \(\varphi^{-1}\circ f\) also extends to \(S^1\). Combining the extensions proves the claim.
 \end{proof}
+One can in fact prove that \(f:\mathbb D\to G\) extends quasisymmetrically to \(S^1\). Working with this boundary regularity is therefore rather forced.
+% Author check: Source page 8 asserts quasisymmetric boundary extension for an arbitrary Jordan G, without the quasicircle assumption from the earlier theorem; retained.
 
-We need analogues of Theorems~\href{https://codezen1729.github.io/math-blog/\#/post/boundary-behaviour-of-quasiconformal-maps}{42} and~\href{https://codezen1729.github.io/math-blog/\#/post/boundary-behaviour-of-quasiconformal-maps}{43} for domains other than \(\mathbb D\). General domains are difficult because we lack tools to capture all their analytic qualities. Extension constructions use many of those qualities, especially in choosing covering spaces. We illustrate the ideas for an annulus; such results provide partial answers to the initial questions.
+We need analogues of Theorems~\ref{thm:cd11-domain-boundary} and~\ref{thm:cd11-boundary-domain} for domains other than \(\mathbb D\). General domains are difficult because we lack tools to capture all their analytic qualities. Extension constructions use many of those qualities, especially in choosing covering spaces. We illustrate the ideas for an annulus; such results provide partial answers to the initial questions.
 
 % Source page 9
 \setcounter{theorem}{45}\begin{theorem}[Annulus: domain to boundary]
@@ -144,5 +206,124 @@ Let \(0<r_1,r_2<1\). Two orientation-preserving quasisymmetric homeomorphisms
 \(f_1:S^1\to S^1\) and \(f_2:S_{r_1}^1\to S_{r_2}^1\) extend to a map
 \(f:\overline{A_{r_1}}\to\overline{A_{r_2}}\) whose restriction to \(A_{r_1}\) is quasiconformal.
 \end{theorem}
+\begin{proof}
+This requires considerably more construction. First introduce the \emph{Beurling--Ahlfors extension} \(Bf\) of a quasisymmetric map \(f:\mathbb R\to\mathbb R\) to \(\mathbb H\).
+% Source page 11
+It is given in the notes by
+\[
+Bf(x+iy)=\frac12\int_0^1\bigl(f(x+ty)-f(x-ty)\bigr)\,dt
++i\int_0^1\bigl(f(x+ty)-f(x-ty)\bigr)\,dt.
+\]
+Equivalently, the notes write
+\[
+Bf(x+iy)=\frac1{2y}\int_{x-y}^{x+y}f(s)\,ds
++\frac{i}{y}\left(\int_x^{x+y}f(s)\,ds-\int_{x-y}^{x}f(s)\,ds\right).
+\]
+% Author check: Source page 11 has a minus sign in the first real-part integral, but the purported equivalent expression requires a plus sign; both displayed source formulas are retained.
+Since \(f\) is continuous, write the derivatives as
+\[
+\begin{aligned}
+\frac{\partial Bf}{\partial x}
+&=\underbrace{\frac{f(x+y)-f(x-y)}{2y}}_A
++i\underbrace{\frac{(f(x+y)-f(x))-(f(x)-f(x-y))}{y}}_B,\\
+\frac{\partial Bf}{\partial y}
+&=\underbrace{-\frac1{2y^2}\int_{x-y}^{x+y}f(s)\,ds}_C
++i\underbrace{-\frac1{y^2}
+\left(\int_x^{x+y}f(s)\,ds-\int_{x-y}^{x}f(s)\,ds\right)}_D\\
+&\quad+\underbrace{\frac{f(x+y)+f(x-y)}{2y}}_E
++i\underbrace{\frac{f(x+y)+f(x-y)}y}_F.
+\end{aligned}
+\]
+% Author check: Source page 11 gives a plus sign between the endpoints in F, and its subsequent denominator algebra also differs from direct expansion; retained.
+Thus
+\[
+\begin{aligned}
+\frac{\partial_{\bar z}(Bf)}{\partial_z(Bf)}
+&=\frac{(Bf)_x+i(Bf)_y}{(Bf)_x-i(Bf)_y}
+=\frac{A+iB+i(C+iD+E+iF)}{A+iB-i(C+iD+E+iF)}\\
+&=\frac{(A-D-F)+i(B+C+E)}
+{(A+D+F)+i(B-C-E)}.
+\end{aligned}
+\]
+The source uses the following bound:
+\[
+\left|\frac{\partial_{\bar z}(Bf)}{\partial_z(Bf)}\right|_2<\infty
+\ \Longleftrightarrow\
+\left|\frac{\partial_{\bar z}(Bf)}{\partial_z(Bf)}+1\right|_1<\infty,
+\]
+which leads to
+\[
+|A|+|B|=O\bigl(|A+D+F|+|B-C-E|\bigr).
+\]
+This last bound follows from quasisymmetry.
+% Author check: Source page 11 uses finite norm bounds rather than a strict bound below 1 for the Beltrami coefficient; the subscripts 1,2 are not defined there.
+
+% Source page 12
+If \(f\) lifts a quasisymmetric circle homeomorphism, then \(f(x+1)=f(x)+1\). One checks that \(Bf(x+i)\) has imaginary part one, so \(\{z:\operatorname{Im}z=1\}\) is invariant under \(Bf\); this will be crucial.
+If \(f(x)=x+\theta(x)\), then the real part of \(Bf\) on this line is \(x+\alpha\), where \(\alpha=\int_0^1\theta(t)\,dt\).
+% Author check: Source page 12 writes Bf(x+1) in the first claim and describes Im(z)=i. The surrounding assertion is unambiguously about the horizontal line at height 1; these local notation slips have been regularized.
+
+Return to the main problem. Lift \(\overline{A_{r_i}}\) to
+\(\Sigma_3=\{z:0\le\operatorname{Im}z\le3\}\). Let
+\(\Pi_{r_i}:\Sigma_3\to\overline{A_{r_i}}\) be the projections. These are quasiconformal: essentially exponential conformal maps composed with a scaling factor.
+Lift \(f_1,f_2\) to \(F_1,F_2\) and set
+\[
+\widetilde F_1=F_1,\qquad \widetilde F_2=F_2-3i,\qquad
+\widetilde F_j(x)=x+\theta_j(x),\quad
+\alpha_j=\int_0^1\theta_j(t)\,dt.
+\]
+\begin{figure}[H]\centering
+\includegraphics[width=.88\textwidth]{cd11-fig-03.pdf}
+\FigureTag{CD11.3}{fig:cd11-03}
+\end{figure}
+% Author check: Source page 12 calls the covering projections quasiconformal, although the definition earlier requires a homeomorphism; retained.
+
+% Source page 13
+The ingenious step is to divide \(\Sigma_3\) into
+\[
+\Sigma_1=\{0\le\operatorname{Im}z\le1\},\quad
+\Sigma_{1,2}=\{1\le\operatorname{Im}z\le2\},\quad
+\Sigma_{2,3}=\{2\le\operatorname{Im}z\le3\}.
+\]
+On \(\Sigma_1\), define the extension to be \(B\widetilde F_1\). As above, its restriction to the upper edge is \(z\mapsto z+\alpha_1\).
+\begin{figure}[H]\centering
+\includegraphics[width=.81\textwidth]{cd11-fig-04.pdf}
+\FigureTag{CD11.4}{fig:cd11-04}
+\end{figure}
+Next, turn \(\Sigma_{2,3}\) around, paste it onto \(\Sigma_1\), and define its extension as already done there.
+\begin{figure}[H]\centering
+\includegraphics[width=.82\textwidth]{cd11-fig-05.pdf}
+\FigureTag{CD11.5}{fig:cd11-05}
+\end{figure}
+
+% Source page 14
+Mathematically, put
+\[
+F=c\circ B\widetilde F_2\circ c^{-1},
+\qquad c(z)=\bar z+3i.
+\]
+Then \(F(x+2i)=x+\alpha_2+2i\). The picture so far is:
+\begin{figure}[H]\centering
+\includegraphics[width=.88\textwidth]{cd11-fig-06.pdf}
+\FigureTag{CD11.6}{fig:cd11-06}
+\end{figure}
+On \(\partial\Sigma_{1,2}\), \(F\) acts by affine translations. Extension across the middle strip is now easy:
+\begin{figure}[H]\centering
+\includegraphics[width=.84\textwidth]{cd11-fig-07.pdf}
+\FigureTag{CD11.7}{fig:cd11-07}
+\end{figure}
+Fix \(\operatorname{Im}z=t\), \(1\le t\le2\). As these lines approach either boundary, the map must become \(x\mapsto x+\alpha_2\) or \(x\mapsto x+\alpha_1\). Intermediate maps are given by the straight-line homotopy joining the boundary maps, viewed as loops around infinity.
+
+% Source page 15
+Explicitly, the notes give
+\[
+F(x+i(1+t))
+=tB\widetilde F_1+(1-t)c\circ B\widetilde F_2\circ c^{-1}.
+\]
+It follows that \(F\) on \(\Sigma_{1,2}\) is \(C^1\), hence quasiconformal, because both pieces are.
+The combined map satisfies \(F(z+1)=F(z)+1\), so it projects to the required quasiconformal map
+\(f:\overline{A_{r_1}}\to\overline{A_{r_2}}\).
+\end{proof}
+% Author check: Source page 15 leaves the evaluation points of the interpolated maps unstated and reverses the weights relative to the stated boundary values; it also infers quasiconformality from C^1 regularity alone. Retained.
 % BLOG-CONTENT-END
 \end{document}

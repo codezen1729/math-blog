@@ -6,6 +6,21 @@
 \section*{Modules, Tensor Products, and the Determinant Trick}
 % BLOG-CONTENT-BEGIN
 \subsection{Modules}
+\setcounter{definition}{3}\begin{definition}
+$M$ is an \emph{$A$-module} if $M\in\Ob(\mathsf{AbGps})$ and $\Hom_{\CRing}(A,\End_{\Ab}(M))\ne\varnothing$. If $M'<M$ satisfies the second condition, then $M'$ is an \emph{$A$-submodule} of $M$.
+\end{definition}
+% Source page 11
+\begin{remark}
+Unwrapping the second condition, say $f\in\Hom_{\CRing}(A,\End(M))$, gives
+\[
+f(a)\in\End_{\Ab}(M),\quad f(a+b)=f(a)+f(b),\quad
+f(ab)=f(a)f(b),\quad f(1)=1.
+\]
+Writing $f(a)(x)$ as $ax$, these become
+\[
+a(x+y)=ax+ay,\quad(a+b)x=ax+bx,\quad(ab)x=a(bx),\quad1x=x.
+\]
+\end{remark}
 \setcounter{example}{3}\begin{example}
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item Ideals of $A$ are $A$-modules.
@@ -21,6 +36,15 @@ A map $f:M\to M'$ between $A$-modules is a \emph{module homomorphism} if
 % Source page 12
 $f\in\Hom_{\Ab}(M,M')$ and $f(ax)=af(x)$. Thus $f$ is equivariant with the ring action of $A$ on $M,M'$.
 \end{definition}
+\begin{remark}
+Let $\AMod$ denote the category of $A$-modules. There are functors
+\[
+\Hom_{\AMod}(-,N):\AMod\to\AMod,\qquad
+\Hom_{\AMod}(N,-):\AMod\to\AMod.
+\]
+\emph{Fact:} These functors are left exact, that is, the sequence $0\to M'\to M\to M''\to0$ is exact if and only if $0\to F(M'')\to F(M)\to F(M')$ is exact. One similarly defines right exactness.
+% Author check: variance and the ``if and only if'' are retained from the source.
+\end{remark}
 % Source page 13
 \subsection{Tensor products}
 If $M,N$ are $A$-modules, there is a universal object among all $A$-bilinear maps from $M\times N$ to $P$, denoted $M\otimes N$. Thus $f:M\times N\to P$ factors through an $A$-linear map $\widetilde f$, as shown.
@@ -42,16 +66,40 @@ It is easy to check that $-\otimes N:\AMod\to\AMod$ and $N\otimes-:\AMod\to\AMod
 \begin{claim}
 \[\Hom(M\otimes N,P)\cong\Hom(M,\Hom(N,P)).\]
 \end{claim}
+\begin{proof}
+% Source page 14
+Given $\widetilde\varphi\in\Hom(M\otimes N,P)$, there is a unique $A$-bilinear map $\varphi:M\times N\to P$. Define
+\[
+\Phi:\Hom(M\otimes N,P)\longrightarrow\Hom(M,\Hom(N,P)),
+\qquad \Phi(\widetilde\varphi):=\varphi(x,-).
+\]
+Similarly, for $f\in\Hom(M,\Hom(N,P))$, the map $\widetilde{\Psi(f)}$ is the inverse of $\Phi$.
+% The source leaves the ``where'' line in this inverse construction blank.
+\end{proof}
 \begin{claim}
 The tensor-product functors above are right exact.
 \end{claim}
+The source records the exact-sequence calculation
+\[
+\Hom(E,\Hom(N,P))\text{ is exact}
+\ \Longleftrightarrow\ \Hom(E\otimes N,P)\text{ is exact}
+\ \Longleftrightarrow\ E\otimes N\text{ is exact}.
+\]
+% Author check: E is introduced by the unfinished phrase ``Let E denote a''.
 \subsection{Finitely generated modules}
 \setcounter{definition}{5}\begin{definition}
-The module $M$ is \emph{free} if $M=\bigoplus_i A$.
+An $A$-module $M$ is \emph{finitely generated} if there exist $\{x_i\}_{i=1}^n$ in $M$ such that \sourcegap.
+% Author check: the generating condition is blank in the source; no formula added.
+The module $M$ is \emph{free} if $M=\bigoplus_i A$. Further, if $M=\bigoplus_{i=1}^n A$, then $\dim(M)=n$. (If $A^m\cong A^n$, then \sourcegap.)
+% The parenthetical rank comparison is also unfinished in the source.
 \end{definition}
-The source also records $A\otimes_A A\cong A$, $A/\aa\otimes_A A\cong A/\aa$.
+The source also records $A\otimes_A A\cong A$, $A/\aa\otimes_A A\cong A/\aa$, and $A/\aa\otimes_A A/\bb$ without a completed right-hand side.
 \setcounter{definition}{6}\begin{definition}
-$N$ is \emph{flat} if $-\otimes N$ is an exact functor.
+$N$ is \emph{flat} if $-\otimes N$ is an exact functor. It is already right exact; equivalently, $N$ is flat if
+\[
+(0\to M'\to M)\ \Longleftrightarrow\ (0\to M'\otimes N\to M\otimes N).
+\]
+% Author check: the handwritten equivalence is retained, not replaced by implication.
 \end{definition}
 \setcounter{theorem}{3}\begin{theorem}[Cayley--Hamilton]
 Let $M$ be a finitely generated $A$-module, $\varphi\in\End_{\AMod}(M)$, and $\varphi(M)\subseteq\aa M$, where $\aa$ is an ideal of $A$. Then
@@ -61,6 +109,20 @@ Let $M$ be a finitely generated $A$-module, $\varphi\in\End_{\AMod}(M)$, and $\v
 % Source page 15
 for some $a_i\in\aa$, $n>0$.
 \end{theorem}
+\begin{proof}
+Let $\{x_i\}_{i=1}^n$ generate $M$. Since $\varphi(x_i)\in\aa M$, write $\varphi(x_i)=\sum_j a_{ij}x_j$. Equivalently,
+\[
+\sum_{j=1}^n(\delta_{ij}\varphi-a_{ij})(x_j)=0,
+\qquad B\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}=0.
+\]
+Let $\widetilde B$ be the cofactor matrix of $B$. Then
+\[
+\widetilde B B\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}=0
+\ \Longrightarrow\ 
+\det(B)I\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}=0.
+\]
+Thus $\det(\delta_{ij}\varphi-a_{ij})\in\End(M)$ is the zero endomorphism.
+\end{proof}
 \setcounter{theorem}{4}\begin{lemma}[Nakayama]
 Let $M,\aa$ be as before. If $\aa\subseteq\bigcap_{\mm\text{ maximal}}\mm$ (the Jacobson radical) and $M=\aa M$, then $M=0$.
 \end{lemma}
@@ -73,5 +135,10 @@ Cayley--Hamilton for $\varphi=\id$ yields, for $x=1+a_1+\cdots+a_n\equiv1\pmod\a
 \]
 Hence $x$ is a unit. Therefore $M=x^{-1}(xM)=0$.
 \end{proof}
+
+\SourceChapter{duplicate-5}{Source note: the Lecture 5 file}
+\begin{remark}[Duplicate source]
+The supplied file \texttt{Lecture 5.pdf} is a second export of the handwritten \emph{Lecture 1: Rings and Modules}. All sixteen pages were checked: its mathematical content, diagrams, annotations, and unfinished passages repeat \href{https://codezen1729.github.io/math-blog/\#/post/rings-ideals-and-prime-ideals}{Rings, Ideals, and Prime Ideals}. Only export spacing and cropping differ. That material is transcribed once, in \href{https://codezen1729.github.io/math-blog/\#/post/rings-ideals-and-prime-ideals}{Rings, Ideals, and Prime Ideals}; the next distinct source is Lecture~6.
+\end{remark}
 % BLOG-CONTENT-END
 \end{document}

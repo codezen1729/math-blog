@@ -5,7 +5,7 @@
 \begin{document}
 \section*{Dense Subsets of Julia Sets}
 % BLOG-CONTENT-BEGIN
-In this short exposition we ask how many periodic points there are for a rational map $f=P/Q\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ with $\deg(f)=d\ge2$. It turns out that
+How many periodic points are there for a rational map $f=P/Q\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ with $\deg(f)=d\ge2$? It turns out that
 \begin{enumerate}
 \setcounter{enumi}{0}\item the number of attracting periodic orbits is at most $2d-2$;
 \setcounter{enumi}{1}\item the number of indifferent periodic orbits is at most $4d-4$ ($\lambda\ne1$);
@@ -19,18 +19,98 @@ The first assertion is elementary: every attracting basin has a critical point, 
 =\#\{\text{zeros of }QP'-Q'P\}\\
 &\le\deg(QP'-Q'P)\le2d-2.
 \end{align*}
-Compare the leading coefficients in the worst case, $\deg P=\deg Q=d$.
+Compare the leading coefficients in the worst case, $\deg P=\deg Q=d$. Now let us prove the second assertion.
 \setcounter{theorem}{19}\begin{proposition}\label{cd4:indifferent}
 The number of indifferent, nonparabolic cycles is at most $4d-4$.
 \end{proposition}
+\begin{proof}
+We separate the proof into two stages.
+\emph{Perturbation.} We will holomorphically deform $f(z)=P(z)/Q(z)$ into the polynomial $z^d$, the simplest rational map of degree $d$.
+% Source page 2
+We do this for two important reasons (revisit them):
+\begin{enumerate}
+\setcounter{enumi}{0}\item If $\{z_j\}_j$ is an indifferent cycle, deform the $z_j$ holomorphically, along with their multipliers $\lambda_j$. We plan to convert them into attracting cycles and use the bound on attracting cycles.
+\setcounter{enumi}{1}\item Deforming to $z^d$ helps ensure that this conversion happens for a ``large proportion'' of indifferent cycles.
+\end{enumerate}
+Define
+\[
+f_t(z)=\frac{P(z)-tz^d}{Q(z)-t},\qquad f_0(z)=f(z),\qquad f_\infty(z)=z^d.
+\]
+This remains a degree-$d$ map unless, for some $t\in\widehat{\mathbb C}$, zeros and poles collide as the parameter approaches $t$. For that to happen, $Q(z)=t$ and $P(z)=tz^d$, so $z^d=P(z)/Q(z)=f(z)$. Thus the number of solutions of $f(z)=z^d$ determines the number of exceptional parameters at which the degree drops.
+
+Let $\{f_0^{\circ k}(z_j)\}_{k=1}^n$ be an $n$-cycle of $f_0$ with $|\lambda_j(0)|=0$. Set $\widetilde f(t,z)=f_t^{\circ n}(z)-z$. Since $\widetilde f(0,z_j)=0$, the implicit function theorem gives neighbourhoods $U$ of $0$ and $V$ of $z_j$ and a holomorphic map $z_j(t)\colon U\to V$ with $\widetilde f(t,z_j(t))=0$.
+% Author check: source writes |lambda_j(0)|=0, although the surrounding argument concerns indifferent cycles.
+% Source page 3
+The multiplier $\lambda_j(t)=(f_t^{\circ n})'(z_j(t))$ is also locally holomorphic. If it were locally constant, the identity theorem would shatter all hope of turning these indifferent points into attracting ones.
+\setcounter{theorem}{20}\begin{lemma}\label{cd4:nonconstant}
+The map $t\mapsto\lambda_j(t)$ is not locally constant.
+\end{lemma}
+\begin{proof}
+Suppose it is, and let us see how far this paralysis extends. Choose a ray $\{re^{i\theta}:0\le r\le+\infty\}$ avoiding every parameter where $\deg(f_t)<d$. Extend $\lambda_j(t)$ to a neighbourhood of this ray so that $f_t$ has an indifferent periodic point $z_j(t)$ with multiplier $\lambda_j(t)$.
+
+If $z_j(t)\to z_j(\widehat t)$ along the ray as $t\to\widehat t$, continuity gives
+$\widetilde f(t,z_j(t))\to\widetilde f(\widehat t,z_j(\widehat t))=0$.
+The implicit function theorem makes $z_j$, and hence $\lambda_j$, analytic near $\widehat t$. Thus the domain of analytic continuation is both open and closed. It follows that $z^d$ has an indifferent cycle $\{f_\infty^{\circ k}(z_j(\infty))\}_k$ with $|\lambda_j(\infty)|=1$. This is impossible: the periodic points of $z^d$ are $0,\infty$,
+% Source page 4
+and roots of unity, none of whose multipliers lie on $S^1$.
+\end{proof}
+There is therefore hope: the functions $\lambda_j(t)$ are not paralysed; they are indeed ``dynamic''.
+
+\emph{Converting cycles.} Near $t=0$, write
+\[
+\frac{\lambda_j(t)}{\lambda_0(t)}=1+a_jt^{n_j}+o(t^{n_j}),\qquad
+|\lambda_j(t)|=1+\Re(a_jt^{n_j})+o(t^{n_j}).
+\]
+% Author check: source page 4 writes lambda_0(t) in the denominator of this expansion, without defining it. The preceding inconsistent |lambda_j(0)|=0 is also retained.
+Set $\sigma_j(\theta)=\operatorname{sign}\Re(a_je^{i\theta n_j})$. For small $r$, $\sigma_j(\theta)=+1$ implies $|\lambda_j(re^{i\theta})|>1$, while $\sigma_j(\theta)=-1$ implies $|\lambda_j(re^{i\theta})|<1$. This is the desired conversion.
+
+Clearly $(2\pi)^{-1}\int_0^{2\pi}\sigma_j(\theta)\,d\theta=0$. Let $\ell$ be odd and no greater than the number of indifferent cycles of $f_0$. Then
+\[
+\frac1{2\pi}\int_0^{2\pi}\sum_{k=1}^{\ell}\sigma_k(\theta)\,d\theta=0.
+\]
+For some $\theta$, at least $(\ell+1)/2$ multipliers have modulus less than one. Hence, for $t=re^{i\theta}$, the map $f_t$ has at least $(\ell+1)/2$ attracting cycles. Since $(\ell+1)/2\le2d-2$, the number of indifferent cycles is finite and at most $4d-4$.
+\end{proof}
 % Source page 5
 \begin{remark}
 Parabolic points may be included with attracting cycles, because their basins also contain critical points, or accommodated in the list of indifferent cycles.
 \end{remark}
-The assertion we use to deduce this quantitative result is qualitative.
+We now prove that there are infinitely many repelling periodic points. The assertion we use to deduce this quantitative result is qualitative.
 \setcounter{theorem}{21}\begin{proposition}\label{cd4:density}
 The closure of the set of repelling periodic points is the Julia set.
 \end{proposition}
+\begin{proof}[Proof due to Fatou]
+Let $z_0\in J(f)$ be neither a fixed point nor a critical value of $f$. Then $f^{-1}(z_0)=\{z_i\}_{i=1}^d$, with all $z_i$ distinct. Choose a neighbourhood $N$ of $z_0$ on which $f^{-1}$ has $d$ branches $\varphi_j$, with $\varphi_j(z_0)=z_j$.
+\begin{figure}[H]\centering
+\includegraphics[width=.57\textwidth]{cd4-fig-01.pdf}
+\FigureTag{CD4.1}{fig:cd4-01}
+\end{figure}
+For some $n$ and some $z\in N$, $f^{\circ n}(z)\in\{z,\varphi_1(z),\varphi_2(z)\}$. Otherwise take $N$ small enough to be hyperbolic and
+% Source page 6
+set
+\[
+g_n(z)=\left(\frac{f^{\circ n}(z)-\varphi_1(z)}{f^{\circ n}(z)-\varphi_2(z)}\right)
+\left(\frac{z-\varphi_2(z)}{z-\varphi_1(z)}\right).
+\]
+Then $g_n\colon N\to\widehat{\mathbb C}\setminus\{0,1,\infty\}$ is a normal family. A subsequence $g_{n_j}$ converges to $g$ on compact subsets $K\subset N$. Rearranging,
+\[
+\frac{f^{\circ n}(z)-\varphi_1(z)}{f^{\circ n}(z)-\varphi_2(z)}
+=g_n(z)\frac{z-\varphi_1(z)}{z-\varphi_2(z)},
+\]
+and hence
+\[
+f^{\circ n_j}(z)\longrightarrow
+\frac{\varphi_2(z)-\varphi_1(z)}{g(z)\dfrac{z-\varphi_1(z)}{z-\varphi_2(z)}-1}+\varphi_2(z).
+\]
+Thus $\{f^{\circ n}|_N\}$ is normal, contradicting $z_0\in J(f)$. Therefore some $z\in N$ satisfies either $f^{\circ n}(z)=z$ or $f^{\circ n}(z)=\varphi_j(z)$; in the latter case, $f^{\circ(n+1)}(z)=f(\varphi_j(z))=z$. Thus $z$ is periodic, of period $n$ or $n+1$.
+
+The closure of periodic points is the Julia set: since $J(f)$ has no isolated points, density away from the fixed points and critical values gives density in all of $J(f)$.
+% Author check: the source states equality for all periodic points, including those potentially outside J; retained in the prose.
+% Source page 7
+By the previous proposition, only finitely many of these periodic points are nonrepelling, and repelling points lie in the Julia set. Hence
+\[
+\overline{\{\text{repelling periodic points}\}}=J(f).
+\]
+\end{proof}
 There are therefore infinitely many repelling periodic points. A small topological argument is needed.
 % BLOG-CONTENT-END
 \end{document}

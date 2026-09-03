@@ -5,7 +5,28 @@
 \begin{document}
 \section*{Elementary Number Theory}
 % BLOG-CONTENT-BEGIN
+\subsection{Cover inscriptions}
+The notebook cover records the following formulas:
+\[
+1+2+3+4+\cdots=-\frac1{12},\qquad
+1+\frac14+\frac19+\frac1{16}+\frac1{25}+\cdots=\frac{\pi^2}{6},
+\]
+\[
+1-1+1-1+1-1+\cdots=\frac12,\qquad
+a^{\varphi(m)}\equiv1\pmod m,
+\]
+\[
+\sqrt{1+2\sqrt{1+3\sqrt{1+4\sqrt{1+\cdots}}}}=3,
+\qquad x^2\geq0.
+\]
+The partially cropped lower edge also contains $e^{i\pi}=-1$ and
+$4\int_0^1\sqrt{1-x^2}\,dx=\pi$.
+
 \subsection{Elementary number theory}
+\setcounter{theorem}{0}\begin{lemma}[GCD of a sum and a product]
+If $\gcd(x,y)=1$, then $\gcd(x+y,xy)=1$. In fact, one can also replace that $1$ by any natural number $d$.
+\end{lemma}
+% Author check: the claimed replacement of 1 by arbitrary d is retained as written.
 \paragraph{Application: AMTI, inter-final round (2014).}
 If $\gcd(a+b,a-b)=1$, find
 \[
@@ -21,6 +42,10 @@ We have
 \end{align*}
 Thus the required GCD is $1$.
 
+\setcounter{theorem}{1}\begin{lemma}[Canonical representation]
+Every integer greater than $1$ can be decomposed into a product of primes; such a representation is called a canonical representation. This is the Fundamental Theorem of Algebra.
+\end{lemma}
+% Author check: source calls this the Fundamental Theorem of Algebra, not Arithmetic.
 \paragraph{Application: British Mathematical Olympiad, round 2 (2009).}
 Find all solutions in nonnegative integers $(a,b)$ of
 $\sqrt a+\sqrt b=\sqrt{2009}$.
@@ -56,10 +81,29 @@ $\sum_{i=1}^n p_i^2\equiv n\pmod6$, and the divisibility assumption gives $n\equ
 Let $a$ be a positive integer and $p$ a prime. Then $a^p\equiv a\pmod p$.
 If $\gcd(a,p)=1$, then $a^{p-1}\equiv1\pmod p$.
 \end{lemma}
+\paragraph{Application: Sierpi\'nski's theorem.}
+$n\nmid 2^{n-1}+1$ for every $n>1$.
+Let $n=\prod_{i=1}^s p_i^{k_i}$, where $p_1<p_2<\cdots<p_s$ are prime factors.
+Write $p_i-1=2^{\gamma_i}m_i$, with $m_i$ odd. (For even $n$ the result is true.)
+The notes write $n\equiv1\pmod{2^{\gamma_i}}$, hence $n-1=2^{\gamma_i}t$.
+We then have $2^{2^{\gamma_i}t}\equiv-1\pmod{p_i}$, and thus
+\[
+-1\equiv2^{2^{\gamma_i}tm_i}\equiv2^{(p_i-1)t}\equiv1\pmod{p_i}.
+\]
+Thus $p_i=2$, a contradiction.
+% Author check: the choice of index i and congruence n=1 mod 2^{gamma_i} are not justified in the source.
 
 \setcounter{theorem}{6}\begin{lemma}[Wilson's theorem]
 If $p$ is prime, then $(p-1)!\equiv-1\pmod p$.
 \end{lemma}
+\paragraph{Application.}
+$n\nmid\sum_{r=1}^{n-3}r(r!)$ if and only if $n$ is prime.
+Note that
+\[
+\sum_{r=1}^{n-3}r(r!)=\sum_{r=1}^{n-3}\bigl((r+1)!-r!\bigr)=(n-2)!-1.
+\]
+The notes conclude $n\nmid(n-2)!-1\Rightarrow n$ is prime.
+% Author check: divisibility signs and the claimed equivalence are retained from the source.
 
 % Source page 3 - right
 \setcounter{theorem}{7}\begin{lemma}[Euler's totient]
@@ -72,10 +116,23 @@ If $(a,m)=1$, then $a^{\varphi(m)}\equiv1\pmod m$.
 \end{lemma}
 This has quite a lot of applications.
 
+\setcounter{theorem}{8}\begin{lemma}[Prime-power exponent]
+If $p^\alpha\mathbin\Vert n$, then
+$\alpha=\lfloor n/p\rfloor+\lfloor n/p^2\rfloor+\lfloor n/p^3\rfloor+\cdots$.
+\end{lemma}
+% Author check: the source says p^alpha || n; the formula normally concerns n!.
 
 \setcounter{theorem}{9}\begin{lemma}[Sophie Germain's identity]
 $a^4+4b^4=(a^2+2b^2+2ab)(a^2+2b^2-2ab)$.
 \end{lemma}
+\paragraph{Application.}
+Show that $n^4+4^n$ is always composite. If $n$ is even, this is obvious.
+If $n$ is odd, put $n=2k+1$. Then
+\[
+n^4+4^n=n^4+4\cdot4^{2k}=n^4+4(2^k)^4
+=(n^2+2^{2k+1}+2^{k+1}n)(n^2+2^{2k+1}-2^{k+1}n).
+\]
+% Author check: the stated application has no lower bound on n.
 
 \setcounter{theorem}{10}\begin{lemma}[A polynomial factorization]
 \begin{align*}
@@ -93,6 +150,11 @@ n(n-1)^4+1=(n-1)^5+(n-1)^4+1
 \]
 Since $n^3-3n^2+2n=n(n-1)(n-2)>1$ and $n^2-n=n(n-1)>1$, the result follows.
 
+\setcounter{theorem}{11}\begin{lemma}[Reciprocal equation]
+$1/x+1/y=1/n$ is equivalent to $(n-x)(n-y)=n^2$.
+The number of solutions $(x,y)$ equals $d(n^2)$.
+\end{lemma}
+% Author check: the domain and order convention for solutions are not specified.
 
 % Source page 4 - left
 \setcounter{theorem}{12}\begin{lemma}[A cubic identity]
@@ -116,7 +178,17 @@ But $625\equiv-16\pmod{641}$, so
 $625\cdot2^{28}\equiv-16\cdot2^{28}=-2^{32}\equiv1\pmod{641}$.
 Consequently $2^{32}+1\equiv0\pmod{641}$.
 
-
+\subsection{Number theory using inequalities}
+Let $n$ be a positive integer. Find all $n$ such that $3^{2n}+3n^2+7$ is a perfect square.
+Put $3^{2n}+3n^2+7=b^2$. Then $b^2>3^{2n}$, so $b>3^n$ and $b\geq3^n+1$.
+Therefore
+\[
+3^{2n}+3n^2+7\geq3^{2n}+2\cdot3^n+1
+\Longrightarrow3n^2+6\geq2\cdot3^n
+\Longrightarrow n\leq2.
+\]
+But $n=2$ satisfies the conditions and is the only solution.
+% Author check: the claimed implication n<=2 is preserved without an added argument.
 
 \setcounter{theorem}{15}\begin{lemma}[Squarefree factor]
 If $n^2=ab$, where $a<b$ and $a$ is not divisible by a perfect square greater than $1$, then $a\mid b$.
@@ -140,6 +212,11 @@ Prove that the only integer solution of $x^2+y^2=x^2y^2$ is $x=y=0$.
 \paragraph{Proof 1.}
 $1=x^2y^2-x^2-y^2+1=(x^2-1)(y^2-1)$.
 Thus $x^2-1=\pm1$ and $y^2-1=\pm1$, implying $x=y=0$.
+\paragraph{Proof 2.}
+The pair $(0,0)$ is a solution. Suppose $x,y\ne0$ and let $1/x^2\geq1/y^2$.
+Then $1/x^2+1/y^2=1\geq2/y^2$, so $2\geq y^2$; also $y^2>1$.
+This forces $y^2=2$, or $y=\sqrt2$.
+% Author check: the inequality-to-bound step is retained from the source.
 \paragraph{Proof 3.}
 From $x^2+y^2=x^2y^2$ the notes obtain $x=2x_1$ and $y=2y_1$, and then
 \[
@@ -185,10 +262,61 @@ Using an appropriate modulus for perfect powers often yields elegant solutions:
 for cubes, modulo $7$ or $9$; for fourth powers, modulo $5$ or $16$;
 for fifth powers, modulo $5$ or $11$. For instance, $x^5\equiv0,\pm1\pmod{11}$, and so on.
 \end{lemma}
+\paragraph{Applications.}
+\begin{enumerate}
+\setcounter{enumi}{0}\item Find integer solutions of $x^3+y^3+z^3=2001$.
+\setcounter{enumi}{1}\item Find integer solutions of $(x+1)^5+(y-4)^5+1=(x-2)^5+(y+3)^5$.
+\end{enumerate}
+(1) Let $x\geq y\geq z$. Then $3x^3\geq2001$, so $11\geq x\geq9$.
+Also $x^3\equiv0,\pm1\pmod9$, but $2001\equiv3\pmod9$.
+This forces $x\equiv y\equiv z\equiv1\pmod9$.
+The only such number in the interval for $x$ is $10$, so $x=10$.
+Then $y^3+z^3=1001$. Arguing similarly gives $10\geq y\geq8$;
+only $y=10$ satisfies the congruence, and this puts $z=1$.
+Thus $(x,y,z)=(10,10,1)$.
+% Author check: source asks for integer solutions but bounds assume positivity and list only ordered triple.
+
+(2) There are two other options, a parity test and a binomial expansion; both yield solutions,
+but the best approach is modulo $5$.
+\begin{align*}
+(x+1)^5+(y-4)^5+1&\equiv x+1+y-4+1=x+y-2\pmod5,\\
+(x-2)^5+(y+3)^5&\equiv x-2+y+3=x+y+1\pmod5.
+\end{align*}
+Hence $3\equiv0\pmod5$, a contradiction.
+These are two examples where an appropriate modular-arithmetic argument yields an elegant solution.
 
 % Source page 6 - right
 \setcounter{theorem}{20}\begin{lemma}[Factorization]
 Some problems are resolved using simple factorization techniques; it is important to acquire skill in factorization.
 \end{lemma}
+\paragraph{Applications.}
+\begin{enumerate}
+\setcounter{enumi}{0}\item If $\dfrac{a^2+b^2}{b^2+c^2}=\dfrac ac$, where $a\ne c$, $b,c\ne0$, and $a,b,c>0$,
+ prove that $a^2+b^2+c^2$ is not prime.
+\setcounter{enumi}{1}\item If $x^5+y^5=2x^2y^2$, prove that $1-xy$ is always the square of a rational number,
+where $x,y\in\mathbb Q$. (IMOTC, 2014.)
+\end{enumerate}
+(1) From $c(a^2+b^2)=a(b^2+c^2)$ we get $ac(a-c)=b^2(a-c)$, hence $b^2=ac$.
+Therefore
+\[
+a^2+b^2+c^2=a^2+ac+c^2=(a+c)^2-ac=(a+c)^2-b^2=(a+b+c)(a-b+c).
+\]
+Since $a,b,c>0$, $a+b+c>0$. Also $(a+c)^2=a^2+2b^2+c^2>2b^2>b^2$,
+so $a+c>b$ and $a-b+c>0$. Thus $a^2+b^2+c^2$ is always composite.
+% Author check: integrality and lower bounds for factors are unstated in the source.
+
+(2) We have
+\[
+x^5+y^5-x^2y^2-x^3y^3=x^2y^2(1-xy),\qquad
+1-xy=\frac{(x^3-y^2)(x^2-y^3)}{x^2y^2}.
+\]
+Also $x^2(x^3-y^2)=y^2(x^2-y^3)$ is equivalent to the hypothesis, so
+$x^2-y^3=\dfrac{x^2}{y^2}(x^3-y^2)$. Substitution gives
+\[
+1-xy=\frac{(x^3-y^2)^2\,x^2/y^2}{x^2y^2}
+=\left(\frac{x^3-y^2}{y^2}\right)^2.
+\]
+% Author check: the source divides by x and y without discussing zero.
+There are many such factorization techniques that do not look elementary to the eye.
 % BLOG-CONTENT-END
 \end{document}

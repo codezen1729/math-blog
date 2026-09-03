@@ -33,7 +33,25 @@ This gives $k\sqrt2+x\sqrt2>k+1$, a contradiction.
 \end{remark}
 
 % Source page 20 - left
-
+\paragraph{Three circles.}
+Given three mutually intersecting circles, prove that their common chords are concurrent.
+\begin{figure}[H]\centering
+\includegraphics[width=.70\linewidth]{lb1-fig-14.pdf}
+\FigureTag{LB1.14}{fig:lb1-14}
+\end{figure}
+Suppose the contrary. Extend $C_2X$ to meet $\omega_2$ at $X_1$ and $\omega_3$ at $Y_1$, with $X_1\ne Y_1$.
+If $X_1=Y_1$, then $X_1=Y_1=\omega_2\cap\omega_3=C_1$.
+We assume that extending $C_2X$ does not form a chord.
+Recall the fact that, if chords $AB,CD$ meet at $X$, then $AX\cdot XB=CX\cdot XD$.
+Consequently
+\[
+A_1X\cdot XA_2=B_1X\cdot XB_2,\qquad
+B_1X\cdot XB_2=Y_1X\cdot XC_2,\qquad
+A_1X\cdot XA_2=X_1X\cdot XC_2.
+\]
+Therefore $X_1X\cdot XC_2=Y_1X\cdot XC_2$, so $X_1X=Y_1X$ and
+$X_1=Y_1=\omega_2\cap\omega_3=C_1$, a contradiction.
+% Author check: general configurations with parallel radical axes are not discussed in source.
 
 \setcounter{theorem}{58}\begin{lemma}[Inductive determinant]
 Given an inequality $S(n)\gtreqless k$, where $S(n)$ is a sum satisfying $S(n+1)=f(S(n))$,
@@ -48,7 +66,23 @@ Proceed directly to the induction step. It is enough that
 \]
 Guess $F(n)=1/n$. The starting case is $1/4\leq3/4-1/2$.
 
-
+\setcounter{theorem}{69}\begin{lemma}[Parity of a permutation's displacement]\label{lemma:lb1-73}
+If $a_1,a_2,\ldots,a_n$ is a permutation of $1,2,\ldots,n$, then
+$|a_1-1|+|a_2-2|+\cdots+|a_n-n|$ is even.
+\end{lemma}
+Let me present a beautiful proof of this fact! Let $|a_i-i|=|x_i|$.
+We note that $x_1+x_2+\cdots+x_n=0$, which implies that the number of odd $x_i$ is even.
+Therefore $\sum|x_i|$ is even. Q.E.D.!
+% Author check: only |x_i| is defined in the source, before the signed-sum assertion.
+\paragraph{Application: RMO (2011).}
+If $a_1,a_2,\ldots,a_{2011}$ is a permutation of $1,2,\ldots,2011$, prove that
+$|a_j-j|=|a_i-i|$ for some $1\leq i<j\leq2011$.
+The possible values of $|a_k-k|$ are $0,1,2,\ldots,2010$.
+There are 2011 numbers $|a_i-i|$ and 2011 possible values.
+Assume no two are equal, and let us obtain a contradiction.
+Then these numbers form a permutation of $0,1,\ldots,2010$, so
+\[\sum|a_k-k|=\frac{2010\cdot2011}{2},\]
+which is odd. A contradiction! Q.E.D. (There is another way to solve it; find it!)
 \paragraph{Colorado puzzle: 21st Colorado Mathematical Olympiad.}
 A hiker strolls 10 miles south, 10 miles west, and 10 miles north, and finds himself back at his initial position.
 Find all positions on Earth from which he could have started!
@@ -56,7 +90,6 @@ Find all positions on Earth from which he could have started!
 You might shout ``North Pole'' and then probably skip the question.
 Behold! Let me give you an unpleasant shock: there are infinitely many positions on Earth from which he could have started!
 So, boo---find them all!
-
 
 \setcounter{theorem}{77}\begin{lemma}[Pigeonhole principle; Dirichlet's principle]\label{lemma:lb1-80}
 If there are $kn+1$ pigeons sitting in $n$ pigeonholes, then at least one hole contains at least $k+1$ pigeons.
@@ -103,7 +136,6 @@ On the other hand, we get $360^\circ$ around every candle, plus four $90^\circ$ 
 Thus $180n=360\times100+90\times4=180\times202$, so $n=202$.
 Q.E.D.! Just like a piece of cake.
 
-
 \subsection{Shovan's enigmatic perspective}
 \paragraph{Balkan Mathematical Olympiad (2014).}
 A regular hexagon of side $n$ is divided into unit equilateral triangles by lines parallel to its sides.
@@ -123,12 +155,16 @@ Similarly, the $k\times k$ hexagons correspond to unit cubes in the $k$th layer 
 Therefore the number of hexagons equals the number of unit cubes in an $n\times n\times n$ cube, namely $n^3$.
 \emph{Quite a genius demonstration.}
 
-
 \paragraph{What an amazing argument! WAAA!}
 For a natural number $n$, prove
 $\lfloor n/1\rfloor+\lfloor n/2\rfloor+\cdots+\lfloor n/n\rfloor+\lfloor\sqrt n\rfloor$ is even.
 (INMO, 2014.)
 % Source page 9 - right
+The source first records
+\[
+\lfloor n/1\rfloor+\cdots+\lfloor n/n\rfloor+\lfloor\sqrt n\rfloor
+=d(1)+d(2)+\cdots+d(n).
+\]
 In $P=\{1,2,\ldots,n\}$, the number of multiples of $q$ is $\lfloor n/q\rfloor$.
 Counting multiples of $k$ not exceeding $n$ is equivalent to counting divisors of the numbers $1,\ldots,n$:
 ``Multiples are obtained by multiplying by a constant, and divisors by dividing by a constant.'' WAAA!
@@ -139,5 +175,6 @@ Therefore
 $\sum_{k=1}^n\lfloor n/k\rfloor+\lfloor\sqrt n\rfloor
 \equiv2\lfloor\sqrt n\rfloor\equiv0\pmod2$.
 \emph{Quite intelligently done.}
+% Author check: first displayed equality includes sqrt term only on LHS; subsequent identity differs and is retained separately.
 % BLOG-CONTENT-END
 \end{document}

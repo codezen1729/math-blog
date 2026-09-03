@@ -5,5 +5,19 @@
   "lattices.jpg": "figures/elliptic-curves/lattices.webp",
   "modular forms.png": "figures/elliptic-curves/modular-forms.webp",
   "torus.png": "figures/elliptic-curves/torus.webp",
-  "elliptic curves.png": "figures/elliptic-curves/elliptic-curves.webp"
+  "elliptic curves.png": "figures/elliptic-curves/elliptic-curves.webp",
+  "figures/torus.png": "figures/elliptic-curves/torus.webp",
+  "figures/elliptic-curves/torus.png": "figures/elliptic-curves/torus.webp",
+  "figures/elliptic curves.png": "figures/elliptic-curves/elliptic-curves.webp",
+  "figures/elliptic-curves/elliptic curves.png": "figures/elliptic-curves/elliptic-curves.webp",
+  "figures/modular forms.png": "figures/elliptic-curves/modular-forms.webp",
+  "figures/elliptic-curves/modular forms.png": "figures/elliptic-curves/modular-forms.webp",
+  "figures/lattices.jpg": "figures/elliptic-curves/lattices.webp",
+  "figures/elliptic-curves/lattices.jpg": "figures/elliptic-curves/lattices.webp",
+  "figures/elliptic curve.png": "figures/elliptic-curves/elliptic-curve.webp",
+  "figures/elliptic-curves/elliptic curve.png": "figures/elliptic-curves/elliptic-curve.webp",
+  "figures/inequality.jpg": "figures/elliptic-curves/inequality.webp",
+  "figures/elliptic-curves/inequality.jpg": "figures/elliptic-curves/inequality.webp",
+  "figures/contour.png": "figures/elliptic-curves/contour.webp",
+  "figures/elliptic-curves/contour.png": "figures/elliptic-curves/contour.webp"
 }

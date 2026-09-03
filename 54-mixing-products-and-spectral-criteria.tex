@@ -8,10 +8,11 @@
 \subsection{Mixing}
 Ergodic theorems give you all the equidistribution theorems one would hope
 for, so let us now abandon the study of orbits. Recall that we studied
-ergodicity (the contents of Lecture 2):
+ergodicity from three different perspectives:
 \begin{itemize}
  \item Measure-theoretic: to obtain dynamical information.
  \item Operator-theoretic: to obtain equidistribution theorems.
+ \item Fourier-analytic: for some examples.
 \end{itemize}
 Now let us focus on the study of ``set-orbits''
 $\{T^{\circ n}(E)\}_{n\in\mathbb Z}$. The measure-theoretic perspective
@@ -128,6 +129,8 @@ Given a system $(X,\mathcal B,\mu,T)$, the following are equivalent:
  and the corresponding eigenspace consists of constant functions.
 \end{enumerate}
 \end{theorem}
+This is a long proof, so hang tight. We will first prove an interesting
+technical lemma due to Koopman and von Neumann.
 
 \setcounter{theorem}{15}\begin{lemma}[Koopman--Neumann]
 \label{lem:l4-koopman-neumann}
@@ -146,7 +149,333 @@ The following are equivalent:
 \end{lemma}
 
 % Source page 5
+\begin{proof}
+Set $J_k:=\{j\in\mathbb N:a_j>1/k\}$. This gives the natural inclusions
+$J_1\subseteq J_2\subseteq J_3\subseteq\cdots$.
+By definition,
+\[
+ \frac1k|J_k\cap[0,n)|
+ <\sum_{\substack{0\leq i\leq n-1\\a_i>1/k}}a_i
+ \leq\sum_{i=0}^{n-1}a_i.
+\]
+Dividing by $n$,
+\[
+ \frac1n|J_k\cap[0,n)|
+ <k\left(\frac1n\sum_{i=0}^{n-1}a_i\right)\longrightarrow0,
+\]
+so $\operatorname{density}(J_k)=0$ for all $k\geq1$.
+Choose $0<\ell_1<\ell_2<\cdots$ such that
+$\frac1n|J_k\cap[0,n)|\leq1/k$ for all $n\geq\ell_k$, and set
+\[
+ J=\bigcup_{k=0}^\infty\bigl(J_k\cap[\ell_k,\ell_{k+1})\bigr).
+\]
+% Author check: the source starts this union at k=0 although J_k and ell_k were introduced for k>=1.
+Since $J_k\subseteq J_{k+1}$,
+$J_k\cap[\ell_{k+1},\ell_{k+2})\subseteq
+ J_{k+1}\cap[\ell_{k+1},\ell_{k+2})$, so
+$J_k\cap[\ell_k,\infty)\subseteq J$.
+If $n\notin J$ and $n\geq\ell_k$, then $n\notin J_k$, and hence
+$a_n\leq1/k$. Thus $a_n\to0$ with $n\notin J$.
+Let $n\in[\ell_k,\ell_{k+1})$. Then
+\[
+ \begin{aligned}
+ J\cap[0,n)
+ &=\left(\bigcup_{i=0}^\infty J_i\cap[\ell_i,\ell_{i+1})\right)\cap[0,n)\\
+ &\subseteq\left(\bigcup_{i=0}^{k}J_i\cap[\ell_i,\ell_{i+1})\right)\cap[0,n)
+ \subseteq J_k\cap[0,n),
+ \end{aligned}
+\]
+because $J_i\subseteq J_{i+1}$ for all $i\geq0$.
+Therefore $\frac1n|J\cap[0,n)|\leq\frac1n|J_k\cap[0,n)|\leq1/k$,
+by our choice of $\{\ell_k\}_{k\geq0}$. Thus $J$ has density zero.
 
+Now suppose $a_n\to0$ with $n\notin J$. Since $\{a_n\}_n$ is bounded,
+there exists $R>0$ such that $a_n\leq R$ for every $n\geq1$.
+% Source page 6
+For each $k\geq1$, choose $N_k$ such that $n\notin J$, $n\geq N_k$
+imply $a_n<1/k$, and such that $\frac1n|J\cap[0,n)|\leq1/k$.
+For all $n\geq kN_k$,
+\[
+ \begin{aligned}
+ \frac1n\sum_{i=0}^{n-1}a_i
+ &=\frac1n\left(\sum_{i=0}^{N_k-1}a_i
+   +\sum_{\substack{i\in J\\N_k\leq i<n}}a_i
+   +\sum_{\substack{i\notin J\\N_k\leq i<n}}a_i\right)\\
+ &<\frac1n\left(RN_k+R|J\cap[0,n)|+\frac nk\right)\\
+ &\leq\frac{RN_k}{n}+R\frac{|J\cap[0,n)|}{n}+\frac1k
+ \leq\frac Rk+\frac Rk+\frac1k
+ =\frac{2R+1}{k}\longrightarrow0\qquad(k\to\infty).
+ \end{aligned}
+\]
+Similarly,
+\[
+ a_n\xrightarrow[n\notin J]{}0
+ \quad\Longleftrightarrow\quad a_n^2\xrightarrow[n\notin J]{}0
+ \quad\Longleftrightarrow\quad\frac1n\sum_{i=0}^{n-1}a_i^2\longrightarrow0.
+\]
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:l4-mixing-equivalences}]
+We shall use the Koopman--Neumann lemma without mentioning it explicitly.
+Keep in mind henceforth that
+\[
+ \begin{aligned}
+ &\frac1N\sum_{n=0}^{N-1}
+  |\mu(A\cap T^{-n}B)-\mu(A)\mu(B)|\longrightarrow0\\
+ &\quad\Longleftrightarrow\quad
+ \frac1N\sum_{n=0}^{N-1}
+  |\mu(A\cap T^{-n}B)-\mu(A)\mu(B)|^2\longrightarrow0\\
+ &\quad\Longleftrightarrow\quad
+ \mu(A\cap T^{-n}B)\xrightarrow[n\notin J]{}\mu(A)\mu(B),
+ \quad\text{where $J$ has density zero.}
+ \end{aligned}
+\]
+\paragraph{$(1)\Longrightarrow(3)$.}
+Given $A_1,B_1,A_2,B_2\in\mathcal B$, there are density-zero sets
+% Source page 7
+$J_1,J_2$ such that
+\begin{equation}
+ \mu(A_1\cap T^{-n}B_1)\xrightarrow[n\notin J_1]{}\mu(A_1)\mu(B_1),
+ \qquad
+ \mu(A_2\cap T^{-n}B_2)\xrightarrow[n\notin J_2]{}\mu(A_2)\mu(B_2).
+ \tag{$*$}\label{eq:l4-pair-limits}
+\end{equation}
+% Obvious notation typo: the second B on the handwritten left side lacks its subscript 2.
+Set $J=J_1\cup J_2$. Clearly,
+\[
+ \frac1n|J\cap[0,n)|
+ \leq\frac1n|J_1\cap[0,n)|+\frac1n|J_2\cap[0,n)|\longrightarrow0,
+\]
+so $J$ has density zero. Therefore
+\[
+ \begin{aligned}
+ &\lim_{\substack{n\to\infty\\n\notin J}}
+ \bigl|(\mu\times\mu)((A_1\times A_2)\cap(T\times T)^{-n}(B_1\times B_2))\\
+ &\hspace{38mm}-(\mu\times\mu)(A_1\times A_2)(\mu\times\mu)(B_1\times B_2)\bigr|\\
+ &=\lim_{\substack{n\to\infty\\n\notin J}}
+ \bigl|\mu(A_1\cap T^{-n}B_1)\mu(A_2\cap T^{-n}B_2)
+ -\mu(A_1)\mu(A_2)\mu(B_1)\mu(B_2)\bigr|=0,
+ \end{aligned}
+\]
+by the definition and \eqref{eq:l4-pair-limits}.
+The $\sigma$-algebra $\mathcal B\times\mathcal B$ contains the algebra of
+rectangles $\mathcal J'$. Let $\widetilde\mu=\mu\times\mu$, and let
+\[
+ \mathcal J:=\left\{A\in\mathcal B\times\mathcal B:
+ \begin{array}{l}
+ \text{for all }A_1,A_2\in\mathcal J,\\
+ \widetilde\mu(A_1\cap T^{-n}A_2)
+ \xrightarrow[n\notin J_{A_1A_2}]{}\widetilde\mu(A_1)\mu(A_2),\\
+ \operatorname{density}(J_{A_1A_2})=0
+ \end{array}\right\}.
+\]
+% Author check: this self-referential class definition and the unadorned mu(A_2) are preserved from the source.
+Clearly, $\mathcal J'\subseteq\mathcal J$. It would now suffice to prove
+that $\mathcal J$ is a monotone class. If $A_i\nearrow A$, then
+$\widetilde\mu(A_i\cap T^{-n}A_2)
+\to\widetilde\mu(A_i)\widetilde\mu(A_2)$ with $n\notin J_{A_iA_2}$.
+We therefore have
+\[
+ \widetilde\mu(A_i\cap T^{-n}A_2)
+ -\widetilde\mu(A_i)\widetilde\mu(A_2)\longrightarrow0
+ \quad\left(n\notin\bigcup_{i=1}^{n}J_{A_iA_2},\quad1\leq i\leq n\right).
+\]
+% Author check: the source uses n both as the time variable and as the finite-union bound here.
+Let $J_k=\bigcup_{i=1}^kJ_{A_iA_2}$, so $J_1\subseteq J_2\subseteq\cdots$.
+Now mimic the proof of
+% Source page 8
+Koopman--Neumann by finding $0<\ell_1<\ell_2<\cdots$ such that
+$\frac1n|J_k\cap[0,n)|\leq1/k$, and define
+\[
+ J=\bigcup_{k=0}^\infty J_k\cap[\ell_k,\ell_{k+1}).
+\]
+Clearly, for any $k$, $J_k\cap[\ell_k,\infty)\subseteq J$.
+Thus, for $n\notin J$ and $n\geq\ell_k$,
+\[
+ \widetilde\mu(A_i\cap T^{-n}A_2)
+ -\widetilde\mu(A_i)\widetilde\mu(A_2)\longrightarrow0
+ \qquad(i\leq k).
+\]
+It follows that
+\[
+ \widetilde\mu(A_i\cap T^{-n}A_2)
+ -\widetilde\mu(A_i)\widetilde\mu(A_2)
+ \xrightarrow[n\in J]{}0\qquad(i\geq1).
+\]
+% Author check: the source says n in J in this line, unlike n not in J above.
+As $A_i\nearrow A$, we know that
+\[
+ \widetilde\mu(A_i\cap T^{-n}A_2)-\widetilde\mu(A_i)\widetilde\mu(A_2)
+ \longrightarrow
+ \widetilde\mu(A\cap T^{-n}A_2)-\widetilde\mu(A)\widetilde\mu(A_2),
+\]
+and $\widetilde\mu(A\cap T^{-n}A_2)-\widetilde\mu(A)\widetilde\mu(A_2)\to0$.
+The exchange of limits can be justified by the fact that
+\[
+ \lim_{(m,n)\to\infty}
+ \bigl(\widetilde\mu(A_m\cap T^{-n}A_2)
+ -\widetilde\mu(A_m)\widetilde\mu(A_2)\bigr)=0,
+\]
+and that, for every $m$,
+$\lim_{n\to\infty}\bigl(\widetilde\mu(A_m\cap T^{-n}A_2)
+-\widetilde\mu(A_m)\widetilde\mu(A_2)\bigr)$ exists, while, for every $n$,
+$\lim_{m\to0}\bigl(\widetilde\mu(A_m\cap T^{-n}A_2)
+-\widetilde\mu(A_m)\widetilde\mu(A_2)\bigr)$ exists.
+Hence Fubini's theorem, together with dominated convergence for counting
+measure on $(\mathbb N\setminus J)\times\mathbb N$, yields the result.
+% Author check: the last limit is written m->0 in the source; the interchange argument is retained, not repaired.
+Thus $\mathcal J$ is a monotone class, as the case $A_i\searrow A$ can be
+handled similarly. Consequently, $\mathcal J=\mathcal B\times\mathcal B$.
+
+\paragraph{$(3)\Longrightarrow(1)$.}
+% Source page 9
+If $T\times T$ is weakly mixing, then
+\[
+ \begin{aligned}
+ \lim_{n\to\infty}\frac1n\sum_{i=0}^{n-1}
+ \bigl|&(\mu\times\mu)((A\times X)\cap(T\times T)^{-n}(B\times X))\\
+ &-(\mu\times\mu)(A\times X)(\mu\times\mu)(B\times X)\bigr|=0.
+ \end{aligned}
+\]
+Therefore
+\[
+ \lim_{n\to\infty}\frac1n\sum_{i=0}^{n-1}
+ |\mu(A\cap T^{-n}B)-\mu(A)\mu(B)|=0,
+\]
+and $T$ is weakly mixing.
+% Author check: both sums above use i as the summation variable but n as the iterate in the source.
+
+\paragraph{$(1)\Longrightarrow(4)$.}
+Let $(Y,\mathcal B',\nu,S)$ be an ergodic system, and let $T$ be weakly
+mixing. For $A_1,B_1\in\mathcal B$ and $A_2,B_2\in\mathcal B'$,
+\[
+ \begin{aligned}
+ &\frac1N\sum_{n=0}^{N-1}(\mu\times\nu)
+ ((A_1\times A_2)\cap(T\times S)^{-n}(B_1\times B_2))\\
+ &=\frac1N\sum_{n=0}^{N-1}\mu(A_1\cap T^{-n}B_1)\nu(A_2\cap S^{-n}B_2)\\
+ &=\frac1N\sum_{n=0}^{N-1}\mu(A_1)\mu(B_1)\nu(A_2\cap S^{-n}B_2)\\
+ &\quad+\frac1N\sum_{n=0}^{N-1}
+ [\mu(A_1\cap T^{-n}B_1)-\mu(A_1)\mu(B_1)]\nu(A_2\cap S^{-n}B_2).
+ \end{aligned}
+\]
+Since $S$ is ergodic,
+$\frac1N\sum_{n=0}^{N-1}\nu(A_2\cap S^{-n}B_2)\to\nu(A_2)\nu(B_2)$.
+Since $T$ is weakly mixing,
+$\frac1N\sum_{n=0}^{N-1}|\mu(A_1\cap T^{-n}B_1)-\mu(A_1)\mu(B_1)|\to0$.
+% Source page 10
+Thus
+\[
+ \frac1N\sum_{n=0}^{N-1}(\mu\times\nu)
+ ((A_1\times A_2)\cap(T\times S)^{-n}(B_1\times B_2))
+ \longrightarrow\mu(A_1)\mu(B_1)\nu(A_2)\nu(B_2),
+\]
+and $T\times S$ is ergodic. Again, one has to extend this result from the
+algebra of rectangles to the $\sigma$-algebra by exchanging limits.
+
+\paragraph{$(4)\Longrightarrow(2)$.}
+Let $(Y,\mathcal B',\nu,S)$ be the ergodic system with $Y=\{y\}$,
+$T=\id$, and $\nu(\{y\})=1$.
+% Author check: the source calls the singleton map T rather than S here.
+Then
+\[
+ (X\times Y,\mathcal B\times\mathcal B',\mu\times\nu,T\times S)
+ \cong(X,\mathcal B,\mu,T),
+\]
+so $T$ is ergodic. Alternatively, as stated in the remark, weak mixing
+implies ergodicity. Applying (4) again, $T\times T$ is ergodic.
+
+\paragraph{$(2)\Longrightarrow(1)$.}
+Let $\mu^2=\mu\times\mu$ be the product measure. Since $T\times T$ is
+ergodic, we have
+\[
+ \begin{aligned}
+ \frac1N\sum_{n=0}^{N-1}\mu(A\cap T^{-n}B)
+ &=\frac1N\sum_{n=0}^{N-1}\mu^2((A\times X)\cap(T\times T)^{-n}(B\times X))\\
+ &\longrightarrow\mu^2(A\times X)\mu^2(B\times X)=\mu(A)\mu(B),
+ \end{aligned}
+\]
+and
+\[
+ \begin{aligned}
+ \frac1N\sum_{n=0}^{N-1}\mu(A\cap T^{-n}B)^2
+ &=\frac1N\sum_{n=0}^{N-1}\mu^2((A\times A)\cap(T\times T)^{-n}(B\times B))\\
+ &\longrightarrow\mu^2(A\times A)\mu^2(B\times B)=\mu(A)^2\mu(B)^2.
+ \end{aligned}
+\]
+Now we have
+% Source page 11
+\[
+ \begin{aligned}
+ &\frac1N\sum_{n=0}^{N-1}(\mu(A\cap T^{-n}B)-\mu(A)\mu(B))^2\\
+ &=\frac1N\sum_{n=0}^{N-1}\mu(A\cap T^{-n}B)^2+\mu(A)^2\mu(B)^2
+ -2\mu(A)\mu(B)\left(\frac1N\sum_{n=0}^{N-1}\mu(A\cap T^{-n}B)\right)\\
+ &\longrightarrow2\mu(A)^2\mu(B)^2-2\mu(A)\mu(B)\mu(A)\mu(B)=0.
+ \end{aligned}
+\]
+
+\paragraph{$(2)\Longrightarrow(5)$.}
+Suppose $U_Tf=\lambda f$, where $\lambda\in S^1$ because $U_T$ is
+unitary. Define $g(x_1,x_2)=f(x_1)\overline{f(x_2)}$. Then
+\[
+ U_{T\times T}g(x,y)=g(Tx,Ty)=\lambda\overline\lambda\,g(x,y)=g(x,y).
+\]
+By ergodicity of $T\times T$, $g$ must be constant almost everywhere.
+Also, $U_Tf=\lambda f$ gives $f\circ T=\lambda f$, so $\lambda=1$.
+Hence $U_T$ has continuous spectrum.
+
+\paragraph{$(5)\Longrightarrow(2)$.}
+Suppose $T\times T$ is not ergodic. There exists a nonconstant
+$f\in L^2_\mu(X\times X)$. We can assume without loss of generality that
+$f(x,y)=\overline{f(y,x)}$. If both
+$f(x,y)+\overline{f(y,x)}$ and $i(f(x,y)-\overline{f(y,x)})$ were constant,
+then $f(x,y)$ would also be constant. Thus we may either work with one of
+them or assume the symmetry $f(x,y)=\overline{f(y,x)}$.
+Now subtract $\int f\,d\mu^2$ from $f$. Then
+$\int(f-\int f\,d\mu^2)\,d\mu^2=0$, so we may also assume
+$\int f\,d\mu^2=0$. Define the Hilbert--Schmidt operator
+\[
+ (F(g))(x):=\int_X f(x,y)g(y)\,d\mu(y).
+\]
+% Source page 12
+\begin{itemize}
+ \item $F$ is self-adjoint, by Fubini's theorem.
+ \item $F$ is nontrivial, because $f$ is.
+ \item $\|F\|_{\mathrm{HS}}=\|f\|_{\mu^2}<\infty$.
+ The Hilbert--Schmidt norm is bounded, so $F$ is compact.
+ \item Since $F$ is self-adjoint,
+ $\sup_{\|x\|\leq1}|\langle Fx,x\rangle|=\|F\|$.
+ Since $F$ is nontrivial, this supremum is nonzero. Therefore $\|F\|$
+ or $-\|F\|$ is an eigenvalue of $F$, again a consequence of $F$ being
+ a nontrivial compact self-adjoint operator.
+ \item There exists $\lambda\ne0$ such that the nullspace of $T-\lambda I$
+ is nontrivial. The closed subspace $N_\lambda$ is Banach, and
+ $\lambda^{-1}T:N_\lambda\to N_\lambda$. Since $T/\lambda$ is compact,
+ $N_\lambda$ is locally compact, equivalently finite-dimensional.
+\end{itemize}
+% Author check: the last bullet switches from F to T in the source; this notation is preserved.
+Thus $F(g)=\lambda g$ for some $g$, with $\lambda\ne0$. Then
+\[
+ \begin{aligned}
+ \lambda g(Tx)
+ &=\int_X f(Tx,y)g(y)\,d\mu(y)\\
+ &=\int_X f(Tx,Ty)g(Ty)\,d\mu(y)
+ =\int_X f(x,y)g(Ty)\,d\mu(y).
+ \end{aligned}
+\]
+The second equality uses the $\mu$-invariance of $T$, and the last uses the
+$T\times T$-invariance of $f$. Hence $F(g\circ T)=\lambda(g\circ T)$,
+so $g\in N_\lambda$ implies $g\circ T\in N_\lambda$.
+Therefore $U_T:N_\lambda\to N_\lambda$, and $U_T$ has a nontrivial
+eigenvalue. If $g$ is an eigenvector corresponding to it, then
+% Source page 13
+\[
+ \int_X\lambda(g\circ T)\,d\mu
+ =\int_X\int_X f(g\circ T)\,d\mu^2.
+\]
+If $g$ were constant, then $\lambda=\int_{X^2}f\,d\mu^2=0$, a
+contradiction. Thus $U_T$ has a nontrivial eigenvector and does not have
+continuous spectrum.
+\end{proof}
 
 Let us stop this session by setting up the premise for the infamous
 Rokhlin problem.

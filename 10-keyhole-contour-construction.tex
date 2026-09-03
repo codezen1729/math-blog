@@ -4,7 +4,7 @@
 \begin{document}
 \section*{Keyhole Contour Construction}
 % BLOG-CONTENT-BEGIN
-Now let us resume our exposition on complex analysis (singularities), which we left in the middle to develop the notions of interior and exterior. We did that first because, to talk about a point where the function is ``yet not defined'' or ``can never be defined,'' we need some curve $\gamma$ with the point $z_0\in\operatorname{int}(\gamma)$. Thus, exploiting the regularity of $f$ (which, as we saw before, is merely the fact that the boundary values of $f$ fix the values in the interior), one may, if possible, extend the analyticity of $f$ to $z_0$. We shall mostly deal with isolated singularities; in other words, punctures in the domain. The basic philosophy that helps settle the matter of isolated singularities is:
+To talk about a point where the function is ``yet not defined'' or ``can never be defined,'' we need some curve $\gamma$ with the point $z_0\in\operatorname{int}(\gamma)$. Thus, exploiting the regularity of $f$ (which, as we saw before, is merely the fact that the boundary values of $f$ fix the values in the interior), one may, if possible, extend the analyticity of $f$ to $z_0$. We shall mostly deal with isolated singularities; in other words, punctures in the domain. The basic philosophy that helps settle the matter of isolated singularities is:
 
 \begin{quote}
 If $f$ can be extended and the gaps in its domain can be filled, then it can and must be done with the help of the boundary of a set containing those punctures in its interior, because certainly the extended function is regular.
@@ -12,7 +12,7 @@ If $f$ can be extended and the gaps in its domain can be filled, then it can and
 
 Digest this!
 
-Let us return to our applied function
+Consider the function
 \[
   \frac{f(z)}{z-z_0},
   \qquad f\in H(U),\quad z_0\in\mathbb C.
@@ -33,7 +33,7 @@ is a holomorphic function of $z_0$; in fact, $g\in H(\mathbb C\setminus\gamma^*)
 \]
 
 
-Then one can extend $f$ to fill in the punctures via \emph{keyhole contour integration}. There are several crucial constructions in complex analysis; of them all, the construction of a keyhole contour is foundational. Let us do that first. The idea of the extension shall become clear as we proceed with this exposition.
+Then one can extend $f$ to fill in the punctures via \emph{keyhole contour integration}. There are several crucial constructions in complex analysis; of them all, the construction of a keyhole contour is foundational. Let us do that first. The idea of the extension will become clear along the way.
 
 \subsection*{Tool 25 — Keyhole Contour Construction}
 
@@ -51,7 +51,7 @@ These $\gamma_\varepsilon$ are the ``keyholes'' which, under a pointwise limit, 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=.51\textwidth]{note7-fig-01.pdf}
-  \textit{Figure N7.1}
+
 \end{figure}
 
 \textit{Proof.}
@@ -100,7 +100,7 @@ Transform $\mathbb C$ so that the edge on which $z_1$ lies becomes the $x$-axis,
 \begin{figure}[H]
   \centering
   \includegraphics[width=.70\textwidth]{note7-fig-02.pdf}
-  \textit{Figure N7.2}
+
 \end{figure}
 
 The keyhole is
@@ -122,7 +122,7 @@ The keyhole is
 \begin{figure}[H]
   \centering
   \includegraphics[width=.30\textwidth]{note7-fig-03.pdf}
-  \textit{Figure N7.3}
+
 \end{figure}
 
 
@@ -138,7 +138,7 @@ In particular,
 \begin{figure}[H]
   \centering
   \includegraphics[width=.48\textwidth]{note7-fig-04.pdf}
-  \textit{Figure N7.4}
+
 \end{figure}
 
 Let $z\in\operatorname{int}(\gamma_1)\cap\operatorname{ext}(\gamma_2)$. Then
@@ -483,6 +483,6 @@ WLOG, let $0\in U\setminus S$ and let $\operatorname{int}(\gamma)$ contain all t
   =\operatorname{Res}(f;\infty).
 \]
 
-With this we conclude our exposition on singularities.
+
 % BLOG-CONTENT-END
 \end{document}

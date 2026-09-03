@@ -6,20 +6,28 @@
 \begin{document}
 \section*{McMullen's Surgery}
 % BLOG-CONTENT-BEGIN
+% Source page 1
 \section{Ideal boundaries and induced maps}
 
-In order to surgically glue different dynamical systems, one ends up
-having to rely on good boundary-extension theorems, or on decent enough
-straightening theorems.
+To glue different dynamical systems together, we need good boundary-extension theorems or suitable straightening theorems.
 
 \subsection{Ideal boundaries}
 
 Consider a Riemann map $R_U\colon\mathbb D\to U$. How do you get to
 $\overline{\mathbb D}$?
 
+\begin{figure}[H]\centering
+\includegraphics[width=12cm]{ms-fig-01.pdf}
+\FigureTag{MS1}{fig:ms-01}
+\end{figure}
+
 \paragraph{Prime ends.}
 Consider $\langle N_j\rangle_j$, with $N_1\supset N_2\supset\cdots$;
 roughly, $\bigcap_i\overline{N_i}\subset\partial U$.
+
+\setcounter{theorem}{0}\begin{lemma}
+$\mathcal N\sim\mathcal M$ or $\mathcal N\wedge\mathcal M$ eventually.
+\end{lemma}
 
 \paragraph{Carath\'eodory.}
 The map $R_U\colon\mathbb D\to U$ gives a homeomorphism
@@ -28,6 +36,7 @@ Carath\'eodory compactifications, where
 $\widehat{\mathbb D}\cong\overline{\mathbb D}$ and
 $\widehat U=U\cup\mathcal I(U)$.
 
+% Source page 2
 We have $\mathcal I(U)\cong S^1$, so ideal boundaries are $1$-manifolds.
 The restriction $\widehat R|_{S^1}\colon S^1\to\mathcal I(U)$ gives
 impressions on $\partial U$. If $\partial U$ is locally connected,
@@ -41,6 +50,19 @@ violate injectivity.
 \FigureTag{MS2}{fig:ms-02}
 \end{figure}
 
+\subsection{Induced maps on ideal boundaries}
+
+\begin{figure}[H]\centering
+\includegraphics[width=10cm]{ms-fig-03.pdf}
+\FigureTag{MS3}{fig:ms-03}
+\end{figure}
+
+% Source page 3
+By Schwarz reflection, $\widehat f$ extends real-analytically to $S^1$.
+We shall think of this as a coordinate function of a real-analytic map
+$\widehat f\colon\mathcal I(U)\to\mathcal I(V)$, with both ideal
+boundaries homeomorphic to $S^1$.
+
 More generally, take $C\subseteq J(f)$ with $f(C)\subseteq C$, and
 consider $f\colon\widehat{\mathbb C}\setminus f^{-1}(C)
 \to\widehat{\mathbb C}\setminus C$.
@@ -50,6 +72,7 @@ consider $f\colon\widehat{\mathbb C}\setminus f^{-1}(C)
 \FigureTag{MS4}{fig:ms-04}
 \end{figure}
 
+We obtain a real-analytic map $\widehat f\colon\mathcal I(U)\to\mathcal I(V)$.
 Here
 \[
  \mathcal I(C):=\bigcup_{\substack{V\subseteq\widehat{\mathbb C}\setminus C\\
@@ -63,6 +86,15 @@ straightening theorem says that $f$ is quasirational if and only if
 $\langle f^{\circ n}\rangle_n$ is uniformly $K$-quasiregular. Here
 quasirational means $f\equiv\varphi\circ R\circ\varphi^{-1}$, with
 $R$ rational.
+
+% Source page 4
+\begin{figure}[H]\centering
+\includegraphics[width=10cm]{ms-fig-05.pdf}
+\FigureTag{MS5}{fig:ms-05}
+\end{figure}
+
+We have $\widehat f=\widehat\phi^{-1}\circ\widehat R\circ\widehat\phi$;
+the map $\widehat f$ is quasisymmetric.
 
 \section{McMullen's gluing lemma}
 
@@ -79,6 +111,7 @@ such that $B$ and $f$ are compatible in the following diagram.
 \FigureTag{MS6}{fig:ms-06}
 \end{figure}
 
+% Source page 5
 \begin{claim}
 The map
 \[
@@ -90,6 +123,93 @@ The map
 is quasirational.
 \end{claim}
 
+\begin{proof}
+Pick $z\in\partial U$ such that $f^{-1}$ is locally defined. This can
+be done for every $z\in\partial U$, barring a few branch points. We have
+\[
+ f^{-1}\circ g=\begin{cases}
+ \text{identity},&z\notin U,\\
+ \psi\quad\text{(quasiconformal)},&z\in U.
+ \end{cases}
+\]
+
+\begin{figure}[H]\centering
+\includegraphics[width=6cm]{ms-fig-07.pdf}
+\FigureTag{MS7}{fig:ms-07}
+\end{figure}
+
+The induced boundary map satisfies $\widehat\psi|_{\mathcal I(U)}
+\equiv\operatorname{Id}$. We claim that this forces
+$\sup_z|\psi(z)-z|_\rho<K'$. If so, then for any $x_k\to x$, we know
+that $B_K(x_k)\to x$ and $\psi(x_k)\in B_K(x_k)$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=5.5cm]{ms-fig-08.pdf}
+\FigureTag{MS8}{fig:ms-08}
+\end{figure}
+
+Hence $f^{-1}\circ g$ is a homeomorphism. By Rickman's lemma,
+$f^{-1}\circ g$ is quasiconformal. On the larger ball there are two
+quasiconformal maps, $\psi\equiv f^{-1}\circ g$ and $\operatorname{id}$;
+these two agree on $K$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=5cm]{ms-fig-09.pdf}
+\FigureTag{MS9}{fig:ms-09}
+\end{figure}
+
+% Source page 6
+We just have to show that $\psi\in H^1(\text{ball})$, the appropriate
+Sobolev space. Let $u=\operatorname{Re}(\psi-\operatorname{Id})$.
+We need to show that $u\in H^1$, and similarly for
+$\operatorname{Im}(\psi-\operatorname{Id})$, since
+$\operatorname{Id}\in H^1(\text{ball})$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=9cm]{ms-fig-10.pdf}
+\FigureTag{MS10}{fig:ms-10}
+\end{figure}
+
+We have $\eta_n\circ u\to u$, so $u\in H^1$, and $u_n=0$ on a
+neighbourhood of $K$ for all sufficiently large $n$. Hence the
+dilatation of $u$ is $1$ almost everywhere on $K$. This means that $g$
+is quasiregular in a neighbourhood of $\partial U$, so $g$ is
+quasiregular.
+
+\begin{figure}[H]\centering
+\includegraphics[width=10cm]{ms-fig-11.pdf}
+\FigureTag{MS11}{fig:ms-11}
+\end{figure}
+
+If $\mathcal I(U)$ is fixed, then $K(g^n)\leq K(f^n)\,K(\phi)^2$.
+
+% Source page 7
+If $\mathcal I(U)$ is strictly preperiodic, then
+$K(g^n)\leq K(f^n)\,K(\phi_V)\,K(\phi_U)$. Thus $K(g^n)$ is uniformly
+bounded, and by Sullivan's straightening theorem, $g$ is quasirational.
+
+It remains to justify $\sup_z|\psi(z)-z|_\rho<K$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=4.8cm]{ms-fig-12.pdf}
+\FigureTag{MS12}{fig:ms-12}
+\end{figure}
+
+Let's say there is a sequence $\langle x_k\rangle_k$, with $x_k\to x$,
+such that $|\psi(x_k)-x_k|_\rho\to\infty$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=12cm]{ms-fig-13.pdf}
+\FigureTag{MS13}{fig:ms-13}
+\end{figure}
+
+Then one would get
+$\langle N_k\rangle_k\not\sim\langle\psi(N_k)\rangle_k$, violating
+the fact that $\widehat\psi|_{\mathcal I(U)}\equiv\operatorname{id}$.
+Maybe conjugate it with a Riemann map and work in $\mathbb D$.
+\end{proof}
+
+% Source page 8
 The same story holds when $\mathcal I(U)$ is periodic.
 
 \begin{figure}[H]\centering
@@ -107,9 +227,168 @@ $\theta\in\mathbb R\setminus\mathbb Q$.
 $a=\dfrac{d-1}{d+1}$.
 \end{enumerate}
 
+Any quasisymmetry that conjugates these rigid models must be a rotation.
+
+\paragraph{The elliptic model.}
+Let $B(z)=e^{2\pi i\theta}z$ and $B\circ\phi\equiv\phi\circ B$.
+Lift this to $\mathbb R$ to get
+\[
+ f(z+\theta)=f(z)+\theta,\qquad
+ f(z+m\theta)=f(z)+m\theta,\qquad
+ f(n+m\theta)=f(0)+m\theta.
+\]
+Hence $f(z)=z+\alpha$, since $m\theta+n$ is dense in $\mathbb R$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=5.5cm]{ms-fig-15.pdf}
+\FigureTag{MS15}{fig:ms-15}
+\end{figure}
+
+% Source page 9
+\paragraph{The hyperbolic model.}
+Let $B(z)=z^n$. For $f(z^n)=f(z)^n$, set $\widetilde f=f/f(1)$.
+Then $\widetilde f(z^n)=\widetilde f(z)^n$, since $f(1)=f(1)^n$.
+The map $\widetilde f$ preserves all $n$th roots of unity and
+$\widetilde f(1)=1$. As $\widetilde f$ is orientation-preserving,
+its restriction to the $n$th roots of unity is the identity. The same
+is true for $A=\{z\in S^1:z^{n^k}=1\}$. But $A$ is dense in $S^1$,
+so $f(z)=f(1)z$.
+
+\paragraph{The parabolic model.}
+Let $B(z)=\dfrac{z^d+a}{1+az^d}$. If $\phi$ is a quasisymmetric
+conjugacy between them, then one can conformally weld two copies of the
+dynamical system $(\mathbb D,B(z))$ to obtain a degree-$d$ rational map
+with critical points at $\{0,\infty\}$ of degree $d-1$.
+
+The initial argument in the notes is: that rational map must be $z^d$,
+but $z^d$ is hyperbolic, whereas $B(z)$ has parabolic behaviour on its
+Julia set, at $1$. This argument is marked for correction in the source.
+
+\paragraph{Correction 1.}
+The rational map would have a quasicircle Julia set, so it can't map a
+hyperbolic point to a parabolic point.
+
 \paragraph{Goal.}
 Simplify rational maps by gluing these rigid models along $\mathcal I(C)$
 for $C\subseteq J(R)$.
+
+\paragraph{Correction 2.}
+If it maps a hyperbolic point to a parabolic point, the intersection of
+the single repelling and attracting petals would have an angle of
+$\pi+\pi$. Thus $J(R)$ will have a cusp. Quasicircles can't have cusps
+(Ahlfors).
+
+% Source page 10
+\section{The gluing construction revisited}
+
+\paragraph{Recap.}
+We consider $f\colon\widehat{\mathbb C}\setminus f^{-1}(C)
+\to\widehat{\mathbb C}\setminus C$ component-wise.
+
+\begin{figure}[H]\centering
+\includegraphics[width=10cm]{ms-fig-16.pdf}
+\FigureTag{MS16}{fig:ms-16}
+\end{figure}
+
+We have $f^{-1}(C)\supseteq C$, but this means
+$\partial C\subset\partial f^{-1}(C)$. We are only looking at those
+$U$ such that $\mathcal I(U)\subseteq\mathcal I(C)$.
+
+\paragraph{Gluing lemma.}
+If $U=V$, take $\phi_V=\phi_U$. The component $\mathcal I(U)$ is
+strictly preperiodic or fixed, with $f^{\circ n}(V)\cap U=\varnothing$
+in the strictly preperiodic case.
+
+\begin{figure}[H]\centering
+\includegraphics[width=10cm]{ms-fig-17.pdf}
+\FigureTag{MS17}{fig:ms-17}
+\end{figure}
+
+We require $f\sim B$, compatibly on ideal boundaries.
+
+\begin{figure}[H]\centering
+\includegraphics[width=7cm]{ms-fig-18.pdf}
+\FigureTag{MS18}{fig:ms-18}
+\end{figure}
+
+For periodic $\mathcal I(U)$, require
+$B_i\sim f|_{U_i}$ compatibly around the cycle.
+
+\begin{figure}[H]\centering
+\includegraphics[width=11.5cm]{ms-fig-19.pdf}
+\FigureTag{MS19}{fig:ms-19}
+\end{figure}
+
+% Source page 11
+\subsection{The parabolic rigid model}
+
+Recall the rigid models:
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item Elliptic: $z\mapsto e^{2\pi i\theta}z$,
+where $\theta\in\mathbb R\setminus\mathbb Q$.
+\setcounter{enumi}{1}\item Hyperbolic: $z\mapsto z^d$, where $d\geq2$.
+\setcounter{enumi}{2}\item Parabolic: $P_d(z)=\dfrac{z^d+a}{1+az^d}$,
+where $a=\dfrac{d-1}{d+1}$.
+\end{enumerate}
+
+Let us explain (iii). Note that if $|z|=1$, then
+$\left|\frac{z^d+a}{1+az^d}\right|=1$. Well,
+\[
+ \frac{z^d+a}{1+az^d}
+ =z^d\circ\left(\frac{z+a}{1+az}\right),
+\]
+so it is enough to show $|z+a|=|1+az|$. Writing $z=x+iy$,
+this is $|x+a+iy|^2=|1+ax+iay|^2$, or
+\[
+\begin{aligned}
+ (x+a)^2+y^2&=(1+ax)^2+a^2y^2,\\
+ x^2+2ax+a^2+y^2&=1+a^2x^2+2ax+a^2y^2.
+\end{aligned}
+\]
+After cancellation this becomes
+$x^2(1-a^2)+y^2(1-a^2)+a^2=1$, that is,
+$(x^2+y^2)(1-a^2)+a^2=1$, or $1-a^2+a^2=1$.
+
+Thus $P_d(S^1)=S^1$, and $P_d$ is orientation-preserving. Hence
+$P_d(\mathbb D)=\mathbb D$ and
+$P_d(\widehat{\mathbb C}\setminus\overline{\mathbb D})
+=\widehat{\mathbb C}\setminus\overline{\mathbb D}$.
+By Montel's theorem, $P_d$ is normal on $\mathbb D$ and
+$\widehat{\mathbb C}\setminus\overline{\mathbb D}$, so $J(P_d)=1$.
+
+\paragraph{Check.}
+$P_d$ has only two critical points, $\{0,\infty\}$, of equal degree,
+and a parabolic fixed point of multiplicity $3$ at $1$.
+
+If there is a quasisymmetry $\phi$ such that
+$\phi\circ P_d=P_d\circ\phi$, then $\phi(1)=1$; otherwise,
+$\phi(1)$ must be a repelling fixed point on $S^1=J(P_d)$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=10cm]{ms-fig-20.pdf}
+\FigureTag{MS20}{fig:ms-20}
+\end{figure}
+
+% Source page 12
+Then we can weld two copies of $P_d$ via $\phi$ to get a rational
+map with a parabolic fixed point of multiplicity $2$, by the
+parabolic Fatou flower theorem.
+
+\begin{figure}[H]\centering
+\includegraphics[width=12cm]{ms-fig-21.pdf}
+\FigureTag{MS21}{fig:ms-21}
+\end{figure}
+
+The intersection between the two petals has angles
+$\frac{2\pi}{2}+\frac{2\pi}{2}$. Thus $J(P_d)$ has a cusp at
+$\phi(1)$. Quasicircles cannot have cusps (Ahlfors).
+Therefore $\phi(1)=1$. By the orientation-preserving property,
+$\phi$ must preserve all repelling points, so $\phi\equiv\operatorname{Id}$.
+
+\begin{remark}
+This also proves that none of these maps are compatible with each other,
+except with themselves via rigid motions---in this case, rotations.
+\end{remark}
 
 \section{Application of McMullen's surgery}
 
@@ -118,6 +397,7 @@ Let $C\subseteq J(f)$ be a forward-invariant, closed component.
 Then $f|_C\sim g|_{J(g)}$, where $g$ is built out of rigid models.
 \end{theorem}
 
+% Source page 13
 \subsection{Dynamics on the ideal boundary}
 
 Only finitely many components $V_1,\ldots,V_k$ of
@@ -131,13 +411,326 @@ $f|_U\colon U\to f(U)$ is a covering. Since $U$ is a disc,
 $\deg(f)=1$. Thus $\deg(f)>1$ on only finitely many components of
 $\widehat{\mathbb C}\setminus C$.
 
+\setcounter{enumi}{1}\item If $f^{\circ n}(U)\notin\mathcal V$ for all $n\geq0$,
+then, by Montel, $\langle f^{\circ n}|_U\rangle_n$ is normal.
+Hence $U$ is a wandering Fatou component, so $U$ is preperiodic,
+and the first return map has degree $1$.
 \end{enumerate}
 
+\begin{figure}[H]\centering
+\includegraphics[width=13cm]{ms-fig-22.pdf}
+\FigureTag{MS22}{fig:ms-22}
+\end{figure}
+
+Thus $U$ eventually hits a Siegel disc or a component in $\mathcal V$.
+Since $\mathcal V$ has finitely many elements, $U$ is always preperiodic.
+Also, the number of periodic components is finite, bounded by
+the number of Siegel discs plus $\#\mathcal V$.
+
+\paragraph{Summary.}
+$\mathcal I(U)$ is preperiodic, with finitely many periodic components,
+and $\deg(f|_U)=1$.
+
+% Source page 14
+\begin{enumerate}[label=(\roman*),start=3]
+\setcounter{enumi}{2}\item Suppose $U\notin\mathcal V$. Here $\phi_U$ and $\phi_{f(U)}$
+are Riemann maps. The following diagram gives
+$\widehat f\sim\operatorname{id}|_{S^1}$ compatibly.
+\end{enumerate}
+
+\begin{figure}[H]\centering
+\includegraphics[width=8cm]{ms-fig-23.pdf}
+\FigureTag{MS23}{fig:ms-23}
+\end{figure}
+
+\begin{enumerate}[label=(\roman*),start=4]
+\setcounter{enumi}{3}\item If $U\in\mathcal V$, consider
+$f|_U\colon U\to V$ with $V\neq U$, and
+$f|_{U'}\colon U'\to V$. The sets $U'$ and $f(U')$ are annuli.
+\end{enumerate}
+
+\begin{figure}[H]\centering
+\includegraphics[width=11cm]{ms-fig-24.pdf}
+\FigureTag{MS24}{fig:ms-24}
+\end{figure}
+
+Write $A_r=\{r<|z|<1\}$. We have a degree-$d$ quasirational
+covering in annular coordinates. Choose anything on one side and
+its lift on the other.
+
+\begin{figure}[H]\centering
+\includegraphics[width=9cm]{ms-fig-25.pdf}
+\FigureTag{MS25}{fig:ms-25}
+\end{figure}
+
+It follows that $\widehat f\sim z^d|_{S^1}$ compatibly.
+
+\begin{figure}[H]\centering
+\includegraphics[width=7cm]{ms-fig-26.pdf}
+\FigureTag{MS26}{fig:ms-26}
+\end{figure}
+
+% Source page 15
+\begin{figure}[H]\centering
+\includegraphics[width=10cm]{ms-fig-27.pdf}
+\FigureTag{MS27}{fig:ms-27}
+\end{figure}
+
+But if $U=V$, then $z^d\not\sim\widehat f$, as the maps
+\[
+ (\text{anything})\circ\phi_1\circ R_U
+ \neq(\text{lift})\circ\phi_2\circ R_V.
+\]
+
+% Source page 16
 \subsection{Periodic components and the surgery}
+
+We have therefore handled compatibility for all but periodic
+components of $\mathcal I(C)$.
 
 \setcounter{theorem}{2}\begin{lemma}\label{lem:periodic-compatibility}
 On periodic components of $\mathcal I(C)$, the first return map is
 compatible with one of the rigid models.
 \end{lemma}
+
+\begin{proof}[Proof of Theorem~\ref{thm:application}: periodic case]
+Consider the periodic cycle and model maps below.
+
+\begin{figure}[H]\centering
+\includegraphics[width=13.5cm]{ms-fig-28.pdf}
+\FigureTag{MS28}{fig:ms-28}
+\end{figure}
+
+We set
+\[
+ B_{p-1}(z):=
+ \begin{cases}
+ e^{2\pi i\theta}z,&\text{elliptic},\\
+ z^{d_{p-1}},&\text{hyperbolic},\\
+ P_{d_{p-1}},&\text{parabolic},
+ \end{cases}
+ \qquad d=\sum_i d_i=\deg(f^{\circ p}).
+\]
+Then
+\[
+\begin{aligned}
+ \phi_0^{-1}\circ B_p\circ\phi_0
+ &=\bigl(\phi_0^{-1}\circ B_{p-1}\circ\phi_{p-2}\bigr)
+ \circ\cdots\circ\bigl(\phi_2^{-1}\circ z^{d_2}\circ\phi_1\bigr)
+ \circ\bigl(\phi_1^{-1}\circ z^{d_1}\circ\phi_0\bigr),\\
+ f^{\circ p}&=\underbrace{f\circ\cdots\circ f}_{p\text{ times}}.
+\end{aligned}
+\]
+This holds because of the following comparison.
+
+% Source page 17
+\[
+ \phi_0^{-1}\circ B_p\circ\phi_0
+ =\phi_0^{-1}\circ B_{p-1}\circ z^{d_{p-2}}
+ \circ z^{d_{p-3}}\circ\cdots\circ z^{d_1}\circ\phi.
+\]
+The model factors are displayed together:
+\[
+\begin{array}{c|ccccc}
+ B_p&B_{p-1}&z^{d_{p-2}}&z^{d_{p-3}}&\cdots&z^{d_1}\\\hline
+ e^{2\pi i\theta}&e^{2\pi i\theta}&z&z&\cdots&z\\
+ z^d&z^{d_{p-1}}&z^{d_{p-2}}&z^{d_{p-3}}&\cdots&z^{d_1}\\
+ P_d&P_{d_{p-1}}&z^{d_{p-2}}&z^{d_{p-3}}&\cdots&z^{d_1}
+\end{array}
+\]
+Here $P_d=\left(z^d\circ\frac{z+a}{1+az}\right)$.
+
+\paragraph{The strictly preperiodic, one-to-one case.}
+If $d=1$, don't perform surgery.
+
+\begin{figure}[H]\centering
+\includegraphics[width=9cm]{ms-fig-29.pdf}
+\FigureTag{MS29}{fig:ms-29}
+\end{figure}
+
+By our gluing lemma, after finitely many such surgical procedures,
+we end up with a quasirational map $g$. Straighten it to get the required
+rational map $R$, such that $R|_{J(R)}\sim f|_C$ compatibly.
+The set $J(R)=\phi(C)$ is connected, where $\phi$ is a straightening map.
+\end{proof}
+
+% Source page 18
+\subsection{Features of the resulting map}
+
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item $J(R)$ is connected.
+\setcounter{enumi}{1}\item Periodic Fatou components are Siegel discs, superattracting
+basins, and parabolic basins.
+\end{enumerate}
+
+% Source page 19
+\section{Compatibility on periodic components}
+
+\paragraph{Recap.}
+We have McMullen's gluing lemma and the rigid models. The application is
+$f|_C\sim g|_{J(g)}$: simplify $f$.
+
+\setcounter{theorem}{3}\begin{lemma}
+On each periodic component, the first return map is compatible with
+one of the rigid models.
+\end{lemma}
+
+\begin{proof}
+This will be a case study.
+
+\subsection{Case 1: buried components}
+
+Consider a buried component $\mathcal I(U)$: $\partial U$ is not part
+of the boundary of any Fatou component. We will show that
+$\widehat f\sim(z\mapsto z^d)$ compatibly.
+
+The set $V'$ is not part of any periodic Fatou component and contains
+no critical points. By Zoretti's theorem, take the curves and annuli below.
+
+\begin{figure}[H]\centering
+\includegraphics[width=12cm]{ms-fig-30.pdf}
+\FigureTag{MS30}{fig:ms-30}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=5.5cm]{ms-fig-31.pdf}
+\FigureTag{MS31}{fig:ms-31}
+\end{figure}
+
+We have $f^{-1}(\gamma_n)\cap\gamma_n=\varnothing$ and
+$f\colon U'\to V'$ of degree $d$. Therefore
+$\operatorname{mod}(V')\geq\operatorname{mod}(U')$, so $U'\subseteq V'$.
+
+% Source page 20
+\begin{figure}[H]\centering
+\includegraphics[width=12cm]{ms-fig-32.pdf}
+\FigureTag{MS32}{fig:ms-32}
+\end{figure}
+
+By Schwarz reflection, $R_U\circ f\circ R_U^{-1}$ is expanding
+on $S^1$, by Pick's theorem.
+
+\begin{figure}[H]\centering
+\includegraphics[width=7cm]{ms-fig-33.pdf}
+\FigureTag{MS33}{fig:ms-33}
+\end{figure}
+
+Thus there is a quasisymmetric conjugacy to $z\mapsto z^d$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=7cm]{ms-fig-34.pdf}
+\FigureTag{MS34}{fig:ms-34}
+\end{figure}
+
+\subsection{Case 2: unburied, Siegel disc}
+
+Here $\partial U$ is part of a Fatou boundary, so there is a Fatou
+component $V\subseteq U$, which has to be periodic. Only one component
+can be accommodated; otherwise their shared boundary would hit
+$\partial U$, hence become part of $C$. This would force $U$ not to be a disc.
+
+\begin{figure}[H]\centering
+\includegraphics[width=6cm]{ms-fig-35.pdf}
+\FigureTag{MS35}{fig:ms-35}
+\end{figure}
+
+We have $V=U=$ a Siegel disc, since otherwise $C$ would be disconnected.
+Via the linearizing map,
+$\widehat f\sim(z\mapsto e^{2\pi i\theta}z)$,
+where $\theta\in\mathbb R\setminus\mathbb Q$.
+The same goes for $V$ a Herman ring.
+
+% Source page 21
+\subsection{Case 3: unburied, (super)attraction}
+
+Let $V\subseteq U$, where $V$ is either an immediate basin of
+(super)attraction or a parabolic basin whose parabolic point is not
+on $\partial U$. Choose $W\subset V$ to be, respectively, a small disc
+around the (super)attracting point or an attracting petal. Then
+$f(W)\subset\overline W$ and $\overline W\cap\partial U=\varnothing$.
+
+Let $W_n=f^{-n}(W)$ denote the component containing $W$.
+Clearly $W_1\subset W_2\subset W_3\subset\cdots$ and
+$\bigcup_n W_n=V$. Since $f(\partial U)=\partial U$, we have
+$W_n\cap\partial U=\varnothing$.
+
+The boundaries $\partial W_n$ slowly approximate $\partial U$ and the
+Julia chunks in $U$. Choose $n$ large enough that $A_n$ has no critical point.
+
+\begin{figure}[H]\centering
+\includegraphics[width=10.5cm]{ms-fig-36.pdf}
+\FigureTag{MS36}{fig:ms-36}
+\end{figure}
+
+Then $f\colon A_{n+1}\to A_n$ is a covering, and, as before,
+$\widehat f\sim(z\mapsto z^d)$ compatibly.
+
+% Source page 22
+\subsection{Case 4: unburied, parabolic}
+
+Let $V\subseteq U$ be parabolic, with its parabolic point $z_0$
+on $\partial U$. Choose a petal $W$ with analytic boundary
+$\partial W$ avoiding critical points, and uniformize $U$, sending
+$z_0$ to $1$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=13cm]{ms-fig-37.pdf}
+\FigureTag{MS37}{fig:ms-37}
+\end{figure}
+
+Define the $W_n$ as before. We obtain the pinched annuli below.
+
+\begin{figure}[H]\centering
+\includegraphics[width=14cm]{ms-fig-38.pdf}
+\FigureTag{MS38}{fig:ms-38}
+\end{figure}
+
+Choose an orientation-preserving $C^1$ diffeomorphism
+$\phi\colon\gamma_n\to\gamma_n'$ taking $1$ to $1$ and
+the preimages of $1$ to the preimages of $1$.
+
+% Source page 23
+\begin{figure}[H]\centering
+\includegraphics[width=13cm]{ms-fig-39.pdf}
+\FigureTag{MS39}{fig:ms-39}
+\end{figure}
+
+The boundary compatibility gives a quasisymmetric map $\phi_{n+1}$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=7cm]{ms-fig-40.pdf}
+\FigureTag{MS40}{fig:ms-40}
+\end{figure}
+
+Fill $A_n$ using $\phi_n$ and $\phi_{n+1}$ to get
+$\Psi_n\colon A_n\to A_n'$, and lift to the next annulus.
+
+\begin{figure}[H]\centering
+\includegraphics[width=7cm]{ms-fig-41.pdf}
+\FigureTag{MS41}{fig:ms-41}
+\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=13cm]{ms-fig-42.pdf}
+\FigureTag{MS42}{fig:ms-42}
+\end{figure}
+
+Set $\phi_{n+2}:=\widehat\Psi_{n+1}\colon\gamma_{n+2}\to\gamma_{n+2}'$.
+Continue the recursion.
+
+% Source page 24
+Fill the whole pinched annulus between $\gamma_n$ and $S^1$ to get
+a quasisymmetric conjugacy between $P_d$ and $f$ on $S^1$, by continuity.
+
+\paragraph{Rigour.}
+First extend $\Psi_n$ smoothly to the rest of the annulus bounded by
+$S^1$ and $\gamma_n$ to get $\widehat\Psi_n$. Then say
+$\widehat\Psi_n\to\Psi$, using the fact that $H^1(\widetilde U)$
+is Cauchy complete, where $\widetilde U$ is the annulus bounded by
+$S^1$ and $\gamma_n$.
+
+Take the trip back via $R_U$ to get
+$\widehat f|_{\mathcal I(U)}\sim P_d|_{S^1}$ compatibly.
+\end{proof}
 % BLOG-CONTENT-END
 \end{document}

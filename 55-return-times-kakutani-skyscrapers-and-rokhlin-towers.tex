@@ -5,7 +5,7 @@
 \begin{document}
 \section*{Return Times, Kakutani Skyscrapers, and Rokhlin Towers}
 % BLOG-CONTENT-BEGIN
-In the last lecture we saw mixing systems. There is a deep question concerning mixing systems, which we addressed last time, called the Rokhlin problem. In this final (almost) lecture we shall see beautiful work of Rokhlin and Kakutani: Rokhlin towers and Kakutani skyscrapers.
+There is a deep question concerning mixing systems called the Rokhlin problem. Here we shall see beautiful work of Rokhlin and Kakutani: Rokhlin towers and Kakutani skyscrapers.
 
 \subsection{Induced Transformations}
 Let us work with the system $(X,\mathcal B,\mu,T)$, where $T$ is invertible. The very first result that we proved---a result that revealed the first emergence of a pattern---was Poincar\'e's recurrence theorem. It tells you that, given a set $A$, almost all points of $A$ under $T$ keep hitting $A$ ad infinitum. Now let us quantify the implication of that theorem by asking:
@@ -25,6 +25,8 @@ This quantity $r_A$ gives us a natural way of defining a transformation on $A$.
 Define $T_A\colon A\to A$ by $T_A(x):=T^{r_A(x)}(x)$. This is defined almost everywhere on $A$, and is called the transformation \emph{induced by $T$ on $A$}, or the \emph{induced transformation on $A$}.
 \end{definition}
 
+\begin{itemize}
+\item $r_A\colon X\to\mathbb N$ is measurable, because we have
 \[
 \begin{aligned}
  \text{``first return'':}\quad \{x\in A\mid r_A(x)=1\}&=A_1=A\cap T^{-1}(A),\\
@@ -33,8 +35,47 @@ Define $T_A\colon A\to A$ by $T_A(x):=T^{r_A(x)}(x)$. This is defined almost eve
  \text{``$n$th return'':}\quad \{x\in A\mid r_A(x)=n\}&=A_n=(A\cap T^{-n}(A))\setminus\bigcup_{i<n}A_i.
 \end{aligned}
 \]
+As $A_n$ is measurable for every $n\geq1$, $r_A$ is measurable, for the sets $\{n\}$ generate the $\sigma$-algebra on $\mathbb N$.
+% Source writes X -> N although r_A may be infinite outside the returning set; retained.
+
+\item $T_A\colon A\to A$ is also measurable. Since $T$ is invertible, for $B\in\mathcal B$ with $B\subseteq A$, clearly $T_A^{-1}(B)=\widetilde B$ almost everywhere, so $T_A$ is measurable. Here notice that
+\[
+ \widetilde B=\bigcup_{n\geq1}T^{-n}(B\cap A_n)
+ \quad\text{almost everywhere},
+\]
+as $T^{-1}$ is defined almost everywhere.
+% Author check: the source places B cap A_n inside T^{-n}; retained exactly.
+\end{itemize}
 
 % Source page 3
+\begin{itemize}
+\item $\bigl(A,\mathcal B|_A,\mu_A=\frac1{\mu(A)}(\mu|_A),T_A\bigr)$ is a measure-preserving system.
+\item As is to be naturally expected, if $T$ is ergodic, then so is $T_A$. Firstly, notice that $A=\bigsqcup_{n\geq1}A_n$. Thus, if $B\in\mathcal B|_A$, then $B=\bigsqcup_{n\geq1}(B\cap A_n)$, so
+\[
+ \mu_A(B)=\frac1{\mu(A)}\sum_{n\geq1}\mu(B\cap A_n),
+ \qquad
+ T_A(B)=\bigsqcup_{n\geq1}T_A(B\cap A_n)
+       =\bigsqcup_{n\geq1}T^n(B\cap A_n).
+\]
+Hence
+\[
+\begin{aligned}
+ \mu_A(T_A(B))
+ &=\frac1{\mu(A)}\sum_{n\geq1}\mu\bigl(T^n(B\cap A_n)\bigr)\\
+ &=\frac1{\mu(A)}\sum_{n\geq1}\mu(B\cap A_n)
+   &&\text{($T$ is $\mu$-invariant)}\\
+ &=\mu(B).
+\end{aligned}
+\]
+% Author check: source concludes mu(B), not mu_A(B); no mathematical correction made.
+If $T_A$ is not ergodic, there exists $B$ with $T_A^{-1}(B)=B$ and $0<\mu(B)<\mu(A)$, i.e. $0<\mu_A(B)<1$. Then
+\[
+ \bigcup_{n\geq1}\ \bigcup_{j=0}^{n-1}T^j(B\cap A_n)
+\]
+is $T$-invariant and has nonzero measure (check!).
+\end{itemize}
+
+Having addressed the nature of the induced transformation, let us introduce Kakutani skyscrapers and see how a simple construction can help us get two marvellous results, one of them addressing the question raised at the beginning of the lecture.
 
 % Source page 4
 \subsection{Kakutani Skyscrapers}
@@ -77,7 +118,7 @@ as $\sum_{k=1}^n k\chi_{A_k}\nearrow r_A$.
 Therefore, the bigger the set, the sooner the points will return. In particular, if $\mu(A)>\frac12$, then the expected return time is less than $2$.
 
 \setcounter{theorem}{17}\begin{theorem}[Rokhlin's Tower Decomposition]\label{thm:l5-rokhlin}
-In the setting of Theorem~\href{https://codezen1729.github.io/math-blog/\#/post/return-times-kakutani-skyscrapers-and-rokhlin-towers}{17}, suppose that $\mu(\{x\})=0$ for all $x\in X$, i.e. $\mu$ is nonatomic. Then for every $n\geq1$ and $\varepsilon>0$, there exists $B\in\mathcal B$ such that
+In the setting of Theorem~\ref{thm:l5-kac}, suppose that $\mu(\{x\})=0$ for all $x\in X$, i.e. $\mu$ is nonatomic. Then for every $n\geq1$ and $\varepsilon>0$, there exists $B\in\mathcal B$ such that
 \begin{itemize}
  \item $B,T(B),\ldots,T^{n-1}(B)$ are disjoint;
  \item $\displaystyle\mu\left(\bigsqcup_{k=0}^{n-1}T^k(B)\right)>1-\varepsilon$.
@@ -85,6 +126,47 @@ In the setting of Theorem~\href{https://codezen1729.github.io/math-blog/\#/post/
 \end{theorem}
 
 % Source page 6
+\begin{proof}
+Nonatomic measures are measures which have no ``atoms''. In mathematical terms, given $E\in\mathcal B$, there exists $F\in\mathcal B$ such that $0<\mu(F)<\mu(E)$. Then $\mu(F)$ or $\mu(E\setminus F)$ is less than $\mu(E)/2$. Replacing $F$ by $E$, one can inductively construct measurable sets satisfying
+\[
+ \mu(\widetilde F)<\frac{\mu(E)}{2^n}<\frac1{2^n}.
+\]
+% Author check: source says ``replacing F by E'' and omits F subset E; retained.
+Now, given $n$ and $\varepsilon$, select $A\in\mathcal B$ such that $0<\mu(A)<\varepsilon/n$. The skyscraper yields the decomposition of $X$ into towers
+\[
+ A_k\sqcup T(A_k)\sqcup\cdots\sqcup T^{k-1}(A_k).
+\]
+Set
+\[
+ B=\bigsqcup_{k\geq n}\ \bigsqcup_{j=0}^{\lfloor k/n\rfloor-1}T^{jn}(A_k).
+\]
+Then $B,T(B),T^2(B),\ldots,T^{n-1}(B)$ are disjoint; each belongs to a particular residue class modulo $n$. The set $\bigcup_{k=0}^{n-1}T^k(B)$ is all of $X$ except those sets in the skyscraper comprising no more than $n$ floors in each tower. Therefore
+\[
+ \mu\left(\left(\bigsqcup_{k=0}^{n-1}T^k(B)\right)^c\right)
+ \leq n\sum_{k=1}^{\infty}\mu(A_k)
+ \leq n\mu(A)<\varepsilon,
+\]
+which implies $\mu\bigl(\bigsqcup_{k=0}^{n-1}T^k(B)\bigr)>1-\varepsilon$.
+\end{proof}
+
+% Source page 7
+\Needspace{11cm}
+Pictorially speaking, this is what happened. Let us represent towers by numbers.
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=.66\textwidth]{lecture5-fig-02.pdf}
+ \FigureTag{L5.2}{fig:lecture5-fig-02}
+\end{figure}
+\[
+\renewcommand{\arraystretch}{1.25}
+\begin{array}{r@{\,=\,}ccccccc}
+ B      &1&1&1&1&\begin{gathered}[b]5\\1\end{gathered}&\begin{gathered}[b]5\\1\end{gathered}&\cdots\\
+ T(B)   &2&2&2&2&\begin{gathered}[b]6\\2\end{gathered}&\begin{gathered}[b]6\\2\end{gathered}&\cdots\\
+ T^2(B) &3&3&3&3&\begin{gathered}[b]7\\3\end{gathered}&\begin{gathered}[b]7\\3\end{gathered}&\cdots\\
+ T^3(B) &4&4&4&4&\begin{gathered}[b]8\\4\end{gathered}&\begin{gathered}[b]8\\4\end{gathered}&\cdots
+\end{array}
+\]
+Since we are stopping at $\lfloor k/n\rfloor-1$, all towers between $A_4$ and $A_8$ will have no means of reaching floors beyond $4$. Similarly, towers between $A_8$ and $A_{12}$ will have no means of reaching beyond the eighth floor, and so on. Each tower will have some residual floors, unattended by iterates of $B$, and there can be at most $4$ in our case.
 
 This decomposition is usually called a \emph{Rokhlin tower of height $n$ with base $B$ and residual set of size $\varepsilon$}.
 

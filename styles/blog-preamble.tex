@@ -21,7 +21,9 @@
 \providecommand{\chapter}{\section}
 \newenvironment{tool}[2]{\subsection*{Tool #1 --- #2}}{}
 \newcommand{\ToolRef}[1]{Tool #1}
-\newcommand{\FigureTag}[2]{\textit{Figure #1}}
+\makeatletter
+\newcommand{\FigureTag}[2]{\par\phantomsection\begingroup\def\@currentlabel{#1}\label{#2}\endgroup}
+\makeatother
 \newcommand{\Result}[1]{\subsection*{#1}}
 \newcommand{\Application}[1]{\subsubsection*{Application\if\relax\detokenize{#1}\relax\else\space--- #1\fi}}
 \newcommand{\ProofHeading}{\par\textit{Proof.}\space}

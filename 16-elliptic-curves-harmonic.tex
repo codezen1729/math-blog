@@ -6,7 +6,7 @@
 % BLOG-CONTENT-BEGIN
 \textbf{III) \underline{Harmonic Perspective}}
 
-Let us begin this venture with a calculation and a promise of exciting things to come; all in just a short while. 
+Let us begin with a calculation. 
 
 \textbf{Calculation}:- We shall first compute the Laurent series of the Weierstrass function,
 \begin{center}
@@ -159,5 +159,22 @@ implies,
 $v_{\infty}(g_3^2 - \lambda\Delta) = 1$, or $v_{i}(g_3^2 - \lambda\Delta) = 2$, or $v_{\rho}(g_3^2 - \lambda\Delta) = 3$, or $v_p(g_3^2 - \lambda\Delta) = 1$. In each case, $j(z) = \lambda$ has a unique solution modulo the action of the modular group. 
 
 \textbf{Remark.} $j(z)$ being a weight $0$ modular form factors through $D/PSL_2(\mathbb{Z})$. For each $\lambda$ in the fundamental domain one has a unique class of elliptic curves $[\mathbb{C}/\Lambda_0, [\Lambda_0]]$, and $j$ maps that to $\mathbb{C}$. In other words, to each equivalence class of elliptic curves $j$ associates an invariant. This function in the literature is called the $j$-invariant. Said differently, two elliptic curves $E_1, E_2$ are isomorphic iff $j(E_1) = j(E_2)$.
+
+
+\textbf{Remark.} Note that $j(\infty) = \infty$. If one contemplates on the elliptic curve corresponding to $\lambda = \infty$, one can convince oneself that it is the infinite cylinder. This happens to the the surface that seals off all elliptic curves in a nice and compact genus 0 surface.
+
+We shall end by stating how the harmonic perspective fits in among the other two natural seeming ones. Let $E: y^2 = 4x^3 - g_2x - g_3$ be an elliptic curve with $g_2, g_3 \in \mathbb{Z}$, and $\Delta \neq 0$. Define,
+$$a_p(E) = p - \#\{\text{integer solutions to $E$ modulo $p$}\}$$
+
+for a prime $p$. Taniyama in $1950$s conjectured that for such curves there is a modular form,
+$$f(\tau) = \sum_{n = 0}^{\infty}a_n(f)e^{2\pi i \tau}$$
+
+such that,
+$$a_p(f) = a_p(E)$$
+
+for all primes $p$. Later, Frey constructed for an odd prime and the triple $(a, b, c)$ such that $a^p + b^p = c^p$ the elliptic curve:-
+$$y^2 = x(x-a^p)(x+b^p)$$
+
+and conjectured that these curves wouldn't be modular in the sense described above. Ribet and Serre proved Frey's conjecture, and the final blow was delivered by Andrew Wiles and Richard Taylor by proving Taniyama's conjecture (now known as \textbf{Modularity Theorem}), thereby also proving \textbf{Fermat's Last Theorem}!
 % BLOG-CONTENT-END
 \end{document}

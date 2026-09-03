@@ -1,3 +1,5 @@
 {
-  "polygon.png": "figures/abels-theorem/polygon.webp"
+  "polygon.png": "figures/abels-theorem/polygon.webp",
+  "figures/polygon.png": "figures/abels-theorem/polygon.webp",
+  "figures/abels-theorem/polygon.png": "figures/abels-theorem/polygon.webp"
 }

@@ -47,8 +47,7 @@ def clean_tex(text: str) -> str:
     text = text.replace("\\NoteHeading", "\\textbf{Note.}")
     text = text.replace("\\ExerciseHeading", "\\textbf{Exercise.}")
     text = re.sub(r"\\ToolRef\{([^{}]*)\}", r"Tool \1", text)
-    text = re.sub(r"\\FigureTag\{([^{}]*)\}\{([^{}]*)\}", r"\\textit{Figure \1}", text)
-    text = re.sub(r"\\label\{[^{}]*\}", "", text)
+    # FigureTag and label anchors are handled by references.py before this pass.
 
     # Turn the custom theorem syntaxes used across the archive into semantic headings.
     theorem_names = {
@@ -165,7 +164,7 @@ def convert_fragment(text: str, collection: str, asset_map: dict[tuple[str, str]
     arguments = [pandoc, "--from=latex+raw_tex", "--to=html5", "--mathjax", "--wrap=none"]
     bibliographies = sorted((SOURCE / collection).glob("*.bib"))
     if bibliographies:
-        arguments.extend(["--citeproc", "--metadata=reference-section-title:References"])
+        arguments.extend(["--citeproc", "--metadata=reference-section-title:References", "--metadata=link-citations:true"])
         for bibliography in bibliographies:
             arguments.extend(["--bibliography", str(bibliography)])
     completed = subprocess.run(arguments, input=cleaned, text=True, capture_output=True, check=True, timeout=90)

@@ -9,8 +9,20 @@ We introduced rings and modules and various operations on them: sums, products, 
 
 If $\varphi\in\End_{\AMod}(M)$ and $\varphi(M)\subseteq\aa M$ for an ideal $\aa<A$, then there exist $a_i\in\aa$ such that $\varphi^n+a_1\varphi^{n-1}+\cdots+a_n=0$. For $\varphi=\id$, there exists $x\in A$ with $x\equiv1\pmod\aa$ and $xM=0$. Further, if $\varphi=\id$, $\varphi(M)=\aa M$, and $\aa$ is contained in the Jacobson radical, then $x$ divides $1$; thus $x^{-1}(xM)=M=0$.
 
-We also introduced primary ideals and saw how ideals in Noetherian rings can be factorized, or decomposed, into primary ideals. In this lecture we aim to introduce a little geometry.
-Let $A$ be a subring of $B$.
+We also introduced primary ideals and saw how ideals in Noetherian rings can be factorized, or decomposed, into primary ideals. Let's introduce a little geometry.
+\subsection{Generalization of integers}
+Consider $\Z\hookrightarrow\Q$, and let $r/s\in\Q$. Then
+\[
+r/s\in\Z\ \Longleftrightarrow\ \exists f\in\Z[x]\text{ such that }f(r/s)=0\text{ in }\Q.
+\]
+% Author check: ``monic'' is absent here and in the subsequent definition.
+Indeed, if $r/s\in\Z$, then $s=\pm1$, and $f(x):=x-sr$ works. Conversely, if $(r/s)^n+a_1(r/s)^{n-1}+\cdots+a_n=0$, then $r^n+a_1r^{n-1}s+\cdots+a_ns^n=0$.
+% Source page 2
+Thus $s\mid r^n$, a contradiction, since we can require $\gcd(r,s)=1$. Hence $y\in\Q$ is integral if and only if some $f\in\Z[x]$ satisfies $f(y)=0$. We generalize this concept to arbitrary rings.
+\setcounter{definition}{13}\begin{definition}
+Let $A$ be a subring of $B$. An element $y\in B$ is \emph{integral over $A$} if there exists $f\in A[x]$ such that $f(y)=0$ in $B$. If every $y\in B$ is integral over $A$, we say $B$ is \emph{integral over $A$}, or that $A$ is \emph{integrally closed in $B$}. If $A$ is a domain, we say $A$ is \emph{integrally closed} if it is integrally closed in its field of fractions $K$.
+% Author check: the phrase ``integrally closed in B'' is used this way in the source, conflicting with the later closure construction.
+\end{definition}
 \setcounter{theorem}{20}\begin{proposition}
 For rings $A,B$ as above, the following are equivalent:
 \begin{enumerate}[label=(\roman*)]
@@ -42,6 +54,7 @@ For (iii), let $x\in C$. There exist $b_i\in B$ such that $x^n+b_1x^{n-1}+\cdots
 
 For (iv), if $x\in B$ is integral over $\overline A$, apply (iii) to $A\subseteq\overline A\subseteq B$ to conclude that $x$ is integral over $A$.
 \end{proof}
+These observations culminate in the fact that the integral closure of $A$ in $B$ is integrally closed in $B$, as expected!
 
 Now we see how integrality behaves under a few operations on rings.
 \setcounter{theorem}{22}\begin{proposition}
@@ -53,5 +66,33 @@ Let $A\subseteq B$ be rings, with $B$ integral over $A$.
 \setcounter{enumi}{2}\item For an integral domain $A$, being integrally closed is a local property.
 \end{enumerate}
 \end{proposition}
+\begin{proof}
+(i) For $x\in B$, reduce the relation $x^n+a_1x^{n-1}+\cdots+a_n=0$, with $a_i\in A$, modulo $\bb$.
+
+(ii) For $x/s\in S^{-1}B$, the same relation gives
+\[
+(x/s)^n+(a_1/s)(x/s)^{n-1}+\cdots+a_n/s^n=0.
+\]
+Thus $x/s$ is integral over $S^{-1}A$. This proves $S^{-1}\overline A\subseteq\overline{S^{-1}A}$. Conversely, if $x/s$ is integral over $S^{-1}A$, write
+\[
+(x/s)^n+(a_1/s_1)(x/s)^{n-1}+\cdots+a_n/s_n=0,
+\quad a_i\in A,\ s_i\in S.
+\]
+Set $t=s_1\cdots s_n$. Then
+\[
+(ts)^n\sum_{i=0}^n(x/s)^i(a_{n-i}/s_{n-i})
+=(xt)^n+b_1(xt)^{n-1}+\cdots+b_n=0,\qquad b_i\in A.
+\]
+% Author check: the sum's a_0,s_0 are not defined explicitly in the source.
+Hence $xt\in\overline A$, so $x/s=xt/st\in S^{-1}\overline A$, proving the reverse inclusion.
+
+(iii) Let $K$ be the field of fractions of $A$, and use the usual inclusion $A\hookrightarrow\overline A$. The ring $A$ is integrally closed if and only if $\overline A/A=0$, equivalently
+\[
+(\overline A/A)_{\pp}=0
+\ \Longleftrightarrow\ (\overline A)_{\pp}/A_{\pp}=0
+\ \Longleftrightarrow\ \overline{A_{\pp}}/A_{\pp}=0,
+\]
+where the last equivalence follows from (ii).
+\end{proof}
 % BLOG-CONTENT-END
 \end{document}

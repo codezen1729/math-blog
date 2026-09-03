@@ -36,6 +36,228 @@ jobs:
             git commit -m 'Make the published posts independently editable in Overleaf'
             git push origin HEAD:main
           fi
+          if [ -f notes-source.zip ] && [ ! -f tools/notes-publication.json ]; then
+            python3 - <<'PY'
+          """One-time additive publication of approved notes; guard all existing writing."""
+          import hashlib
+          import json
+          from pathlib import Path, PurePosixPath
+          import sys
+          import zipfile
+          
+          project = Path(sys.argv[1] if len(sys.argv) > 1 else '.').resolve()
+          archive = project / 'notes-source.zip'
+          marker = project / 'tools/notes-publication.json'
+          if marker.exists():
+              print('The approved notes have already been introduced; current writing is retained.')
+              raise SystemExit(0)
+          
+          with zipfile.ZipFile(archive) as package:
+              plan = json.loads(package.read('publication-plan.json'))
+              assert plan['schema'] == 1
+              entries = plan['files']
+              names = [item['path'] for item in entries]
+              assert len(set(names)) == len(names)
+              assert set(package.namelist()) == {'publication-plan.json', *names}
+              prepared = []
+              for item in entries:
+                  name = item['path']
+                  path = PurePosixPath(name)
+                  assert not path.is_absolute() and '..' not in path.parts and str(path) == name
+                  assert path.parts[0] in {'tools', 'styles', 'figures'} or (len(path.parts) == 1 and (name.endswith('.tex') or name == 'README.md'))
+                  if len(path.parts) == 1 and name.endswith('.tex'):
+                      assert name.split('-', 1)[0].isdigit() and int(name.split('-', 1)[0]) >= 29, 'Existing manuscript files must not be replaced.'
+                  assert all(not part.startswith('.') for part in path.parts)
+                  target = project / name
+                  assert target.resolve().is_relative_to(project)
+                  assert not target.is_symlink()
+                  before = item['beforeSha256']
+                  if before is None:
+                      assert not target.exists(), f'Refusing to overwrite existing new-note path: {name}'
+                  else:
+                      assert target.is_file() and hashlib.sha256(target.read_bytes()).hexdigest() == before, f'Writing changed since preparation: {name}'
+                  data = package.read(name)
+                  assert hashlib.sha256(data).hexdigest() == item['sha256'], f'Archive checksum failed: {name}'
+                  prepared.append((target, data))
+              assert any(target == marker for target, _ in prepared)
+              # Validate everything before the first write, and write the completion marker last.
+              prepared.sort(key=lambda item: item[0] == marker)
+              for target, data in prepared:
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(data)
+              print(f'Introduced {plan["newPosts"]} approved posts; existing manuscript files were not replaced.')
+          PY
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -- '*.tex' figures styles tools README.md
+            git commit -m 'Introduce the approved new blog posts'
+            git push origin HEAD:main
+          fi
+          if [ -f three-notes-source.zip ] && [ ! -f tools/three-notes-publication.json ]; then
+            python3 - <<'PY'
+          """Introduce four approved posts once, without replacing existing manuscripts."""
+          import hashlib
+          import json
+          from pathlib import Path, PurePosixPath
+          import sys
+          import zipfile
+          
+          project = Path(sys.argv[1] if len(sys.argv) > 1 else '.').resolve()
+          archive = project / 'three-notes-source.zip'
+          marker = project / 'tools/three-notes-publication.json'
+          if marker.exists():
+              print('These four posts have already been introduced; current writing is retained.')
+              raise SystemExit(0)
+          
+          new_manuscripts = {
+              '80-mcmullens-surgery.tex', '81-the-quadratic-family.tex',
+              '82-conformal-welding.tex', '83-smooth-covering-manifolds.tex',
+          }
+          with zipfile.ZipFile(archive) as package:
+              archive_names = package.namelist()
+              assert len(archive_names) == len(set(archive_names)), 'Duplicate archive paths.'
+              plan = json.loads(package.read('publication-plan.json'))
+              assert plan['schema'] == 1 and plan['newPosts'] == 4
+              entries = plan['files']
+              names = [item['path'] for item in entries]
+              assert len(set(names)) == len(names)
+              assert set(archive_names) == {'publication-plan.json', *names}
+              assert {name for name in names if '/' not in name and name.endswith('.tex')} == new_manuscripts
+              prepared = []
+              for item in entries:
+                  name = item['path']
+                  path = PurePosixPath(name)
+                  assert not path.is_absolute() and '..' not in path.parts and str(path) == name
+                  assert path.parts[0] in {'tools', 'styles', 'figures'} or name in new_manuscripts or name == 'README.md'
+                  assert all(not part.startswith('.') for part in path.parts)
+                  target = project / name
+                  assert target.resolve().is_relative_to(project)
+                  assert not any(parent.is_symlink() for parent in [target, *target.parents] if parent != project)
+                  before = item['beforeSha256']
+                  if name in new_manuscripts:
+                      assert before is None, 'Existing manuscript files must not be replaced.'
+                  if before is None:
+                      assert not target.exists(), f'Refusing to overwrite new-post path: {name}'
+                  else:
+                      assert target.is_file() and hashlib.sha256(target.read_bytes()).hexdigest() == before, f'Writing changed since preparation: {name}'
+                  data = package.read(name)
+                  assert hashlib.sha256(data).hexdigest() == item['sha256'], f'Archive checksum failed: {name}'
+                  prepared.append((target, data))
+              assert any(target == marker for target, _ in prepared), 'Completion marker is required.'
+              # Preflight every file before writing, and record completion last.
+              prepared.sort(key=lambda item: item[0] == marker)
+              for target, data in prepared:
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(data)
+              print('Introduced four approved posts; existing manuscripts were not replaced.')
+          PY
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -- '*.tex' figures styles tools README.md
+            git commit -m 'Introduce quadratic dynamics, McMullen surgery, and smooth coverings'
+            git push origin HEAD:main
+          fi
+          if [ -f content-revision.zip ]; then
+            python3 - <<'PY'
+          """Apply the audited full-content revision once, without overwriting newer writing."""
+          import hashlib
+          import json
+          from pathlib import Path, PurePosixPath
+          import re
+          import stat
+          import sys
+          import zipfile
+          
+          REVISION = "full-main-tex-2026-09-03"
+          MARKER = "tools/content-revision-2026-09-03.json"
+          
+          
+          def require(condition, message):
+              if not condition:
+                  raise ValueError(message)
+          
+          
+          def digest(data):
+              return hashlib.sha256(data).hexdigest()
+          
+          
+          def checked_target(project, name):
+              parts = PurePosixPath(name).parts
+              for i in range(1, len(parts) + 1):
+                  part = project / Path(*parts[:i])
+                  require(not part.is_symlink(), "Symbolic-link targets are not permitted.")
+                  if i < len(parts):
+                      require(not part.exists() or part.is_dir(), f"A parent path is not a directory: {part.relative_to(project)}")
+              target = project / name
+              require(target.resolve().is_relative_to(project), "Path leaves the project.")
+              return target
+          
+          
+          def apply_revision(project, archive):
+              project = Path(project).resolve()
+              marker = checked_target(project, MARKER)
+              if marker.exists():
+                  require(not marker.is_symlink(), "The completion marker must be a regular file.")
+                  record = json.loads(marker.read_text())
+                  require(record.get("revision") == REVISION, "Unexpected completion marker.")
+                  print("The full-content revision is already present; subsequent writing is retained.")
+                  return 0
+          
+              with zipfile.ZipFile(archive) as package:
+                  archive_names = package.namelist()
+                  require(len(archive_names) == len(set(archive_names)), "Duplicate archive paths.")
+                  plan = json.loads(package.read("publication-plan.json"))
+                  require(plan.get("schema") == 1 and plan.get("revision") == REVISION, "Unexpected revision plan.")
+                  require(plan.get("totalPosts") == 83, "Unexpected post count.")
+                  entries = plan["files"]
+                  names = [item["path"] for item in entries]
+                  require(len(names) == len(set(names)), "Duplicate planned paths.")
+                  require(not any(str(parent) in names for name in names for parent in PurePosixPath(name).parents if str(parent) != "."), "Planned files cannot also be parent directories.")
+                  require(set(archive_names) == {"publication-plan.json", *names}, "Unlisted archive contents.")
+                  require(MARKER in names, "Completion marker is missing.")
+                  prepared = []
+                  for item in entries:
+                      name = item["path"]
+                      path = PurePosixPath(name)
+                      require(not path.is_absolute() and ".." not in path.parts and str(path) == name and "\\" not in name, "Unsafe archive path.")
+                      require(all(not part.startswith(".") for part in path.parts), "Hidden paths are not permitted.")
+                      require(path.parts[0] in {"tools", "styles", "figures"} or name == "README.md" or bool(re.fullmatch(r"\d{2}-[a-z0-9-]+\.tex", name)), "Path outside the approved source folders.")
+                      info = package.getinfo(name)
+                      require(not info.is_dir() and not stat.S_ISLNK(info.external_attr >> 16), "Archive entries must be regular files.")
+                      target = checked_target(project, name)
+                      before = item["beforeSha256"]
+                      if before is None:
+                          require(not target.exists(), f"Refusing to replace an existing new path: {name}")
+                      else:
+                          require(target.is_file() and digest(target.read_bytes()) == before, f"Writing changed since preparation: {name}")
+                      data = package.read(name)
+                      require(digest(data) == item["sha256"], f"Archive checksum failed: {name}")
+                      if name == MARKER:
+                          require(before is None and json.loads(data).get("revision") == REVISION, "Invalid completion marker.")
+                      prepared.append((target, data))
+          
+                  # Do not change a single source until the entire revision passes preflight.
+                  prepared.sort(key=lambda item: item[0] == marker)
+                  for target, data in prepared:
+                      target.parent.mkdir(parents=True, exist_ok=True)
+                      target.write_bytes(data)
+                  print(f"Applied the full-content revision to {len(prepared)} source files; completion was recorded last.")
+                  return len(prepared)
+          
+          
+          if __name__ == "__main__":
+              project = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
+              archive = Path(sys.argv[2]) if len(sys.argv) > 2 else project / "content-revision.zip"
+              apply_revision(project, archive)
+          PY
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add -- '*.tex' figures styles tools README.md
+            if ! git diff --cached --quiet; then
+              git commit -m 'Restore complete main.tex content and linked blog references'
+              git push origin HEAD:main
+            fi
+          fi
           printf 'revision=%s\n' "$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
   build:
@@ -58,7 +280,9 @@ jobs:
           tar -xzf /tmp/blog-pandoc.tar.gz -C /tmp
           sudo install /tmp/pandoc-3.9/bin/pandoc /usr/local/bin/pandoc
       - name: Check the Overleaf PDFs
-        run: python3 tools/check-pdfs.py
+        run: |
+          if [ -f tools/test-references.py ]; then python3 tools/test-references.py; fi
+          python3 tools/check-pdfs.py
       - name: Convert the current blog writing
         run: python3 tools/render.py --site website
       - uses: pnpm/action-setup@v4
@@ -77,7 +301,8 @@ jobs:
         working-directory: website
         run: |
           node scripts/check-content.mjs --public
-          node --experimental-strip-types --test scripts/dynamics.test.mjs
+          node --experimental-strip-types --test scripts/dynamics.test.mjs scripts/correspondence.test.mjs scripts/laboratory.test.mjs scripts/blog-routes.test.mjs
+          if [ -f scripts/references.test.mjs ]; then node --test scripts/references.test.mjs; fi
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5

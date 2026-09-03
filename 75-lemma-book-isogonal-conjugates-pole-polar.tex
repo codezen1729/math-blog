@@ -19,7 +19,7 @@ The resulting lines are concurrent. Their point of concurrence is the isogonal c
 \end{figure}
 The circumcentre and orthocentre are isogonal conjugates of each other, while the incentre is its own isogonal conjugate.
 \paragraph{Application.}
-
+Remember the IMO 1996 problem with a cut-and-paste solution discussed in Volume 1?
 For those who did not read Volume 1---how dare you!---here is the problem.
 % Source page 3 - left
 \paragraph{IMO (1996).}
@@ -65,14 +65,53 @@ The lines through $P,Q,R$ perpendicular to $BC,CA,AB$, respectively, are concurr
 $BP^2-PC^2+CQ^2-QA^2+AR^2-RB^2=0$.
 \end{lemma}
 % Source page 4 - left
-
+This has quite a crispy application. Have a look!
+\paragraph{IMOTC: Indian Team Selection Test 3 (2014).}
+For $i=1,2,3$, let $x_i,y_i$ be nonzero real numbers, and put $v_i=x_i+y_i$.
+Suppose
+\[
+x_1x_2x_3=-y_1y_2y_3,\qquad x_1^2+x_2^2+x_3^2=y_1^2+y_2^2+y_3^2,
+\]
+and both $(v_1,v_2,v_3)$ and $(v_1^2,v_2^2,v_3^2)$ satisfy the triangle inequalities.
+Prove that exactly one of $x_1,x_2,x_3,y_1,y_2,y_3$ is negative.
+Let $ABC$ have $|BC|=v_1$, $|CA|=v_2$, $|AB|=v_3$.
+The triangle inequalities for the squares imply that $ABC$ is acute.
+Take $D,E,F$ on the extended sides $BC,CA,AB$, respectively, with
+$|BD|=x_1$, $|CE|=x_2$, $|AF|=x_3$, considering directed segments.
+The product condition and Menelaus's theorem imply that $D,E,F$ are collinear.
+The squared-sum condition implies that the perpendiculars at $D,E,F$ to $BC,CA,AB$ concur.
+Thus $D,E,F$ form a Simson line, and their perpendiculars concur on the circumcircle.
+Since $ABC$ is acute, exactly one lies outside the corresponding side segment, proving that exactly one number is negative.
+\emph{Quite intelligently done.}
+% Author check: source combines absolute-value notation with directed segment values; retained.
 
 \setcounter{theorem}{102}\begin{lemma}[Trigonometric Ceva]
 In triangle $ABC$, the lines $AD,BE,CF$ are concurrent if and only if
 $\sin\angle BAD\sin\angle ACF\sin\angle CBE
 =\sin\angle DAC\sin\angle BCF\sin\angle ABE$.
 \end{lemma}
-
+This powerful lemma proves not only concurrency but also collinearity!
+\paragraph{Application: British MO 2013--14, round 2.}
+The point $P$ lies inside $ABC$ with $\angle ABP=\angle PCA$.
+Choose $Q$ so that $PBQC$ is a parallelogram. Prove $\angle QAB=\angle CAP$.
+\begin{figure}[H]\centering
+\includegraphics[width=.70\linewidth]{lb2-fig-08.pdf}
+\FigureTag{LB2.8}{fig:lb2-08}
+\end{figure}
+Solution due to Pranjal Warade.
+It is equivalent to proving that the isogonal conjugate $P'$ of $P$ lies on $AQ$;
+in other words, that $A,P',Q$ are collinear, or that $AQ,BB',CC'$ concur.
+The source writes
+\[
+\frac{\sin\angle QAB}{\sin\angle QAC}
+\frac{\sin\angle ACC'}{\sin\angle BCC'}
+\frac{\sin\angle BB'}{\sin\angle ABB'}
+=\frac{\sin\angle QAB}{\sin\angle QAC}
+\frac{\sin\angle PCB}{\sin\angle PBC}
+=\frac{BQ}{QC}\frac{BP}{PC}=1.
+\]
+The marked points in the original drawing are not necessarily coincident.
+% Author check: source sin angle BB' has only two vertex letters; proof line retained with explicit source wording.
 
 \subsection{Pole and polar argument}
 To master PAPA techniques, begin with the standard definitions.

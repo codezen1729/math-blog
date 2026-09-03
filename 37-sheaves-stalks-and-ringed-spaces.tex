@@ -3,9 +3,17 @@
 \input{styles/notes-preamble.tex}
 \graphicspath{{figures/commutative-algebra/}}
 \begin{document}
-\section*{Sheaves and Stalks}
+\section*{Sheaves, Stalks, and Ringed Spaces}
 % BLOG-CONTENT-BEGIN
 \subsection{Sheaves}
+\setcounter{definition}{17}\begin{definition}
+Let $X$ be a topological space. A \emph{presheaf} $\mathcal F$ consists of:
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item An abelian group $\mathcal F(U)$ for every open $U\subseteq X$.
+\setcounter{enumi}{1}\item For open $V\subseteq U$, a group morphism $\rho_{UV}:\mathcal F(U)\to\mathcal F(V)$ such that, for open $W\subseteq V\subseteq U$, $\rho_{VW}\circ\rho_{UV}=\rho_{UW}$.
+\end{enumerate}
+% Author check: the source has rho_VW rather than rho_UW at the end; this is a clear index typo corrected locally.
+\end{definition}
 \setcounter{definition}{18}\begin{definition}
 A presheaf $\mathcal F$ is a \emph{sheaf} if, for $U=\bigcup_i U_i$, the sequence
 \[
@@ -26,6 +34,25 @@ where $(f,U)\sim(g,V)$ if there exists $W\subset U,V$, $p\in W$, with $\rho_{UW}
 \begin{remark}
 One can also set $\mathcal F_p:=\operatorname{colim}_{p\in U}\mathcal F(U)$.
 \end{remark}
+\setcounter{definition}{20}\begin{definition}
+A poset $(S,\ge)$ is \emph{filtered} if, for every $x,y\in S$, there exists $z$ such that $x,y\ge z$. More generally, a category $C$ is filtered if:
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item For $x,y\in C$, there exists $z$ with arrows $x\to z$ and $y\to z$.
+\setcounter{enumi}{1}\item For every $u,v:x\to y$, there exists $w:y\to z$ such that $w\circ u=w\circ v$.
+\end{enumerate}
+\begin{figure}[H]\centering
+\includegraphics[width=.66\textwidth]{ca6-fig-02.pdf}
+\FigureTag{CA6.2}{fig:ca-6-02}
+\end{figure}
+\end{definition}
+Suppose $\mathcal I$ is a filtered indexing category. Any diagram indexed by $\mathcal I$ has the following colimit:
+% Source page 6
+\[
+\varinjlim_{i\in\mathcal I}A_i
+=\left\{(a_i,i)\in\coprod_{i\in\mathcal I}A_i\right\}/{\sim},
+\]
+where $(a_i,i)\sim(a_j,j)$ if there exist $f:A_i\to A_k$ and $g:A_j\to A_k$ with $f(a_i)=g(a_j)$. Thus \mbox{$\mathcal F_p=\varinjlim_{p\in U}\mathcal F(U)$}.
+% The source repeats f(a_j); corrected to g(a_j), matching the displayed domains.
 For a sheaf $\mathcal F$, one has $\mathcal F(U)\to\mathcal F_p$, $s\mapsto s_p$, for $p\in U$.
 \setcounter{theorem}{31}\begin{lemma}
 If $s,t\in\mathcal F(X)$ and $s_x=t_x$ for every $x\in X$, then $s=t$.
@@ -33,9 +60,54 @@ If $s,t\in\mathcal F(X)$ and $s_x=t_x$ for every $x\in X$, then $s=t$.
 \begin{proof}
 Without loss of generality, assume $t=0$. For every $x\in X$, there exists $U_x$ such that $s|_{U_x}=0$. Hence $s\equiv0$ by the uniqueness axiom of $\mathcal F$.
 \end{proof}
+\paragraph{Morphisms of (pre)sheaves.}
+A morphism $\alpha:\mathcal F\to\mathcal G$ is a collection of group morphisms $\alpha(U):\mathcal F(U)\to\mathcal G(U)$ for every open $U\subseteq X$.
+% Author check: compatibility with restrictions is not stated in the source.
+\paragraph{Sheafification.}
+Given a presheaf $\mathcal F$, there exists a unique sheaf $\mathcal F^+$ with $\theta:\mathcal F\to\mathcal F^+$ such that, for every $\alpha:\mathcal F\to\mathcal G$ of presheaves, there is a unique $\widetilde\alpha$ making the diagram commute.
+% Author check: the source does not explicitly require G to be a sheaf or say unique up to isomorphism.
+\begin{figure}[H]\centering
+\includegraphics[width=.36\textwidth]{ca6-fig-03.pdf}
+\FigureTag{CA6.3}{fig:ca-6-03}
+\end{figure}
+\[
+\mathcal F^+(U):=\left\{
+f:U\to\coprod_{x\in U}\mathcal F_x\ \middle|\
+\begin{array}{l}
+\text{for every }x\in U\text{ there exist }x\in V,\ s\in\mathcal F(V)\\
+\text{such that }f(x)=s_x\text{ for every }x\in V
+\end{array}\right\}.
+\]
 % Source page 7
+\subsection{Ringed topological spaces}
+\setcounter{definition}{21}\begin{definition}
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item $(X,\mathcal O_X)$ is a \emph{ringed topological space} if $X\in\mathsf{Top}$ and $\mathcal O_X$ is a sheaf of rings such that $\mathcal O_{X,x}$ is a local ring for every $x\in X$. Here $\mathcal O_X$ is the \emph{structure sheaf}, and $\mathcal O_{X,x}/\mm_x$ is the \emph{residue field}.
+% Author check: this is called ``ringed'' rather than ``locally ringed'' in the source.
+\setcounter{enumi}{1}\item A morphism $(f,f^{\#}):(X,\mathcal O_X)\to(Y,\mathcal O_Y)$ of ringed topological spaces consists of a continuous $f:X\to Y$ and a sheaf map $f^{\#}:\mathcal O_Y\to f_*\mathcal O_X$, where $f_*\mathcal F(V):=\mathcal F(f^{-1}(V))$, such that
+\[
+f_x^{\#}:\mathcal O_{Y,f(x)}\longrightarrow f_*\mathcal O_{X,x}
+\]
+is a local homomorphism, that is, $f_x^{\#}(\mm_{f(x)})\subseteq\mm_x$.
+% Author check: f_* is retained in the target of the stalk map as written.
+\setcounter{enumi}{2}\item $(f,f^{\#})$ is an \emph{open (closed) immersion} if $f$ is an open (closed) embedding and $f_x^{\#}$ is an isomorphism for every $x\in X$.
+% Author check: the stalk-isomorphism requirement for closed immersions is retained.
+\end{enumerate}
+\end{definition}
+For $X=\Spec(A)$, define $\mathcal O_X(D(f)):=A_f$. On the left these are functions where $f$ does not vanish; on the right is the ring in which $f$ is invertible.
 \setcounter{theorem}{32}\begin{lemma}
 $V(I)\subseteq V(J)$ if and only if $J\subseteq\sqrt I$.
 \end{lemma}
+Also, $D(g)\subseteq D(f)$ implies $g\in\sqrt{(f)}$, so there exist $m\ge1$ and $b\in A$ with $g^m=fb$.
+% Source page 8
+Thus $f$ is invertible in $A_g$, giving a map $A_f\to A_g$. Hence $\mathcal O_X$ is a presheaf. Note that $\mathcal O_X(X)=A$, and for every $\pp\in X$, $\mathcal O_{X,\pp}:=A_{\pp}$ is local. Therefore $(X,\mathcal O_X)$ is a ringed topological space.
+% Author check: the sheaf axiom verification is not supplied in the source.
+\setcounter{definition}{22}\begin{definition}
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item An \emph{affine scheme} is something isomorphic to a ringed topological space $(X,\mathcal O_X)$ as above.
+\setcounter{enumi}{1}\item A \emph{scheme} is a ringed topological space with an open cover \sourcegap.
+% Author check: the handwritten file ends here, without the condition on the cover.
+\end{enumerate}
+\end{definition}
 % BLOG-CONTENT-END
 \end{document}

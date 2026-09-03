@@ -3,7 +3,7 @@
 \input{styles/notes-preamble.tex}
 \graphicspath{{figures/lemma-book/}}
 \begin{document}
-\section*{Rearrangement and Convexity}
+\section*{Rearrangement, Convexity, and Power Means}
 % BLOG-CONTENT-BEGIN
 \setcounter{theorem}{54}\begin{lemma}[Popoviciu's theorem]
 Let $f:\mathbb R\to\mathbb R$ be convex on an interval $I$, and let $x_1,x_2,x_3\in I$.
@@ -26,7 +26,6 @@ By Popoviciu's theorem,
 \]
 This is exactly the desired inequality.
 
-
 \subsection{Rearrangement and convexity}
 \setcounter{theorem}{84}\begin{lemma}[Rearrangement inequality]\label{lemma:lb1-87}
 Consider two collections of real numbers in increasing order,
@@ -45,6 +44,7 @@ and the permutation $(a'_1,b'_1,c'_1)=(\sqrt[3]{b/c},\sqrt[3]{c/a},\sqrt[3]{a/b}
 \[\frac ab+\frac bc+\frac ca\geq\sqrt[3]{\frac{a^2}{bc}}
 +\sqrt[3]{\frac{b^2}{ca}}+\sqrt[3]{\frac{c^2}{ab}}=a+b+c,\]
 since $abc=1$. Q.E.D.!
+There are two more possible Q.E.D.s for this problem; the next is an ingenious application of AM--GM.
 \paragraph{Solution 2.}
 \[
 \begin{aligned}
@@ -54,9 +54,60 @@ since $abc=1$. Q.E.D.!
 \end{aligned}
 \]
 Add all three to obtain $a/b+b/c+c/a\geq a+b+c$.
+The third solution follows from Muirhead's theorem.
+% Source page 46 - right
+\paragraph{Solution 3.}
+\[\frac ab+\frac bc+\frac ca=a^2c+b^2a+c^2b
+\mathrel{\stackrel{?}{\geq}}(abc)^{2/3}(a+b+c)
+=\sum_{\mathrm{cyc}}a^{5/3}b^{2/3}c^{2/3}.\]
+Since $(2,1,0)\succ(5/3,2/3,2/3)$, the result follows. Q.E.D.!
+% Author check: the source applies Muirhead to a three-term cyclic sum; its usual symmetric-sum hypothesis is not addressed.
+\paragraph{A two-line proof of the AM--GM inequality.}
+We have $x_i^{t_i}=e^{t_i\log x_i}$. Since $e^x$ is convex, we can deduce
+\[x_1^{t_1}x_2^{t_2}\cdots x_n^{t_n}
+=e^{t_1\log x_1+\cdots+t_n\log x_n}
+\leq t_1e^{\log x_1}+\cdots+t_ne^{\log x_n}=t_1x_1+\cdots+t_nx_n.\]
+Now put $t_1=t_2=\cdots=t_n=1/n$ to obtain, by Jensen's inequality,
+\[\frac{x_1+x_2+\cdots+x_n}{n}\geq\sqrt[n]{x_1x_2\cdots x_n}.\]
+Q.E.D.!
+% Author check: the initial general-weight formula does not state that the weights are nonnegative and sum to one.
+\paragraph{Challenge.}
+Define $x_k=(a^k+b^k+c^k)/3$ for $a,b,c>0$. Prove the following inequality:
+\[\frac13\left(\frac{x_1^5}{x_2x_3}+\frac{x_2^2}{x_1x_3}+\frac{x_3}{x_1x_2}\right)>1.\]
+P.S. This problem has a two-line solution, so don't think that it is complicated!
+% Author check: the strict sign in the source is retained; a=b=c gives equality.
+Now let us proceed on our eternal journey. Let me show you the magic of convexity--concavity arguments: problems get resolved in seconds!!
 
+% Source page 49 - left
+So far, so good. By the way, did you figure out how to resolve the challenge we came across two pages ago?
+Hold on: here comes that two-line solution!
+\[
+\begin{aligned}
+x_3^2\geq x_2^3\geq x_1^6
+&\quad\Longrightarrow\quad
+\frac13(x_3^2+x_2^3+x_1^6)\left(\frac12+\frac13+\frac16\right)
+>\frac{x_3^2}{2}+\frac{x_2^3}{3}+\frac{x_1^6}{6}\geq x_1x_2x_3,\\
+\frac{x_3^2+x_2^3+x_1^6}{x_1x_2x_3}>3
+&\quad\Longrightarrow\quad
+\frac{x_1^5}{x_2x_3}+\frac{x_2^2}{x_1x_3}+\frac{x_3}{x_1x_2}>3.
+\end{aligned}
+\]
+W$^5$. Q.E.D.! You see, we are done in just two steps!
+% Author check: the source uses a strict > in the weighted-sum comparison; the direction and strictness are preserved for review.
 
+For $a,b,c>0$ with $abc=1$, prove $\sqrt{a+3}+\sqrt{b+3}+\sqrt{c+3}\geq6$.
+The source also annotates $ab+bc+ca=3$.
+\[
+\sum_{\mathrm{cyc}}\sqrt{a+3}
+\geq3\sqrt[6]{28+3(ab+bc+ca)+9(a+b+c)}
+\geq3\sqrt[6]{28+9+27}=6.
+\]
+% Author check: source uses sixth roots in this displayed AM--GM calculation and equality ab+bc+ca=3; retained.
 
-
+For positive $x,y,z$, prove
+$\sqrt{x+y+z}\left(\sum_{\mathrm{cyc}}\dfrac{\sqrt y}{z+x}\right)\geq3\sqrt3/2$.
+Normalize $x+y+z=1$, and set $f:(0,1)\to\mathbb R$, $f(x)=\sqrt x/(1-x)$.
+Since $f$ is convex, $f(x)+f(y)+f(z)\geq3f(1/3)$, which gives the result.
+% Author check: asserted convexity on the entire interval is preserved.
 % BLOG-CONTENT-END
 \end{document}

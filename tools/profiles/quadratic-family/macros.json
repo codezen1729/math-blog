@@ -6,5 +6,7 @@
   "\\Crit": "\\operatorname{Crit}",
   "\\Int": "\\operatorname{Int}",
   "\\Ext": "\\operatorname{Ext}",
-  "\\id": "\\operatorname{id}"
+  "\\id": "\\operatorname{id}",
+  "\\Moduli": "\\operatorname{Moduli}",
+  "\\diam": "\\operatorname{diam}"
 }

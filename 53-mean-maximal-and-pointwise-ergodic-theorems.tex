@@ -15,9 +15,14 @@ what happens, as $N\to\infty$, to
   A_N^f:=\frac1N\sum_{n=0}^{N-1}U_T^n f
   \qquad\text{(the $T$-average of $f$).}
 \]
+Although we started off by asking about $U_T^n f$ as $n\to\infty$, we shall
+see that, as a consequence of the Koopman--Neumann lemma for positive bounded
+sequences, if $A_N^f\to A$ as $N\to\infty$, then $U_T^n f\to A$ as
+$n\to\infty$, $n\notin J$, where $J$ has ``density'' zero in $\mathbb Z$.
+% Author check: this implication is preserved as stated in the handwritten source.
 In answering what happens to $\frac1{N+1}\sum_{n=0}^{N}U_T^n f$ as
 $N\to\infty$, ergodic theorems will, in some sense, establish a duality
-between space and time.
+between space and time. We plan to prove the following.
 
 \setcounter{theorem}{8}\begin{theorem}[Birkhoff]
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system, with $T$ ergodic.
@@ -36,13 +41,22 @@ from $x\in X$ is the remarkable thing to observe, and the imposition that
 $T$ be ergodic is essential; otherwise, there may be $x\in X$ such that
 $T^n(x)\notin B$ for all $n\geq1$. But as soon as you remove that
 set-theoretic hindrance, recurrence of orbits is governed by the sizes of
-sets.
+sets. Now let me explain the duality.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{lecture3-fig-01.pdf}
+  \FigureTag{L3.1}{fig:lecture3-fig-01}
+\end{figure}
+% Author check: the diagram's T^{-n}(B)=X a.e. is reproduced without adding a union.
 
 Thus certain spatial information can be translated into temporal information,
 and vice versa.
 
 % Source page 3
+In this lecture we shall give a complete proof of Birkhoff's ergodic theorem
+(often also called the pointwise ergodic theorem). We must emphasise that
+ergodic theorems are unitary properties.
 
 \setcounter{theorem}{9}\begin{theorem}[von Neumann's mean ergodic theorem: $L^2_\mu$ version]
 \label{thm:l3-mean-l2}
@@ -57,6 +71,44 @@ Then, for every $f\in L^2_\mu$,
   \quad\text{in the $L^2_\mu$ norm.}
 \]
 \end{theorem}
+\begin{proof}
+Let us first begin by finding $I^\perp$. Set
+$B=\{U_Tg-g:g\in L^2_\mu\}$, and claim that $B^\perp=I$.
+If $f\in I$, then $U_Tf=f$. Hence
+\[
+ \langle f,U_Tg-g\rangle
+ =\langle U_Tf,U_Tg\rangle-\langle f,g\rangle=0,
+\]
+so $f\in B^\perp$. If $f\in B^\perp$, then
+\[
+ \langle U_Tg-g,f\rangle=0
+ \ \Longrightarrow\ \langle U_Tg,f\rangle=\langle g,f\rangle
+ \ \Longrightarrow\ \langle g,(U_T^*-\id)f\rangle=0
+ \qquad(g\in L^2_\mu).
+\]
+Therefore
+\[
+ \sup_{\|g\|\leq1}|\langle g,(U_T^*-\id)f\rangle|
+ =0=\|(U_T^*-\id)f\|.
+\]
+% Source page 4
+Thus $U_T^*f=f$. Since $U_T$ is unitary, $U_Tf=f$, so $f\in I$.
+Consequently, $B^\perp=I$ and $L^2_\mu(X)=I\oplus\overline B$.
+Write $f=P_Tf+h$, with $h\in\overline B$. It now suffices to prove
+$\frac1N\sum_{n=0}^{N-1}U_T^nh\to0$ in $L^2_\mu$.
+For $h=U_Tg-g$, with $g\in L^2_\mu$, the telescoping series gives
+\[
+ \left\|\frac1N\sum_{n=0}^{N-1}U_T^n(U_Tg-g)\right\|_2
+ =\frac1N\|U_T^Ng-g\|_2
+ \leq\frac{\|U_T-\id\|\,\|g\|_2}{N}
+ \leq\frac{2\|g\|_2}{N}.
+\]
+% Author check: the middle operator norm is U_T-Id in the source, not U_T^N-Id.
+Here $U_T$, being an isometry, must have norm $1$. Therefore
+$\frac1N\sum_{n=0}^{N-1}U_T^nh\to0$ in $L^2_\mu$, since
+$2\|g\|_2/N\to0$ as $N\to\infty$.
+% Author check: no separate extension from B to its closure is written in the source.
+\end{proof}
 
 \setcounter{theorem}{10}\begin{theorem}[von Neumann's mean ergodic theorem: $L^1_\mu$ version]
 \label{thm:l3-mean-l1}
@@ -67,6 +119,58 @@ $f\in L^1_\mu$,
  \quad\text{in $L^1_\mu$,}\qquad U_Tf'=f'.
 \]
 \end{theorem}
+\begin{proof}
+Note that
+\[
+ \left(\int_X|f|\,d\mu\right)^2
+ \leq\left(\int_X|f|^2\,d\mu\right)
+       \left(\int_X1^2\,d\mu\right),
+ \qquad\text{so }\|\cdot\|_1\leq\|\cdot\|_2.
+\]
+If $g\in L^\infty_\mu\subset L^2_\mu$, then
+$\frac1N\sum_{n=0}^{N-1}U_T^ng\to g'$ in $L^1_\mu$.
+Now $\|A_N^g\|_\infty\leq\|g\|_\infty$, and
+$|\langle A_N^g,\chi_B\rangle|\leq\|g\|_\infty\mu(B)$.
+Since $A_N^g\to g'$, the dominated convergence theorem gives
+$|\langle g',\chi_B\rangle|\leq\|g\|_\infty\mu(B)$.
+
+% Source page 5
+If $g'$ does not have bounded essential supremum, one can find sets $B_N$
+such that $\mu(B_N)>0$ and $g'|_{B_N}>N$. Then
+\[
+ N\mu(B_N)<|\langle g',\chi_{B_N}\rangle|
+ \leq\|g\|_\infty\mu(B_N),
+\]
+a contradiction. Thus $g'\in L^\infty_\mu$. As $g\in L^2_\mu$, the
+$L^2$ version of von Neumann's ergodic theorem tells us that $g'$ is
+$T$-invariant.
+
+Now we exploit the fact that $L^\infty_\mu$ is dense in $L^2_\mu$.
+% Author check: the source says L^2 here, although the approximation below is in L^1.
+Fix $f\in L^1_\mu$ and $\epsilon>0$. Let $g\in L^\infty_\mu$ satisfy
+$\|f-g\|_1<\epsilon$. Since $T$ is $\mu$-invariant,
+$\|A_N^f-A_N^g\|_1<\epsilon$. Also, there are $g'$ and $N_0$ such that
+$\|A_N^g-g'\|_1<\epsilon$ for all $N\geq N_0$.
+By the triangle inequality,
+\[
+ \|A_N^f-A_{N'}^f\|_1<4\epsilon\qquad(N,N'\geq N_0).
+\]
+Thus $A_N^f$ is Cauchy in $L^1_\mu$. Since $L^1_\mu$ is complete
+(the Riesz--Fischer theorem), $A_N^f\to f'$.
+
+It is now an elementary exercise to show that $f'$ is $T$-invariant:
+\[
+ U_TA_N^f=\frac{N+1}{N}A_{N+1}^f-\frac1Nf,
+\]
+and hence
+\[
+ \|U_TA_N^f-A_N^f\|_1
+ =\left\|\frac{N+1}{N}A_{N+1}^f-A_N^f-\frac1Nf\right\|_1
+ \leq\|A_{N+1}^f-A_N^f\|_1+\frac2N\|f\|_1.
+\]
+As $N\to\infty$, $\|f'\circ T-f'\|_1=0$, so $f'\circ T=f'$ almost
+everywhere.
+\end{proof}
 
 % Source page 6
 \begin{remark}
@@ -74,6 +178,30 @@ $f\in L^1_\mu$,
 If $T$ is ergodic, then, for $f=\chi_B$, we only know so far that the
 frequency of orbit visits of $f$ is a fixed number, independent of $x$.
 \end{remark}
+\begin{remark}[Quantitative estimate]
+We have $A_N^{\chi_B}=\frac1N\sum_{n=0}^{N-1}\chi_B\circ T$.
+% Author check: the source omits the power n on T in this particular formula.
+As $T$ is $\mu$-invariant,
+\[
+ \int_X\chi_B\circ T\,d\mu=\int_X\chi_B\,d\mu=\mu(B)
+ \qquad\text{(by Litmus Test 2).}
+\]
+Therefore
+\[
+ \int_X A_N^{\chi_B}\,d\mu=\mu(B)
+ \geq\sqrt{\mu(B)}\,
+ \mu\bigl(\{x:A_N^{\chi_B}(x)>\sqrt{\mu(B)}\}\bigr),
+\]
+and hence
+\[
+ \mu\bigl(\{x:A_N^{\chi_B}(x)>\sqrt{\mu(B)}\}\bigr)
+ \leq\sqrt{\mu(B)}.
+\]
+Thus the measure of points in $B$ that spend at least a proportion
+$\sqrt{\mu(B)}$ of the time in $B$ is at most $\mu(B)^{1/2}$.
+\end{remark}
+In light of the quantitative remark above, we have a more quantitative
+version of the ergodic theorem.
 
 \setcounter{theorem}{11}\begin{theorem}[Maximal ergodic theorem]
 \label{thm:l3-maximal}
@@ -130,7 +258,7 @@ because $F_N(x)=0$ if $x\notin P$. Therefore
 \]
 Here the equality uses positivity, and the last inequality uses $\|U\|\leq1$.
 \end{proof}
-\begin{proof}[Proof of Theorem~\href{https://codezen1729.github.io/math-blog/\#/post/mean-maximal-and-pointwise-ergodic-theorems}{12}]
+\begin{proof}[Proof of Theorem~\ref{thm:l3-maximal}]
 Set $f=g-\alpha$ and $Uf:=f\circ T$. This is a unitary positive operator,
 so $\|U\|\leq1$. We have
 \[
@@ -145,6 +273,11 @@ To obtain the other inequality, look at
 \]
 \end{proof}
 
+\begin{remark}
+This theorem has essentially removed the dependence on $N$ in the
+statement made in the quantitative remark above.
+\end{remark}
+Let us finally prove our desired theorem.
 
 \setcounter{theorem}{13}\begin{theorem}[Birkhoff's ergodic theorem]
 \label{thm:l3-birkhoff}
@@ -156,6 +289,85 @@ The function $f^*$ is $T$-invariant, and $\int f^*\,d\mu=\int f\,d\mu$.
 \end{theorem}
 
 % Source page 9
+\begin{proof}
+Of course, the measure-preserving system $(X,\mathcal B,\mu,T)$ is lurking
+in the background. Since the nature of the result is purely additive, we
+may assume without loss of generality that $f:X\to\mathbb R$. Define
+\[
+ f^*(x)=\limsup_{n\to\infty}\frac1n\sum_{i=0}^{n-1}f(T^i(x)),
+ \qquad
+ f_*(x)=\liminf_{n\to\infty}\frac1n\sum_{i=0}^{n-1}f(T^i(x)).
+\]
+\paragraph{Trick (which we noticed before).}
+\[
+ \frac{n+1}{n}\left(\frac1{n+1}\sum_{i=0}^nf(T^i(x))\right)
+ =\frac1n\sum_{i=0}^{n-1}f(T^i(T(x)))+\frac1nf(x)
+ \leq f^*\circ T+\frac1nf(x).
+\]
+% Author check: the finite-average comparison with the limsup is written this way in the source.
+Choose $\{n_k\}_k$ such that $A_{n+1}^f\to f^*$.
+Since $(n_k+1)/n_k\to1$, we obtain $f^*\leq f^*\circ T$.
+% Obvious index typography: source's n_k+1 over n_k is read as (n_k+1)/n_k.
+If we instead choose $\{n_k\}_k$ such that $A_n^f$ on the right-hand side
+converges to $f^*$, then
+\[
+ \limsup_{n_k}\frac{n+1}{n}A_{n+1}^f
+ =f^*\circ T\leq\limsup_n A_{n+1}^f=f^*.
+\]
+Consequently, and similarly for $f_*$,
+\begin{equation}
+ f^*=f^*\circ T,\qquad f_*=f_*\circ T.
+ \tag{$*$}\label{eq:l3-invariance}
+\end{equation}
+Let $\alpha>\beta$, with $\alpha,\beta\in\mathbb Q$, and set
+\[
+ E_\alpha^\beta=\{x\in X:f_*(x)<\beta\text{ and }f^*(x)>\alpha\}.
+\]
+% Source page 10
+By \eqref{eq:l3-invariance}, $T^{-1}(E_\alpha^\beta)=E_\alpha^\beta$.
+Also, $E_\alpha\supseteq E_\alpha^\beta$, where $E_\alpha$ is as in
+Theorem~\ref{thm:l3-maximal}. That theorem gives
+\[
+ \alpha\mu(E_\alpha\cap E_\alpha^\beta)
+ \leq\int_{E_\alpha\cap E_\alpha^\beta}f\,d\mu,
+\]
+since $T^{-1}(E_\alpha^\beta)=E_\alpha^\beta$.
+Similarly, applying it to $-f$ gives
+$\int_{E_\alpha^\beta}f\,d\mu\leq\beta\mu(E_\alpha^\beta)$.
+Combining these,
+\[
+ \alpha\mu(E_\alpha^\beta)
+ \leq\int_{E_\alpha^\beta}f\,d\mu
+ \leq\beta\mu(E_\alpha^\beta).
+\]
+Since $\alpha>\beta$, $\mu(E_\alpha^\beta)=0$ for all rational
+$\alpha>\beta$. By the density of $\mathbb Q$ in $\mathbb R$,
+\[
+ \{x:f_*(x)<f^*(x)\}
+ =\bigcup_{\substack{\alpha,\beta\in\mathbb Q\\\alpha>\beta}}E_\alpha^\beta.
+\]
+The union has measure zero, so $f_*=f^*$ almost everywhere. Thus
+\[
+ A_n^f(x)=\frac1n\sum_{i=0}^{n-1}f(T^i(x))\longrightarrow f^*=f_*
+ \qquad\text{almost everywhere.}
+\]
+By the $L^1_\mu$ version of von Neumann's ergodic theorem,
+$A_n^f\to f'\in L^1_\mu$ in $L^1_\mu$. A consequence of the
+% Source page 11
+Borel--Cantelli lemma gives a sequence $n_k\to\infty$ such that
+\[
+ A_{n_k}^f(x)=:g_{n_k}(x)\longrightarrow f'(x)
+ \qquad\text{almost everywhere.}
+\]
+% Obvious notation typo: the handwritten superscript here looks like g, but preceding averages are of f.
+Hence $f^*=f'=f_*$ in $L^1_\mu$, and $f^*$ is $T$-invariant because $f'$
+is. Now $g_n\to f^*$ almost everywhere. By the dominated convergence
+theorem and $T$-invariance of $\mu$, we also get
+\[
+ \int f\,d\mu=\int g_n\,d\mu=\int f^*\,d\mu.\qedhere
+\]
+% Author check: the source invokes DCT without an explicit dominating function.
+\end{proof}
 
 \begin{remark}[Final remark]
 If $T$ is ergodic, then $f^*$ must be constant, since it is $T$-invariant

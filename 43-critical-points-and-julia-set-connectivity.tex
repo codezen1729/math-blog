@@ -5,10 +5,31 @@
 \begin{document}
 \section*{Critical Points and Julia-Set Connectivity}
 % BLOG-CONTENT-BEGIN
-In this exposition we see how the critical points of polynomials on $\widehat{\mathbb C}$ determine the shape and structure of the Julia set. The following is a well-known fact.
+Let's see how the critical points of polynomials on $\widehat{\mathbb C}$ determine the shape and structure of the Julia set. The following is a well-known fact.
 \setcounter{theorem}{22}\begin{theorem}\label{cd5:components}
 If $\mathcal A_0$ is an immediate basin of attraction, then $\widehat{\mathbb C}\setminus\mathcal A_0$ is either connected or has uncountably many components.
 \end{theorem}
+\begin{proof}
+Choose $N_0$ small enough that $f(\overline{N_0})\subset N_0$ and $\partial N_0$ contains no forward image of a critical point. Such images are at most countable, because $\{z:f'(z)=0\}$ is finite. Let $\widehat z$ be the fixed point, and let $N_k$ be the component of $f^{-k}(N_0)$ containing $\widehat z$.
+
+By invariance, $N_0\subset N_1\subset N_2\subset\cdots$. The iterates converge locally uniformly on compact sets. Given a path $P$ from $\widehat z$ to any $z\in\mathcal A_0$, we have $f^{\circ k}(P)\subseteq N_0$ for all sufficiently large $k$. Thus $z\in f^{-k}(N_0)$, and $\bigcup_kN_k=\mathcal A_0$.
+% Source page 2
+Therefore $\widehat{\mathbb C}\setminus\mathcal A_0=\bigcap_k(\widehat{\mathbb C}\setminus N_k)$. If each $\partial N_k$ is connected, being a Jordan curve, and has no components, then $\{\widehat{\mathbb C}\setminus N_k\}_k$ is a nested sequence of compact connected sets. Hence $\widehat{\mathbb C}\setminus\mathcal A_0$ is connected.
+% Author check: the handwritten phrase "if it has no components" is retained; likely it concerns holes or additional boundary components.
+
+Otherwise, $\overline{N_k}$ is a $d$-fold branched covering of $\overline{N_{k-1}}$, and the same holds for their components: if $C$ and $D$ are such components, $f|_C\colon C\to D$ is a $d$-fold branched covering. Thus
+\[
+f\colon\overline{N_k}\setminus f^{-1}(N_{k-1})\longrightarrow
+\overline{N_{k-1}}\setminus N_{k-1}
+\]
+is also a $d$-fold branched covering. The following figure completes the proof. Since $f$ is conformal on $\partial N_k$, it sends the interior of $\partial N_k$ to the interior of $f(\partial N_k)$, preserving angles and therefore direction.
+\begin{figure}[H]\centering
+\includegraphics[width=.65\textwidth]{cd5-fig-01.pdf}
+\FigureTag{CD5.1}{fig:cd5-01}
+\end{figure}
+The union of intersections of these Jordan-curve interiors forms $\widehat{\mathbb C}\setminus\mathcal A_0$, which is evidently uncountable.
+\end{proof}
+% Author check: the schematic nested-complement proof and its degree assertions are transcribed without adding missing topological arguments.
 % Source page 3
 We now ask when $\widehat{\mathbb C}\setminus\mathcal A_0$ is connected. This reveals the topological shape of polynomial Julia sets. Let us see the role of critical points, working in the ambient plane $\mathbb C\subset\widehat{\mathbb C}$.
 \setcounter{definition}{13}\begin{definition}[Filled Julia set]
@@ -22,5 +43,42 @@ By the maximum modulus principle, $|f(z)|\le r$ for every $z\in\operatorname{Int
 \setcounter{theorem}{23}\begin{theorem}\label{cd5:connectedness}
 The sets $K$ and $\partial K$ are connected if and only if every critical point has a bounded orbit.
 \end{theorem}
+\begin{proof}
+The polynomial has an attracting basin at infinity, denoted $\mathcal A(\infty)$. Critical points govern how far the B\"ottcher map can extend as a conformal isomorphism.
+\begin{itemize}
+\item If $\mathcal A\cong\mathbb D$, inversion of the sphere gives $\psi\colon\mathbb C\setminus\overline{\mathbb D}\to\mathbb C\setminus K$ conformally. Moreover,
+\[
+J=\partial K=\bigcap_{\varepsilon>0}\overline{\psi(A_{1+\varepsilon})}.
+\]
+Thus $J$ is connected, and hence $K$ is connected.
+\item If $\mathcal A\cong\mathbb D_r$ with $r<1$, inversion gives $\mathbb C\setminus\overline{\mathbb D_r}\cong U\subset\mathbb C\setminus K$, now with $r>1$. The set $\mathcal A=\mathbb C\setminus K$ contains a critical point $c$ of $f$.
+\end{itemize}
+% Author check: source reuses r after inversion and writes A congruent to D_r for the maximal-coordinate situation.
+Set $v=f(c)$, and let $\phi$ denote the inverted B\"ottcher coordinate. Then $\phi(c)\in\partial\mathbb D_r$ and $\phi\circ f=z^d\circ\phi$, giving
+\[
+|\phi(v)|=|\phi(f(c))|=|\phi(c)^d|=r^d>r>1.
+\]
+% Source page 5
+Consider the ray $R=\{t\phi(v):t\ge1\}$ in $\mathbb C\setminus\mathbb D_r$, and let $R'=\psi(R)$, where $\psi=\phi^{-1}$.
+\begin{figure}[H]\centering
+\includegraphics[width=.88\textwidth]{cd5-fig-02.pdf}
+\FigureTag{CD5.2}{fig:cd5-02}
+\end{figure}
+The critical point $c$ helps break the domain into two components. At $c$, the equation $f(z)=v$ has two solutions, at least locally, yielding two noncompact external rays $R_1',R_2'$.
+\begin{figure}[H]\centering
+\includegraphics[width=.72\textwidth]{cd5-fig-03.pdf}
+\FigureTag{CD5.3}{fig:cd5-03}
+\end{figure}
+% Author check: the source says "two solutions at c" and illustrates d components; multiplicities and local versus global components are not further specified.
+% Source page 6
+The union $R_1'\cup R_2'$ cuts the plane into $V_0,V_1$. Since $f$ is open, $f(V_k)\supseteq\mathbb C\setminus R'\supset K$, giving $f(J\cap V_0)\supset J$. Thus $f(J_0)=J=f(J_1)$, where $J_0=J\cap V_0$ and $J_1=J\cap V_1$ are disjoint compact sets.
+
+Repeat inductively:
+\[
+J_{10}=J_1\cap f^{-1}(J_0),\quad J_{00}=J_0\cap f^{-1}(J_0),\quad
+J_{01}=J_0\cap f^{-1}(J_1),\quad J_{11}=J_1\cap f^{-1}(J_1).
+\]
+These are all nonempty disjoint compact sets. Continuing produces $J_{10100110\ldots}$ for every word $10100110\ldots\in\{0,1\}^{\mathbb N}$. Each such set is a component, so $J$ has uncountably many components. One can similarly prove the same for $K$.
+\end{proof}
 % BLOG-CONTENT-END
 \end{document}

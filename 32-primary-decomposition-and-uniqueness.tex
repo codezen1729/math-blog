@@ -6,6 +6,21 @@
 \section*{Primary Decomposition and Uniqueness}
 % BLOG-CONTENT-BEGIN
 \subsection{Primary decomposition}
+\setcounter{definition}{8}\begin{definition}
+An ideal $\qq<A$ is \emph{primary} if
+\[
+xy\in\qq\ \Longleftrightarrow\ x\in\qq\text{ or }y\in\qq\text{ or }x,y\in\rad(\qq).
+\]
+Equivalently, every zero-divisor in $A/\qq$ is nilpotent. If $\rad(\qq)=\pp$, then $\qq$ is \emph{$\pp$-primary}.
+% Author check: the displayed equivalence is not silently replaced by the usual primary-ideal implication.
+\end{definition}
+\begin{claim}
+$\rad(\qq)$ is the smallest prime ideal containing $\qq$.
+\end{claim}
+\begin{proof}
+% Source page 6
+If $xy\in\rad(\qq)$, then $x^ny^n\in\qq$ for $n>0$. Hence $x^n\in\qq$, $y^n\in\qq$, or $x^n,y^n\in\rad(\qq)$; thus $x$ or $y$ belongs to $\rad(\qq)$.
+\end{proof}
 \setcounter{example}{6}\begin{example}
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item In $A=\Z$, $(0)$ and $(p^n)$ are primary ideals.
@@ -13,6 +28,11 @@
 \setcounter{enumi}{2}\item If $\rad(\aa)$ is maximal, then $\aa$ is primary. In particular, $\mm^n$ is $\mm$-primary. Here $A/\aa$ has only one prime ideal: $\rad(\aa)=\mm$ implies that $A/\aa\setminus\mm$ consists of units.
 \end{enumerate}
 \end{example}
+\begin{remark}
+In $\Z$, unique factorization gives $n=p_1^{a_1}\cdots p_n^{a_n}$, where $n\in\Z$ and the $p_i$ are primes. Equivalently,
+\[(n)=\prod_{i=1}^n(p_i)^{a_i}=\bigcap_{i=1}^n(p_i)^{a_i}.\]
+An appropriate generalization of this phenomenon to arbitrary rings requires replacing powers of primes by primary ideals. For certain rings, every ideal has an ``almost'' unique primary decomposition, $\aa=\bigcap_{i=1}^n\qq_i$, where $\qq_i$ is $\pp_i$-primary.
+\end{remark}
 % Source page 7
 \setcounter{definition}{9}\begin{definition}
 For an ideal $\aa<A$, an expression
@@ -22,6 +42,17 @@ is a \emph{primary decomposition} of $\aa$. The set $\{\pp_i\}_{i=1}^n$ is the s
 \begin{remark}
 If $\qq_j\supseteq\bigcap_{k=1}^{\ell}\qq_{i_k}$, then $\qq_j$ is redundant in (*). Henceforth we assume our primary decomposition is \emph{irredundant}, or minimal.
 \end{remark}
+\setcounter{theorem}{8}\begin{lemma}
+If the $\qq_i$ are $\pp$-primary, then so is $\bigcap_i\qq_i$.
+\end{lemma}
+\begin{proof}
+We have $\rad(\qq)=\rad(\bigcap_i\qq_i)=\bigcap_i\rad(\qq_i)$.
+% Source page 8
+If $xy\in\qq$ and $y\notin\qq$, then there exists $i$ with $xy\in\qq_i$ and $y\notin\qq_i$, so $x\in\pp$.
+% Author check: finiteness of the intersection is implicit in the surrounding decomposition.
+\end{proof}
+\paragraph{Consequence.}
+If $\aa=\bigcap_{i=1}^n\qq_i$ is a primary decomposition, we can assume that the primes $\pp_i$ for which $\qq_i$ is $\pp_i$-primary are all distinct.
 \setcounter{theorem}{9}\begin{lemma}
 Let $\qq$ be $\pp$-primary and $x\in A$.
 \begin{enumerate}[label=(\roman*)]
@@ -55,7 +86,34 @@ Let $S$ be a multiplicatively closed subset of $A$ and $\qq$ a $\pp$-primary ide
 \setcounter{enumi}{1}\item If $S\cap\pp=\varnothing$, then $S^{-1}\pp$-primary ideals of $S^{-1}A$ correspond to $\pp$-primary ideals of $A$.
 \end{enumerate}
 \end{lemma}
+\begin{proof}
+(i) If $s\in S\cap\pp$, then $s^n\in S\cap\qq$ for some $n>0$, so $S^{-1}\qq$ contains a unit.
+
+(ii) If $\qq$ is $\pp$-primary, then $S^{-1}\qq$ is $S^{-1}\pp$-primary:
+\[
+\frac xs\frac yt\in S^{-1}\qq\ \Longrightarrow\ xy\in\qq
+\ \Longrightarrow\ x\in\qq\text{ or }y^n\in\qq
+\ \Longrightarrow\ \frac xs\in S^{-1}\qq\text{ or }\left(\frac yt\right)^n\in S^{-1}\qq.
+\]
+Also, $\rad(S^{-1}\qq)=S^{-1}\rad(\qq)=S^{-1}\pp$. Similarly, one can show that if $S^{-1}\qq$ is $S^{-1}\pp$-primary, then $\qq$ is $\pp$-primary.
+% Author check: the final sentence has not been restricted to contracted ideals.
+\end{proof}
 % Source page 11
+\subsection{Isolated and embedded primes}
+\paragraph{Second uniqueness theorem.}
+Let $\Sigma$ be a set of prime ideals associated to $\aa$. Say $\Sigma$ is \emph{isolated} if $\pp'\subseteq\pp\in\Sigma\Rightarrow\pp'\in\Sigma$. Set
+\[S=A\setminus\bigcup_{\pp\in\Sigma}\pp.\]
+Clearly $S$ is multiplicatively closed. Further, $\pp'\in\Sigma\Rightarrow\pp'\cap S=\varnothing$, while $\pp'\notin\Sigma\Rightarrow\pp'\nsubseteq\bigcup_{\pp\in\Sigma}\pp$ by prime avoidance, since $\pp'\nsubseteq\pp$ for every $\pp\in\Sigma$. Thus $\pp'\cap S\ne\varnothing$.
+
+Let $\{\pp_i\}_{i=1}^n$ be the primes associated to $\aa$, and let $\{\pp_{i_1},\ldots,\pp_{i_k}\}$ be its minimal elements under inclusion. Then $\Sigma:=\{\pp_{i_j}\}_{j=1}^k$ is isolated. Hence
+\[
+(S^{-1}\aa)^c
+=\bigcap_{i=1}^n(S^{-1}\qq_i)^c
+=\bigcap_{j=1}^k(S^{-1}\qq_{i_j})^c
+=\bigcap_{j=1}^k\qq_{i_j}.
+\]
+% Source page 12
+Therefore $\bigcap_{j=1}^k\qq_{i_j}$ is determined only by $\aa$. The primes minimal among $\{\pp_i\}_{i=1}^n$ are called \emph{isolated primes}; the rest are \emph{embedded primes}.
 \begin{remark}
 One can generalize this to modules and prove analogous results. Briefly, for an $A$-module $M$, set
 \[

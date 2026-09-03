@@ -1,4 +1,8 @@
 {
   "hopf_fibration.png": "figures/k-theory/hopf-fibration.webp",
-  "universal_line_bundle.jpg": "figures/k-theory/universal-line-bundle.webp"
+  "universal_line_bundle.jpg": "figures/k-theory/universal-line-bundle.webp",
+  "figures/hopf_fibration.png": "figures/k-theory/hopf-fibration.webp",
+  "figures/k-theory/hopf_fibration.png": "figures/k-theory/hopf-fibration.webp",
+  "figures/universal_line_bundle.jpg": "figures/k-theory/universal-line-bundle.webp",
+  "figures/k-theory/universal_line_bundle.jpg": "figures/k-theory/universal-line-bundle.webp"
 }

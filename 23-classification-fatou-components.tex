@@ -4,10 +4,105 @@
 \begin{document}
 \section*{Classification of Non-Wandering Fatou Components}
 % BLOG-CONTENT-BEGIN
+
+    
+        Let $f$ be a rational map on the Riemann Sphere $\hat{\mathbb{C}}$ such that $deg(f) \geq 2$. In this series we shall explore three classical surgeries in complex dynamics. The first one leads up to the classification of the connected components of the Fatou set of $f$. The second one establishes the fact that the multiplier map on the hyperbolic components of a Multibrot set is a conformal isomorphism; this in its essence describes the topological shape of such sets modulo the hyperbolicity conjecture. The last one leads to the proof of the finiteness of the modular group associated to connected, forward invariant components of the Julia set of $f$.
+
+\chapter{Introduction}
+    
+        
+        Our story begins with two very basic questions - How to study the deformation of a Riemann surface with tools like holomorphic maps at our disposal? What are the consequences of such a study? We shall linger more on the first question, with consequences appearing as instances of the proposed means of study. Let's begin by introducing the objects in the question (historically).
+
+        In the early $20$th century Henri Poincaré and Paul Koebe proved the uniformization theorem. It essentially characterizes Riemann surfaces by the quotients of three model surfaces, they are - the unit disk, the complex plane, and the Riemann sphere. More precisely, it says the following:-
+        
+      
+        \subsection*{Theorem — Uniformization Theorem, $1907$} Let $S$ be a Riemann surface, then $S$ is conformally isomorphic to a quotient of the form $\hat{S}/\Gamma$, where $\hat{S}$ is necessarily conformally isomorphic to either the unit disk $\mathbb{D}$, the complex plane $\mathbb{C}$, or the Riemann sphere $\hat{\mathbb{C}}$, where $\Gamma \cong \pi_1(S)$ is a group of conformal automorphisms of $S$ which acts freely and properly discontinuously on the universal cover $\hat{S}$.
+        
+        
+        Later in that era a French mathematician named Paul Montel proved theorems about the normality of a given family of holomorphic functions between hyperbolic surfaces. This fell in the hands of two French mathematicians - Pierre Fatou and Gaston Julia who saw that normality of the family of forward iterates of self maps $f$, namely the family $\{f^{\circ n}\}_n$, was the right tool to study stability and chaos of the deformation of the domain of $f$ (aka dynamics of $f$). Montel's Theorem along with the Uniformization Theorem reduced the number of Riemann surfaces to consider in the study of deformation: upto equivalence, they are - the Riemann sphere, the complex plane, the punctured plane, the torus, and the rest we shall refer to as hyperbolic surfaces. The dynamics on the hyperbolic surfaces have been completely classified, and handling the torus is elementary. This leaves us with only three surfaces to consider, of them, polynomial dynamics on the complex plane and the dynamics of holomorphic self maps on the Riemann sphere (i.e. rational maps) have historically seen a lot of interesting progress. Hence, we shall focus on these two\footnote{ Handling functions that have essential singularity at $\infty$ on the complex plane or the punctured plane is extremely difficult.}.     
+
+        If we consider the case of rational maps $f: \hat{\mathbb{C}} \rightarrow \hat{\mathbb{C}}$ with deg$(f) \geq 2$; we can prove that the set $J(f)$ (on which the family $\{f^{\circ n}\}_n$ is not locally normal) is a non-empty, nowhere dense, totally invariant, self-similar, perfect subset of $\hat{\mathbb{C}}$. Therefore, $J(f)$ breaks the set $F(f)$ (on which the family of forward iterates of $f$ is locally normal) into connected components, called the Fatou components, where each component shall turn out to be a hyperbolic surface in its own right. The sets $F(f)$ and $J(f)$ are called the Fatou set and the Julia set of $f$ (respectively). Understanding the dynamics of $f$ shall amount to understanding the Fatou set and the Julia set.
+
+
+        \begin{figure}[!htb]
+            \minipage{0.32\textwidth}
+                \includegraphics[width=\linewidth]{J1.png}
+                
+            \endminipage
+            \minipage{0.32\textwidth}
+                \includegraphics[width=\linewidth]{J2.png}
+                
+            \endminipage
+            \minipage{0.32\textwidth}%
+                \includegraphics[width=\linewidth]{J3.png}
+                
+            \endminipage
+        \caption{Julia sets of polynomials of the form $z^2 + c$ for three particular values of $c$.}
+        \end{figure}
+
+
+        Below, we shall review the background from complex dynamics with which one will be able to deduce that the Fatou components whose orbits eventually recur can be completely classified (up to conformal equivalence) using the classification theorem of self maps on hyperbolic surfaces. The arguments that go in proving the aforementioned classification theorem cannot capture any information about the Fatou components that keep wandering across the Riemann sphere (if any). This, in spirit, sums up the work of Fatou and Julia.  
+
+        Their work though helped understand the stability of the dynamics of rational maps to a large extent still left a lot of open problems unattended for decades due to lack of proper tools. One of them being the following:- 
+    
+        \subsection*{Conjecture — No Wandering Domain} The orbits of all Fatou components of rational maps of degree atleast $2$ are eventually periodic.
+
+
+        Parallelly, beginning with the work of Herbert Gr\"otzsch, and later contributions from mathematicians like Lars Ahlfors, Oswald Teichm\"uller, Albert Pfluger, and Charles B. Morrey; the right means to loosen the notion of conformality was formulated. Not only that, a general theory around such a notion was also laid out with deep connections to the function theory of Riemann surfaces. At that stage complex dynamics needed just that!  
+
+        Monumental to any theory is the robustness of its classification theorems. In the case of dynamics, to be able to classify, one must first be able to compare or alter the dynamics of $f$ to grasp the parameters that control such things. One cannot alter the dynamics of $f$ within setup of conformality because of it's innate rigidity. Therefore, generalizing holomorphic maps was a natural next step (in retrospect). But historically speaking, the loosened notion of conformality (i.e. quasiconformality) entered complex dynamics quite abruptly. 
+
+        Quasiconformal maps (abbreviated as QC-maps) are conformal (i.e angle preserving) up to a bounded error. Hence, QC-maps are much more flexible than holomorphic maps for they don't have to obey the Identity Theorem. In the $1950$s Ahlfors and Bers proved the celebrated Measurable Riemann Mapping Theorem which is essentially the Riemann Mapping Theorem for QC-maps. This theorem yields a way to associate a QC-map to a given holomorphic map. Following such a ductile association one performs a series of alterations in both the domain of the function and the function itself via a mechanism spelled out explicitly by the Surgery Principles. And finally, the crucial step in all such modes of operations is to land back in the category of holomorphic maps, which is done via Weyl's Lemma. All the aforementioned theoretical means to alter the dynamics of $f$ will be developed in \href{https://codezen1729.github.io/math-blog/\#/post/surgical-tools}{Scalpel, Forceps, and other Surgical Tools}.
+
+        \href{https://codezen1729.github.io/math-blog/\#/post/first-surgery}{Sullivan's No Wandering Theorem} illustrates the first occurrence of a surgical procedure in complex dynamics. An American mathematician by the name Dennis Sullivan\footnote{He was awarded the Abel Prize for his groundbreaking contributions to topology in its broadest sense, and in particular its algebraic, geometric and dynamical aspects.}, inspired by Poincar\'e's perturbations of Fuchsian groups into quasi-Fuchsian groups, deployed the theory of QC-maps and resolved the No Wandering Domain conjecture entirely\footnote{With this, complex dynamics was reborn and the foundations for what is now known as Quasiconformal Surgery was laid out.}. Sullivan's technique is referred to as soft surgery. The two surgeries that follow Sullivan's are theoretically different from his original technique. In the little literature that there is about them\footnote{There is rich literature spanning both dynamics and quasiconformal maps independently; but instances of their interplay have only been of anecdotal interest in them, and a complete and comprehensive treatment of the interplay were only found in original papers.}, they are broadly referred to as cut and paste surgery. These two surgery techniques alter the dynamics of $f$ in fundamentally different ways. Cut and Paste Surgery alters the parameters of the dynamics of $f$, like - multipliers, number of periodic cycles, rotation numbers, and so on, by gluing together several maps with prescribed parameters after cutting off certain sets from their domains. Whereas, Soft Surgery merely alters the domain via a quasiconformal change of coordinates, and as we shall see in the \href{https://codezen1729.github.io/math-blog/\#/post/surgical-tools}{discussion of quasiconformal maps}, the definition of a quasiconformal map is formulated in such a way that the flexibility in its conformality is intertwined with the flexibility in changing the dynamical quantifiers. Hence, a mere change of coordinates can also alter the dynamics of $f$. 
+
+        This brings us to the raison d’\^etre of this series. Our goal is to present such techniques in dynamics. The theory of distributions, quasiconformal maps, Riemann surfaces, and holomorphic dynamics, though are foundational for such techniques, and that these techniques in itself can't be formulated into a theory; we shall expose the nuances of these techniques which shall then be shown to have the potential of being the future of dynamics. 
+
+        \href{https://codezen1729.github.io/math-blog/\#/post/second-surgery}{The Multiplier Map} aims to prove the following theorem:-
+        \subsection*{Theorem — Multiplier Map} Let $\Lambda : \Omega \rightarrow \mathbb{D}$ be the multiplier map, where $\Omega$ is a hyperbolic component of period $p$ of the Mandlebrot set. Then $\Lambda$ is a conformal isomorphism.
+        
+        
+        The objects in the theorem will be introduced below. What the theorem roughly says is that certain components of the Mandlebrot set look like bulbs. If one has the following conjecture:-
+        \subsection*{Conjecture — Hyperbolicity} The interior of the Mandlebrot set is the union of its hyperbolic components.
+        
+        
+        One can make conclusive statements about the topological shape of the Mandlebrot set, and as shall be shown, also its higher dimensional analogues - the Multibrot sets.
+
+
+        \begin{figure}[htp]
+            \centering
+            \includegraphics[width=9cm]{M.png}
+            \caption{Mandlebrot set with hyperbolic components shown as blue bulbs spread across the cardoid.}
+        \end{figure}
+
+
+        \begin{figure}[!htb]
+            \minipage{0.32\textwidth}
+                \includegraphics[width=\linewidth]{M1.jpg}
+                
+            \endminipage
+            \minipage{0.32\textwidth}
+                \includegraphics[width=\linewidth]{M2.jpg}
+                
+            \endminipage
+            \minipage{0.32\textwidth}%
+                \includegraphics[width=\linewidth]{M3.jpg}
+                
+            \endminipage
+        \caption{Multibrot set for three particular choices of dimension. Surprisingly these images tend to a clean circle as the dimension goes off to $\infty$.}
+        \end{figure}
+
+
+        The final post, \href{https://codezen1729.github.io/math-blog/\#/post/third-surgery}{Third Surgery}, discusses the last surgery on our list. There we shall introduce a new object, a group, Mod$(K, f)$, where $K$ is a connected, forward invariant component of $J(f)$. This group in some sense is the group of all quasiconformal homeomorphisms associated to $f$ that commute with $f$ under composition on $K$. Let Aut$(f)$ denote the group of M\"obius transformations that commute with $f$ on $\hat{\mathbb{C}}$. We shall alter the dynamics of $f$ and obtain a new map $g$ (yet again!) to represent the group Mod$(K, f)$ as Aut$(g)$, thereby realizing our objects of interest as subgroups of $PSL_2(\mathbb{C})$. These subgroups also naturally turn out to be finite. Such realizations shall shed light on the periodic components of the Julia set $J(f)$. 
+
+        These three examples, in the absence of a general coherent theory, hammer home the point that Quasiconformal Surgery is still in its infancy. This series deals only with dynamics of very rigid surfaces via maps that are highly regular. Interested readers are invited to pursue this subject in a much more general setting (\cite{katok1997introduction}, \cite{einsiedler2013ergodic}, and \cite{przytycki2010conformal}).
+
+% RESTORED-INTRO-END
+
 \chapter{Preliminaries}
     
         
-        This chapter will present an overview of background material in complex dynamics that shall be of importance to us later. The content here has found excellent footings in \cite{milnor2011dynamics}, \cite{mcmullen2016complex}, and \cite{carleson2013complex}. Throughout this chapter, $f: S \rightarrow S$ is a holomorphic function and $S$ a Riemann surface (unless otherwise stated).
+        Let us begin with the complex-dynamical background for classifying Fatou components. There are detailed treatments in \cite{milnor2011dynamics}, \cite{mcmullen2016complex}, and \cite{carleson2013complex}. Throughout, $f: S \rightarrow S$ is a holomorphic function and $S$ a Riemann surface (unless otherwise stated).
 
         By a Riemann surface $S$, we mean a connected complex analytic manifold of complex dimension $1$. In particular, S is a topological manifold of dimension 2 with the transition maps being holomorphic (after appropriately identifying domains in $\mathbb{R}^2$ with domains in $\mathbb{C}$). A function $f: S \rightarrow S'$ between Riemann surfaces $S$ and $S'$ is said to be holomorphic if it is so with respect to the local coordinate maps. If $S = S'$ we shall call $f$ a self map. These self maps induce the concept of change via iteration. For instance, the map $(z \rightarrow z^2) : (1 - \frac{1}{n})\mathbb{D} \rightarrow (1 - \frac{1}{n})\mathbb{D}$ (upon iteration) eventually gobbles up the entire disk of radius $1 - \frac{1}{n}$, whereas the map $(z \rightarrow z^2) : \mathbb{D} \rightarrow \mathbb{D}$ keeps the unit disk as it is. These examples illustrate drastically different dynamics on two Riemann surfaces by the same map, despite one being $\frac{1}{n}$-close to the other for arbitrarily large $n$. 
 
@@ -94,7 +189,7 @@
         
         
         
-        Post Pick's Theorem the reason hyperbolic spaces are relevant to dynamics become evident\footnote{One stunning aspect of complex dynamics is how one classification theorem can be "aged" so to speak, and be exploited to yield others. A showing example would be the Uniformization Theorem (which classifies simply-connected Riemann surfaces), can be aged to prove Pick's Theorem (which classifies the nature of distances of holomorphic maps between hyperbolic surfaces). If one ages this further one can classify dynamics on hyperbolic surfaces. And later in the chapter we shall see how this can be used to classify periodic Fatou components.}. Let us embark on that journey but also parallelly get some mathematical understanding of the words - order, chaos, and dynamics.
+        Post Pick's Theorem the reason hyperbolic spaces are relevant to dynamics become evident\footnote{One stunning aspect of complex dynamics is how one classification theorem can be "aged" so to speak, and be exploited to yield others. A showing example would be the Uniformization Theorem (which classifies simply-connected Riemann surfaces), can be aged to prove Pick's Theorem (which classifies the nature of distances of holomorphic maps between hyperbolic surfaces). If one ages this further one can classify dynamics on hyperbolic surfaces. We shall see how this can be used to classify periodic Fatou components.}. Let us embark on that journey but also parallelly get some mathematical understanding of the words - order, chaos, and dynamics.
 
         In this subject one is interested in studying how iterates of a self map $f$ deform the surface $S$. This amounts to studying the orbits of individual points under $f$, that is, the sequence - $\{f^{\circ n}(z)\}_n$, for a given $z \in S$. For instance, consider the map $(z \rightarrow z^n): \mathbb{C} \rightarrow \mathbb{C}$, it is visually clear that on the set of points with norm either $(< 1)$ or $(> 1)$, the iterates of the map behave in a stable and predictable manner. Indeed, if one embeds $\mathbb{C} \hookrightarrow \hat{\mathbb{C}}$, then it can easily be seen that the points $0$ and $\infty$ uniformly attract the points in the set mentioned above. But the points on the unit circle with irrational arguments are spun across in an erratic manner. Therefore, to capture both the following should be expected:-
         

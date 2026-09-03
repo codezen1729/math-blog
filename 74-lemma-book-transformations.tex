@@ -3,7 +3,7 @@
 \input{styles/notes-preamble.tex}
 \graphicspath{{figures/lemma-book/}}
 \begin{document}
-\section*{Rotation in Geometry}
+\section*{Transformations: Rotating, Reflecting, and Cutting Figures}
 % BLOG-CONTENT-BEGIN
 \subsection{Transformations}
 \setcounter{theorem}{91}\begin{lemma}[Transformation techniques]\label{lemma:lb1-94}
@@ -25,7 +25,67 @@ Hence
 \[[\text{hexagon}]=3\left(\frac12\cdot3\cdot4\right)
 +\frac{\sqrt3}{4}(3^2+4^2+5^2),
 \qquad[ABC]=9+\frac{25\sqrt3}{4}.\]
+\paragraph{Transformation II: Pompeiu's theorem.}
+Given a point $P$ inside $\triangle ABC$, the lengths $PA,PB,PC$ always form the sides of a triangle.
+Rotate $\triangle ABC$ through $60^\circ$ about $C$ to $A'AC$.
+Then $\triangle PP'C$ is equilateral, so $PP'=PC$.
+Now notice $\triangle APP'$: its sides are $PA,PB,PC$. W$^5$.
+\begin{figure}[H]\centering
+\includegraphics[width=.70\linewidth]{lb1-fig-35.pdf}
+\FigureTag{LB1.35}{fig:lb1-35}
+\end{figure}
+There is another beautiful extension: if $P$ lies along arc $BC$ of the circumcircle of the equilateral triangle $ABC$, then $PA=PB+PC$.
+% Author check: the initial Pompeiu statement omits that ABC is equilateral; the construction and extension use that condition.
+% Source page 56 - right
+\paragraph{Transformation III.}
+Choose one point on each side of a unit square.
+Let the quadrilateral formed by those points have sides $a,b,c,d$.
+Prove that $a+b+c+d\geq2\sqrt2$.
+\begin{figure}[H]\centering
+\includegraphics[width=.42\linewidth]{lb1-fig-36.pdf}
+\FigureTag{LB1.36}{fig:lb1-36}
+\end{figure}
+Use multiple reflections in the sides to obtain a solution.
+The solution I like most is the following.
+The perimeter of $ABCD$ is minimal if it is a closed light path.
+All those light polygons have perimeter $2\sqrt2$: when you join the midpoints of the sides, you get a light polygon with perimeter $2\sqrt2$.
+Therefore $a+b+c+d\geq2\sqrt2$. Q.E.D.!
+% Author check: the minimization/light-path assertion is stated without an additional justification in the source.
+\paragraph{Transformation IV.}
+Let us solve the Cut and Paste IMO problem using inversion.
+\begin{figure}[H]\centering
+\includegraphics[width=.69\linewidth]{lb1-fig-37.pdf}
+\FigureTag{LB1.37}{fig:lb1-37}
+\end{figure}
+Perform inversion of the inside triangle with respect to $I(P,r)$.
+The angle condition on $P$ implies $\alpha+\theta=\beta+\gamma$, so $\triangle A'B'C'$ is isosceles.
+Thus $A'B'=A'C'$.
+Using the distance relation,
+\[\frac{AB\cdot r^2}{PA\cdot PB}=\frac{AC\cdot r^2}{PC\cdot PA}
+\quad\Longrightarrow\quad\frac{AB}{BP}=\frac{AC}{PC}.\]
+W$^5$. Q.E.D.
 
+% Source page 57 - left
 
+Recall the application of Lemma~\href{https://codezen1729.github.io/math-blog/\#/post/lemma-book-isogonal-conjugates-pole-polar?ref=tex-099e9b09289bfb83}{98} and the cut-and-paste solution.
+That was my hundredth lemma; here is an application to complete the formality!
+\paragraph{Tournament of Towns (2002).}
+In triangle $ABC$, a point $P$ satisfies $\angle ABP=\angle ACP$ and $\angle PBC=\angle PAC$.
+Prove using pure geometry that $P$ is the orthocentre.
+\begin{figure}[H]\centering
+\includegraphics[width=.65\linewidth]{lb2-fig-12.pdf}
+\FigureTag{LB2.12}{fig:lb2-12}
+\end{figure}
+This is obvious using trigonometric Ceva, but they expect a purely geometric solution. Give me those scissors!
+% Source page 13 - right
+\begin{figure}[H]\centering
+\includegraphics[width=.92\linewidth]{lb2-fig-13.pdf}
+\FigureTag{LB2.13}{fig:lb2-13}
+\end{figure}
+I hope the figure is not looking like Greek and Latin to you! Anybody got some glue? Let us repaste it.
+The rearranged pieces give $\angle PAB=\angle PCB=z$, and then
+$2(x+y+z)=180^\circ$.
+Thus $x+y+z=90^\circ$, so $P$ is the orthocentre of $ABC$.
+This was my hundredth lemma with an application. What was yours?
 % BLOG-CONTENT-END
 \end{document}
