@@ -1,0 +1,143 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\input{styles/three-notes-preamble.tex}
+\graphicspath{{figures/mcmullens-surgery/}}
+\begin{document}
+\section*{McMullen's Surgery}
+% BLOG-CONTENT-BEGIN
+\section{Ideal boundaries and induced maps}
+
+In order to surgically glue different dynamical systems, one ends up
+having to rely on good boundary-extension theorems, or on decent enough
+straightening theorems.
+
+\subsection{Ideal boundaries}
+
+Consider a Riemann map $R_U\colon\mathbb D\to U$. How do you get to
+$\overline{\mathbb D}$?
+
+\paragraph{Prime ends.}
+Consider $\langle N_j\rangle_j$, with $N_1\supset N_2\supset\cdots$;
+roughly, $\bigcap_i\overline{N_i}\subset\partial U$.
+
+\paragraph{Carath\'eodory.}
+The map $R_U\colon\mathbb D\to U$ gives a homeomorphism
+$\widehat R_U\colon\widehat{\mathbb D}\to\widehat U$ of the
+Carath\'eodory compactifications, where
+$\widehat{\mathbb D}\cong\overline{\mathbb D}$ and
+$\widehat U=U\cup\mathcal I(U)$.
+
+We have $\mathcal I(U)\cong S^1$, so ideal boundaries are $1$-manifolds.
+The restriction $\widehat R|_{S^1}\colon S^1\to\mathcal I(U)$ gives
+impressions on $\partial U$. If $\partial U$ is locally connected,
+then $\widehat R|_{S^1}\colon S^1\to\partial U$: the impressions turn
+out to be points. If $U$ is a Jordan domain, this restriction is a
+homeomorphism $S^1\cong\partial U$. Situations like the following
+violate injectivity.
+
+\begin{figure}[H]\centering
+\includegraphics[width=11.5cm]{ms-fig-02.pdf}
+\FigureTag{MS2}{fig:ms-02}
+\end{figure}
+
+More generally, take $C\subseteq J(f)$ with $f(C)\subseteq C$, and
+consider $f\colon\widehat{\mathbb C}\setminus f^{-1}(C)
+\to\widehat{\mathbb C}\setminus C$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=12cm]{ms-fig-04.pdf}
+\FigureTag{MS4}{fig:ms-04}
+\end{figure}
+
+Here
+\[
+ \mathcal I(C):=\bigcup_{\substack{V\subseteq\widehat{\mathbb C}\setminus C\\
+                         V\text{ a component}}}\mathcal I(V).
+\]
+
+\subsection{Regularity of the map}
+
+We loosen the regularity of $f$ for convenience. Sullivan's
+straightening theorem says that $f$ is quasirational if and only if
+$\langle f^{\circ n}\rangle_n$ is uniformly $K$-quasiregular. Here
+quasirational means $f\equiv\varphi\circ R\circ\varphi^{-1}$, with
+$R$ rational.
+
+\section{McMullen's gluing lemma}
+
+\paragraph{Hypotheses.}
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item $\mathcal I(U)$ is either a fixed component of $\mathcal I(C)$,
+or strictly preperiodic, with $f^{\circ n}(V)\cap U=\varnothing$.
+\setcounter{enumi}{1}\item There are quasiconformal maps $\phi_{U,V}\colon U,V\to\mathbb D$
+such that $B$ and $f$ are compatible in the following diagram.
+\end{enumerate}
+
+\begin{figure}[H]\centering
+\includegraphics[width=7cm]{ms-fig-06.pdf}
+\FigureTag{MS6}{fig:ms-06}
+\end{figure}
+
+\begin{claim}
+The map
+\[
+ g(z):=\begin{cases}
+ f(z),&z\notin U,\\
+ \phi_V^{-1}\circ B\circ\phi_U(z),&z\in U
+ \end{cases}
+\]
+is quasirational.
+\end{claim}
+
+The same story holds when $\mathcal I(U)$ is periodic.
+
+\begin{figure}[H]\centering
+\includegraphics[width=11.5cm]{ms-fig-14.pdf}
+\FigureTag{MS14}{fig:ms-14}
+\end{figure}
+
+\section{Rigid models}
+
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item Elliptic: $z\mapsto e^{2\pi i\theta}z$, where
+$\theta\in\mathbb R\setminus\mathbb Q$.
+\setcounter{enumi}{1}\item Hyperbolic: $z\mapsto z^d$, where $d>1$.
+\setcounter{enumi}{2}\item Parabolic: $z\mapsto\dfrac{z^d+a}{1+az^d}$, where
+$a=\dfrac{d-1}{d+1}$.
+\end{enumerate}
+
+\paragraph{Goal.}
+Simplify rational maps by gluing these rigid models along $\mathcal I(C)$
+for $C\subseteq J(R)$.
+
+\section{Application of McMullen's surgery}
+
+\setcounter{theorem}{1}\begin{theorem}\label{thm:application}
+Let $C\subseteq J(f)$ be a forward-invariant, closed component.
+Then $f|_C\sim g|_{J(g)}$, where $g$ is built out of rigid models.
+\end{theorem}
+
+\subsection{Dynamics on the ideal boundary}
+
+Only finitely many components $V_1,\ldots,V_k$ of
+$\widehat{\mathbb C}\setminus C$ intersect $f^{-1}(C)$ or contain
+a critical point. Denote this collection by $\mathcal V$.
+
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item If $U\notin\mathcal V$ is a component of
+$\widehat{\mathbb C}\setminus C$, then
+$f|_U\colon U\to f(U)$ is a covering. Since $U$ is a disc,
+$\deg(f)=1$. Thus $\deg(f)>1$ on only finitely many components of
+$\widehat{\mathbb C}\setminus C$.
+
+\end{enumerate}
+
+\subsection{Periodic components and the surgery}
+
+\setcounter{theorem}{2}\begin{lemma}\label{lem:periodic-compatibility}
+On periodic components of $\mathcal I(C)$, the first return map is
+compatible with one of the rigid models.
+\end{lemma}
+% BLOG-CONTENT-END
+\end{document}

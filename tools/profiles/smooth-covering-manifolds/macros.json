@@ -1,0 +1,10 @@
+{
+  "\\C": "\\mathbb C",
+  "\\D": "\\mathbb D",
+  "\\M": "\\mathcal M",
+  "\\Chat": "\\widehat{\\mathbb C}",
+  "\\Crit": "\\operatorname{Crit}",
+  "\\Int": "\\operatorname{Int}",
+  "\\Ext": "\\operatorname{Ext}",
+  "\\id": "\\operatorname{id}"
+}

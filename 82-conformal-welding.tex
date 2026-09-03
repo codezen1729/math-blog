@@ -1,0 +1,38 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\input{styles/three-notes-preamble.tex}
+\graphicspath{{figures/quadratic-family/}}
+\begin{document}
+\section*{Conformal Welding}
+% BLOG-CONTENT-BEGIN
+We have a quasisymmetric map $\psi\colon S^1\to S^1$. Extend it to a quasiconformal map $\widehat\psi\colon\overline\D\to\overline\D$. Set
+\[
+\mu:=\begin{cases}
+(\widehat\psi^{-1})^*\mu_0,&\text{on }\D,\\
+\mu_0,&\text{on }\Chat\setminus\overline\D.
+\end{cases}
+\]
+Let $\phi$ be an integrating map for $\mu$. Then
+\[
+\begin{aligned}
+(\phi\circ\widehat\psi)^*\mu_0
+ &=\widehat\psi^*(\phi^*(\mu_0))=\mu_0
+ &&\text{on }\D,\\
+\phi^*(\mu_0)&=\mu_0
+ &&\text{on }\Chat\setminus\overline\D.
+\end{aligned}
+\]
+Consequently, the maps
+\[
+\begin{aligned}
+\phi\circ\widehat\psi&\colon(\D,\mu_0)\longrightarrow(\phi(\D),\mu_0),\\
+\phi&\colon(\Chat\setminus\overline\D,\mu_0)
+ \longrightarrow(\phi(\Chat\setminus\overline\D),\mu_0)
+\end{aligned}
+\]
+are conformal. The curve $\gamma=\phi(S^1)$ is a quasicircle. 
+
+The map $\psi$ is called a \emph{conformal welding} of $\gamma$.
+% BLOG-CONTENT-END
+\end{document}

@@ -162,6 +162,15 @@
     "file": "61-orientation-and-covering-maps.tex"
   },
   {
+    "slug": "smooth-covering-manifolds",
+    "title": "Smooth Covering Manifolds",
+    "collection": "smooth-covering-manifolds",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "6f557b5e233b05df34a62cd63f0c17bb12c7bf5d8c28592710ead6bab1312494",
+    "file": "83-smooth-covering-manifolds.tex"
+  },
+  {
     "slug": "flat-structures-and-teichmuller-curves",
     "title": "Flat Structures and Teichmüller Curves",
     "collection": "miscellaneous",
@@ -351,6 +360,15 @@
     "file": "43-critical-points-and-julia-set-connectivity.tex"
   },
   {
+    "slug": "the-quadratic-family",
+    "title": "The Quadratic Family",
+    "collection": "quadratic-family",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "7b008b2a3af172069987d5541b12b764a979b9a8bd543d7c46575b56f71bc837",
+    "file": "81-the-quadratic-family.tex"
+  },
+  {
     "slug": "prime-ends-and-landing-of-external-rays",
     "title": "Prime Ends and Landing of External Rays",
     "collection": "complex-dynamics-notes",
@@ -394,6 +412,15 @@
     "phaseLabel": "Complex Dynamics",
     "initialSha256": "34da6c0d0160d19f3fa071d7f0420376fa5c159549f381d2abf2f38547afc092",
     "file": "48-boundary-behaviour-of-quasiconformal-maps.tex"
+  },
+  {
+    "slug": "conformal-welding",
+    "title": "Conformal Welding",
+    "collection": "quadratic-family",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "e93e8a7c99c136f1ee3ef692003e2abcf78c38687ce0245a52742889dc896376",
+    "file": "82-conformal-welding.tex"
   },
   {
     "slug": "shishikuras-surgery-principles",
@@ -448,6 +475,15 @@
     "phaseLabel": "Complex Dynamics",
     "initialSha256": "20d113c86c29114a481c957cb8111a89cf6dc1cf5aabdbf5b1fbdb118cf232d8",
     "file": "27-third-surgery.tex"
+  },
+  {
+    "slug": "mcmullens-surgery",
+    "title": "McMullen’s Surgery",
+    "collection": "mcmullens-surgery",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "208afa9f735855109a140f924b7d9e769aa59125808c13d08171c8ce1702408e",
+    "file": "80-mcmullens-surgery.tex"
   },
   {
     "slug": "from-complex-dynamics-to-measure-preserving-systems",

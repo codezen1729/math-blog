@@ -1,0 +1,101 @@
+\documentclass[11pt,a4paper]{article}
+\input{styles/blog-preamble.tex}
+\input{styles/notes-preamble.tex}
+\input{styles/three-notes-preamble.tex}
+\graphicspath{{figures/quadratic-family/}}
+\begin{document}
+\section*{The Quadratic Family}
+% BLOG-CONTENT-BEGIN
+\section{Normalization and the Mandelbrot set}
+Starting with $f(z)=az^2+bz+c$, conjugation by a dilation gives
+\[
+\lambda^{-1}f(\lambda z)=z^2+\alpha z+\beta,
+\qquad \lambda=\frac1a.
+\]
+We then conjugate by a translation:
+\[
+\begin{aligned}
+(z-d)\circ(z^2+\alpha z+\beta)\circ(z+d)
+ &=(z+d)^2+\alpha(z+d)+\beta-d
+\end{aligned}
+\]
+Taking $d=-\alpha/2$, the critical point, gives the normal form $z^2+c$, denoted by $P_c$.
+
+\setcounter{definition}{0}\begin{definition}[Mandelbrot set]
+The \emph{Mandelbrot set} is
+\[
+\M:=\{c\in\C\mid (P_c^{\circ n}(0))_{n\ge0}\text{ is bounded}\}.
+\]
+\end{definition}
+
+\subsection{Critical points and connectedness}
+\setcounter{theorem}{0}\begin{theorem}[Connected and Cantor filled Julia sets]\label{thm:critical-connectedness}
+Let $P$ be any polynomial, and let $K_P$ be its filled Julia set. Then:
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item $\Crit(P)\subset K_P$ if and only if $K_P$ is connected.
+\setcounter{enumi}{1}\item If $\Crit(P)\cap K_P=\varnothing$, then $K_P$ is a Cantor set.
+\end{enumerate}
+\end{theorem}
+
+\setcounter{theorem}{1}\begin{corollary}[Connected Julia sets]
+\[
+\M=\{c\mid K(P_c)\text{ is connected}\}
+    =\{c\mid J(P_c)\text{ is connected}\}.
+\]
+\end{corollary}
+
+\subsection{Escape bounds and the real slice}
+\setcounter{theorem}{2}\begin{theorem}[Basic properties of the Mandelbrot set]\label{thm:basic-properties}
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item $\M\subseteq\{c\mid |c|\le2\}$, and $\M$ is closed and simply connected.
+\setcounter{enumi}{1}\item $\M\cap\mathbb R=[-2,1/4]$.
+\setcounter{enumi}{2}\item $|P_c^{\circ n}(0)|\le2$ for all $n\ge1$ if and only if $c\in\M$.
+\end{enumerate}
+\end{theorem}
+
+\Needspace{10\baselineskip}
+\subsection{Attracting cycles and stability}
+\setcounter{theorem}{3}\begin{theorem}[Continuation of attracting cycles]\label{thm:attracting-continuation}
+Let $a\in\Int(\M)$, and suppose $P_a$ has an attracting cycle of length $m$. Let $W$ be the component of $\Int(\M)$ containing $a$. Then, for every $c\in W$, $P_c$ has an attracting cycle $\{z_1(c),\ldots,z_m(c)\}$ of length $m$, and $c\mapsto z_i(c)$ is holomorphic for every $1\le i\le m$.
+\end{theorem}
+
+\begin{proof}
+Consider $P_c^{\circ m}(z)-z$. By the implicit function theorem, we obtain an attracting periodic point of period $m$, say $z_1(c)$, in a small neighbourhood of $a$. The sequence $\{P_c^{\circ jm}(0)\}$ is bounded. Hence all subsequences of this sequence converge to an analytic continuation of $z_1(c)$ over $W$.
+
+The point $z_1(c)$ could be repelling at uncountably many $c$. Then there is a $j$ such that $P_c^{\circ jm}(0)=z_1(c)$ for uncountably many $c$. By the identity theorem, $z_1(c)$ is a polynomial in $c$, and $P_c^{\circ m}(z_1(c))=z_1(c)$ can have only finitely many solutions. Hence $z_1(c)$ is repelling only at countably many points.
+
+Thus $|(P_c^{\circ m})'(z_1(c))|\le1$. By the maximum modulus principle, $z_1(c)$ is an attracting fixed point on all of $W$. The other functions are $\{P_c^{\circ i}(z_1(c))\}_{0\le i<m}$.
+\end{proof}
+
+\setcounter{theorem}{4}\begin{theorem}[Density of the interior]\label{thm:interior-dense}
+$\Int(\M)$ is dense in $\M$.
+\end{theorem}
+\begin{proof}
+Let $U$ be a disk that meets $\partial\M$, with $0\notin U$.
+\begin{figure}[H]
+\centering
+\includegraphics[width=7.5cm,height=4.7cm,keepaspectratio]{qf-fig-01.pdf}
+\FigureTag{QF1}{fig:qf-01}
+\end{figure}
+Suppose $U$ has no $c$ for which $0$ is periodic under $P_c$. Consider a branch of $\sqrt{-c}$ on $U$. Consequently, the family
+\[
+\left\{\frac{P_c^{\circ n}(0)}{\sqrt{-c}}\right\}_n
+\]
+omits $\{0,1,\infty\}$ and is normal in $c$. But $U$ meets $\partial\M$, so for some $c\in U$ the sequence explodes, whereas for some $c$ it remains bounded, violating normality.
+\end{proof}
+
+\setcounter{theorem}{5}\begin{corollary}[$J$-stability]
+\[
+\{c\mid P_c\text{ is }J\text{-stable}\}=\C\setminus\partial\M.
+\]
+\end{corollary}
+\begin{proof}
+By definition, if $c\in\Int(\M)$, the sequence $\{P_c^{\circ n}(0)\}_n$ is bounded and hence forms a normal family, so $c$ is $J$-stable. If $c\in\Ext(\M)$, then $P_c^{\circ n}(0)\to\infty$, again giving normality and $J$-stability. As in the preceding theorem, normality fails exactly on the boundary.
+\end{proof}
+
+\subsection{The principal hyperbolic component}
+\setcounter{theorem}{7}\begin{theorem}[Quasicircle Julia sets]
+If $c$ is in the principal hyperbolic component, then $J(P_c)$ is a quasicircle.
+\end{theorem}
+% BLOG-CONTENT-END
+\end{document}

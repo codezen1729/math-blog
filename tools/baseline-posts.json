@@ -1135,6 +1135,54 @@
   },
   {
     "order": 19,
+    "slug": "smooth-covering-manifolds",
+    "title": "Smooth Covering Manifolds",
+    "dek": "",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "track": "Surfaces and Curves",
+    "kind": "Exposition",
+    "minutes": 6,
+    "wordCount": 1099,
+    "prerequisites": [
+      "orientation-and-covering-maps"
+    ],
+    "background": [],
+    "sourceCollection": "Smooth Covering Manifolds",
+    "sourcePath": "smooth-covering-manifolds/notes/section01.tex",
+    "sourceStart": 1,
+    "sourceEnd": 78,
+    "sourceSegments": [
+      {
+        "source": "smooth-covering-manifolds/notes/section01.tex",
+        "start": 1,
+        "end": 123,
+        "sha256": "1d0cacd7d6ae889952c2b3d75603203432045da34166d60f9ea43e5a77a6c6cd"
+      },
+      {
+        "source": "smooth-covering-manifolds/notes/section02.tex",
+        "start": 1,
+        "end": 78,
+        "sha256": "62d28cbb5065be50d330484b3433fdcd48d180685faaaadd67b227c528cf4dd6"
+      }
+    ],
+    "status": "Published",
+    "html": "<h1 id=\"coverings-and-smooth-structures\">Coverings and smooth structures</h1>\n<h2 id=\"the-lifted-smooth-structure\">The lifted smooth structure</h2>\n<h2 class=\"unnumbered\" id=\"definition-1-smooth-covering\">Definition 1 — Smooth covering</h2>\n<p>A topological covering map <span class=\"math inline\">\\(p:E\\to M\\)</span> is said to be a <em>smooth covering map</em> if, for every <span class=\"math inline\">\\(x\\in M\\)</span>, there is an evenly covered neighbourhood <span class=\"math inline\">\\(U_x\\)</span> of <span class=\"math inline\">\\(x\\)</span> with <span class=\"math display\">\\[p^{-1}(U_x)=\\bigsqcup_{\\alpha\\in I}V_\\alpha,\n \\qquad p|_{V_\\alpha}:V_\\alpha\\longrightarrow U_x\n \\quad\\text{a diffeomorphism for every }\\alpha\\in I.\\]</span></p>\n<h2 class=\"unnumbered\" id=\"proposition-1\">Proposition 1</h2>\n<p>Let <span class=\"math inline\">\\(M\\)</span> be a smooth <span class=\"math inline\">\\(n\\)</span>-manifold, <span class=\"math inline\">\\(E\\)</span> a connected topological space, and <span class=\"math inline\">\\(p:E\\to M\\)</span> a topological covering map. Then <span class=\"math inline\">\\(E\\)</span> admits a unique smooth structure which makes it a smooth <span class=\"math inline\">\\(n\\)</span>-manifold and makes <span class=\"math inline\">\\(p\\)</span> a smooth covering map.</p>\n<p><strong>Hausdorffness.</strong> It is easy to see that <span class=\"math inline\">\\(E\\)</span> is Hausdorff. Let <span class=\"math inline\">\\(e_1,e_2\\in E\\)</span>. If <span class=\"math inline\">\\(p(e_1)\\ne p(e_2)\\)</span>, then the Hausdorff property of <span class=\"math inline\">\\(M\\)</span> separates <span class=\"math inline\">\\(p(e_1)\\)</span> and <span class=\"math inline\">\\(p(e_2)\\)</span> by neighbourhoods which can be pulled back to <span class=\"math inline\">\\(E\\)</span>. If <span class=\"math inline\">\\(p(e_1)=p(e_2)\\)</span>, then the covering-map definition separates <span class=\"math inline\">\\(e_1\\)</span> and <span class=\"math inline\">\\(e_2\\)</span>: let <span class=\"math inline\">\\(\\widetilde p=p(e_1)=p(e_2)\\)</span> and let <span class=\"math inline\">\\(U_{\\widetilde p}\\)</span> be an evenly covered neighbourhood of <span class=\"math inline\">\\(\\widetilde p\\)</span>. Then <span class=\"math inline\">\\(e_1\\)</span> and <span class=\"math inline\">\\(e_2\\)</span> must belong to different slices of <span class=\"math inline\">\\(p^{-1}(U_{\\widetilde p})\\)</span>. Hence <span class=\"math inline\">\\(E\\)</span> is Hausdorff.</p>\n<figure data-latex-placement=\"H\">\n<p><img src=\"figures/smooth-covering-manifolds/sc-fig-01.svg\" loading=\"lazy\" style=\"height:5.2cm\" /> <em>Figure SC1</em></p>\n</figure>\n<h4 id=\"compatible-charts.\">Compatible charts.</h4>\n<p>Now let us dress <span class=\"math inline\">\\(E\\)</span> with a smooth structure. Let <span class=\"math inline\">\\(y\\in E\\)</span>, put <span class=\"math inline\">\\(x=p(y)\\)</span>, and let <span class=\"math inline\">\\(U_x\\)</span> be an evenly covered neighbourhood of <span class=\"math inline\">\\(x\\)</span>. Let <span class=\"math inline\">\\((\\varphi,U&#39;_x)\\)</span> be a chart containing <span class=\"math inline\">\\(x\\)</span>, so <span class=\"math inline\">\\(x\\in U&#39;_x\\)</span>. Shrink <span class=\"math inline\">\\(U_x\\)</span> (or <span class=\"math inline\">\\(U&#39;_x\\)</span>) to <span class=\"math inline\">\\(U_x\\cap U&#39;_x=U\\)</span>. Then <span class=\"math inline\">\\((\\varphi,U)\\)</span> is still a chart, and <span class=\"math inline\">\\(U\\)</span> is still an evenly covered neighbourhood of <span class=\"math inline\">\\(x\\)</span>.</p>\n<p>Write <span class=\"math inline\">\\(p^{-1}(U)=\\bigsqcup_{\\alpha\\in I}V_\\alpha\\)</span>. Say <span class=\"math inline\">\\(y\\in V_\\alpha\\)</span>; then <span class=\"math inline\">\\((V_\\alpha,\\varphi\\circ p|_{V_\\alpha})\\)</span> is a chart for <span class=\"math inline\">\\(E\\)</span>. These charts are compatible. Let <span class=\"math inline\">\\((\\widetilde V,\\widetilde\\varphi)\\)</span> and <span class=\"math inline\">\\((\\widetilde W,\\widetilde\\psi)\\)</span> be two such charts for <span class=\"math inline\">\\(E\\)</span>. The transition map is <span class=\"math display\">\\[\\widetilde\\psi\\circ\\widetilde\\varphi^{-1}:\n \\widetilde\\varphi(\\widetilde V\\cap\\widetilde W)\n \\longrightarrow\\widetilde\\psi(\\widetilde V\\cap\\widetilde W).\\]</span> Here <span class=\"math inline\">\\(\\widetilde\\psi=\\psi\\circ p|_{\\widetilde W}\\)</span> and <span class=\"math inline\">\\(\\widetilde\\varphi=\\varphi\\circ p|_{\\widetilde V}\\)</span>, where <span class=\"math inline\">\\((p(\\widetilde W),\\psi)\\)</span> and <span class=\"math inline\">\\((p(\\widetilde V),\\varphi)\\)</span> are charts of <span class=\"math inline\">\\(M\\)</span>. Consequently, <span class=\"math display\">\\[\\begin{align*}\n \\widetilde\\psi\\circ\\widetilde\\varphi^{-1}\n &amp;=\\left(\\widetilde\\psi|_{\\widetilde V\\cap\\widetilde W}\\right)\n   \\circ\\widetilde\\varphi^{-1}|_{\\widetilde\\varphi(\\widetilde V\\cap\\widetilde W)}\\\\\n &amp;=\\left(\\psi\\circ p|_{\\widetilde V\\cap\\widetilde W}\\right)\n   \\circ\\left(\\varphi\\circ p|_{\\widetilde V}\\right)^{-1}\n   |_{\\widetilde\\varphi(\\widetilde V\\cap\\widetilde W)}\\\\\n &amp;=\\left(\\psi\\circ p|_{\\widetilde V\\cap\\widetilde W}\\right)\n   \\circ\\left(\\varphi\\circ p|_{\\widetilde V\\cap\\widetilde W}\\right)^{-1}\\\\\n &amp;=\\psi\\circ p|_{\\widetilde V\\cap\\widetilde W}\n   \\circ\\left(p|_{\\widetilde V\\cap\\widetilde W}\\right)^{-1}\\circ\\varphi^{-1}\n  =\\psi\\circ\\varphi^{-1}.\n\\end{align*}\\]</span></p>\n<h4 id=\"smoothness-of-the-covering-map.\">Smoothness of the covering map.</h4>\n<p>Another immediate fact is that, with this smooth structure, <span class=\"math inline\">\\(p\\)</span> is a smooth map. Let <span class=\"math inline\">\\(y\\in E\\)</span> and <span class=\"math inline\">\\(x=p(y)\\)</span>, let <span class=\"math inline\">\\((\\varphi,U)\\)</span> be the evenly covered chart of <span class=\"math inline\">\\(M\\)</span>, and let <span class=\"math inline\">\\((\\widetilde\\varphi,V)\\)</span> be the corresponding chart of <span class=\"math inline\">\\(E\\)</span>, as constructed before. Then <span class=\"math inline\">\\(p(V)\\subseteq U\\)</span>; in fact, <span class=\"math inline\">\\(p(V)=U\\)</span>. We have <span class=\"math display\">\\[\\varphi\\circ p\\circ\\widetilde\\varphi^{-1}\n =\\varphi\\circ p\\circ(\\varphi\\circ p)^{-1}=\\id,\\]</span> which is smooth from <span class=\"math inline\">\\(\\widetilde\\varphi(V)\\)</span> to <span class=\"math inline\">\\(\\varphi(U)\\)</span>. Thus <span class=\"math inline\">\\(p\\)</span> is a smooth covering map. What we have in particular managed to prove here is that <span class=\"math inline\">\\(p|_V:V\\to U\\)</span> is smooth; one can similarly prove that the inverse branch <span class=\"math inline\">\\(p^{-1}|_U:U\\to V\\)</span> is smooth.</p>\n<h2 id=\"countability-of-the-fundamental-group\">Countability of the fundamental group</h2>\n<h2 class=\"unnumbered\" id=\"lemma-2-countability-of-the-fundamental-group\">Lemma 2 — Countability of the fundamental group</h2>\n<p>Let <span class=\"math inline\">\\(M\\)</span> be a topological manifold. Then <span class=\"math inline\">\\(\\pi_1(M,P)\\)</span> is countable for every <span class=\"math inline\">\\(P\\in M\\)</span>.</p>\n<h2 id=\"proper-local-diffeomorphisms\">Proper local diffeomorphisms</h2>\n<h2 class=\"unnumbered\" id=\"proposition-3\">Proposition 3</h2>\n<p>Let <span class=\"math inline\">\\(M\\)</span> be a connected smooth manifold and let <span class=\"math inline\">\\(p\\colon E\\to M\\)</span> be a proper local diffeomorphism. Then <span class=\"math inline\">\\(p\\)</span> is a covering map.</p>\n<p><em>Proof.</em> The image <span class=\"math inline\">\\(p(E)\\)</span> is open because <span class=\"math inline\">\\(p\\)</span> is a local diffeomorphism. It is also closed because <span class=\"math inline\">\\(p\\)</span> is proper and <span class=\"math inline\">\\(M\\)</span> is locally compact and Hausdorff. Since <span class=\"math inline\">\\(M\\)</span> is connected, <span class=\"math inline\">\\(p\\)</span> is surjective.</p>\n<p>Since <span class=\"math inline\">\\(p\\)</span> is a local diffeomorphism, <span class=\"math inline\">\\(p^{-1}(\\{q\\})\\)</span> is discrete. It is also compact, because <span class=\"math inline\">\\(p\\)</span> is proper, and hence is finite. Write <span class=\"math inline\">\\(p^{-1}(q)=\\{p_i\\}_{i=1}^{n}\\)</span>. For each pair <span class=\"math inline\">\\(p_i,q\\)</span>, there are open neighbourhoods <span class=\"math inline\">\\(V_i\\)</span> and <span class=\"math inline\">\\(U_i\\)</span> of <span class=\"math inline\">\\(p_i\\)</span> and <span class=\"math inline\">\\(q\\)</span>, respectively, such that <span class=\"math inline\">\\(p|_{V_i}\\colon V_i\\to U_i\\)</span> is a diffeomorphism.</p>\n<p>Since <span class=\"math inline\">\\(E\\)</span> is Hausdorff, there are neighbourhoods <span class=\"math inline\">\\(W_i\\)</span> of <span class=\"math inline\">\\(p_i\\)</span> such that <span class=\"math inline\">\\(W_i\\cap W_j=\\varnothing\\)</span> whenever <span class=\"math inline\">\\(i\\ne j\\)</span>. Replace <span class=\"math inline\">\\(V_i\\)</span> by <span class=\"math inline\">\\(V_i\\cap W_i\\)</span> and <span class=\"math inline\">\\(U_i\\)</span> by <span class=\"math inline\">\\(p|_{V_i}(V_i\\cap W_i)\\)</span>. The restriction <span class=\"math inline\">\\(p|_{V_i}\\colon V_i\\to U_i\\)</span> is again a diffeomorphism.</p>\n<p>Now replace each <span class=\"math inline\">\\(U_i\\)</span> by <span class=\"math inline\">\\(U=\\bigcap_{i=1}^{n}U_i\\)</span> and each <span class=\"math inline\">\\(V_i\\)</span> by <span class=\"math inline\">\\(V_i\\cap(p|_{V_i})^{-1}(U)\\)</span>. Then <span class=\"math inline\">\\(p|_{V_i}\\colon V_i\\to U\\)</span> is a diffeomorphism for every <span class=\"math inline\">\\(i\\)</span>, and <span class=\"math inline\">\\(V_i\\cap V_j=\\varnothing\\)</span> for <span class=\"math inline\">\\(i\\ne j\\)</span>.</p>\n<p>The set <span class=\"math inline\">\\(K=\\bigl(\\bigcup_{i=1}^{n}V_i\\bigr)^c\\)</span> is closed in <span class=\"math inline\">\\(E\\)</span>, so <span class=\"math inline\">\\(p(K)\\)</span> is closed. Replace <span class=\"math inline\">\\(U\\)</span> by <span class=\"math inline\">\\(U\\setminus p(K)\\)</span>.</p>\n<p>Then <span class=\"math inline\">\\(p^{-1}(U)\\subseteq\\bigcup_{i=1}^{n}V_i\\)</span>. Finally, replace <span class=\"math inline\">\\(V_i\\)</span> by <span class=\"math inline\">\\(V_i\\cap p^{-1}(U)\\)</span>. After these shavings, we have <span class=\"math display\">\\[p^{-1}(U)=\\bigsqcup_{i=1}^{n}V_i,\n\\qquad p|_{V_i}\\colon V_i\\longrightarrow U\n\\quad\\text{a diffeomorphism}.\\]</span> Thus <span class=\"math inline\">\\(p\\)</span> is a smooth covering map.</p>\n<h2 id=\"covering-lie-groups\">Covering Lie groups</h2>\n<p>Now let us impose further structures on our original setting and see where it leads us. We then saw how the structure was still preserved once we shifted our course to the category of smooth manifolds. More precisely, we saw that a topological cover of a manifold also preserves the smooth structure. If we now lift this to the category of Lie groups and ask whether smooth covering maps preserve the group structure, the following proposition answers this in its full glory!</p>\n<h2 class=\"unnumbered\" id=\"proposition-4-yes-group-structure-is-preserved\">Proposition 4 — Yes, group structure is preserved!</h2>\n<p>Let <span class=\"math inline\">\\(G\\)</span> be a connected Lie group, and let <span class=\"math inline\">\\(\\pi\\colon\\widetilde{G}\\to G\\)</span> be a smooth covering map with <span class=\"math inline\">\\(\\widetilde{G}\\)</span> simply connected. Then one can endow <span class=\"math inline\">\\(\\widetilde{G}\\)</span> with a Lie group structure for which <span class=\"math inline\">\\(\\pi\\)</span> is a Lie group homomorphism. Furthermore, <span class=\"math inline\">\\(\\widetilde{G}\\)</span> is unique up to Lie group isomorphism.</p>",
+    "mathMacros": {
+      "\\C": "\\mathbb C",
+      "\\D": "\\mathbb D",
+      "\\M": "\\mathcal M",
+      "\\Chat": "\\widehat{\\mathbb C}",
+      "\\Crit": "\\operatorname{Crit}",
+      "\\Int": "\\operatorname{Int}",
+      "\\Ext": "\\operatorname{Ext}",
+      "\\id": "\\operatorname{id}"
+    },
+    "excerptHtml": "<p>A topological covering map <span class=\"math inline\">\\(p:E\\to M\\)</span> is said to be a <em>smooth covering map</em> if, for every <span class=\"math inline\">\\(x\\in M\\)</span>, there is an evenly covered neighbourhood <span class=\"math inline\">\\(U_x\\)</span> of <span class=\"math inline\">\\(x\\)</span> with <span class=\"math display\">\\[p^{-1}(U_x)=\\bigsqcup_{\\alpha\\in I}V_\\alpha,\n \\qquad p|_{V_\\alpha}:V_\\alpha\\longrightarrow U_x\n \\quad\\text{a diffeomorphism for every }\\alpha\\in I.\\]</span></p>",
+    "editedSourceSha256": "6f557b5e233b05df34a62cd63f0c17bb12c7bf5d8c28592710ead6bab1312494"
+  },
+  {
+    "order": 20,
     "slug": "flat-structures-and-teichmuller-curves",
     "title": "Flat Structures and Teichmüller Curves",
     "dek": "",
@@ -1192,7 +1240,7 @@
     "editedSourceSha256": "68c84d26abccf003ef86393e9794292208fd8e7ea711518667adce7c134e8338"
   },
   {
-    "order": 20,
+    "order": 21,
     "slug": "locally-trivial-bundles",
     "title": "Locally Trivial Bundles",
     "dek": "",
@@ -1261,7 +1309,7 @@
     "editedSourceSha256": "ff766997572c85f373cc0dfd1d40c20ef096ef6f87824aa1208f488204646a57"
   },
   {
-    "order": 21,
+    "order": 22,
     "slug": "vector-bundles",
     "title": "Vector Bundles",
     "dek": "",
@@ -1330,7 +1378,7 @@
     "editedSourceSha256": "105e2659a6c8f17866154cafcd4e49590257e62c0095c99404c27ebd391447de"
   },
   {
-    "order": 22,
+    "order": 23,
     "slug": "classification-vector-bundles",
     "title": "Classification of Vector Bundles",
     "dek": "",
@@ -1398,7 +1446,7 @@
     "editedSourceSha256": "f4df7f5da43f1a3c116f488ae3019f2a2a4b82a88bf9965471c09b5dd4c3cc13"
   },
   {
-    "order": 23,
+    "order": 24,
     "slug": "stable-isomorphism-vector-bundles",
     "title": "Stable Isomorphism Classes of Vector Bundles",
     "dek": "",
@@ -1464,7 +1512,7 @@
     "editedSourceSha256": "f4f4965b31fef0092611546bc8e643f52c6ff767283471fed748197b7f0ae7a4"
   },
   {
-    "order": 24,
+    "order": 25,
     "slug": "bott-periodicity-k-theory",
     "title": "Bott Periodicity and the Genesis of K-Theory",
     "dek": "",
@@ -1533,7 +1581,7 @@
     "editedSourceSha256": "b667a1382663e0e8cb0b5b0caf1d27962247df854fc63124586ab46d6f29f01e"
   },
   {
-    "order": 25,
+    "order": 26,
     "slug": "rings-ideals-and-prime-ideals",
     "title": "Rings, Ideals, and Prime Ideals",
     "dek": "",
@@ -1600,7 +1648,7 @@
     "editedSourceSha256": "75e1d4f7171add176efcc761c53a83a59e014bd31a97f727df4b1fe9bc96dd5d"
   },
   {
-    "order": 26,
+    "order": 27,
     "slug": "modules-tensor-products-and-the-determinant-trick",
     "title": "Modules, Tensor Products, and the Determinant Trick",
     "dek": "",
@@ -1669,7 +1717,7 @@
     "editedSourceSha256": "7cdbae41618e6920b06a7fb201a358d1922be4a09e7e3df798ca053b614f31eb"
   },
   {
-    "order": 27,
+    "order": 28,
     "slug": "localization-rings-modules-and-prime-ideals",
     "title": "Localization: Rings, Modules, and Prime Ideals",
     "dek": "",
@@ -1738,7 +1786,7 @@
     "editedSourceSha256": "a10cfe7c894ee5f5d47cabcb5a6d65a88edd25cd7b8ca2fdc2023a0934c458c7"
   },
   {
-    "order": 28,
+    "order": 29,
     "slug": "primary-decomposition-and-uniqueness",
     "title": "Primary Decomposition and Uniqueness",
     "dek": "",
@@ -1807,7 +1855,7 @@
     "editedSourceSha256": "b213a76931f8cf86956945b74e8cf5a3074bc81b3a0384567515bc5609795c27"
   },
   {
-    "order": 29,
+    "order": 30,
     "slug": "noetherian-and-artinian-rings",
     "title": "Noetherian and Artinian Rings",
     "dek": "",
@@ -1876,7 +1924,7 @@
     "editedSourceSha256": "b711c7154e5558828d3813c361ffa0bf99266fe75c444228a89b93111b46d924"
   },
   {
-    "order": 30,
+    "order": 31,
     "slug": "integral-dependence",
     "title": "Integral Dependence",
     "dek": "",
@@ -1945,7 +1993,7 @@
     "editedSourceSha256": "e5b4a42d26a3c8980c7f16a1e9f74e243b8c5588b0c476d9b8cbbf0e21e313d6"
   },
   {
-    "order": 31,
+    "order": 32,
     "slug": "the-nullstellensatz-and-affine-geometry",
     "title": "The Nullstellensatz and Affine Geometry",
     "dek": "",
@@ -2014,7 +2062,7 @@
     "editedSourceSha256": "8ec9e39590eb2daf70d84394f14130e2bac8eef222a93dee850a98936c46276c"
   },
   {
-    "order": 32,
+    "order": 33,
     "slug": "the-spectrum-of-a-ring",
     "title": "The Spectrum of a Ring",
     "dek": "",
@@ -2083,7 +2131,7 @@
     "editedSourceSha256": "6896c2f106f7c055db2c3ca86f6c3f7a003cf8a80c9f60145c0c04498bb26c76"
   },
   {
-    "order": 33,
+    "order": 34,
     "slug": "sheaves-stalks-and-ringed-spaces",
     "title": "Sheaves and Stalks",
     "dek": "",
@@ -2152,7 +2200,7 @@
     "editedSourceSha256": "ac9e4f22338445c1ddff61205206462d8ed80a49bc0415b28cdbd265e015a8e8"
   },
   {
-    "order": 34,
+    "order": 35,
     "slug": "hyperbolic-geometry",
     "title": "Hyperbolic Geometry",
     "dek": "",
@@ -2195,7 +2243,7 @@
     "editedSourceSha256": "169d40e3b2e8a74db8483b13090381a6d1bd0232f27c019c8d13d02f339974b6"
   },
   {
-    "order": 35,
+    "order": 36,
     "slug": "rational-dynamics-on-the-riemann-sphere",
     "title": "Rational Dynamics on the Riemann Sphere",
     "dek": "",
@@ -2240,7 +2288,7 @@
     "editedSourceSha256": "7ab5856d5f6aec305b401ddf60ce6454dfad8423a4bef1196e6adef9636ffa56"
   },
   {
-    "order": 36,
+    "order": 37,
     "slug": "attracting-and-repelling-fixed-points",
     "title": "Attracting and Repelling Fixed Points",
     "dek": "",
@@ -2285,7 +2333,7 @@
     "editedSourceSha256": "b9daad837e1bd69bbbdd1173cb2b8b1d100c3954b9e1898bb61e339d4ae6db1d"
   },
   {
-    "order": 37,
+    "order": 38,
     "slug": "parabolic-fixed-points-and-the-flower-theorem",
     "title": "Parabolic Fixed Points and the Flower Theorem",
     "dek": "",
@@ -2330,7 +2378,7 @@
     "editedSourceSha256": "85054f42c51617806b917231926335d715d158bab60c08eeb7ccb61735b997a9"
   },
   {
-    "order": 38,
+    "order": 39,
     "slug": "dense-subsets-of-julia-sets",
     "title": "Dense Subsets of Julia Sets",
     "dek": "",
@@ -2375,7 +2423,7 @@
     "editedSourceSha256": "27bbf66591e61a259fe15e97b0b88afec58edf4bb113fd43ffc4be53003e6d31"
   },
   {
-    "order": 39,
+    "order": 40,
     "slug": "critical-points-and-julia-set-connectivity",
     "title": "Critical Points and Julia-Set Connectivity",
     "dek": "",
@@ -2420,7 +2468,55 @@
     "editedSourceSha256": "acc7b5659fb33e301f48380c40404adb9d2874ec2786dd0d847ad8191009e03e"
   },
   {
-    "order": 40,
+    "order": 41,
+    "slug": "the-quadratic-family",
+    "title": "The Quadratic Family",
+    "dek": "",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "track": "Complex Dynamics",
+    "kind": "Exposition",
+    "minutes": 4,
+    "wordCount": 633,
+    "prerequisites": [
+      "critical-points-and-julia-set-connectivity"
+    ],
+    "background": [],
+    "sourceCollection": "Quadratic Family",
+    "sourcePath": "quadratic-family/notes/section01.tex",
+    "sourceStart": 1,
+    "sourceEnd": 6,
+    "sourceSegments": [
+      {
+        "source": "quadratic-family/notes/section01.tex",
+        "start": 1,
+        "end": 176,
+        "sha256": "892ebae0a8a688c2a21e48f78cd2e8d5696f901a578a7451a0d7ddbd8a520245"
+      },
+      {
+        "source": "quadratic-family/notes/section03.tex",
+        "start": 3,
+        "end": 6,
+        "sha256": "1f77fcdce51a19576a4b12e42d4dedf30ccb664e421c9a96d0f1bec96bf5fb57"
+      }
+    ],
+    "status": "Published",
+    "html": "<h1 id=\"normalization-and-the-mandelbrot-set\">Normalization and the Mandelbrot set</h1>\n<p>Starting with <span class=\"math inline\">\\(f(z)=az^2+bz+c\\)</span>, conjugation by a dilation gives <span class=\"math display\">\\[\\lambda^{-1}f(\\lambda z)=z^2+\\alpha z+\\beta,\n\\qquad \\lambda=\\frac1a.\\]</span> We then conjugate by a translation: <span class=\"math display\">\\[\\begin{aligned}\n(z-d)\\circ(z^2+\\alpha z+\\beta)\\circ(z+d)\n &amp;=(z+d)^2+\\alpha(z+d)+\\beta-d\n\\end{aligned}\\]</span> Taking <span class=\"math inline\">\\(d=-\\alpha/2\\)</span>, the critical point, gives the normal form <span class=\"math inline\">\\(z^2+c\\)</span>, denoted by <span class=\"math inline\">\\(P_c\\)</span>.</p>\n<h2 class=\"unnumbered\" id=\"definition-1-mandelbrot-set\">Definition 1 — Mandelbrot set</h2>\n<p>The <em>Mandelbrot set</em> is <span class=\"math display\">\\[\\M:=\\{c\\in\\C\\mid (P_c^{\\circ n}(0))_{n\\ge0}\\text{ is bounded}\\}.\\]</span></p>\n<h2 id=\"critical-points-and-connectedness\">Critical points and connectedness</h2>\n<h2 class=\"unnumbered\" id=\"theorem-1-connected-and-cantor-filled-julia-sets\">Theorem 1 — Connected and Cantor filled Julia sets</h2>\n<p>Let <span class=\"math inline\">\\(P\\)</span> be any polynomial, and let <span class=\"math inline\">\\(K_P\\)</span> be its filled Julia set. Then:</p>\n<dl>\n<dt><span>(i)</span></dt>\n<dd>\n<p><span class=\"math inline\">\\(\\Crit(P)\\subset K_P\\)</span> if and only if <span class=\"math inline\">\\(K_P\\)</span> is connected.</p>\n</dd>\n<dt><span>(ii)</span></dt>\n<dd>\n<p>If <span class=\"math inline\">\\(\\Crit(P)\\cap K_P=\\varnothing\\)</span>, then <span class=\"math inline\">\\(K_P\\)</span> is a Cantor set.</p>\n</dd>\n</dl>\n<h2 class=\"unnumbered\" id=\"corollary-2-connected-julia-sets\">Corollary 2 — Connected Julia sets</h2>\n<p><span class=\"math display\">\\[\\M=\\{c\\mid K(P_c)\\text{ is connected}\\}\n    =\\{c\\mid J(P_c)\\text{ is connected}\\}.\\]</span></p>\n<h2 id=\"escape-bounds-and-the-real-slice\">Escape bounds and the real slice</h2>\n<h2 class=\"unnumbered\" id=\"theorem-3-basic-properties-of-the-mandelbrot-set\">Theorem 3 — Basic properties of the Mandelbrot set</h2>\n<dl>\n<dt><span>(i)</span></dt>\n<dd>\n<p><span class=\"math inline\">\\(\\M\\subseteq\\{c\\mid |c|\\le2\\}\\)</span>, and <span class=\"math inline\">\\(\\M\\)</span> is closed and simply connected.</p>\n</dd>\n<dt><span>(ii)</span></dt>\n<dd>\n<p><span class=\"math inline\">\\(\\M\\cap\\mathbb R=[-2,1/4]\\)</span>.</p>\n</dd>\n<dt><span>(iii)</span></dt>\n<dd>\n<p><span class=\"math inline\">\\(|P_c^{\\circ n}(0)|\\le2\\)</span> for all <span class=\"math inline\">\\(n\\ge1\\)</span> if and only if <span class=\"math inline\">\\(c\\in\\M\\)</span>.</p>\n</dd>\n</dl>\n<h2 id=\"attracting-cycles-and-stability\">Attracting cycles and stability</h2>\n<h2 class=\"unnumbered\" id=\"theorem-4-continuation-of-attracting-cycles\">Theorem 4 — Continuation of attracting cycles</h2>\n<p>Let <span class=\"math inline\">\\(a\\in\\Int(\\M)\\)</span>, and suppose <span class=\"math inline\">\\(P_a\\)</span> has an attracting cycle of length <span class=\"math inline\">\\(m\\)</span>. Let <span class=\"math inline\">\\(W\\)</span> be the component of <span class=\"math inline\">\\(\\Int(\\M)\\)</span> containing <span class=\"math inline\">\\(a\\)</span>. Then, for every <span class=\"math inline\">\\(c\\in W\\)</span>, <span class=\"math inline\">\\(P_c\\)</span> has an attracting cycle <span class=\"math inline\">\\(\\{z_1(c),\\ldots,z_m(c)\\}\\)</span> of length <span class=\"math inline\">\\(m\\)</span>, and <span class=\"math inline\">\\(c\\mapsto z_i(c)\\)</span> is holomorphic for every <span class=\"math inline\">\\(1\\le i\\le m\\)</span>.</p>\n<p><em>Proof.</em> Consider <span class=\"math inline\">\\(P_c^{\\circ m}(z)-z\\)</span>. By the implicit function theorem, we obtain an attracting periodic point of period <span class=\"math inline\">\\(m\\)</span>, say <span class=\"math inline\">\\(z_1(c)\\)</span>, in a small neighbourhood of <span class=\"math inline\">\\(a\\)</span>. The sequence <span class=\"math inline\">\\(\\{P_c^{\\circ jm}(0)\\}\\)</span> is bounded. Hence all subsequences of this sequence converge to an analytic continuation of <span class=\"math inline\">\\(z_1(c)\\)</span> over <span class=\"math inline\">\\(W\\)</span>.</p>\n<p>The point <span class=\"math inline\">\\(z_1(c)\\)</span> could be repelling at uncountably many <span class=\"math inline\">\\(c\\)</span>. Then there is a <span class=\"math inline\">\\(j\\)</span> such that <span class=\"math inline\">\\(P_c^{\\circ jm}(0)=z_1(c)\\)</span> for uncountably many <span class=\"math inline\">\\(c\\)</span>. By the identity theorem, <span class=\"math inline\">\\(z_1(c)\\)</span> is a polynomial in <span class=\"math inline\">\\(c\\)</span>, and <span class=\"math inline\">\\(P_c^{\\circ m}(z_1(c))=z_1(c)\\)</span> can have only finitely many solutions. Hence <span class=\"math inline\">\\(z_1(c)\\)</span> is repelling only at countably many points.</p>\n<p>Thus <span class=\"math inline\">\\(|(P_c^{\\circ m})&#39;(z_1(c))|\\le1\\)</span>. By the maximum modulus principle, <span class=\"math inline\">\\(z_1(c)\\)</span> is an attracting fixed point on all of <span class=\"math inline\">\\(W\\)</span>. The other functions are <span class=\"math inline\">\\(\\{P_c^{\\circ i}(z_1(c))\\}_{0\\le i&lt;m}\\)</span>.</p>\n<h2 class=\"unnumbered\" id=\"theorem-5-density-of-the-interior\">Theorem 5 — Density of the interior</h2>\n<p><span class=\"math inline\">\\(\\Int(\\M)\\)</span> is dense in <span class=\"math inline\">\\(\\M\\)</span>.</p>\n<p><em>Proof.</em> Let <span class=\"math inline\">\\(U\\)</span> be a disk that meets <span class=\"math inline\">\\(\\partial\\M\\)</span>, with <span class=\"math inline\">\\(0\\notin U\\)</span>.</p>\n<figure data-latex-placement=\"H\">\n<p><img src=\"figures/quadratic-family/qf-fig-01.svg\" loading=\"lazy\" style=\"width:7.5cm;height:4.7cm\" /> <em>Figure QF1</em></p>\n</figure>\n<p>Suppose <span class=\"math inline\">\\(U\\)</span> has no <span class=\"math inline\">\\(c\\)</span> for which <span class=\"math inline\">\\(0\\)</span> is periodic under <span class=\"math inline\">\\(P_c\\)</span>. Consider a branch of <span class=\"math inline\">\\(\\sqrt{-c}\\)</span> on <span class=\"math inline\">\\(U\\)</span>. Consequently, the family <span class=\"math display\">\\[\\left\\{\\frac{P_c^{\\circ n}(0)}{\\sqrt{-c}}\\right\\}_n\\]</span> omits <span class=\"math inline\">\\(\\{0,1,\\infty\\}\\)</span> and is normal in <span class=\"math inline\">\\(c\\)</span>. But <span class=\"math inline\">\\(U\\)</span> meets <span class=\"math inline\">\\(\\partial\\M\\)</span>, so for some <span class=\"math inline\">\\(c\\in U\\)</span> the sequence explodes, whereas for some <span class=\"math inline\">\\(c\\)</span> it remains bounded, violating normality.</p>\n<h2 class=\"unnumbered\" id=\"corollary-6-j-stability\">Corollary 6 — <span class=\"math inline\">\\(J\\)</span>-stability</h2>\n<p><span class=\"math display\">\\[\\{c\\mid P_c\\text{ is }J\\text{-stable}\\}=\\C\\setminus\\partial\\M.\\]</span></p>\n<p><em>Proof.</em> By definition, if <span class=\"math inline\">\\(c\\in\\Int(\\M)\\)</span>, the sequence <span class=\"math inline\">\\(\\{P_c^{\\circ n}(0)\\}_n\\)</span> is bounded and hence forms a normal family, so <span class=\"math inline\">\\(c\\)</span> is <span class=\"math inline\">\\(J\\)</span>-stable. If <span class=\"math inline\">\\(c\\in\\Ext(\\M)\\)</span>, then <span class=\"math inline\">\\(P_c^{\\circ n}(0)\\to\\infty\\)</span>, again giving normality and <span class=\"math inline\">\\(J\\)</span>-stability. As in the preceding theorem, normality fails exactly on the boundary.</p>\n<h2 id=\"the-principal-hyperbolic-component\">The principal hyperbolic component</h2>\n<h2 class=\"unnumbered\" id=\"theorem-8-quasicircle-julia-sets\">Theorem 8 — Quasicircle Julia sets</h2>\n<p>If <span class=\"math inline\">\\(c\\)</span> is in the principal hyperbolic component, then <span class=\"math inline\">\\(J(P_c)\\)</span> is a quasicircle.</p>",
+    "mathMacros": {
+      "\\C": "\\mathbb C",
+      "\\D": "\\mathbb D",
+      "\\M": "\\mathcal M",
+      "\\Chat": "\\widehat{\\mathbb C}",
+      "\\Crit": "\\operatorname{Crit}",
+      "\\Int": "\\operatorname{Int}",
+      "\\Ext": "\\operatorname{Ext}",
+      "\\id": "\\operatorname{id}"
+    },
+    "excerptHtml": "<p>Starting with <span class=\"math inline\">\\(f(z)=az^2+bz+c\\)</span>, conjugation by a dilation gives <span class=\"math display\">\\[\\lambda^{-1}f(\\lambda z)=z^2+\\alpha z+\\beta,\n\\qquad \\lambda=\\frac1a.\\]</span> We then conjugate by a translation: <span class=\"math display\">\\[\\begin{aligned}\n(z-d)\\circ(z^2+\\alpha z+\\beta)\\circ(z+d)\n &amp;=(z+d)^2+\\alpha(z+d)+\\beta-d\n\\end{aligned}\\]</span> Taking <span class=\"math inline\">\\(d=-\\alpha/2\\)</span>, the critical point, gives the normal form <span class=\"math inline\">\\(z^2+c\\)</span>, denoted by <span class=\"math inline\">\\(P_c\\)</span>.</p>",
+    "editedSourceSha256": "7b008b2a3af172069987d5541b12b764a979b9a8bd543d7c46575b56f71bc837"
+  },
+  {
+    "order": 42,
     "slug": "prime-ends-and-landing-of-external-rays",
     "title": "Prime Ends and Landing of External Rays",
     "dek": "",
@@ -2465,7 +2561,7 @@
     "editedSourceSha256": "8b08ce2e532322b6b43ce269d73862491f06c579e788c50e1948a7453853a5ec"
   },
   {
-    "order": 41,
+    "order": 43,
     "slug": "the-chain-rule-and-a-family-of-complex-planes",
     "title": "The Chain Rule and Complex Dilatation",
     "dek": "",
@@ -2510,7 +2606,7 @@
     "editedSourceSha256": "5d20dfa7e3b3495f5a5c325bf0ac70cf4a1c22521a93950e3043f24d9b1086cd"
   },
   {
-    "order": 42,
+    "order": 44,
     "slug": "quasiconformal-mappings",
     "title": "Quasiconformal Mappings",
     "dek": "",
@@ -2555,7 +2651,7 @@
     "editedSourceSha256": "25c829acd56c010f9399877f92dd2aa135625ed2924bb0add257af82246d7315"
   },
   {
-    "order": 43,
+    "order": 45,
     "slug": "the-mapping-theorem-and-invariant-complex-structures",
     "title": "The Mapping Theorem and Invariant Complex Structures",
     "dek": "",
@@ -2600,7 +2696,7 @@
     "editedSourceSha256": "35957768b46b077592dd7120d749fd53ce9fddc1964964dfb41c2404195f70a6"
   },
   {
-    "order": 44,
+    "order": 46,
     "slug": "boundary-behaviour-of-quasiconformal-maps",
     "title": "Boundary Behaviour of Quasiconformal Maps",
     "dek": "",
@@ -2645,7 +2741,50 @@
     "editedSourceSha256": "34da6c0d0160d19f3fa071d7f0420376fa5c159549f381d2abf2f38547afc092"
   },
   {
-    "order": 45,
+    "order": 47,
+    "slug": "conformal-welding",
+    "title": "Conformal Welding",
+    "dek": "",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "track": "Complex Dynamics",
+    "kind": "Exposition",
+    "minutes": 1,
+    "wordCount": 134,
+    "prerequisites": [
+      "boundary-behaviour-of-quasiconformal-maps",
+      "the-mapping-theorem-and-invariant-complex-structures"
+    ],
+    "background": [],
+    "sourceCollection": "Quadratic Family",
+    "sourcePath": "quadratic-family/notes/section04.tex",
+    "sourceStart": 33,
+    "sourceEnd": 60,
+    "sourceSegments": [
+      {
+        "source": "quadratic-family/notes/section04.tex",
+        "start": 33,
+        "end": 60,
+        "sha256": "771373ee838d4a5aa39addaccd7d1c221ae8e34597669640afdf438aa5c32661"
+      }
+    ],
+    "status": "Published",
+    "html": "<p>We have a quasisymmetric map <span class=\"math inline\">\\(\\psi\\colon S^1\\to S^1\\)</span>. Extend it to a quasiconformal map <span class=\"math inline\">\\(\\widehat\\psi\\colon\\overline\\D\\to\\overline\\D\\)</span>. Set <span class=\"math display\">\\[\\mu:=\\begin{cases}\n(\\widehat\\psi^{-1})^*\\mu_0,&amp;\\text{on }\\D,\\\\\n\\mu_0,&amp;\\text{on }\\Chat\\setminus\\overline\\D.\n\\end{cases}\\]</span> Let <span class=\"math inline\">\\(\\phi\\)</span> be an integrating map for <span class=\"math inline\">\\(\\mu\\)</span>. Then <span class=\"math display\">\\[\\begin{aligned}\n(\\phi\\circ\\widehat\\psi)^*\\mu_0\n &amp;=\\widehat\\psi^*(\\phi^*(\\mu_0))=\\mu_0\n &amp;&amp;\\text{on }\\D,\\\\\n\\phi^*(\\mu_0)&amp;=\\mu_0\n &amp;&amp;\\text{on }\\Chat\\setminus\\overline\\D.\n\\end{aligned}\\]</span> Consequently, the maps <span class=\"math display\">\\[\\begin{aligned}\n\\phi\\circ\\widehat\\psi&amp;\\colon(\\D,\\mu_0)\\longrightarrow(\\phi(\\D),\\mu_0),\\\\\n\\phi&amp;\\colon(\\Chat\\setminus\\overline\\D,\\mu_0)\n \\longrightarrow(\\phi(\\Chat\\setminus\\overline\\D),\\mu_0)\n\\end{aligned}\\]</span> are conformal. The curve <span class=\"math inline\">\\(\\gamma=\\phi(S^1)\\)</span> is a quasicircle.</p>\n<p>The map <span class=\"math inline\">\\(\\psi\\)</span> is called a <em>conformal welding</em> of <span class=\"math inline\">\\(\\gamma\\)</span>.</p>",
+    "mathMacros": {
+      "\\C": "\\mathbb C",
+      "\\D": "\\mathbb D",
+      "\\M": "\\mathcal M",
+      "\\Chat": "\\widehat{\\mathbb C}",
+      "\\Crit": "\\operatorname{Crit}",
+      "\\Int": "\\operatorname{Int}",
+      "\\Ext": "\\operatorname{Ext}",
+      "\\id": "\\operatorname{id}"
+    },
+    "excerptHtml": "",
+    "editedSourceSha256": "e93e8a7c99c136f1ee3ef692003e2abcf78c38687ce0245a52742889dc896376"
+  },
+  {
+    "order": 48,
     "slug": "shishikuras-surgery-principles",
     "title": "Shishikura’s Surgery Principles",
     "dek": "",
@@ -2690,7 +2829,7 @@
     "editedSourceSha256": "a3a768a03a9d453dde3f075b9af3941c0760d9596ae6e88e719c6d626aa8b40d"
   },
   {
-    "order": 46,
+    "order": 49,
     "slug": "classification-fatou-components",
     "title": "Classification of Non-Wandering Fatou Components",
     "dek": "",
@@ -2730,7 +2869,7 @@
     "editedSourceSha256": "68f50a2064adc4768e721ff93b7a0d316ed90ba4327f7fec894a6281c4f38a65"
   },
   {
-    "order": 47,
+    "order": 50,
     "slug": "surgical-tools",
     "title": "Scalpel, Forceps, and other Surgical Tools",
     "dek": "",
@@ -2770,7 +2909,7 @@
     "editedSourceSha256": "084831e2710d7d95693fdf63e1f4297c100f7d2dcca29cd6bbf01f0ad28b99a5"
   },
   {
-    "order": 48,
+    "order": 51,
     "slug": "first-surgery",
     "title": "First Surgery",
     "dek": "",
@@ -2807,7 +2946,7 @@
     "editedSourceSha256": "c95d0918451efbe5ff7e638952f26718d02e66131866d21fd5491230b430c989"
   },
   {
-    "order": 49,
+    "order": 52,
     "slug": "second-surgery",
     "title": "Second Surgery",
     "dek": "",
@@ -2844,7 +2983,7 @@
     "editedSourceSha256": "24b56aa6378768607fbcf1325d406cecd9ac50bddf86e6a990d63df29a41159c"
   },
   {
-    "order": 50,
+    "order": 53,
     "slug": "third-surgery",
     "title": "Third Surgery",
     "dek": "",
@@ -2882,7 +3021,56 @@
     "editedSourceSha256": "20d113c86c29114a481c957cb8111a89cf6dc1cf5aabdbf5b1fbdb118cf232d8"
   },
   {
-    "order": 51,
+    "order": 54,
+    "slug": "mcmullens-surgery",
+    "title": "McMullen’s Surgery",
+    "dek": "",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "track": "Complex Dynamics",
+    "kind": "Exposition",
+    "minutes": 3,
+    "wordCount": 589,
+    "prerequisites": [
+      "third-surgery",
+      "conformal-welding"
+    ],
+    "background": [],
+    "sourceCollection": "McMullen's Surgery",
+    "sourcePath": "mcmullens-surgery/notes/section01.tex",
+    "sourceStart": 1,
+    "sourceEnd": 285,
+    "sourceSegments": [
+      {
+        "source": "mcmullens-surgery/notes/section01.tex",
+        "start": 1,
+        "end": 274,
+        "sha256": "8b00278705d6fc2bcd7b8c899ac81365e5a7b55b359aff947d928b10354a85fb"
+      },
+      {
+        "source": "mcmullens-surgery/notes/section02.tex",
+        "start": 1,
+        "end": 285,
+        "sha256": "fb7968ef3aabbf1b9d3515cf86251e54e493f03a11dbdae65fc9052acf1db122"
+      }
+    ],
+    "status": "Published",
+    "html": "<h1 id=\"ideal-boundaries-and-induced-maps\">Ideal boundaries and induced maps</h1>\n<p>In order to surgically glue different dynamical systems, one ends up having to rely on good boundary-extension theorems, or on decent enough straightening theorems.</p>\n<h2 id=\"ideal-boundaries\">Ideal boundaries</h2>\n<p>Consider a Riemann map <span class=\"math inline\">\\(R_U\\colon\\mathbb D\\to U\\)</span>. How do you get to <span class=\"math inline\">\\(\\overline{\\mathbb D}\\)</span>?</p>\n<h4 id=\"prime-ends.\">Prime ends.</h4>\n<p>Consider <span class=\"math inline\">\\(\\langle N_j\\rangle_j\\)</span>, with <span class=\"math inline\">\\(N_1\\supset N_2\\supset\\cdots\\)</span>; roughly, <span class=\"math inline\">\\(\\bigcap_i\\overline{N_i}\\subset\\partial U\\)</span>.</p>\n<h4 id=\"carathéodory.\">Carathéodory.</h4>\n<p>The map <span class=\"math inline\">\\(R_U\\colon\\mathbb D\\to U\\)</span> gives a homeomorphism <span class=\"math inline\">\\(\\widehat R_U\\colon\\widehat{\\mathbb D}\\to\\widehat U\\)</span> of the Carathéodory compactifications, where <span class=\"math inline\">\\(\\widehat{\\mathbb D}\\cong\\overline{\\mathbb D}\\)</span> and <span class=\"math inline\">\\(\\widehat U=U\\cup\\mathcal I(U)\\)</span>.</p>\n<p>We have <span class=\"math inline\">\\(\\mathcal I(U)\\cong S^1\\)</span>, so ideal boundaries are <span class=\"math inline\">\\(1\\)</span>-manifolds. The restriction <span class=\"math inline\">\\(\\widehat R|_{S^1}\\colon S^1\\to\\mathcal I(U)\\)</span> gives impressions on <span class=\"math inline\">\\(\\partial U\\)</span>. If <span class=\"math inline\">\\(\\partial U\\)</span> is locally connected, then <span class=\"math inline\">\\(\\widehat R|_{S^1}\\colon S^1\\to\\partial U\\)</span>: the impressions turn out to be points. If <span class=\"math inline\">\\(U\\)</span> is a Jordan domain, this restriction is a homeomorphism <span class=\"math inline\">\\(S^1\\cong\\partial U\\)</span>. Situations like the following violate injectivity.</p>\n<figure data-latex-placement=\"H\">\n<p><img src=\"figures/mcmullens-surgery/ms-fig-02.svg\" loading=\"lazy\" style=\"width:11.5cm\" /> <em>Figure MS2</em></p>\n</figure>\n<p>More generally, take <span class=\"math inline\">\\(C\\subseteq J(f)\\)</span> with <span class=\"math inline\">\\(f(C)\\subseteq C\\)</span>, and consider <span class=\"math inline\">\\(f\\colon\\widehat{\\mathbb C}\\setminus f^{-1}(C)\n\\to\\widehat{\\mathbb C}\\setminus C\\)</span>.</p>\n<figure data-latex-placement=\"H\">\n<p><img src=\"figures/mcmullens-surgery/ms-fig-04.svg\" loading=\"lazy\" style=\"width:12cm\" /> <em>Figure MS4</em></p>\n</figure>\n<p>Here <span class=\"math display\">\\[\\mathcal I(C):=\\bigcup_{\\substack{V\\subseteq\\widehat{\\mathbb C}\\setminus C\\\\\n                         V\\text{ a component}}}\\mathcal I(V).\\]</span></p>\n<h2 id=\"regularity-of-the-map\">Regularity of the map</h2>\n<p>We loosen the regularity of <span class=\"math inline\">\\(f\\)</span> for convenience. Sullivan’s straightening theorem says that <span class=\"math inline\">\\(f\\)</span> is quasirational if and only if <span class=\"math inline\">\\(\\langle f^{\\circ n}\\rangle_n\\)</span> is uniformly <span class=\"math inline\">\\(K\\)</span>-quasiregular. Here quasirational means <span class=\"math inline\">\\(f\\equiv\\varphi\\circ R\\circ\\varphi^{-1}\\)</span>, with <span class=\"math inline\">\\(R\\)</span> rational.</p>\n<h1 id=\"mcmullens-gluing-lemma\">McMullen’s gluing lemma</h1>\n<h4 id=\"hypotheses.\">Hypotheses.</h4>\n<dl>\n<dt><span>(i)</span></dt>\n<dd>\n<p><span class=\"math inline\">\\(\\mathcal I(U)\\)</span> is either a fixed component of <span class=\"math inline\">\\(\\mathcal I(C)\\)</span>, or strictly preperiodic, with <span class=\"math inline\">\\(f^{\\circ n}(V)\\cap U=\\varnothing\\)</span>.</p>\n</dd>\n<dt><span>(ii)</span></dt>\n<dd>\n<p>There are quasiconformal maps <span class=\"math inline\">\\(\\phi_{U,V}\\colon U,V\\to\\mathbb D\\)</span> such that <span class=\"math inline\">\\(B\\)</span> and <span class=\"math inline\">\\(f\\)</span> are compatible in the following diagram.</p>\n</dd>\n</dl>\n<figure data-latex-placement=\"H\">\n<p><img src=\"figures/mcmullens-surgery/ms-fig-06.svg\" loading=\"lazy\" style=\"width:7cm\" /> <em>Figure MS6</em></p>\n</figure>\n<h2 class=\"unnumbered\" id=\"claim\">Claim</h2>\n<p>The map <span class=\"math display\">\\[g(z):=\\begin{cases}\n f(z),&amp;z\\notin U,\\\\\n \\phi_V^{-1}\\circ B\\circ\\phi_U(z),&amp;z\\in U\n \\end{cases}\\]</span> is quasirational.</p>\n<p>The same story holds when <span class=\"math inline\">\\(\\mathcal I(U)\\)</span> is periodic.</p>\n<figure data-latex-placement=\"H\">\n<p><img src=\"figures/mcmullens-surgery/ms-fig-14.svg\" loading=\"lazy\" style=\"width:11.5cm\" /> <em>Figure MS14</em></p>\n</figure>\n<h1 id=\"rigid-models\">Rigid models</h1>\n<dl>\n<dt><span>(i)</span></dt>\n<dd>\n<p>Elliptic: <span class=\"math inline\">\\(z\\mapsto e^{2\\pi i\\theta}z\\)</span>, where <span class=\"math inline\">\\(\\theta\\in\\mathbb R\\setminus\\mathbb Q\\)</span>.</p>\n</dd>\n<dt><span>(ii)</span></dt>\n<dd>\n<p>Hyperbolic: <span class=\"math inline\">\\(z\\mapsto z^d\\)</span>, where <span class=\"math inline\">\\(d&gt;1\\)</span>.</p>\n</dd>\n<dt><span>(iii)</span></dt>\n<dd>\n<p>Parabolic: <span class=\"math inline\">\\(z\\mapsto\\dfrac{z^d+a}{1+az^d}\\)</span>, where <span class=\"math inline\">\\(a=\\dfrac{d-1}{d+1}\\)</span>.</p>\n</dd>\n</dl>\n<h4 id=\"goal.\">Goal.</h4>\n<p>Simplify rational maps by gluing these rigid models along <span class=\"math inline\">\\(\\mathcal I(C)\\)</span> for <span class=\"math inline\">\\(C\\subseteq J(R)\\)</span>.</p>\n<h1 id=\"application-of-mcmullens-surgery\">Application of McMullen’s surgery</h1>\n<h2 class=\"unnumbered\" id=\"theorem-2\">Theorem 2</h2>\n<p>Let <span class=\"math inline\">\\(C\\subseteq J(f)\\)</span> be a forward-invariant, closed component. Then <span class=\"math inline\">\\(f|_C\\sim g|_{J(g)}\\)</span>, where <span class=\"math inline\">\\(g\\)</span> is built out of rigid models.</p>\n<h2 id=\"dynamics-on-the-ideal-boundary\">Dynamics on the ideal boundary</h2>\n<p>Only finitely many components <span class=\"math inline\">\\(V_1,\\ldots,V_k\\)</span> of <span class=\"math inline\">\\(\\widehat{\\mathbb C}\\setminus C\\)</span> intersect <span class=\"math inline\">\\(f^{-1}(C)\\)</span> or contain a critical point. Denote this collection by <span class=\"math inline\">\\(\\mathcal V\\)</span>.</p>\n<dl>\n<dt><span>(i)</span></dt>\n<dd>\n<p>If <span class=\"math inline\">\\(U\\notin\\mathcal V\\)</span> is a component of <span class=\"math inline\">\\(\\widehat{\\mathbb C}\\setminus C\\)</span>, then <span class=\"math inline\">\\(f|_U\\colon U\\to f(U)\\)</span> is a covering. Since <span class=\"math inline\">\\(U\\)</span> is a disc, <span class=\"math inline\">\\(\\deg(f)=1\\)</span>. Thus <span class=\"math inline\">\\(\\deg(f)&gt;1\\)</span> on only finitely many components of <span class=\"math inline\">\\(\\widehat{\\mathbb C}\\setminus C\\)</span>.</p>\n</dd>\n</dl>\n<h2 id=\"periodic-components-and-the-surgery\">Periodic components and the surgery</h2>\n<h2 class=\"unnumbered\" id=\"lemma-3\">Lemma 3</h2>\n<p>On periodic components of <span class=\"math inline\">\\(\\mathcal I(C)\\)</span>, the first return map is compatible with one of the rigid models.</p>",
+    "mathMacros": {
+      "\\C": "\\mathbb C",
+      "\\D": "\\mathbb D",
+      "\\M": "\\mathcal M",
+      "\\Chat": "\\widehat{\\mathbb C}",
+      "\\Crit": "\\operatorname{Crit}",
+      "\\Int": "\\operatorname{Int}",
+      "\\Ext": "\\operatorname{Ext}",
+      "\\id": "\\operatorname{id}"
+    },
+    "excerptHtml": "<p>In order to surgically glue different dynamical systems, one ends up having to rely on good boundary-extension theorems, or on decent enough straightening theorems.</p>",
+    "editedSourceSha256": "208afa9f735855109a140f924b7d9e769aa59125808c13d08171c8ce1702408e"
+  },
+  {
+    "order": 55,
     "slug": "from-complex-dynamics-to-measure-preserving-systems",
     "title": "From Complex Dynamics to Measure-Preserving Systems",
     "dek": "",
@@ -2925,7 +3113,7 @@
     "editedSourceSha256": "3e81a9bb8950430f7d8da9fa2125763c23506a8806b77c9ad7628b7b91adb610"
   },
   {
-    "order": 52,
+    "order": 56,
     "slug": "recurrence-and-three-views-of-ergodicity",
     "title": "Recurrence and Ergodicity",
     "dek": "",
@@ -2970,7 +3158,7 @@
     "editedSourceSha256": "ed33751a4b5cd76fd922fc7e841dfae1dbc72eaa6cd2908ff149b7092a32d00a"
   },
   {
-    "order": 53,
+    "order": 57,
     "slug": "mean-maximal-and-pointwise-ergodic-theorems",
     "title": "Mean, Maximal, and Pointwise Ergodic Theorems",
     "dek": "",
@@ -3015,7 +3203,7 @@
     "editedSourceSha256": "fff211006ae00d90d07dd0ef516b9448e544029d4176be6a4cb02b7116abe9c5"
   },
   {
-    "order": 54,
+    "order": 58,
     "slug": "mixing-products-and-spectral-criteria",
     "title": "Mixing, Products, and Spectral Criteria",
     "dek": "",
@@ -3060,7 +3248,7 @@
     "editedSourceSha256": "7100f19453c10190b3f4ac451fdf4b54cdc40d4a76cfc9fa9d72f2c29c683829"
   },
   {
-    "order": 55,
+    "order": 59,
     "slug": "return-times-kakutani-skyscrapers-and-rokhlin-towers",
     "title": "Return Times, Kakutani Skyscrapers, and Rokhlin Towers",
     "dek": "",
@@ -3105,7 +3293,7 @@
     "editedSourceSha256": "37c5eac7490f7d5ff7d089db24e315974bcbd761134ddbf48848878b5370544d"
   },
   {
-    "order": 56,
+    "order": 60,
     "slug": "invariant-measures-and-the-geometry-of-ergodicity",
     "title": "Invariant Measures and the Geometry of Ergodicity",
     "dek": "",
@@ -3150,7 +3338,7 @@
     "editedSourceSha256": "a661bfb33b2efc7759c0b92c17d7d5b939d26282edc240e9dd36ad3f9ca30773"
   },
   {
-    "order": 57,
+    "order": 61,
     "slug": "unique-ergodicity-and-equidistribution",
     "title": "Equidistribution",
     "dek": "",
@@ -3195,7 +3383,7 @@
     "editedSourceSha256": "ea3788613724e3d5c17308e2e3fb3b544c2517268759682f16ae15693f0a81a6"
   },
   {
-    "order": 58,
+    "order": 62,
     "slug": "thermodynamical-formalism-hausdorff-dimension",
     "title": "Thermodynamical Formalism and Hausdorff Dimension",
     "dek": "",
@@ -3263,7 +3451,7 @@
     "editedSourceSha256": "b327bf698bc9ee1188ab89fd720e33cd59ee3d821a6faf7a7de3ec84a235c0fc"
   },
   {
-    "order": 59,
+    "order": 63,
     "slug": "lemma-book-elementary-number-theory",
     "title": "Elementary Number Theory",
     "dek": "",
@@ -3312,7 +3500,7 @@
     "editedSourceSha256": "31fb81b5465c66def5f21158388bf10de08771eccefd02c34a8f2880267e94b9"
   },
   {
-    "order": 60,
+    "order": 64,
     "slug": "lemma-book-induction-contradiction-pigeonholes",
     "title": "Proof Strategies: Induction, Contradiction, and Pigeonholes",
     "dek": "",
@@ -3387,7 +3575,7 @@
     "editedSourceSha256": "5df726fcb7ebf2e4a38677c5db2142b6639de2b677ccd25f570f90be2cebdbe4"
   },
   {
-    "order": 61,
+    "order": 65,
     "slug": "lemma-book-polynomial-roots-identities-systems",
     "title": "Polynomial Roots, Identities, and Algebraic Systems",
     "dek": "",
@@ -3498,7 +3686,7 @@
     "editedSourceSha256": "532edae0d267155637cdfb98cd8f5672731f47347ac31cb98c0a96de1a79c3e8"
   },
   {
-    "order": 62,
+    "order": 66,
     "slug": "lemma-book-congruences-diophantine-equations-descent",
     "title": "Congruences and Diophantine Equations",
     "dek": "",
@@ -3633,7 +3821,7 @@
     "editedSourceSha256": "8d98f7702f91d0a7a89da944789b326ecd8c1d260de4b1a4e5efb4214fbf070c"
   },
   {
-    "order": 63,
+    "order": 67,
     "slug": "lemma-book-standard-inequalities-cauchy-schwarz",
     "title": "AM–GM and Cauchy–Schwarz Applications",
     "dek": "",
@@ -3736,7 +3924,7 @@
     "editedSourceSha256": "2fc0eea5747feda4380f1ecb9983e2a55400c331dd5d4700cfaa0ecb0127b1b6"
   },
   {
-    "order": 64,
+    "order": 68,
     "slug": "lemma-book-inequality-toolkit",
     "title": "An Inequality Toolkit: Jensen, Muirhead, and Sums of Squares",
     "dek": "",
@@ -3817,7 +4005,7 @@
     "editedSourceSha256": "1406c9a9a270c6534a946063d15b06e8b1f7073eaa3350290dc3182d4b7585da"
   },
   {
-    "order": 65,
+    "order": 69,
     "slug": "lemma-book-rearrangement-convexity-power-means",
     "title": "Rearrangement and Convexity",
     "dek": "",
@@ -3880,7 +4068,7 @@
     "editedSourceSha256": "4279af03b1ac73688c23ae0f82711edb13d6659e6148b2f3eb4a4679e168a6ba"
   },
   {
-    "order": 66,
+    "order": 70,
     "slug": "lemma-book-lagrange-multipliers-boundary-analysis",
     "title": "Optimization, Normalization, and AM–GM",
     "dek": "",
@@ -3949,7 +4137,7 @@
     "editedSourceSha256": "f6fb78b51c550323c59552d0c90abe00f9cf4fc83acc99f57329b27af104b0b4"
   },
   {
-    "order": 67,
+    "order": 71,
     "slug": "lemma-book-circle-geometry",
     "title": "Circle Geometry: Inversion, Radical Axes, and Special Circles",
     "dek": "",
@@ -4022,7 +4210,7 @@
     "editedSourceSha256": "0eac8aaf6eee461be3e5f1f5da832987850ca8205b7d74c261bc91d078cccedb"
   },
   {
-    "order": 68,
+    "order": 72,
     "slug": "lemma-book-working-backwards-area-ratios",
     "title": "Working Backwards, Area Ratios, and Geometric Constructions",
     "dek": "",
@@ -4085,7 +4273,7 @@
     "editedSourceSha256": "615484d88e0620460645660e474b5ce4e1cdb5faa931b0a4c14a46ce1bf54334"
   },
   {
-    "order": 69,
+    "order": 73,
     "slug": "lemma-book-triangle-inequalities-trigonometric-substitutions",
     "title": "Triangle Inequalities and Trigonometric Substitutions",
     "dek": "",
@@ -4203,7 +4391,7 @@
     "editedSourceSha256": "759852ee1ff9dbebf6c814c92aaa91091848000a914a669743ff9da4e70ea9d3"
   },
   {
-    "order": 70,
+    "order": 74,
     "slug": "lemma-book-isogonal-conjugates-pole-polar",
     "title": "Isogonal Conjugates and Pole–Polar Geometry",
     "dek": "",
@@ -4260,7 +4448,7 @@
     "editedSourceSha256": "402c9e67bfe9c066a45ca91a5fc8e0fe9ed9ce65b6270fc8fd6d6c5dd45d6272"
   },
   {
-    "order": 71,
+    "order": 75,
     "slug": "lemma-book-transformations",
     "title": "Rotation in Geometry",
     "dek": "",
@@ -4311,7 +4499,7 @@
     "editedSourceSha256": "24d102dadf2c48b0177719aaf1cf24c7f5267673f9dfc5af0d44916d03f881d1"
   },
   {
-    "order": 72,
+    "order": 76,
     "slug": "lemma-book-puzzles-multiplication",
     "title": "Puzzles, Surprises, and Marvellous Methods of Multiplication",
     "dek": "",
@@ -4396,7 +4584,7 @@
     "editedSourceSha256": "2dd2a001884fe2d85a7b58cba2dfefdca1637545eafdfeb67f2654530ab3460d"
   },
   {
-    "order": 73,
+    "order": 77,
     "slug": "lemma-book-ramanujan-problems",
     "title": "Problems Proposed by S. Ramanujan",
     "dek": "",
@@ -4448,7 +4636,7 @@
     "editedSourceSha256": "469554c924871b7e650099cde24aa56221a1d4ee5774a502b3d3832de0153725"
   },
   {
-    "order": 74,
+    "order": 78,
     "slug": "lemma-book-problems-for-anant-mudgal",
     "title": "Problems for Anant Mudgal",
     "dek": "",
@@ -4500,7 +4688,7 @@
     "editedSourceSha256": "20bb199ea093ec35ccf172092a177dd79758887fad0a928ab0733bef148c9f61"
   },
   {
-    "order": 75,
+    "order": 79,
     "slug": "lemma-book-thrilling-thirty-surviving-problems",
     "title": "Thrilling Thirty: The Surviving Problems",
     "dek": "",
@@ -4558,7 +4746,7 @@
     "editedSourceSha256": "9b8d2aa22dc253c750576c385603bcb8e6fc64f3dc403939d6c353b0ba8579b0"
   },
   {
-    "order": 76,
+    "order": 80,
     "slug": "the-language-of-category-theory-in-algebraic-topology",
     "title": "The Language of Category Theory (in Algebraic Topology)",
     "dek": "",
@@ -4616,7 +4804,7 @@
     "editedSourceSha256": "2139caff4d0a12bf7b16f6c4963abd44f0264432c3739dfbc358d8b870cda972"
   },
   {
-    "order": 77,
+    "order": 81,
     "slug": "erdos-distance-problem",
     "title": "Erdős Distance Problem",
     "dek": "",
@@ -4674,7 +4862,7 @@
     "editedSourceSha256": "21694d29ae1b199b7aac0b2d843d5d7990aa2fb00c5fa0c22351970de7c89a4e"
   },
   {
-    "order": 78,
+    "order": 82,
     "slug": "small-gaps-between-primes",
     "title": "Small Gaps between Primes",
     "dek": "",

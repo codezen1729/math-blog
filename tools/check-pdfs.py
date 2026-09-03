@@ -22,7 +22,7 @@ def check(project: Path, output: Path):
         environment = {**os.environ, "openin_any":"p", "openout_any":"p", "BIBINPUTS":str(project) + "/:"}
         command = [latex, "-no-shell-escape", "-interaction=nonstopmode", "-halt-on-error", f"-output-directory={directory}", filename]
         def execute(args, cwd):
-            result = subprocess.run(args, cwd=cwd, env=environment, capture_output=True, text=True, timeout=90)
+            result = subprocess.run(args, cwd=cwd, env=environment, capture_output=True, text=True, errors="replace", timeout=90)
             if result.returncode:
                 raise RuntimeError(f"{filename}: compilation failed\n{result.stdout[-2400:]}\n{result.stderr[-400:]}")
         execute(command, project)
