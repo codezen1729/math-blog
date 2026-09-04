@@ -2,19 +2,18 @@
 \input{styles/blog-preamble.tex}
 \graphicspath{{figures/complex-analysis/}}
 \begin{document}
-\section*{A Complex Vector Space}
+\section*{The Complex Plane}
 % BLOG-CONTENT-BEGIN
 % Overleaf publishing connection verified.
-\textit{Following the framework of T. Tao.}
 
 \subsection*{Tool 1 — Basis-Fixing Reduction}
-Given a linear transformation,
+Consider a linear transformation,
 \[
 T\left(\sum_{i=1}^{n}a_i e_i\right)=\sum_{i=1}^{n}a_iT(e_i).
 \]
-If $T$ fixes the basis $\{e_i\}$, then $T$ is the identity. Thus, compose $T$ with linear transformations so that the composition fixes $\{e_i\}$; then one can trace one's steps back.
+Observe that if $T$ fixes the basis $\{e_i\}$, then $T$ is the identity map. Thus, compose $T$ with linear transformations so that the composition fixes $\{e_i\}$; then one can trace the steps back to recover $T$.
 
-It follows that any isometry $T\colon\mathbb C\to\mathbb C$ is of the form
+A simple application of the aforementioned tool goes into showing that any isometry $T\colon\mathbb C\to\mathbb C$ is of the form
 \[
 T(z)=z_0+\omega z
 \qquad\text{or}\qquad
@@ -47,25 +46,24 @@ then, noting that
 \[
 \langle T(v),T(e_i)\rangle=\langle v,e_i\rangle,
 \]
-we get $a_i=b_i$ for every $i$, $1\leq i\leq n$. Now is the right time
-
-
-to remind ourselves of Tool 1. We know that
+we get $a_i=b_i$ for every $i$, $1\leq i\leq n$. We know that
 \[
 T\left(\sum_{i=1}^{n}a_ie_i\right)=\sum_{i=1}^{n}a_iT(e_i).
 \]
-Compose $T$ with a rotation $\varphi$ such that
+We apply Tool $1$ by composing $T$ with a rotation $\varphi$ so that
 \[
 (\varphi\circ T)(e_1)=e_1.
 \]
 The map $\varphi\circ T$ is again an isometry that preserves $0$ (observe here that $T$ is linear). Thus
-\begin{align*}
+\[
 \langle(\varphi\circ T)(e_2),e_1\rangle
-&=\langle(\varphi\circ T)(e_2),(\varphi\circ T)(e_1)\rangle
- =\langle e_2,e_1\rangle=0,\\
+=\langle(\varphi\circ T)(e_2),(\varphi\circ T)(e_1)\rangle
+ =\langle e_2,e_1\rangle=0, \text{ and,}
+\]
+\[
 \langle(\varphi\circ T)(e_2),(\varphi\circ T)(e_2)\rangle
-&=\langle e_2,e_2\rangle=1.
-\end{align*}
+=\langle e_2,e_2\rangle=1.
+\]
 Therefore \((\varphi\circ T)(e_2)=\pm e_2,\)
 and hence
 \[
@@ -85,66 +83,21 @@ T(z)=z_0+\omega\overline z.
 \]
 
 \textbf{Remark.}
-The power of Tool 1 goes far beyond this. Maps that fix certain elements often turn out to be ``nice,'' and one can trace one's steps back after reaching that ``nice'' place. We will see another illustration of this in the same theme. Before that, note that what we essentially found is that the complex plane is rigid: if two points of a plane are connected by a rubber band, there are only two ways to deform it so that the lengths of the rubber bands remain the same in the end -- reflections and rotations. If you stretch the rubber band, then you cannot undo it later.
+The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice''. We shall see another application of this soon. Before that, it is worth emphasizing the rigidity of the complex plane: if two points of the plane are connected by a rubber band, there are essentially two ways to deform it preserving lengths -- reflections and rotations. This rigidity feature can be extended to all Euclidean spaces $\mathbb R^n$. However, there are instances of non-Euclidean spaces, for which the doubling map $z\mapsto 2z$ is an isometry. 
 
-
-In other words, it will break. This rigidity can be extended to all of $\mathbb R^n$ with a very similar idea, yielding the following.
-
-\subsection*{General version}
-Any origin-fixing isometry from $\mathbb R^n$ to $\mathbb R^n$ is a composition of at most $n$ reflections along hyperplanes.
-
-\textit{Proof.}
-Exercise. Refer to Beardon's \emph{The Geometry of Discrete Groups}, or any text on M\"obius transformations on $\mathbb R^n$.
-
-\subsubsection*{Application — The dihedral group}
-Now let us look at another application of Tool 1. To be sincere, we shall not deviate from the theme of reflections and rotations. Let us try to study the structure of $D_n$, the dihedral group. \(D_n\cong\operatorname{Aut}(C_n),\)
-where $C_n$ is the cyclic graph on $n$ vertices having exactly one $n$-cycle.
+\subsubsection*{The dihedral group}
+Now let us illustrate another application of Tool $1$ by proving that the dihedral group \(D_n\) is isomorphic to \(\operatorname{Aut}(C_n),\) where $C_n$ is the cyclic graph on $n$ vertices.
 
 \textit{Proof.}
 It is easy to check that $D_n$ acts on $C_n$, since rotations and reflections preserve edges. Thus there is a group homomorphism
 \[
 \varphi\colon D_n\longrightarrow\operatorname{Aut}(C_n).
 \]
-We only have to show that $\varphi$ is surjective; it is clearly injective, since the kernel is the identity in $D_n$.
-
-Label the vertices $\{1,2,3,4,\ldots,n\}$. Without loss of generality, for a given $T\in\operatorname{Aut}(C_n)$ assume $T(1)=1$; otherwise compose it with $\varphi(T')$, where $T'$ is a rotation. Write the cycle as
+The map $\varphi$ is clearly injective. We have to prove that it is also surjective. To that end, label the vertices $\{1,2,3,4,\ldots,n\}$. Without loss of generality, for a given $T\in\operatorname{Aut}(C_n)$ assume $T(1)=1$; otherwise compose it with $\varphi(T')$, where $T'$ is a rotation. Write the cycle as
 \[
 1\longrightarrow2\longrightarrow3\longrightarrow\cdots
-\longrightarrow n\longrightarrow1
-\qquad\text{(not a directed graph).}
+\longrightarrow n\longrightarrow1.
 \]
-If $T(1)=1$, then $T(2)$ must be adjacent
-
-
-to $1$, so $T(2)=2$ or $n$. If $T(2)=2$, then $T(3)$ must be adjacent to $2$ and cannot be $1$. Inductively, $T(i)=i$ for every $i$. If $T(2)=n$, then $T(3)$ must be adjacent to $n$ but not to $1$. Again, inductively, we conclude that $T$ is a reflection. From this ``nice'' place, trace back to conclude that $T\in\varphi(D_n)$. Hence $\varphi$ is an isomorphism.
-
-\textbf{Remark.}
-This is a good place to ask the following. We have just seen the rigidity of the complex plane, geometrically speaking. Now consider the isometries that fix $0$ and $1$.
-
-\textbf{Exercise.}
-Such an isometry is a \emph{field homomorphism} (hence a linear map) that fixes $\mathbb R$, from $\mathbb C$ to $\mathbb C$, with $\mathbb C$ viewed as $\mathbb R^2$.
-
-The very geometric notion of rigidity has led us to an algebraic question, namely the exercise above. Suppose we have a field extension of $\mathbb R$, say $\mathbb C'$, such that
-\[
-\operatorname{Aut}_{\mathbb R}(\mathbb C')
-\cong
-\{\text{isometries of $\mathbb C$ that fix $\mathbb R$}\}.
-\]
-Then is $\mathbb C'\cong\mathbb C$? Here $\operatorname{Aut}_{\mathbb R}(\mathbb C')$ denotes the field homomorphisms that fix $\mathbb R$.
-
-Here the group $D_2$, seen as $\operatorname{Aut}(C_2)$ with vertices $\pm e_2$, is of relevance, because then we are asking
-\[
-\operatorname{Aut}_{\mathbb R}(\mathbb C')
-\cong\operatorname{Aut}(C_2)
-\cong\mathbb Z/2\mathbb Z:
-\qquad\text{does this force $\mathbb C'=\mathbb C$?}
-\]
-
-This is an infant version of the inverse Galois problem.
-
-The algebraic construction of $\mathbb C$ is thus significant: it shows us that rigidity is a consequence of an algebraic structure, and vice versa.
-
-
-This finally brings us to the statement made by Sophie Germain: ``Algebra is written geometry and geometry is figured algebra.'' One can regard the construction of $\mathbb C$ via geometry and, independently, via algebra as an illustration of Sophie's comment.
+If $T(1)=1$, then $T(2)$ must be adjacent to $1$, so $T(2)=2$ or $n$. If $T(2)=2$, then $T(3)$ must be adjacent to $2$ and cannot be $1$. Inductively, $T(i)=i$ for every $i$. If $T(2)=n$, then $T(3)$ must be adjacent to $n$ but not to $1$. Again, inductively, we conclude that $T$ is a reflection. Now, tracing back, we conclude that $T\in\varphi(D_n)$. Hence $\varphi$ is an isomorphism.
 % BLOG-CONTENT-END
 \end{document}
