@@ -276,7 +276,7 @@ jobs:
       - name: Install the LaTeX toolchain
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended texlive-pictures texlive-science dvisvgm ghostscript lmodern python3-pil
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended texlive-pictures texlive-science texlive-plain-generic dvisvgm ghostscript lmodern python3-pil
           curl --fail --location --retry 3 -o /tmp/blog-pandoc.tar.gz https://github.com/jgm/pandoc/releases/download/3.9/pandoc-3.9-linux-amd64.tar.gz
           printf '872a10c7ec29d5278831d855b11bd4ade0df4d5ec9a089a3197bc63a37eb4003  /tmp/blog-pandoc.tar.gz\n' | sha256sum --check
           tar -xzf /tmp/blog-pandoc.tar.gz -C /tmp
