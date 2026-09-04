@@ -486,6 +486,15 @@
     "file": "27-third-surgery.tex"
   },
   {
+    "slug": "mcmullens-surgery",
+    "title": "McMullen’s Surgery",
+    "collection": "mcmullens-surgery",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "208afa9f735855109a140f924b7d9e769aa59125808c13d08171c8ce1702408e",
+    "file": "80-mcmullens-surgery.tex"
+  },
+  {
     "slug": "from-complex-dynamics-to-measure-preserving-systems",
     "title": "From Complex Dynamics to Measure-Preserving Systems",
     "collection": "ergodic-theory",
