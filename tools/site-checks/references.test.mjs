@@ -45,7 +45,14 @@ test('posts have internal section headings below the page title', () => {
 test('full newest collections retain their closing sections and all source figures', () => {
   const expected = {'the-quadratic-family':7, 'conformal-welding':1, 'smooth-covering-manifolds':9};
   for (const [slug,count] of Object.entries(expected)) assert.equal([...bySlug.get(slug).html.matchAll(/<img\b/g)].length,count,slug);
-  assert.equal([...bySlug.get('mcmullens-surgery').html.matchAll(/<img\b/g)].length,42,'mcmullens-surgery');
+  assert.equal([...bySlug.get('third-surgery').html.matchAll(/<img\b/g)].length,10,'third-surgery');
+  assert.equal([...bySlug.get('mcmullens-surgery').html.matchAll(/<img\b/g)].length,20,'mcmullens-surgery');
+  assert.equal([...bySlug.get('mcmullens-surgery-finite-symmetry').html.matchAll(/<img\b/g)].length,1,'mcmullens-surgery-finite-symmetry');
+  const surgeryFigures = new Set(
+    ['third-surgery','mcmullens-surgery','mcmullens-surgery-finite-symmetry']
+      .flatMap(slug => [...bySlug.get(slug).html.matchAll(/src="(figures\/mcmullens-surgery\/ms-fig-[^"]+\.svg)"/g)].map(match => match[1]))
+  );
+  assert.equal(surgeryFigures.size,30,'McMullen surgery figure distribution');
   assert.match(bySlug.get('smooth-covering-manifolds').html,/associativ/i);
   assert.ok(bySlug.get('the-quadratic-family').html.includes('G_c(P_c(z))=2G_c(z)'), 'The Quadratic Family must retain the functional equation from its final section.');
   assert.ok(bySlug.get('polynomial-like-maps-and-the-straightening-theorem').wordCount > 900);
