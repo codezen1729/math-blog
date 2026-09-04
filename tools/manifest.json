@@ -478,7 +478,7 @@
   },
   {
     "slug": "third-surgery",
-    "title": "Third Surgery",
+    "title": "McMullen's Surgery I: Ideal Boundaries and the Gluing Lemma",
     "collection": "surgeries",
     "phase": 4,
     "phaseLabel": "Complex Dynamics",
@@ -487,12 +487,21 @@
   },
   {
     "slug": "mcmullens-surgery",
-    "title": "McMullen’s Surgery",
-    "collection": "mcmullens-surgery",
+    "title": "McMullen's Surgery II: Rigid Models and a Julia Component",
+    "collection": "surgeries",
     "phase": 4,
     "phaseLabel": "Complex Dynamics",
     "initialSha256": "208afa9f735855109a140f924b7d9e769aa59125808c13d08171c8ce1702408e",
     "file": "80-mcmullens-surgery.tex"
+  },
+  {
+    "slug": "mcmullens-surgery-finite-symmetry",
+    "title": "McMullen's Surgery III: Commuting Deformations and Finite Symmetry",
+    "collection": "surgeries",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "bc505e78af09f4f86b75c70fe3d86578fa70cab375bd81b4ac5193d6c9ae0784",
+    "file": "84-mcmullens-surgery-finite-symmetry.tex"
   },
   {
     "slug": "from-complex-dynamics-to-measure-preserving-systems",

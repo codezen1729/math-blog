@@ -3107,7 +3107,7 @@
   {
     "order": 54,
     "slug": "third-surgery",
-    "title": "Third Surgery",
+    "title": "McMullen's Surgery I: Ideal Boundaries and the Gluing Lemma",
     "dek": "",
     "excerptHtml": "<p><span>(Invariant Line Field on the Julia Set)</span>:- A line field on the Julia set <span class=\"math inline\">\\(J(f)\\)</span> of <span class=\"math inline\">\\(f\\)</span> is a measurable essentially bounded function <span class=\"math inline\">\\(\\mu(z)\\)</span> supported on a positive area subset of <span class=\"math inline\">\\(J(f)\\)</span>. It is said to be invariant if <span class=\"math inline\">\\(f^*\\mu = \\mu\\)</span>.</p>",
     "mathMacros": {
@@ -3116,7 +3116,7 @@
     },
     "phase": 4,
     "phaseLabel": "Complex Dynamics",
-    "track": "Complex dynamics",
+    "track": "Complex Dynamics",
     "kind": "Essay",
     "minutes": 42,
     "wordCount": 8798,
@@ -3145,17 +3145,16 @@
   {
     "order": 55,
     "slug": "mcmullens-surgery",
-    "title": "McMullen’s Surgery",
+    "title": "McMullen's Surgery II: Rigid Models and a Julia Component",
     "dek": "",
     "phase": 4,
     "phaseLabel": "Complex Dynamics",
     "track": "Complex Dynamics",
-    "kind": "Exposition",
+    "kind": "Essay",
     "minutes": 15,
     "wordCount": 3028,
     "prerequisites": [
-      "third-surgery",
-      "conformal-welding"
+      "third-surgery"
     ],
     "background": [],
     "sourceCollection": "McMullen's Surgery",
@@ -3199,6 +3198,43 @@
   },
   {
     "order": 56,
+    "slug": "mcmullens-surgery-finite-symmetry",
+    "title": "McMullen's Surgery III: Commuting Deformations and Finite Symmetry",
+    "dek": "",
+    "excerptHtml": "",
+    "mathMacros": {
+      "\\baselinestretch": "1.3",
+      "\\esssup": "\\operatorname{ess\\,sup}"
+    },
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "track": "Complex Dynamics",
+    "kind": "Essay",
+    "minutes": 1,
+    "wordCount": 1,
+    "prerequisites": [
+      "mcmullens-surgery"
+    ],
+    "background": [],
+    "sourceCollection": "Surgeries in Complex Dynamics",
+    "sourcePath": "surgeries/main.tex",
+    "sourceStart": 1436,
+    "sourceEnd": 1752,
+    "sourceSha256": "0d3d1426e21ec2ae5782804d8c43ddaeedce991913e915495663a487074a1613",
+    "sourceSegments": [
+      {
+        "source": "surgeries/main.tex",
+        "start": 1436,
+        "end": 1752,
+        "sha256": "0d3d1426e21ec2ae5782804d8c43ddaeedce991913e915495663a487074a1613"
+      }
+    ],
+    "status": "Source draft",
+    "html": "",
+    "editedSourceSha256": "7283b068c102b911a4630915a017bee986b7b56d398f6a6b171615edc301198c"
+  },
+  {
+    "order": 57,
     "slug": "from-complex-dynamics-to-measure-preserving-systems",
     "title": "From Complex Dynamics to Measure-Preserving Systems",
     "dek": "",
@@ -3241,7 +3277,7 @@
     "editedSourceSha256": "aea7301f1c842881106476bf96e4d99113ca959deb62893c3f2f3da20125eb67"
   },
   {
-    "order": 57,
+    "order": 58,
     "slug": "recurrence-and-three-views-of-ergodicity",
     "title": "Recurrence and Three Views of Ergodicity",
     "dek": "",
@@ -3286,7 +3322,7 @@
     "editedSourceSha256": "30795995f736982d6ddfc435772384a30c73a529ace0936e44a86e6d016bc41b"
   },
   {
-    "order": 58,
+    "order": 59,
     "slug": "mean-maximal-and-pointwise-ergodic-theorems",
     "title": "Mean, Maximal, and Pointwise Ergodic Theorems",
     "dek": "",
@@ -3331,7 +3367,7 @@
     "editedSourceSha256": "38b29de56ce38bedb46ab12a7a78d58f59c38065d6db7760fa2b64c9cefd48a9"
   },
   {
-    "order": 59,
+    "order": 60,
     "slug": "mixing-products-and-spectral-criteria",
     "title": "Mixing, Products, and Spectral Criteria",
     "dek": "",
@@ -3376,7 +3412,7 @@
     "editedSourceSha256": "a6759ef90e0631b9c644c0615dc9158dd6767fcdd394c6802b311c86ce2dedd9"
   },
   {
-    "order": 60,
+    "order": 61,
     "slug": "return-times-kakutani-skyscrapers-and-rokhlin-towers",
     "title": "Return Times, Kakutani Skyscrapers, and Rokhlin Towers",
     "dek": "",
@@ -3421,7 +3457,7 @@
     "editedSourceSha256": "3e880c2ca7497d011d2fe179f2e459b39b338d54cc0ed53f683de3da48f793f0"
   },
   {
-    "order": 61,
+    "order": 62,
     "slug": "invariant-measures-and-the-geometry-of-ergodicity",
     "title": "Invariant Measures and the Geometry of Ergodicity",
     "dek": "",
@@ -3466,7 +3502,7 @@
     "editedSourceSha256": "d7321cad156521206f9c4b2b80119f1d5a6ed024ab7677518a8d0d8c7779a12f"
   },
   {
-    "order": 62,
+    "order": 63,
     "slug": "unique-ergodicity-and-equidistribution",
     "title": "Unique Ergodicity and Equidistribution",
     "dek": "",
@@ -3511,7 +3547,7 @@
     "editedSourceSha256": "9cc2d9ec999d80168abfd1da80a964d3dc041d9721e6cfcaeeefa321fa9b428b"
   },
   {
-    "order": 63,
+    "order": 64,
     "slug": "thermodynamical-formalism-hausdorff-dimension",
     "title": "Thermodynamical Formalism and Hausdorff Dimension",
     "dek": "",
@@ -3579,7 +3615,7 @@
     "editedSourceSha256": "dec054f98dfdf36020819723d392582bda251f291a519230dbe3f52d12c828b7"
   },
   {
-    "order": 64,
+    "order": 65,
     "slug": "lemma-book-elementary-number-theory",
     "title": "Elementary Number Theory",
     "dek": "",
@@ -3634,7 +3670,7 @@
     "editedSourceSha256": "95bf4c4c8d90bd05efcdccda58f03212b022af8f8be1e3a1c5e5dee16c3f9a94"
   },
   {
-    "order": 65,
+    "order": 66,
     "slug": "lemma-book-induction-contradiction-pigeonholes",
     "title": "Proof Strategies: Induction, Contradiction, and Pigeonholes",
     "dek": "",
@@ -3709,7 +3745,7 @@
     "editedSourceSha256": "4afe8ac729abecd50ff663f23ebdfc63865a54998c19a4291c0709fdb7dc250d"
   },
   {
-    "order": 66,
+    "order": 67,
     "slug": "lemma-book-polynomial-roots-identities-systems",
     "title": "Polynomial Roots, Identities, and Algebraic Systems",
     "dek": "",
@@ -3820,7 +3856,7 @@
     "editedSourceSha256": "9b26b304ed37e976bec8a294e044cdf4f11cdd62f04b73250dcc7481799cb73a"
   },
   {
-    "order": 67,
+    "order": 68,
     "slug": "lemma-book-congruences-diophantine-equations-descent",
     "title": "Congruences, Diophantine Equations, and Infinite Descent",
     "dek": "",
@@ -3955,7 +3991,7 @@
     "editedSourceSha256": "2df73125a35533fd8eb3c08b5710fe6956b3d305ec3fa5b241ccb47f4cbcb825"
   },
   {
-    "order": 68,
+    "order": 69,
     "slug": "lemma-book-standard-inequalities-cauchy-schwarz",
     "title": "Standard Inequalities and Ingenious Cauchy–Schwarz Applications",
     "dek": "",
@@ -4058,7 +4094,7 @@
     "editedSourceSha256": "2236119bc583c414dcd61bc9841b6333dc52b6f16828e271d4887df389da67c9"
   },
   {
-    "order": 69,
+    "order": 70,
     "slug": "lemma-book-inequality-toolkit",
     "title": "An Inequality Toolkit: Jensen, Muirhead, and Schur",
     "dek": "",
@@ -4133,7 +4169,7 @@
     "editedSourceSha256": "a66563d9b83346a17b07061b4ba33da361b69250652148b24f42be86b730018a"
   },
   {
-    "order": 70,
+    "order": 71,
     "slug": "lemma-book-rearrangement-convexity-power-means",
     "title": "Rearrangement, Convexity, and Power Means",
     "dek": "",
@@ -4196,7 +4232,7 @@
     "editedSourceSha256": "8a2eae6ddf27d92f0886a1af779a7566793b6d187ad76d03fa7aa421f3c11281"
   },
   {
-    "order": 71,
+    "order": 72,
     "slug": "lemma-book-lagrange-multipliers-boundary-analysis",
     "title": "Lagrange Multipliers and Boundary Analysis",
     "dek": "",
@@ -4271,7 +4307,7 @@
     "editedSourceSha256": "86e3a7d49429949b2a69721fc52573d80a9458e8cf73d51f6c197ddcddbb61aa"
   },
   {
-    "order": 72,
+    "order": 73,
     "slug": "lemma-book-circle-geometry",
     "title": "Circle Geometry: Inversion, Radical Axes, and Special Circles",
     "dek": "",
@@ -4344,7 +4380,7 @@
     "editedSourceSha256": "a83fb2fe99611fb7afed43ac4c6565423f271667efd443953d9a093668155137"
   },
   {
-    "order": 73,
+    "order": 74,
     "slug": "lemma-book-working-backwards-area-ratios",
     "title": "Working Backwards, Area Ratios, and Geometric Constructions",
     "dek": "",
@@ -4413,7 +4449,7 @@
     "editedSourceSha256": "62071e01921f97cf2f50e4317a3c55775f897a9f1ec91af06c2324ef4a89a908"
   },
   {
-    "order": 74,
+    "order": 75,
     "slug": "lemma-book-triangle-inequalities-trigonometric-substitutions",
     "title": "Triangle Inequalities and Trigonometric Substitutions",
     "dek": "",
@@ -4525,7 +4561,7 @@
     "editedSourceSha256": "43c05a53c3c7eff60b0a82ae0b2774771b98a98b759f92e17e6c9781247da28a"
   },
   {
-    "order": 75,
+    "order": 76,
     "slug": "lemma-book-isogonal-conjugates-pole-polar",
     "title": "Isogonal Conjugates and Pole–Polar Geometry",
     "dek": "",
@@ -4582,7 +4618,7 @@
     "editedSourceSha256": "615ab9a57b13d70e7726eaf01c439e0885e7b0f597b6eda5f769d3b4ead98266"
   },
   {
-    "order": 76,
+    "order": 77,
     "slug": "lemma-book-transformations",
     "title": "Transformations: Rotating, Reflecting, and Cutting Figures",
     "dek": "",
@@ -4633,7 +4669,7 @@
     "editedSourceSha256": "9ec60398b4c9380d51eaac8a7fe814873bd1b2804917b52b68fc2183ae4655ab"
   },
   {
-    "order": 77,
+    "order": 78,
     "slug": "lemma-book-puzzles-multiplication",
     "title": "Puzzles, Surprises, and Marvellous Methods of Multiplication",
     "dek": "",
@@ -4718,7 +4754,7 @@
     "editedSourceSha256": "900bf5427c5e3d2068b02bfa43577f0dea54990da524f31b6cfbf765ba85ed57"
   },
   {
-    "order": 78,
+    "order": 79,
     "slug": "lemma-book-ramanujan-problems",
     "title": "Problems Proposed by S. Ramanujan",
     "dek": "",
@@ -4764,7 +4800,7 @@
     "editedSourceSha256": "211f339c7c9662b2e7d25f07c6226948eb79624cd4a282fa27c2f3fc0398bbad"
   },
   {
-    "order": 79,
+    "order": 80,
     "slug": "lemma-book-problems-for-anant-mudgal",
     "title": "Problems for Anant Mudgal",
     "dek": "",
@@ -4810,7 +4846,7 @@
     "editedSourceSha256": "ce8728778eb5cde90649e7241e2c497e935f6cafdc950ed6966d38b4264600a6"
   },
   {
-    "order": 80,
+    "order": 81,
     "slug": "lemma-book-thrilling-thirty-surviving-problems",
     "title": "Thrilling Thirty: The Surviving Problems",
     "dek": "",
@@ -4862,7 +4898,7 @@
     "editedSourceSha256": "0bb28eee233d60887c017fbad0400cadc11464918cb3489ccc00ba9c305475ca"
   },
   {
-    "order": 81,
+    "order": 82,
     "slug": "the-language-of-category-theory-in-algebraic-topology",
     "title": "The Language of Category Theory (in Algebraic Topology)",
     "dek": "",
@@ -4920,7 +4956,7 @@
     "editedSourceSha256": "989508e776565d120ed802d927b37d872781dbe9bd0d81bb21ff0c01faca8462"
   },
   {
-    "order": 82,
+    "order": 83,
     "slug": "erdos-distance-problem",
     "title": "Erdős Distance Problem",
     "dek": "",
@@ -4978,7 +5014,7 @@
     "editedSourceSha256": "2ca709b4db14f2058eff42b41a1c7774eb57d639010873c30856a8d3cfc135dc"
   },
   {
-    "order": 83,
+    "order": 84,
     "slug": "small-gaps-between-primes",
     "title": "Small Gaps between Primes",
     "dek": "",
