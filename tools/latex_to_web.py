@@ -4,6 +4,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "tools/profiles"
 
+
+def shared_math_macro_preamble() -> str:
+    """Translate the website's shared KaTeX notation into LaTeX definitions."""
+    path = Path(__file__).resolve().parent / "shared-macros.json"
+    macros = json.loads(path.read_text())
+    definitions = []
+    for command, expansion in macros.items():
+        arguments = [int(value) for value in re.findall(r"#([1-9])", expansion)]
+        arity = max(arguments, default=0)
+        count = f"[{arity}]" if arity else ""
+        declaration = r"\renewcommand" if command == r"\phi" else r"\providecommand"
+        definitions.append(f"{declaration}{{{command}}}{count}{{{expansion}}}")
+    return "\n".join(definitions)
+
 def unwrap_layout_commands(text: str) -> str:
     """Remove presentation boxes, never the argument/conclusion inside them."""
     pattern = re.compile(r"\\(?:fbox|centerline)\s*\{")
@@ -55,16 +69,30 @@ def clean_tex(text: str) -> str:
         "thm": "Theorem",
         "thmx": "Theorem",
         "lemma": "Lemma",
+        "lem": "Lemma",
         "proposition": "Proposition",
         "prop": "Proposition",
         "corollary": "Corollary",
+        "cor": "Corollary",
         "definition": "Definition",
         "defn": "Definition",
         "conjecture": "Conjecture",
         "example": "Example",
+        "prob": "Problem",
+        "task": "Task",
+        "cl": "Claim",
+        "claim": "Claim",
+        "numberedquestion": "Question",
+        "question": "Question",
+        "question*": "Question",
+        "numberedremark": "Remark",
+        "remark": "Remark",
+        "exercise": "Exercise",
+        "observation": "Observation",
     }
     for environment, label in theorem_names.items():
-        pattern = rf"\\begin\{{{environment}\}}(?:\[([^]]*)\]|\{{([^{{}}]*)\}})?\s*:?-?"
+        escaped_environment = re.escape(environment)
+        pattern = rf"\\begin\{{{escaped_environment}\}}(?:\[([^]]*)\]|\{{([^{{}}]*)\}})?\s*:?-?"
 
         def theorem_repl(match: re.Match[str], theorem_label: str = label) -> str:
             title = (match.group(1) or match.group(2) or "").strip().strip("()")
@@ -143,7 +171,22 @@ def render_diagrams(text: str, collection: str) -> str:
             with tempfile.TemporaryDirectory(prefix="math-blog-diagram-") as temporary:
                 directory = Path(temporary)
                 wrapped = "$\\displaystyle " + diagram + "$" if match.group(2) == "tikzcd" else diagram
-                document = r"\documentclass[dvisvgm,border=6pt]{standalone}" + "\n" + r"\def\pgfsysdriver{pgfsys-dvisvgm.def}" + "\n" + r"\usepackage{amsmath,amssymb,tikz,tikz-cd}" + "\n" + r"\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathreplacing}" + "\n" + r"\newcommand{\cross}{\times}" + "\n" + r"\begin{document}" + "\n" + wrapped + "\n" + r"\end{document}"
+                document = "\n".join([
+                    r"\documentclass[dvisvgm,border=6pt]{standalone}",
+                    r"\def\pgfsysdriver{pgfsys-dvisvgm.def}",
+                    r"\usepackage[dvipsnames]{xcolor}",
+                    r"\usepackage{amsmath,amssymb,mathtools,mathrsfs,braket,bm}",
+                    r"\IfFileExists{mathabx.sty}{\usepackage{mathabx}}{}",
+                    r"\IfFileExists{bbm.sty}{\usepackage{bbm}}{}",
+                    r"\usepackage{graphicx,tikz,tikz-cd,pgfplots}",
+                    r"\pgfplotsset{compat=1.18}",
+                    r"\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathreplacing}",
+                    shared_math_macro_preamble(),
+                    r"\providecommand{\cross}{\times}",
+                    r"\begin{document}",
+                    wrapped,
+                    r"\end{document}",
+                ])
                 (directory / "diagram.tex").write_text(document, encoding="utf-8")
                 environment = {**os.environ, "openin_any": "p", "openout_any": "p"}
                 for command in ([latex, "-no-shell-escape", "-interaction=nonstopmode", "-halt-on-error", "diagram.tex"], [dvisvgm, "--no-fonts", "--exact", "--output=diagram.svg", "diagram.dvi"]):

@@ -1,7 +1,7 @@
 [
   {
     "slug": "basis-fixing-reduction",
-    "title": "A Complex Vector Space",
+    "title": "The Complex Plane",
     "collection": "complex-analysis",
     "phase": 1,
     "phaseLabel": "Standard Tools in Complex Analysis",
@@ -486,15 +486,6 @@
     "file": "27-third-surgery.tex"
   },
   {
-    "slug": "mcmullens-surgery",
-    "title": "McMullen’s Surgery",
-    "collection": "mcmullens-surgery",
-    "phase": 4,
-    "phaseLabel": "Complex Dynamics",
-    "initialSha256": "208afa9f735855109a140f924b7d9e769aa59125808c13d08171c8ce1702408e",
-    "file": "80-mcmullens-surgery.tex"
-  },
-  {
     "slug": "from-complex-dynamics-to-measure-preserving-systems",
     "title": "From Complex Dynamics to Measure-Preserving Systems",
     "collection": "ergodic-theory",
@@ -712,7 +703,7 @@
   },
   {
     "slug": "lemma-book-thrilling-thirty-surviving-problems",
-    "title": "Thrilling Thirty: The Surviving Problems",
+    "title": "A Collection of Problems",
     "collection": "lemma-book",
     "phase": 7,
     "phaseLabel": "The Lemma Book",

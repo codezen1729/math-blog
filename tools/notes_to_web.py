@@ -78,9 +78,35 @@ def prepare(text):
     text=expand(text,'SourceChapter',lambda key,title:r'\section*{'+title+'}',2)
     text=expand(text,'Lecture',lambda number,title:r'\section*{'+title+'}',2)
     text=preserve_lists(text)
-    names={'theorem':'theorem','lemma':'theorem','proposition':'theorem','corollary':'theorem','conjecture':'theorem','definition':'definition','example':'example','namedtool':'namedtoolcounter'}
-    unnumbered=['claim','remark','exercise','question','observation','proof']
-    token=re.compile(r'\\setcounter\{(theorem|definition|example|namedtoolcounter)\}\{(\d+)\}|\\(begin|end)\{('+ '|'.join([*names,*unnumbered]) +r')\}')
+    names={
+        'theorem':'theorem', 'thm':'theorem',
+        'lemma':'theorem', 'lem':'theorem',
+        'proposition':'theorem', 'prop':'theorem',
+        'corollary':'theorem', 'cor':'theorem',
+        'conjecture':'theorem', 'prob':'theorem', 'task':'theorem',
+        'numberedquestion':'theorem', 'numberedremark':'theorem',
+        'definition':'definition', 'defn':'definition',
+        'example':'example', 'namedtool':'namedtoolcounter',
+        'cl':'cl', 'thmx':'thmx',
+    }
+    labels={
+        'theorem':'Theorem', 'thm':'Theorem', 'thmx':'Theorem',
+        'lemma':'Lemma', 'lem':'Lemma',
+        'proposition':'Proposition', 'prop':'Proposition',
+        'corollary':'Corollary', 'cor':'Corollary',
+        'conjecture':'Conjecture', 'prob':'Problem', 'task':'Task',
+        'numberedquestion':'Question', 'question':'Question', 'question*':'Question',
+        'numberedremark':'Remark', 'remark':'Remark',
+        'definition':'Definition', 'defn':'Definition', 'example':'Example',
+        'namedtool':'Tool', 'cl':'Claim', 'claim':'Claim',
+        'exercise':'Exercise', 'observation':'Observation',
+    }
+    unnumbered=['claim','remark','exercise','question','question*','observation','proof']
+    environments=sorted([*names,*unnumbered],key=len,reverse=True)
+    counter_names=sorted(set(names.values()),key=len,reverse=True)
+    environment_pattern='|'.join(re.escape(name) for name in environments)
+    counter_pattern='|'.join(re.escape(name) for name in counter_names)
+    token=re.compile(r'\\setcounter\{('+counter_pattern+r')\}\{(\d+)\}|\\(begin|end)\{('+environment_pattern+r')\}')
     counters={key:0 for key in names.values()}; out=[]; last=0
     for m in token.finditer(text):
         if m.start()<last: continue
@@ -93,9 +119,11 @@ def prepare(text):
             elif env=='namedtool': title,cursor=argument(text,cursor)
             if env=='proof': replacement=r'\textit{'+(title if title else 'Proof')+'.}'
             else:
-                label='Tool' if env=='namedtool' else env.capitalize()
+                label=labels[env]
                 if env in names:
-                    counter=names[env]; counters[counter]+=1; label+=' '+str(counters[counter])
+                    counter=names[env]; counters[counter]+=1
+                    value=counters[counter]
+                    label+=' '+(chr(64+value) if counter=='thmx' and 1 <= value <= 26 else str(value))
                 if title: label+=' — '+title
                 replacement=r'\subsection*{'+label+'}'
         out.append(replacement); last=cursor
