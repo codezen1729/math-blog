@@ -29,7 +29,7 @@ The first argument is the destination's stable slug—the part after `#/post/` i
 
 ## Project contents
 
-- Numbered `.tex` files: the 83 editable blog posts.
+- Numbered `.tex` files: the 84 editable blog posts.
 - `main.tex`: the default preview selection.
 - `styles/`: PDF formatting and notation.
 - `figures/`: the figures used in the posts.

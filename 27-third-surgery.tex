@@ -1,95 +1,124 @@
 \documentclass[11pt,a4paper]{article}
 \input{styles/blog-preamble.tex}
-\graphicspath{{figures/surgeries/}}
+\graphicspath{{figures/mcmullens-surgery/}}
 \begin{document}
-\section*{Third Surgery}
+\section*{McMullen's Surgery I: Ideal Boundaries and the Gluing Lemma}
 % BLOG-CONTENT-BEGIN
+\begin{center}
+\emph{McMullen's Surgery:} Part I \(\,\cdot\,\)
+\BlogPost{mcmullens-surgery}{Part II} \(\,\cdot\,\)
+\BlogPost{mcmullens-surgery-finite-symmetry}{Part III}
+\end{center}
 
-    
-    
-    Let $f$ be a rational map on $\hat{\mathbb{C}}$, and $\text{Aut}(f)$ the group of M\"obius transformations commuting with $f$. Given any such transformation $M$, for each $n$, $M$ permutes the finitely many periodic points of order $n$. Using the triple transitivity property of $M$ and setting $n\geq 3$, we see that $\text{Aut}(f)$ must be a finite group. We shall now attempt to loosen the regularity and see if the finiteness can be retained. To begin with, let $\text{Mod}(f)$ denote the group of homotopy classes of quasiconformal maps commuting with $f$. It can be shown that regardless of the group being infinite and complicated, all its finite subgroups can be realized as $\text{Aut}(g)$ for some deformation $g$ of $f$. So, we pull our necks a bit more to the surface and ask what about the group $\text{Mod}(J, f)$, the group of quasiconformal maps commuting with $f$ only on its Julia set? Yet again, it can be shown that if the Julia set is connected and carries no invariant line field, then $\text{Mod}(J, f)$ is a finite group. The proof of the former claim uses Nielsen realization for Riemann surfaces and is done in \cite{mcmullen1988automorphisms}, \cite{mcmullen1998quasiconformal} and \cite{imayoshi2012introduction}, the latter claim will be our focus here. Let us define certain objects before proceeding further.
-    
-    \subsection*{Definition 6.1}{(Invariant Line Field on the Julia Set)}: A line field on the Julia set $J(f)$ of $f$ is a measurable essentially bounded function $\mu(z)$ supported on a positive area subset of $J(f)$. It is said to be invariant if $f^*\mu = \mu$.
-    
-    
+Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\text{Aut}(f)$ the group of M\"obius transformations commuting with $f$. Given any such transformation $M$, for each $n$, $M$ permutes the finitely many periodic points of order $n$. Choose $n$ so that this set has at least three distinct points. The induced action of $\text{Aut}(f)$ on this finite set is faithful, since a M\"obius transformation fixing three points is the identity. Therefore, $\text{Aut}(f)$ is a finite group. We shall now attempt to loosen the regularity and see if the finiteness can be retained. To begin with, let $\text{Mod}(f)$ denote the group of isotopy classes of quasiconformal maps commuting with $f$. It can be shown that regardless of the group being infinite and complicated, all its finite subgroups can be realized as subgroups of $\text{Aut}(g)$ for some deformation $g$ of $f$. So, we pull our necks a bit more to the surface and ask what about the group $\text{Mod}(J, f)$, the group of quasiconformal maps commuting with $f$ only on its Julia set? Yet again, it can be shown that if the Julia set is connected and carries no invariant line field, then $\text{Mod}(J, f)$ is a finite group. The proof of the former claim uses Nielsen realization for Riemann surfaces and is done in \cite{mcmullen1988automorphisms}, \cite{mcmullen1998quasiconformal} and \cite{imayoshi2012introduction}; the latter claim will be our focus here. Let us define certain objects before proceeding further.
+
+    \subsection*{Definition 6.1}{(Invariant Line Field on the Julia Set)}: A line field on the Julia set $J(f)$ of $f$ is a measurable Beltrami differential $\mu(z)$, supported on a positive area subset of $J(f)$, with $|\mu(z)|=1$ almost everywhere on its support. It is said to be invariant if $f^*\mu = \mu$.
+
+
     \subsection*{Definition 6.2}{(Stable Conjugacy)}: Let $f$, $g$ be two rational maps, and $F$, $G$ be two closed subsets of the Riemann sphere such that $f(F) = F$ and $g(G) = G$. A map $\phi:\hat{\mathbb{C}} \rightarrow \hat{\mathbb{C}}$ determines a stable conjugacy $(F, f) \sim (G, g)$ if
     \begin{enumerate}
         \item $\phi$ is quasiconformal on $\hat{\mathbb{C}}$.
         \item $\phi(F) = G$.
         \item $\phi \circ f(z) = g\circ \phi(z)$ for all $z\in F$.
     \end{enumerate}
-    
-    We say that two maps $\phi$, $\psi$ determine the same stable conjugacy if they are homotopic through maps satisfying the three aforementioned conditions. The group of self stable conjugacies $(F, f)$ is denoted by $\text{Mod}(F, f)$.
-    
-    
+
+    We say that two maps $\phi$, $\psi$ determine the same stable conjugacy if they are isotopic through maps satisfying the three aforementioned conditions. The group of self stable conjugacies $(F, f)$ is denoted by $\text{Mod}(F, f)$.
+
+
     We shall study the finiteness of the object $\text{Mod}(K, f)$, the group of quasiconformal maps commuting with $f$ on $K$ (a forward invariant component of $J(f)$). Our main goal will be proving the following.
-    
+
     \subsection*{Theorem 6.3}{(Commuting Deformations on Julia Sets)}: Let $K$ be a component of the Julia set of $f$ (which is assumed to have more than one point) such that $f(K) = K$. Then:
     \begin{enumerate}
-        \item There exists a rational map $g$ with Julia set $J(g)$ and a stable conjugacy $\phi:(K,f)\sim (J(g), g)$ that determines an isomorphism $\text{Mod}(F, f) \cong \text{Mod}(J(g), g)$.
-        \item If $K$ above carries no invariant line field, then $g$ can be chosen so that $\text{Mod}(J(g), g) \cong \text{Aut}(g)$. In particular, $\text{Mod}(F, f)$ is a finite group. 
+        \item There exists a rational map $g$ with Julia set $J(g)$ and a stable conjugacy $\phi:(K,f)\sim (J(g), g)$ that determines an isomorphism $\text{Mod}(K, f) \cong \text{Mod}(J(g), g)$.
+        \item If $K$ above carries no invariant line field, then $g$ can be chosen so that $\text{Mod}(J(g), g) \cong \text{Aut}(g)$. In particular, $\text{Mod}(K, f)$ is a finite group.
     \end{enumerate}
-    
-    
+
+
     Now the finiteness above is only for stable conjugacies on certain components of the Julia set. In particular, one can easily deduce from the theorem above that if the Julia set is connected and admits no invariant line field then $\text{Mod}(J(f), f)$ is a finite group. It has been conjectured that the hypothesis demanding the non-existence of invariant line fields on $J(f)$ can be dropped.
-    
+
     \subsection*{Conjecture 6.4}: For any nonaffine rational map $g$ with connected Julia set $J$, $\text{Mod}(J, g)$ is a finite group.
-    
-    
+
+
     At the end, we shall briefly touch upon this conjecture for the case of exposed critical points. Let us now begin the proof of Theorem $6.3$
-    
-    \subsection*{Proposition 6.5}: Let $\phi:\hat{\mathbb{C}}\rightarrow\hat{\mathbb{C}}$ be a homeomorphism, $R\subset\hat{\mathbb{C}}$ is an open region, $\phi\big|_R$ is $K$-qc, and $\phi\big|_{\hat{\mathbb{C}}\backslash R} = \text{Id}\big|_{\hat{\mathbb{C}}\backslash R}$, implies that $\phi$ is quasiconformal.
-    
-    
-    \textit{Proof.}: Clearly $\phi(R) = R$. Conjugate $\phi$ by $\psi_1$, $\psi_2$ $\in \text{PSL}_2(\mathbb{C})$ such that $\tilde{\phi} = \psi_1 \circ \phi \circ \psi_2^{-1}$ has $z, w\in R$ as fixed points. Now set $U = \hat{\mathbb{C}}\backslash \{z,w\} \subset \mathbb{C}$ (under the usual identification). $\tilde{\phi}\big|_{R^c}$ is quasiconformal, $\tilde{\phi}\big|_{U\backslash R^c}$ is also quasiconformal which implies that $\tilde{\phi}$ is quasiconformal on $\hat{\mathbb{C}}$ by Rickman's lemma.
-    
-    
-    
-    This surgery, unlike the preceding two, cuts and pastes along ideal boundaries rather than topological boundaries. So, we begin by formulating an appropriate analogue of Rickman's lemma to help us formulate a mechanism with which we can glue certain deformed objects. 
-    
-    \subsection*{Definition 6.6}{(Ideal Boundary of a Disc)}: By a disk $U \subset \hat{\mathbb{C}}$ we mean a simply connected domain whose complement contains at least two points. For a disk $U$, the ideal boundary $I(U)$ is the set of all prime ends of $U$.    
-    
-    Given a holomorphic map $f:U\rightarrow V$ between discs $U$ and $V$, one obtains an induced map between their respective ideal boundaries. Indeed, consider the Riemann maps $R_U:U\rightarrow \mathbb{D}$ and $R_V:V\rightarrow \mathbb{D}$, and consider the composition $\hat{f} = R_V\circ f \circ R_U^{-1}: \mathbb{D}\rightarrow\mathbb{D}$, a proper holomorphic self map. Using the map $\frac{1}{z}$ and Schwarz Reflection Principle one can extend the map to a real analytic self map on $\mathbb{S}^1$, and since Riemann maps (by Carath\'eodory's Theorem) give a map between $\mathbb{S}^1$ and the ideal boundaries of its corresponding disks. We have a map $\hat{f}:I(U)\rightarrow I(V)$. It doesn't make sense to call $\hat{f}$ real analytic, but whenever we do so we invariably see it as a self map on $\mathbb{S}^1$. Now with this in mind let us formulate an analogue of Rickman's lemma.
-    
+
+    \subsection*{Proposition 6.5}{(Rickman's Lemma)}: Let $\phi:\hat{\mathbb{C}}\rightarrow\hat{\mathbb{C}}$ be a homeomorphism and $R\subset\hat{\mathbb{C}}$ an open region. If $\phi\big|_R$ is $K$-qc and $\phi\big|_{\hat{\mathbb{C}}\backslash R} = \text{Id}\big|_{\hat{\mathbb{C}}\backslash R}$, then $\phi$ is quasiconformal \cite{mcmullen1988automorphisms}.
+
+
+
+    This surgery, unlike the preceding two, cuts and pastes along ideal boundaries rather than topological boundaries \cite{mcmullen1988automorphisms,branner2014quasiconformal}. So, we begin by formulating an appropriate analogue of Rickman's lemma to help us formulate a mechanism with which we can glue certain deformed objects.
+
+    \subsection*{Definition 6.6}{(Ideal Boundary of a Disc)}: By a disk $U \subset \hat{\mathbb{C}}$ we mean a simply connected domain whose complement contains at least two points. For a disk $U$, the ideal boundary $I(U)$ is the set of all prime ends of $U$.
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=12cm]{ms-fig-01.pdf}
+    \FigureTag{MS1}{fig:ms-01}
+    \end{figure}
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=11.5cm]{ms-fig-02.pdf}
+    \FigureTag{MS2}{fig:ms-02}
+    \end{figure}
+
+    Given a proper holomorphic map $f:U\rightarrow V$ between discs $U$ and $V$, one obtains an induced map between their respective ideal boundaries. Indeed, consider the Riemann maps $R_U:U\rightarrow \mathbb{D}$ and $R_V:V\rightarrow \mathbb{D}$, and consider the composition $\hat{f} = R_V\circ f \circ R_U^{-1}: \mathbb{D}\rightarrow\mathbb{D}$, a proper holomorphic self map. Using reflection across $\mathbb{S}^1$, namely $z\mapsto 1/\bar z$, and the Schwarz Reflection Principle, one can extend the map to a real analytic map on $\mathbb{S}^1$. Since Riemann maps give homeomorphisms between $\mathbb{S}^1$ and the corresponding ideal boundaries, we have a map $\hat{f}:I(U)\rightarrow I(V)$. It doesn't make sense to call $\hat{f}$ real analytic intrinsically, but whenever we do so we invariably see it in these circle coordinates. Now with this in mind let us formulate an analogue of Rickman's lemma.
+
     \subsection*{Proposition 6.7}: Let $U$ be a disk. We have the following:
     \begin{enumerate}
-        \item $\phi:\overline{U}\rightarrow\overline{U}$ be a homeomorphism and $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$ then $\phi\big|_{I(U)} \equiv \text{Id}\big|_{I(U)}$ 
-        \item $\phi:U\rightarrow U$ be a quasiconformal map and $\phi\big|_{I(U)} \equiv \text{Id}\big|_{I(U)}$, then $\phi$ extends quasiconformally to $\mathbb{C}$ and $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$.
+        \item $\phi:\overline{U}\rightarrow\overline{U}$ be a homeomorphism and $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$ then $\phi\big|_{I(U)} \equiv \text{Id}\big|_{I(U)}$
+        \item $\phi:U\rightarrow U$ be a quasiconformal map and $\phi\big|_{I(U)} \equiv \text{Id}\big|_{I(U)}$, then $\phi$ extends quasiconformally by the identity to $\hat{\mathbb{C}}$ and $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$.
     \end{enumerate}
-    
-    
+
+
     \textit{Proof.}: $(1)$ $\phi$ is continuous on $\overline{U}$ implies $\phi$ is uniformly continuous as $\overline{U}$ is compact. Let $\{C_n\}_n$ be a sequence of crosscuts. As $\phi$ is a homeomorphism and $\text{diam}(C_n) \rightarrow 0$, uniform continuity ensures that if $\{C_n\}_n$ defines a prime end, then so does $\{\phi(C_n)\}_n$. Let $U_1 \supset U_2 \supset \cdots \supset U_n \supset \cdots$ be the prime end corresponding to $\{C_n\}$. Then an easy consequence of Jordan Curve Theorem would tell us that $C_l \subset U_k$ for all $l>k$.\\
     Set $Q_k$ to be the quadrilateral bounded by $C_k\cup C_{k+1}$ in $U$ for large $k$. Fix n. Suppose there exists an increasing sequence $\{k_i\}_i$ such that $Q_{k_i}$ and $\phi(Q_{k_i})$ belong to different components of $U\backslash C_n$. Pick a sequence of points $x_k \in Q_k$ such that $x_k \rightarrow x \in \partial U$ (one can arrange for it from $\mathcal{E}\cap \partial U$, being a compact connected set on $\partial U$, where $\mathcal{E}$ happens to be the impression of the prime end $\{U_k\}_k$).\\
     As $\phi$ is uniformly continuous, $\phi(x_k) \rightarrow \phi(x) = x$ ($\phi$ is identity on $\partial U$), but this forces $\phi(x_{k_i})$ and $x_{k_i}$ to eventually land in the same component of $U\backslash C_n$. Contradiction\\
     So for large enough $k$, $\phi(U_k) \in U_n$, now repeat the same argument with the fundamental chain $\{\phi({U_k})\}_k$ and the map $\phi^{-1}$ to get the desired result. Or, roughly speaking, $\{U_k\}_k$, $\{\phi(U_k)\}_k$ can either be the same as prime ends or must be eventually disjoint as fundamental chains. But here, the components of $U\backslash C_k$ and $U\backslash \phi(C_k)$ will always intersect. This implies that they can't be eventually disjoint $\implies$ $\{U_k\}_k \sim \{\phi(U_k)\}_k$.
 
-    (2) Observe that if $\phi$ is identity on the ideal boundary of $U$ then $\sup_{z\in U}{|\phi(z)-z|_P} < \infty$. Here $|.|_P$ is the Poincare metric bestowed on the hyperbolic surface $U$, in fact, $U \cong \mathbb{D}$. Suppose we prove that $\sup_{z\in U}{|\phi(z)-z|_P} < K$, then given any $\{x_k\}_k$ such that $x_k\rightarrow x \in \partial U$, note that $\phi(x_k) \in B_K(x_k)$ (ball of radius $K$ around $x_k$). Since $\overline{U}$ is compact in $\hat{\mathbb{C}}$, $U$ hyperbolic, we know that $B_K(x_k) \rightarrow x \in \partial U$, in particular, $\phi(x_k) \rightarrow x$ $\implies$ $\phi$ extends to $\partial U$ continuously and $\hat{\phi}\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$. A direct application of Rickman's lemma would now complete the proof.\\
-    Now suppose $\sup_{z\in U}{|\phi(z)-z|_P} \nless \infty$ $\implies$ $\exists$ $\{z_k\}_k$ such that $|\phi(z_k)-z_k| > K$. WLOG assume that $z_k \rightarrow z$ and $\phi(z_k) \rightarrow z'$, else work appropriate subsequences. By continuity of $\phi$, $z\in \partial U$ and $z' \in \partial U$. If $\forall$ Cauchy sequences $z_k \rightarrow z$, $\phi(z_k) \rightarrow z'=z$, then there is nothing to worry about, else we have $z'\neq z$ which would also ensure that $\sup_{z\in U}{|\phi(z)-z|_P} \nless \infty$. Consider spherical geodesics of radius $\text{dist}(z, z_k)$ around $z$, denote it by $\gamma_k$. Let $t_1, t_2$ be the first points where $\gamma_k$ hits $\partial U$ and $t_0 \in (t_1, t_2)$ is such that $\gamma(t_0) = z_k$. Set $C_k:= \gamma_k\big|_{[t_1,t_2]}$. Build crosscuts $C_k$ this way inductively (the next step would be to choose $z_l \in \text{Int}(\gamma_k)$ and repeat). Let $\{M_j\}_j$ be the corresponding prime end with $z$ in its impression, then by our hypothesis $\{\phi(M_j)\}_j$ also forms a prime end of $U$ and $\{\phi(M_j)\}_j \sim \{M_j\}_j$. Therefore, $\phi(z_k)$ will be forced arbitrarily close to $z$. Contradiction. 
-    
-    
-    \subsection*{Proposition 6.8}
-    Let $\phi$, $\psi: \overline{U} \rightarrow \overline{V}$ be continuous maps where $U$ and $V$ are discs, $K$-qc on $U$ and equal on $\partial U$. Then there exists a homotopy connecting $\phi$ to $\psi$ through $K^3$-qc maps all agreeing on $\partial U$.
-    
-    
-    \textit{Proof.}: Let $\alpha = \psi^{-1}\circ \phi: U \rightarrow U$. Then $\alpha$ is $K^2$-qc and is identity on $I(U)$ by the previous proposition. We construct $\alpha_t$ connecting $\alpha$ to the identity map through homeomorphism enjoying the two properties that $\alpha$ does. Uniformize $U$, lift $\alpha$ to $\bar{\alpha}:\mathbb{D} \rightarrow \mathbb{D}$ and let $\bar{\alpha}_t(z):= (1-t)\bar{\alpha}(z) + tz$. Push $\bar{\alpha}_t$ to $\alpha_t$ on $U$ and note that the desired homotopy could then be given by $\phi_t = \psi\circ \alpha_t$
-    
-    
-    \subsection*{Corollary 6.9} If $K$ is connected and periodic points of $f$ are dense in $K$, then any $[\phi]$ in $\text{Mod}(K, f)$ is uniquely determined by its values on $K$.
-    
-    
-    \textit{Proof.}: Let's now construct a stable conjugacy taking $\phi$ to $\text{Id}$, given that $\phi = \text{Id}$ on $K$. Here, $K$ is compact connected. Let $\hat{\mathbb{C}}\backslash K = \sqcup_{\alpha}U_{\alpha}$, then $U_{\alpha}$'s are simply connected. Indeed, let $\gamma$ be a loop in $U_{\alpha}$, then as $\gamma \cup K = \phi$, one can construct polygonal region $\tilde{\gamma}$ such that $K$, $\gamma$ belong to different components of $\hat{\mathbb{C}}\backslash \tilde{\gamma}$. Now the claim is a simple consequence of Jordan Curve Theorem, which is, if $\gamma \subset \text{Int}(\tilde{\gamma})$, then $\text{Int}(\tilde{\gamma})\subseteq U_{\alpha}$. By the previous propositions, on each disk in the complement of $K$ there is a homotopy connecting $\phi$ to identity through quasiconformal maps which are identity on $K$. The dilatation of the intervening maps is bounded by $K(\phi)^3$ (independent of the disk). By Proposition $6.5$ the time $t$ maps in each disk piece together to form a quasiconformal map of the whole Riemann sphere. Thus, $[\phi] = [\text{Id}]$ in $\text{Mod}(K,f)$.  
-    
-    
-    \subsection*{Definition 6.10}{(Ideal Boundary of $K$)}: We define $I(K)$ the ideal boundary of $K$ for a given infinite continuum $K$ to be the union of ideal boundaries of the disk in the complement of $K$. (Note: In what's to follow $K$ shall be a forward invariant component of $J(f)$ unless otherwise stated).
-    
-    
-    
-    If $f$ is quasirational (i.e quasiconformally conjugate to a rational function on $\hat{\mathbb{C}}$), then $f$ induces a map $\hat{f}: I(K) \rightarrow I(K)$ which is quasisymmetrically conjugate to a real analytic map. Indeed, firstly assume $f$ to be rational. $f$ is branched covering of $K$ by $f^{-1}(K)$ ramified at the critical points. So, for a component $\tilde{K}$ of $f^{-1}(K)$ we would still have $f\big|_{\tilde{K}}$ as a branched covering of $K$ $\implies$ $f\big|_{\tilde{K}}(\tilde{K}) = K$. Since $\text{deg}(f) < \infty$, $f^{-1}(K)$ consists of $K$ and finitely many other components. Let $U$ be a component of $\hat{\mathbb{C}}\backslash K$, and let $U'$ be a component of $U\backslash f^{-1}(K)$ whose closure contains $\partial U$, then $f(U')$ is sitting inside a component $V$ of $\hat{\mathbb{C}}\backslash K$. Uniformize $U'$ and $V$ via maps $\pi$ and $\rho$ respectively. Then, $\rho^{-1}\circ f \circ \pi \equiv \tilde{f}$ by Schwarz Reflection Principle extends to a real analytic map on $\mathbb{S}^1$, and $\pi$ and $\rho$ take $\mathbb{S}^1$ homeomorphically to $I(U')$, $I(V)$. Extend this to $I(U)$. If $f$ were now only quasirational then the induced map on the ideal boundary of $K$ will be quasisymmetrically conjugate to a real analytic map.   
+    (2) Observe that if $\phi$ is identity on the ideal boundary of $U$ then $\sup_{z\in U}{|\phi(z)-z|_P} < \infty$. Here $|.|_P$ is the Poincar\'e metric bestowed on the hyperbolic surface $U$; in fact, $U \cong \mathbb{D}$. This is the standard bounded-displacement property of a quasiconformal self-map of the disk with identity boundary values. Suppose $\sup_{z\in U}{|\phi(z)-z|_P} < K$. Given any $\{x_k\}_k$ such that $x_k\rightarrow x \in \partial U$, note that $\phi(x_k) \in B_K(x_k)$, the ball of radius $K$ around $x_k$. Since $\overline{U}$ is compact in $\hat{\mathbb{C}}$ and $U$ is hyperbolic, we know that $B_K(x_k) \rightarrow x \in \partial U$. In particular, $\phi(x_k) \rightarrow x$ $\implies$ $\phi$ extends to $\partial U$ continuously and $\hat{\phi}\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$. A direct application of Rickman's lemma now completes the proof.
 
+    \begin{figure}[H]\centering
+    \includegraphics[width=12cm]{ms-fig-13.pdf}
+    \FigureTag{MS13}{fig:ms-13}
+    \end{figure}
+
+
+    \subsection*{Proposition 6.8}
+    Let $\phi$, $\psi: \overline{U} \rightarrow \overline{V}$ be homeomorphisms where $U$ and $V$ are discs, $K$-qc on $U$ and equal on $\partial U$. Then there exists an isotopy connecting $\phi$ to $\psi$ through $K^3$-qc maps all agreeing on $\partial U$.
+
+
+    \textit{Proof.}: Let $\alpha = \psi^{-1}\circ \phi: U \rightarrow U$. Then $\alpha$ is $K^2$-qc and is identity on $I(U)$ by the previous proposition. We construct $\alpha_t$ connecting $\alpha$ to the identity map through homeomorphisms enjoying the two properties that $\alpha$ does. Uniformize $U$ and bring the identity in radially from the boundary of the unit disk, as in \cite{mcmullen1988automorphisms}; this gives the required isotopy through $K^2$-qc maps. Push it to $U$ and note that the desired isotopy is given by $\phi_t = \psi\circ \alpha_t$. Its maps are $K^3$-qc and agree on $\partial U$.
+
+
+    \subsection*{Corollary 6.9} If $K$ is connected and periodic points of $f$ are dense in $K$, then any $[\phi]$ in $\text{Mod}(K, f)$ is uniquely determined by its values on $K$.
+
+
+    \textit{Proof.}: Let's now construct a stable conjugacy taking $\phi$ to $\text{Id}$, given that $\phi = \text{Id}$ on $K$. Here, $K$ is compact connected. Let $\hat{\mathbb{C}}\backslash K = \sqcup_{\alpha}U_{\alpha}$, then $U_{\alpha}$'s are simply connected. Indeed, let $\gamma$ be a loop in $U_{\alpha}$, then as $\gamma \cap K = \varnothing$, one can construct a polygonal region $\tilde{\gamma}$ such that $K$ and $\gamma$ belong to different components of $\hat{\mathbb{C}}\backslash \tilde{\gamma}$. Now the claim is a simple consequence of the Jordan Curve Theorem: if $\gamma \subset \text{Int}(\tilde{\gamma})$, then $\text{Int}(\tilde{\gamma})\subseteq U_{\alpha}$. By the previous propositions, on each disk in the complement of $K$ there is an isotopy connecting $\phi$ to the identity through quasiconformal maps which are identity on $K$. The dilatation of the intervening maps is bounded by $K(\phi)^3$ (independent of the disk). By Proposition $6.5$ the time $t$ maps in each disk piece together to form a quasiconformal map of the whole Riemann sphere. Thus, $[\phi] = [\text{Id}]$ in $\text{Mod}(K,f)$.
+
+
+    \subsection*{Definition 6.10}{(Ideal Boundary of $K$)}: We define $I(K)$, the ideal boundary of a given infinite continuum $K$, to be the union of the ideal boundaries of the disks in the complement of $K$. (Note: In what's to follow $K$ shall be a forward invariant component of $J(f)$ unless otherwise stated).
+
+
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=10cm]{ms-fig-03.pdf}
+    \FigureTag{MS3}{fig:ms-03}
+    \end{figure}
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=12cm]{ms-fig-04.pdf}
+    \FigureTag{MS4}{fig:ms-04}
+    \end{figure}
+
+    If $f$ is quasirational (i.e. quasiconformally conjugate to a rational function on $\hat{\mathbb{C}}$), then $f$ induces a map $\hat{f}: I(K) \rightarrow I(K)$ which is quasisymmetrically conjugate to a real analytic map. Indeed, firstly assume $f$ to be rational. Since $\text{deg}(f) < \infty$, $f^{-1}(K)$ consists of $K$ and finitely many other components. Let $U$ be a component of $\hat{\mathbb{C}}\backslash K$, and let $U'$ be the component of $U\backslash f^{-1}(K)$ whose closure contains $\partial U$. Then $f$ carries $U'$ properly to a component $V$ of $\hat{\mathbb{C}}\backslash K$. In Riemann-map coordinates for $U$ and $V$, the map $f$ carries a neighbourhood of $\mathbb{S}^1$ to a neighbourhood of $\mathbb{S}^1$. By the Schwarz Reflection Principle it extends across the circle and induces a real analytic map $\hat{f}:I(U)\rightarrow I(V)$. If $f$ were now only quasirational, then the induced map on the ideal boundary of $K$ would be quasisymmetrically conjugate to a real analytic map.
+
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=10cm]{ms-fig-05.pdf}
+    \FigureTag{MS5}{fig:ms-05}
+    \end{figure}
     All surgery principles introduced so far are means to deform a rational map to another rational map, so for one to perform successive surgeries one must constantly convert one's results back to something rational. The Gluing Lemma introduced below as a substitute for Rickman's Lemma will allow us to bypass that, thereby standing as a surgery principle in its own right for quasirational maps.
-    
+
     \subsection*{Definition 6.11}{(Compatibility of Maps on the Ideal Boundary)}: Let $K$ be a non-degenerate invariant continuum such that $f^{-1}(K)$ consists of $K$ and finitely many other disjoint components. Let $U$ and $V$ be components of $\hat{\mathbb{C}}\backslash K$ so that $\hat{f}:I(U) \rightarrow I(V)$ as described above is the induced map. Let $B$ denote a Blaschke product mapping $\overline{\mathbb{D}}$ onto itself \cite{garcia2018finite}. We say $f$ and $B$ are compatible on the ideal boundary of $U$ via quasiconformal maps $\phi_U:U\rightarrow \mathbb{D}$ and $\phi_V:V\rightarrow \mathbb{D}$, if the induced maps $\hat{\phi}_U: I(U) \rightarrow \mathbb{S}^1$ and $\hat{\phi}_V: I(V) \rightarrow \mathbb{S}^1$ define a quasisymmetric equivalence between $\hat{f}:I(U) \rightarrow I(V)$ and the restriction of $B$ to the unit circle, as shown in the following commutative diagram:
-    
+
     $$\begin{tikzcd}[column sep = large, row sep = large]
         I(U)
         \arrow[d, "\hat{\phi}_U"']
@@ -97,218 +126,68 @@
         &
         I(V)
         \arrow[d, "\hat{\phi}_V"]
-        \\ 
-        \mathbb{S}^1 
-        \arrow[r, "B"'] 
-        & 
-        \mathbb{S}^1 
+        \\
+        \mathbb{S}^1
+        \arrow[r, "B"']
+        &
+        \mathbb{S}^1
         \\
         \end{tikzcd}$$
-    
-    
-    
+
+
+
     We are now ready to state and prove the Gluing Lemma.
-    
+
     \subsection*{Lemma 6.12}{(Gluing Lemma)}: In the setup of the definition above suppose that:
     \begin{enumerate}
-        \item either $I(U)$ is a fixed component of $I(K)$ under the map $\hat{f}:I(K)\rightarrow I(K)$
-        \item or $I(U)$ is strictly preperiodic under $\hat{f}$, and $f^{\circ n}(V) \cap U = \phi$, for all $n>0$.
+        \item either $I(U)$ is a fixed component of $I(K)$ under the map $\hat{f}:I(K)\rightarrow I(K)$, and $\phi_U=\phi_V=\phi$,
+        \item or $I(U)$ is non-recurrent under $\hat{f}$, so that $\hat{f}^{\circ n}(I(U)) \cap I(U) = \varnothing$ for all $n>0$.
     \end{enumerate}
-    
+
     Assume $f$ and $B$ are compatible on $I(U)$ via maps $\phi_U$ and $\phi_V$. Then the map
-    
+
     $$g(z):= \begin{cases}
         f(z), &\quad\text{if}  z \notin U\\
         \phi_V^{-1}\circ B\circ \phi_U(z) &\quad\text{if}   z\in U\\
         \end{cases}$$
-    
+
     is quasirational.
-    
-    
-    \textit{Proof.}: Consider $f^{-1}\circ g$ locally near $\partial U$, using the branch of $f^{-1}$ which fixes the points not in $U$. This map is outside $U$, and quasiconformal inside $U$. It also includes the identity map on the ideal boundary since $\hat{f} = \hat{\phi}_V^{-1}\circ B\circ\hat{\phi_U} = \hat{g}:I(U)\rightarrow I(V)$. Using Proposition $6.5$ we note that $f^{-1}\circ g$ is locally quasiconformal. By composing with $f$ we obtain that $g$ is locally quasiconformal except on neighbourhoods of the branch points. Hence, $g$ is quasiregular. The dilatation of $g$ is bounded by the maximum of $K(f)$ and $K(\phi_U)\cdot K(\phi_V)$.\\
-    If $I(U)$ is a fixed component of $\hat{f}$, then $g(U) = U$ and $g^{\circ n}(U) = \phi^{-1}\circ B^{\circ n}\circ \phi(U)$. Hence, we have $K(g^{\circ n}) = K(\phi)^2$ on $U$. If $z \notin U$, it may have several iterates in $\hat{\mathbb{C}}\backslash U$ before falling into $U$. Hence, $K(g^{\circ n}) \leq K(f^{\circ n})\cdot K(\phi)^2\leq K\cdot K(\phi)^2$, where $f$ is quasirational so that $K(f^{\circ n}) \leq K$ for all $n$ and some $K \geq 1$ (by Sullivan's Straightening Theorem). Hence, $g$ is quasirational.\\
-    In the case where $\hat{f}(I(U)) = I(V)$ and $f^{\circ n}(V) \cap U = \phi$ for all $n > 0$, the dilatation is $K(g^{\circ n}) \leq K\cdot K(\phi_U)\cdot K(\phi_V)$, since no orbit can pass through $U$ more than once. 
-    
-    
-    \subsection*{Corollary 6.13} In the setup above, suppose $U_0 = U_p$, and $U_1, U_2,\ldots, U_{p-1}$ components of $\hat{\mathbb{C}}\backslash K$ such that $\hat{f}^{\circ j}(I(U_0)) = I(U_j)$ for $0\leq j\leq p-1$. For $j = 0, 1, \ldots, p-1$, let  $B_j$ be Blaschke products compatible with $f\big|_{U_j}$ on the ideal boundary via maps $\phi_j$. Then the map
+
+
+    \textit{Proof.}: Consider locally the branch of $f^{-1}\circ g$ that agrees with the identity outside $U$. It is the identity outside $U$ and quasiconformal inside $U$. It also induces the identity map on the ideal boundary since $\hat{f} = \hat{\phi}_V^{-1}\circ B\circ\hat{\phi}_U = \hat{g}:I(U)\rightarrow I(V)$. Using Proposition $6.5$ we note that $f^{-1}\circ g$ is locally quasiconformal. By composing with $f$ we obtain that $g$ is locally quasiconformal except on neighbourhoods of the branch points. Hence, $g$ is quasiregular. The dilatation of $g$ is bounded by the maximum of $K(f)$ and $K(\phi_U)\cdot K(\phi_V)$.\\
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=6cm]{ms-fig-07.pdf}
+    \FigureTag{MS7}{fig:ms-07}
+    \end{figure}
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=10cm]{ms-fig-11.pdf}
+    \FigureTag{MS11}{fig:ms-11}
+    \end{figure}
+    If $I(U)$ is a fixed component of $\hat{f}$, then $g(U) = U$ and $g^{\circ n}(U) = \phi^{-1}\circ B^{\circ n}\circ \phi(U)$. Hence, we have $K(g^{\circ n}) \leq K(\phi)^2$ on $U$. If $z \notin U$, it may have several iterates in $\hat{\mathbb{C}}\backslash U$ before falling into $U$. Hence, $K(g^{\circ n}) \leq K(f^{\circ n})\cdot K(\phi)^2\leq K\cdot K(\phi)^2$, where $f$ is quasirational so that $K(f^{\circ n}) \leq K$ for all $n$ and some $K \geq 1$ (by Sullivan's Straightening Theorem). Hence, $g$ is quasirational.\\
+    In the non-recurrent case, the dilatation is $K(g^{\circ n}) \leq K\cdot K(\phi_U)\cdot K(\phi_V)$, since no orbit can pass through $U$ more than once.
+
+
+    \subsection*{Corollary 6.13} In the setup above, suppose $U_0 = U_p$, and $U_1, U_2,\ldots, U_{p-1}$ are components of $\hat{\mathbb{C}}\backslash K$ such that $\hat{f}^{\circ j}(I(U_0)) = I(U_j)$ for $0\leq j\leq p-1$. Set $\phi_p=\phi_0$. For $j = 0, 1, \ldots, p-1$, let $B_j$ be Blaschke products compatible with $f\big|_{U_j}$ on the ideal boundary via the maps $\phi_j$ and $\phi_{j+1}$. Then the map
     $$g(z):= \begin{cases}
-        f(z), &\quad\text{if}  z \notin \cup_{j=0}^{p-1}{U_j}\\
+        f(z), &\quad\text{if}  z \notin \bigcup_{j=0}^{p-1}{U_j}\\
         \phi_{j+1}^{-1}\circ B_j\circ \phi_j(z) &\quad\text{if}   z\in U_j\\
         \end{cases}$$
-        
+
         is quasirational.
-    
-    
-    \textit{Proof.}: Note that $g^{\circ p}$ is quasiconformally conjugate to a Blaschke product of degree $d = \sum_{j=0}^{p-1}{\text{deg}(B_j)}$ on any of the $U_j$'s. Therefore, $K(g^{\circ n})$ is uniformly bounded forcing $g$ to be quasirational by Straightening Theorem.
-    
-    
-    
-    One of the means of carrying out this successive surgery would be by pasting certain rigid models, defined as follows:
-    
-    \subsection*{Definition 6.14}{(Rigid Models)}: We give here three rigid models for proper self maps of the unit disk as:
-    \begin{enumerate}
-        \item The elliptic model $z\rightarrow e^{2\pi i\theta}z$, for $\theta \in \mathbb{R}\backslash \mathbb{Q}$,
-        \item The hyperbolic model $z\rightarrow z^d$ for some $d>1$,
-        \item The parabolic model $z \rightarrow P_d(z)$ for $d>1$, where
-        $$P_d(z):= \frac{z^d + a}{1+az^d}   \text{for}   a = \frac{d-1}{d+1}$$
-    \end{enumerate}
-    
-    
-    
-    Let $B(z) = e^{2\pi i\theta}z$, then if $\phi\circ B = B\circ\phi$, lift $\phi$ to get $f(z+\theta) = f(z) + \theta$ for $z\in \mathbb{R}$. $f$ is $1$-periodic. This implies $f(m\theta + n) = f(0) + m\theta$, now as $m\theta + n$ is dense in $\mathbb{R}$, we get that $f(z) = z+\alpha$ $\implies$ $\phi$ is a rotation.\\
-    Let $B(z) = z^n$, and let $f$ be a topological orientation preserving map, $f(z^n) = f(z)^n$ for all $z \in \mathbb{S}^1$. Set $\tilde{f} = \frac{f}{f(1)}$, and note that the $(n-1)$th roots of unity are fixed by $z^n$ $\implies$ $\tilde{f}$ permutes those fixed points such that $\tilde{f}(1) = 1$, as $\tilde{f}$ is an orientation preserving homeomorphism $\tilde{f}(e^{\frac{2\pi i}{n-1}}) = e^{\frac{2\pi i}{n-1}}$, and as we know $\tilde{f}(e^{2\pi k/n})$ = $\tilde{f}(1)^{1/n}$ $\implies$ $\tilde{f}(\text{nth roots of unity}) = \text{nth roots of unity}$ (as $\tilde{f}$ is a bijection) $\implies$ for all $n^k$th roots of unity we have $\tilde{f}$ acting on it identically. If $A = \{z\in \mathbb{S}^1|$ $z^{n^k} = 1$, for some $k\}$, $A$ is dense in $\mathbb{S}^1$. So, $\tilde{f} = \text{Id}$ on $\mathbb{S}^1$. Therefore, $f(z) = f(1)z$, where $f(1)$ is a $(n-1)$th root of unity, making it a rotation map.\\
-    Further note that $\phi_1(z) = z$ and $\phi_2(z) = \frac{z+1}{1+az}$ conjugates $z \rightarrow z^d$ to $z \rightarrow P_d(z)$. And one can also prove that these models aren't equivalent by looking at their indifferent and repelling periodic points.\\
-    These three observations in conjunction establish some sense of rigidity as far as these objects' conjugacy classes are concerned. Now let us state the main theorem in which the core of McMullen's surgery resides.
-    
-    \subsection*{Theorem 6.15}{(Main Theorem)}: Let $f$ be a rational map and $C \subset J(f)$ a forward invariant component different from a single point. Then there exists a rational map $g$ and a quasiconformal homeomorphism $\phi: \hat{\mathbb{C}} \rightarrow \hat{\mathbb{C}}$ such that $\phi$ stable conjugates $g\big|_{J(g)}$ to $f\big|_C$. Moreover, $g$ has the following properties. The Julia set $J(g)$ is connected and the periodic Fatou components of $g$ are Siegel discs, basins of (super)attraction or parabolic basins. On each periodic Fatou component, the first return map is conjugate to one of the three rigid models. Moreover, if $c$ is critical point in a strictly preperiodic Fatou component, and $n$ is the smallest number for which $g^{\circ n}(c)$ is in a periodic component U, then:
-    \begin{enumerate}
-        \item if $U$ is a Siegel disc, $g^{\circ n}(c)$ is the indifferent point in $U$; i.e. the center of the Siegel disc;
-        \item if $U$ is a basin of (super)attraction, $g^{\circ n}(c)$ is the (super)attracting periodic point;
-        \item if $U$ is a parabolic basin, $g^{\circ (n +k)}(c)$ is a critical point, where $k$ is the smallest number for which $g^{\circ k}(U)$ contains a critical point.
-    \end{enumerate}
-    
-    
-    To prove the Main Theorem we need to understand what kind of maps $f$ induces on the different components of the ideal boundary of $C$. We shall summarize that first in the following two propositions. 
-    
-    \subsection*{Proposition 6.16}{(Global Dynamics of $\hat{f}$ on $I(C)$)}: 
-    \begin{enumerate}
-        \item All but finitely many components of $\hat{\mathbb{C}}\backslash C$ map to their images by a quasiconformal homeomorphism.
-        \item Every component of $I(C)$ is preperiodic and there are only finitely many periodic ones.
-        \item For any component $I(U)$ of $I(C)$, there exists quasisymmetric maps $\hat{\phi}_1$ and $\hat{\phi}_2$ mapping $I(U)$ and $\hat{f}(I(U))$ respectively to $\mathbb{S}^1$ that provide an equivalence between $\hat{f}$  and $z\rightarrow z^d$ for some $d\geq 1$. If $I(U)$ is fixed, $\hat{f}$  and $z\rightarrow z^d$ may not be quasisymmetrically conjugate. 
-    \end{enumerate}
-    (Note: The equivalence between $\hat{f}$  and $z\rightarrow z^d$ for some $d\geq 1$ can be changed to an equivalence between $\hat{f}$  and any Blaschke product of degree $d$ on $\mathbb{S}^1$. There is also a lot of freedom in the choices of the quasisymmetric maps $\hat{\phi}_1$ and $\hat{\phi}_2$ providing the equivalence, in that, for an arbitrary choice of one, one can obtain the other). 
-    
-    
-    \subsection*{Proposition 6.17}{(Dynamics of $\hat{f}$ on Periodic Components of $I(C)$)}: On each periodic component of $I(C)$, the first return map is quasisymmetrically conjugate to one of the three rigid models.
-    
-    
-    
-    Let us apply Propositions $6.16$ and $6.17$ in a sequence of surgeries to establish the main theorem.
-
-    Proof of Main Theorem. Suppose $I(U)$ is periodic of period $p\geq 1$. Following Proposition $6.17$, let $\hat{\phi}:I(U)\rightarrow \mathbb{S}^1$ be a quasisymmetric map so that $\hat{\phi}\circ \hat{f}^p\circ \hat{\phi}^{-1}$ equals exactly one of the rigid models, say $B_U$. Extend $\hat{\phi}$ to a quasiconformal homeomorphism of $\overline{\mathbb{D}}$. Denote the extension also by $\hat{\phi}$. Choose a Riemann mapping $R_U:U \rightarrow \mathbb{D}$ and set $\phi:= \hat{\phi}\circ R_U:U\rightarrow \mathbb{D}$. It follows that $f^{\circ p}$ and $B_U$ are compatible on the ideal boundary via $\phi$. If $p=1$ we are done: replacing $f$ on $U$ by the map $\phi^{-1}\circ B_U\circ \phi$ and keeping $f$ outside $U$, it follows from the Gluing Lemma that we obtain a new quasirational map. If $p>1$ then we have to replace $f$ on the disc components $U_j$ where $I(U_j):= \hat{f}^j(I(U))$ for $0\leq j\leq p-1$ with maps that are compatible with $\hat{f}$ along the ideal boundaries and whose composition agrees with $\phi^{-1}\circ B_U\circ \phi$ on $U$. Let $d_j\geq 1$ denote the degree of $\hat{f}:I(U_j)\rightarrow I(U_{j+1})$ for $0\leq j\leq p-1$. Then the sum $\sum_{j=1}^{p-1}{d_j} = d$ where $d=1$ in the elliptic case. From Proposition $6.16$ $(3)$ we know that there exist a pair of quasisymmetric maps mapping $I(U_j)$ and $I(U_{j+1})$ respectively to $\mathbb{S}^1$ and that provide an equivalence between $\hat{f}$ and $B_j(z):= z^{d_j}$ for $0\leq j\leq p-2$. From what we noted in Proposition $6.16$ we know that we may choose one of the quasisymmetric maps arbitrarily. Let $\hat{\phi}_0 = \hat{\phi}:I(U_0)\rightarrow \mathbb{S}^1$ from above. For $j = 1,\ldots, p-1$ establish recursively $\hat{\phi}_j:I(U_j)\rightarrow \mathbb{S}^1$ such that $\hat{\phi}_j\circ \hat{f} = B_{j-1}\circ \phi_{j-1}$. Depending on the case we choose $B_{p-1}$ to be the Blaschke product defined as 
-    
-    $$B_{p-1}(z):= \begin{cases}
-        e^{2\pi i \theta}z, &\quad\text{in the elliptic case,}\\
-        z^{d_{p-1}} &\quad\text{in the hyperbolic case,}\\
-        \frac{z^{d_{p-1}}+a}{1 + az^{d_{p-1}}} &\quad\text{in the parabolic case, for}   a = \frac{d-1}{d+1}\\
-        \end{cases}$$
 
 
-    The conditions in Corollary $6.13$ are therefore satisfied. Hence, by replacing $f$ on $U_j$ by the map $\phi_{j+1}^{-1}\circ B_j\circ \phi_j$ for $j = 0, 1, \ldots, p-1$ and keeping $f$ outside $\cup_{j=0}^{p-1}{U_j}$ we obtain a new quasirational map.\\
-    After having dealt with all the periodic components of $I(C)$ we work backwards along the preimages of each of them. If $I(V)$ is one of them, and $\hat{f}(I(V)) = I(W)$, then $\hat{f}$ is quasisymmetrically equivalent to $z\rightarrow z^d$ for some $d\geq 1$. If $d=1$ we keep the quasiconformal homeomorphism $f\big|_V:V\rightarrow W$. Only if $d>1$ we shall replace the map. Suppose this has been done up to $V$. We construct as before gluing maps $\phi_1$ and $\phi_2$ using Riemann mappings $R_V$ and $R_W$ and define $g:V\rightarrow W$ as $g:= \phi_2^{-1}\circ z^d\circ \phi$. The new critical point $c$ equals $\phi_1^{-1}(0) \in V$ with critical value $g(c)$ equals to $\phi_2^{-1}(0)$. The orbit of $c$ satisfies one of the conditions in the main theorem if the orbit of $g(c)$ does. We choose the Riemann mapping $R_W$ so that $\phi_2^{-1}(0)$ has the correct orbital behaviour. Keep repeating this, after a finite number of steps we would have constructed a quasirational map, satisfying the conditions of the main theorem. After integration we get our desired rational map $g$.\\
-    Now, to prove $C = J(g)$, we first note that on all components of $\hat{\mathbb{C}}\backslash C$, $U_i$ such that $U_i\cap f^{-1}(C)\neq \phi$, we replaced $f$ with something else $\implies$ after altering $f$ to a quasirational map $q$, we note that $q^{-1}(C)=C$ $\implies$ $(C, f) \sim (J(g), g)$ where $g$ is the rational map quasiconformally conjugate to $q$. $C$ is connected nowhere dense totally invariant set for $g$. It will hence suffice to show that $C\subseteq J(g)$. Note that $\forall$ $x\in C$, there does not exist a neighbourhood $U_x$ of $x$ such that $\{f^{\circ n}\big|_{U_x}\}_n$ is a normal family of $\hat{\mathbb{C}}$ $\implies$ $\forall$ $y\in C$ the same must be true, for we know that $\{f^{\circ n}\big|_{U_x}\}_n$ expands to the whole of $\hat{\mathbb{C}}$ barring at most two points $\implies$ $\{g^{\circ n}\big|_{\tilde{U}_y}\}_n$ must also expand for they are homeomorphic conjugates.
+    \textit{Proof.}: Note that $g^{\circ p}$ is quasiconformally conjugate to a Blaschke product of degree $d = \prod_{j=0}^{p-1}{\text{deg}(B_j)}$ on any of the $U_j$'s. Therefore, $K(g^{\circ n})$ is uniformly bounded forcing $g$ to be quasirational by Straightening Theorem.
 
-    Therefore, we have established the following isomorphism $\text{Mod}(C, f) \cong \text{Mod}(J(g), g)$. If we further show that $\text{Mod}(J(g),g) \cong \text{Aut}(g)$, then we can show that the group $\text{Mod}(C, f)$ is a finite group. Now to complete the proof of the main theorem let us prove the two aforementioned propositions.
+    \begin{figure}[H]\centering
+    \includegraphics[width=11.5cm]{ms-fig-14.pdf}
+    \FigureTag{MS14}{fig:ms-14}
+    \end{figure}
 
-    Proof of Proposition $6.16$. There are only finitely many components $V_1, V_2,\ldots, V_k$ of $\hat{\mathbb{C}}\backslash C$, which intersect $f^{-1}(C)$ or contain a critical point. Set $V = \{V_j\}_{1\leq j\leq k}$.\\
-    Proof of (1). If $U$ is a component of $\hat{\mathbb{C}}\backslash C$ not in $V$, then $f$ maps $U$ onto another component of $\hat{\mathbb{C}}\backslash C$ as a covering. Since $U$ is a disk, $f\big|_U$ is a quasiconformal homeomorphism onto its image. \\
-    Proof of (2). Let $U$ be a component of $\hat{\mathbb{C}}\backslash C$ not in $V$. Suppose $f^{\circ n}(U)$ is not in $V$ for any $n\geq 0$. Then, $f^{\circ n}$ is normal on $U$ and therefore $f^{\circ n}(U)$ must eventually cycle, otherwise $U$ would be a wandering domain which \BlogPost{first-surgery}{Sullivan's No Wandering Theorem} rules out for a rational map. Hence, $U$ is eventually mapped onto a Fatou component whose first return map is a quasiconformal homeomorphism, and therefore a Siegel disk. It follows that $I(U)$ is preperiodic. If, on the other hand, $f^{\circ n}(U)$ is eventually mapped onto one of the components in $V$ then $I(U)$ must also be preperiodic. Indeed, if some iterate is mapped onto $I(W)$ for $W \notin V$, we can repeat the argument from before, the component $W$  is eventually mapped onto the Siegel disk or onto one of the components in $V$. Since there are only finitely many components in $V$, the ideal boundary $I(U)$ will eventually cycle. There is a finite number of periodic components in $I(C)$, since there are at most finitely many cycles of Siegel disks and finitely many components in $V$ (as the number of cycles of indifferent points is finite).\\
-    Proof of (3). If $U$ is not in $V$ then $f\big|_U$ is a quasiconformal homeomorphism and $\hat{f}:I(U)\rightarrow f(I(U))$ is quasisymmetrically equivalent to the identity. If $U$ is one of the components in $V$, then we can find an annulus $U' \subset U$ such that $\partial U \subset \partial U'$ and $f$ is a covering on its image. Indeed, uniformize $U$ and $f(U)$ separately $\implies$ $\phi_1: \mathbb{D} \rightarrow U$ and $\phi_2: \mathbb{D} \rightarrow f(U)$. Let $K:= \text{crit}(f)\cup f^{-1}(C)$, then $K\cap \partial U$, and $f(K)\cap \partial f(U)$ are empty. This facilitates $r_1, r_2$ such that $\{z$ $|$ $|z|\geq r_1 \cap \phi_1^{-1}(K) = \phi\}$, and $\{z$ $|$ $|z|\geq r_1 \cap \phi_2^{-1}(K) = \phi\}$. Let $R = \max(r_1, r_2)$, so now let $\tilde{\phi}_1 = \phi_1\big|_{\mathbb{A}_{R, 1}}$ and $\tilde{\phi}_2 = \phi_2\big|_{\mathbb{A}_{R, 1}}$. This way we can simultaneously uniformize $U'$ and $f(U')$ for a suitable annulus $U'$ as $U'\cap \text{crit}(f) = \phi$. Note that, $f\big|_{U'}: U' \rightarrow f(U')$ is a covering of degree $d$, therefore, the induced covering map $\tilde{f}: \mathbb{A}_{R, 1}\rightarrow \mathbb{A}_{R, 1}$ is conjugate to the map $z\rightarrow z^d$ with the same extension to $\mathbb{S}^1$ via the map $\phi$ (say). The way to see that would be to use Schwarz Reflection principle to extend this to a covering self map on the unit circle and use classification theorem for connected covers of $\mathbb{S}^1$. Choose Riemann maps $R_U$, $R_V$ for disks $U$, $V$ (respectively). Then $\psi_1 = \phi\circ \tilde{\phi_1}\circ R_U^{-1}$ and $\psi_2 = \phi\circ \tilde{\phi_2}\circ R_V^{-1}$ extend to $\mathbb{S}^1$ providing an equivalence between $\hat{f}:I(U) \rightarrow I(V)$ and $z\rightarrow z^d$ for some $d\geq 1$.\\ 
-    
-    (Note: The choice of $\phi_1$ determines $\phi_2$, thereby also carrying that degree of freedom to $\psi_1$ and $\psi_2$). 
-
-    Now let us devote some time to prove Proposition $6.17$ through a sequence of lemmas which shall study each type of periodic component of $I(C)$ separately. Let $U$ be a component of $\hat{\mathbb{C}}\backslash C$ for which $I(U)$ is periodic under $\hat{f}$. Replacing $f$ by a suitable iterate, we may assume that $I(U)$ is fixed. Recall from the discussion above that there is an annulus $U' \subset U$ with $\partial U \subset \partial U'$ and such that $f$ is a covering onto its image.
-    
-    \subsection*{Lemma 6.18}: Suppose $\hat{f}(I(U)) = I(U)$. If $U'$ can be chosen to be a proper subset of $f(U')$ then $\hat{f}$ is quasisymmetrically conjugate to $z\rightarrow z^d$ for some $d>1$. 
-    
-    
-    \textit{Proof.}: In the proof of the above lemma we shall use the following theorem. A complete treatment of the theorem and expanding maps can be found in \cite{shub1985expanding}, \cite{hubbard1982iteration} and \cite{de2012one}.
-    \subsection*{Theorem 6.19}: Any expanding\footnote{A real-analytic endomorphism on $\mathbb{S}^1$ is said to be expanding if there is a smooth metric $\rho(\theta)\text{d}\theta$ with respect to which the derivative of the map is everywhere $>1$.} $C^{1+\alpha}$ orientation preserving endomorphism of $\mathbb{S}^1$ is quasisymmetrically conjugate to $z\rightarrow z^d$ for some $d>1$.
-    
-    
-    Let $R_U:U\rightarrow \mathbb{D}$ be the Riemann map, then $R_U(U')$ is an annular region in $\mathbb{D}$ as $U' \subset f(U')$. We also have $R_U\circ f\circ R_U^{-1}(R_U(U')=R_U(f(U'))$. Let $\tilde{f} = R_U\circ f\circ R_U^{-1}$ $\implies$ $\tilde{f}\big|_{R_U(U')}: R_U(U') \rightarrow R_U(f(U'))$. Uniformize $R_U(f(U'))$ to a standard annulus $\mathbb{A}_{R,1}$, and via Schwarz Reflection principle extend the new conjugated map $\tilde{\tilde{f}}$ past $\mathbb{S}^1$. Therefore, 
-    $$\tilde{\tilde{f}}: A' \rightarrow \mathbb{A}_{R, 1/R}$$
-    
-    is a holomorphic covering such that $\mathbb{S}^1$ is totally invariant with respect to $\tilde{\tilde{f}}$. Now, the Poincar\'e metric \footnote{Further details regarding such hyperbolic metrics along with a complete treatment of the metric in the proof can be found in \cite{beardon2011hyperbolic}} on $\mathbb{A}_{R, 1/R}$ is given by $\lambda(z)|\text{dz}|$, where 
-    
-    $$\lambda(z) = \frac{-\pi}{2\log(R)}\left(\frac{1}{|z|\cos\left(\frac{\pi \log|z|}{2\log R}\right)}\right)$$
-    
-    Now as $\tilde{\tilde{f}}$ is a covering map, by Pick's Theorem it is a local isometry $\implies$ $\lambda(\tilde{\tilde{f}})|d(f(z))| = \lambda(\tilde{\tilde{f}}(z))$. As for $z\in \mathbb{S}^1$, $\tilde{\tilde{f}} \in \mathbb{S}^1$, we have $\lambda(\tilde{\tilde{f}}(z)) = \frac{-\pi}{2\log(R)}$, one can choose $R$ such that $\frac{\pi}{2}>\log(\frac{1}{R})$.
-    By Theorem $6.19$ the result follows as $\tilde{\tilde{f}}\big|_{\mathbb{S}^1}$ is expanding.
-    
-    
-    \subsection*{Lemma 6.20}: Suppose $\hat{f}: I(U) \rightarrow I(U)$. Either $\partial U \subset \partial V$ for some Fatou component $V \subset U$ or $\hat{f}:I(U)\rightarrow I(U)$ is quasisymmetrically conjugate to $z\rightarrow z^d$ for some $d>1$.
-    
-    
-    \textit{Proof.}: To prove this lemma we shall need the following theorem due to Zoretti which can be found in \cite{whyburn1948analytic}.
-    \subsection*{Theorem 6.21}{(Zoretti's Theorem)}: Let $C$ be a component of a compact set $J \subset \mathbb{R}^2$. For all $\epsilon >0$ there exists a simple closed curve $\gamma_{\epsilon}$ which encloses $C$ and is such that $\gamma_{\epsilon}\cap J = \emptyset$ and $\text{dist}(C, x) < \epsilon$ for all $x\in \gamma_{\epsilon}$.
-    
-    
-    In $\overline{U}$, $\partial U$ is a component of $\overline{U}\cap\overline{J(f)}$ $\implies$ one can apply Zoretti's Theorem to get $\gamma_n$ (simple closed curves) such that $\gamma_n$ is in the Fatou set lying in an $\epsilon_n$-neighbourhood of $\partial U$. As $\partial U$ is disjoint from the boundaries of the Fatou components in $U$, and as periodic Fatou components are finite - If $\{U_i\}_{1\leq i\leq n}$ were the periodic components and $K = \cup_{i=1}^{n}{U_i}$, then $\partial U \cap \partial K = \emptyset$ $\implies$ by compactness $\exists$ $\delta$ such that $\text{dist}(\partial K, \partial U) > \delta$. Let $\epsilon_n < \delta$ $\implies$ $\gamma_n$ does not go through any periodic Fatou component. Now choose $n$ large enough such that the open annuli bounded by $\gamma_n$ and $\partial U$ also doesn't have any critical values, further that if $V'$ were such an annulus, then $\text{mod}(V')$ be such that if $V' \cong \mathbb{A}_{R, 1/R}$, then $\frac{\pi}{2}> \log(1/R)$.\\
-    As $\hat{f}(I(U)) = I(U)$, the thing implicit in this assumption is that $f(U) = U$ $\implies$ $\exists$ $U'$, a unique component of $f^{-1}(V')$ bounded by $\partial U$ and preimage of $\gamma_n$. Since, $\gamma_n$ isn't in any periodic Fatou component, it must be disjoint from its preimages $\implies$ $U' \subset V'$ or $V'\subset U'$, but as $f:U'\rightarrow V'$ is a proper covering, $\text{mod}(V')>\text{mod}(U')$. This gives us that $U' \subset V'$ and the lemma follows from the previous lemma. 
-    
-    
-    
-    Now we are left to handle the cases $\partial U \subset \partial V$, where $V \subset U$ is a Fatou component. By the classification theorem of periodic Fatou components for rational maps, $V$ can only be a Siegel disk, a Herman ring, a basin of (super)attraction, or a parabolic basin. We deal with these cases separately in a bunch of lemmas to follow.
-    
-    \subsection*{Lemma 6.22}: If $V$ is fixed Siegel disk or a fixed Herman ring of rotation number $\theta \in \mathbb{R}/\mathbb{Q}$, then $\hat{f}$ is real analytically conjugate to the rigid rotation $R_{\theta} = e^{2\pi i \theta}z$  
-    
-    
-    \textit{Proof.}: If $V$ is a Siegel disk then $U=V$ and a Riemann mapping $R_U$, which maps the indifferent fixed point to $0$, conjugates $f$ to the rigid rotation on $\mathbb{D}$. Hence $\hat{f}$ on $\mathbb{S}^1$ is actually equal to $R_{\theta}$. If $V$ is a Herman ring, then there is a conformal map $\phi:V \rightarrow \mathbb{A}_r$ conjugating $f$ to $R_{\theta}$. In this case, arguing as we did in Proposition $6.16$, we obtain that $\hat{f}$ on $I(U)$ is real analytically conjugate to $R_{\theta}$.
-    
-    
-    \subsection*{Lemma 6.23}: If $V$ is an immediate basin of (super)attraction, or a parabolic basin whose parabolic fixed point is not on $\partial U$, then $\hat{f}$ is quasisymmetrically conjugate to $z\rightarrow z^d$ for some $d>1$. 
-    
-    
-    \textit{Proof.}: Let $W \subset V$ be a Jordan domain, for which $f(W)$ is a proper subset of $W$ and $\overline{W}$ does not intersect $\partial U$. In the (super)attraction case $W$ may be chosen as disk surrounding the (super)attracting fixed point and mapping inside itself. In the parabolic case $W$ may be chosen as an attracting petal in the parabolic basin so that $\overline{W}$ intersects $\partial V$ at the parabolic fixed point.\\
-    Let $W_n$ be the component of $f^{\circ (-n)}(W)$ containing $W$, then 
-    $$\overline{W} \subset \overline{W_1} \subset \overline{W_2} \subset \ldots
-    $$
-    
-    and $\cup_{n}{W_n} = V$. In the parabolic case, $\partial U$ cannot contain any point in the grand orbit of the parabolic point since $f(\partial U) = \partial U$, so $W_n \cap \partial U = \emptyset$ for all $n>0$. Observe that, if $V$ is not simply connected, $W_n$ will become multiply connected after a certain $n_0$, since the union of all the $W_n$'s must account for all of $V$.\\
-    For every $n$, there is a component of $\partial W_n$ which together with $\partial U$ bounds an annulus $A_n$ disjoint from $W_n$. In general, $A_n$ may contain infinitely many different components of the Julia set. Each annulus lies in an $\epsilon_n$-neighbourhood of $\partial U$, where $\epsilon_n \rightarrow 0$ as $n\rightarrow \infty$. Otherwise there is a continuum in $\partial V$ which lies in $U$ and meets $\partial U$, contradicting the fact that $C$ is a component of the Julia set.\\
-    Choose $n$ sufficiently large so that $A_n$ contains no critical point. The component of $\partial W_n$ such that the annulus bounded by that component and $\partial U$ (denoted by $A_n$), and that $A_n \cap W_n = \emptyset$, is essentially the component of $\partial W_n$ that hits rays from $\partial U$ to $W_n$ first. This fact along with $f(W_{n+1}) = W_n$ ensures that $f(A_{n+1}) = A_n$. Again choose the modulus of $A_n$ such that one can apply Lemma $6.18$.
-    
-    
-    \subsection*{Lemma 6.24}: If $V$ belongs to a parabolic basin, with a parabolic fixed point on $\partial U$, then $\hat{f}$ on $I(U)$ is quasisymmetrically conjugate to $P_d(z)$ for some $d>1$.
-    
-    
-    \textit{Proof.}: Let $R_U:U\rightarrow \mathbb{D}$ be a Riemann map sending the parabolic fixed point to $z=1$ (Note that any petal $P$ contains an attracting vector, that vector yields the path $\gamma: [0,1) \rightarrow U$ such that $\lim_{t \rightarrow 1}{\gamma(t)} = \text{p}$. Therefore, $\text{p}$ is accessible $\implies$ so are all its preimages by Riesz's Theorem radial limit exists). Then $f$ and $V$ carry over to $\mathbb{D}$ where we also denote them by $f$ and $V$. Observe that $f$ is not defined on the whole disk, and that its domain contains $V$ and a one-sided neighbourhood of $\mathbb{S}^1$. By Schwarz-Reflection Principle, $f$ can be extended to a holomorphic map on the neighbourhood of $\mathbb{S}^1$ having a parabolic fixed point at $z=1$. The restriction to the unit circle is precisely $\hat{f}$. We construct by hand a quasisymmetric conjugacy between $\hat{f}$ and $P_d$ where $d$ is the degree of $\hat{f}$ on $\mathbb{S}^1$.\\
-    Consider an attracting petal $W$, containing $z=1$ on its boundary. For simplicity choose $W$ so that $\partial W$ is a $C^{\infty}$ curve avoiding the critical orbits. As before, let $W_n$ denote the component of $f^{\circ (-n)}(W)$ containing $W$. For $n$ sufficiently large, $W_n$ contains all critical points of $V$, and hence there is a unique component of $\gamma_n$ of $\partial W_n$, lying between $\partial U$ and $W_n$, and touching $\mathbb{S}^1$ at the $n$-th preimages of $z=1$. This curve $\gamma_n$ is contained in the annulus where $f$ is covering.\\
-    The curves $\gamma_n$ and $\gamma_{n+1}$ bound a pinched annulus $A_n$ with several components. This pinched annulus is, in a sense, a fundamental domain, since all forward orbits of points in between $\mathbb{S}^1$ and $\gamma_{n+1}$ must pass once and only once through $A_n \cup \gamma_n$.\\
-    We may carry out the same discussion on another copy of the unit disk for the map $P_d$, obtaining analogous sets $W'_n$, $\gamma_n'$, $A'_n$, etc.\\
-    To construct the conjugacy, we start by fixing $n$ sufficiently large and by choosing a $C^1$-diffeomorphism $\phi$ from the curve $\gamma_n$ onto $\gamma_n'$, fixing $z=1$, and sending preimages of $z=1$ to their analogues in an appropriate fashion (To do this one basically has to construct a smooth graph joining points $(x_i, x_i')$). Using the map $f$, we define $\phi$ on $\gamma_{n+1}$ so that $P_d\circ \phi = \phi \circ f$. We then extend $\phi$ quasiconformally to the different components of $A_n$ sending them to their analogues $A_n'$. Using the dynamics of $f$ and $P_d$ we extend recursively to the whole pinched annulus in between $\mathbb{S}^1$ and $\gamma_n$, so that it conjugates $f$ and $P_d$. Such a map extends quasiconformally to the whole unit disk, and quasisymmetrically to $\mathbb{S}^1$, conjugating $\hat{f}$ and $P_d$ as required.
-    
-   
-   
-   This concludes the proof of Proposition $6.17$ and Theorem $6.3$ (1). Now the following proposition shall handle Theorem $6.3$ (2), thereby finishing the proof of the central theorem behind this surgery.  
-   
-   \subsection*{Proposition 6.25}: $\text{Mod}(J(g), g) \cong \text{Aut}(g)$. $\text{Mod}(C, f)$ is a finite group, given that $C$ carries no invariant line field.
-   
-   
-   \textit{Proof.}: Let $\phi$ be an element of $\text{Mod}(J(g), g)$. We claim the ideal boundary values of $\phi$ on any component of $I(J(g))$ coincide with those of a conformal map commuting with $g$. If so, by Corollary $6.9$ there is a homotopy connecting $\phi$ to a unique quasiconformal map $\hat{\phi}$ which is conformal on $\hat{\mathbb{C}}\backslash J(g)$ and commutes with $g$ everywhere. But if $J(g)$ carries no invariant line field, such a map is conformal, for $\hat{\phi}^*\mu_0$ being an invariant line field of $J(g)$ must have $0$ dilatation. Hence $[\phi]$ is represented by an element of $\text{Aut}(g)$, completing the proof.\\ To establish the claim we note that as there are finitely many periodic components with say periods $p_1, p_2, \dots, p_N$, then set $M = \text{lcm}(p_1, p_2, \dots, p_N)$. So, the $M$-th iterate of $g$ shall fix all the periodic components, which by our classification theorem happen to be - Siegel disks, parabolic basins, or (super)attracting basins, which conjugate to rigid models after uniformization. \\
-   As remarked earlier, the two models must be identical, and up to composition with uniformizing maps, $\phi$ is a rotation commuting with the dynamics throughout the disk. Thus the ideal boundary values of $\phi$ coincide with those of a conformal map commuting with $g$.\\
-   Now let $U$ be a preperiodic component, and let $V = \phi(U)$, then there is a least integer $k$ such that $g^{\circ k}(U)$ (and consequently $g^{\circ k}(V)$) are components fixed by $g$. If $g^{\circ k}$ maps $U$ by degree $1$, as $g^{\circ k}(U)$ and $g^{\circ k}(V)$ are fixed, one can replace $\phi$ with a conformal map $\tilde{\phi}$ and the ideal boundary values won't change. So, just use $g^{\circ (-k)}\circ \tilde{\phi}\circ g^{\circ k}$ for $U$.\\
-   On the other hand, if $\text{deg}(g^{\circ k}) >1$, by Proposition $6.16$, the critical values in $g^{\circ k}(U)$ and $g^{\circ k}(V)$ are unique (which either coincides with the center of a Siegel disk, or the critical point in the parabolic basin or the superattracting basin), and $\tilde{\phi}$ will carry those to critical values via chain rule $\implies$ $\tilde{\phi}$ can be lifted, therefore even in this case suitable replacements can be arranged. 
-   
-   
-   Before talking about Conjecture $6.4$, let us briefly talk about buried sets. 
-   
-   \subsection*{Definition 6.26}{(Buried Sets)}: A collection of points in a closed set $J \subset X$ will be called buried if it does not belong to the boundary of the components of $X\backslash J$.
-   
-   
-   Classical examples of buried sets arise from Cantor-like sets. The boundaries of the components of the complement of the Cantor set are rational, and Cantor set being uncountable must have uncountably many buried points. A standard example of buried Julia components is given in the following proposition (proved in \cite{mcmullen1988automorphisms}), more information on buried Julia components can be found in \cite{godillon2015family} and \cite{wang2022buried}.
-   
-   \subsection*{Proposition 6.27}: Let $f(z) = z^2 + \frac{\lambda}{z^3}$. For all non-zero $\lambda$ sufficiently small,
-   \begin{enumerate}
-       \item $J(f)$ has uncountably many buried components.
-       \item $J(f)$ has a unique forward invariant buried component.
-       \item $J(f)$ is homeomorphic to (a Cantor set) $\times$ $\mathbb{S}^1$
-   \end{enumerate}
-   
-   
-   \subsection*{Definition 6.28}{(Exposed Critical Points)}: We say $f(z)$ has exposed critical points if every critical point lies in $F(f)$ or on the boundary of a component of $F(f)$.
-   
-   
-   In proving the special case of Conjecture $6.4$ the following special case of a result of Strebel found in \cite{MR505549} was used. We shall state the special case here.
-   
-   \subsection*{Theorem 6.29}{(Strebel's Theorem)}: Let $U$ be a finitely connected domain in $\hat{\mathbb{C}}$, and let $\phi:\overline{U} \rightarrow \overline{U}$ be a quasiconformal homeomorphism which is identity on $\partial U$. Then there is a unique quasiconformal map $\psi$ of minimal dilatation among those homotopic to $\phi$ (relative to $\partial U$). The absolute value of the Beltrami differential $|\psi_{\bar{z}}/\psi_z|$ is constant on $U$ (in fact, $\psi$ is a Teichm\"uller mapping of finite norm).
-   
-   
-   
-   Now we shall state a final theorem related to the difficult question of the existence of invariant line fields (explained in \cite{mcmullen1994frontiers} and \cite{mcmullen2016complex}).
-   
-   \subsection*{Theorem 6.30}: If $J(f)$ is connected and $f$ has exposed critical points, then $\text{Mod}(J(f), f)$ is a finite group.
+\begin{center}
+\BlogPost{mcmullens-surgery}{Continue to Part II: Rigid Models and a Julia Component}
+\end{center}
 % BLOG-CONTENT-END
 \bibliographystyle{amsalpha}
 \bibliography{tools/profiles/surgeries/MSc_Dissertation}
