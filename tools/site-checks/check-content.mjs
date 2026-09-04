@@ -14,7 +14,7 @@ for (const path of ['public/figures/research-statement/', 'public/manuscripts/re
   assert.ok(!existsSync(new URL(path, root)), `Withdrawn research statement files are still served: ${path}`);
 }
 const posts = JSON.parse(readFileSync(new URL('lib/generated-posts.json', root), 'utf8'));
-const expectedPublicPostCount = 82;
+const expectedPublicPostCount = 83;
 const bySlug = new Map(posts.map(post => [post.slug, post]));
 const decode = value => value.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&#x([\da-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16))).replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(+n));
 const mathIssues=[];
@@ -30,7 +30,7 @@ const essayCount = posts.filter(post=>post.track!=='Research').length;
 assert.equal(essayCount,expectedPublicPostCount);
 assert.equal(posts.length,expectedPublicPostCount);
 assert.ok(!bySlug.has('research-statement'));
-assert.ok(!bySlug.has('mcmullens-surgery'));
+assert.ok(bySlug.has('mcmullens-surgery'));
 assert.equal(posts.filter(post=>post.phase===1).length,12);
 assert.ok(bySlug.has('polynomial-like-maps-and-the-straightening-theorem'));
 assert.ok(posts.filter(post=>post.phase===3).every(post=>post.phaseLabel==='K-theory'));
