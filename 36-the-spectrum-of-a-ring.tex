@@ -11,8 +11,7 @@ Throughout, $A$ is a commutative ring.
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item $\Spec(A):=\{\pp\mid\pp\text{ is prime in }A\}$. In particular, $\Spec(0)=\varnothing$.
 \setcounter{enumi}{1}\item For an ideal $I<A$, set
-\[V(I):=\{\pp\in\Spec(A)\mid I\subseteq\pp\},\qquad D(f):=A\setminus V((f))\quad(f\in A).\]
-% Author check: the source writes A, not Spec(A), in the complement defining D(f).
+\[V(I):=\{\pp\in\Spec(A)\mid I\subseteq\pp\},\qquad D(f):=\Spec(A)\setminus V((f))\quad(f\in A).\]
 \end{enumerate}
 \end{definition}
 \setcounter{theorem}{29}\begin{proposition}
@@ -38,24 +37,22 @@ $\{\pp\}\subseteq\Spec(A)$ is closed if and only if $\pp$ is maximal.
 $\{\pp\}$ is closed if and only if $\{\pp\}=V(I)$ for an ideal $I<A$. This is equivalent to $I\subseteq\pp$ and $I\nsubseteq\qq$ for prime $\qq\ne\pp$, and hence to $\pp$ being maximal.
 \end{proof}
 \begin{remark}
-Not all points of $\Spec(A)$ are closed, so $\Spec(A)$ cannot be Hausdorff. Closed points of $\Spec(A)$ correspond to maximal ideals of $A$.
-% Author check: the non-Hausdorff assertion is written without qualification in the source.
+If $\Spec(A)$ has a nonclosed point, then $\Spec(A)$ cannot be Hausdorff. Closed points of $\Spec(A)$ correspond to maximal ideals of $A$.
 For $A=\kk[x_1,\ldots,x_n]/I$, with $\kk$ algebraically closed, Nullstellensatz gives the correspondences
 \[
 \begin{aligned}
 \text{maximal ideals of }A
-&\longleftrightarrow(x-\alpha_1,\ldots,x-\alpha_n),\quad\alpha\in\kk^n\\
-&\longleftrightarrow\text{closed points of }A\\
+&\longleftrightarrow(x_1-\alpha_1,\ldots,x_n-\alpha_n)/I,
+\quad\alpha\in\kk^n, p(\alpha)=0\text{ for every }p\in I\\
+&\longleftrightarrow\text{closed points of }\Spec(A)\\
 &\longleftrightarrow\text{maximal ideals of }\kk[x_1,\ldots,x_n]\text{ containing }I\\
 &\longleftrightarrow\{\alpha\in\kk^n\mid p(\alpha)=0,\ p\in I\}.
 \end{aligned}
 \]
-% Author check: the repeated unindexed x and ``closed points of A'' follow the source.
 \end{remark}
 \setcounter{example}{9}\begin{example}
 \begin{enumerate}[label=(\roman*)]
-\setcounter{enumi}{0}\item $\Spec(\C[x])=:\mathbb A^1_{\C}$ has primes $(0)$ and $(x-a)$, $a\in\C$. Closed points correspond to $a\in\C$, $a\ne0$. The point $0$ is not closed; in fact, $\overline{\{0\}}=\mathbb A^1_{\C}$. Such points are called \emph{generic}.
-% Author check: the source excludes a=0 among closed points and conflates the zero ideal with the number 0; retained.
+\setcounter{enumi}{0}\item $\Spec(\C[x])=:\mathbb A^1_{\C}$ has primes $(0)$ and $(x-a)$, $a\in\C$. Closed points correspond to all $a\in\C$. The point $(0)$ is not closed; in fact, $\overline{\{(0)\}}=\mathbb A^1_{\C}$. Such points are called \emph{generic}.
 \setcounter{enumi}{1}\item $\Spec(\Z)=\{(0),p\Z\mid p\text{ prime}\}$.
 % Source page 3
 \setcounter{enumi}{2}\item $\Spec(\kk[\epsilon]/(\epsilon^2))=\{(\epsilon)\}$.
@@ -79,18 +76,16 @@ $D(f)$&Nonvanishing domain of $f$\\\bottomrule
 \setcounter{example}{10}\begin{example}[More examples]
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item In $\Spec(\kk[\epsilon]/(\epsilon^2))$, $\epsilon([(\epsilon)])=0$, but $\epsilon\ne0$. Thus $f(x)=0$ for every $x\in\Spec A$ does not imply $f\equiv0$.
-\setcounter{enumi}{1}\item $\Spec(\R[x])=\{(0),(x-a),(x^2+ax+b)\}$. Pictorially, it looks like a folding of the complex plane.
-% Author check: the condition of irreducibility on the quadratic is absent in the source.
+\setcounter{enumi}{1}\item $\Spec(\R[x])=\{(0)\}\cup\{(x-a)\mid a\in\R\}\cup\{(x^2+ax+b)\mid a,b\in\R,\ a^2-4b<0\}$. Pictorially, it looks like a folding of the complex plane.
 \begin{figure}[H]\centering
 \includegraphics[width=.68\textwidth]{ca6-fig-01.pdf}
-\FigureTag{CA6.1}{fig:ca-6-01}
 \end{figure}
 \end{enumerate}
 \end{example}
 % Source page 4
 Let $\varphi:A\to B$ be a ring homomorphism. It induces $f=\Spec(\varphi):\Spec(B)\to\Spec(A)$.
 \begin{claim}
-$f$ is continuous, so $\Spec$ is a functor.
+$f$ is continuous, so $\Spec$ is a contravariant functor.
 \end{claim}
 \begin{proof}
 For $V(I)$ in $\Spec(A)$,
@@ -98,12 +93,11 @@ For $V(I)$ in $\Spec(A)$,
 \begin{aligned}
 f^{-1}(V(I))
 &=\{\qq\in\Spec(B)\mid\varphi^{-1}(\qq)\in V(I)\}\\
-&=\{\qq\in\Spec(B)\mid\qq\in\varphi(V(I))\}\\
-&=\{\qq\in\Spec(B)\mid\qq\in V(I^e)\}
+&=\{\qq\in\Spec(B)\mid I\subseteq\varphi^{-1}(\qq)\}\\
+&=\{\qq\in\Spec(B)\mid\varphi(I)\subseteq\qq\}
 =V(I^e).
 \end{aligned}
 \]
-% Author check: the middle expression phi(V(I)) is retained as written.
 \end{proof}
 % BLOG-CONTENT-END
 \end{document}

@@ -25,6 +25,15 @@ If $A,X,A'$ and $B,Y,B'$ are collinear in the two-circle configuration, then $AB
 \FigureTag{LB1.7}{fig:lb1-07}
 \end{figure}
 
+Two circles intersect at $X,Y$. Draw a chord $AB$ in the first circle.
+Extend $AX,BY$ to meet the second circle at $A',B'$.
+Construct a circle through $A',B'$, and extend $XA',YB'$ to meet the third circle at $A^2,B^2$.
+Iterate this $2014$ times. Determine the number of trapeziums in the resulting configuration.
+\begin{figure}[H]\centering
+\includegraphics[width=.90\linewidth]{lb1-fig-08.pdf}
+\FigureTag{LB1.8}{fig:lb1-08}
+\end{figure}
+
 
 % Source page 13 - right
 \setcounter{theorem}{36}\begin{lemma}[Express side ratios as area ratios]
@@ -112,11 +121,13 @@ Prove that $AL\perp AB$.
 \end{figure}
 Let us assume the result is true: $AL\perp AB$.
 An angle chase then gives the needed intermediate relation.
+Extend $CA$ beyond $A$ to a point $D$.
 Since $AL$ bisects $\angle KAC$, let $\angle LAK=\angle LAC=\alpha$.
 Then $\angle KAB=90^\circ-\alpha$ and
 $\angle BAD=180^\circ-(90^\circ-\alpha+\alpha+\alpha)=90^\circ-\alpha$.
 Thus $\angle KAB=\angle BAD=90^\circ-\alpha$, suggesting that $AB$ is an exterior angle bisector of $\triangle KAC$.
 We now prove that fact independently. The hypothesis gives $BC/BK=CL/KL$, while the angle-bisector theorem gives $CL/KL=AC/AK$. Hence $BC/BK=AC/AK$, so the converse of the exterior angle-bisector theorem shows that $AB$ is the exterior angle bisector of $\angle KAC$.
+The internal and exterior angle bisectors are perpendicular, so $AL\perp AB$.
 This is exactly what we wanted.
 % Source page 33 - right
 

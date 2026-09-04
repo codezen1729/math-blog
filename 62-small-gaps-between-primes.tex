@@ -16,7 +16,6 @@ Let us make the question concrete. If $[x,x+h]$ contains $k+1$ primes and $p_n$ 
 It therefore suffices to study
 \[H_m:=\liminf_{n\to\infty}(p_{n+m}-p_n).\]
 When $H_m<\infty$, infinitely many intervals of bounded length contain at least $m+1$ primes.
-% Author check: the source's off-by-one counts and bounded-set argument are retained.
 Studying the quantities $\{H_m\}_m$ is difficult because of the additive nature of the problem.
 Primes appear naturally only as factors, so they are suited for
 multiplicative studies. Regardless, there are deep conjectures about this.
@@ -35,8 +34,6 @@ They proved
 \[
  \liminf_{n\to\infty}\frac{p_{n+1}-p_n}{\log p_n}=0.
 \]
-In fact, they proved the stronger version
-$p_{n+1}-p_n\le(\log p_n)^{1/2+\varepsilon}$ infinitely often.
 \paragraph{2013: Yitang Zhang.}
 $\liminf_{n\to\infty}(p_{n+1}-p_n)=H_1\le70{,}000{,}000$.
 \paragraph{2013: Polymath.}
@@ -52,9 +49,7 @@ $H_1\le600$. Subsequently, Maynard and Tao's group joined forces.
 $H_1\le246$.
 They were also able to prove the following bound for $H_m$.
 \paragraph{2015: Maynard and Tao's group.}
-$H_m\ll m^3e^{4m}$, asserting for the first time that $\{H_m\}_m$ is a
-sequence of integers.
-% Author check: the historical narrative and dated claims are reproduced, not updated.
+$H_m\ll m^3e^{4m}$, showing that $H_m<\infty$ for every $m$.
 We now focus on the 2005 work of Goldston, Pintz, and Y{\i}ld{\i}r{\i}m: first motivate $\liminf_{n\to\infty}(p_{n+1}-p_n)/\log p_n=0$, then examine the technique behind its proof.
 Since the problem is additive and the multiplicative structure of primes does not appear directly, we model $\mathbb P$ by a sequence just as
 sparse as $\mathbb P$. Collect the numbers $\{1,2,3,\ldots,n\}$.
@@ -90,7 +85,6 @@ is
  \end{aligned}
 \]
 if $h$ is small compared with $p$.
-% Author check: X(p+h)=0 is written in the event, while the product uses the probability of X(p+h)=1.
 By Taylor expansion, $e^{-1/\log p}\sim1-1/\log p$.
 Combining these approximations, according to the random
 % Source page 5
@@ -133,12 +127,12 @@ $\liminf_{p\to\infty}(p_{\mathrm{next}}-p)<\infty$, that is, whether
 bounded gaps between primes exist.
 
 
-\setcounter{theorem}{20}\begin{conjecture}
+\setcounter{theorem}{20}\begin{conjecture}[Cram\'er's conjecture]
 $\displaystyle\limsup_{p\to\infty}
 \frac{p_{\mathrm{next}}-p}{(\log p)^2}=1$.
 \end{conjecture}
 Consider the sequence of consecutive numbers $m!+2,m!+3,\ldots,m!+m$.
-If $m!\sim x$, then the length of $(m!+2,m!+m)$ is
+If $x=m!$, then the length of $(m!+2,m!+m)$ is
 $\sim\log x/\log\log x$, which is far less than $(\log x)^2$.
 In fact, it is dominated even by the average gap.
 
@@ -147,7 +141,6 @@ Goldston, Pintz, and Y{\i}ld{\i}r{\i}m aimed for the much stronger bound $\boxed
 Their strategy begins with an admissible tuple.
 Let $\mathcal H=\{h_1,h_2,\ldots,h_k\}$, where $h_1<h_2<\cdots<h_k$.
 It is called an \emph{admissible $k$-tuple} if it misses at least one congruence class modulo every prime.
-% Author check: minimal diameter is included in the source's definition of admissibility.
 Given an admissible $k$-tuple, ask whether two primes can occur in $\{n+h_1,n+h_2,\ldots,n+h_k\}$, because avoiding a residue class modulo every prime removes the obvious congruence obstruction.
 Suppose one can find a sequence $\{a(n)\}_n$ of nonnegative numbers such
 that, for every $j=1,2,\ldots,k$,
@@ -164,6 +157,81 @@ Then
 \]
 Hence $\#\{1\le j\le k:n+h_j\in\mathbb P\}\ge2$, giving
 $p_{n+1}-p_n\le\diam(\{h_j\}_{j=1}^k)$.
+
+Inspired by Selberg, their choice of $\{a(n)\}_n$ is as follows.
+The idea is to choose $a(n)=1$ if the numbers
+$\{n+h_j\}_{j=1}^k$ are all prime, because, even without
+\eqref{eq:m5-star}, we would at least have an upper bound on the number
+of prime $k$-tuples.
+Let $\{\lambda_d\}_d$ be a sequence of real numbers such that
+$\lambda_1=1$ and $\lambda_d=0$ for all $d>R$. Set
+\[
+ a(n):=\left(\sum_{d\mid(n+h_1)\cdots(n+h_k)}\lambda_d\right)^2.
+\]
+If $R<x\le n$ and all the $n+h_j$ are prime, then $a(n)=1$.
+Expanding the square, one has
+\[
+ \begin{aligned}
+ &\sum_{d_1,d_2}\lambda_{d_1}\lambda_{d_2}
+ \sum_{\substack{x\le n\le2x\\
+ d_1\mid\prod_{i=1}^k(n+h_i)\\d_2\mid\prod_{i=1}^k(n+h_i)}}1\\
+ &\qquad=
+ \sum_{d_1,d_2}\lambda_{d_1}\lambda_{d_2}
+ \sum_{\substack{x\le n\le2x\\{}[d_1,d_2]\mid\prod_{i=1}^k(n+h_i)}}1,
+ \end{aligned}
+\]
+since $[d_1,d_2]\mid m$ if and only if $d_1\mid m$ and $d_2\mid m$.
+Thus $\sum_{x\le n\le2x,\ n+h_j\in\mathbb P}a(n)$ and
+$\sum_{x\le n\le2x}a(n)$ are quadratic forms. One needs to choose
+$\{\lambda_d\}_d$ to maximise
+\[
+ \frac{\displaystyle\sum_{\substack{x\le n\le2x\\n+h_j\in\mathbb P}}a(n)}
+ {\displaystyle\sum_{x\le n\le2x}a(n)},
+ \qquad\text{preferably making it greater than }1/k.
+\]
+The two quadratic forms need not commute and hence cannot be simultaneously
+diagonalised. Also, the coefficients are too complicated for Lagrange
+multipliers. They narrowed the choice down to
+\[
+ \lambda_d=\mu(d)P\left(\frac{\log(R/d)}{\log R}\right)
+\]
+for some polynomial $P$, a choice motivated by Selberg's sieve. With that
+choice they obtained
+\[
+ \sum_{x\le n\le2x}a(n)\sim
+ \frac{x}{(\log R)^k}\mathfrak S(\mathcal H)
+ \int_0^1\frac{y^{k-1}}{(k-1)!}\bigl(P^{(k)}(1-y)\bigr)^2\,dy.
+\]
+For the numerator, one must count primes subject to
+$[d_1,d_2]\mid\prod_{i=1}^k(n+h_i)$. This condition selects a union of
+residue classes modulo $q=[d_1,d_2]$, counted prime by prime according to
+the residue pattern of $\mathcal H$; it is not a single congruence attached
+to one fixed $h_i$. This is where strong equidistribution theorems enter.
+The prime number theorem in arithmetic progressions gives
+\[
+ \#\{p\in\mathbb P:p\le x,\ p\equiv a\pmod q\}
+ \sim\frac{x}{\varphi(q)\log x}
+\]
+for fixed $q$ with $(a,q)=1$, whereas here
+$[d_1,d_2]\lesssim R^2\approx x^{1/2}$. The Bombieri--Vinogradov theorem
+supplies the required average distribution up to level $1/2$. It leads to
+an asymptotic of the shape
+\[
+ \sum_{\substack{x\le n\le2x\\n+h_j\in\mathbb P}}a(n)
+ \sim
+ \frac{x}{(\log x)(\log R)^{k-1}}\mathfrak S(\mathcal H)
+ \int_0^1\frac{y^{k-2}}{(k-2)!}\bigl(P^{(k-1)}(1-y)\bigr)^2\,dy.
+\]
+The resulting ratio is less than $1/k$. Assuming the stronger
+Elliott--Halberstam conjecture, Goldston, Pintz, and Y{\i}ld{\i}r{\i}m obtained
+the following conditional result.
+\setcounter{theorem}{21}\begin{theorem}[Assuming the Elliott--Halberstam conjecture]
+$H_1\le16$.
+\end{theorem}
+Unconditionally, their method yields the averaged conclusion in
+Theorem~\ref{thm:m5-gpy}. The Elliott--Halberstam conjecture predicts that
+the exponent $1/2$ in the level of distribution can be improved to
+$1-\varepsilon$ for every $\varepsilon>0$.
 
 % Source page 11
 This attempt to prove $H_1\le16$ led to subsequent improvements and the following bounds.

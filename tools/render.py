@@ -106,6 +106,31 @@ def expand_blog_post_links(text: str, filename: str, slugs: set[str]) -> str:
         cursor = match.start() + len(replacement)
     return text
 
+
+def opening_excerpt(fragment: str) -> str:
+    """Return the first genuine prose paragraph, rather than a later teaser."""
+    for paragraph in re.findall(r"<p(?:\s[^>]*)?>.*?</p>", fragment, flags=re.S):
+        candidate = re.sub(r'<span\b[^>]*class="[^"]*\bmath display\b[^"]*"[^>]*>.*?</span>', ' ', paragraph, flags=re.S)
+        candidate = re.sub(r'<a\b(?=[^>]*class="[^"]*\bfootnote-ref\b[^"]*")[^>]*>.*?</a>', '', candidate, flags=re.S)
+        candidate = re.sub(r'<img\b[^>]*>', '', candidate, flags=re.S)
+        plain = html.unescape(re.sub(r"<[^>]+>", " ", candidate))
+        plain = re.sub(r"\s+", " ", plain).strip()
+        navigation_parts = re.findall(r"\bPart\s+[IVXLCDM]+\b", plain, flags=re.I)
+        roman_section_label = re.fullmatch(
+            r"[IVXLCDM]+\s*[.)]\s*(?:Prologue|[^.!?]{1,70}\bPerspective)\.?",
+            plain,
+            flags=re.I,
+        )
+        if (
+            len(plain) >= 8
+            and re.search(r"[A-Za-z]", plain)
+            and not re.fullmatch(r"(?:proof|remark|note|example|definition|theorem)\.?", plain, flags=re.I)
+            and len(navigation_parts) < 2
+            and not roman_section_label
+        ):
+            return paragraph
+    return ""
+
 def render(project: Path, site: Path):
     manifest = json.loads((project / "tools/manifest.json").read_text())
     baseline_posts = json.loads((project / "tools/baseline-posts.json").read_text())
@@ -115,7 +140,18 @@ def render(project: Path, site: Path):
     missing = [item["slug"] for item in manifest if item["slug"] not in posts_by_slug]
     if missing:
         raise ValueError(f"Published posts missing from the baseline catalog: {', '.join(missing)}")
-    posts = [posts_by_slug[item["slug"]] for item in manifest]
+    posts = []
+    for order, item in enumerate(manifest, start=1):
+        post = posts_by_slug[item["slug"]].copy()
+        # The manifest is the publication sequence and the public series index.
+        # Keeping these fields here prevents stale catalogue numbers after a
+        # pedagogical reorder or series rename.
+        post.update(
+            order=order,
+            phase=item["phase"],
+            phaseLabel=item["phaseLabel"],
+        )
+        posts.append(post)
     assert len(posts) >= 28
     assert len({item['slug'] for item in manifest}) == len(manifest)
     # External figures are fixed inputs in this first wording-editing workflow.
@@ -162,8 +198,7 @@ def render(project: Path, site: Path):
         fragment = re.sub(r'<(/?)h([1-5])\b', lambda m: '<' + m[1] + 'h' + str(int(m[2])+1), fragment)
         plain = html.unescape(re.sub(r"<[^>]+>", " ", fragment))
         count = len(re.findall(r"\b[\w'-]+\b", plain))
-        paragraphs = re.findall(r"<p>.*?</p>", fragment, flags=re.S)
-        excerpt = next((p for p in paragraphs if 90 <= len(re.sub(r"<[^>]+>", "", p)) <= 700 and "<img" not in p and "footnote" not in p), "")
+        excerpt = opening_excerpt(fragment)
         profile_macros = json.loads((profile / 'macros.json').read_text())
         post.update(
             title=title,
@@ -182,8 +217,7 @@ def render(project: Path, site: Path):
         post['html'] = re.sub(r'href="#(?!/)([^"]+)"', lambda m: 'href="#/post/' + post['slug'] + '?ref=' + quote(html.unescape(m[1]), safe='') + '"', post['html'])
     # Reference linking can also affect the opening excerpt.
     for post in posts:
-        paragraphs = re.findall(r'<p>.*?</p>', post['html'], flags=re.S)
-        post['excerptHtml'] = next((p for p in paragraphs if 90 <= len(re.sub(r'<[^>]+>', '', p)) <= 700 and '<img' not in p and 'footnote' not in p), '')
+        post['excerptHtml'] = opening_excerpt(post['html'])
     (site / "lib/generated-posts.json").write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n")
     metadata = json.loads((site / "lib/figure-metadata.json").read_text())
     for post in posts:

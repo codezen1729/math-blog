@@ -31,6 +31,28 @@ Prove that the bisectors of $\angle PBA$ and $\angle PCA$, together with $AP$, c
 The angle condition on $P$ gives $\alpha+\delta=\beta+\gamma$.
 Angle bisectors concur to give the incentre; therefore $AP$ and the bisectors of $\angle ABP$ and $\angle ACP$ are concurrent.
 This proves the required concurrence. The two points shown on $AP$ need not coincide.
+\paragraph{Pythagoras Olympiad (1980).}
+In triangle $ABC$, a point $D$ satisfies
+$\angle DCA=\angle DCB=\angle DBC=10^\circ$ and $\angle DBA=20^\circ$.
+Find $\angle CAD$.
+\begin{figure}[H]\centering
+\includegraphics[width=.95\linewidth]{lb2-fig-03.pdf}
+\FigureTag{LB2.3}{fig:lb2-03}
+\end{figure}
+Put $x=\angle CAD$. Applying trigonometric Ceva gives
+\[
+\frac{\sin x}{\sin(130^\circ-x)}\frac{\sin20^\circ}{\sin10^\circ}
+\frac{\sin10^\circ}{\sin10^\circ}=1,
+\]
+and hence
+\[
+\frac{\sin x}{\sin(130^\circ-x)}
+=\frac{\sin10^\circ}{\sin20^\circ}
+=\frac{\sin30^\circ}{\sin100^\circ}.
+\]
+The function $t\mapsto\sin t/\sin(130^\circ-t)$ is strictly increasing for
+$0<t<130^\circ$, so $x=30^\circ$.
+
 \setcounter{theorem}{98}\begin{lemma}[Concurrent perpendiculars]\label{lemma:lb2-102}
 Let $A,B,C$ form a triangle and $P,Q,R$ be three points in the plane.
 The lines through $P,Q,R$ perpendicular to $BC,CA,AB$, respectively, are concurrent if and only if
@@ -46,16 +68,14 @@ x_1x_2x_3=-y_1y_2y_3,\qquad x_1^2+x_2^2+x_3^2=y_1^2+y_2^2+y_3^2,
 \]
 and both $(v_1,v_2,v_3)$ and $(v_1^2,v_2^2,v_3^2)$ satisfy the triangle inequalities.
 Prove that exactly one of $x_1,x_2,x_3,y_1,y_2,y_3$ is negative.
-Let $ABC$ have $|BC|=v_1$, $|CA|=v_2$, $|AB|=v_3$.
+Let $ABC$ have $BC=v_1$, $CA=v_2$, $AB=v_3$.
 The triangle inequalities for the squares imply that $ABC$ is acute.
-Take $D,E,F$ on the extended sides $BC,CA,AB$, respectively, with
-$|BD|=x_1$, $|CE|=x_2$, $|AF|=x_3$, considering directed segments.
+Take $D,E,F$ on the extended sides $BC,CA,AB$, respectively, with directed segments
+$\overline{BD}=x_1$, $\overline{CE}=x_2$, $\overline{AF}=x_3$.
 The product condition and Menelaus's theorem imply that $D,E,F$ are collinear.
 The squared-sum condition implies that the perpendiculars at $D,E,F$ to $BC,CA,AB$ concur.
 Thus $D,E,F$ form a Simson line, and their perpendiculars concur on the circumcircle.
 Since $ABC$ is acute, exactly one lies outside the corresponding side segment, proving that exactly one number is negative.
-
-% Author check: source combines absolute-value notation with directed segment values; retained.
 
 \setcounter{theorem}{102}\begin{lemma}[Trigonometric Ceva]
 In triangle $ABC$, the lines $AD,BE,CF$ are concurrent if and only if
@@ -77,12 +97,11 @@ Trigonometric Ceva gives
 \[
 \frac{\sin\angle QAB}{\sin\angle QAC}
 \frac{\sin\angle ACC'}{\sin\angle BCC'}
-\frac{\sin\angle BB'}{\sin\angle ABB'}
+\frac{\sin\angle CBB'}{\sin\angle ABB'}
 =\frac{\sin\angle QAB}{\sin\angle QAC}
 \frac{\sin\angle PCB}{\sin\angle PBC}
 =\frac{BQ}{QC}\frac{BP}{PC}=1.
 \]
-% Author check: source sin angle BB' has only two vertex letters; proof line retained with explicit source wording.
 
 \subsection{Pole and polar argument}
 The pole--polar method begins with the standard definitions.

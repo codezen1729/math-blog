@@ -5,212 +5,26 @@
 \section*{Sullivan's No Wandering Theorem}
 % BLOG-CONTENT-BEGIN
 
-    
-        
-        The setup is the following:
-        
-        
-$f: \hat{\mathbb{C}} \rightarrow \hat{\mathbb{C}}$ is a rational map,
+\subsection*{Theorem 4.1 (No Wandering Theorem)}
+Rational maps of degree at least $2$ on $\hat{\mathbb{C}}$ have no wandering Fatou components.
 
-        
-deg$(f) \geq 2$.
-
-        
-        
-        
         A Fatou component of $f$ may be invariant, periodic, preperiodic, or wandering. Sullivan's theorem rules out the wandering case for rational maps; see \cite{branner2014quasiconformal,sullivan1985quasiconformal}. We begin with the analytic observations needed for the surgery proof. 
 
-        Let $U$ be a wandering Fatou component, and let $f^{\circ n}(U) = U_n$, then $U_n \cap U_m = \phi$ $(\forall n \neq m)$, and since $f$ has finitely many critical points, eventually, $U_n$ will have no critical points of $f$. Conjugate $f$ by a M\"obius transform (if need be) to assume WLOG that $\infty \in f^{-1}(U)$. That is, $\infty$ belongs to a Fatou component in $f^{-1}(U)$. As all $U_n$ are disjoint, they won't intersect the component that contains $\infty$ in $f^{-1}(U)$. This forces $\bigcup_{n\geq 1}U_n$ to be bounded in $\mathbb{C}$ (after stereographic projection), as the domains $U_n$ won't cluster around $\infty$ in $\hat{\mathbb{C}}$. 
+        Let $U$ be a wandering Fatou component, and let $f^{\circ n}(U) = U_n$, then $U_n \cap U_m = \varnothing$ $(\forall n \neq m)$, and since $f$ has finitely many critical points, eventually, $U_n$ will have no critical points of $f$. Conjugate $f$ by a M\"obius transform (if need be) to assume WLOG that $\infty \in f^{-1}(U)$. That is, $\infty$ belongs to a Fatou component in $f^{-1}(U)$. As all $U_n$ are disjoint, they won't intersect the component that contains $\infty$ in $f^{-1}(U)$. This forces $\bigcup_{n\geq 1}U_n$ to be bounded in $\mathbb{C}$ (after stereographic projection), as the domains $U_n$ won't cluster around $\infty$ in $\hat{\mathbb{C}}$.
 
         Let $g$ be a non-constant limit function of the family $\{f^{\circ n}\big|_U\}_n$. Then there exists $z_0 \in U$ such that $g'(z_0) \neq 0$. Let $\overline{B_{\delta}(z_0)} \subset U$ (closed ball of radius $\delta$) be such that $g$ is injective on it. Set,
         $$\epsilon = \inf_{z\in \partial B_{\delta}(z_0)}{|g(z)-g(z_0)|}$$
         
-        Let us denote the subsequence that converges uniformly to $g$ by the same sequence, i.e. $f^{\circ n} \rightarrow g$ uniformly. Going by first principles, $\exists N$ such that $\forall n$, $n\geq N$, $|f^{\circ n}(z)-g(z)| < \epsilon$ $(\forall z \in \overline{B_{\delta}(z_0)})$. Set $F_n(z):= f^{\circ n}(z)-g(z_0)$ and $G(z):= g(z)-g(z_0)$. Then $\forall n > N$, and $z\in \partial B_{\delta}(z_0)$,
-        $$|F_n(z) -G(z)| = |f^{\circ n}(z)-g(z)|<\epsilon \leq |G(z)|$$
+        Let $f^{\circ n_j}\rightarrow g$ uniformly on compact subsets of $U$. Going by first principles, $\exists J$ such that $\forall j$, $j\geq J$, $|f^{\circ n_j}(z)-g(z)| < \epsilon$ $(\forall z \in \overline{B_{\delta}(z_0)})$. Set $F_j(z):= f^{\circ n_j}(z)-g(z_0)$ and $G(z):= g(z)-g(z_0)$. Then $\forall j > J$, and $z\in \partial B_{\delta}(z_0)$,
+        $$|F_j(z) -G(z)| = |f^{\circ n_j}(z)-g(z)|<\epsilon \leq |G(z)|$$
         
-        $\implies$ $G(z)$ and $F_n(z)$ have the same number of zeroes in $B_{\delta}(z_0)$ (by Rouch\'e's Theorem). So, $\forall n \geq N$, $\exists$ $z^*(n)$ such that $f^{\circ n}(z^*(n)) = g(z_0)$. This gives, 
-        $$g(z_0) \in \bigcap_{n>N}{U_n}$$
+        $\implies$ $G(z)$ and $F_j(z)$ have the same number of zeroes in $B_{\delta}(z_0)$ (by Rouch\'e's Theorem). So, $\forall j \geq J$, $\exists$ $z^*(j)$ such that $f^{\circ n_j}(z^*(j)) = g(z_0)$. This gives,
+        $$g(z_0) \in \bigcap_{j\geq J}{U_{n_j}}$$
         
-        $\implies$ $U$ isn't a wandering domain $\implies$ $g$ is constant. Geometrically speaking, what we essentially proved is that if $g$ isn't a constant map, then Rouch\'e's Theorem and Open Mapping Theorem force all sufficiently late images of $U$ to lie in $g(U)$ and share a common point.
+        $\implies$ $U$ isn't a wandering domain $\implies$ $g$ is constant.
 
-        This forces diam$(U_n) \rightarrow 0$ as $n\rightarrow \infty$. If not, then $\exists L$, $L \subset U$, compact in $U$, and a subsequence $\{n_j\}_j$ such that diam$(f^{\circ n_j}(L)) \geq \delta$. Normality yields another subsequence which we shall again denote by $\{n_j\}_j$ such that $f^{\circ n_j} \rightarrow (z\rightarrow c)$ (the constant function $c$). This implies $f^{\circ n_j}(L) \subset B_{\epsilon}(c)$ $(\forall \epsilon >0)$. Contradiction. 
+        This forces $\operatorname{diam}(f^{\circ n}(L)) \rightarrow 0$ for every compact $L\Subset U$. If not, then $\exists L$, $L \subset U$, compact in $U$, and a subsequence $\{n_j\}_j$ such that diam$(f^{\circ n_j}(L)) \geq \delta$. Normality yields another subsequence which we shall again denote by $\{n_j\}_j$ such that $f^{\circ n_j} \rightarrow (z\rightarrow c)$ (the constant function $c$). This implies $f^{\circ n_j}(L) \subset B_{\epsilon}(c)$ $(\forall \epsilon >0)$. Contradiction.
 
-        Replace $U$ by $U_n$ for $n$ large enough so that $U_n$ has no critical points $\implies$ $f:U \rightarrow U_n$ will be a covering map of degree $(\leq $ deg$(f))$. Let $\gamma \subset U$ be a Jordan curve, set $\gamma_n:= f^{\circ n}(\gamma) \subset U_n$. By the above argument, we will have diam$(\gamma_n) \rightarrow 0$, hence, if $D_n$ denotes the bounded connected component of $\hat{\mathbb{C}}\backslash \gamma_n$, then diam$(D_n) \rightarrow 0$. As $\infty \in f^{-1}(U)$, by continuity of $f$ we have a $\delta >0$ such that $f(B_{\delta}(P)) \subset f^{-1}(U)$ for any pole $P$ of $f$. Now as poles are finite, for $n$ large enough, $D_n$ will contain no poles of $f$ $\implies$ $D_n$ will wander off an open ball of radius $\delta$ around each pole, since $U$ is a wandering domain.
-
-        Now set $\overline{\gamma_n}$ to be the curve $\gamma_n$ along with all its bounded components (seen as domains in $\mathbb{C}$). By the observation made above, $f\big|_{\overline{\gamma_n}}$ is holomorphic. By maximum modulus principle $f^{\circ m}$ is bounded on $\overline{\gamma_n}$, for all $m\geq n$, as $\bigcup_{m\geq n}U_m$ is bounded in $\mathbb{C}$. By Montel's Theorem, $\{f^{\circ m}\big|_{\overline{\gamma_n}}\}_m$ is a normal family $\implies$ $\overline{\gamma_n} \subset U_n$. Therefore by Jordan Curve Theorem $\gamma_n$ is null-homotopic. Lift that homotopy to $U$ to get that \textbf{$\mathbf{\{U_n\}_n}$ is a sequence of eventually simply connected domains}.
-
-        Finally, $f:U_n \rightarrow U_{n+1}$ is proper (for $\hat{\mathbb{C}}$ is compact) and a local diffeomorphism $\implies$ $f$ is a covering map. By Uniformisation Theorem we have a lift of $f$, $\tilde{f}$.
-        
-        $$\begin{tikzcd}[column sep = large, row sep = large]
-        U_n \arrow[r, "f"] \arrow[d, "\phi"']
-        & U_{n+1} \arrow[d, "\xi"] \\
-        \mathbb{D} \arrow[r,"\tilde{f}"']
-        & \mathbb{D}
-        \end{tikzcd}$$
-        
-        
-        But $f$ being a covering map, and $\phi, \xi$, biholomorphisms, force $\tilde{f}$ to be a covering map $\implies$ $\tilde{f}$ is $1-1$ by Monodromy Theorem. This gives us that $\mathbf{f}$ \textbf{is univalent}. Henceforth replace $U$ by $U_n$ for $n$ large enough such that it is simply connected and $f$ on it is univalent.
-
-        With the two observations in bold, the stage is set for surgery modulo relevant technicalities which we shall reveal first. 
-        
-        \subsection*{Lemma 4.1}{(Constructing a Family of Diffeomorphisms)}: Let $B:= \{\lambda \in \mathbb{R}^N|$ $|\lambda| \leq 1\}$, $N>4d+2$, where $d = $ deg$(f)$. Given $k>1$ there exists a family of maps $\psi:B\times \overline{\mathbb{D}} \rightarrow \overline{\mathbb{D}}$, given by, $\psi(\lambda, z) \rightarrow \psi_{\lambda}(z)$ such that the following hold:
-        \begin{enumerate}
-            \item $\psi_{\lambda}$ is $K$-qc on $\mathbb{D}$ $(\forall \lambda \in B)$.
-            \item $\psi_{\lambda}(z)$ is real analytic in $\lambda$.
-            \item $\psi_0$ is identity on $\mathbb{D}$.
-            \item $\psi_{\lambda}(z) = z$ ($\forall z, arg(z) \in [\pi, 2\pi], \forall \lambda \in B)$.
-            \item $\psi_{\lambda_1}(z) \ncong \psi_{\lambda_2}(z)$ $(\forall \lambda_1 \neq \lambda_2$ on $\partial \mathbb{D})$.
-        \end{enumerate}
-        
-        
-        \textit{Proof.}: Set,
-        
-        $$w_{\delta}(x) := 
-        \begin{cases}
-        \delta^2\text{exp}\left(\frac{-\delta^2}{\delta^2 - x^2}\right), &\quad|x| < \delta\\
-        0, &\quad|x| \geq \delta\\ 
-        \end{cases}$$
-        
-        
-        Then, $0\leq w_{\delta}(x) \leq \frac{\delta^2}{e}$ and $|w_{\delta}'(x)| \leq \frac{8\delta}{e^2}$.
-        Let $0 = x_0<x_1<\cdots<x_N<x_{N+1} = \pi$ be a partition of $[0,\pi]$ and let $\delta < \frac{1}{2}\min_{j}{(x_j-x_{j-1})}$. Define,
-        
-        $$\Omega(\lambda, \theta):= \sum_{j=1}^{N}{\lambda_jw_{\delta}(\theta - x_j)}$$
-        
-        
-        $(\lambda = (\lambda_1, \lambda_2,\ldots,\lambda_n))$. With this we construct a function $\psi_{\lambda}:B\times\overline{\mathbb{D}} \rightarrow \overline{\mathbb{D}}$ as follows,
-        
-        $$\psi_{\lambda}(re^{i\theta}) := 
-        \begin{cases}
-        re^{i(\theta+\Omega(\lambda, \theta))}, &\quad r\neq0\\
-        0, &\quad r =0\\ 
-        \end{cases}$$
-        
-        
-        Clearly, $\psi_{\lambda}$ satisfies all the conditions of the Lemma, to check quasiconformality one merely has to change one's coordinates to polar and compute $\left|\frac{\partial \bar{z}}{\partial z}(\psi_{\lambda}(z))\right|$.
-         
-        
-        
-        \subsection*{Lemma 4.2}{(Incision)}: Let $\{\phi_t\}_{t\in[0,1]}$ be a continuous family of self-conjugacies of a rational map $f$. If $\phi_0$ is the identity, then every $\phi_t$ is the identity on the Julia set of $f$ and sends each Fatou component of $f$ to itself.
-        
-        
-        \textit{Proof.}: $\phi_t\circ f = f\circ \phi_t$ $\implies$ $\phi_t\circ f^{\circ n} = f^{\circ n}\circ \phi_t$ $\implies$ $\phi_t(\{z\in \hat{\mathbb{C}}|$ $f^{\circ n}(z) = z, \text{for some}  n\}) = \{z\in \hat{\mathbb{C}}|$ $f^{\circ n}(z)=z, \text{for some}  n\}$. Since $P_n:= \{z\in \hat{\mathbb{C}}|$ $f^{\circ n}(z)=z\}$ is discrete, $\phi_0 = \text{Id}$, and $\phi_t$ is continuous in $t$, we have, $\phi_t\big|_{P_n} = \text{Id}\big|_{P_n}$. Now $\bigcup_{n\geq1}P_n$ is dense in the Julia set, so it forces $\phi_t\big|_{J(f)} = \text{Id}$.  Let $U$ be a Fatou component, as $\phi_t$ is orientation preserving, $\phi_t\big|_{\partial U} = \text{Id}$ gives us $\phi_t\big|_{U} = U$.
-        
-        
-    
-        \subsection*{Lemma 4.3}{(Contradiction)}: Let $U\subset \mathbb{C}$ be simply connected, $\{\phi_t\}_{t\in[0,1]}$ a family of qc-maps which extend to $\partial \mathbb{D}$ identically. Let $R:U\rightarrow \mathbb{D}$ be a Riemann map, set $\hat{\phi}_t = R\circ \phi_t\circ R^{-1}:\mathbb{D} \rightarrow \mathbb{D}$, then $\hat{\phi}_t$ extends to $\partial \mathbb{D}$ independent of $t$. 
-        
-        
-        \textit{Proof.}: $\hat{\phi}_t: \mathbb{D} \rightarrow \mathbb{D}$ is quasiconformal $\implies$ $\hat{\phi}_t$ extends quasisymmetrically to $\partial \mathbb{D}$. $\phi_t$ (by Lemma $4.2$) fixes $\partial \mathbb{D}$ $\implies$ it permutes the homotopy classes of curves $\gamma:[0,1]\rightarrow U$ such that $\lim_{t\rightarrow 1}{\gamma(t)} \in \partial U$. Now $\hat{\phi}_t$ permutes points $\zeta \in \mathbb{S}^1$ such that $\lim_{r\rightarrow 1}{R(re^{i\text{arg}(\zeta)})}$ are the same, where $R$ is the Riemann map. Such points have a totally disconnected topology (by Theorem $3.11$). $\hat{\phi}_t$ is continuous in $t$, and $\hat{\phi}_t$ permutes points in the same way $\forall t$. This implies the extension of $\hat{\phi}_t$ to $\mathbb{S}^1$ is independent of $t$.  
-        
-        
-        
-        
-        We now prove the No Wandering Theorem using the three lemmas above. 
-
-        We have by Lemma $4.1$ a family of $K$-qc maps $\{\psi_{\lambda}\}_{\lambda \in B}$ with the prescribed properties. Let $\tilde{\mu}_{\lambda}:= \psi_{\lambda}^*\mu_0$, the Beltrami form induced by $\psi_{\lambda}$ on $\mathbb{D}$. Let $R:\mathbb{D} \rightarrow U$ be a Riemann map, and $\theta_1, \theta_2, \theta_3 \in [\pi, 2\pi]$ be such that,
-        
-        $$
-        \lim_{r \rightarrow 1}{re^{i\theta_j}}$$
-        
-        
-        exists $(\forall j$, $1\leq j\leq 3)$, let those limits be $a_1, a_2, a_3$, respectively. Push $\tilde{\mu}_{\lambda}$ from $\mathbb{D}$ onto $U$, i.e. let $\mu_{\lambda}:= R_*\tilde{\mu}_{\lambda}$ (aka pullback via $R^{-1}$). With these scalpels firm in our hands, let us expand the zone of possible incisions by spreading $\mu_{\lambda}$ on almost all of $\hat{\mathbb{C}}$. We do that as follows:
-        
-        $$\mu_{\lambda} := 
-        \begin{cases}
-        (f^{\circ n})_*\mu_{\lambda}, &\quad\text{on}  U_n,  n\geq 0\\
-        (f^{\circ m})^*\mu_{\lambda} &\quad\text{on}   f^{-m}(U_n),  m\geq 0\\
-         \mu_0 &\quad\text{on}   \hat{\mathbb{C}}\backslash \bigcup_{n,m\geq 0}{(f^{-m}(U_n)})\\ 
-        \end{cases}$$
-        
-        
-        $\mu_{\lambda}$ has dilatation bounded by $K$, is $f$-invariant, and is real analytic in $\lambda$. By Mapping Theorem we have $\phi_{\lambda}:\hat{\mathbb{C}} \rightarrow \hat{\mathbb{C}}$ such that $\phi_{\lambda}^*\mu_0 = \mu_{\lambda}$. Let $g_{\lambda} = \phi_{\lambda}\circ f\circ \phi_{\lambda}^{-1}$ $\implies$ By Weyl's Lemma $g_{\lambda}$ is holomorphic, as $g_{\lambda}^*\mu_0= (\phi^{-1}_{\lambda})^* \circ (f)^*\circ (\phi_{\lambda})^*\mu_0 = (\phi^{-1}_{\lambda})^*\circ (f^*\mu_{\lambda}) = (\phi^{-1}_{\lambda})^*\mu_{\lambda} = \mu_0$. We can further arrange for $\phi_{\lambda}$ such that it fixes $a_1, a_2, a_3$, and depends analytically on $\lambda$. $g_{\lambda}$ is a rational map of the same degree $d$ as that of $f$ (for $\phi_{\lambda}$ are mere homeomorphisms) $\implies$ the $2d+1$ coefficients of $g_{\lambda}$ depend analytically on $\lambda$ by construction. Define,
-        
-        $$\pi: B \rightarrow \text{Rat}_d,   \pi(\lambda) := g_{\lambda}$$
-        
-        
-        Real dimension of $\text{Rat}_d$ is $2(2d+1) = 4d+2$ (since $\text{dim}(B)>4d+2$). This gives rise to a path $\lambda:[0,1] \rightarrow B$, such that $g_{\lambda(t)} = g$, $\forall t, t\in [0,1]$ (because $\exists$ $g_{\lambda} \in \text{Rat}_d$ such that it is a regular value of $\pi$, for $\psi_{\lambda}$ is injective on $\lambda$). Set $\Phi_t = \phi^{-1}_{\lambda(0)}\circ \phi_{\lambda(t)}$. We have the following:
-        
-        \begin{enumerate}
-            \item $\Phi_t$ is $K^2$-qc.
-            \item $\Phi_0$ is identity.
-            \item $\Phi_t$ fixes $a_1, a_2, a_3$.
-        \end{enumerate}
-        
-        
-        Therefore, with the help of the scalpels $\psi_{\lambda}$ the incision we made leaves us with the following parametrized deformations.
-        
-        $$\begin{tikzcd}[column sep = large, row sep = large]
-        (\hat{\mathbb{C}}, \mu_{\lambda(0)})
-        \arrow[r, "f"] 
-        \arrow[d, "\phi_{\lambda(0)}"]
-        & 
-        (\hat{\mathbb{C}}, \mu_{\lambda(0)})
-        \arrow[d, "\phi_{\lambda(0)}"]
-        \\ 
-        (\hat{\mathbb{C}}, \mu_0)
-        \arrow[r, "g_{\lambda(t)} = g"'] 
-        & 
-        (\hat{\mathbb{C}}, \mu_0)
-        \\ 
-        (\hat{\mathbb{C}}, \mu_{\lambda(t)}) 
-        \arrow[r, "f"'] 
-        \arrow[u, "\phi_{\lambda(t)}"']
-        \arrow[uu, bend left = 60, "\Phi_t"]
-        & 
-        (\hat{\mathbb{C}}, \mu_{\lambda(t)}) 
-        \arrow[u, "\phi_{\lambda(t)}"']
-        \arrow[uu, bend right = 60, "\Phi_t"']
-        \\
-        \end{tikzcd}$$
-        
-        
-        By Lemma $4.2$ $\Phi_t$ is identity on $J(f)$, in particular on $\partial U$, and sends $U$ onto $U$. Consider $\hat{\Phi}_t: (\mathbb{D}, \tilde{\mu}_{\lambda(t)}) \rightarrow (\mathbb{D}, \tilde{\mu}_{\lambda(0)})$, where $\hat{\Phi}_t := R\circ \Phi_t\circ R^{-1}$. Now by Lemma $4.3$ $\hat{\Phi}_t$ extends to $\hat{\Phi}$ on $\partial \mathbb{D}$ (independent of $t$). This gives us,
-        
-        $$\hat{\psi}_t := \psi_{\lambda(0)}\circ \hat{\Phi}_t: (\mathbb{D}, \tilde{\mu}_{\lambda(t)}) \rightarrow (\mathbb{D}, \mu_0)$$
-        
-        
-        as shown in the diagram below,
-        
-        $$\begin{tikzcd}[column sep = large, row sep = large]
-        (U, \mu_{\lambda(t)})
-        \arrow[r, "\Phi_t"] 
-        \arrow[d, "R"]
-        & 
-        (U, \mu_{\lambda(0)})
-        \arrow[d, "R"]
-        \\ 
-        (\mathbb{D}, \tilde{\mu}_{\lambda(t)})
-        \arrow[r, "\hat{\Phi}_t"'] 
-        \arrow[d, "\psi_{\lambda(t)}"]
-        \arrow[dr, "\hat{\psi}_t"']
-        & 
-        (\mathbb{D}, \tilde{\mu}_{\lambda(0)})
-        \arrow[d, "\psi_{\lambda(0)}"]
-        \\ 
-        (\mathbb{D}, \mu_0) 
-        \arrow[r, "\text{Id}"'] 
-        & 
-        (\mathbb{D}, \mu_0) 
-        \\
-        \end{tikzcd}$$
-        
-        
-        where $\hat{\psi}_t$ extends to $\partial \mathbb{D}$ (given by $\psi_{\lambda(0)}\circ \hat{\Phi}$). Note that $\psi_{\lambda(t)}$ and $\hat{\psi}_t$ pull back the same Beltrami form ($\tilde{\mu}_{\lambda(t)}$), and they both fix $a_1, a_2, a_3$ $\implies$ by Weyl's Lemma $\psi_{\lambda(t)} = \hat{\psi}_t$. This exposes the following,
-        
-        $$\psi_{\lambda(t)} = \psi_{\lambda(t)}\Big|_{\partial \mathbb{D}} = (\psi_{\lambda(0)} \circ \hat{\Phi}_t)\Big|_{\partial \mathbb{D}} = \psi_{\lambda(0)}\circ \hat{\Phi}$$
-        
-        
-        
-        $\forall t$, $t\in[0,1]$ $\implies$ $\psi_{\lambda(t)}$ is not injective. Contradiction. 
-        
-        $\qed$
-    
-        
-        
-        
-
-(No Wandering Theorem): Rational maps of degree at least $2$ on $\hat{\mathbb{C}}$ have no wandering Fatou components.
 % BLOG-CONTENT-END
 \bibliographystyle{amsalpha}
 \bibliography{tools/profiles/surgeries/MSc_Dissertation}

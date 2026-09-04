@@ -19,15 +19,13 @@ $\lvert\mathcal M^T(X)\rvert=1$.
 \end{theorem}
 
 \begin{proof}
-% [source: the handwritten proof labels this direction with a downward arrow,
-% although it starts from uniqueness of the invariant measure.]
 $(\Downarrow)$ Choose some $\delta_x\in\mathcal M(X)$. By the existence theorem
 for invariant measures,
 \[
   \frac1N\sum_{n=0}^{N-1}\delta_{T^nx}\overset{*}{\longrightarrow}\mu,
 \]
-for there cannot be more than one accumulation point, as
-$\lvert\mathcal M^T(X)\rvert=1$. Now, by the ergodic theorem, we have
+for every accumulation point is $T$-invariant and there cannot be more than
+one, as $\lvert\mathcal M^T(X)\rvert=1$. Therefore
 \[
   \frac1N\sum_{n=0}^{N-1}f(T^nx)\longrightarrow\int_X f\,d\mu,
 \]
@@ -53,12 +51,13 @@ if $\lvert\mathcal E^T(X)\rvert=1$, for $\mathcal M^T(X)$ consists of
 
 \begin{remark}[2]
 When $(X,T)$ is uniquely ergodic, the convergence in the theorem above is
-uniform. Otherwise, for some $\varepsilon>0$ there exists $x$ such that
+uniform. Otherwise, for some $\varepsilon>0$ there exist points $x_k$ and
+integers $N_k\to\infty$ such that
 \[
-  \left|\frac1N\sum_{n=0}^{N-1}g(T^nx)-C_g\right|\geq\varepsilon.
+  \left|\frac1{N_k}\sum_{n=0}^{N_k-1}g(T^nx_k)-C_g\right|\geq\varepsilon.
 \]
-Set $\mu_N=\frac1N\sum_{n=0}^{N-1}\delta_{T^nx}$. By weak-$*$ compactness,
-we have $\mu_{N(k)}\to\nu$, and therefore
+Set $\mu_k=\frac1{N_k}\sum_{n=0}^{N_k-1}\delta_{T^nx_k}$. By weak-$*$ compactness,
+some subsequence converges to $\nu$, and therefore
 $\left|\int_X g\,d\nu-C_g\right|\geq\varepsilon$. Now
 $C_g=\int_X g\,d\mu$, where $\mu\in\mathcal M^T(X)$, so $\nu\ne\mu$.
 This is a contradiction.
@@ -71,7 +70,7 @@ well-distributed.
 This motivates the following definition of equidistribution for a sequence $(x_j)_j$.
 
 \setcounter{definition}{9}\begin{definition}[Equidistribution]
-We say that $(x_n)_n$, with $x_n\in X$, is \emph{equidistributed} in $(X,T)$
+We say that $(x_n)_n$, with $x_n\in X$, is \emph{equidistributed} in $(X,\mu)$
 if, for every $f\in C(X)$, we have
 \[
   \lim_{n\to\infty}\frac1n\sum_{j=1}^n f(x_j)
@@ -83,7 +82,16 @@ if, for every $f\in C(X)$, we have
 Unique ergodicity links equidistribution in $X$ with invariant measures in $\mathcal M(X)$.
 \end{remark}
 
-
+\setcounter{definition}{10}\begin{definition}[Generic point]
+We say that $x\in X$ is \emph{generic for $\mu$} if either of the following
+equivalent conditions holds:
+\begin{enumerate}[label=(\roman*)]
+  \item $\displaystyle\frac1n\sum_{j=1}^n\delta_{T^jx}
+  \overset{*}{\longrightarrow}\mu$ in $\mathcal M(X)$;
+  \item $\displaystyle\lim_{n\to\infty}\frac1n\sum_{j=1}^n f(T^jx)
+  =\int_Xf\,d\mu$ for every $f\in C(X)$.
+\end{enumerate}
+\end{definition}
 
 The following proposition is an immediate consequence of the ergodic theorem.
 
@@ -96,9 +104,8 @@ By the Stone--Weierstrass theorem, $(C(X),\lVert\cdot\rVert_\infty)$ is
 separable. Let
 % Source page 4
 $(f_n)_n$ be dense in $C(X)$. We use a dense subset because
-% [source: the summation index is j, but the displayed iterate is T^n x.]
 \[
-  \lim_{n\to\infty}\frac1n\sum_{j=1}^n f(T^nx)
+  \lim_{n\to\infty}\frac1n\sum_{j=1}^n f(T^jx)
   =\int_X f\,d\mu\qquad(\forall x\in X_f),\qquad\mu(X_f)=1.
 \]
 But $X_f$ depends on $f$; we now need to drop that dependence.
@@ -109,14 +116,12 @@ ergodic theorem, for all $x\in X'$ and $i\geq1$,
 \[
   \frac1N\sum_{n=0}^{N-1}f_i(T^nx)\longrightarrow\int_X f_i\,d\mu.
 \]
-% [source: the right side of this display is written as integral f, without
-% an i subscript. It is unambiguously the f_i statement immediately above.]
 As $(f_i)_i$ is dense in $(C(X),\lVert\cdot\rVert_\infty)$, it is dense
-uniformly, and
+uniformly, and for each $f\in C(X)$ and $\varepsilon>0$ we can choose $i$ so that
 \[
-  |f(x)-f_i(x)|<\varepsilon\qquad\forall i\geq N_0.
+  \|f-f_i\|_\infty<\varepsilon.
 \]
-Now, for a sufficiently large $N\geq N_0$, given $\varepsilon>0$, we have
+For this $i$ we have
 (with $A_N^f$ denoting the average)
 \begin{align*}
   &\left|\int f\,d\mu-\limsup_{N\to\infty}
@@ -129,7 +134,7 @@ Now, for a sufficiently large $N\geq N_0$, given $\varepsilon>0$, we have
   &\quad\leq\left|\int f\,d\mu-\int f_i\,d\mu\right|
     +\left|\limsup_{N\to\infty}(A_N^f-A_N^{f_i})\right|
     +\left|\int f_i\,d\mu-\limsup_{N\to\infty}A_N^{f_i}\right|\\
-  &\quad<\varepsilon.
+  &\quad<2\varepsilon.
 \end{align*}
 One can similarly estimate $\liminf_{N\to\infty}A_N^f$ to obtain that,
 for all $x\in X'$, $\lim_{N\to\infty}A_N^f(x)=\int_X f\,d\mu$.
@@ -181,11 +186,11 @@ Thus $\liminf_{N\to\infty}A_N^{\chi_{[a,b]}}
 \begin{remark}
 Therefore, equidistribution theorems can be derived from ergodic
 theory, provided one finds the right transformation that is uniquely
-ergodic. For instance, rotation, namely $P(x)=x+\alpha$ with
+ergodic. For instance, the orbit sequence $\{n\alpha\}$ modulo $1$, with
 $\alpha\notin\mathbb Q$, is equidistributed in $[0,1]$, for $R_\alpha$ is
-uniquely ergodic. Weyl's theorem describes
-equidistribution of a degree-$n$ polynomial $P(n)$ where at least one
-coefficient is irrational.
+uniquely ergodic. Weyl's theorem describes equidistribution modulo $1$ of a
+polynomial sequence $P(n)$ when at least one nonconstant coefficient is
+irrational.
 \end{remark}
 
 \setcounter{theorem}{25}\begin{theorem}[Jewett--Krieger]

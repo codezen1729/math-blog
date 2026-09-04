@@ -5,23 +5,41 @@
 \begin{document}
 \section*{Dense Subsets of Julia Sets}
 % BLOG-CONTENT-BEGIN
+Let us analyse the topological structure of $J$ further, for the nature of a boundary also reveals what it bounds.
+\subsection{Backward orbits and self-similarity}
+\begin{itemize}
+\item For $z_0\in J$,
+\[
+J=\overline{\bigcup_{n\ge0}f^{-n}(z_0)}.
+\]
+Let $N$ be a neighbourhood of a point $z\in J$. Expand $N$ until it hits a point $w\in\widehat{\mathbb C}$. We may take $w=z_0$, since $z_0\notin\mathcal E(f)$. Thus $f^{-n}(w)\cap N\ne\varnothing$, giving $\overline{\bigcup_n f^{-n}(w)}\supseteq J(f)$. The reverse inclusion follows from invariance.
+\item $J$ has no isolated points. If $J$ were finite, then $J\subseteq\mathcal E(f)$, which is impossible since exceptional points are superattracting.
+\end{itemize}
+\setcounter{theorem}{18}\begin{proposition}[Topological Structure of Julia Set IV]
+$J(f)$ is either connected or has uncountably many components.
+\end{proposition}
+\begin{remark}
+Since $\bigcup_n f^{-n}(z_0)$ is dense in $J$, for a neighbourhood $N$ of $z_0$ the set $V=\bigcup_n f^{-n}(N)$ is dense and open. As the closed set $J\subseteq\widehat{\mathbb C}$ is compact, choose a finite open cover $\{N_{ij}\}_{i=1}^{M_j}$. Set $V_{ij}=\bigcup_n f^{-n}(N_{ij})$; these sets are dense and open. Then $\bigl(\bigcap_{i=1}^{M_j}V_{ij}\bigr)\cap J$ is a dense open subset of $J$. Choose the sets $N_{ij}$ with diameter less than $1/j$. If
+\[
+z\in\left(\bigcap_j\bigcap_{i=1}^{M_j}V_{ij}\right)\cap J,
+\]
+again a dense set, then $\{f^{\circ n}(z)\}_n$ meets every possible $N_{ij}$. Finally, the Lebesgue number lemma shows that $\{z,f(z),f^2(z),\ldots\}$ is dense in $J$ for every $z$ belonging to a dense subset of $J$.
+\end{remark}
+\begin{remark}[Self-similarity]
+Another striking feature of the Julia set is that it repeats shapes and patterns infinitely often. Mathematically, $(J,z)$ is locally conformally isomorphic to $(J,z')$ if there are neighbourhoods $N,N'$ of $z,z'$, respectively, and a biholomorphism $\varphi\colon N\to N'$ such that $\varphi(z)=z'$ and $\varphi(N\cap J)=N'\cap J$.
+By density of the preimages of any $z_0\in J$, the set of $z$ such that $(J,z)\cong(J,z_0)$ is dense in $J$, unless every backwards orbit $z_0\leftarrow z_1\leftarrow z_2\leftarrow\cdots$ contains a critical point $z_k$ of $f$. Otherwise $f$ is locally univalent and one can keep backtracking $z_0$.
+\end{remark}
+
+\subsection{Periodic cycles}
 How many periodic points are there for a rational map $f=P/Q\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ with $\deg(f)=d\ge2$? It turns out that
 \begin{enumerate}
 \setcounter{enumi}{0}\item the number of attracting periodic orbits is at most $2d-2$;
-\setcounter{enumi}{1}\item the number of indifferent periodic orbits is at most $4d-4$ ($\lambda\ne1$);
+\setcounter{enumi}{1}\item the number of indifferent periodic orbits whose multiplier is not a root of unity is at most $4d-4$;
 \setcounter{enumi}{2}\item there are infinitely many repelling periodic orbits.
 \end{enumerate}
-The first assertion is elementary: every attracting basin has a critical point, and
-\begin{align*}
-\#\{\text{critical points of }P/Q\}
-&=\#\{\text{zeros of }(P/Q)'\}\\
-&=\#\left\{\text{zeros of }\frac{P'}Q-\frac{Q'P}{Q^2}\right\}
-=\#\{\text{zeros of }QP'-Q'P\}\\
-&\le\deg(QP'-Q'P)\le2d-2.
-\end{align*}
-Compare the leading coefficients in the worst case, $\deg P=\deg Q=d$. Now let us prove the second assertion.
+The first assertion is elementary: every immediate attracting basin has a critical point, and a degree-$d$ rational map has $2d-2$ critical points counted with multiplicity by the Riemann--Hurwitz formula. Now let us prove the second assertion.
 \setcounter{theorem}{19}\begin{proposition}\label{cd4:indifferent}
-The number of indifferent, nonparabolic cycles is at most $4d-4$.
+The number of indifferent cycles whose multiplier is not a root of unity is at most $4d-4$.
 \end{proposition}
 \begin{proof}
 We separate the proof into two stages.
@@ -38,8 +56,7 @@ f_t(z)=\frac{P(z)-tz^d}{Q(z)-t},\qquad f_0(z)=f(z),\qquad f_\infty(z)=z^d.
 \]
 This remains a degree-$d$ map unless, for some $t\in\widehat{\mathbb C}$, zeros and poles collide as the parameter approaches $t$. For that to happen, $Q(z)=t$ and $P(z)=tz^d$, so $z^d=P(z)/Q(z)=f(z)$. Thus the number of solutions of $f(z)=z^d$ determines the number of exceptional parameters at which the degree drops.
 
-Let $\{f_0^{\circ k}(z_j)\}_{k=1}^n$ be an $n$-cycle of $f_0$ with $|\lambda_j(0)|=0$. Set $\widetilde f(t,z)=f_t^{\circ n}(z)-z$. Since $\widetilde f(0,z_j)=0$, the implicit function theorem gives neighbourhoods $U$ of $0$ and $V$ of $z_j$ and a holomorphic map $z_j(t)\colon U\to V$ with $\widetilde f(t,z_j(t))=0$.
-% Author check: source writes |lambda_j(0)|=0, although the surrounding argument concerns indifferent cycles.
+Let $\{f_0^{\circ k}(z_j)\}_{k=1}^n$ be an $n$-cycle of $f_0$ with $|\lambda_j(0)|=1$. Set $\widetilde f(t,z)=f_t^{\circ n}(z)-z$. Since $\widetilde f(0,z_j)=0$, the implicit function theorem gives neighbourhoods $U$ of $0$ and $V$ of $z_j$ and a holomorphic map $z_j(t)\colon U\to V$ with $\widetilde f(t,z_j(t))=0$.
 % Source page 3
 The multiplier $\lambda_j(t)=(f_t^{\circ n})'(z_j(t))$ is also locally holomorphic. If it were locally constant, the multiplier could not be perturbed from the unit circle to produce an attracting cycle.
 \setcounter{theorem}{20}\begin{lemma}\label{cd4:nonconstant}
@@ -58,10 +75,9 @@ Therefore the functions $\lambda_j(t)$ vary nontrivially with $t$.
 
 \emph{Converting cycles.} Near $t=0$, write
 \[
-\frac{\lambda_j(t)}{\lambda_0(t)}=1+a_jt^{n_j}+o(t^{n_j}),\qquad
+\frac{\lambda_j(t)}{\lambda_j(0)}=1+a_jt^{n_j}+o(t^{n_j}),\qquad
 |\lambda_j(t)|=1+\Re(a_jt^{n_j})+o(t^{n_j}).
 \]
-% Author check: source page 4 writes lambda_0(t) in the denominator of this expansion, without defining it. The preceding inconsistent |lambda_j(0)|=0 is also retained.
 Set $\sigma_j(\theta)=\operatorname{sign}\Re(a_je^{i\theta n_j})$. For small $r$, $\sigma_j(\theta)=+1$ implies $|\lambda_j(re^{i\theta})|>1$, while $\sigma_j(\theta)=-1$ implies $|\lambda_j(re^{i\theta})|<1$. This is the desired conversion.
 
 Clearly $(2\pi)^{-1}\int_0^{2\pi}\sigma_j(\theta)\,d\theta=0$. Let $\ell$ be odd and no greater than the number of indifferent cycles of $f_0$. Then
@@ -103,8 +119,7 @@ f^{\circ n_j}(z)\longrightarrow
 \]
 Thus $\{f^{\circ n}|_N\}$ is normal, contradicting $z_0\in J(f)$. Therefore some $z\in N$ satisfies either $f^{\circ n}(z)=z$ or $f^{\circ n}(z)=\varphi_j(z)$; in the latter case, $f^{\circ(n+1)}(z)=f(\varphi_j(z))=z$. Thus $z$ is periodic, of period $n$ or $n+1$.
 
-The closure of periodic points is the Julia set: since $J(f)$ has no isolated points, density away from the fixed points and critical values gives density in all of $J(f)$.
-% Author check: the source states equality for all periodic points, including those potentially outside J; retained in the prose.
+Periodic points are dense in the Julia set: since $J(f)$ has no isolated points, density away from the fixed points and critical values gives density in all of $J(f)$.
 % Source page 7
 By the previous proposition, only finitely many of these periodic points are nonrepelling, and repelling points lie in the Julia set. Hence
 \[

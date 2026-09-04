@@ -1,7 +1,7 @@
 [
   {
     "slug": "basis-fixing-reduction",
-    "title": "The Complex Plane",
+    "title": "A Complex Vector Space",
     "collection": "complex-analysis",
     "phase": 1,
     "phaseLabel": "Standard Tools in Complex Analysis",
@@ -91,7 +91,7 @@
   },
   {
     "slug": "rouche-and-bloch",
-    "title": "Rouché's Theorem and Bloch's Theorem",
+    "title": "Rouché's Theorem",
     "collection": "complex-analysis",
     "phase": 1,
     "phaseLabel": "Standard Tools in Complex Analysis",
@@ -106,6 +106,24 @@
     "phaseLabel": "Standard Tools in Complex Analysis",
     "initialSha256": "509aed785cee4f381e51c15f250bdb1c03d2907305fac5be3a6ca722af21c86b",
     "file": "12-separation-and-holomorphic-lifting.tex"
+  },
+  {
+    "slug": "smooth-covering-manifolds",
+    "title": "Smooth Covering Manifolds",
+    "collection": "smooth-covering-manifolds",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "6f557b5e233b05df34a62cd63f0c17bb12c7bf5d8c28592710ead6bab1312494",
+    "file": "83-smooth-covering-manifolds.tex"
+  },
+  {
+    "slug": "orientation-and-covering-maps",
+    "title": "Orientation and Covering Maps",
+    "collection": "miscellaneous",
+    "phase": 2,
+    "phaseLabel": "Surfaces and Curves",
+    "initialSha256": "888bc3a2f2e5d713ace4effbe4bad61250153058e9e809f44a9ef6d5b6f50d43",
+    "file": "61-orientation-and-covering-maps.tex"
   },
   {
     "slug": "topology-of-surfaces",
@@ -151,24 +169,6 @@
     "phaseLabel": "Surfaces and Curves",
     "initialSha256": "70b7b6ab682333d99846b7ff102f607f4dc1fac179b30ffa1fc85c18e3f57f60",
     "file": "17-abels-theorem.tex"
-  },
-  {
-    "slug": "orientation-and-covering-maps",
-    "title": "Orientation and Covering Maps",
-    "collection": "miscellaneous",
-    "phase": 2,
-    "phaseLabel": "Surfaces and Curves",
-    "initialSha256": "888bc3a2f2e5d713ace4effbe4bad61250153058e9e809f44a9ef6d5b6f50d43",
-    "file": "61-orientation-and-covering-maps.tex"
-  },
-  {
-    "slug": "smooth-covering-manifolds",
-    "title": "Smooth Covering Manifolds",
-    "collection": "smooth-covering-manifolds",
-    "phase": 2,
-    "phaseLabel": "Surfaces and Curves",
-    "initialSha256": "6f557b5e233b05df34a62cd63f0c17bb12c7bf5d8c28592710ead6bab1312494",
-    "file": "83-smooth-covering-manifolds.tex"
   },
   {
     "slug": "flat-structures-and-teichmuller-curves",
@@ -360,15 +360,6 @@
     "file": "43-critical-points-and-julia-set-connectivity.tex"
   },
   {
-    "slug": "the-quadratic-family",
-    "title": "The Quadratic Family",
-    "collection": "quadratic-family",
-    "phase": 4,
-    "phaseLabel": "Complex Dynamics",
-    "initialSha256": "7b008b2a3af172069987d5541b12b764a979b9a8bd543d7c46575b56f71bc837",
-    "file": "81-the-quadratic-family.tex"
-  },
-  {
     "slug": "prime-ends-and-landing-of-external-rays",
     "title": "Prime Ends and Landing of External Rays",
     "collection": "complex-dynamics-notes",
@@ -376,6 +367,15 @@
     "phaseLabel": "Complex Dynamics",
     "initialSha256": "8b08ce2e532322b6b43ce269d73862491f06c579e788c50e1948a7453853a5ec",
     "file": "44-prime-ends-and-landing-of-external-rays.tex"
+  },
+  {
+    "slug": "classification-fatou-components",
+    "title": "Classification of Non-Wandering Fatou Components",
+    "collection": "surgeries",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "68f50a2064adc4768e721ff93b7a0d316ed90ba4327f7fec894a6281c4f38a65",
+    "file": "23-classification-fatou-components.tex"
   },
   {
     "slug": "the-chain-rule-and-a-family-of-complex-planes",
@@ -414,6 +414,15 @@
     "file": "48-boundary-behaviour-of-quasiconformal-maps.tex"
   },
   {
+    "slug": "the-quadratic-family",
+    "title": "The Quadratic Family",
+    "collection": "quadratic-family",
+    "phase": 4,
+    "phaseLabel": "Complex Dynamics",
+    "initialSha256": "7b008b2a3af172069987d5541b12b764a979b9a8bd543d7c46575b56f71bc837",
+    "file": "81-the-quadratic-family.tex"
+  },
+  {
     "slug": "conformal-welding",
     "title": "Conformal Welding",
     "collection": "quadratic-family",
@@ -439,15 +448,6 @@
     "phaseLabel": "Complex Dynamics",
     "initialSha256": "2d4d12fd50f68ad9ef5cb1c0c1b53ce5ae0ffea8a8fbcdffdf823b5d389a7d52",
     "file": "50-polynomial-like-maps-and-the-straightening-theorem.tex"
-  },
-  {
-    "slug": "classification-fatou-components",
-    "title": "Classification of Non-Wandering Fatou Components",
-    "collection": "surgeries",
-    "phase": 4,
-    "phaseLabel": "Complex Dynamics",
-    "initialSha256": "68f50a2064adc4768e721ff93b7a0d316ed90ba4327f7fec894a6281c4f38a65",
-    "file": "23-classification-fatou-components.tex"
   },
   {
     "slug": "surgical-tools",
@@ -505,7 +505,7 @@
   },
   {
     "slug": "from-complex-dynamics-to-measure-preserving-systems",
-    "title": "From Complex Dynamics to Measure-Preserving Systems",
+    "title": "Measure-Preserving Systems",
     "collection": "ergodic-theory",
     "phase": 6,
     "phaseLabel": "Ergodic Theory",
@@ -580,7 +580,7 @@
     "title": "Elementary Number Theory",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "31fb81b5465c66def5f21158388bf10de08771eccefd02c34a8f2880267e94b9",
     "file": "63-lemma-book-elementary-number-theory.tex"
   },
@@ -589,7 +589,7 @@
     "title": "Proof Strategies: Induction, Contradiction, and Pigeonholes",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "5df726fcb7ebf2e4a38677c5db2142b6639de2b677ccd25f570f90be2cebdbe4",
     "file": "69-lemma-book-induction-contradiction-pigeonholes.tex"
   },
@@ -598,7 +598,7 @@
     "title": "Polynomial Roots, Identities, and Algebraic Systems",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "532edae0d267155637cdfb98cd8f5672731f47347ac31cb98c0a96de1a79c3e8",
     "file": "70-lemma-book-polynomial-roots-identities-systems.tex"
   },
@@ -607,7 +607,7 @@
     "title": "Congruences, Diophantine Equations, and Infinite Descent",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "8d98f7702f91d0a7a89da944789b326ecd8c1d260de4b1a4e5efb4214fbf070c",
     "file": "71-lemma-book-congruences-diophantine-equations-descent.tex"
   },
@@ -616,16 +616,16 @@
     "title": "Standard Inequalities and Ingenious Cauchy–Schwarz Applications",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "2fc0eea5747feda4380f1ecb9983e2a55400c331dd5d4700cfaa0ecb0127b1b6",
     "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex"
   },
   {
     "slug": "lemma-book-inequality-toolkit",
-    "title": "An Inequality Toolkit: Jensen, Muirhead, and Schur",
+    "title": "An Inequality Toolkit: Jensen, Muirhead, and Root Heuristics",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "1406c9a9a270c6534a946063d15b06e8b1f7073eaa3350290dc3182d4b7585da",
     "file": "64-lemma-book-inequality-toolkit.tex"
   },
@@ -634,7 +634,7 @@
     "title": "Rearrangement, Convexity, and Power Means",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "4279af03b1ac73688c23ae0f82711edb13d6659e6148b2f3eb4a4679e168a6ba",
     "file": "73-lemma-book-rearrangement-convexity-power-means.tex"
   },
@@ -643,7 +643,7 @@
     "title": "Lagrange Multipliers and Boundary Analysis",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "f6fb78b51c550323c59552d0c90abe00f9cf4fc83acc99f57329b27af104b0b4",
     "file": "67-lemma-book-lagrange-multipliers-boundary-analysis.tex"
   },
@@ -652,7 +652,7 @@
     "title": "Circle Geometry: Inversion, Radical Axes, and Special Circles",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "0eac8aaf6eee461be3e5f1f5da832987850ca8205b7d74c261bc91d078cccedb",
     "file": "65-lemma-book-circle-geometry.tex"
   },
@@ -661,7 +661,7 @@
     "title": "Working Backwards, Area Ratios, and Geometric Constructions",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "615484d88e0620460645660e474b5ce4e1cdb5faa931b0a4c14a46ce1bf54334",
     "file": "66-lemma-book-working-backwards-area-ratios.tex"
   },
@@ -670,7 +670,7 @@
     "title": "Triangle Inequalities and Trigonometric Substitutions",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "759852ee1ff9dbebf6c814c92aaa91091848000a914a669743ff9da4e70ea9d3",
     "file": "68-lemma-book-triangle-inequalities-trigonometric-substitutions.tex"
   },
@@ -679,7 +679,7 @@
     "title": "Isogonal Conjugates and Pole–Polar Geometry",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "402c9e67bfe9c066a45ca91a5fc8e0fe9ed9ce65b6270fc8fd6d6c5dd45d6272",
     "file": "75-lemma-book-isogonal-conjugates-pole-polar.tex"
   },
@@ -688,7 +688,7 @@
     "title": "Transformations: Rotating, Reflecting, and Cutting Figures",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "24d102dadf2c48b0177719aaf1cf24c7f5267673f9dfc5af0d44916d03f881d1",
     "file": "74-lemma-book-transformations.tex"
   },
@@ -697,7 +697,7 @@
     "title": "Puzzles, Surprises, and Marvellous Methods of Multiplication",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "2dd2a001884fe2d85a7b58cba2dfefdca1637545eafdfeb67f2654530ab3460d",
     "file": "76-lemma-book-puzzles-multiplication.tex"
   },
@@ -706,7 +706,7 @@
     "title": "Problems Proposed by S. Ramanujan",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "469554c924871b7e650099cde24aa56221a1d4ee5774a502b3d3832de0153725",
     "file": "77-lemma-book-ramanujan-problems.tex"
   },
@@ -715,16 +715,16 @@
     "title": "Problems for Anant Mudgal",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "20bb199ea093ec35ccf172092a177dd79758887fad0a928ab0733bef148c9f61",
     "file": "78-lemma-book-problems-for-anant-mudgal.tex"
   },
   {
     "slug": "lemma-book-thrilling-thirty-surviving-problems",
-    "title": "A Collection of Problems",
+    "title": "Thrilling Thirty: The Surviving Problems",
     "collection": "lemma-book",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
     "initialSha256": "9b8d2aa22dc253c750576c385603bcb8e6fc64f3dc403939d6c353b0ba8579b0",
     "file": "79-lemma-book-thrilling-thirty-surviving-problems.tex"
   },

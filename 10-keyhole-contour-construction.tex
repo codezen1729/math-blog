@@ -25,7 +25,7 @@ We saw before that
 \]
 and we also saw that
 \[
-  g(z_0):=\int_\gamma\frac{f(z)}{z-z_0}\,dz
+  g(z_0):=\frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz
 \]
 is a holomorphic function of $z_0$; in fact, $g\in H(\mathbb C\setminus\gamma^*)$. It remains to show that
 \[
@@ -37,7 +37,7 @@ Then one can extend $f$ to fill in the punctures via \emph{keyhole contour integ
 
 \subsection*{Tool 25 — Keyhole Contour Construction}
 
-Given two polygonal paths $\gamma_1$ and $\gamma_2$ such that \(\gamma_2\subset \operatorname{int}(\gamma_1),\)
+Given two simple closed polygonal paths $\gamma_1$ and $\gamma_2$ such that \(\gamma_2\subset \operatorname{int}(\gamma_1),\)
 there exists a simple closed polygonal path $\gamma_\varepsilon$ such that
 \[
   \lim_{\varepsilon\to0}\gamma_\varepsilon
@@ -50,7 +50,7 @@ These $\gamma_\varepsilon$ are the ``keyholes'' which, under a pointwise limit, 
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.51\textwidth]{note7-fig-01.pdf}
+  \includegraphics[width=0.68\textwidth]{note7-fig-01.pdf}
 
 \end{figure}
 
@@ -99,7 +99,7 @@ Transform $\mathbb C$ so that the edge on which $z_1$ lies becomes the $x$-axis,
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.70\textwidth]{note7-fig-02.pdf}
+  \includegraphics[width=0.82\textwidth]{note7-fig-02.pdf}
 
 \end{figure}
 
@@ -121,7 +121,7 @@ The keyhole is
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.30\textwidth]{note7-fig-03.pdf}
+  \includegraphics[width=0.54\textwidth]{note7-fig-03.pdf}
 
 \end{figure}
 
@@ -137,7 +137,7 @@ In particular,
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.48\textwidth]{note7-fig-04.pdf}
+  \includegraphics[width=0.66\textwidth]{note7-fig-04.pdf}
 
 \end{figure}
 
@@ -208,7 +208,7 @@ with $f_2,g_2\to0$ as $|z|\to\infty$. Then
 \[
   f_1-g_1=g_2-f_2
 \]
-on a domain in $U$. Hence $g_2-f_2$ is entire and tends to $0$ as $z\to\infty$, so $g_2=f_2+c$ and $f_1=g_1+c$. But as $z\to\infty$, $c\to0$; therefore $c=0$, $g_2=f_2$, and $f_1=g_1$. Hence the decomposition is unique.
+on a domain in $U$. Hence $g_2-f_2$ is entire and tends to $0$ as $z\to\infty$, so it is identically $0$. Therefore $g_2=f_2$ and $f_1=g_1$. Hence the decomposition is unique.
 
 \textbf{Remark.} By induction one can extend this result. Let $\gamma_0,\{\gamma_i\}_{i=1}^n$ be Jordan curves such that
 \[
@@ -368,18 +368,6 @@ and let $f\in H(U)$. Consider the Laurent series of $f$:
 
 \item If $a_k\ne0$ for infinitely many $k<0$, then $f$ is said to have an essential singularity.
 \end{enumerate}
-
-Now look: if $f$ has too many poles, then $f(1/z)$ will have poles clustering around $0$. Clearly $f(1/z)$ is not bounded near $0$. If $f(1/z)$ were to have a pole at $0$, then $1/f(1/z)$ would have a cluster of zeros near $0$ and $f$ would explode. This behavior requires a third class, called an essential singularity.
-
-Without loss of generality, let $0\in U\setminus S$ and let $\operatorname{int}(\gamma)$ contain all the poles of $f$. Then
-\[
-  \frac{1}{2\pi i}\int_{\gamma_z\circ\gamma}f(z)\,dz
-  =\frac{1}{2\pi i}\int_\gamma f(z)\,dz
-  =\sum_{z_0}\operatorname{Res}(f;z_0)
-  =-\frac{1}{2\pi i}\int_\ell f(1/z)\frac{1}{z^2}\,dz
-  =\operatorname{Res}(f;\infty).
-\]
-
 
 % BLOG-CONTENT-END
 \end{document}

@@ -1,9 +1,10 @@
 """Regression checks for source-derived titles and author-friendly blog links."""
 import json
 from pathlib import Path
+import re
 import unittest
 
-from render import expand_blog_post_links, extract_post_title
+from render import expand_blog_post_links, extract_post_title, opening_excerpt
 
 
 class PostTitleTests(unittest.TestCase):
@@ -96,6 +97,93 @@ class BlogPostLinkTests(unittest.TestCase):
             with self.subTest(source=source):
                 with self.assertRaisesRegex(ValueError, message):
                     expand_blog_post_links(source, "example.tex", self.slugs)
+
+
+class OpeningExcerptTests(unittest.TestCase):
+    def test_uses_the_first_readable_lines_even_when_they_are_short(self):
+        fragment = (
+            '<p>A short but genuine opening paragraph.</p>'
+            '<p>This much longer paragraph used to be selected merely because it met '
+            'an arbitrary teaser-length threshold.</p>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>A short but genuine opening paragraph.</p>',
+        )
+
+    def test_skips_a_display_formula_and_figure_before_the_opening_prose(self):
+        fragment = (
+            '<p><span class="math display">x^2</span></p>'
+            '<p><img src="figure.svg"></p>'
+            '<p>The first explanatory sentence begins here.</p>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>The first explanatory sentence begins here.</p>',
+        )
+
+    def test_keeps_a_brief_opening_instead_of_searching_later(self):
+        fragment = '<p>Why bundles?</p><p>A later and substantially longer paragraph.</p>'
+        self.assertEqual(opening_excerpt(fragment), '<p>Why bundles?</p>')
+
+    def test_keeps_opening_prose_while_removing_its_display_formula(self):
+        fragment = (
+            '<p>The argument begins with the following identity. '
+            '<span class="math display">\\[x^2+y^2=1\\]</span></p>'
+            '<p>A later paragraph must not replace it.</p>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>The argument begins with the following identity. '
+            '<span class="math display">\\[x^2+y^2=1\\]</span></p>',
+        )
+
+    def test_keeps_opening_prose_while_removing_its_footnote_marker(self):
+        fragment = (
+            '<p>The opening remains here<a href="#fn1" class="footnote-ref"><sup>1</sup></a>.</p>'
+            '<p>A later paragraph must not replace it.</p>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>The opening remains here<a href="#fn1" class="footnote-ref"><sup>1</sup></a>.</p>',
+        )
+
+    def test_skips_series_navigation_before_the_opening_prose(self):
+        fragment = (
+            '<p><a href="#one">McMullen’s Surgery: Part I</a> '
+            '<span class="math inline">\\(\\,\\cdot\\,\\)</span> '
+            '<a href="#two">Part II</a> · <a href="#three">Part III</a></p>'
+            '<p>The construction begins with a rational map.</p>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>The construction begins with a rational map.</p>',
+        )
+
+    def test_skips_roman_numeral_section_furniture(self):
+        fragment = (
+            '<p>II) Algebraic Perspective</p>'
+            '<p>Suppose an elliptic curve is given in Weierstrass form.</p>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>Suppose an elliptic curve is given in Weierstrass form.</p>',
+        )
+
+
+class PublishedSourceHygieneTests(unittest.TestCase):
+    def test_published_posts_do_not_expose_editorial_placeholders(self):
+        project = Path(__file__).resolve().parents[1]
+        manifest = json.loads((project / "tools/manifest.json").read_text())
+        editorial_scaffolding = re.compile(
+            r"Author check:|\[(?:unfinished|missing|illegible|unclear)[^\]]*\]"
+            r"|The source (?:records|also records)|Source note:",
+            flags=re.I,
+        )
+        for item in manifest:
+            source = (project / item["file"]).read_text()
+            body = source.split("% BLOG-CONTENT-BEGIN", 1)[1].split("% BLOG-CONTENT-END", 1)[0]
+            self.assertIsNone(editorial_scaffolding.search(body), item["file"])
 
 
 if __name__ == "__main__":

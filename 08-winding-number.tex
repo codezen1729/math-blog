@@ -7,7 +7,7 @@
 Let us look at singularities through contour integration.
 
 \subsection*{Recall: Cauchy's Theorem}
-If \(\gamma_0:[0,1]\to U\) and \(\gamma_1:[0,1]\to U\) are two closed rectifiable curves and \(f\in H(U)\), then
+If \(\gamma_0:[0,1]\to U\) and \(\gamma_1:[0,1]\to U\) are two closed rectifiable curves homotopic in $U$ and \(f\in H(U)\), then
 \[
   \int_{\gamma_0} f(z)\,dz=\int_{\gamma_1} f(z)\,dz.
 \]
@@ -37,10 +37,10 @@ Let us now spike the function \(f\) with a singularity at \(z_0\) by considering
 \[
   \frac{H(z)}{z-z_0}.
 \]
-We know locally that \(H(z)=H(z_0)+(z-z_0)f'(z_0)+\cdots,\)
+We know locally that \(H(z)=H(z_0)+(z-z_0)H'(z_0)+\cdots,\)
 and hence
 \[
-  \frac{H(z)-H(z_0)}{z-z_0}=f'(z_0)+\cdots=:g(z).
+  \frac{H(z)-H(z_0)}{z-z_0}=H'(z_0)+\cdots=:g(z).
 \]
 We know that \(g\) is holomorphic near \(z_0\), but can we say something about \(g\) globally? If we can somehow say that \(g\) is holomorphic, then
 \[
@@ -58,7 +58,7 @@ Let us first focus on
 \[
   g(z)=\frac{H(z)-H(z_0)}{z-z_0}.
 \]
-Clearly, \(g\in H(U\setminus\{z_0\})\) and is bounded near \(z_0\), which can be seen from the linear approximation of \(f\) near \(z_0\).
+Clearly, \(g\in H(U\setminus\{z_0\})\) and is bounded near \(z_0\), which can be seen from the linear approximation of \(H\) near \(z_0\).
 
 \paragraph{Digression.}
 Suppose \(f\in H(U\setminus\{z_0\})\) and \(f\) is bounded near \(z_0\). Let \(\overline{B_r(z_0)}\subset U\), and let \(\gamma\) and \(\gamma'\) be two circles in \(B_r(z_0)\). As \(B_r(z_0)\) is convex, we have
@@ -67,14 +67,14 @@ Suppose \(f\in H(U\setminus\{z_0\})\) and \(f\) is bounded near \(z_0\). Let \(\
 \]
 Now, if we estimate,
 \[
-  \left|\int_{\gamma'} f(z)\,dz\right|<M,2\pi\varepsilon
+  \left|\int_{\gamma'} f(z)\,dz\right|<M\cdot2\pi\varepsilon
   \qquad(\forall\varepsilon,\ \varepsilon>0),
 \]
 where \(M\) is a bound for \(f\) and \(\varepsilon\) is the radius of \(\gamma'\). Thus, \(f\) vanishes on closed paths near \(z_0\), and hence is conservative near \(z_0\).
 
 But \(f\) is continuous in \(\overline{B_r(z_0)}\setminus\{z_0\}\), which is not compact, so \(f\) need not be uniformly continuous. To sidestep this, define
 \[
-  F(z):=\int_{\gamma_{z^*\to z}} f(z)\,dz,
+  F(z):=\int_{\gamma_{z^*\to z}} f(w)\,dw,
 \]
 where \(\gamma_{z^*\to z}\) is some polygonal path in \(U\setminus\{z_0\}\) and \(z^*\in U\setminus\{z_0\}\). First note that \(F\in H(U\setminus\{z_0\})\). As the polygonal path can be written as line segments,
 \[
@@ -88,15 +88,15 @@ where \(\gamma_{z^*\to z}|_{[a_k,a_{k+1}]}\) is a line segment and
 where \(b_k\) is the slope of the segment. From a statement proved previously, \(F\in H(U\setminus\{z_0\})\). Also,
 \[
   |F(z+h)-F(z)|
-  =\left|\int_{\gamma_{z\to z+h}}f(z)\,dz\right|
+  =\left|\int_{\gamma_{z\to z+h}}f(w)\,dw\right|
   \le M\,|\gamma_{z\to z+h}|=M|h|.
 \]
-Thus, \(F\) is uniformly continuous in \(U\setminus\{z_0\}\), and therefore \(F\) can be continuously extended to \(z_0\).
+Thus, \(F\) is uniformly continuous near \(z_0\), and therefore \(F\) can be continuously extended to \(z_0\).
 
 
 For \(z\) close to \(z^*\),
 \[
-  |F(z)|\le \int_{\gamma_{z^*\to z}}|f(z)|\,dz
+  |F(z)|\le \int_{\gamma_{z^*\to z}}|f(w)|\,|dw|
   \qquad\text{in }B_\varepsilon(z^*)\subset U.
 \]
 Thus, \(F\) is bounded near \(z^*\) and \(z_0\). By a similar argument, the integral of \(F\) over every closed contour vanishes. By Morera, \(F\in H(U)\), and therefore \(F'=f\in H(U)\).
@@ -124,7 +124,7 @@ The reason we think so is that, given any continuous closed curve (let us assume
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.38\linewidth]{note5-fig-01.pdf}
+  \includegraphics[width=0.60\linewidth]{note5-fig-01.pdf}
 
 \end{figure}
 
@@ -167,7 +167,7 @@ based on where \(z_0\) is. There is good reason to believe that this integral ca
 If we define
 \[
   \gamma'(t)=\gamma(t)-h,
-  \qquad h<d=\operatorname{dist}(\gamma(t),z_0),
+  \qquad |h|<d=\operatorname{dist}(\gamma(t),z_0),
 \]
 and again consider the straight-line homotopy \(\overline{\gamma}:[0,1]\times[0,1]\to\mathbb C\), given by \(\overline{\gamma}(s,t)=(1-s)\gamma'(t)+s\gamma(t),\)
 then, as \(|\gamma'(t)-\gamma(t)|<|\gamma(t)-z_0|\), we have \(z_0\notin\operatorname{im}(\overline{\gamma})\). Therefore,
@@ -187,10 +187,7 @@ Let \(\gamma\) be a closed curve and let \(z_0\) not be on the image of \(\gamma
 
 \paragraph{Proof 1 (geometric).}
 Approximate \(\gamma\) with a polygonal path \(\gamma_P\) such that \(W_\gamma(z_0)=W_{\gamma_P}(z_0).\)
-This \(\gamma_P\) can be assumed to be simple,
-
-
-for it is a concatenation of simple closed polygonal paths. Thus, \(\gamma_P=\gamma_{P_1}+\gamma_{P_2}+\cdots+\gamma_{P_n},\)
+This \(\gamma_P\) can be decomposed as a concatenation of simple closed polygonal paths. Thus, \(\gamma_P=\gamma_{P_1}+\gamma_{P_2}+\cdots+\gamma_{P_n},\)
 where each \(\gamma_{P_i}\) is simple. Clearly,
 \[
   \int_{\gamma_P}\frac{dz}{z-z_0}
@@ -229,12 +226,12 @@ So, the mystery is finally resolved: the integral basically computes how many ti
   \centering
   \begin{minipage}[b]{.47\linewidth}
     \centering
-    \includegraphics[width=.84\linewidth]{note5-fig-02.pdf}
+    \includegraphics[width=0.96\linewidth]{note5-fig-02.pdf}
 
   \end{minipage}
   \begin{minipage}[b]{.47\linewidth}
     \centering
-    \includegraphics[width=.78\linewidth]{note5-fig-03.pdf}
+    \includegraphics[width=0.96\linewidth]{note5-fig-03.pdf}
 
   \end{minipage}
 \end{figure}
@@ -281,7 +278,7 @@ Note that \(\gamma_P\cap\operatorname{ext}(\gamma)=\varnothing\), and we thus ha
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.45\linewidth]{note5-fig-04.pdf}
+  \includegraphics[width=0.64\linewidth]{note5-fig-04.pdf}
 
 \end{figure}
 
@@ -330,7 +327,7 @@ Thus, for our purposes, note that given \(\gamma_P\), there exist vertices \(v_1
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.48\linewidth]{note5-fig-05.pdf}
+  \includegraphics[width=0.64\linewidth]{note5-fig-05.pdf}
 
 \end{figure}
 
@@ -359,7 +356,7 @@ Here is how these deformations look:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.90\linewidth]{note5-fig-06.pdf}
+  \includegraphics[width=0.94\linewidth]{note5-fig-06.pdf}
 
 \end{figure}
 
@@ -382,7 +379,7 @@ so \(\gamma_2\subset\operatorname{ext}(\gamma_1)\).
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.46\linewidth]{note5-fig-07.pdf}
+  \includegraphics[width=0.64\linewidth]{note5-fig-07.pdf}
 
 \end{figure}
 
@@ -461,29 +458,29 @@ be a polynomial with \(a_i\in\mathbb C\). Let \(\gamma_R:[0,2\pi]\to\mathbb C\) 
 \]
 Note that, for \(R\) large enough,
 \[
-  |R^ne^{int}a_n|>
+  |R^Ne^{iNt}a_N|>
   \left|\sum_{n=0}^{N-1}R^ne^{int}a_n\right|.
 \]
 It dominates by the triangle inequality:
 \[
-  |R^ne^{int}a_n|>
+  |R^Ne^{iNt}a_N|>
   \sum_{n=0}^{N-1}|R^ne^{int}a_n|,
 \]
 which dominates
 \[
   \left|\sum_{n=0}^{N-1}R^ne^{int}a_n\right|.
 \]
-This also means that the contours \(R^ne^{int}a_n\) and \(P(Re^{it})\) share the same winding number around \(0\), because
+This also means that the contours \(R^Ne^{iNt}a_N\) and \(P(Re^{it})\) share the same winding number around \(0\), because
 \[
-  |R^ne^{int}a_n-0|>|R^ne^{int}a_n-P(Re^{it})|
+  |R^Ne^{iNt}a_N-0|>|R^Ne^{iNt}a_N-P(Re^{it})|
   \qquad(\forall t).
 \]
 Therefore,
 \[
-  W_{R^ne^{int}a_n}(0)=W_{P(Re^{it})}(0)
+  W_{R^Ne^{iNt}a_N}(0)=W_{P(Re^{it})}(0)
   =\frac{1}{2\pi i}\int_0^{2\pi}
-    \frac{R^nina_ne^{int}}{R^ne^{int}a_n}\,dt
-  =n.
+    \frac{R^NiNa_Ne^{iNt}}{R^Ne^{iNt}a_N}\,dt
+  =N.
 \]
 Recall that, via this technique of local constancy, we established the notion of interior and exterior. Now, if \(P\) does not vanish on \(\overline{B_R(0)}\), then we have
 \[
@@ -494,14 +491,14 @@ This contradicts local constancy. Therefore, \(P(z)\) has zeros on a large enoug
 
 \subsection*{Higher-Order Cauchy Integral Formula}
 \[
-  W_\gamma(z_0)f^{(n)}(z_0)
+  W_\gamma(z_0)H^{(n)}(z_0)
   =\frac{n!}{2\pi i}\int_\gamma\frac{H(z)}{(z-z_0)^{n+1}}\,dz.
 \]
 The derivative of \(W_\gamma(z_0)\) is \(0\), since \(W_\gamma(z_0)\) is locally constant. Thus,
 \[
-  \frac{d}{dz_0}\bigl(W_\gamma(z_0)f(z_0)\bigr)
+  \frac{d}{dz_0}\bigl(W_\gamma(z_0)H(z_0)\bigr)
   =\frac{d}{dz_0}\left(\frac{1}{2\pi i}\int_\gamma\frac{dz}{z-z_0}\right)H(z_0)
-   +W_\gamma(z_0)f'(z_0).
+   +W_\gamma(z_0)H'(z_0).
 \]
 Also,
 \[
@@ -511,7 +508,7 @@ Also,
 \]
 Therefore,
 \[
-  W_\gamma(z_0)f'(z_0)
+  W_\gamma(z_0)H'(z_0)
   =\frac{1}{2\pi i}\int_\gamma\frac{H(z)}{(z-z_0)^2}\,dz.
 \]
 One can now finish the argument via induction.
@@ -524,7 +521,7 @@ where \(P\) is irreducible in \(\mathbb R\). We saw that \(P(x)\) has a root in 
 \]
 then
 \[
-  \overline{P(z_0)}=\sum_{n\ge0}\overline{a_n}\,\overline{z_0}^{,n}
+  \overline{P(z_0)}=\sum_{n\ge0}\overline{a_n}\,\overline{z_0}^{\,n}
   =P(\overline{z_0})=0.
 \]
 Hence, \(\overline{z_0}\) is a root if \(z_0\) is a root, and
@@ -535,11 +532,10 @@ If \(\deg(P)>2\), then \(P\) is reducible, which is not possible. Thus \(\deg(P)
 \[
   P(z)=az^2+bz+c.
 \]
-After an affine change of variable and rescaling, the quadratic has the form \(P(z)=z^2+a^2.\)
+After an affine change of variable and rescaling, the quadratic has the form \(P(z)=z^2+a\), where $a>0$.
 Therefore,
 \[
-  \mathbb C\cong\mathbb R(\sqrt{-a})
-  \cong\mathbb R(\sqrt a,\sqrt{-1})
+  \mathbb R(\sqrt{-a})
   \cong\mathbb R(\sqrt{-1})
   \cong\mathbb C.
 \]

@@ -8,97 +8,32 @@
 
 Let $U$ be a bounded domain in $\mathbb C$. Then $U$ is simply connected if and only if $\mathbb C\setminus U$ is connected.
 
-Let $z_0\in\mathbb C\setminus U$, and say that $z_0$ is separated from $\infty$ by $U$. First note that $\mathbb C\setminus U$ cannot have two unbounded components. Let $z_0$ be in one of the bounded components, say $z_0\in V$. Choose $R$ such that $\partial\overline{B_R(z_0)}$ contains $U$ and the bounded component $V$. Let $x\in\partial\overline{B_R(z_0)}$. The segment $\overline{xz_0}$ intersects $U$ nontrivially. Define
-\[
-  F:=\left\{y\in U:\overline{xz_0}\cap U=y,\ 
-  x\in\partial\overline{B_R(z_0)}\right\}.
-\]
-The set $F$ is closed and bounded, hence compact. Let $\{F_j\}$ be the components of $F$. Since $F$ is compact, it has only finitely many compact components. In the domain $U$, join those components by polygonal paths, using the fact that $U$ is path-connected, and let this set be $S$. The set $S$ is again compact. Consider a finite cover of $S$ by balls in $U$, say $\{B_n\}_{n=1}^k$, such that $\bigcup_nB_n$ is connected. Use the decomposition theorem proved for $\partial(\bigcup_nB_n)$, and let $\gamma$ be the polygonal arc that contains the other arcs. Then \(z_0\in\operatorname{int}(\gamma),\)
-because $\overline{z_0x}$ cuts $\gamma$ too many times. Hence
-\[
-  W_\gamma(z_0)\ne0,
-\]
-so $U$ is not simply connected. The following figure illustrates the construction.
-
-
-\subsubsection*{Construction of the Separating Curve $\gamma$}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.60\textwidth]{note8-fig-01.pdf}
-
-\end{figure}
-
-This is the technique of separation by polygonal arcs.
-
-
-The converse is relatively simple. Let $\mathbb C\setminus U$ be connected, where $U$ is a bounded domain. Then $U$ is simply connected. Let us prove the contrapositive.
-
-
-If $U$ is not simply connected, then there exists a closed curve $\gamma$ and a homotopy $H$ such that \(H^*\cap U^c\ne\varnothing.\)
-Let $x\in H^*\cap U^c$. Note that the images of $H$ and $\partial U$ are both compact. If $H^*\cap\partial U=\varnothing$, then $H^*$ is connected and has the separation
-\[
-  \bigl(\operatorname{int}(U)\cap H^*\bigr)
-  \cup
-  \bigl(\operatorname{ext}(U)\cap H^*\bigr)
-  =H^*,
-\]
-a contradiction. Hence \(H^*\cap\partial U\ne\varnothing.\)
-Let $H$ be the straight-line homotopy. Every line will cross $\partial U$ at least twice, since $U$ is bounded, so $x$ must belong to a bounded component. One may assume without loss of generality that $\gamma$ is simple; otherwise approximate it by a concatenation of simple closed polygons. Now
-\[
-  \operatorname{int}(\gamma)\cap U^c\ne\varnothing.
-\]
-
-\textbf{Remark.} By the complex tube lemma, $U$ is simply connected if all simple closed curves in $U$ are null-homotopic. So one can circumvent weird curves, such as space-filling curves, and use simple geometry.
-
-\textbf{Exercise.} Use this construction to prove the Jordan arc theorem.
-
-\paragraph{Sketch.} First establish that if $\gamma_0$ is a Jordan arc and $\delta>0$, then for $\varepsilon>0$ there is an arc \(\gamma_\varepsilon^*\subset N_\delta(\gamma_0)\)
-with
-\[
-  \gamma_\varepsilon(0)=\gamma_0(0),
-  \qquad
-  \gamma_\varepsilon(1)=\gamma_0(1),
-\]
-such that $\gamma_\varepsilon$ is homotopic, as a curve with fixed endpoints and up to reparametrization, to $\gamma_0$ in
-\[
-  N_\delta(\gamma_0):=
-  \{z\in\mathbb C:\operatorname{dist}(z,\gamma_0)<\delta\}.
-\]
-Then prove that
-\[
-  W_{\gamma_0}(z_0)=0
-  \qquad\text{for all }z_0\in(\gamma_0^*)^c.
-\]
-Take any bounded component of $(\gamma_0^*)^c$ and, using the separation-via-arc technique, contradict the fact that $W_{\gamma_0}(z_0)=0$.
-
-
-Another place to apply this separation-by-polygon method is to give a complete characterization of branches of the logarithm. First note, very quickly, that a continuous branch of the logarithm on a domain \(U\subset\mathbb C\setminus\{0\}\) is a continuous function \(f:U\to\mathbb C\) such that
+First note, very quickly, that a continuous branch of the logarithm on a domain \(U\subset\mathbb C\setminus\{0\}\) is a continuous function \(f:U\to\mathbb C\) such that
 \[
   \exp(f(z))=z.
 \]
-This continuity directly implies holomorphicity, since $\exp(z)\ne0$ for every $z\in\mathbb C$. In fact, one has the following. Let $f:U\to V$ be continuous, let $g:V\to\mathbb C$ satisfy $g\in H(V)$ and $g'\ne0$, and suppose $g\circ f\in H(U)$. Then $f\in H(U)$.
+This continuity directly implies holomorphicity, since $\exp'(z)=\exp(z)\ne0$ for every $z\in\mathbb C$. In fact, one has the following. Let $f:U\to V$ be continuous, let $g:V\to\mathbb C$ satisfy $g\in H(V)$ and $g'\ne0$, and suppose $g\circ f\in H(U)$. Then $f\in H(U)$.
 
 \paragraph{Quick proof.} The limit
 \[
-  \lim_{z\to z_0}\frac{g(z)-g(z_0)}{z-z_0}
+  \lim_{w\to w_0}
+  \frac{g(f(w))-g(f(w_0))}{w-w_0}
 \]
 exists. Let $f(w_0)=z_0$ and let $f(w_0+h')=z_0+h$. Then
 \begin{align*}
-  \lim_{h\to0}\frac{g(z_0+h)-g(z_0)}{h}
-  &=\lim_{f(w_0+h')\to f(w_0)}
-  \frac{g(f(w_0+h'))-g(f(w_0))}{f(w_0+h')-f(w_0)}\\
+  \lim_{h'\to0}
+  \frac{g(f(w_0+h'))-g(f(w_0))}{h'}
   &=\lim_{h'\to0}
-  \frac{g(f(w_0+h'))-g(f(w_0))}{w_0+h'-w_0}
-  \cdot
-  \frac{h'}{f(w_0+h')-f(w_0)}.
+  \frac{g(f(w_0+h'))-g(f(w_0))}{f(w_0+h')-f(w_0)}\\
+  &\qquad\cdot
+  \frac{f(w_0+h')-f(w_0)}{h'}.
 \end{align*}
 The first limit exists and equals some $c$. Consequently,
 
 \[
   \lim_{h'\to0}
   \frac{f(w_0+h')-f(w_0)}{h'}
-  =\frac{c}{g'(w_0)}
+  =\frac{c}{g'(z_0)}
 \]
 exists, since $g'\ne0$. Thus $f\in H(U)$, so a continuous branch is a holomorphic branch.
 
@@ -131,7 +66,7 @@ Then
 is nonempty and simply connected. The image $\gamma([0,+\infty))$ is a branch cut: removing it produces a nonempty simply connected domain on which a single-valued logarithm can be defined.
 
 
-Since $\lim_{t\to\infty}\gamma(t)=\infty$, we have $\gamma(t)>M$ whenever $t>b$. Consider $\gamma([a,b])$, and let $\gamma(b)=z_1$. Choose coordinates so that $\gamma(b)=i$; this can be ensured by an appropriate rotation and dilation. Let $c\in(a,b)$ be such that
+Since $\lim_{t\to\infty}\gamma(t)=\infty$, we have $|\gamma(t)|>M$ whenever $t>b$. Consider $\gamma([a,b])$, and let $\gamma(b)=z_1$. Choose coordinates so that $\gamma(b)=i$; this can be ensured by an appropriate rotation and dilation. Let $c\in(a,b)$ be such that
 \[
   \operatorname{Re}(\gamma(c))=1,
   \qquad
@@ -209,7 +144,7 @@ One way to construct a logarithm is by looking at appropriate domains where $1/z
 
 \subsection*{Definition: Covering Spaces and Covering Maps}
 
-Let $f:M\to N$. For every $x\in N$, there exists $U\subseteq N$ such that
+The map $f:M\to N$ is a covering map if, for every $x\in N$, there exists $U\subseteq N$ such that
 \[
   f^{-1}(U)=\bigsqcup_\alpha V_\alpha,
 \]
@@ -221,14 +156,14 @@ is a homeomorphism.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.51\textwidth]{note8-fig-02.pdf}
+  \includegraphics[width=0.62\textwidth]{note8-fig-02.pdf}
 
 \end{figure}
 
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.70\textwidth]{note8-fig-03.pdf}
+  \includegraphics[width=0.72\textwidth]{note8-fig-03.pdf}
 
 \end{figure}
 
@@ -237,7 +172,7 @@ This setup leads to the lifting lemma.
 \subsection*{Tool 29 — Lifting Lemma}
 
 Let $M,N$ be Riemann surfaces, let $f:M\to N$ be a covering map, with $M,N$ connected, and let $U$ be a simply connected, path-connected Riemann surface. Let $g:U\to N$ be holomorphic, let $z_0\in U$ and $p\in M$, and suppose \(f(p)=g(z_0).\)
-Then there exists a unique holomorphic map $h:U\to M$ such that
+Then there exists a unique holomorphic map $h:U\to M$ such that $h(z_0)=p$ and
 \[
   g=f\circ h.
 \]
@@ -248,9 +183,9 @@ Then there exists a unique holomorphic map $h:U\to M$ such that
 Let \(z:U\to\mathbb C\setminus\{0\},\)
 where $U$ is a simply connected domain and $0\notin U$. The map
 \[
-  e^z:\mathbb C\setminus\{0\}\to\mathbb C\setminus\{0\}
+  e^z:\mathbb C\to\mathbb C\setminus\{0\}
 \]
-is a covering map. (Exercise.) Hence there exists a holomorphic function $f:U\to\mathbb C\setminus\{0\}$ such that \(\exp(f)=z.\)
+is a covering map. (Exercise.) Hence there exists a holomorphic function $f:U\to\mathbb C$ such that \(\exp(f)=z.\)
 
 
 More generally, if $h$ is holomorphic and nonvanishing on the simply connected domain $U$, then there exists a holomorphic $g$ such that \(e^{g(z)}=h(z).\)
@@ -259,53 +194,5 @@ If we look at
   z^n:\mathbb C\setminus\{0\}\to\mathbb C\setminus\{0\},
 \]
 which is locally a diffeomorphism, then there exists $g$ such that \(g(z)^n=h(z).\)
-If one writes
-\[
-  h(z)=z^nw(z)
-\]
-and factors out the zeros, then \(h(z)=z^ng(z)^n=(zg(z))^n,\)
-a restatement of the rank theorem.
-
-\subsection*{Little Picard's Theorem}
-
-Here is a slick proof of Little Picard's theorem.
-
-
-Let $f(\mathbb C)$ avoid $0$ and $1$, WLOG. Then \(f=e^{2\pi i g}.\)
-The set $g(\mathbb C)$ avoids the integers.
-
-The function $\cos z:\mathbb C\setminus\{\pi j\}\to\mathbb C$ is a local diffeomorphism; hence
-\[
-  g=\cos(h).
-\]
-Since $\cos(iz)=\cosh(z)$, the set $h(\mathbb C)$ now avoids
-\[
-  \pm i\cosh^{-1}(j)+2\pi k,
-\]
-or, after solving the quadratic equation in $e^z$,
-\[
-  \pm i\log\bigl(m\pm\sqrt{m^2-1}\bigr)+2\pi k.
-\]
-There exists a uniform constant $c$ such that
-\[
-  D(w,c)\nsubseteq h(\mathbb C),
-\]
-where $c$ is larger than the diameter of the lattice above. By Bloch's theorem,
-\[
-  D\bigl(z_0,c'|h'(z_0)|R\bigr)
-  \nsubseteq D(z_0,c),
-  \qquad
-  D\bigl(z_0,c'|h'(z_0)|R\bigr)\subset h(\mathbb C).
-\]
-Hence \(c'|h'(z_0)|R<c.\)
-Let $c''=c/c'$. Then
-\[
-  |h'(z_0)|<\frac{c''}{R}
-  \qquad(\forall R>0).
-\]
-Therefore $h$ is constant, so $g$ is constant and
-\[
-  f\equiv0.
-\]
 % BLOG-CONTENT-END
 \end{document}

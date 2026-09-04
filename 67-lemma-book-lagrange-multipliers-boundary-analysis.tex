@@ -28,16 +28,16 @@ Thus we solve
 \]
 We now have four variables and four equations. Solving them produces candidates; substituting those candidates into $f$ gives the candidate extremal values.
 This statement is sometimes called Lagrange's theorem.
-% Author check: necessary conditions are described as sufficient for extrema in the source.
 % Source page 15 - right
 The arithmetic--geometric mean inequality provides a first example.
-Prove that $(x+y+z)/3\geq\sqrt[3]{xyz}$.
+For positive $x,y,z$, prove that $(x+y+z)/3\geq\sqrt[3]{xyz}$.
 Find the maximum of $f(x,y,z)=xyz$ with $g(x,y,z)=x+y+z=S$.
 The three equations $\partial f/\partial x=\lambda\partial g/\partial x$,
 $\partial f/\partial y=\lambda\partial g/\partial y$,
 $\partial f/\partial z=\lambda\partial g/\partial z$ give
 $yz=\lambda$, $zx=\lambda$, $xy=\lambda$.
-Thus $xy=yz=zx$, so $x=y=z=S/3$.
+Thus $xy=yz=zx$, so $x=y=z=S/3$. On the boundary of the nonnegative
+simplex the product is zero, while at this interior point it is positive.
 Plugging this into $f$ gives
 \[
 f(S/3,S/3,S/3)\geq f(x,y,z)
@@ -55,53 +55,6 @@ Introduce the notation ``gradient of a function $f$,'' written $\nabla f$:
 % Source page 16 - left
 Instead of the first three equations in the AM--GM example, it suffices to write
 $\nabla f(x,y,z)=\lambda\nabla g(x,y,z)$.
-\paragraph{USAMO.}
-Let $a,b,c\geq0$ and $a^2+b^2+c^2+abc=4$. Prove that $0\leq ab+bc+ca-abc\leq2$.
-Put $f(a,b,c)=ab+bc+ca-abc$. We are to find its maximum and minimum under the given condition, called a constraint.
-The Lagrange equations are
-\[
-\nabla f=\lambda\nabla(a^2+b^2+c^2+abc),
-\quad (b+c-bc,a+c-ac,a+b-ab)=\lambda(2a+bc,2b+ac,2c+ab).
-\]
-Equivalently,
-\[
-\begin{cases}
-b+c-bc=\lambda(2a+bc),\\
-a+c-ac=\lambda(2b+ac),\\
-a+b-ab=\lambda(2c+ab),\\
-a^2+b^2+c^2+abc=4.
-\end{cases}
-\]
-Solving gives the two solutions $(1,1,1)$ and $(0,\sqrt2,\sqrt2)$, with
-$f(1,1,1)=2$ and $f(0,\sqrt2,\sqrt2)=2$; hence $f(a,b,c)\leq2$.
-We also notice that $(2,0,0)$ is a solution and $f(2,0,0)=0$, so $0\leq f(a,b,c)$.
-Thus $0\leq f(a,b,c)\leq2$.
-% Author check: boundary points described as solutions of the multiplier system; exhaustive-extrema claim retained.
-
-% Source page 16 - right
-\paragraph{IMO (1984).}
-With $x+y+z=1$, prove that $0<xy+yz+zx-2xyz\leq7/27$.
-The use of Lagrange multipliers requires careful justification.
-Before equating gradients, it is essential to show that the gradients are continuous.
-Let $f(x,y,z)=xy+yz+zx-2xyz$ and $g(x,y,z)=x+y+z=1$.
-Both are polynomials and have continuous first-order partial derivatives.
-Then
-\[
-\nabla f=\lambda\nabla g
-\Longrightarrow(y+z-2yz,x+z-2xz,x+y-2xy)=(\lambda,\lambda,\lambda).
-\]
-From $y+z-2yz=x+z-2xz$ we get $y-x=2z(y-x)$, so $y=x$ or $z=1/2$.
-Similarly,
-\[
-x=y\ \text{or}\ z=\tfrac12,\qquad
-y=z\ \text{or}\ x=\tfrac12,\qquad
-z=x\ \text{or}\ y=\tfrac12,\qquad x+y+z=1.
-\]
-The resulting solutions, up to permutation, are $(1/3,1/3,1/3)$ and $(1/2,1/2,0)$.
-Since $f(1/3,1/3,1/3)=7/27>f(1/2,1/2,0)=1/4$, these are its extreme values.
-Therefore $0<1/4\leq xy+yz+zx-2xyz\leq7/27$.
-% Author check: domain restrictions are missing; asserted minimum1/4 and boundary reasoning are retained.
-
 % Source page 17 - left
 \setcounter{theorem}{39}\begin{lemma}[A warning about Lagrange multipliers]
 Lagrange multipliers identify stationary candidates, but boundary and sufficiency checks remain essential.
@@ -115,11 +68,9 @@ $f(a,b,c)=a^2+b^2+c^2+2abc$. The following lemma summarizes the procedure.
 In a problem where Lagrange multipliers are applied, search for a constraint on the variables.
 Under this constraint, determine the extreme values of the desired function by equating the gradient of one to $\lambda$ times the gradient of the other:
 $\nabla f=\lambda\nabla g$.
-Then plug the solutions back into $f$: the smallest resulting value is its minimum and the largest is its maximum.
+Then plug the solutions back into $f$ to obtain stationary candidates; boundary
+and sufficiency checks are still required before identifying extrema.
 \end{lemma}
-% Author check: this procedure omits boundary/sufficiency checks; the next example exposes that issue.
-For example, the preceding IMO problem gave $(1/3,1/3,1/3)$ and $(1/2,1/2,0)$.
-Substituting, we get $7/27$ and $1/4$, so $1/4\leq f(x,y,z)\leq7/27$.
 % Source page 17 - right
 Lemma~\ref{lemma:lb1-46} explains the steps. Apply them now:
 \[
@@ -201,19 +152,18 @@ $f(x)=x-x^4$, so $f'(x)=1-4x^3=0$ gives $x=1/\sqrt[3]4$.
 Thus $x=1/\sqrt[3]4$ is the only interior critical point.
 We also have $f''(x)=-12x^2<0$ for $x>0$, so this point gives the maximum.
 Therefore $f(1/\sqrt[3]4)=3/(4\sqrt[3]4)$.
-% Author check: the source repeatedly evaluates f' rather than f when naming the extremal function value; it also writes f''<0 without excluding x=0.
 
 
 
 \subsection{Boundary-analysis techniques}
 Boundary analysis begins with two elementary principles.
 \setcounter{theorem}{85}\begin{lemma}[Boundary-analysis lemma I]\label{lemma:lb1-88}
-Given any linear function, its maximum or minimum is attained at the boundary of its domain.
+Given a nonconstant linear function on a compact convex polytope, its maximum
+and minimum are attained on the boundary.
 \end{lemma}
 \setcounter{theorem}{86}\begin{lemma}[Boundary-analysis lemma II]\label{lemma:lb1-89}
-Given a convex function, its maximum is attained at an endpoint of its domain.
+Given a convex function on a compact interval, its maximum is attained at an endpoint.
 \end{lemma}
-% Author check: the source gives no compactness/domain qualifications for these two extrema claims and attributes the second to Weierstrass.
 The following examples illustrate the method.
 \paragraph{Problem 1: Romanian team selection test.}
 For a given positive number $a$, find the maximum of
@@ -231,13 +181,12 @@ Thus the maximum value is $a^n$.
 Let $0\leq a,b,c,d\leq1$. Prove that
 \[(1-a)(1-b)(1-c)(1-d)+a+b+c+d\geq1.\]
 Choose any one variable and let the others be constant.
-It is a linear function, so it attains its maximum when the chosen variable is either zero or one.
+It is a linear function, so it attains its minimum when the chosen variable is either zero or one.
 Argue similarly for all four variables, giving $(a,b,c,d)=0$ or $1$.
-If one variable is zero, the value is $3$; if all equal one, the value is $4$.
-If two variables are zero, the value is $2$; if three or all of them are zero, the value is $1$.
+At a Boolean vertex, the value is $1$ when all four variables are zero, and
+otherwise it is the number of variables equal to one.
 We observe that $1$ is the smallest of all the values obtained, so the minimum of the function is $1$.
 The conclusion follows. 
-% Author check: the source says maximum at the reduction step before comparing minimum endpoint values.
 These are some standard techniques, but there are one or two more problems with quite a different way of sorting things.
 \paragraph{Problem 3: W. L. Putnam Mathematical Competition.}
 Let $n$ be a natural number and $x_i\in[0,1]$ for $i=1,2,\ldots,n$.
@@ -255,10 +204,9 @@ $\widehat a x+\widehat b/x+\widehat c$, where $\widehat a,\widehat b,\widehat c>
 This is a convex function, so it attains its maximum at an endpoint.
 Thus each of $a,b,c,d,e$ is either $p$ or $q$.
 If $n$ of them equal $p$ and $5-n$ equal $q$, then the left-hand side has the form
-\[n^2+(5-n^2)+n(5-n)\left(\frac pq+\frac qp\right)
+\[n^2+(5-n)^2+n(5-n)\left(\frac pq+\frac qp\right)
 =25+n(5-n)\left(\sqrt{\frac pq}-\sqrt{\frac qp}\right)^2.\]
 This completes the endpoint argument.
-% Author check: the source's intermediate term is written (5-n^2), not (5-n)^2; preserved.
 Here are three problems on which to test the method.
 % Source page 48 - right
 \paragraph{Problem 1.}
@@ -284,22 +232,9 @@ Coordinate methods can also help with extremal questions about the area of a tri
 \setcounter{theorem}{101}\begin{lemma}[Hadamard's inequality]
 If $A=(a_{ij})$ is an $n\times n$ matrix, then
 $|\det A|^2\leq\prod_{i=1}^n\bigl(\sum_{j=1}^n|a_{ij}|^2\bigr)$.
-Equality holds if and only if the rows are orthogonal.
+If no row is zero, equality holds if and only if the rows are pairwise
+orthogonal. A zero row also gives equality.
 \end{lemma}
-% Author check: zero-row equality cases not qualified; source repeats handwritten number104 after Zsigmondy104.
-\paragraph{Application: Mathematical Reflections, issue 1 (2014).}
-In triangle $ABC$, a point $P$ is at distances $R_1=1$, $R_2=2$, $R_3=3$ from $A,B,C$.
-Find the maximum area of $ABC$.
-Place $P$ at the origin, with $A=(x_1,y_1)$, $B=(x_2,y_2)$, $C=(x_3,y_3)$.
-Then $x_i^2+y_i^2=R_i^2$ and
-\[
-[ABC]=\frac12\begin{vmatrix}1&x_1&y_1\\1&x_2&y_2\\1&x_3&y_3\end{vmatrix},\qquad
-\begin{vmatrix}1&x_1&y_1\\1&x_2&y_2\\1&x_3&y_3\end{vmatrix}^{\!2}
-\leq(R_1^2+1)(R_2^2+1)(R_3^2+1).
-\]
-The determinant estimate gives
-\[[ABC]\leq\frac12\sqrt{(R_1^2+1)(R_2^2+1)(R_3^2+1)}.\]
-% Author check: final bound drops factor1/2; no attainment analysis or numeric maximum recorded.
 
 % Source page 11 - left
 % BLOG-CONTENT-END

@@ -2,7 +2,7 @@
 \input{styles/blog-preamble.tex}
 \graphicspath{{figures/complex-analysis/}}
 \begin{document}
-\section*{Rouché's Theorem and Bloch's Theorem}
+\section*{Rouché's Theorem}
 % BLOG-CONTENT-BEGIN
 \subsection*{Tool 26 — Argument Principle}
 
@@ -19,9 +19,10 @@ It is rather trivial via the residue theorem. Tool 26 provides a substitute for 
 
 \subsection*{Hurwitz's Theorem}
 
-Let $\{f_n\}$ be such that $f_n\in H(U)$, where $U$ is a domain. If the $f_n$ are injective and $f_n\to f$ uniformly, then $f$ is injective.
+Let $\{f_n\}$ be such that $f_n\in H(U)$, where $U$ is a domain. If the $f_n$ are injective and $f_n\to f$ uniformly on compact sets, then $f$ is injective or constant.
 
 \textit{Proof.}
+Assume that $f$ is nonconstant.
 Suppose $f$ is not injective. Then $f(z)-f(z_0)$ has more than one zero. Since $f_n\to f$ uniformly, $f_n'\to f'$ uniformly; hence \(f_n-f_n(z_0)\longrightarrow f-f(z_0)\)
 and
 \[
@@ -54,13 +55,11 @@ Under the inversion $z\mapsto1/z$,
   &=-\operatorname{Res}\!\left(\frac{f(1/z)}{z^2};0\right)
   =-a_1.
 \end{align*}
-Depending on the orientation, one has
+For a meromorphic function on the Riemann sphere, one has
 \[
-  \frac{1}{2\pi i}\int_\gamma f(z)\,dz
-  =\pm C\pm\sum_{z_0\in S\cap\operatorname{ext}(\gamma)}
-  \operatorname{Res}(f;z_0).
+  \operatorname{Res}(f;\infty)
+  =-\sum_{z\in\mathbb C}\operatorname{Res}(f;z).
 \]
-The residue at $\infty$ is the sum of the residues on $\mathbb C$. Read this together with the WLOG statement above; it makes sense, since one has M\"obius inversion and translation.
 
 
 \subsection*{Tool 27 — Rouch\'e's Theorem}
@@ -88,7 +87,7 @@ Let $f,g\in H(\overline{B_1(0)})$. If $f$ has a simple zero, then, for $\varepsi
 
 \[
   z_\varepsilon
-  =\frac{1}{2\pi i}\int_{\overline{B_\delta(0)}}
+  =\frac{1}{2\pi i}\int_{\partial B_\delta(0)}
   z\,\frac{f_\varepsilon'(z)}{f_\varepsilon(z)}\,dz
 \]
 is continuous in $\varepsilon$. Thus a continuous deformation of holomorphic functions also deforms their zeros continuously, whenever the map $\varepsilon\mapsto z_\varepsilon$ is well-defined.
@@ -101,7 +100,7 @@ If $f\in H(U)$, then $f$ is an open map.
 Consider $f(z)-f(z_0)$ on a ball $B_\varepsilon(z_0)$ such that \(\#\{z:f(z)=f(z_0),\ z\in\overline{B_\varepsilon(z_0)}\}=1.\)
 The set $f(\partial B_\varepsilon(z_0))$ is compact and
 \[
-  f(\partial B_\varepsilon(z_0))\cap f(z_0)=\varnothing.
+  f(\partial B_\varepsilon(z_0))\cap\{f(z_0)\}=\varnothing.
 \]
 Let
 \[
@@ -109,7 +108,7 @@ Let
 \]
 If $|w-f(z_0)|<d/4$, then
 \[
-  |f(z)-w|>|w-f(z_0)|
+  |f(z)-f(z_0)|>|w-f(z_0)|
   \qquad(z\in\partial B_\varepsilon(z_0)).
 \]
 Hence $f(z)-w$ has a zero in $B_\varepsilon(z_0)$.
@@ -147,104 +146,32 @@ Expand $h(z)$, where $h\in H(U)$, around $0$:
 \]
 Now note that
 \[
-  \frac{-c}{1-z/z_0}
-  =-\sum_{n\ge0}\frac{c}{z_0^n}z^n,
+  \frac{c}{z-z_0}
+  =-\frac{c/z_0}{1-z/z_0}
+  =-\sum_{n\ge0}\frac{c}{z_0^{n+1}}z^n,
 \]
 so
 \[
-  a_n=c_n-\frac{c}{z_0^n},
+  a_n=c_n-\frac{c}{z_0^{n+1}},
   \qquad
   \frac{a_n}{a_{n+1}}
-  =\frac{c_n-c/z_0^n}{c_{n+1}-c/z_0^{n+1}}.
+  =\frac{c_n-c/z_0^{n+1}}{c_{n+1}-c/z_0^{n+2}}.
 \]
 Consequently,
 
 \[
   \frac{a_n}{a_{n+1}}
-  =z_0\left(\frac{c_nz_0^n-c}{c_nz_0^{n+1}-c}\right).
+  =z_0\left(\frac{c_nz_0^{n+1}-c}{c_{n+1}z_0^{n+2}-c}\right).
 \]
 Since $h(z)$ is convergent at $z_0$,
 \[
-  \lim_{n\to\infty}c_nz_0^n=0,
+  \lim_{n\to\infty}c_nz_0^{n+1}=0,
   \qquad
   \lim_{n\to\infty}\frac{a_n}{a_{n+1}}=z_0.
 \]
 
 \textbf{Remark.} Thus the radius of convergence of a Taylor series is exactly equal to the distance to the nearest pole of $f$.
 
-\subsection*{Bloch's Theorem}
-
-Let \(f:D(z_0,R)\to\mathbb C\)
-be holomorphic and $f'(z_0)\ne0$. There exist absolute constants $c',c''>0$ such that
-\[
-  f\bigl(\overline{B_R(z_0)}\bigr)
-  \supseteq \overline{B_{c'|f'(z_0)|R}}\bigl(f(z_0)\bigr).
-\]
-
-
-\textit{Proof.}
-Apply the affine normalization
-\[
-  F(z):=\frac{f(Rz+z_0)-f(z_0)}{Rf'(z_0)}.
-\]
-Then \(F(0)=0\) and \(F'(0)=1\), so it is enough to prove the result for \(z_0=0\) and \(R=1\).
-Assume \(|f'(z)|<2|f'(0)|=2.\)
-By the Cauchy estimate, if
-\[
-  f(z)=\sum_{n\ge0}a_nz^n,
-\]
-then $|a_n|\le2$. Hence, with $a_0=0$,
-\[
-  |f(z)|\ge |z|-\left|\sum_{n\ge2}a_nz^n\right|
-  \ge |z|-\frac{2|z|^2}{1-|z|}
-  \qquad(z\in D(0,1)).
-\]
-The same estimate holds on $D(0,1/8)$. The function $|f(z)/z|$ attains its minimum on $\partial D(0,1/8)$, since $f$ has a simple zero at $0$. On $\partial D(0,1/8)$,
-\begin{align*}
-  |f(z)|
-  &\ge \frac18-\frac{2(1/8)^2}{1-1/8}\\
-  &=\frac18-\frac{2}{64}\cdot\frac87
-   =\frac14\left(\frac12-\frac17\right)
-   =\frac{5}{56}.
-\end{align*}
-Now let $|w|<5/56$ and put $g=-w$. On $\partial D(0,1/8)$, \(|f(z)|>|g|,\)
-and hence $f-w$ has a simple zero, since $f$ has a simple zero. Therefore
-\[
-  D\left(0,\frac{5}{56}\right)
-  \subset f\bigl(D(0,1/8)\bigr)
-  \subset f\bigl(D(0,1)\bigr).
-\]
-This proves that there exists an absolute constant $c'$ such that, if \(|f'(z)|<2|f'(z_0)|,\)
-then
-\[
-  D\bigl(f(z_0),c'|f'(z_0)|R\bigr)
-  \subset f\bigl(D(z_0,R)\bigr).
-\]
-
-It remains to remove the additional hypothesis $|f(z)|<2|f'(z_0)|$. If the hypothesis holds for $z\in D(z_0,R/4)$, then Bloch's theorem follows. Otherwise there exists
-\[
-  z_1\in D(z_0,R/4)
-\]
-such that
-\[
-  |f'(z_1)|>2|f'(z_0)|.
-\]
-Now replace $z_0$ by $z_1$ and $R$ by $R/2$, and note that, with $z_0=0$,
-\[
-  |z_n|<\sum_{n\ge2}\frac{R}{2^n},
-  \qquad
-  |z_n|<\frac R2\quad(\forall n).
-\]
-Thus $z_n\to z_0'\in D(z_0,R)$ and \(|f'(z_n)|>2^n|f'(z_0)|.\)
-Therefore $f'(z)$ blows up at $z_0'$, a contradiction.
-
-
 \paragraph{Final remark.} These techniques underlie constructions such as branches of the logarithm, holomorphic lifts, biholomorphisms, and the Jordan curve theorem.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=.58\textwidth]{note7-fig-05.pdf}
-
-\end{figure}
 % BLOG-CONTENT-END
 \end{document}

@@ -5,7 +5,7 @@
 \begin{document}
 \section*{Parabolic Fixed Points and the Flower Theorem}
 % BLOG-CONTENT-BEGIN
-Consider a fixed point $f(\widehat p)=\widehat p$ whose multiplier satisfies $\lambda^q=1$. Such points are called parabolic fixed points. It is immediately clear that the expected dynamics should be different. For instance, consider the orbits of $\pm1$ and $\pm i$ under $f(z)=z+z^3$.
+Consider a fixed point $f(\widehat p)=\widehat p$ whose multiplier satisfies $\lambda^q=1$ and for which $f^{\circ q}$ is not locally the identity. Such points are called parabolic fixed points. It is immediately clear that the expected dynamics should be different. For instance, consider the orbits of $\pm1$ and $\pm i$ under $f(z)=z+z^3$.
 \begin{figure}[H]\centering
 \includegraphics[width=.55\textwidth]{cd3-fig-01.pdf}
 \FigureTag{CD3.1}{fig:cd3-01}
@@ -13,38 +13,36 @@ Consider a fixed point $f(\widehat p)=\widehat p$ whose multiplier satisfies $\l
 The map $f$ repels $1,-1$ and attracts $i,-i$ towards $\widehat p=0$. Notice that it pushes and pulls from two directions. The following theorem tells us that such patterns reappear. For now, no neighbourhood of $\widehat p=0$ can be expected to be a ``basin'', since $\widehat p$ is a sink only in certain directions.
 % Source page 2
 \setcounter{definition}{10}\begin{definition}
-Let $f(z)=z+az^{n+1}+O(z^{n+2})$. A vector $v\in\mathbb C$ is attracting if $nav^n=+1$, and repelling if $nav^n=-1$.
+Let $f(z)=z+az^{n+1}+O(z^{n+2})$. A vector $v\in\mathbb C$ is attracting if $nav^n=-1$, and repelling if $nav^n=+1$.
 \end{definition}
-% Author check: these signs are reversed relative to the subsequent coordinate c=-1/(na) and the orbit asymptotic; retained as written.
 \begin{remark}
 The equation $nav^n=\pm1$ has $2n$ equally spaced solutions. Also $f$ is locally invertible, with $f^{(n+1)}(0)\ne0$, $f'(0)=1$, and $f^{(k)}(0)=0$ for $1<k\le n$. Thus
 \[
-(f^{-1})''(0)=-\frac{f''(0)}{(f'(0))^3}=-a\quad(n=1),
+(f^{-1})''(0)=-\frac{f''(0)}{(f'(0))^3}=-2a\quad(n=1),
 \]
 and
 \[
 (f^{-1})'''(0)=\frac{3(f''(0))^2-f'(0)f'''(0)}{(f'(0))^5}
-=-f'''(0)=-a\quad(n=2).
+=-f'''(0)=-6a\quad(n=2).
 \]
 Inductively, $-f^{(n+1)}(0)=(f^{-1})^{(n+1)}(0)$. Thus attracting and repelling vectors exchange roles for $f^{-1}$.
 \end{remark}
-% Author check: the source identifies f^(n+1)(0) with a, omitting the factorial in these examples.
 The next theorem explains why these vectors have their names, and shows that all maps with a parabolic point behave somewhat like $z+z^3$.
 \setcounter{theorem}{16}\begin{theorem}\label{cd3:asymptotic}
 If an orbit $\{z_k\}_k$ of $z_0$ tends to $0$ and $z_k\ne0$ for every $k$, then $z_k\sim v_j/k^{1/n}$ as $k\to\infty$ for some attracting vector $v_j$. The analogous assertion holds for orbits converging to $0$ under $f^{-1}$.
 \end{theorem}
 % Source page 3
 \begin{proof}
-We conjugate the dynamics to a translation on a slit plane. First let us state explicitly what we expect. Set $v_j=e^{\pi ij/n}v_0$: $v_j$ is attracting if $2\nmid j$, and repelling if $2\mid j$.
+We conjugate the dynamics to a translation on a slit plane. First let us state explicitly what we expect. Choose a repelling vector $v_0$ and set $v_j=e^{\pi ij/n}v_0$: $v_j$ is attracting if $2\nmid j$, and repelling if $2\mid j$.
 \begin{figure}[H]\centering
 \includegraphics[width=.58\textwidth]{cd3-fig-02.pdf}
 \FigureTag{CD3.2}{fig:cd3-02}
 \end{figure}
-As illustrated, we expect points on these rays to map into one another as indicated by the arrows. The orbit must eventually enter a domain in
+As illustrated, we expect points on these rays to map into one another as indicated by the arrows. The orbit must eventually enter one of the domains
 \[
 \Delta_j=\{re^{i\theta}v_j:r>0,\ |\theta|<\pi/n\}
 \]
-must contain the orbit eventually; it must also approach $0$ asymptotically in direction $v_j$ ($2\nmid j$). We obtain the necessary bounds by conjugating the iterates to another hyperbolic surface and applying Pick's theorem. Define the biholomorphism
+and it must also approach $0$ asymptotically in an attracting direction $v_j$. We obtain the necessary bounds by conjugating the iterates to another hyperbolic surface and applying Pick's theorem. Define the biholomorphism
 \[
 \varphi\colon\Delta_j\longrightarrow\mathbb C\setminus\mathbb R_{(-1)^j},
 \qquad\varphi(z)=\frac c{z^n},\quad c=-\frac1{na}.
@@ -68,8 +66,7 @@ Writing the same calculation with big-$O$ notation yields
 F_j(w)=w+1+O\!\left(\frac1{\sqrt[n]{|w|}}\right).
 \tag{*}\label{cd3:translation-estimate}
 \]
-This follows by writing $f(z)=z(1+az^n+O(z^n))$ and following the same steps. This estimate will be used below.
-% Author check: source writes O(z^n) here, rather than the stronger remainder needed for the displayed estimate.
+This follows by writing $f(z)=z(1+az^n+O(z^{n+1}))$ and following the same steps. This estimate will be used below.
 % Source page 5
 For $|w|>R$, with $R$ large, $|F_j(w)-w-1|<1/2$. Thus $\Re F_j(w)>\Re w+1/2$.
 \begin{figure}[H]\centering
@@ -87,9 +84,8 @@ Since $F_j(w)-w=1+o(1)$, putting $w_k=\varphi(z_k)$ gives $w_{k+1}-w_k\to1$, and
 % Source page 6
 Thus $w_k/k\to1$, so $w_k\sim k$. Since $1/w_k=-naz_k^n$, we get $naz_k^n\sim-1/k$. As $nav_j^n=-1$, this gives $z_k^n\sim v_j^n/k$.
 
-Write $z_k=r_ke^{i\alpha_k}$ and $v_j=re^{i\alpha}$. Then $z_k^n=r_k^ne^{ni\alpha_k}$ and $v_j^n/k=(r^n/k)e^{ni\alpha}$. The modulus of their ratio tends to one, so $r_k\sim r/k^{1/n}$. Also $e^{n(\alpha_k-\alpha)i}\to1$, so eventually $\alpha_k-\alpha\in(2\pi/n)\mathbb Z$. But eventually $z_k\in P_j(R)\subset\Delta_j$, and $|\alpha_k-\alpha|<\pi/n$, forcing $\alpha_k-\alpha\to0$. Therefore $z_k\sim v_j/k^{1/n}$.
+Write $z_k=r_ke^{i\alpha_k}$ and $v_j=re^{i\alpha}$. Then $z_k^n=r_k^ne^{ni\alpha_k}$ and $v_j^n/k=(r^n/k)e^{ni\alpha}$. The modulus of their ratio tends to one, so $r_k\sim r/k^{1/n}$. Also $e^{n(\alpha_k-\alpha)i}\to1$. Since eventually $z_k\in P_j(R)\subset\Delta_j$ and $|\alpha_k-\alpha|<\pi/n$, it follows that $\alpha_k-\alpha\to0$. Therefore $z_k\sim v_j/k^{1/n}$.
 \end{proof}
-% Author check: source replaces convergence to a root of unity by eventual exact membership in (2pi/n)Z.
 Having seen this, let us identify the basin of attraction for $\widehat p$.
 \setcounter{definition}{11}\begin{definition}
 The set $\mathcal A_j(\widehat p)$ consists of all $p_0$ whose orbit $p_0\mapsto p_1\mapsto p_2\mapsto\cdots$ under $f$ tends to $\widehat p$ along $v_j$. Since $P_j(R)\subset\mathcal A_j(\widehat p)$, there is a unique connected component $\mathcal A_j^0$ with $f(\mathcal A_j^0)\subseteq\mathcal A_j^0$. This is called the immediate basin.
@@ -110,17 +106,33 @@ Clearly $P$ contains exactly one $v_j$; these sets therefore look like petals ar
 There are petals $\{P_j\}_{j=0}^{2n-1}$, each attracting or repelling, such that $\{\widehat p\}\cup P_0\cup\cdots\cup P_{2n-1}$ is an open neighbourhood of $\widehat p$. The sets $P_j$ and $P_j\cap P_{j\pm1}$ are simply connected regions, except when $n=1$.
 \end{theorem}
 \begin{proof}
-We cannot simply take $P_j(R)$. Although $\{\widehat p\}\cup\bigcup_{j=0}^{2n-1}P_j(R)$ forms a neighbourhood of $\widehat p$, it does not quite form a flower, so we modify $\mathbb H_R$ slightly. Let
+We cannot simply take $P_j(R)$. The construction above gives the correct dynamics inside each sector, but these sets may leave gaps between adjacent attracting and repelling directions. We therefore modify $\mathbb H_R$ slightly. Let
 \[
 W_R=\{u+iv:u+|v|>2R\},\qquad\mathbb H_{2R}\subset W_R.
 \]
-Then $P_j=\psi_j(W_R)\subset\Delta_j$ is an attracting petal for odd $j$ and large $R$. Similarly, $P_j=\psi_j(-W_R)$ is a repelling petal.
+For $R$ sufficiently large, the estimate $F_j(w)=w+1+o(1)$ gives
+\[
+F_j(W_R)\subset W_R,
+\]
+and the corresponding estimate for $F_j^{-1}(w)=w-1+o(1)$ gives
+\[
+F_j^{-1}(-W_R)\subset -W_R.
+\]
+Then
+\[
+P_j=\psi_j(W_R)\subset\Delta_j
+\]
+is an attracting petal for odd $j$, while
+\[
+P_j=\psi_j(-W_R)\subset\Delta_j
+\]
+is a repelling petal for even $j$.
 \begin{figure}[H]\centering
 \includegraphics[width=.74\textwidth]{cd3-fig-04.pdf}
 \FigureTag{CD3.4}{fig:cd3-04}
 \end{figure}
-% Source page 9
-Now note the following correspondence, since $\varphi$ preserves orientation because it is locally conformal around $\widehat p$.
+
+Now note the following correspondence, since $\varphi$ preserves orientation because it is locally conformal away from $\widehat p$.
 \begin{figure}[H]\centering
 \includegraphics[width=.64\textwidth]{cd3-fig-05.pdf}
 \FigureTag{CD3.5}{fig:cd3-05}
@@ -128,12 +140,23 @@ Now note the following correspondence, since $\varphi$ preserves orientation bec
 Thus
 \[
 \varphi(\Delta_j\cap\Delta_{j+1})=
-\begin{cases}\text{upper half-plane},&2\mid j,\\
+\begin{cases}
+\text{upper half-plane},&2\mid j,\\
 \text{lower half-plane},&2\nmid j.
 \end{cases}
 \]
-Also $\psi_j(P_j\cap P_{j+1})=V_R^+$ or $V_R^-$, where $V_R^\pm$ are components of $W_R$. Hence $P_j$ and $P_j\cap P_{j\pm1}$ are simply connected. Clearly $\{\widehat p\}\cup\bigcup_{j=0}^{2n-1}P_j$ contains a ball around $\widehat p$, since each $P_j$ contains $|z|<\varepsilon_j$ for sufficiently small $\varepsilon_j$. This is the flower theorem, due to Leau and Fatou.
-% Author check: source applies psi_j to petal intersections and calls V_R^+- components of W_R; it also says each petal contains a disc. These statements are retained, not silently repaired.
+The set $W_R\cap(-W_R)$ has exactly two simply connected components,
+\[
+V_R^+=\{u+iv:v>2R+|u|\},\qquad
+V_R^-=\{u+iv:v<-2R-|u|\}.
+\]
+According to the parity of $j$, the map $\varphi$ carries $P_j\cap P_{j+1}$ onto $V_R^+$ or $V_R^-$. Hence $P_j$ and $P_j\cap P_{j\pm1}$ are simply connected, with the stated exception when $n=1$.
+
+Finally, $W_R\cup(-W_R)$ contains $\{w:|w|>2R\}$. Since $\varphi(z)=c/z^n$, the union of the inverse images of these two sets contains a punctured disc about $\widehat p$. Therefore
+\[
+\{\widehat p\}\cup\bigcup_{j=0}^{2n-1}P_j
+\]
+contains a neighbourhood of $\widehat p$. This is the flower theorem, due to Leau and Fatou.
 \begin{figure}[H]\centering
 \includegraphics[width=.60\textwidth]{cd3-fig-06.pdf}
 \FigureTag{CD3.6}{fig:cd3-06}
@@ -148,85 +171,65 @@ For any petal $P$, there is a conformal embedding $\alpha\colon P\to\mathbb C$, 
 \FigureTag{CD3.7}{fig:cd3-07}
 \end{figure}
 \end{theorem}
-Before proving the theorem, let us make a few observations. Recall that $\Re F_j(w)>\Re w+1/2$ and
-$|F_j(w+1)-w-1|=O(1/\sqrt[n]{|w|})$.
-% Author check: the source writes F_j(w+1) in this recalled estimate, unlike (*).
-\begin{observation}[1]
-For $\widehat w\in\mathbb H_R$, the maps $\beta_k(w)=F_j^{\circ k}(w)-F_j^{\circ k}(\widehat w)$ converge locally uniformly to a biholomorphic map.
-\end{observation}
-% Source page 11
-By Cauchy's estimate, $|F'(w)-1|<C/S^{1+\varepsilon}$ when $|w|\ge2S\ge2R$. Given $w',w''\in\mathbb H_{2S}$,
+\begin{proof}
+We prove the assertion for an attracting petal; the repelling case follows by applying the same argument to $f^{-1}$. Recall that on $\mathbb H_R$,
 \[
-\frac1{w''-w'}\int_{\gamma_{w'\to w''}}(F'(w)-1)\,dw
-=\frac{F(w'')-F(w')}{w''-w'}-1,
+F_j(w)=w+1+O\!\left(|w|^{-1/n}\right).
 \]
-so the modulus of the right-hand side is at most $C/S^{1+\varepsilon}$. Since $\Re F^{\circ k}(w)>k/2$, eventually
+After increasing $R$, Cauchy's estimate on a slightly smaller region gives
 \[
-\left|\frac{\beta_k(w)}{\beta_{k-1}(w)}-1\right|
-\le\frac{C'}{k^{1+\varepsilon}}\qquad(k\ge R).
-\tag{1}\label{cd3:ratio-bound}
+F_j'(w)=1+O\!\left(|w|^{-1-1/n}\right).
 \]
-Consequently
+Fix $\widehat w\in\mathbb H_R$ and set
 \[
-1-\frac{C'}{k^{1+\varepsilon}}
-\le\left|\frac{\beta_k(w)}{\beta_{k-1}(w)}\right|
-\le1+\frac{C'}{k^{1+\varepsilon}}.
+\beta_k(w)=F_j^{\circ k}(w)-F_j^{\circ k}(\widehat w).
 \]
-The series $\sum_k C'/k^{1+\varepsilon}$ converges, so the product $\prod_k(1+C'/k^{1+\varepsilon})$ converges, say to $P$. Therefore
+Since $\Re F_j^{\circ k}(w)>\Re w+k/2$, the mean-value integral along the segment joining $F_j^{\circ k}(\widehat w)$ to $F_j^{\circ k}(w)$ gives, locally uniformly in $w$,
 \[
-\prod_{i=1}^{k}\left|\frac{\beta_i(w)}{\beta_{i-1}(w)}\right|\le P,
-\qquad |\beta_k(w)|\le|\beta_0(w)|P=|w-\widehat w|P.
-\tag{2}\label{cd3:product-bound}
+\left|\frac{\beta_{k+1}(w)}{\beta_k(w)}-1\right|
+\le \frac{C}{k^{1+1/n}}
 \]
-% Source page 12
-Multiplying \eqref{cd3:ratio-bound} and \eqref{cd3:product-bound}, with $k-1$ in the latter, gives
-\[
-|\beta_k(w)-\beta_{k-1}(w)|\le\frac{PC'|w-\widehat w|}{k^{1+\varepsilon}}.
-\]
-Thus $\beta_0(w)+\sum_{k=1}^{\infty}(\beta_k(w)-\beta_{k-1}(w))$ is absolutely convergent, because the corresponding series of bounds does. We obtain $\beta_k(w)\to\beta(w)$ and $\beta_k(w)/\beta_0(w)\to\beta(w)/\beta_0(w)$, so $\beta$ is holomorphic.
+whenever $w\ne\widehat w$ and $k$ is sufficiently large. The series $\sum_k k^{-1-1/n}$ converges, so the corresponding infinite product converges locally uniformly to a nonzero limit. Hence $\beta_k$ converges locally uniformly to a holomorphic map $\beta$.
 
-To see univalence, choose $k_0$ such that $1-C'/k_0^{1+\varepsilon}>0$. Then $|\beta_k(w)/\beta_{k-1}(w)|>0$, so $F_j^{\circ k}$ is eventually univalent: the positive lower bound is independent of $w,\widehat w$ for every $k\ge k_0$. Hence $\beta$ is univalent.
-\begin{observation}[2]
-$\beta(F_j(w))=\beta(w)+1$.
-\end{observation}
-Fix $k$. We have $\beta_k(w)\sim F_j^{\circ k}(w)$ and $|F_j(w+1)-(w+1)|=O(1/\sqrt[n]{|w|})$.
-% Source page 13
-Thus $F_j^{\circ k}(w)\sim w+k\sim w$, and
+The same estimate applied to any two distinct points $w,w'\in\mathbb H_R$ shows that
+\[
+\lim_{k\to\infty}\bigl(F_j^{\circ k}(w)-F_j^{\circ k}(w')\bigr)\ne0.
+\]
+Thus $\beta$ is univalent. Moreover,
 \begin{align*}
-\lim_{k\to\infty}\beta_k(F_j(w))
-&=\lim_{k\to\infty}\beta_{k+1}(w)
-+\lim_{k\to\infty}\bigl(F_j^{\circ(k+1)}(w)-F_j^{\circ k}(w)\bigr),\\
-\beta(F_j(w))&=\beta(w)+o(w+k+1-w+k)=\beta(w)+1.
+\beta(F_j(w))
+&=\lim_{k\to\infty}\bigl(F_j^{\circ(k+1)}(w)-F_j^{\circ k}(\widehat w)\bigr)\\
+&=\beta(w)+\lim_{k\to\infty}
+\bigl(F_j^{\circ(k+1)}(\widehat w)-F_j^{\circ k}(\widehat w)\bigr)\\
+&=\beta(w)+1.
 \end{align*}
-% Author check: source's final little-o expression and base-point argument are retained as written.
-The map $\beta|_{\mathbb H_{2R}}$ is univalent and satisfies this equation. Also, for sufficiently large $k$, $F^{\circ k}(\mathbb H_R)\subseteq\mathbb H_{2R}$. Extending in this way makes $\beta$ univalent on $\mathbb H_R$.
-\begin{observation}[3]
-If $\beta(\mathbb H_R)=U$, then $\{U+n\}_{n\in\mathbb Z}$ covers $\mathbb C$:
-$\bigcup_{n\in\mathbb Z}(U+n)=\mathbb C$.
-\end{observation}
-Since $\beta(w)\sim w$, for sufficiently large $S$ we have $|\beta(w)-w|<|w|/3$ for all $w\in\mathbb H_R$ with $|w|>S$. Given $\overline w_0\in\mathbb C/\mathbb Z$, choose a representative $w_0$ with $|w_0|>2S$ and $\overline{B_{|w_0|/2}(w_0)}\subseteq\mathbb H_R$. For every $w$ in this disc, $S<|w|<3|w_0|/2$, and therefore $|\beta(w)-w|<|w_0|/2$.
-% Source page 14
-On its boundary, $|\beta(w)-w|<|w-w_0|$. Thus $w-w_0$ and $(\beta(w)-w)+(w-w_0)$ have the same number of roots. It follows that $w_0\in\beta(B_{|w_0|/2}(w_0))$, proving $\bigcup_{n\in\mathbb Z}(U+n)=\mathbb C$.
+The estimates also give $\beta(w)/w\to1$ as $|w|\to\infty$ within $\mathbb H_R$. If $U=\beta(\mathbb H_R)$, Rouch\'e's theorem applied on sufficiently large discs contained in $\mathbb H_R$ shows that
+\[
+\bigcup_{m\in\mathbb Z}(U+m)=\mathbb C.
+\]
 
-
-\begin{proof}[Proof of Theorem~\ref{cd3:linearisation}]
-\emph{Existence.} For any petal $P$ and $z\in P$, some iterate enters $P_j(R)$. We have the following commutative diagram.
+For $P=P_j(R)$, define
+\[
+\alpha(z)=\beta(\varphi(z)).
+\]
+For any $z$ in the full petal $P$, choose $k$ so that $f^{\circ k}(z)\in P_j(R)$ and define
+\[
+\alpha(z)=\alpha(f^{\circ k}(z))-k.
+\]
+This is independent of $k$, and it gives a conformal embedding satisfying
+\[
+\alpha(f(z))=\alpha(z)+1.
+\]
 \begin{figure}[H]\centering
 \includegraphics[width=.65\textwidth]{cd3-fig-08.pdf}
 \FigureTag{CD3.8}{fig:cd3-08}
 \end{figure}
-For $P=P_j(R)$, define $\alpha(z)=\beta(\varphi(z))$. For any $z\in P$, choose $k_0$ so that $f^{\circ k}(z)\in P_j(R)$ for all $k\ge k_0$, and define $\alpha(z)=\alpha(f^{\circ k}(z))-k$.
-% Source page 15
-This ensures that the following diagram also commutes.
 \begin{figure}[H]\centering
 \includegraphics[width=.34\textwidth]{cd3-fig-09.pdf}
 \FigureTag{CD3.9}{fig:cd3-09}
 \end{figure}
-\emph{Uniqueness.} Let $\alpha,\alpha'$ be two Fatou coordinates. Then $g=\alpha'\circ\alpha^{-1}$ commutes with $z\mapsto z+1$, so $g(w+1)=g(w)+1$. If $\alpha\colon P\to U$ and $\alpha'\colon P\to U'$ are biholomorphisms, then $g\colon U\to U'$ is a biholomorphism. Since the translates $U+n$ sweep out $\mathbb C$, extend $g$ to an entire function by integer translations, obtaining $\widehat g\colon\mathbb C\to U'+\mathbb Z$.
 
-Its image misses at most one point. If $U'+\mathbb Z=\mathbb C\setminus\{0\}$, without loss of generality, then $1\in U'+\mathbb Z$, so some integer $n$ belongs to $U'$. Hence $0\in U'-n\subseteq U'+\mathbb Z$, a contradiction. Thus $\widehat g(\mathbb C)=\mathbb C$ and $\widehat g\in\operatorname{Aut}(\mathbb C)$. By the identity theorem, $\widehat g(w+1)=\widehat g(w)+1$.
-% Source page 16
-Therefore $\alpha$ is unique up to translation.
+For uniqueness, let $\alpha,\alpha'$ be two such Fatou coordinates, with images $U,U'$. Then $g=\alpha'\circ\alpha^{-1}$ satisfies $g(w+1)=g(w)+1$ whenever both sides are defined. Since the integer translates of $U$ cover $\mathbb C$, this relation extends $g$ to an injective entire map $\widehat g\colon\mathbb C\to\mathbb C$. Every injective entire map is affine, and the identity $\widehat g(w+1)=\widehat g(w)+1$ forces $\widehat g(w)=w+b$. Therefore $\alpha'=\alpha+b$.
 \end{proof}
 \begin{remark}
 Critical points again play a crucial role; we will not elaborate on this. If $\alpha$ is the Fatou coordinate for the petal wrapping $v_j$, it extends to $\mathcal A_j(\widehat p)$, and $\alpha^{-1}$ extends to some $\mathbb H_R$ with $R$ optimal. This is analogous to the Koenigs-coordinate situation. For every $\mathcal A_j(\widehat p)$ there is a maximal petal $P_{\max}\subseteq\mathcal A_j(\widehat p)$ to which $\alpha$ extends biholomorphically, and $f$ has a critical point on $\partial P_{\max}$ that prevents further univalent extension.

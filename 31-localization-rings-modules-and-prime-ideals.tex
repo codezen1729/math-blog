@@ -8,10 +8,9 @@
 \subsection{Motivations for localization}
 Recall the construction of $\Q$ from $\Z$:
 \[
-\Q:=\{(x,y)\in\Z\times\Z\}/{\sim},\qquad
+\Q:=\{(x,y)\in\Z\times(\Z\setminus\{0\})\}/{\sim},\qquad
 (x_1,y_1)\sim(x_2,y_2)\ \Longleftrightarrow\ x_1y_2-y_1x_2=0.
 \]
-% Author check: the source does not exclude zero denominators in this recollection.
 We want to generalize this to arbitrary commutative rings. If $X$ is a variety and $x\in X$, then a neighbourhood $U$ of $x$ corresponds to a localization of the coordinate ring $A(X)$. Thus localization is the algebraic analogue of examining a neighbourhood of a point.
 \setcounter{definition}{7}\begin{definition}
 Let $S\subseteq A$ be a multiplicatively closed set in a commutative ring. Consider the equivalence relation on $A\times S$ given by
@@ -35,15 +34,13 @@ Set $S^{-1}A:=(A\times S)/{\sim}$, the \emph{localization of $A$ by $S$}.
 \]
 For every $g$, there is a unique $h$ as drawn below; pointwise, $h(a/s):=g(a)g(s)^{-1}$.
 \begin{figure}[H]\centering
-\includegraphics[width=.49\textwidth]{ca2-fig-01.pdf}
-\FigureTag{CA2.1}{fig:ca-2-01}
+\includegraphics[width=.55\textwidth]{ca2-fig-01.pdf}
 \end{figure}
 \setcounter{enumi}{3}\item For the map $f:A\to S^{-1}A$, one has:
 \begin{itemize}
 \item If $s\in S$, then $f(s)$ is a unit in $S^{-1}A$.
 \item $f(a)=0$ implies $as=0$ for some $s\in S$.
-\item Every element of $S^{-1}A$ is of the form $f(a)+f(s)^{-1}$.
-% Author check: the plus sign is present in the handwritten source.
+\item Every element of $S^{-1}A$ is of the form $f(a)f(s)^{-1}$.
 \end{itemize}
 These properties determine the initial object in (iii) uniquely up to isomorphism.
 \end{enumerate}
@@ -71,7 +68,7 @@ A property $P$ of an $A$-module $M$ is a \emph{local property} if
 \]
 \setcounter{example}{5}\begin{example}[Local properties]
 \begin{enumerate}[label=(\roman*)]
-\setcounter{enumi}{0}\item $M=0\Longleftrightarrow M_{\pp}=0\Longleftrightarrow M_{\mm}=0$ for every maximal $\mm$. To see this, let $x\in M$, $x\ne0$, and $\aa=\Ann(x)$, say $\aa\subseteq\mm$. Then $x/1\in M_{\mm}$ and $x/1=0$, so $x$ is killed by some element in $A\setminus\mm$.
+\setcounter{enumi}{0}\item $M=0\Longleftrightarrow M_{\pp}=0\Longleftrightarrow M_{\mm}=0$ for every maximal $\mm$. To see this, let $x\in M$, $x\ne0$, and $\aa=\Ann(x)$, say $\aa\subseteq\mm$. Then $x/1\ne0$ in $M_{\mm}$: otherwise, $x$ would be killed by some element in $A\setminus\mm$, contradicting $\Ann(x)\subseteq\mm$.
 \setcounter{enumi}{1}\item A map $\varphi:M\to N$ is injective if and only if every localized map $\varphi_{\pp}:M_{\pp}\to N_{\pp}$ is injective; equivalently, it is enough to check every maximal ideal $\mm$. Indeed, $\ker\varphi=0\Longleftrightarrow\ker\varphi_{\pp}=0\Longleftrightarrow\ker\varphi_{\mm}=0$.
 \setcounter{enumi}{2}\item Surjectivity of $\varphi:M\to N$ is also a local property.
 \end{enumerate}

@@ -25,8 +25,8 @@ Here is another example.
 \paragraph{Leningrad Mathematical Olympiad.}
 In triangle $ABC$, $\angle B=60^\circ$, $AD\perp BC$, and $CE\perp AB$.
 Prove that the circumcentre of $ABC$ lies on the common bisector of $\angle AOE$ and $\angle COD$.
+Here $O=AD\cap CE$.
 Begin with the following figure.
-% Author check: O is defined by the diagram as the intersection of the two altitudes.
 % Source page 21 - left
 Let $\omega$ be the circumcircle of triangle $AOC$, meeting the common bisector $\ell$ at $X$.
 Then $AOXC$ is cyclic. Drop the perpendicular from $X$ to $AC$ at $M$.
@@ -38,10 +38,18 @@ We have
 \angle XOC&=\angle XAM=30^\circ=\pi/2-\angle AXM,
 \quad\text{so }\angle AXM=60^\circ.
 \end{align*}
-Thus $\angle MXC=60^\circ=\angle AXM$, giving $\triangle AXM\cong\triangle BXM$ and $MA=MC$.
+Thus $\angle MXC=60^\circ=\angle AXM$, giving $\triangle AXM\cong\triangle CXM$ and $MA=MC$.
 Therefore $XM$ is a perpendicular bisector.
 Since $\angle AXC=120^\circ=2\angle ABC$, $X$ is the circumcentre, so the circumcentre lies on $\ell$.
-% Author check: source has triangle BXM in this congruence; retained although diagram suggests CXM.
+\begin{figure}[H]\centering
+\includegraphics[width=.79\linewidth]{lb1-fig-15.pdf}
+\FigureTag{LB1.15}{fig:lb1-15}
+\end{figure}
+The case $X=O$ is shown separately below.
+\begin{figure}[H]\centering
+\includegraphics[width=.73\linewidth]{lb1-fig-16.pdf}
+\FigureTag{LB1.16}{fig:lb1-16}
+\end{figure}
 
 \paragraph{Average speed.}
 A plane travels from $A$ to $B$ at $160$ mph and returns from $B$ to $A$ at $240$ mph.
@@ -52,16 +60,6 @@ $T_1=L/160$ and $T_2=L/240$.
 The average time is $(T_1+T_2)/2$, while total time is
 $T_1+T_2=L/160+L/240=L/96$.
 Total distance is $2L$, so average speed is $2L/(L/96)=192$ mph.
-% Source page 21 - right
-\begin{figure}[H]\centering
-\includegraphics[width=.79\linewidth]{lb1-fig-15.pdf}
-\FigureTag{LB1.15}{fig:lb1-15}
-\end{figure}
-% Source page 22 - left
-\begin{figure}[H]\centering
-\includegraphics[width=.73\linewidth]{lb1-fig-16.pdf}
-\FigureTag{LB1.16}{fig:lb1-16}
-\end{figure}
 
 
 \paragraph{Ramanujan's problem.}
@@ -112,7 +110,6 @@ Now
 =\frac1{l^2}+\frac1{b^2}+\frac1{h^2}
 +2\left(\frac1{lb}+\frac1{bh}+\frac1{hl}\right).\]
 Thus $1/4-1/2=-1/4=1/l^2+1/b^2+1/h^2<0$, a contradiction.
-% Author check: the handwritten arithmetic 1/4-1/2=-1/2 is retained.
 
 \paragraph{1. Proportional angles.}\leavevmode\par
 \begin{figure}[H]\centering
@@ -130,6 +127,16 @@ $1=5$, $2=25$, $3=325$, $4=4325$. Then $5={}?$
 % Source page 54 - left
 \paragraph{Answers.}
 2. If $1=5$, then $5=1$. Q.E.D.!
+\subsection{Mission impossible}
+\paragraph{Compass-only midpoint.}
+Construct the midpoint of a line segment without using a ruler, but only a compass!
+I will not tell you exactly what I did. Go figure it out for yourself!
+\begin{figure}[H]\centering
+\includegraphics[width=.78\linewidth]{lb1-fig-31.pdf}
+\FigureTag{LB1.31}{fig:lb1-31}
+\end{figure}
+\paragraph{Equilateral triangle.}
+Inscribe an equilateral triangle inside an arbitrary triangle $ABC$. Challenge!
 \subsection{Marvellous methods of multiplication: triple M}
 \paragraph{The Egyptian method.}
 Suppose we want to multiply $11\times17$. The method proceeds as follows:
@@ -160,7 +167,6 @@ Thus $2^{\alpha_i}$ appears in the binary expansion of $N$ if and only if $\lflo
 The corresponding double-sequence entry is $2^{\alpha_i}M$.
 Adding all such terms gives $2^{\alpha_1}M+\cdots+2^{\alpha_n}M=N\times M$.
 This proves the method.
-% Author check: the source calls N/2^n odd while retaining a fractional part; floor notation is not included in this proof, unlike the algorithm's initial description.
 \paragraph{Parabolic multiplication.}\leavevmode\par
 \begin{figure}[H]\centering
 \includegraphics[width=.79\linewidth]{lb1-fig-32.pdf}
@@ -184,7 +190,6 @@ If $\theta_n$ is the vertex angle of $T_n$, then
 Hence
 \[\theta_n=60^\circ+\left(-\frac12\right)^{n-1}(\theta_1-60^\circ),\]
 and therefore $\theta_n\to60^\circ$. The triangles approach an equilateral triangle.
-% Author check: the finite sum displayed in the manuscript omits the initial-angle remainder; the proof switches from degrees to radians in the limit. Both are preserved.
 
 \paragraph{Out of the box.}
 Place one of $+,-,\times,\div$ in each blank of $8\ \underline{\hspace{.5cm}}\ 8\ \underline{\hspace{.5cm}}\ 8=6$.

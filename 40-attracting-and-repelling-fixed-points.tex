@@ -24,8 +24,7 @@ A fixed point is \emph{superattracting} if its multiplier $\lambda$ is $0$, geom
 \end{definition}
 We deal with all fixed points except those for which $\lambda\in S^1$. First let us understand the dynamics locally, and then describe the phenomenon governing it.
 \subsection{Geometrically attracting and repelling points}
-For $f\in\Hol(S,S)$, let $\varphi\circ f\circ\varphi^{-1}=\widehat f$ be its coordinate representation in a chart centred at a fixed point. Here $\widehat f'(0)\notin\{0,1\}$. On sufficiently small domains, $\widehat f$ behaves like $\widehat f'(0)z=\lambda z$. If $\lambda<1$, $f$ pulls; if $\lambda>1$, $f$ pushes. More precisely:
-% Author check: the explanatory sentence writes lambda rather than its modulus, and the preceding exclusion writes {0,1}.
+For $f\in\Hol(S,S)$, let $\varphi\circ f\circ\varphi^{-1}=\widehat f$ be its coordinate representation in a chart centred at a fixed point. Here $|\widehat f'(0)|\notin\{0,1\}$. On sufficiently small domains, $\widehat f$ behaves like $\widehat f'(0)z=\lambda z$. If $|\lambda|<1$, $f$ pulls; if $|\lambda|>1$, $f$ pushes. More precisely:
 % Source page 3
 \Needspace{18\baselineskip}
 \setcounter{theorem}{10}\begin{theorem}[Koenigs linearisation]\label{cd2:koenigs}
@@ -40,7 +39,7 @@ If the multiplier satisfies $|\lambda|\notin\{0,1\}$, there is a map $\phi$, uni
 \[
 |f(z)|\le|\lambda z|+C|z|^2\le(|\lambda|+C|z|)|z|\qquad(|z|<r_0).
 \]
-Since $|\lambda|<1$, choosing $|z|$ small enough keeps $|\lambda|+C|z|$ within $\mathbb D$. More precisely, choose $0<r\le r_0$ such that $|\lambda|+Cr<1$, and put $c=|\lambda|+Cr$. Then $|f(z)|\le c|z|$ for every $z\in\mathbb D_r$, so $f(z)\in\mathbb D_r$ and
+Choose $c$ with $|\lambda|<c<\sqrt{|\lambda|}$, and then choose $0<r\le r_0$ so that $|\lambda|+Cr\le c$. Then $|f(z)|\le c|z|$ for every $z\in\mathbb D_r$, so $f(z)\in\mathbb D_r$ and
 $|f^{\circ n}(z)|\le c^n|z|<c^nr\to0$ as $n\to\infty$.
 % Source page 4
 This is precisely the push/pull we were discussing. There is $r<1$ such that $|f(z)|<c|z|$ on $\mathbb D_r$, with $c<1$. Let $\{z_n\}_n$ be the orbit of $z_0\in\mathbb D_r$. All these orbits converge to the origin, since $|z_n|\le rc^n$, and $|z_{n+1}-\lambda z_n|\le C|z_n|^2\le Cr^2c^{2n}$. Set $w_n=z_n/\lambda^n$. Then
@@ -51,7 +50,7 @@ This is precisely the push/pull we were discussing. There is $r<1$ such that $|f
 &\le\frac{Cr^2c^{2n}}{|\lambda|^{n+1}}
 =\frac{Cr^2}{|\lambda|}\left(\frac{c^2}{|\lambda|}\right)^n.
 \end{align*}
-Choose $c$ with $c^2<|\lambda|<c$. The sequence $\{w_n\}_n$ is Cauchy, and its geometric bound is independent of $z_0$. The map $\phi_n(z_0)=f^{\circ n}(z_0)/\lambda^n$ is holomorphic on $\mathbb D_r$, with $\phi_n(f(z_0))=\lambda\phi_{n+1}(z_0)$. Taking $\phi=\lim_{n\to\infty}\phi_n$ gives $\phi\circ f=\lambda\phi$. Also, $\phi_n'(0)=1$, so $\phi'(0)=1$, and $\phi$ is a local conformal isomorphism around $0$.
+The sequence $\{w_n\}_n$ is Cauchy, and its geometric bound is independent of $z_0$. The map $\phi_n(z_0)=f^{\circ n}(z_0)/\lambda^n$ is holomorphic on $\mathbb D_r$, with $\phi_n(f(z_0))=\lambda\phi_{n+1}(z_0)$. Taking $\phi=\lim_{n\to\infty}\phi_n$ gives $\phi\circ f=\lambda\phi$. Also, $\phi_n'(0)=1$, so $\phi'(0)=1$, and $\phi$ is a local conformal isomorphism around $0$.
 
 \emph{Case 2: $|\lambda|>1$.} Since $f'(0)\ne0$, $f$ is locally invertible. Its local inverse has multiplier $0<|1/\lambda|<1$ at $0$.
 % Source page 5
@@ -68,40 +67,61 @@ If $0$ is a superattracting fixed point of $f$, with a zero of order $n$ at $0$,
 \end{theorem}
 % Source page 6
 \begin{proof}
-Locally around $0$, write $f(z)=b_0z^n+b_1z^{n+1}+b_2z^{n+2}+\cdots$. Since $cf(z/c)=b_0z^n/c^{n-1}+\cdots$, choosing $c^{n-1}=b_0$ allows us to assume that the leading coefficient is $1$.
-
-Choose $r$ small enough that $f$ maps $\mathbb D_r$ into itself. The orbit of $z$ has the form
+Locally around $0$, write
 \[
-f^{\circ k}(z)=\left(z^n\left(1+\sum_{j\ge1}b_jz^j\right)\right)^{\circ k}
-=z^{n^k}(1+n^{k-1}b_1z+\cdots).
+f(z)=b_0z^n+b_1z^{n+1}+b_2z^{n+2}+\cdots.
 \]
-Set $\phi_k(z)=z(1+(b_1/n)z+\cdots)$, taking the local root so that
-$(\phi_k(z))^{n^k}=z^{n^k}(1+n^{k-1}b_1z+\cdots)=f^{\circ k}(z)$.
-Direct substitution gives $\phi_k(f(z))=(\phi_{k+1}(z))^n$.
+Since $cf(z/c)=b_0z^n/c^{n-1}+\cdots$, choosing $c^{n-1}=b_0$ allows us to assume that the leading coefficient is $1$.
 
-It remains to prove that $\phi_k$ converges uniformly. Conjugate $f$ and $\phi_k$ by $(z\mapsto e^z)|_{\mathbb H_r}$. Let $\eta(z)=\sum_{j\ge1}b_jz^j$. Then
+Choose $r$ small enough that $f$ maps $\mathbb D_r$ into itself and
 \[
-F(z)=\log f(e^z)=\log\bigl(e^{nz}(1+\eta(z))\bigr)
-=nz+\log(1+\eta(z)),
+f(z)=z^n(1+\eta(z)),\qquad \eta(0)=0,
 \]
-so $|F(z)-nz|=|\log(1+\eta(z))|<\log2<1$ whenever $|\eta(z)|<1/2$.
-% Author check: source uses eta(z), although the preceding definition would give eta(e^z) after the exponential substitution.
-% Source page 7
-Set $\Phi_k(z)=\log\phi_k(e^z)=F^{\circ k}(z)/n^k$. Then
+with $|\eta(z)|<1/2$ on $\mathbb D_r$. Put
 \[
-|\Phi_{k+1}(z)-\Phi_k(z)|
-=\frac{|F^{\circ(k+1)}(z)-nF^{\circ k}(z)|}{n^{k+1}}
+\mathbb H_r=\{Z\in\mathbb C:\Re Z<\log r\}.
+\]
+The exponential map covers $\mathbb D_r\setminus\{0\}$, and $f$ has a lift
+\[
+F(Z)=\log f(e^Z)=nZ+\log(1+\eta(e^Z))
+\]
+on $\mathbb H_r$, where the branch is chosen so that $F(Z)-nZ\to0$ as $\Re Z\to-\infty$. After decreasing $r$ if necessary,
+\[
+|F(Z)-nZ|<1\qquad(Z\in\mathbb H_r).
+\]
+
+Set
+\[
+\Phi_k(Z)=\frac{F^{\circ k}(Z)}{n^k}.
+\]
+Then
+\[
+|\Phi_{k+1}(Z)-\Phi_k(Z)|
+=\frac{|F(F^{\circ k}(Z))-nF^{\circ k}(Z)|}{n^{k+1}}
 <\frac1{n^{k+1}}.
 \]
-This is again a uniform bound. Since $e^z\colon\mathbb H_r\to\mathbb D_r$ is distance-reducing,
+Thus $\{\Phi_k\}_k$ converges locally uniformly to a holomorphic map $\Phi$, and
 \[
-|\phi_{k+1}(z)-\phi_k(z)|
-<|\log\phi_{k+1}(e^z)-\log\phi_k(e^z)|<\frac1{n^{k+1}}.
+\Phi\circ F=n\Phi.
 \]
-Thus $\{\phi_k\}_k$ has a uniform limit $\phi$. Uniqueness again follows because $\phi\circ\psi^{-1}$ commutes with $z\mapsto z^n$.
+Moreover, $F(Z+2\pi i)=F(Z)+2\pi in$, so
+\[
+\Phi_k(Z+2\pi i)=\Phi_k(Z)+2\pi i
+\]
+for every $k$, and the same identity holds for $\Phi$. Consequently
+\[
+\phi(e^Z)=e^{\Phi(Z)}
+\]
+is well-defined on $\mathbb D_r\setminus\{0\}$. Since $\Phi(Z)-Z\to0$ as $\Re Z\to-\infty$, the map extends holomorphically across $0$, with $\phi(0)=0$ and $\phi'(0)=1$. Finally,
+\[
+\phi(f(e^Z))=e^{\Phi(F(Z))}=e^{n\Phi(Z)}=\phi(e^Z)^n.
+\]
+Hence $\phi\circ f=(z\mapsto z^n)\circ\phi$, and $\phi$ is a local conformal isomorphism at $0$.
+
+Uniqueness again follows because $\phi\circ\psi^{-1}$ commutes with $z\mapsto z^n$. Comparing its first nonzero Taylor coefficient beyond the linear term shows that it is multiplication by an $(n-1)$th root of unity.
 \end{proof}
 \begin{remark}
-A crucial fact is that $f(z)\ne0$ for $z\in\mathbb D_r\setminus\{0\}$, so $\log f(e^z)$ makes sense. This is a useful technique for bounding quantities: move the problem to another hyperbolic surface and use the estimates supplied by Pick's theorem.
+A crucial fact is that $f(z)\ne0$ for $z\in\mathbb D_r\setminus\{0\}$, so the lift $\log f(e^Z)$ makes sense. This is a useful technique for bounding quantities: move the problem to another hyperbolic surface and use the estimates supplied by Pick's theorem.
 \end{remark}
 % Source page 8
 How far can these local descriptions be extended? We now pass from local to global linearisation, focusing on rational maps on $\widehat{\mathbb C}$.
@@ -112,15 +132,19 @@ Koenigs' function $\phi$ extends holomorphically to the basin of attraction $\ma
 \FigureTag{CD2.4}{fig:cd2-04}
 \end{figure}
 \begin{proof}
-The formula $\lim_{n\to\infty}f^{\circ n}(z)/\lambda^n$ is valid on $\mathcal A$, since it converges uniformly on compact sets. For every $z\in\mathcal A$, there is a neighbourhood $\overline U\subseteq\mathcal A$ on which $f^{\circ n}$ converges uniformly to $\widehat p$. Thus there is $N$ such that $f^{\circ n}(z)\in U$, the domain of $\phi$, for every $n\ge N$ and $z\in\overline U$. Then
-% Source page 9
+Let $U_0$ be a forward-invariant neighbourhood of $\widehat p$ on which the local Koenigs coordinate $\phi$ is defined and satisfies $\phi\circ f=\lambda\phi$. For every $z\in\mathcal A$, there is a neighbourhood $U$ of $z$ and an integer $N$ such that $f^{\circ N}(U)\subset U_0$. Define
 \[
-\frac{\phi(f^{\circ N}(z))}{\lambda^N}
-=\lim_{n\to\infty}\frac{f^{\circ n}(z)}{\lambda^n}.
+\Phi(w)=\frac{\phi(f^{\circ N}(w))}{\lambda^N}\qquad(w\in U).
 \]
-Indeed, $\phi$ extends to $\mathcal A$.
+If $M\ge N$ also satisfies $f^{\circ M}(U)\subset U_0$, then
+\[
+\frac{\phi(f^{\circ M}(w))}{\lambda^M}
+=\frac{\lambda^{M-N}\phi(f^{\circ N}(w))}{\lambda^M}
+=\frac{\phi(f^{\circ N}(w))}{\lambda^N}.
+\]
+Thus the definition is independent of $N$. The local definitions agree on overlaps and patch to a holomorphic map $\Phi\colon\mathcal A\to\mathbb C$ that extends $\phi$ and satisfies $\Phi\circ f=\lambda\Phi$.
 \end{proof}
-The local inverse $\psi=\phi^{-1}$ of Koenigs' function extends to an entire function when $\widehat p$ is a repelling fixed point.
+The local inverse $\psi=\phi^{-1}$ of Koenigs' function extends to a meromorphic function on $\mathbb{C}$ when $\widehat p$ is a repelling fixed point.
 \begin{figure}[H]\centering
 \includegraphics[width=.36\textwidth]{cd2-fig-05.pdf}
 \FigureTag{CD2.5}{fig:cd2-05}
@@ -151,59 +175,11 @@ Given an attracting fixed point $\widehat p$ of a map $f\colon S\to S$, let $\ma
 There is a maximal $r$ such that $\psi\colon\mathbb D_r\to\mathcal A_0$ is a holomorphic inverse of the Koenigs coordinate $\phi$. The closed disc $\overline{\mathbb D_r}$ and $\psi(\overline{\mathbb D_r})$ are homeomorphic, and $\psi(\partial\mathbb D_r)$ contains a critical point of $f$.
 \end{theorem}
 % Source page 11
-\begin{proof}
-Suppose $\phi^{-1}$ extends biholomorphically to an entire function. We would then have the following commutative diagram, implying that $f|_{\psi(\mathbb C)}$ is injective.
-\begin{figure}[H]\centering
-\includegraphics[width=.38\textwidth]{cd2-fig-06.pdf}
-\FigureTag{CD2.6}{fig:cd2-06}
-\end{figure}
-Since $\deg(f)\ge2$, $J(f)\ne\varnothing$. By Picard's theorem, $|\widehat{\mathbb C}\setminus\psi(\mathbb C)|\le2$, because $\psi$ is entire. But $J(f)$ is either connected or has uncountably many components, so $\widehat{\mathbb C}\setminus\psi(\mathbb C)$ is a single point. By invariance, $f$ is injective on $\widehat{\mathbb C}$, which is impossible when $\deg(f)\ge2$. There is consequently a maximal $r$ such that the following diagram commutes.
-\begin{figure}[H]\centering
-\includegraphics[width=.42\textwidth]{cd2-fig-07.pdf}
-\FigureTag{CD2.7}{fig:cd2-07}
-\end{figure}
-The set $\lambda\overline{\mathbb D_r}$ is a compact subset of $\mathbb D_r$, and the image of $\mathbb D_r$ under multiplication by $\lambda$ lies in $\lambda\overline{\mathbb D_r}$. Thus there is a compact $K\subset U$ with $f(U)\subset K$, and
-$f(\overline U)\subseteq\overline{f(U)}\subseteq K\subset U\subset\mathcal A$.
-% Source page 12
-By invariance, $\overline U\subset\mathcal A$, so $\phi$ is holomorphic on $\overline U$, since it extends to the whole basin. Let $w_0\in\partial\mathbb D_r$ and suppose $\partial U$ contains no critical point of $f$. Then $f$ is locally invertible at each $z_0\in\partial U$. But $\psi(w_0)$ may not yet be well-defined: the curve $t\mapsto\psi(tw_0)$ as $t\to1$ might accumulate at several points.
-\begin{figure}[H]\centering
-\includegraphics[width=.78\textwidth]{cd2-fig-08.pdf}
-\FigureTag{CD2.8}{fig:cd2-08}
-\end{figure}
-Let $z_0\in\partial U$ be an accumulation point of $\psi(tw_0)$ as $t\to1$. Since $f$ has a local inverse there, define, on a neighbourhood $V$ of $w_0$,
-\[
-\psi(w)=f^{-1}(\psi(\lambda w))\qquad(w\in V).
-\]
-Do this at every point. The identity theorem patches the local pieces over the compact set $\partial\mathbb D_r$, extending $\psi$ biholomorphically to a larger disc. That the extension is biholomorphic is again a consequence of the identity theorem.
-\end{proof}
 Thus critical points obstruct biholomorphic extension within $\mathcal A$.
 % Source page 13
 \setcounter{theorem}{13}\begin{theorem}\label{cd2:maximal-bottcher}
-There is a maximal $0<r\le1$ such that the B\"ottcher coordinate $\phi$ has a biholomorphic inverse on $\mathbb D_r$. If $r=1$, then $\mathbb D\cong\mathcal A_0$, and the superattracting point $\widehat p$ is the only critical point in $\mathcal A$. Otherwise there is another critical point in $\mathcal A_0$, on $\partial\psi(\mathbb D_r)$.
+There is a maximal $0<r\le1$ such that the B\"ottcher coordinate $\phi$ has a biholomorphic inverse on $\mathbb D_r$. If $r=1$, then $\mathbb D\cong\mathcal A_0$, and the superattracting point $\widehat p$ is the only critical point in $\mathcal A_0$. Otherwise there is another critical point in $\mathcal A_0$, on $\partial\psi(\mathbb D_r)$.
 \end{theorem}
-% Author check: source says the only critical point in the full basin A, rather than A_0.
-\begin{proof}
-As before, a maximal $r\le1$ exists. For the following diagram to commute, the image of $\mathbb D_r$ under $z\mapsto z^n$, and all its subsequent iterates, must lie in $\mathbb D_r$, since $f^{\circ n}(\mathcal A_0)\subseteq\mathcal A_0$.
-\begin{figure}[H]\centering
-\includegraphics[width=.38\textwidth]{cd2-fig-09.pdf}
-\FigureTag{CD2.9}{fig:cd2-09}
-\end{figure}
-For Koenigs coordinates, $\phi$ already extends over $\mathcal A$, so the identity theorem gives a biholomorphic continuation of its local inverse. We do not have that now, and must make do with the extension of $|\phi|$.
-
-The map $\psi$ has no critical points in $\mathbb D_r$, since $\psi'(w)=0$ implies
-$\psi'(w^n)=(f\circ\psi)'(w)=f'(\psi(w))\psi'(w)=0$.
-Thus $w^n$, and all $w^{n^k}$, would be critical points, which is impossible by the identity theorem. Hence $\psi$ is locally injective (biholomorphic).
-% Author check: source chain-rule formula omits the factor n w^{n-1}; retained.
-
-The set $\{(w_1,w_2)\in\mathbb D_r\times\mathbb D_r:\psi(w_1)=\psi(w_2)\}$ is closed. Thus choose $|w_1|=|w_2|$ minimal with $\psi(w_1)=\psi(w_2)$.
-% Source page 14 Since $|\phi|$ extends to $\mathcal A$, we have $|\phi(\psi(w))|=|w|$ for all $w\in\mathbb D_\varepsilon$, the domain of biholomorphy. By the identity theorem, $|\phi(\psi(w))|=|w|$ for every $w\in\mathbb D_r$. Consequently $\psi(w_1)=\psi(w_2)$ implies $|w_1|=|w_2|$.
-
-Let $w_1'\in B_\varepsilon(w_1)$. The set $\psi^{-1}(\psi(B_\varepsilon(w_1)))$ contains $w_2$, so $\psi(B_\varepsilon(w_1))\cap\psi(B_\varepsilon(w_2))\ne\varnothing$. There are therefore $w_1',w_2'$ with $|w_1'|<|w_1|$ and $\psi(w_1')=\psi(w_2')$, a contradiction. Thus $\psi$ is injective, hence biholomorphic onto $\psi(\mathbb D_r)$.
-
-If $r=1$ and $\psi(\mathbb D)\subsetneq\mathcal A_0$, take $z_0\in\partial U\cap\mathcal A_0$. Approximate $z_0$ by $\psi(w_j)$. Then $|\phi(\psi(w_j))|=|w_j|\to1$, so $|\phi(z_0)|=1$, and $z_0$ does not tend to $0$, contradicting $z_0\in\mathcal A_0$.
-
-If $r<1$, just as before, a critical point on the boundary prevents extension of $\psi$ beyond its maximal disc $\mathbb D_r$.
-\end{proof}
 \begin{remark}
 We defer the homeomorphism part to \BlogPost{parabolic-fixed-points-and-the-flower-theorem}{the next post}, where we explore topological properties, including continuous extension to $\partial\mathbb D_r$ of the inverses of B\"ottcher and Koenigs coordinates, and much more.
 \end{remark}
@@ -213,10 +189,7 @@ We defer the homeomorphism part to \BlogPost{parabolic-fixed-points-and-the-flow
 There are finitely many attracting periodic orbits.
 \end{theorem}
 \begin{proof}
-For fixed points this follows because all immediate basins contain critical points, and a rational map has finitely many critical points. Given an attracting orbit $z_0\mapsto z_1\mapsto\cdots\mapsto z_0$ in $n$ steps, consider $f^{\circ n}$.
-\end{proof}
-\begin{proof}[Alternative proof]
-Let $\widehat p\in O$ be an attracting fixed point, where $O$ is its immediate basin. If $O$ has no critical value of $f$, then there is a neighbourhood $U$ of $\widehat p$ and, for every $k\ge1$, a local inverse $g_k\colon U\to\widehat{\mathbb C}$ of $f^{\circ k}$. The family $\{g_k\}_k$ is normal, but $g_k'(\widehat p)$ is unbounded, since it is $\lambda^k$ with $\lambda>1$.
+For every attracting periodic orbit, the union of its immediate-basin components contains a critical point. Distinct attracting cycles have disjoint immediate basins, while a rational map has only finitely many critical points.
 \end{proof}
 Critical points therefore bound the number of attracting periodic orbits. Let us try to extend this theorem to noncompact Riemann surfaces and nonrational maps.
 \setcounter{definition}{8}\begin{definition}

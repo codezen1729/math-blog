@@ -26,12 +26,12 @@ This suggests using Lagrange's identity. Set $a=m$, $b=n$, $c=m^2-n^2$, and $d=m
 Then $m^6+n^6=(m^3-2mn^2)^2+(n^3-2nm^2)^2$.
 
 \setcounter{theorem}{47}\begin{lemma}[A prime in one denominator]
-If $\sum_i a_i/b_i=N/D$, $p\mid b_k$, $p\nmid a_i$ for every $i$, and $p\nmid b_i$ for $i\ne k$, then $p\mid D$ and $p\nmid N$.
+If $\sum_i a_i/b_i=N/D$ is in lowest terms and exactly one denominator $b_k$ has maximal positive $p$-adic valuation, with $p\nmid a_k$, then $p\mid D$ and $p\nmid N$.
 \end{lemma}
 Prove that $1+1/2+1/3+\cdots+1/n$ is never an integer for $n>1$.
-Let $2^k$ be the maximum power of $2$ dividing $n$.
-Write $\sum_{k=1}^n1/k=N/D$ in lowest terms. The argument aims to show that $N$ is odd and $D$ is even.
-% Author check: source selects the maximum power dividing n, not largest power <=n; odd/even does not alone imply coprimality.
+Let $2^r$ be the largest power of $2$ not exceeding $n$, and let $L=\operatorname{lcm}(1,2,\ldots,n)$.
+In $\sum_{k=1}^n L/k$, the term $L/2^r$ is odd and every other term is even.
+Thus the numerator is odd before cancellation while $L$ is even, so the reduced denominator is even.
 
 % Source page 23 - left
 \setcounter{theorem}{48}\begin{lemma}[Products of perfect powers]
@@ -49,27 +49,10 @@ a contradiction.
 $x^n+y^n=z^n$ has no solution for $n>2$.
 \end{lemma}
 Fermat's last theorem shortens the following argument.
-If $x,y,z$ are natural numbers and $n>1$, with $x^n+y^n=z^n$, show that $\min(x,y,z)>n$.
+If $x,y,z$ are positive natural numbers and $n>1$, with $x^n+y^n=z^n$, show that $\min(x,y,z)>n$.
 Fermat's last theorem gives $n=2$, since $n>1$.
-Thus $x^2+y^2=z^2$, and one can finish the proof with ease.
-% Author check: domain restrictions for FLT are supplied only in the following application, as in source.
-
-\emph{Experimentation, observation, and insight together can work wonders.}
-Given
-\[
-\overline{abc}_{10}+\overline{acb}_{10}+\overline{bac}_{10}
-+\overline{bca}_{10}+\overline{cab}_{10}+\overline{cba}_{10}=3194,
-\]
-find $\overline{abc}_{10}$.
-The following calculation gives a quick route to the answer.
-Let $\overline{abc}_{10}=100a+10b+c$. Then
-$3194=122a+212b+221c=f(a,b,c)$.
-% Source page 24 - left
-Guess: $f(7,6,8)=3894$. This exceeds $3194$ by $700$.
-Since $f(4,1,0)=700$, we obtain
-$f(7-4,6-1,8-0)=f(3,5,8)=3194$.
-Thus $\overline{abc}=358$.
-% Author check: the coefficients122,212,221 do not match the displayed sum of all six permutations; retained.
+Thus $x^2+y^2=z^2$. If, for example, $x\leq2$, then
+$(z-y)(z+y)=x^2\leq4$, which has no solution with $y>0$; the same argument applies to $y$, while $z>x,y$.
 
 \subsection{Ramanujan's ingenious idea}
 \setcounter{theorem}{53}\begin{lemma}[Adjusting a sum with ones]
@@ -83,18 +66,6 @@ For example, $2^2\cdot6^6=3^3\cdot3^3\cdot4^4$ becomes
 $1^1\cdot1^1\cdot2^2\cdot6^6=3^3\cdot3^3\cdot4^4$,
 and $1+1+2+6=3+3+4$.
 \end{lemma}
-\paragraph{Application: APMO (2014).}
-For a positive integer $m$, let $S(m)$ and $P(m)$ denote its digit sum and digit product.
-Show that, for each positive $n$, there are natural numbers $a_1,\ldots,a_n$ such that
-\[
-S(a_1)<S(a_2)<\cdots<S(a_n),\qquad S(a_i)=P(a_{i+1})\quad(1\leq i\leq n),
-\]
-where $a_{n+1}=a_1$.
-After some analysis, choose the sequence
-$(a_n)=(11,\allowbreak211,\allowbreak221111,\allowbreak22211111111,\allowbreak\ldots)$.
-The emerging pattern gives an almost magical construction.
-% Author check: source gives the displayed sequence without verifying the cyclic final condition.
-
 \setcounter{theorem}{55}\begin{lemma}[Subtract the two sides]
 To show $A(x)=B(x)$, define $f(x)=A(x)-B(x)$ and try to prove $f(x)=0$ everywhere.
 \end{lemma}
@@ -112,20 +83,22 @@ Since $\lfloor x+k\rfloor=\lfloor x\rfloor+k$ for integer $k$, we get $f(x+1/n)=
 Thus $f$ has period $1/n$. For $0\leq x\leq1/n$, $f(x)=0$; therefore it vanishes everywhere, proving the identity.
 
 \setcounter{theorem}{63}\begin{lemma}[Floor and fractional part]
-$\lfloor x\rfloor=x-\{x\}$, where $\{x\}\in[0,1]$.
-Thus $0\leq\{x\}\leq1$ and $x-1\leq\lfloor x\rfloor\leq x$.
+$\lfloor x\rfloor=x-\{x\}$, where $\{x\}\in[0,1)$.
+Thus $0\leq\{x\}<1$ and $x-1<\lfloor x\rfloor\leq x$.
 \end{lemma}
 This useful lemma can turn a floor-function equation into an elementary inequality problem.
 \paragraph{Application.}
 Find all real numbers satisfying
 $\lfloor x/2\rfloor+\lfloor x/4\rfloor+\lfloor x/8\rfloor=2014$.
-Then
+Write $x/8=q+u$, where $q\in\mathbb Z$ and $0\leq u<1$. Then
 \[
-\frac x2+\frac x4+\frac x8-2014=\{x/2\}+\{x/4\}+\{x/8\},
-\quad0\leq\frac{7x}{8}-2014\leq3.
+\left\lfloor\frac x2\right\rfloor+
+\left\lfloor\frac x4\right\rfloor+
+\left\lfloor\frac x8\right\rfloor
+=7q+\lfloor4u\rfloor+\lfloor2u\rfloor.
 \]
-Thus $2014\leq7x/8\leq2017$, or $x\in[16112/7,16136/7]$.
-% Author check: source presents a necessary interval but does not determine all solutions within it; fractional-part endpoint1 retained.
+The last two terms have sum $0,1,3$, or $4$, whereas $2014\equiv5\pmod7$.
+Therefore the equation has no real solutions.
 
 Here are two problems with particularly striking solutions.
 Find $a,b,c>0$ such that $1/2014=1/a+1/b+1/c$.
@@ -145,10 +118,12 @@ Without loss of generality, assume $a>b$. Then
 \[
 k=\frac{a^2+b^2}{ab+1}<\frac{a^2+ab}{ab+1}<\frac{a^2+ab}{ab}=\frac ab+1.
 \]
-Choose a solution $(a,b)$ with $b$ as small as possible among all solutions.
-Since $(b,kb-a)$ is also a solution, the above bound gives $kb<a+b$, hence $kb-a<b$.
-This contradicts the minimality of $b$. Thus $k=1$ is the only solution.
-% Author check: source proof omits positivity of kb-a and claims only k=1, stronger than the stated square conclusion.
+Choose a solution $(a,b)$ with $b$ as small as possible among all positive solutions for this value of $k$.
+Put $c=kb-a$. The quadratic equation gives $ac=b^2-k$.
+If $c<0$, then $a-kb>0$ and $k-b^2=a(a-kb)\geq a$, contradicting $k<a/b+1\leq a+1$.
+Thus $c\geq0$, and the above bound gives $c<b$.
+If $c>0$, then $(b,c)$ is a smaller positive solution, contradicting the choice of $b$.
+Therefore $c=0$, and $k=b^2$ is an integer square.
 
 Here is a useful parametric construction.
 Prove that $x^2=y^3+z^5$ has infinitely many positive integer solutions.
@@ -167,33 +142,18 @@ This strategy appears frequently in national olympiad problems.
 \paragraph{Application: Belarus Mathematical Olympiad (2000).}
 Find all pairs of positive integers $(m,n)$ satisfying
 \[(m-n)^2(n^2-m)=4m^2n.\]
-Assume $m>n$ and let $\gcd(m,n)=d$, so $m=dx$ and $n=dy$.
+Let $\gcd(m,n)=d$, so $m=dx$ and $n=dy$, where $\gcd(x,y)=1$.
 Then
-\[(dx-dy)^2(d^2y^2-dx)=4d^3xy
-\quad\Longrightarrow\quad (x-y)^2(dy^2-x)=4xy.\]
-This directly implies $y\mid x$. Since $x>y$, write $m=nk$ for some $k\in\mathbb N$.
-Hence
-\[(nk-n)^2(n^2-nk)=4n^3k^2
-\quad\Longrightarrow\quad(k-1)^2(n-k)=4k^2.\]
-Since $\gcd(k^2,(k-1)^2)=1$, we obtain $(k-1)^2=1$ or $4$.
-Therefore $k=2$ or $3$, and $n=4k^2+k$ or $k^2+k$, respectively.
+\[(dx-dy)^2(d^2y^2-dx)=4d^3x^2y
+\quad\Longrightarrow\quad (x-y)^2(dy^2-x)=4x^2y.\]
+Reducing modulo $y$ gives $y\mid x^3$. Since $\gcd(x,y)=1$, we have $y=1$.
+Hence $(x-1)^2(d-x)=4x^2$. Since $x\neq1$ and $\gcd(x,x-1)=1$, it follows that $(x-1)^2\mid4$.
+Therefore $x=2$ or $3$, giving $d=18$ or $12$, respectively.
 We end up with $(m,n)=(36,18)$ and $(36,12)$. Q.E.D.!
-% Author check: the two first substituted right-hand sides omit a factor x; the restriction m>n is assumed, and the divisibility step is retained as written.
 
-\setcounter{theorem}{87}\begin{lemma}[Dirichlet principle]\label{lemma:lb1-90}
-An infinite arithmetic progression $a,a+b,a+2b,a+3b,\ldots$ contains infinitely many primes if $\gcd(a,b)=1$.
+\setcounter{theorem}{87}\begin{lemma}[Dirichlet's theorem]\label{lemma:lb1-90}
+An infinite arithmetic progression $a,a+b,a+2b,a+3b,\ldots$ contains infinitely many primes if $a,b$ are positive and $\gcd(a,b)=1$.
 \end{lemma}
-% Author check: the source uses the name Dirichlet principle and does not state positivity conditions on the progression parameters.
-\paragraph{Application.}
-Let $a_0=4$ and define $a_n=a_{n-1}^2-a_{n-1}$ for each positive integer $n$.
-% Source page 50 - left
-Prove that there are infinitely many primes that are factors of no term in the sequence.
-Since $4^2\equiv4+2\pmod{10}$, we have $a_1\equiv2\pmod{10}$.
-Now $2^2=2+2$, so $a_i^2\equiv a_i+2\pmod{10}$, giving $a_k\equiv2\pmod{10}$ for all $k$.
-None of the $a_k$ is of the form $5K$, which implies that there is no prime factor of the form $5K-1$.
-There are infinitely many primes of the form $5K-1$ by Dirichlet's principle, since $\gcd(5,1)=1$.
-Q.E.D.!
-% Author check: the claim that no multiple of 5 implies no prime factor 5K-1 is retained; the congruence for all k also includes a_0=4 as written.
 
 \subsection{Euler's formula and lifting indices}
 \setcounter{theorem}{92}\begin{lemma}[Euler's formula]\label{lemma:lb1-95}
@@ -207,50 +167,50 @@ $1978^m(1978^{n-m}-1)\equiv0\pmod{1000}$.
 Thus $1978^m\equiv0\pmod8$ and $1978^{n-m}\equiv1\pmod{125}$.
 The minimum of $m$ is $3$, so let $m=3$.
 Now $1978^{n-3}\equiv1\pmod{125}$, and $\gcd(1978,125)=1$.
-Euler's formula gives $1978^{\phi(125)}\equiv1\pmod{125}$, so $1978^{100}\equiv1\pmod{125}$ and $n-3\mid100$.
+Euler's formula gives $1978^{\phi(125)}\equiv1\pmod{125}$, so the multiplicative order of $1978$ modulo $125$ divides $100$.
 Also $1978^{n-3}\equiv3^{n-3}\pmod5$, and $1978^{n-3}\equiv1\pmod5$.
 Hence $4\mid n-3$, since $3^4\equiv1\pmod5$.
-Thus $n-3=4$ or $100$.
-Let $n-3=4$. Then
+The divisors of $100$ that are multiples of $4$ are $4,20$, and $100$.
+Now
 \[1978^4\equiv(-22)^4=4^2\cdot121^2\equiv(4\cdot(-4))^2
 =(-16)^2=256\equiv6\not\equiv1\pmod{125}.\]
-Therefore $n-3=100$, giving $\min n=103$.
+Also $1978^{20}\equiv26\not\equiv1\pmod{125}$.
+Therefore the order is $100$, and the least possible value of $n-3$ is $100$, giving $\min n=103$.
 Thus $\min(m+n)=\min m+\min n=103+3=106$.
-Q.B.D.!
-% Author check: n-3|100 is asserted from Euler's theorem, and the listed options 4 or100 omit20; the source proof is not repaired.
+Q.E.D.!
 \Needspace{15\baselineskip}
-\paragraph{Hensel's lemma.}\leavevmode\par
-\setcounter{theorem}{93}\begin{lemma}[Lifting All the Indices: LATI lemma]\label{lemma:lb1-96}
-Define $v_p(x)$ to be the greatest power of $p$ that divides $x$.
+\paragraph{Lifting the exponent.}\leavevmode\par
+\setcounter{theorem}{93}\begin{lemma}[Lifting the Exponent]\label{lemma:lb1-96}
+For a prime $p$, define $v_p(x)$ to be the exponent of the greatest power of $p$ that divides $x$.
 If $v_p(x)=\alpha$, we also write $p^\alpha\mathbin{\|}x$.
 Here are some lemmas:
 \begin{enumerate}
 \setcounter{enumi}{0}\item $v_p(xy)=v_p(x)+v_p(y)$, and $v_p(0)=\infty$.
-\setcounter{enumi}{1}\item $v_p(x^n-y^n)=v_p(x-y)+v_p(n)$ if $p\neq2$ and $p\mid x-y$.
-\setcounter{enumi}{2}\item $v_2(x^n-y^n)=v_2(x-y)+v_2(n)$ if $4\mid x-y$.
-\setcounter{enumi}{3}\item $v_2(x^n-y^n)=v_2(x-y)+v_2(x+y)+v_2(n)-1$ if $n$ is even and $2\mid x-y$.
-\setcounter{enumi}{4}\item $v_p(x^n+y^n)=v_p(x+y)+v_p(n)$ if $n$ is odd and $p\mid x+y$.
-\setcounter{enumi}{5}\item $v_p(x^n-y^n)=v_p(x-y)$ if $\gcd(p,n)=1$ and $p\mid x-y$.
-\setcounter{enumi}{6}\item $v_p(x^n+y^n)=v_p(x+y)$ if $n$ is odd, $\gcd(p,n)=1$, and $p\mid x+y$.
+\setcounter{enumi}{1}\item $v_p(x^n-y^n)=v_p(x-y)+v_p(n)$ if $p$ is odd, $p\mid x-y$, and $p\nmid xy$.
+\setcounter{enumi}{2}\item $v_2(x^n-y^n)=v_2(x-y)+v_2(n)$ if $x,y$ are odd and $4\mid x-y$.
+\setcounter{enumi}{3}\item $v_2(x^n-y^n)=v_2(x-y)+v_2(x+y)+v_2(n)-1$ if $n$ is even and $x,y$ are odd.
+\setcounter{enumi}{4}\item $v_p(x^n+y^n)=v_p(x+y)+v_p(n)$ if $p$ is odd, $n$ is odd, $p\mid x+y$, and $p\nmid xy$.
+\setcounter{enumi}{5}\item $v_p(x^n-y^n)=v_p(x-y)$ if $p$ is odd, $p\nmid nxy$, and $p\mid x-y$.
+\setcounter{enumi}{6}\item $v_p(x^n+y^n)=v_p(x+y)$ if $p$ is odd, $n$ is odd, $p\nmid nxy$, and $p\mid x+y$.
 \end{enumerate}
 \end{lemma}
 The lemma has many applications, provided its hypotheses are checked.
-% Author check: the heading calls these Hensel's lemma; v_p is described as a power though used as its exponent. Prime/coprimality hypotheses such as p not dividing xy are missing from several source formulas.
 % Source page 57 - right
 \paragraph{Application: Ireland (1996).}
 Let $p$ be a prime and $a,n$ positive integers.
 Prove that if $2^p+3^p=a^n$, then $n=1$.
-If $p=2$, then $2^2+3^2=13^1$, so $p$ is an odd prime.
+If $p=2$, then $2^2+3^2=13$, so $n=1$.
+Hence we may suppose that $p$ is an odd prime.
 Now, if $p$ is odd, then $5\mid a$ and
 $v_5(2^p+3^p)=v_5(2+3)+v_5(p)$, since $p$ is odd and $5\mid3+2$.
-If $p=5$, we get $2^5+3^5=275\neq a^n$, so $p\neq5$.
+If $p=5$, we get $2^5+3^5=275=5^2\cdot11$, so again $n=1$.
+Hence we may suppose that $p\neq5$.
 Therefore $v_5(2^p+3^p)=1$.
-Since the highest power of $5$ in $a$ is $1$, we obtain $n=1$.
-% Author check: 275!=a^n is written without specifying n>1, and the final valuation is described as belonging to a rather than a^n; retained.
+Since $v_5(a^n)=n v_5(a)=1$, we obtain $n=1$.
 
 \subsection{Fractional congruences}
 \setcounter{theorem}{99}\begin{lemma}[Fractional congruences]\label{lemma:lb2-103}
-If $a\equiv b\pmod n$ and $(b,n)=1$, define $a/b\equiv1\pmod n$.
+If $a\equiv b\pmod n$ and $(b,n)=1$, then $a/b$ modulo $n$ means $ab^{-1}$ modulo $n$, and $a/b\equiv1\pmod n$.
 \end{lemma}
 \paragraph{Application: INMO practice test (2014).}
 Given $1+1/2+\cdots+1/100=A/B$, with $(A,B)=1$, prove $5\nmid AB$.
@@ -276,7 +236,8 @@ Further,
 \]
 Since $1/11\equiv-1/14$ and $1/12\equiv-1/13\pmod{25}$,
 $1/11+1/12+1/13+1/14\equiv0\pmod{25}$.
-Also $1/16+1/17+1/18+1/19\equiv1/6+1/7+1/8+1/9\equiv75\equiv0\pmod{25}$.
+Also
+$1/16+1/17+1/18+1/19\equiv11+3+7+4\equiv0\pmod{25}$.
 Thus $\sum_{5\nmid k,\,k\leq19}1/k=25X_2/Y_2$, where $(Y_2,5)=1$.
 Consequently
 \[
@@ -284,26 +245,22 @@ Consequently
 =\frac{60X_1Y_2+60X_2Y_1+Y_1Y_2}{12Y_1Y_2},
 \]
 so $5\nmid AB$.
-% Author check: source equates the sum over16--19 with that over6--9 termwise modulo25; retained.
 
 The needed result is Zsigmondy's theorem.
 \subsection{Zsigmondy's theorem}
 \setcounter{theorem}{100}\begin{lemma}[Zsigmondy's theorem]\label{lemma:lb2-104}
-If $a,b,n$ are positive integers with $\gcd(a,b)=1$, then $a^n-b^n$ has a prime factor dividing none of $a^k-b^k$ for $k<n$,
+If $a>b$ are positive integers with $\gcd(a,b)=1$ and $n>1$, then $a^n-b^n$ has a prime factor dividing none of $a^k-b^k$ for $k<n$,
 with the exceptions $2^6-1^6$, and $n=2$ when $a+b$ is a power of $2$.
-If $a>b$ and $n\geq2$, then
+If $a>b$, $\gcd(a,b)=1$, and $n\geq2$, then
 % Source page 8 - right
 $a^n+b^n$ has a prime factor dividing none of $a^k+b^k$ for $k<n$, except $2^3+1^3$.
 \end{lemma}
-% Author check: first clause lacks a>b and n>1 restrictions; second lacks explicit coprimality; preserved.
 \paragraph{Application: IMO shortlist (2000).}
 Find positive integer triples $(a,m,n)$ with $a^m+1\mid(a+1)^n$.
-The family $(2,3,n)$ satisfies the divisibility because $2^3+1\mid3^n$.
-For $(a,m)\ne(2,3)$, Zsigmondy's theorem supplies a prime factor of $a^m+1$ not dividing $a+1$,
-so it does not divide $(a+1)^n$. Hence there are no other solutions.
-
-
-% Author check: n=1 and m=1 cases, among others, are omitted in the source claim.
+If $a=1$, every pair $(m,n)$ works, and if $m=1$, every pair $(a,n)$ works.
+Suppose now that $a>1$ and $m>1$. Apart from $(a,m)=(2,3)$, Zsigmondy's theorem supplies a prime factor of $a^m+1$ not dividing $a+1$,
+so it does not divide $(a+1)^n$. Finally, $2^3+1=3^2$ divides $3^n$ exactly when $n\geq2$.
+Hence the remaining solutions are $(a,m,n)=(2,3,n)$ with $n\geq2$.
 
 
 % Source page 9 - left
@@ -314,31 +271,21 @@ For positive integers $x,y,z$, prove that $(xy+1)(yz+1)(zx+1)$ is a perfect squa
 if and only if $xy+1$, $yz+1$, and $zx+1$ are each perfect squares.
 
 
-Here is another problem.
-\paragraph{Challenge.}
-For $a_1,\ldots,a_n,x,y\in\mathbb N$, prove the following system has solutions if and only if $x=y$:
-% Source page 10 - right
-\[
-a_1^x+\cdots+a_n^x=b^x,\qquad a_1^y+\cdots+a_n^y=b^y,
-\]
-where $b$ is a natural number.
-
 \subsection{An exponential Diophantine equation}
 \paragraph{IMO (1997).}
 Solve $a^{b^2}=b^a$ in positive integers.
-Let $a\geq b$ and suppose $\gcd(a,b)=b$, so $a=bk$.
-Then $b^{b^2}k^{b^2}=b^{bk}$ and $k^{b^2}=b^{bk-b^2}$.
-Put $k=b^x$. This gives
+The pair $(1,1)$ is a solution. Otherwise $a$ and $b$ have the same prime divisors.
+Comparing prime valuations shows that there are an integer $c>1$ and coprime positive integers $r,s$ such that
+$a=c^r$, $b=c^s$, and
 \[
-xb^2=b^{x+1}-b^2
-\Longrightarrow b^2(x+1)=b^{x+1}
-\Longrightarrow x+1=b^{x-1}.
+r c^{2s}=s c^r.
 \]
-Set $y=x+1$. Then $y=b^{y-2}$, $k=b^{y-1}$, $a=b^y$, and $b=\sqrt[y-2]{y}$.
-The pairs $(b,y)$ are $(1,1),(3,3),(2,4)$.
-Since $2^{y-2}-y$ is increasing, the difference grows exponentially.
+If $r<2s$, then $r c^{2s-r}=s$; coprimality forces $r=1$, but $s=c^{2s-1}$ is impossible.
+The case $r=2s$ is also impossible. Hence $r>2s$, and
+$r=s c^{r-2s}$; coprimality now forces $s=1$.
+Thus $r=c^{r-2}$ with $r>2$. For $r\geq5$, we have $c^{r-2}\geq2^{r-2}>r$, while
+$r=3$ gives $c=3$ and $r=4$ gives $c=2$.
 Thus the only pairs $(a,b)$ are $(1,1),(27,3),(16,2)$.
-% Author check: reduction gcd(a,b)=b and k=b^x, the direction a>=b, and endpoint analysis are not established in source.
 
 \subsection{Number-theoretic inequalities}
 Here is a legendary problem due to Paul Erd\H{o}s.
@@ -357,12 +304,8 @@ Given $3\mid n+1$, prove that there are integers $x,y,z$ with $4xyz=n(xy+yz+zx)$
 Take $x=n$, $y=(n-2)/3+1$, and $z=n(n+1)/3$.
 This proves the claim. The case $4\mid n+1$ leads to a related problem.
 
-Two related problems are recorded below.
-\paragraph{Problem 1.}
-Given $\alpha,\beta\in\mathbb Z^+$ and primes $p_1,\ldots,p_n,q$, show that, for every $\alpha$, there exists an $n$ such that
-$p_1^\alpha+p_2^\alpha+\cdots+p_n^\alpha=q^\beta$.
-% Source page 15 - right
-\paragraph{Problem 2.}
+One related problem is recorded below.
+\paragraph{Problem.}
 Find infinitely many families of solutions in nine distinct integers
 $x_1,x_2,x_3,y_1,y_2,y_3,z_1,z_2,z_3$ of
 \[

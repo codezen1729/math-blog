@@ -3,158 +3,9 @@
 \input{styles/notes-preamble.tex}
 \graphicspath{{figures/ergodic-theory/}}
 \begin{document}
-\section*{From Complex Dynamics to Measure-Preserving Systems}
+\section*{Measure-Preserving Systems}
 % BLOG-CONTENT-BEGIN
-\subsection{Motivation from Complex Dynamics}
-One motivation for ergodic theory comes from complex dynamics. Consider
-\[
-  f\colon S\longrightarrow S,
-  \qquad f\in\operatorname{Hol}(S),\quad S\text{ a Riemann surface}.
-\]
-If one feels uncomfortable with that level of generality, then simply consider
-$p\colon\mathbb C\to\mathbb C$ (a polynomial), or $S=\widehat{\mathbb C}$
-(the Riemann sphere), forcing $f$ to be a rational polynomial,
-$f(z)=p(z)/q(z)$.
-% Author check: the handwritten phrase is "rational polynomial"; retained.
-
-One is interested in studying how $f$, and the iterates of $f$, deform the space
-$S$, which amounts to studying $\{f^{\circ n}(z)\}_{n\geq0}$ for a given $z\in S$.
-In light of this, one asks:
-\begin{itemize}
-  \item What is the topological structure of sets $U$ that deform via $f$ in a
-  stable manner?
-  \item What is the topological structure of sets $J$ that deform via $f$ in a
-  chaotic manner?
-\end{itemize}
-More precisely:
-
-% Source page 2
-\setcounter{definition}{0}\begin{definition}[Fatou set]
-\[
-F(f):=\left\{x\in S:\text{there is a neighbourhood }U_x\text{ of }x
-\text{ such that }\{f^{\circ n}|_{U_x}\}_n\text{ is a normal family}\right\}.
-\]
-$F(f)$ is called the \emph{Fatou set} of $f$; it is open by definition.
-It corresponds to stability.
-\end{definition}
-
-\setcounter{definition}{1}\begin{definition}[Julia set]
-$J(f):=S\setminus F(f)$ is called the \emph{Julia set}. It corresponds to chaos.
-\end{definition}
-
-Studying the dynamics of $f$ includes studying stable and chaotic sets (or Fatou and Julia sets).
-The following is the general philosophy for undertaking such a study.
-
-\paragraph{Philosophy of complex dynamics.}
-Orbits of critical points, i.e. $\{f^{\circ n}(z)\}_{n\geq1}$ with $f'(z)=0$,
-and fixed points determine stable sets entirely, and chaotic sets to a large
-extent.
-
-Here is why this should surprise you. If $f\colon\mathbb C\to\mathbb C$ is
-holomorphic and, say, you know the zeros and poles of $f$, then basic
-one-variable complex analysis will tell you that you can determine the
-function $f$ to a large extent.
-% Author check: the source says "holomorphic" while subsequently discussing poles.
-
-% Source page 3
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.68\textwidth]{lecture1-fig-01.pdf}
-  \FigureTag{L1.1}{fig:lecture1-fig-01}
-\end{figure}
-Let $(\bullet)$ denote zeros and $(\times)$ poles. If you know
-$f^{(n)}(\bullet)$, then you know
-\[
-  f(z)=\sum_{n\geq0}^{\infty}\frac{f^{(n)}(\bullet)}{n!}(z-\bullet)^n
-\]
-on a disc that extends up to the nearest pole to $(\bullet)$. Furthermore,
-if $f(z)=p(z)/q(z)$, then $(\bullet)$ and $(\times)$ completely determine $f$.
-Yet the philosophy says that telling you precisely what $f$ is is not enough
-to study its dynamics.
-% Author check: the assertion of complete determination by zeros and poles is
-% retained verbatim in substance; the source does not mention a multiplicative constant.
-
-Now, here is why this should not surprise you. Let
-$\varphi\colon S\to S'$ be a biholomorphism.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.32\textwidth]{lecture1-fig-02.pdf}
-  \FigureTag{L1.2}{fig:lecture1-fig-02}
-\end{figure}
-
-% Source page 4
-Since $\varphi$ is only a change of coordinates on the surface, the dynamics should remain unchanged. Indeed:
-% Author check: "via f" is the handwritten wording, although the coordinate
-% change introduced just above is varphi.
-\begin{itemize}
-  \item $\widetilde f^{\circ n}=(\varphi\circ f\circ\varphi^{-1})^{\circ n}
-  =\varphi\circ f^{\circ n}\circ\varphi^{-1}=\widetilde{f^{\circ n}}$.
-  \item If $\{f^{\circ n}|_U\}_n$ is normal, then
-  $\{\widetilde f^{\circ n}|_{\varphi(U)}\}_n$ shall be normal.
-\end{itemize}
-Thus, to study dynamics one must naturally look for things that are invariant
-under coordinate transformations. Zeros and poles are not among such
-invariants, as can easily be seen. If $f(z_0)=0$, then
-$\widetilde f(\varphi(z_0))=\varphi(0)$, which need not be $0$.
-But if $\widehat z$ is a fixed or critical point, then:
-\begin{itemize}
-  \item $\widetilde f(\varphi(z_k))=\varphi(z_k)$, so $\varphi(z_k)$ is a fixed
-  point of $\widetilde f$;
-  \item $\widetilde f'(\varphi(z_k))=0$, by the chain rule.
-\end{itemize}
-% Author check: the manuscript changes from z-hat to z_k in these two bullets.
-This motivates the focus on critical and fixed points. Zeros and poles of $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$
-are merely points that map to the two poles. If you change your coordinates
-on $\widehat{\mathbb C}$ via a M\"obius transformation
-\[
-  z\longmapsto\frac{az+b}{cz+d},
-  \qquad \begin{pmatrix}a&b\\c&d\end{pmatrix}\in\operatorname{PSL}_2(\mathbb C),
-\]
-then the zeros and poles are sent to the points $a/c$, $b/d$ on the
-Riemann sphere.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.48\textwidth]{lecture1-fig-03.pdf}
-  \FigureTag{L1.3}{fig:lecture1-fig-03}
-\end{figure}
-Therefore, saying that one wants to study zeros
-% Source page 5
-and poles of $f$ is equivalent to saying that one has a preferred set of
-coordinates. This choice is useful in analysis but irrelevant to the underlying dynamics. A useful strategy is to choose coordinates in which the function is simpler.
-In particular, if $U\subset S$ and there is
-$\varphi\colon U\to\varphi(U)\subseteq\mathbb C$, we seek a $\varphi$ that makes
-$\varphi\circ f\circ\varphi^{-1}$ simplest to study. For instance:
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.49\textwidth]{lecture1-fig-04.pdf}
-  \FigureTag{L1.4}{fig:lecture1-fig-04}
-\end{figure}
-Then we know that, under this changed set of coordinates, $f$ is an irrational
-rotation by the angle $\theta$ on $\mathbb D$.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.84\textwidth]{lecture1-fig-05.pdf}
-  \FigureTag{L1.5}{fig:lecture1-fig-05}
-\end{figure}
-
-% Source page 6
-Such results are called \emph{linearization theorems}: one turns the function
-into as linear a function as possible, and the orbits of critical points bound
-the largest possible domain $U$ in which $f$ behaves like a polynomial.
-Usually these domains are considered to be neighbourhoods of fixed points of
-$f$. In addition, orbits of critical points reveal a lot of the topological
-structure of Julia sets (or chaotic sets). Therefore, the following question
-is fundamental to complex dynamics.
-
-\paragraph{Question.}
-How is $\{f^{\circ n}(\widehat z)\}_n$ distributed on $S$, where $\widehat z$
-is a critical point of $f$?
-
-Ergodic theory offers many qualitative answers to such questions. Here we
-develop the parts of the theory that lead towards Szemer\'edi's theorem,
-beginning with measure-preserving systems.
-
-\subsection{Introduction to Measure-Preserving Systems}
+\subsection{The Basic Setup}
 Let $X$ be a set and $T\colon X\to X$ a map. We shall refer to $X$ as the
 \emph{state space} and $T$ as the \emph{transformation} (or deformation).
 
@@ -178,19 +29,18 @@ We now equip $X$ with the structure of a probability space and introduce the
 basic setup of ergodic theory.
 
 % Source page 8
-\setcounter{definition}{2}\begin{definition}[Measure-preserving system]
+\setcounter{definition}{0}\begin{definition}[Measure-preserving system]
 Let $(X,\mathcal B,\mu)$ and $(Y,\mathcal C,\nu)$ be probability spaces. A
 measurable map $\varphi\colon X\to Y$ is \emph{measure-preserving} if
 \[
   \mu\bigl(\varphi^{-1}(B)\bigr)=\nu(B)
   \qquad\text{for every }B\in\mathcal C,
 \]
-and $\mu$ is said to be \emph{$\varphi$-invariant}. Finally,
-$(X,\mathcal B,\mu,T)$ is a \emph{measure-preserving system} if $\mu$ is
-$T$-invariant.
+equivalently, $\varphi_*\mu=\nu$. Finally,
+$(X,\mathcal B,\mu,T)$ is a \emph{measure-preserving system} if
+$T\colon X\to X$ is measurable and
+$\mu(T^{-1}(B))=\mu(B)$ for every $B\in\mathcal B$.
 \end{definition}
-% Author check: the source uses "varphi-invariant" for the map between two
-% possibly different probability spaces, not just for a self-map.
 
 \begin{remark}
 \leavevmode\par
@@ -199,7 +49,7 @@ $T$-invariant.
   introduce a measure-theoretic structure on our state space $X$. The recurrence results below require it to be a probability measure.
   \item Probabilistically, $\varphi\colon X\to Y$ being measurable means that
   events of $Y$ relate to events of $X$.
-  \item $\mu$ being $\varphi$-invariant means that the link $\varphi^{-1}$ is
+  \item $\varphi$ being measure-preserving means that the link $\varphi^{-1}$ is
   deterministic. In other words, the likelihood of the occurrence of $B$
   forces the likelihood of the occurrence of $\varphi^{-1}(B)$ to the same
   extent.
@@ -207,8 +57,8 @@ $T$-invariant.
   function $T$.
 
 % Source page 9
-  \item The reason we define $\mu(T^{-1}(B))=\nu(B)$, and not
-  $\mu(B)=\nu(T(B))$, is that the following properties do not hold for $T$
+  \item For a self-map $T$, the reason we define $\mu(T^{-1}(B))=\mu(B)$, and not
+  $\mu(B)=\mu(T(B))$, is that the following properties do not all hold for $T$
   in place of $T^{-1}$:
   \begin{align*}
     \chi_A(T(x))&=\chi_{T^{-1}(A)}(x), &&\text{the link},\\
@@ -217,13 +67,13 @@ $T$-invariant.
     T^{-1}(A\mathbin\triangle B)&=T^{-1}(A)\mathbin\triangle T^{-1}(B).
   \end{align*}
   If $A$ and $B$ occur, then $T^{-1}$ forces $T^{-1}(A)$ and $T^{-1}(B)$ to
-  occur. $T$ does not respect set-theoretic operations, so working with $T$
-  would imply that the measure-preserving map is too special!
+  occur. Inverse images respect all Boolean operations, whereas direct images
+  need not respect complements or intersections without injectivity.
 \end{itemize}
 \end{remark}
 
 We next define isomorphisms of measure-preserving systems.
-\setcounter{definition}{3}\begin{definition}[Measurable isomorphism]
+\setcounter{definition}{1}\begin{definition}[Measurable isomorphism]
 We write
 \[
   (X,\mathcal B_X,\mu_X,T)\cong(Y,\mathcal B_Y,\mu_Y,S)
@@ -234,7 +84,7 @@ almost everywhere, such that the following diagram commutes.
 \end{definition}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.30\textwidth]{lecture1-fig-06.pdf}
+  \includegraphics[width=.55\textwidth]{lecture1-fig-06.pdf}
   \FigureTag{L1.6}{fig:lecture1-fig-06}
 \end{figure}
 
@@ -242,12 +92,10 @@ almost everywhere, such that the following diagram commutes.
 The following criterion checks whether a transformation is measure-preserving.
 
 \setcounter{theorem}{0}\begin{lemma}[Litmus test]
-Given $(X,\mathcal B,\mu,T)$, with $T\colon X\to X$ measurable, $T$ will be
-$\mu$-invariant if $T$ preserves measures of the semi-algebra that generates
-$X$.
+Given $(X,\mathcal B,\mu,T)$, with $T\colon X\to X$ measurable, $\mu$ will be
+$T$-invariant if $T$ preserves the measures of a semi-algebra that generates
+$\mathcal B$.
 \end{lemma}
-% Author check: "T will be mu-invariant" and "generates X" are the source's
-% terminology; no mathematical repair has been made.
 \begin{proof}
 Let
 \[
@@ -261,33 +109,30 @@ as $\mu(T^{-1}(A_i))=\mu(A_i)$, we have
 \[
   \lim_{i\to\infty}\mu(T^{-1}(A_i))=\mu(T^{-1}(A))=\mu(A).
 \]
-Similarly, one deals with $A_i\searrow A$. Thus $\mathcal J'$ is a
-$\sigma$-algebra containing $\mathcal J$, but $\mathcal B$ is, by definition,
-the smallest such set of sets. Hence $\mathcal J'=\mathcal B$, so $T$ is
-$\mu$-invariant.
+Similarly, one deals with $A_i\searrow A$. Thus $\mathcal J'$ is a monotone
+class containing the algebra generated by $\mathcal J$. By the monotone class
+theorem, $\mathcal J'$ contains $\sigma(\mathcal J)=\mathcal B$. Hence
+$\mathcal J'=\mathcal B$, so $\mu$ is $T$-invariant.
 \end{proof}
 
-A good time to stop, breathe, and look at examples.
 \setcounter{example}{0}\begin{example}[Measure-preserving systems]
 \leavevmode\par
 \begin{enumerate}
   \setcounter{enumi}{0}\item \emph{Rotation:}
-  $(\mathbb R/\mathbb Z,m_{S^1},\mathcal B_{S^1},R_\alpha)$, where
+  $(\mathbb R/\mathbb Z,\mathcal B_{S^1},m_{S^1},R_\alpha)$, where
   $R_\alpha\colon\mathbb R/\mathbb Z\to\mathbb R/\mathbb Z$ and
   $R_\alpha(t)=t+\alpha\pmod1$.
   \setcounter{enumi}{1}\item \emph{Doubling:}
-  $(\mathbb R/\mathbb Z,m_{S^1},\mathcal B_{S^1},T_2)$, where
+  $(\mathbb R/\mathbb Z,\mathcal B_{S^1},m_{S^1},T_2)$, where
   $T_2\colon\mathbb R/\mathbb Z\to\mathbb R/\mathbb Z$ and
   $T_2(t)=2t\pmod1$.
   \setcounter{enumi}{2}\item \emph{Bernoulli shift:}
-  $\bigl(\{0,1\}^{\mathbb N},\prod_{\mathbb N}\mu_{1/2},\mathcal B,\sigma\bigr)$,
+  $\bigl(\{0,1\}^{\mathbb N},\mathcal B,\prod_{\mathbb N}\mu_{1/2},\sigma\bigr)$,
   where $\mu_{1/2}(\{0\})=\mu_{1/2}(\{1\})=1/2$, and
   $\mu=\prod_{\mathbb N}\mu_{1/2}$ is the product measure, with
   $\sigma(x_0,x_1,x_2,\ldots)=(x_1,x_2,\ldots)$.
 \end{enumerate}
 \end{example}
-% Author check: the order (space, measure, sigma-algebra, transformation) in
-% these examples is retained from the manuscript.
 
 % Source page 11
 \setcounter{example}{1}\begin{example}[Measurable isomorphism]
@@ -298,49 +143,40 @@ Define $\phi\colon\{0,1\}^{\mathbb N}\to\mathbb R/\mathbb Z$ by
 $\phi^{-1}$ is not well-defined on rationals in base $2$ (the dyadic
 rationals, $\mathbb Z[1/2]$), because they do not have a unique base-$2$
 representation. $\mathbb Z[1/2]$ is countable in $\mathbb R/\mathbb Z$, hence
-has Lebesgue measure $0$, so $\phi^{-1}$ is invertible.
-% Author check: the final assertion is "phi^{-1} is invertible" in the source.
-To prove $\mu(\phi^{-1}((a,b)))=m_{S^1}((a,b))=b-a$, it is enough to prove
-it for $a=0$ and $b\in\mathbb Q\cap[0,1)$, because, given any
-$(a,b)\subseteq[0,1)$,
+has Lebesgue measure $0$, so $\phi$ is invertible almost everywhere.
+To prove $\mu(\phi^{-1}([a,b)))=m_{S^1}([a,b))=b-a$, it is enough to prove
+it for intervals of the form $[0,b)$, because, given any
+$[a,b)\subseteq[0,1)$,
 \begin{align*}
-  \mu(\phi^{-1}((a,b)))
-  &=\mu\bigl(\phi^{-1}((b,0)\setminus(a,0))\bigr)\\
-  &=\mu\bigl(\phi^{-1}((b,0))\setminus\phi^{-1}((a,0))\bigr)\\
-  &=\mu(\phi^{-1}((b,0)))-\mu(\phi^{-1}((a,0))).
+  \mu(\phi^{-1}([a,b)))
+  &=\mu\bigl(\phi^{-1}([0,b)\setminus[0,a))\bigr)\\
+  &=\mu(\phi^{-1}([0,b)))-\mu(\phi^{-1}([0,a))).
 \end{align*}
-% Author check: intervals (b,0) and (a,0), rather than (0,b) and (0,a), are
-% written repeatedly in the original and retained here.
-Also, given any $(a,b)\subseteq[0,1]$, there exist
-$p_n,q_n\in\mathbb Q\cap[0,1)$ such that $(p_n,q_n)\nearrow(a,b)$.
 
-Now note that
+Write $a=0.a_1a_2\ldots$ in base $2$. Then
 \[
-  \mu(\phi^{-1}((0,a)))=\mu\left(\bigcup_{i=1}^{n}A_i\right),
+  \phi^{-1}([0,a))=\bigcup_{\{i\geq1:a_i=1\}}A_i
 \]
-where, if $a=0.10010011$,
+up to the null set of ambiguous dyadic expansions, where
 \[
-  A_1=\{0\}\times\{0,1\}^{\mathbb N},\qquad
-  A_2=\{1,0,0,0\}\times\{0,1\}^{\mathbb N},\qquad\ldots,
+  A_i=\{a_1\}\times\cdots\times\{a_{i-1}\}\times\{0\}
+  \times\{0,1\}^{\mathbb N}.
 \]
-and $A_i=\{1,0,0,1,0,0,\ldots,\underset{i}{0}\}\times\{0,1\}^{\mathbb N}$,
-where $i$ is the position of the next $1$ in the base-$2$ expansion of $a$.
 Thus
 \[
-  \mu\left(\bigcup A_i\right)=\sum\mu(A_i)
-  =\sum_{\substack{1\text{ in the}\\i\text{th place}}}\frac1{2^i}=a=a-0.
+  \mu(\phi^{-1}([0,a)))
+  =\sum_{\{i\geq1:a_i=1\}}\mu(A_i)
+  =\sum_{\{i\geq1:a_i=1\}}\frac1{2^i}=a.
 \]
-% Author check: finite upper index n, braces for binary prefixes, and the
-% indexing of A_i are retained as written; the cylinder notation is informal.
 Also, $\phi\circ\sigma=T_2\circ\phi$. Hence the Bernoulli system is
 measurably isomorphic to the circle-doubling system.
 \end{example}
 
 \subsection{Questions and applications}
 We have a means to measure, hence a way to compare, and we wish to compare
-$E$ with its iterates $T^{\circ n}(E)$. As $T$ is measure-preserving, we are
-justified in asking how $\{T^{\circ n}(E)\}_n$ behaves, because $T$ preserves
-measure, so $E$ and $T(E)$ belong to the same structural space; hence
+$E$ with its inverse images $(T^{\circ n})^{-1}(E)$. As $T$ is measure-preserving, we are
+justified in asking how $\{(T^{\circ n})^{-1}(E)\}_n$ behaves, because $T$ preserves
+measure, so $E$ and $T^{-1}(E)$ belong to the same structural space; hence
 comparison is natural.
 
 % Source page 12
@@ -348,7 +184,7 @@ comparison is natural.
 With that in mind, we ask the following questions:
 \begin{itemize}
   \item What happens to $\{T^{\circ n}x\}$ as $n\to\infty$?
-  \item What happens to $T^{\circ n}(E)$ as $n\to\infty$, for $E\in\mathcal B$?
+  \item What happens to $(T^{\circ n})^{-1}(E)$ as $n\to\infty$, for $E\in\mathcal B$?
   \item What happens to $f\circ T^n$ as $n\to\infty$, for measurable
   $f\colon X\to\mathbb R$ (or $\mathbb C$)?
 \end{itemize}
@@ -359,13 +195,12 @@ Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. Let
 $E\in\mathcal B$ satisfy $\mu(E)>0$, and let $k\geq1$. Then there exists
 $n\geq1$ such that
 \[
-  E\cap T^n(E)\cap\cdots\cap T^{(k-1)n}(E)\neq\varnothing.
+  \mu\bigl(E\cap(T^{\circ n})^{-1}(E)\cap\cdots\cap
+  (T^{\circ(k-1)n})^{-1}(E)\bigr)>0.
 \]
-Equivalently, there exist $x\in X$ and $n\geq1$ such that $T^{\ell n}(x)\in E$
+In particular, there exist $x\in X$ and $n\geq1$ such that $T^{\ell n}(x)\in E$
 for every $0\leq\ell<k$.
 \end{theorem}
-% Author check: the source uses positive powers on the sets, and gives the
-% displayed orbit statement as equivalent; no alteration has been made.
 From this we get a combinatorial analogue:
 \setcounter{theorem}{2}\begin{theorem}[Szemer\'edi's theorem]
 Let $E\subset\mathbb Z$ satisfy

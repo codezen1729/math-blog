@@ -4,22 +4,24 @@
 \begin{document}
 \section*{Bott Periodicity and the Genesis of K-Theory}
 % BLOG-CONTENT-BEGIN
-\underline{\textbf{Bott Periodicity and the Genesis of K-Theory}}
-
 As $K$ is represented by the space $BU\times \mathbb{Z}$, any theorem about the homotopy type of $BU\times \mathbb{Z}$ can be significant. Bott periodicity gives the key homotopy equivalence. 
-\subsection*{Theorem 4.2 — Bott Periodicity} $BU\times \mathbb{Z} \sim \Omega^2(BU\times \mathbb{Z})$
+\begin{theorem}[Bott periodicity]
+$BU\times \mathbb{Z} \simeq \Omega^2(BU\times \mathbb{Z})$.
+\end{theorem}
 
 For a proof, see \cite{milnor2016morse}. An immediate consequence of Bott's theorem is the following theorem which we will also call Bott's Periodicity Theorem.
-\subsection*{Theorem 4.3}
+\begin{theorem}[Bott periodicity for reduced K-theory]
     $\widetilde{K}(\Sigma^2X) \cong \widetilde{K}(X)$
+\end{theorem}
 
-\textit{Proof.}
+\begin{proof}
     Observe that,
     $$\widetilde{K}(X) \cong [(X, x_0), (BU\times \mathbb{Z}, (y_0, 0))]$$
     as it is the kernel of the map $[X, BU\times \mathbb{Z}] \rightarrow [x_0, BU\times \mathbb{Z}]$, which is precisely the set of homotopy classes of maps sending $x_0$ into $BU\times \{0\}$. Now, by Bott's Theorem,
     $$\widetilde{K}(X) \cong [X, \Omega^2(BU\times \mathbb{Z})]_{\text{based}} \cong [\Sigma^2X, BU\times \mathbb{Z}]_{\text{based}}$$
     giving us, 
     $$\widetilde{K}(X) \cong \widetilde{K}(\Sigma^2X)$$
+\end{proof}
 
 
 An important consequence of the theorem above is that one can build a cohomology theory on $\tau_c$. Generally speaking, a \textbf{cohomology theory} on a category $\mathcal{C}$ of topological pairs is the following data:
@@ -38,19 +40,21 @@ $$\cdots \rightarrow F^k(X, A)\rightarrow F^k(X) \rightarrow F^k(A) \rightarrow 
 
 The construction of K-theory on pairs of compact Hausdorff spaces uses the following two propositions \cite{hatcher2003vector}.
 
-\subsection*{Proposition 4.1} Consider $A\xrightarrow{i} X \xrightarrow{q} X/A$, where $i$, $q$ are the canonical inclusion and quotient maps. Then, 
-$$\widetilde{K}(X/A) \xrightarrow{q^*} \widetilde{K}(X) \xhookrightarrow{i^*} \widetilde{K}(A)$$
+\begin{proposition}
+Consider $A\xrightarrow{i} X \xrightarrow{q} X/A$, where $i$, $q$ are the canonical inclusion and quotient maps. Then,
+$$\widetilde{K}(X/A) \xrightarrow{q^*} \widetilde{K}(X) \xrightarrow{i^*} \widetilde{K}(A)$$
 is an exact sequence of rings.
+\end{proposition}
 
-\textit{Proof.}
-    Note that $i^*\circ q^* = (q\circ i)^*$, where $q\circ i$ is the composition $A\rightarrow A\subset X \rightarrow A/A$, and $\widetilde{K}(A/A) = \{0\}$. So, $\text{Im}(q^*) \subseteq \text{Ker}(i^*)$. Now we show $\text{Ker}(i^*)  \subseteq \text{Im}(q^*)$. If $[E] \in \text{Ker}(i^*)$, $\big[E\big|_{A}\big] = 0$, in other words, 
+\begin{proof}
+    Note that $i^*\circ q^* = (q\circ i)^*$, where $q\circ i$ is the constant map from $A$ to the basepoint of $X/A$. So, $\text{Im}(q^*) \subseteq \text{Ker}(i^*)$. Now we show $\text{Ker}(i^*)  \subseteq \text{Im}(q^*)$. If $[E] \in \text{Ker}(i^*)$, $\big[E\big|_{A}\big] = 0$, in other words,
     $$E\big|_{A}\oplus \epsilon^n(A) \cong \epsilon^{n+m}(A)$$
     Therefore, we may WLOG assume that $E\big|_{A}$ is trivial, with trivialisation,
     $$\psi: E\big|_{A} \rightarrow A\times \mathbb{C}^n$$
     Let $E/\psi$ denote the quotient space, where $\psi^{-1}(x, v) \sim \psi^{-1}(y, v)$, for all $x, y\in A$. We claim that $E/\psi$ is a bundle over $X/A$, and that $q^*(E/\psi) \cong E$. To show the former, note that for a locally trivializing cover $\{U_{\alpha}\}_{\alpha}$ of $E$, the modified collection of open\footnote{The spaces $A$, $X$ being compact Hausdorff ensure that the modified collection is indeed a collection of open sets. Perhaps, this dependence of the compactness hypothesis in this proof may be lifted.} sets $\{U_{\alpha}\backslash A\}_{\alpha}$ defines a bundle over $X\backslash A$. This bundle is a subbundle of $E$, and for that to extend to a bundle on $X/A$, one would need a local trivialization at the point $q\circ i(A)$. As $E\big|_{A}$ is trivial, one has a frame $\sigma_i$ over $A$ which can (by a partition of unity argument) be extended to a frame over an open set containing $A$, since the set of points $p$ satisfying
     $$\det(\sigma_1(p), \sigma_2(p),\ldots, \sigma_n(p)) \neq 0$$
     is open, thereby facilitating the required extension. Now note that by definition, the natural map $E\rightarrow E/\psi$ lifts the quotient map, (i.e.) one has the following commutative diagram:
-    \[\begin{tikzcd}
+    \[\begin{tikzcd}[column sep=huge,row sep=large]
 	E & {E/\psi} \\
 	X & {X/A}
 	\arrow["q"', from=2-1, to=2-2]
@@ -59,13 +63,18 @@ is an exact sequence of rings.
 	\arrow[from=1-1, to=1-2]
 \end{tikzcd}\]
 which is also an isomorphism on the fibres. It is easy to see that $E$ satisfies the universal property of pullbacks.
+\end{proof}
 
-\textbf{Remark}: Interpreting the proposition in terms of the classifying space perspective yields the following: Given a classifying map $f$ of some bundle over $X$, such that $f\big|_A$ is nullhomotopic, then there exists an open neighbourhood $U$ of 
+\begin{remark}
+Interpreting the proposition in terms of the classifying space perspective yields the following: Given a classifying map $f$ of some bundle over $X$, such that $f\big|_A$ is nullhomotopic, then there exists an open neighbourhood $U$ of
 $A$ such that $f\big|_{U}$ is nullhomotopic. Equivalently, maps from compact subsets into $BU$ that are null-homotopic extend as null-homotopic maps over a neighbourhood. If you think about it, the above is not unexpected at all, for the spaces $BU(n)$ are locally contractible. 
+\end{remark}
 
-\subsection*{Proposition 4.2} If $A$ is contractible, then $q^*: \widetilde{K}(X/A) \rightarrow \widetilde{K}(X)$ is an isomorphism.
+\begin{proposition}
+If $(X,A)$ is a compact Hausdorff pair, the inclusion $A\hookrightarrow X$ is a cofibration, and $A$ is contractible, then $q^*: \widetilde{K}(X/A) \rightarrow \widetilde{K}(X)$ is an isomorphism.
+\end{proposition}
 
-\textit{Proof.}
+\begin{proof}
     We begin by identifying $\widetilde{K}(X)$ with $\pi_b(X,BU)$. Following the remark above, note that if $A$ is contractible then for any classifying map $f: X\rightarrow BU$, $f\big|_A$ is nullhomotopic, and that there exists an open neighbourhood $U$ of $A$ such that $f\big|_U$ is also nullhomotopic. Let,
     $$F:U\times [0,1] \rightarrow BU$$
     $$F_0\equiv f\big|_U, F_1 \equiv b_0$$ be the nullhomotopy. As compact Hausdorff spaces are normal, by Urysohn's lemma we have, $$\alpha :X \rightarrow [0,1]$$
@@ -87,15 +96,15 @@ $A$ such that $f\big|_{U}$ is nullhomotopic. Equivalently, maps from compact sub
         $$\beta\big|_{A\times [0,1]} \equiv 1, \supp{\beta} \subset V\times [0,1]$$
         Repeat the construction above by defining, 
         $$G(H_t):= \begin{cases}
-            N((x, t), \beta(x)), & \text{ if } x\in V\\
+            N((x, t), \beta(x,t)), & \text{ if } x\in V\\
             H_t(x), & \text{ else}
         \end{cases}$$
         To finish the proof, let's do away with one small yet essential detail: One can define a straight-line homotopy between $\alpha$ and $\beta_t$, hence the function $Q$ is independent of the open neighbourhoods on which $f$ and $g$ are null-homotopic. 
+\end{proof}
 
 Let $n \in \mathbb{N}\cup \{0\}$, define,
-$$\widetilde{K}^{-n}(X, A):= \widetilde{K}(\Sigma^nX/\Sigma^n A)$$
-$$\widetilde{K}^{2n}(X, A) := \widetilde{K}(X/A)$$
-$$\widetilde{K}^{2n+1}(X, A) := \widetilde{K}(\Sigma(X/A))$$
+$$\widetilde{K}^{-n}(X, A):= \widetilde{K}(\Sigma^n(X/A)).$$
+Using Bott periodicity, extend this definition to all integer degrees by $\widetilde K^{m+2}(X,A)\cong\widetilde K^m(X,A)$.
 For the sequence of functors defined above, homotopy axiom follows from the representation of the functor $K$, and the excision axiom is just the trivial statement $(X\backslash U)/(A\backslash U) = X/A$. To investigate the sequence axiom, we need to define the requisite natural transformations; for this purpose, Proposition $4.2$ will come in handy. Given a pair $(X, A)$ we have the following sequence of spaces called the \textbf{Puppe sequence}:
 \[\begin{tikzcd}
 	&& {(((X\cup CA)\cup CX)\cup C(X\cup CA))/C(X\cup A))\sim \color{red}{\Sigma} X} \\
@@ -143,8 +152,9 @@ which, written in a more recognisable form, is
 $$\cdots \rightarrow \widetilde{K}^n(X, A)\rightarrow \widetilde{K}^n(X) \rightarrow \widetilde{K}^n(A) \rightarrow \widetilde{K}^{n+1}(X, A)\rightarrow \cdots$$
 
 The periodicity theorem essentially allows us to  wrap the sequence on itself. Exactness at various places will be given by Proposition $4.1$ applied to relevant sections of the Puppe sequence, along with the observation that $(X\cup CY)/CY \sim X/Y$. So, $\{K^n\}_{n}$ satisfies the sequence axiom for pairs. Thus $\{\widetilde K^n\}_n$ satisfies the axioms of a generalised cohomology theory on compact Hausdorff pairs.
-\subsection*{Theorem 4.4}
+\begin{theorem}
     The sequence of functors $\widetilde{K}^n$ defines a generalized cohomology theory on the category of compact Hausdorff pairs.
+\end{theorem}
 
 We finish by computing the $K$-groups of spheres and tori to illustrate the theory. Let $X$ and $Y$ be compact Hausdorff; one has the following exact sequence of pointed spaces:
 \begin{equation}\tag{2}
@@ -165,7 +175,8 @@ which gives the isomorphism,
 \begin{enumerate}[(i)]
     \item (K-Groups of Spheres): Note that, $\widetilde{K}(S^k) \cong \pi_k(BU) \cong \pi_{k+1}(U)$; here we exploit the fact implicit in Bott's Theorem that $U\sim \Omega BU$. Now, we need to compute two distinct homotopy groups of the stable unitary group $U$. Note,
     $$\pi_1(U) = \pi_1(U(1)) = \pi_1(S^1) \cong \mathbb{Z}$$
-    $$\pi_2(U) = \pi_2(U(2)) \cong \pi_2(S^1\times SU(2)) \cong \pi_2(SU(2)) \cong \pi_2(S^3) = 0$$
+    The fibration $SU(2)\rightarrow U(2)\rightarrow S^1$ and the identification $SU(2)\cong S^3$ give
+    $$\pi_2(U) = \pi_2(U(2)) \cong \pi_2(SU(2)) \cong \pi_2(S^3) = 0.$$
     By Bott periodicity, we have $\pi_{2n}(U) \cong 0$, and $\pi_{2n+1}(U) \cong \mathbb{Z}$, for $n\in \mathbb{N}$. This gives us that:
     $$\widetilde{K}(S^n) = \begin{cases}
         \mathbb{Z}, &\text{ if }2|n\\

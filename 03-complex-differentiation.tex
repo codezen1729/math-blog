@@ -7,7 +7,7 @@
 \subsection*{Tool 5 — Epsilon-Room Method}
 This is the ``leaving an $\varepsilon$-margin'' method, a standard technique in analysis. Often it is not easy to prove a sharp equality or inequality. Thus, to prove something of the form $A=B$ or $A\leq B$, one tries to prove
 \[
-A=B+\varepsilon\quad(\forall\varepsilon>0)
+|A-B|<\varepsilon\quad(\forall\varepsilon>0)
 \qquad\text{or}\qquad
 A\leq B+\varepsilon\quad(\forall\varepsilon>0).
 \]
@@ -15,9 +15,9 @@ A\leq B+\varepsilon\quad(\forall\varepsilon>0).
 
 This need for an $\varepsilon$-margin leads to a standard recurring argument: ``Let $\varepsilon>0$.'' This idea is a special form of routine analysis:
 \[
-a<b_k\ (\forall k)\Longrightarrow a<\inf_k b_k,
+a<b_k\ (\forall k)\Longrightarrow a\leq\inf_k b_k,
 \qquad
-a_k<b\ (\forall k)\Longrightarrow\sup_k a_k<b.
+a_k<b\ (\forall k)\Longrightarrow\sup_k a_k\leq b.
 \]
 
 \subsubsection*{Application — Complex differentiation}
@@ -140,14 +140,13 @@ This is just for fun.
 \textbf{Remark.}
 The derivative already shows that holomorphic functions are far more regular than merely Fr\'echet differentiable functions. If $f=u+iv$, then
 \[
-f'(z_0)=
+Df(z_0)=
 \begin{pmatrix}
 u_x&u_y\\
 v_x&v_y
-\end{pmatrix}
-\binom{\operatorname{Re}(z_0)}{\operatorname{Im}(z_0)}.
+\end{pmatrix}.
 \]
-Note that the matrix is orthogonal, since \(u_xu_y+v_xv_y=0\)
+Note that the matrix is a positive scalar multiple of an orthogonal matrix, since \(u_xu_y+v_xv_y=0\)
 by the Cauchy--Riemann equations. Let us see what this orthogonality leaves us with.
 
 
@@ -160,7 +159,7 @@ Then
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.46\linewidth]{note1-fig-04.pdf}
+  \includegraphics[width=0.64\linewidth]{note1-fig-04.pdf}
 
 \end{figure}
 
@@ -172,10 +171,10 @@ f'(\gamma_1(t_0))\gamma_1'(t_0),
 f'(\gamma_2(t_0))\gamma_2'(t_0)
 \right\rangle.
 \end{align*}
-As $f'$ is orthogonal, it fixes inner products, so
+As $f'$ is a positive scalar multiple of an orthogonal matrix, it multiplies inner products by $|f'(\gamma_1(t_0))|^2$, so
 \[
 \langle(f\circ\gamma_1)'(t_0),(f\circ\gamma_2)'(t_0)\rangle
-=\langle\gamma_1'(t_0),\gamma_2'(t_0)\rangle.
+=|f'(\gamma_1(t_0))|^2\langle\gamma_1'(t_0),\gamma_2'(t_0)\rangle.
 \]
 Consequently,
 \begin{align*}
@@ -192,8 +191,8 @@ Assuming $\theta$ and $\psi$ are both acute, we have
 \boxed{\theta=\psi.}
 \]
 
-Thus $f\in H(\Omega)$ does not deform curves haphazardly: it does so in such a manner that neither the rate of change nor the angle of intersection changes. If $f\in H(\Omega)$ and $f'\neq0$ on $\Omega$, then $f$ is called a conformal map. Mind you, these maps are very rare. One result is especially useful here:
+Thus $f\in H(\Omega)$ does not deform curves haphazardly: it does so in such a manner that the angle of intersection does not change. If $f\in H(\Omega)$ and $f'\neq0$ on $\Omega$, then $f$ is called a conformal map. Mind you, these maps are very rare. One result is especially useful here:
 
-The only smooth conformal maps on $\mathbb R^n\cup\{\infty\}$ are the M\"obius transformations.
+The orientation-preserving conformal automorphisms of $\widehat{\mathbb C}$ are the M\"obius transformations.
 % BLOG-CONTENT-END
 \end{document}

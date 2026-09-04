@@ -14,11 +14,6 @@ what happens, as $N\to\infty$, to
   A_N^f:=\frac1N\sum_{n=0}^{N-1}U_T^n f
   \qquad\text{(the $T$-average of $f$).}
 \]
-Although we started off by asking about $U_T^n f$ as $n\to\infty$, we shall
-see that, as a consequence of the Koopman--Neumann lemma for positive bounded
-sequences, if $A_N^f\to A$ as $N\to\infty$, then $U_T^n f\to A$ as
-$n\to\infty$, $n\notin J$, where $J$ has ``density'' zero in $\mathbb Z$.
-% Author check: this implication is preserved as stated in the handwritten source.
 In answering what happens to $\frac1{N+1}\sum_{n=0}^{N}U_T^n f$ as
 $N\to\infty$, ergodic theorems will, in some sense, establish a duality
 between space and time. The main result is the following.
@@ -27,7 +22,8 @@ between space and time. The main result is the following.
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system, with $T$ ergodic.
 If $f\in L^1_\mu$, then
 \[
-  \lim_{n\to\infty}\frac1n\sum_{j=0}^{n-1}U_T^j f=\int f\,d\mu.
+  \lim_{n\to\infty}\frac1n\sum_{j=0}^{n-1}U_T^j f=\int f\,d\mu
+  \qquad\text{almost everywhere.}
 \]
 \end{theorem}
 
@@ -39,12 +35,10 @@ the size of $B$ (or the measure of $B$). The conclusion is independent of $x\in 
 $T$ be ergodic is essential; otherwise, there may be $x\in X$ such that
 $T^n(x)\notin B$ for all $n\geq1$. Removing that invariant-set obstruction allows the measure of a set to govern the recurrence frequency. This is the time--space duality.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{lecture3-fig-01.pdf}
-  \FigureTag{L3.1}{fig:lecture3-fig-01}
-\end{figure}
-% Author check: the diagram's T^{-n}(B)=X a.e. is reproduced without adding a union.
+For a positive-measure set $B$, ergodicity gives
+\[
+ \bigcup_{n\geq0}T^{-n}(B)=X\qquad\text{almost everywhere}.
+\]
 
 Thus certain spatial information can be translated into temporal information,
 and vice versa.
@@ -88,7 +82,9 @@ Therefore
  =0=\|(U_T^*-\id)f\|.
 \]
 % Source page 4
-Thus $U_T^*f=f$. Since $U_T$ is unitary, $U_Tf=f$, so $f\in I$.
+Thus $U_T^*f=f$. Since $U_T$ is an isometry,
+$\|U_Tf-f\|_2^2=\|U_Tf\|_2^2+\|f\|_2^2-2\operatorname{Re}\langle U_Tf,f\rangle=0$.
+Hence $U_Tf=f$, so $f\in I$.
 Consequently, $B^\perp=I$ and $L^2_\mu(X)=I\oplus\overline B$.
 Write $f=P_Tf+h$, with $h\in\overline B$. It now suffices to prove
 $\frac1N\sum_{n=0}^{N-1}U_T^nh\to0$ in $L^2_\mu$.
@@ -96,14 +92,18 @@ For $h=U_Tg-g$, with $g\in L^2_\mu$, the telescoping series gives
 \[
  \left\|\frac1N\sum_{n=0}^{N-1}U_T^n(U_Tg-g)\right\|_2
  =\frac1N\|U_T^Ng-g\|_2
- \leq\frac{\|U_T-\id\|\,\|g\|_2}{N}
  \leq\frac{2\|g\|_2}{N}.
 \]
-% Author check: the middle operator norm is U_T-Id in the source, not U_T^N-Id.
 Here $U_T$, being an isometry, must have norm $1$. Therefore
-$\frac1N\sum_{n=0}^{N-1}U_T^nh\to0$ in $L^2_\mu$, since
-$2\|g\|_2/N\to0$ as $N\to\infty$.
-% Author check: no separate extension from B to its closure is written in the source.
+$\frac1N\sum_{n=0}^{N-1}U_T^nh\to0$ in $L^2_\mu$ for $h\in B$, since
+$2\|g\|_2/N\to0$ as $N\to\infty$. If $h\in\overline B$, choose $b\in B$
+with $\|h-b\|_2<\varepsilon$. Since every $U_T^n$ is an isometry,
+\[
+ \left\|\frac1N\sum_{n=0}^{N-1}U_T^nh\right\|_2
+ \leq\varepsilon+
+ \left\|\frac1N\sum_{n=0}^{N-1}U_T^nb\right\|_2.
+\]
+Letting first $N\to\infty$ and then $\varepsilon\to0$ completes the proof.
 \end{proof}
 
 \setcounter{theorem}{10}\begin{theorem}[von Neumann's mean ergodic theorem: $L^1_\mu$ version]
@@ -141,8 +141,7 @@ a contradiction. Thus $g'\in L^\infty_\mu$. As $g\in L^2_\mu$, the
 $L^2$ version of von Neumann's ergodic theorem tells us that $g'$ is
 $T$-invariant.
 
-Now we exploit the fact that $L^\infty_\mu$ is dense in $L^2_\mu$.
-% Author check: the source says L^2 here, although the approximation below is in L^1.
+Now we exploit the fact that $L^\infty_\mu$ is dense in $L^1_\mu$.
 Fix $f\in L^1_\mu$ and $\epsilon>0$. Let $g\in L^\infty_\mu$ satisfy
 $\|f-g\|_1<\epsilon$. Since $T$ is $\mu$-invariant,
 $\|A_N^f-A_N^g\|_1<\epsilon$. Also, there are $g'$ and $N_0$ such that
@@ -175,8 +174,7 @@ If $T$ is ergodic, then, for $f=\chi_B$, we only know so far that the
 frequency with which an orbit visits $B$ is a fixed number, independent of $x$.
 \end{remark}
 \begin{remark}[Quantitative estimate]
-We have $A_N^{\chi_B}=\frac1N\sum_{n=0}^{N-1}\chi_B\circ T$.
-% Author check: the source omits the power n on T in this particular formula.
+We have $A_N^{\chi_B}=\frac1N\sum_{n=0}^{N-1}\chi_B\circ T^n$.
 As $T$ is $\mu$-invariant,
 \[
  \int_X\chi_B\circ T\,d\mu=\int_X\chi_B\,d\mu=\mu(B)
@@ -193,7 +191,7 @@ and hence
  \mu\bigl(\{x:A_N^{\chi_B}(x)>\sqrt{\mu(B)}\}\bigr)
  \leq\sqrt{\mu(B)}.
 \]
-Thus the measure of points in $B$ that spend at least a proportion
+Thus the measure of points in $X$ that spend at least a proportion
 $\sqrt{\mu(B)}$ of the time in $B$ is at most $\mu(B)^{1/2}$.
 \end{remark}
 In light of the quantitative remark above, we have a more quantitative
@@ -255,6 +253,25 @@ because $F_N(x)=0$ if $x\notin P$. Therefore
 Here the equality uses positivity, and the last inequality uses $\|U\|\leq1$.
 \end{proof}
 
+\begin{proof}[Proof of the maximal ergodic theorem]
+Apply Lemma~\ref{lem:l3-positive} to $U=U_T$ and $f=g-\alpha$.
+If
+\[
+ P_N:=\left\{x:\max_{1\leq n\leq N}
+ \sum_{i=0}^{n-1}(g(T^ix)-\alpha)>0\right\},
+\]
+then
+\[
+ 0\leq\int_{P_N}(g-\alpha)\,d\mu,
+ \qquad \alpha\mu(P_N)\leq\int_{P_N}g\,d\mu.
+\]
+The sets $P_N$ increase to $E_\alpha$. Letting $N\to\infty$ gives
+$\alpha\mu(E_\alpha)\leq\int_{E_\alpha}g\,d\mu\leq\|g\|_1$.
+If $T^{-1}(A)=A$, apply the same argument to
+$(g-\alpha)\chi_A$. Its positive maximal set is $E_\alpha\cap A$, which
+gives the second inequality.
+\end{proof}
+
 
 \begin{remark}
 This theorem has essentially removed the dependence on $N$ in the
@@ -262,16 +279,42 @@ statement made in the quantitative remark above.
 \end{remark}
 We now prove Birkhoff's ergodic theorem.
 
-\setcounter{theorem}{13}\begin{theorem}[Birkhoff's ergodic theorem]
-\label{thm:l3-birkhoff}
-If $f\in L^1_\mu$, then
+\begin{proof}[Proof of Birkhoff's ergodic theorem]
+First consider a function of the form
+$h=u+(U_Tg-g)$, where $u\in I$ and $g\in L^2_\mu$. Its averages satisfy
 \[
- \lim_{n\to\infty}\frac1n\sum_{j=0}^{n-1}f(T^j(x))=f^*(x).
+ A_N^h=u+\frac{U_T^Ng-g}{N}.
 \]
-The function $f^*$ is $T$-invariant, and $\int f^*\,d\mu=\int f\,d\mu$.
-\end{theorem}
+For every $\varepsilon>0$, invariance of $\mu$ gives
+\[
+ \sum_{N=1}^{\infty}
+ \mu\bigl(\{|U_T^Ng|>\varepsilon N\}\bigr)
+ =\sum_{N=1}^{\infty}\mu\bigl(\{|g|>\varepsilon N\}\bigr)<\infty.
+\]
+The Borel--Cantelli lemma therefore implies $U_T^Ng/N\to0$ almost
+everywhere, and so $A_N^h\to u$ almost everywhere. By the $L^2$ mean
+ergodic theorem, functions of this form are dense in $L^2_\mu$, hence in
+$L^1_\mu$.
 
+For $q\in L^1_\mu$ and $\alpha>0$, the maximal theorem applied to $q$ and
+$-q$ gives
+\[
+ \mu\left(\left\{x:\sup_{N\geq1}|A_N^q(x)|>\alpha\right\}\right)
+ \leq\frac{2\|q\|_1}{\alpha}.
+\]
+Given $f\in L^1_\mu$, approximate it in $L^1$ by the functions $h$ above.
+Since $A_N^h$ converges almost everywhere, the last inequality shows that
+the upper and lower limits of $A_N^f$ agree almost everywhere. Thus
+$A_N^f\to f^*$ almost everywhere.
 
+The $L^1$ mean ergodic theorem also gives $A_N^f\to f'$ in $L^1$, where
+$f'$ is $T$-invariant. A subsequence converges to $f'$ almost everywhere,
+so $f^*=f'$ almost everywhere. Consequently $f^*$ is $T$-invariant and
+\[
+ \int_Xf^*\,d\mu=\lim_{N\to\infty}\int_XA_N^f\,d\mu
+ =\int_Xf\,d\mu.
+\]
+\end{proof}
 
 \begin{remark}[Ergodic case]
 If $T$ is ergodic, then $f^*$ must be constant, since it is $T$-invariant
@@ -283,7 +326,7 @@ Thus
 and we finally get the link between space and time averages:
 \[
  \boxed{\lim_{n\to\infty}\frac1n\sum_{i=0}^{n-1}f(T^i(x))
- =\int_Xf\,d\mu.}
+ =\int_Xf\,d\mu\quad\text{for almost every }x.}
 \]
 \end{remark}
 % BLOG-CONTENT-END

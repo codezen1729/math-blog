@@ -38,8 +38,7 @@ Let $M$ be a smooth $n$-manifold, $E$ a connected topological space, and $p:E\to
 % e_1,e_2 is the clear local label typo, as its next sentence explicitly states.
 \begin{figure}[H]
  \centering
- \includegraphics[width=.78\linewidth,height=5.2cm,keepaspectratio]{sc-fig-01.pdf}
- \FigureTag{SC1}{fig:sc-01}
+ \includegraphics[width=0.90\linewidth]{sc-fig-01.pdf}
 \end{figure}
 
 
@@ -56,8 +55,7 @@ Write $p^{-1}(U)=\bigsqcup_{\alpha\in I}V_\alpha$. Say $y\in V_\alpha$; then $(V
 Here $\widetilde\psi=\psi\circ p|_{\widetilde W}$ and $\widetilde\varphi=\varphi\circ p|_{\widetilde V}$, where $(p(\widetilde W),\psi)$ and $(p(\widetilde V),\varphi)$ are charts of $M$.
 \begin{figure}[H]
  \centering
- \includegraphics[width=.88\linewidth,height=6.4cm,keepaspectratio]{sc-fig-02.pdf}
- \FigureTag{SC2}{fig:sc-02}
+ \includegraphics[width=0.96\linewidth]{sc-fig-02.pdf}
 \end{figure}
 Consequently,
 \begin{align*}
@@ -92,10 +90,9 @@ It remains to prove uniqueness. For this purpose, restrict the relevant open set
 Let us now consider the following diagram. Here $E$ and $E'$ denote the same topological space $E$, but with different smooth structures.
 \begin{figure}[H]
  \centering
- \includegraphics[width=.46\linewidth,height=3.8cm,keepaspectratio]{sc-fig-03.pdf}
- \FigureTag{SC3}{fig:sc-03}
+ \includegraphics[width=0.62\linewidth]{sc-fig-03.pdf}
 \end{figure}
-Let $E'$ be the manifold we constructed. There is a continuous lift $\widetilde p$ of $p$, since $E=E'$ as topological manifolds and $\pi_1(E)=\pi_1(E')$.
+Let $E$ be the manifold we constructed. There is a continuous lift $\widetilde p$ of $p$, since $E=E'$ as topological manifolds and $\pi_1(E)=\pi_1(E')$.
 
 We shall first show that $\widetilde p$ is smooth. Let $(\psi,V)$ be a chart at $x\in M$ such that $V$ is an evenly covered neighbourhood of $x$, and let $U$ be such that $p'|_U:U\to V$ is a diffeomorphism. Let $(\sigma,W)$ be a chart at $y\in E$ such that $\widetilde p(W)\subseteq U$. Then
 \[
@@ -107,11 +104,10 @@ We shall first show that $\widetilde p$ is smooth. Let $(\psi,V)$ be a chart at 
 \]
 Hence $\widetilde p$ is smooth, using the charts $(\sigma,W)$ and $(\psi\circ p',U)$.
 
-Now fix a point $m\in M$, and let $e,e'$ lie in the corresponding fibres of $m$, that is, $e\in p^{-1}(m)$ and $e'\in(p')^{-1}(m)$. Let $\widetilde p$ be the unique lift sending $e$ to $e'$. One can similarly construct a lift of $p'$ such that $\widetilde p'(e')=e$. Notice that $\id_E$ and $\widetilde p'\circ\widetilde p$ are both lifts of $p$, and they agree at a fixed basepoint.
+Now fix a point $m\in M$, and let $e$ be a point of the fibre over $m$, viewed as the same underlying point of $E$ and $E'$. Let $\widetilde p$ be the unique lift fixing $e$. One can similarly construct a lift of $p'$ that fixes $e$. Notice that $\id_E$ and $\widetilde p'\circ\widetilde p$ are both lifts of $p$, and they agree at a fixed basepoint.
 \begin{figure}[H]
  \centering
- \includegraphics[width=.46\linewidth,height=3.8cm,keepaspectratio]{sc-fig-04.pdf}
- \FigureTag{SC4}{fig:sc-04}
+ \includegraphics[width=0.62\linewidth]{sc-fig-04.pdf}
 \end{figure}
 It follows that $\id_E=\widetilde p'\circ\widetilde p$ and $\id_{E'}=\widetilde p\circ\widetilde p'$. Therefore $\widetilde p$ is a diffeomorphism. Further, $\widetilde p=\id_E$, since $p'=p$ as topological maps. Thus the smooth structures of $E$ and $E'$ are compatible.
 
@@ -138,9 +134,9 @@ Let $M$ be a topological manifold. Then $\pi_1(M,P)$ is countable for every $P\i
 \begin{proof}
 Let $\{B_i\}_{i=1}^{\infty}$ be a countable basis of coordinate balls. Since $M$ is second countable, each $B_i\cap B_j$ has only countably many components. Pick a point $x_i\in\widehat{B_j\cap B_k}$, where $\widehat{B_j\cap B_k}$ varies over all components of all intersections $B_j\cap B_k$, and let $X=\{x_i\}$. Notice that $P\in M$ belongs to a component of some $B_j\cap B_k$, so we may assume that $P\in X$.
 
-Let $[f]\in\pi_1(M,P)$, with $f\colon[0,1]\to M$. By the Lebesgue number lemma, there is a partition $0<a_1<a_2<\cdots<a_n<1$ of $[0,1]$ such that $f([a_i,a_{i+1}])\subseteq B_{i+1}$ for suitable basis elements. Notice that $f(a_i)\in B_i\cap B_{i+1}$; let $x_i$ and $f(a_i)$ lie in the same component. Thus $f=f_1*f_2*\cdots*f_n$, where $f_i=f|_{[a_{i-1},a_i]}$, $a_0=0$, and $*$ denotes the usual concatenation.
+Let $[f]\in\pi_1(M,P)$, with $f\colon[0,1]\to M$. By the Lebesgue number lemma, there is a partition $0=a_0<a_1<a_2<\cdots<a_n=1$ of $[0,1]$ such that $f([a_{i-1},a_i])\subseteq B_i$ for suitable basis elements. Notice that $f(a_i)\in B_i\cap B_{i+1}$ for $1\leq i<n$; let $x_i$ and $f(a_i)$ lie in the same component, and set $x_0=x_n=P$. Thus $f=f_1*f_2*\cdots*f_n$, where $f_i=f|_{[a_{i-1},a_i]}$ and $*$ denotes the usual concatenation.
 
-Let $g_i$ be a path from $x_i$ to $f(a_i)$. We can then factor $f$ as follows:
+Let $g_0$ and $g_n$ be the constant path at $P$, and, for $1\leq i<n$, let $g_i$ be a path from $x_i$ to $f(a_i)$. We can then factor $f$ as follows:
 \[
 \begin{aligned}
 f&=\underbrace{g_0*f_1*g_1^{-1}}_{h_1}
@@ -152,19 +148,16 @@ f&=\underbrace{g_0*f_1*g_1^{-1}}_{h_1}
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.98\linewidth]{sc-fig-05.pdf}
-  \FigureTag{SC5}{fig:sc-05}
 \end{figure}
 
 % Source page 8
 \Needspace{6.6cm}
-A loop based at $P$ has been transformed as shown in Figure~\ref{fig:sc-06}.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=11.5cm]{sc-fig-06.pdf}
-  \FigureTag{SC6}{fig:sc-06}
+  \includegraphics[width=0.96\linewidth]{sc-fig-06.pdf}
 \end{figure}
 
-Thus every $f$ can be factored using paths $h_{x_i x_{i+1}}$ from $x_i$ to $x_{i+1}$. Notice that both $x_i$ and $x_{i+1}$ belong to $B_i$. Hence any two paths $\gamma_1$ and $\gamma_2$ between them satisfy $\gamma_1\simeq\gamma_2$. It follows that
+Thus every $f$ can be factored using paths $h_{x_{i-1}x_i}$ from $x_{i-1}$ to $x_i$. Notice that both $x_{i-1}$ and $x_i$ belong to $B_i$. Hence any two paths $\gamma_1$ and $\gamma_2$ between them satisfy $\gamma_1\simeq\gamma_2$. It follows that
 \[
 [f]=\mathop{*}_{i=1}^{n}[h_{x_{i-1}x_i}].
 \]
@@ -217,8 +210,7 @@ is a multiplication map on $G\times G$; let's lift it.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=7cm]{sc-fig-07.pdf}
-  \FigureTag{SC7}{fig:sc-07}
+  \includegraphics[width=0.72\linewidth]{sc-fig-07.pdf}
 \end{figure}
 
 The diagram gives $\pi\circ\widetilde m=m\circ(\pi\times\pi)$, or
@@ -241,7 +233,8 @@ such that $(\psi\circ\pi)\circ\widetilde m\circ\varphi^{-1}$ is smooth.
 This can be done for every $q$ and $\pi(p)$.
 
 % Source page 12
-Therefore, $\widetilde m$ is smooth. Thus $\widetilde m$ is a smooth multiplication map.
+Therefore, $\widetilde m$ is smooth.) Thus one has a smooth
+multiplication function.
 
 Similarly, by lifting $i\circ\pi$, where $i$ is the inverse map on $G$,
 one gets a smooth inverse map $\widetilde i$ on $\widetilde G$. Now it
@@ -259,8 +252,9 @@ defined by $f(x)=\widetilde e\cdot x$. Then
 Now $f$ and $\operatorname{Id}_{\widetilde G}$ are both lifts of $\pi$,
 and $f(\widetilde e)=\widetilde e\cdot\widetilde e=\widetilde e
 =\operatorname{Id}_{\widetilde G}(\widetilde e)$. Hence
-$f=\operatorname{Id}_{\widetilde G}$, so
-$x\cdot\widetilde e=\widetilde e\cdot x=x$.
+$f=\operatorname{Id}_{\widetilde G}$, so $\widetilde e\cdot x=x$.
+The same argument, applied to the map $x\mapsto x\cdot\widetilde e$, gives
+$x\cdot\widetilde e=x$.
 
 Now let's move on to associativity. Define
 $\alpha_L,\alpha_R\colon\widetilde G\times\widetilde G\times\widetilde G
@@ -280,12 +274,6 @@ Therefore $(\widetilde G,\cdot)$ is a Lie group and
 $\pi\colon\widetilde G\to G$ is a Lie group homomorphism.
 \end{proof}
 
-\begin{remark}
-Notice that the assumption that $\widetilde G$ is simply connected was
-crucial: it helped us literally lift the group structure on $G$. Such a
-lift might not be possible for some other smooth covers of $G$.
-\end{remark}
-
 \Needspace{8.3cm}
 \subsection{Uniqueness across the categories}
 
@@ -297,21 +285,16 @@ homomorphisms, then we have the following.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=7.5cm]{sc-fig-08.pdf}
-  \FigureTag{SC8}{fig:sc-08}
+  \includegraphics[width=0.72\linewidth]{sc-fig-08.pdf}
 \end{figure}
 
 There are continuous lifts $\widetilde p_1$ and $\widetilde p_2$ of
 $p_1$ and $p_2$ such that the diagram commutes. Thus $\widetilde p_2$ is
 a homeomorphism. Next, $p_1\circ\widetilde p_2$ is smooth and
 $\widetilde p_2$ is continuous, with $p_1$ a local diffeomorphism. Hence
-$\widetilde p_2$ is smooth, and therefore a diffeomorphism. Finally,
-$p_1$ and $p_2$ are covering maps, so $\widetilde p_2$ is a covering map
-that is smooth; hence $\widetilde p_2$ is a group homomorphism.
+$\widetilde p_2$ is smooth, and therefore a diffeomorphism.
 
 % Source page 14
-The continuous lift is a diffeomorphism. It remains to show that this same map is a group homomorphism.
-
 Notice that
 \begin{align*}
  p_1\bigl(\widetilde p_2(xy)\bigr)
@@ -330,14 +313,11 @@ say $(e_2,e_2)$, where $e_2$ is the identity of $G_2$, then uniqueness
 of lifts would tell us that
 $\widetilde p_2(xy)=\widetilde p_2(x)\widetilde p_2(y)$.
 
-Now one can choose $\widetilde p_2$ from the group of deck
-transformations so that $\widetilde p_2(e_2)=e_1$, where $e_1$ is the identity of $G_1$. For that $\widetilde p_2$, one can similarly
+Choose the unique lift $\widetilde p_2$ of $p_2$ through $p_1$ such that
+$\widetilde p_2(e_2)=e_1$, where $e_1$ is the identity of $G_1$. For that $\widetilde p_2$, one can similarly
 prove $\widetilde p_2(x^{-1})=(\widetilde p_2(x))^{-1}$. Thus
 $\widetilde p_2$ is a group homomorphism, hence a group isomorphism,
 and therefore, of course, a covering map.
-
-% Source page 15
-Thus the topological, smooth, and group-theoretic constructions yield the same map $\widetilde p_2$.
 
 \section{Classification and complex structures}
 
@@ -356,8 +336,7 @@ The same reduction applies in the complex category, as summarised in the followi
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=14cm]{sc-fig-09.pdf}
-  \FigureTag{SC9}{fig:sc-09}
+  \includegraphics[width=0.98\linewidth]{sc-fig-09.pdf}
 \end{figure}
 
 % Source page 16
@@ -374,9 +353,9 @@ Given a simply connected Riemann surface $S$, we have
 $S\cong\mathbb C$, $\mathbb P_1$, or $\mathbb D$.
 \end{theorem}
 
-If $G<\operatorname{Aut}(\mathbb P_1)$ acts properly discontinuously on
-$S$, then $G=\{0\}$. In the case of $\mathbb C$,
-$G\cong\mathbb Z$ or $\mathbb Z\times\mathbb Z$. These are easy
+If $G<\operatorname{Aut}(\mathbb P_1)$ acts freely and properly discontinuously on
+$\mathbb P_1$, then $G=\{1\}$. In the case of $\mathbb C$,
+$G=\{1\}$, $G\cong\mathbb Z$, or $G\cong\mathbb Z\times\mathbb Z$. These are easy
 consequences of elementary theorems taught in a complex analysis or
 topology course.
 

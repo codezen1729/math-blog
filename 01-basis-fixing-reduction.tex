@@ -4,7 +4,6 @@
 \begin{document}
 \section*{The Complex Plane}
 % BLOG-CONTENT-BEGIN
-% Overleaf publishing connection verified.
 
 \subsection*{Tool 1 — Basis-Fixing Reduction}
 Consider a linear transformation,
@@ -17,8 +16,9 @@ A simple application of the aforementioned tool goes into showing that any isome
 \[
 T(z)=z_0+\omega z
 \qquad\text{or}\qquad
-T(z)=z_0+\omega\overline z.
+T(z)=z_0+\omega\overline z,
 \]
+where $|\omega|=1$.
 
 
 \textit{Proof.}
@@ -86,7 +86,7 @@ T(z)=z_0+\omega\overline z.
 The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice''. We shall see another application of this soon. Before that, it is worth emphasizing the rigidity of the complex plane: if two points of the plane are connected by a rubber band, there are essentially two ways to deform it preserving lengths -- reflections and rotations. This rigidity feature can be extended to all Euclidean spaces $\mathbb R^n$. However, there are instances of non-Euclidean spaces, for which the doubling map $z\mapsto 2z$ is an isometry. 
 
 \subsubsection*{The dihedral group}
-Now let us illustrate another application of Tool $1$ by proving that the dihedral group \(D_n\) is isomorphic to \(\operatorname{Aut}(C_n),\) where $C_n$ is the cyclic graph on $n$ vertices.
+Now let us illustrate another application of Tool $1$ by proving that, for $n\geq3$, the dihedral group \(D_n\) is isomorphic to \(\operatorname{Aut}(C_n),\) where $C_n$ is the cyclic graph on $n$ vertices.
 
 \textit{Proof.}
 It is easy to check that $D_n$ acts on $C_n$, since rotations and reflections preserve edges. Thus there is a group homomorphism

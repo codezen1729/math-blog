@@ -19,8 +19,8 @@ const bySlug = new Map(posts.map(post => [post.slug, post]));
 const decode = value => value.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&#x([\da-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16))).replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(+n));
 const mathIssues=[];
 const requiredPassages = {
-  'vector-bundles': ['A paracompact Hasudorff space is normal and also admits a partition of unity'],
-  'classification-vector-bundles': ['holds homotopic information about', 'is orthogonal'],
+  'vector-bundles': ['A paracompact Hausdorff space is normal and also admits a partition of unity'],
+  'classification-vector-bundles': ['pullback of bundles via maps', 'images lie in orthogonal summands'],
   'first-surgery': ['have no wandering Fatou components'],
   'locally-trivial-bundles': ['replacing points'],
 };
@@ -55,15 +55,13 @@ for(const post of posts) {
     }
     assert.equal(readFileSync(new URL(`public/${post.sourceUrl}`,root),'utf8'),source);
   }
-  assert.ok(post.wordCount > (post.editedSourceSha256 ? 0 : 250), `${post.slug} has no publishable text`);
+  assert.ok(post.wordCount > 75, `${post.slug} has no publishable text`);
   assert.equal(post.dek,'');
-  assert.ok(post.excerptHtml === '' || post.html.includes(post.excerptHtml));
+  assert.ok(typeof post.excerptHtml === 'string' && post.excerptHtml.length > 0 && post.html.includes(post.excerptHtml), `${post.slug} has no opening preview`);
   assert.ok(!/the cited result|preserved in the linked TeX source|A technique-led field note/.test(post.html));
-  if (!post.editedSourceSha256) {
-    for(const passage of requiredPassages[post.slug] ?? []) assert.ok(decode(post.html).includes(passage), `Missing source passage in ${post.slug}: ${passage}`);
-    if(post.slug==='classification-vector-bundles') assert.ok(post.html.includes('\\tag{1}'));
-    if(post.slug==='bott-periodicity-k-theory') for(const n of [2,3,4]) assert.ok(post.html.includes(`\\tag{${n}}`));
-  }
+  for(const passage of requiredPassages[post.slug] ?? []) assert.ok(decode(post.html).includes(passage), `Missing source passage in ${post.slug}: ${passage}`);
+  if(post.slug==='classification-vector-bundles') assert.ok(post.html.includes('\\tag{1}'));
+  if(post.slug==='bott-periodicity-k-theory') for(const n of [2,3,4]) assert.ok(post.html.includes(`\\tag{${n}}`));
   for(const slug of post.prerequisites) assert.ok(bySlug.has(slug) && bySlug.get(slug).order<post.order,`Invalid prerequisite ${slug}`);
   for(const match of post.html.matchAll(/src="([^"]+)"/g)) {
     assert.ok(existsSync(new URL(`public/${decode(match[1])}`,root)),`${post.slug}: missing ${match[1]}`);

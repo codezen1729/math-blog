@@ -17,7 +17,7 @@ $\Ob(\mathcal C)$, and a class of composable morphisms, denoted by
 $\Mor(\mathcal C)$.
 \end{definition}
 \begin{figure}[H]
- \centering\includegraphics[width=.35\textwidth]{m1-fig-02.pdf}
+ \centering\includegraphics[width=.55\textwidth]{m1-fig-02.pdf}
  \FigureTag{M1.2}{fig:m1-fig-02}
 \end{figure}
 
@@ -38,16 +38,15 @@ $F\colon\Mor(\mathcal C)\to\Mor(\mathcal D)$ such that
 \]
 \end{definition}
 \setcounter{example}{1}\begin{example}
-Let $\cat{PCTop}$ be the category of path-connected topological spaces.
+Let $\cat{PCTop}_*$ be the category of pointed path-connected topological spaces and base-point-preserving maps.
 The assignments $X\mapsto\pi_1(X)$ (the fundamental group of $X$) and
 \[
  (h\colon X\to Y)\longmapsto
  \bigl([f]\xmapsto{h_*}[h\circ f]\colon\pi_1(X)\to\pi_1(Y)\bigr)
 \]
-give a functor from $\cat{CTop}$ to $\cat{Grps}$. Moreover,
+give a functor from $\cat{PCTop}_*$ to $\cat{Grps}$. Moreover,
 $\mathbb C\setminus\{0\}\mapsto\mathbb Z$, $\partial\mathbb D\mapsto\mathbb Z$,
 and $z\mapsto z^2$ maps to $n\mapsto2n$.
-% Author check: source changes PCTop to CTop and omits base points.
 \end{example}
 Functors help us better understand relations in a category
 by translating them to a different category. Given two such translations,
@@ -92,9 +91,8 @@ $h_X\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$ by
 % Source page 4 (the defining formula overlaps the previous page boundary).
 \[
  h_X(C)=\Hom(C,X),\qquad
- h_X(f\colon C\to C')\colon\Hom(C,X)\to\Hom(C',X),\quad g\mapsto g\circ f.
+ h_X(f\colon C\to C')\colon\Hom(C',X)\to\Hom(C,X),\quad g\mapsto g\circ f.
 \]
-% Author check: the source's Hom-map direction is retained, despite the stated f direction.
 We say that a functor $F\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$ is
 \emph{representable} if there exists $C\in\Ob(\mathcal C)$ such that $F\cong h_C$.
 
@@ -103,20 +101,18 @@ This is akin to studying $\mathcal C$ through its action on itself via
 $\Hom_{\mathcal C}(-,-)$.
 \subsubsection{Final and Initial Objects}
 Let $F\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$ be given by
-$F(C)=*$ (a singleton) and $F(f)=\id_*$. We say $I$ is an \emph{initial object}
+$F(C)=*$ (a singleton) and $F(f)=\id_*$. We say $I$ is a \emph{final object}
 of $\mathcal C$ if $h_I\cong F$, where $\cong$ denotes natural isomorphism.
-% Author check: initial/final and variance conventions in this paragraph are as written.
 \paragraph{Construction of $I$.}
 Let $I\in\Ob(\mathcal C)$ be such that, for every $C\in\Ob(\mathcal C)$,
-there is a unique $f\in\Mor(\mathcal C)$ with $I\xrightarrow{f}C$.
+there is a unique $f\in\Mor(\mathcal C)$ with $C\xrightarrow{f}I$.
 \begin{claim}
 $h_I\cong F$.
 \end{claim}
 For every $C\in\mathcal C$, the sets $h_I(C)$ and $F(C)$ are isomorphic,
-as they both have a single element. A \emph{final object} is the dual notion
-of an initial object. Therefore final objects are representable functors;
-categories with no final object yield standard examples of non-representable
-functors.
+as they both have a single element. An \emph{initial object} is the dual notion
+of a final object. Therefore final objects represent the constant singleton functor;
+categories with no final object yield standard examples in which this functor is non-representable.
 % Source page 5 (opening line continues the preceding page).
 \subsubsection{Limits and Colimits}
 Let $\chi\colon J\to\mathcal C$ be a functor, where $J$ is often called the
@@ -130,15 +126,14 @@ $\theta\in\Mor(J)$. Define
 where $\Nat$ stands for natural transformations, and
 \[
  \begin{aligned}
- F_\chi(f\colon A\to B)&\colon\Nat(C_A,\chi)\to\Nat(C_B,\chi),\\
- \{\nu_B\}_{B\in\Ob(\mathcal C)}&\longmapsto
- \{f\circ\nu_B\}_{B\in\Ob(\mathcal C)}.
+ F_\chi(f\colon A\to B)&\colon\Nat(C_B,\chi)\to\Nat(C_A,\chi),\\
+ \{\nu_i\}_{i\in\Ob(J)}&\longmapsto
+ \{\nu_i\circ f\}_{i\in\Ob(J)}.
  \end{aligned}
 \]
-% Author check: source uses B both as object and indexing variable and gives the displayed composition order.
 If $F_\chi\cong h_C$, then $C=\lim(\chi)$ is called the \emph{limit} of $\chi$.
 \paragraph{Construction of $C$.}
-Define the category $\mathcal C:=\Cone(\chi)$, with
+Define the category $\Cone(\chi)$, with
 \[
  \Ob(\Cone(\chi))=
  \left(C,\{f_i\colon C\to\chi(i)\}_{i\in J}\right),\qquad C\in\Ob(\mathcal C),
@@ -147,7 +142,7 @@ where the $f_i$ are such that, if $\alpha\colon i\to j$, then the following
 diagram commutes.
 % Source page 6
 \begin{figure}[H]
- \centering\includegraphics[width=.32\textwidth]{m1-fig-04.pdf}
+ \centering\includegraphics[width=.55\textwidth]{m1-fig-04.pdf}
  \FigureTag{M1.4}{fig:m1-fig-04}
 \end{figure}
 The morphisms are
@@ -157,23 +152,22 @@ The morphisms are
 \]
 where $f$ is such that the following diagram commutes for every $i\in\Ob(J)$.
 \begin{figure}[H]
- \centering\includegraphics[width=.30\textwidth]{m1-fig-05.pdf}
+ \centering\includegraphics[width=.55\textwidth]{m1-fig-05.pdf}
  \FigureTag{M1.5}{fig:m1-fig-05}
 \end{figure}
-$\mathcal C$ is called the \emph{cone category} of $\chi$.
-A final object of $\mathcal C$ is called the limit of $\chi$.
+$\Cone(\chi)$ is called the \emph{cone category} of $\chi$.
+A final object of $\Cone(\chi)$ is called the limit of $\chi$.
 Let $\lim(\chi)$ be the final object. Then it is easy to see that
 $h_{\lim(\chi)}\cong F_\chi$, namely,
 \[
  \Hom(D,\lim(\chi))\cong\Nat(C_D,\chi)\qquad\text{(as sets)}.
 \]
 Given $f\colon D\to\lim(\chi)$, we obtain
-$\bigl(D,\{f\circ\chi_i\}_{i\in\Ob(J)}\bigr)$
+$\bigl(D,\{\chi_i\circ f\}_{i\in\Ob(J)}\bigr)$
 % Source page 7
 in $\Ob(\Cone(\chi))$, where $\chi_i\colon\lim(\chi)\to\chi(i)$.
 By definition, $f$ must be unique, so we have the natural map
-$f\mapsto\{f\circ\chi_i\}_{i\in\Ob(J)}$.
-% Author check: the composition order f o chi_i is the source's order.
+$f\mapsto\{\chi_i\circ f\}_{i\in\Ob(J)}$.
 A \emph{colimit} is the dual notion of a limit in $\mathcal C$.
 \subsubsection{Adjunctions (or Adjoints)}
 Let $\mathcal C$ and $\mathcal D$ be two categories, and let
@@ -184,16 +178,15 @@ functor $G\colon\mathcal D\to\mathcal C$ such that
 \]
 This can be rephrased in terms of a representable functor. Define
 \[
- \overline F\colon\mathcal C\to\cat{Sets},\qquad
+ \overline F\colon\mathcal C^{\mathrm{op}}\to\cat{Sets},\qquad
  C\longmapsto\Hom_{\mathcal D}(F(C),D),
 \]
 % Source page 8
 and send $f\colon C\to C'$ to the map
 \[
- \bigl(g\colon F(C)\to D\bigr)\longmapsto
- \bigl(g\circ F(f)\colon F(C')\to D\bigr).
+ \bigl(g\colon F(C')\to D\bigr)\longmapsto
+ \bigl(g\circ F(f)\colon F(C)\to D\bigr).
 \]
-% Author check: the stated variance and composition domains are preserved.
 Suppose $\overline F$ is representable. Then there exists $\overline D$ such that
 \[
  \Hom_{\mathcal C}(C,\overline D)\cong\Hom_{\mathcal D}(F(C),D).
@@ -204,13 +197,6 @@ Set $G(D):=\overline D$. The action of $G$ on morphisms is induced by naturality
 The cone construction above is one example. Objects in a cone
 category generalize the notion of a morphism. A morphism relates a particular
 object to another, but a cone object relates to a collection of objects that are already related to one another.
-% Source page 9
-\begin{figure}[H]
- \centering\includegraphics[width=.74\textwidth]{m1-fig-06.pdf}
- \FigureTag{M1.6}{fig:m1-fig-06}
-\end{figure}
-% Author check: source's schematic cone arrows point toward C, unlike the earlier definition.
-
 \subsubsection{Quotient Category}
 Let $\mathcal C$ be a category. For every $X,Y\in\Ob(\mathcal C)$, an
 equivalence relation $\sim$ is set up on $\Hom_{\mathcal C}(X,Y)$ such that
@@ -222,8 +208,7 @@ equivalence relation $\sim$ is set up on $\Hom_{\mathcal C}(X,Y)$ such that
  \quad\Longrightarrow\quad f_1\circ g_1\sim f_2\circ g_2.
 \]
 Also, $X\sim Y$ if there exist $f\colon X\to Y$ and $g\colon Y\to X$ such that
-$f\circ g\sim\id_Y$ and $g\circ f=\id_X$.
-% Author check: the second relation is an equality in the source, not a tilde.
+$f\circ g\sim\id_Y$ and $g\circ f\sim\id_X$.
 % Source page 10
 Then $\mathcal C/{\sim}$ is the \emph{quotient category}.
 \setcounter{example}{2}\begin{example}
@@ -242,7 +227,7 @@ The set
 \]
 consists of the maps $f\colon X\to X'$ for which the following diagram commutes.
 \begin{figure}[H]
- \centering\includegraphics[width=.30\textwidth]{m1-fig-07.pdf}
+ \centering\includegraphics[width=.52\textwidth]{m1-fig-07.pdf}
  \FigureTag{M1.7}{fig:m1-fig-07}
 \end{figure}
 The dual notion is $B\downarrow\mathcal C$.
@@ -254,7 +239,7 @@ Finally, $A\downarrow\mathcal C\downarrow B:=A\downarrow(\mathcal C\downarrow B)
 demands that the following diagram commute.
 % Source page 11
 \begin{figure}[H]
- \centering\includegraphics[width=.28\textwidth]{m1-fig-08.pdf}
+ \centering\includegraphics[width=.52\textwidth]{m1-fig-08.pdf}
  \FigureTag{M1.8}{fig:m1-fig-08}
 \end{figure}
 \subsubsection{Category of Presheaves}
@@ -271,9 +256,8 @@ functor given by
  \chi_A(i)=A\quad(i\in\Ob(J)),\qquad
  \chi_A(f\colon i\to j)=\id_A.
 \]
-Then $\Nat(\chi_A,\chi_B)$ captures the morphism from $A$ to $B$, and
-$\Nat(\chi_A,\chi_B)$ is a functor in $\Fun(J,\mathcal C)$.
-% Author check: the last assertion is preserved; Nat denotes a set of transformations.
+Then $\Nat(\chi_A,\chi_B)$ captures the morphisms from $A$ to $B$, and
+each element of $\Nat(\chi_A,\chi_B)$ is a morphism in $\Fun(J,\mathcal C)$.
 \subsubsection{Objects as Morphisms}
 Let $X\in\Ob(\mathcal C)$. The points of $X$ can be thought
 % Source page 12
@@ -292,8 +276,7 @@ Given a group $G$, define a category $\mathcal BG$ as follows:
 \]
 where $g\in G$ is a morphism $*\to*$ and multiplication is composition.
 \begin{remark}
-$\mathcal BG$ has no final object.
-% Author check: source makes this assertion without excluding the trivial group.
+If $G$ is nontrivial, $\mathcal BG$ has no final object.
 \end{remark}
 \subsubsection{Forgetful Functors}
 Let $\mathcal C$ be a category of certain sets with a particular
@@ -307,10 +290,9 @@ structure imposed. The forgetful functor is
 \subsubsection{Exponentials}
 Let $C,B\in\Ob(\mathcal C)$. The \emph{exponential} is an object $C^B$
 such that, for any $f\colon A\times B\to C$, there exists a unique
-$\overline f\colon A\times B\to C^B$ for which the following diagram commutes.
-% Author check: source writes A times B, rather than A, as the domain of bar-f.
+$\overline f\colon A\to C^B$ for which the following diagram commutes.
 \begin{figure}[H]
- \centering\includegraphics[width=.38\textwidth]{m1-fig-09.pdf}
+ \centering\includegraphics[width=.58\textwidth]{m1-fig-09.pdf}
  \FigureTag{M1.9}{fig:m1-fig-09}
 \end{figure}
 We say $\mathcal C$ is \emph{Cartesian closed} if it contains exponentials
@@ -324,21 +306,22 @@ of morphisms
  \mu\colon G\times G\to G,\qquad \nu\colon G\to G,\qquad e\colon *\to G,
 \]
 where $*$ is a terminal object, such that the following diagrams commute.
-% Author check: source says final product; associativity labels use e, not id_G.
-\begin{figure}[H]
- \centering\includegraphics[width=.43\textwidth]{m1-fig-10.pdf}
- \FigureTag{M1.10}{fig:m1-fig-10}
-\end{figure}
-\begin{figure}[H]
- \centering\includegraphics[width=.86\textwidth]{m1-fig-11.pdf}
- \FigureTag{M1.11}{fig:m1-fig-11}
-\end{figure}
-% Source page 15 (the second inverse square continues from page 14).
-\begin{figure}[H]
- \centering\includegraphics[width=.78\textwidth]{m1-fig-12.pdf}
- \FigureTag{M1.12}{fig:m1-fig-12}
-\end{figure}
-% Author check: source calls the identity diagrams as well as the inverse diagrams "Inverse Axiom".
+\[
+\begin{tikzcd}[row sep=large,column sep=large,cells={nodes={font=\normalsize}}]
+G\times G\times G \arrow[r,"\mu\times\id_G"] \arrow[d,"\id_G\times\mu"']
+  &G\times G\arrow[d,"\mu"]\\
+G\times G\arrow[r,"\mu"']&G
+\end{tikzcd}
+\]
+The identity and inverse axioms are
+\[
+\begin{aligned}
+ \mu\circ(e\times\id_G)&=\id_G,
+ &\mu\circ(\id_G\times e)&=\id_G,\\
+ \mu\circ(\nu,\id_G)&=e\circ!,
+ &\mu\circ(\id_G,\nu)&=e\circ!.
+\end{aligned}
+\]
 \setcounter{example}{4}\begin{example}
 In $\cat{Sets}$, a group object is a group; in $\cat{Top}$, it is a topological
 group; in $\cat{Man}$, it is a Lie group. In $k\text{-}\cat{Top}_*/{\sim}$,
@@ -368,12 +351,11 @@ $\pi_2(x,y)=y$. Explicitly,
 \[
  X*Y=(X\times Y\times[0,1])/{\sim},\qquad
  \begin{cases}
- (x,y,0)\sim(x',y,0),\\
- (x,y,1)\sim(x,y',1),
+ (x,y,0)\sim(x,y',0),\\
+ (x,y,1)\sim(x',y,1),
  \end{cases}
 \]
 which is essentially all the line segments joining points in $X$ and $Y$.
-% Author check: the source's endpoint identifications, including the final 0, are retained.
 The special cases are
 \[
  \begin{aligned}
@@ -390,7 +372,6 @@ $S^n=\underbrace{S^0*\cdots*S^0}_{n+1\text{ times}}$.
 \subsubsection{Pushouts and Pullbacks}
 A pushout is a colimit of the first diagram below. The second gives the example
 $\Cone(f):=(X\amalg CA)/{\sim}$, where $(a,1)\sim f(a)$.
-% Author check: the parenthetical "fibre products" occurs beside pushouts in the source.
 \begin{figure}[H]
  \centering\includegraphics[width=.63\textwidth]{m1-fig-14.pdf}
  \FigureTag{M1.14}{fig:m1-fig-14}
@@ -443,7 +424,7 @@ We conclude with two applications of Yoneda's lemma.
 \subsubsection{Application 1}
 If $\mathcal C$ is Cartesian closed, then for any three objects $X,Y,Z$,
 \[
- \Hom_{\mathcal C}(X,\Hom_{\mathcal C}(Y,Z))
+\Hom_{\mathcal C}(X,Z^Y)
  \cong\Hom_{\mathcal C}(X\times Y,Z),
 \]
 often written as $Z^{X\times Y}\cong(Z^Y)^X$.
@@ -461,26 +442,14 @@ one can prove that
  =\Hom_{(k\text{-}\cat{Top}_*)/{\sim}}(\Sigma X,Y).
  \end{aligned}
 \]
-Here $\pi_b$ denotes the collection of based continuous maps
-$X\to\Omega_{y_0}Y$, up to homotopy, sending the base point to the base point.
-The homotopy sets are
-\[
- \begin{aligned}
- \text{zeroth homotopy set}&:=\pi_b(*,Y),\\
- \text{first homotopy set}&:=\pi_b(*,\Omega_{y_0}Y),\\
- &\ \vdots\\
- \text{$n$th homotopy set}&:=\pi_b(*,\Omega[\Omega^{n-1}(Y)])
- \cong\pi_b(\Sigma^n*,Y)\cong\pi_b(S^n,Y).
- \end{aligned}
-\]
-% Author check: the source uses * in these definitions and identifies Sigma^n * with S^n.
+Here $\pi_b$ denotes the collection of based continuous maps, up to based homotopy.
 \subsubsection{Application 2}
 Let $\mathcal C$ be a category and $X\in\Ob(\mathcal C)$. Then
 $X$ is a group object if and only if $h_X\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$
 lifts to groups, i.e. there exists $\widetilde h_X$ making the following
 diagram commute; $U$ is the forgetful functor.
 \begin{figure}[H]
- \centering\includegraphics[width=.43\textwidth]{m1-fig-15.pdf}
+ \centering\includegraphics[width=.62\textwidth]{m1-fig-15.pdf}
  \FigureTag{M1.15}{fig:m1-fig-15}
 \end{figure}
 Now $\Omega_{y_0}Y$ can be made into a group object in
@@ -492,7 +461,7 @@ By Yoneda's lemma, one can give a group structure to
 \]
 for every $A\in\Ob((k\text{-}\cat{Top}_*)/{\sim})$, since the functor
 $\pi_b(-,\Omega_{y_0}Y)$ lifts to $\cat{Grps}$.
-This way one can give homotopy sets, homology sets, and cohomology sets a group
-structure!
+This way one can give the based homotopy classes
+$\pi_b(A,\Omega_{y_0}Y)$ a group structure.
 % BLOG-CONTENT-END
 \end{document}

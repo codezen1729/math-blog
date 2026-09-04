@@ -792,7 +792,7 @@
     "minutes": 14,
     "wordCount": 2882,
     "prerequisites": [
-      "goursat-cauchy"
+      "orientation-and-covering-maps"
     ],
     "background": [
       "Covering spaces",
@@ -1122,7 +1122,9 @@
     "kind": "Exposition",
     "minutes": 9,
     "wordCount": 1795,
-    "prerequisites": [],
+    "prerequisites": [
+      "smooth-covering-manifolds"
+    ],
     "background": [],
     "sourceCollection": "Miscellaneous",
     "sourcePath": "Miscellaneous/notes/essay04.tex",
@@ -1180,9 +1182,7 @@
     "kind": "Exposition",
     "minutes": 18,
     "wordCount": 3588,
-    "prerequisites": [
-      "orientation-and-covering-maps"
-    ],
+    "prerequisites": [],
     "background": [],
     "sourceCollection": "Smooth Covering Manifolds",
     "sourcePath": "Smooth Covering Manifolds/notes/section01.tex",
@@ -1235,7 +1235,10 @@
     "kind": "Exposition",
     "minutes": 15,
     "wordCount": 3121,
-    "prerequisites": [],
+    "prerequisites": [
+      "topology-of-surfaces",
+      "abels-theorem"
+    ],
     "background": [],
     "sourceCollection": "Miscellaneous",
     "sourcePath": "Miscellaneous/notes/essay03.tex",
@@ -1335,22 +1338,22 @@
       "Elementary differential geometry"
     ],
     "sourceCollection": "K-Theory",
-    "sourcePath": "k-theory/main.tex",
-    "sourceStart": 151,
+    "sourcePath": "K-Theory/main.tex",
+    "sourceStart": 101,
     "sourceEnd": 560,
-    "sourceSha256": "e7b4eb7d294c6b27daec994b7f4d649b4335c2e920f5ac0c205bf1f4ac122e31",
+    "sourceSha256": "8f18953dd68ca043bd56601636a6d1fad4fa09778299a25504f8f9235bc64069",
     "sourceSegments": [
-      {
-        "source": "k-theory/main.tex",
-        "start": 151,
-        "end": 560,
-        "sha256": "e7b4eb7d294c6b27daec994b7f4d649b4335c2e920f5ac0c205bf1f4ac122e31"
-      },
       {
         "source": "K-Theory/main.tex",
         "start": 101,
         "end": 150,
         "sha256": "e0fa762e73c1a74cf23c05f9dd1dc53dc15e90d98617af27ffdaec1091aca520"
+      },
+      {
+        "source": "K-Theory/main.tex",
+        "start": 151,
+        "end": 560,
+        "sha256": "e7b4eb7d294c6b27daec994b7f4d649b4335c2e920f5ac0c205bf1f4ac122e31"
       }
     ],
     "status": "Source draft",
@@ -1714,19 +1717,13 @@
     "sourceCollection": "Commutative Algebra",
     "sourcePath": "Commutative Algebra/notes/lecture1.tex",
     "sourceStart": 191,
-    "sourceEnd": 37,
+    "sourceEnd": 320,
     "sourceSegments": [
       {
         "source": "Commutative Algebra/notes/lecture1.tex",
         "start": 191,
         "end": 320,
         "sha256": "2158e23d48650d19b9eadab0db4eb6e978098b0bf38720b8822cc8e71058da45"
-      },
-      {
-        "source": "Commutative Algebra/notes/lecture5.tex",
-        "start": 34,
-        "end": 37,
-        "sha256": "c54bee37a215bae29044f7985defd7d102ccee4472416f4dfb33060d4365db4a"
       }
     ],
     "status": "Published",
@@ -2523,7 +2520,7 @@
     "editedSourceSha256": "14cc3e3618195399e7bdfa0091b950c8827466262aaebb1e69aa339438a99f6a"
   },
   {
-    "order": 41,
+    "order": 47,
     "slug": "the-quadratic-family",
     "title": "The Quadratic Family",
     "dek": "",
@@ -2534,7 +2531,8 @@
     "minutes": 13,
     "wordCount": 2675,
     "prerequisites": [
-      "critical-points-and-julia-set-connectivity"
+      "boundary-behaviour-of-quasiconformal-maps",
+      "classification-fatou-components"
     ],
     "background": [],
     "sourceCollection": "Quadratic Family",
@@ -2579,7 +2577,7 @@
     "editedSourceSha256": "0cd5d5de1af0ffd9bf42d3dec410c060c9f336fc0086a106c65abe11a9677b49"
   },
   {
-    "order": 42,
+    "order": 41,
     "slug": "prime-ends-and-landing-of-external-rays",
     "title": "Prime Ends and Landing of External Rays",
     "dek": "",
@@ -2635,7 +2633,7 @@
     "minutes": 7,
     "wordCount": 1345,
     "prerequisites": [
-      "prime-ends-and-landing-of-external-rays"
+      "complex-differentiation"
     ],
     "background": [],
     "sourceCollection": "Complex Dynamics",
@@ -2770,7 +2768,8 @@
     "minutes": 11,
     "wordCount": 2185,
     "prerequisites": [
-      "the-mapping-theorem-and-invariant-complex-structures"
+      "the-mapping-theorem-and-invariant-complex-structures",
+      "prime-ends-and-landing-of-external-rays"
     ],
     "background": [],
     "sourceCollection": "Complex Dynamics",
@@ -2804,7 +2803,7 @@
     "editedSourceSha256": "cff3edd64fb4baf8a8da498213210bf3d8040e041dfaeec137c81bccdcb77072"
   },
   {
-    "order": 47,
+    "order": 48,
     "slug": "conformal-welding",
     "title": "Conformal Welding",
     "dek": "",
@@ -2815,8 +2814,7 @@
     "minutes": 2,
     "wordCount": 398,
     "prerequisites": [
-      "boundary-behaviour-of-quasiconformal-maps",
-      "the-mapping-theorem-and-invariant-complex-structures"
+      "the-quadratic-family"
     ],
     "background": [],
     "sourceCollection": "Quadratic Family",
@@ -2849,7 +2847,7 @@
     "editedSourceSha256": "1edf109bc06aa8f9ae4679e5ad1e3e5904422572aeca128308179ad76fbce83d"
   },
   {
-    "order": 48,
+    "order": 49,
     "slug": "shishikuras-surgery-principles",
     "title": "Shishikura’s Surgery Principles",
     "dek": "",
@@ -2894,7 +2892,7 @@
     "editedSourceSha256": "8459e8b267c4fd390a6762ca7a3bf1db8293563db986cfa3becefe1166e87ef5"
   },
   {
-    "order": 49,
+    "order": 50,
     "slug": "polynomial-like-maps-and-the-straightening-theorem",
     "title": "Polynomial-Like Maps and the Straightening Theorem",
     "dek": "",
@@ -2939,7 +2937,7 @@
     "editedSourceSha256": "2d4d12fd50f68ad9ef5cb1c0c1b53ce5ae0ffea8a8fbcdffdf823b5d389a7d52"
   },
   {
-    "order": 50,
+    "order": 42,
     "slug": "classification-fatou-components",
     "title": "Classification of Non-Wandering Fatou Components",
     "dek": "",
@@ -2955,8 +2953,7 @@
     "minutes": 43,
     "wordCount": 9003,
     "prerequisites": [
-      "goursat-cauchy",
-      "topology-of-surfaces"
+      "prime-ends-and-landing-of-external-rays"
     ],
     "background": [
       "Normal families"
@@ -3084,7 +3081,8 @@
     "minutes": 8,
     "wordCount": 1674,
     "prerequisites": [
-      "surgical-tools"
+      "surgical-tools",
+      "the-quadratic-family"
     ],
     "background": [],
     "sourceCollection": "Surgeries in Complex Dynamics",
@@ -3236,7 +3234,7 @@
   {
     "order": 57,
     "slug": "from-complex-dynamics-to-measure-preserving-systems",
-    "title": "From Complex Dynamics to Measure-Preserving Systems",
+    "title": "Measure-Preserving Systems",
     "dek": "",
     "phase": 6,
     "phaseLabel": "Ergodic Theory",
@@ -3591,7 +3589,10 @@
     "kind": "Essay",
     "minutes": 32,
     "wordCount": 6609,
-    "prerequisites": [],
+    "prerequisites": [
+      "unique-ergodicity-and-equidistribution",
+      "rational-dynamics-on-the-riemann-sphere"
+    ],
     "background": [
       "Measure theory",
       "Functional analysis",
@@ -3620,8 +3621,8 @@
     "title": "Elementary Number Theory",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 11,
     "wordCount": 2109,
@@ -3675,8 +3676,8 @@
     "title": "Proof Strategies: Induction, Contradiction, and Pigeonholes",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 8,
     "wordCount": 1574,
@@ -3750,8 +3751,8 @@
     "title": "Polynomial Roots, Identities, and Algebraic Systems",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 10,
     "wordCount": 1958,
@@ -3861,8 +3862,8 @@
     "title": "Congruences, Diophantine Equations, and Infinite Descent",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 17,
     "wordCount": 3398,
@@ -3996,8 +3997,8 @@
     "title": "Standard Inequalities and Ingenious Cauchy–Schwarz Applications",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 18,
     "wordCount": 3573,
@@ -4096,11 +4097,11 @@
   {
     "order": 70,
     "slug": "lemma-book-inequality-toolkit",
-    "title": "An Inequality Toolkit: Jensen, Muirhead, and Schur",
+    "title": "An Inequality Toolkit: Jensen, Muirhead, and Root Heuristics",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 8,
     "wordCount": 1572,
@@ -4174,8 +4175,8 @@
     "title": "Rearrangement, Convexity, and Power Means",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 5,
     "wordCount": 886,
@@ -4237,8 +4238,8 @@
     "title": "Lagrange Multipliers and Boundary Analysis",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 17,
     "wordCount": 3529,
@@ -4312,8 +4313,8 @@
     "title": "Circle Geometry: Inversion, Radical Axes, and Special Circles",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 11,
     "wordCount": 2302,
@@ -4385,8 +4386,8 @@
     "title": "Working Backwards, Area Ratios, and Geometric Constructions",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 8,
     "wordCount": 1638,
@@ -4454,8 +4455,8 @@
     "title": "Triangle Inequalities and Trigonometric Substitutions",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 15,
     "wordCount": 3113,
@@ -4566,8 +4567,8 @@
     "title": "Isogonal Conjugates and Pole–Polar Geometry",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 5,
     "wordCount": 990,
@@ -4623,8 +4624,8 @@
     "title": "Transformations: Rotating, Reflecting, and Cutting Figures",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 3,
     "wordCount": 500,
@@ -4674,8 +4675,8 @@
     "title": "Puzzles, Surprises, and Marvellous Methods of Multiplication",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 10,
     "wordCount": 2033,
@@ -4759,8 +4760,8 @@
     "title": "Problems Proposed by S. Ramanujan",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 3,
     "wordCount": 439,
@@ -4805,8 +4806,8 @@
     "title": "Problems for Anant Mudgal",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 2,
     "wordCount": 281,
@@ -4851,8 +4852,8 @@
     "title": "Thrilling Thirty: The Surviving Problems",
     "dek": "",
     "phase": 7,
-    "phaseLabel": "The Lemma Book",
-    "track": "The Lemma Book",
+    "phaseLabel": "Lemma Book (Olympiad Days)",
+    "track": "Lemma Book (Olympiad Days)",
     "kind": "Exposition",
     "minutes": 8,
     "wordCount": 1620,

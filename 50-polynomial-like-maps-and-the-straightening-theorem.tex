@@ -22,25 +22,6 @@ $S=\mathbb C$ or $\widehat{\mathbb C}$, $f$ is rational, and $\deg(f)\ge2$.
 different dynamical data along selected subdomains. The Straightening
 Theorem is a central example.
 
-% Source page 2
-Let $f\colon U\to V$, with $f\in\Hol(U)$. Locally around critical points,
-$f$ behaves like a polynomial. There is an easy way to see this. Let
-$\widehat z$ be a critical point of $f$. First conjugate it locally with
-holomorphic changes of coordinates $\psi,\varphi$ such that
-\[
- \widetilde f(\widehat z)
- =(\varphi\circ f\circ\psi^{-1})(\widehat z)=\widehat z.
-\]
-Then $\widehat z$ is a superattracting fixed point and thus admits a
-B\"ottcher coordinate change. One can extend this polynomial behaviour
-until $\widetilde f$ hits the nearest other critical point.
-% Author check: distinct coordinate maps are called a conjugacy; the extension claim is informal.
-
-Together, these local models may or may not describe $f$ on all of $U$,
-depending on the union of their B\"ottcher domains. This local polynomial
-behaviour led Douady and Hubbard to investigate polynomial-like maps and
-their relation to polynomials.
-
 \setcounter{definition}{26}\begin{definition}[Polynomial-like map]
 Let $U,V$ be bounded simply connected domains of $\mathbb C$ such that
 $\partial U,\partial V$ are analytic curves and
@@ -56,24 +37,10 @@ critical points, where it was observed to have polynomial-like behaviour.
 Polynomials are polynomial-like, so this definition genuinely generalises
 them.
 \end{remark}
-\begin{remark}[2]
-One can weaken the regularity required of the boundaries $\partial U,\partial V$.
-If the domains given to us are $U',V'$ and $f\colon U'\to V'$, construct
-a polygonal region in $V'\setminus\overline{U'}$.
-By the Jordan Curve Theorem, if $\gamma$ is the polygon and
-$V=\operatorname{Int}(\gamma)$, we have
-$U'\subset\overline{U'}\subset V\subset\overline V\subset V'$.
-Let $U=f^{-1}(V)$; then $\partial U$ and $\partial V$ are piecewise
-analytic. One can smooth the corners of $\gamma$ by choosing appropriately
-scaled mollifiers. For questions about local behaviour, it is therefore enough to study
-$f|_U$.
-\end{remark}
-% Author check: the smoothing discussion does not establish real-analytic boundaries as written.
-
+Here $K(f):=\bigcap_{n\ge0}f^{-n}(V)$ is the set of points that never escape under the polynomial-like map.
 \setcounter{theorem}{51}\begin{theorem}[Straightening Theorem]
 \label{thm:cd13-straightening}
-Every polynomial-like map $f\colon U\to V$ of degree $d$ is
-quasiconformally conjugate to a polynomial of degree $d$.
+Every polynomial-like map $f\colon U\to V$ of degree $d$ is hybrid equivalent to a polynomial $P$ of degree $d$: there is a quasiconformal conjugacy whose Beltrami coefficient vanishes almost everywhere on $K(f)$ \cite{douadyhubbard1985polynomiallike}.
 \end{theorem}
 \paragraph{Note.}
 In other words, the ellipse field of a polynomial-like map can be
@@ -91,75 +58,80 @@ Let $\rho>1$, and let
 be a Riemann map fixing $\infty$. Since $\partial V$ is analytic, $R$
 extends analytically to its boundary $\partial V$.
 Call such an extension $\psi_1\colon\partial V\to S^1_{\rho^d}$.
+Let $\widehat f=f|_{\partial U}$ and
+$\widetilde f=\psi_1\circ\widehat f\colon\partial U\to S^1_{\rho^d}$.
+The map $\widehat f$ is an analytic covering of degree $d$, while
+$z\mapsto z^d$ is a covering from $S^1_\rho$ to $S^1_{\rho^d}$ of the
+same degree. Hence $\widetilde f$ lifts through $z\mapsto z^d$ to an
+analytic orientation-preserving diffeomorphism
+$\psi_2\colon\partial U\to S^1_\rho$, giving
+$\psi_1(f(z))=\psi_2(z)^d$ for every $z\in\partial U$.
 \begin{figure}[H]
  \centering\includegraphics[width=.35\textwidth]{cd13-fig-01.pdf}
  \FigureTag{CD13.1}{fig:cd13-01}
 \end{figure}
-Since $\partial U,\partial V$ are analytic, $R$ and $f$ can be extended
-analytically beyond $\partial U,\partial V$. Thus $\widetilde f$ remains
-a branched covering of degree $d$, and we have
-\[
- \widetilde f_*\bigl(\pi_1(\partial U)\bigr)
- \subseteq(z\mapsto z^d)_*\bigl(\pi_1(S^1_\rho)\bigr).
-\]
-Hence $\widetilde f$ can be lifted to $\psi_2$, giving
-$\psi_1(f(z))=\psi_2(z)^d$ for every $z\in\partial U$.
-Here $\psi_2\in\operatorname{Deck}(S^1_{\rho^d})$.
-% Author check: the deck-group assertion and covering terminology are retained.
 Let
 \[
- A_0=V\setminus U,\qquad
+ A_0=V\setminus\overline U,\qquad
  A_{\rho,\rho^d}:=\{\zeta:\rho<|\zeta|<\rho^d\}.
 \]
 The maps $\psi_1,\psi_2$ are analytic on $\partial V,\partial U$,
-so there exists a quasiconformal map $\psi$ on $A_0$ such that
-$\psi\colon\overline{A_0}\to A_{\rho,\rho^d}$ is continuous.
+so there exists a quasiconformal map
+$\psi\colon A_0\to A_{\rho,\rho^d}$ which extends continuously to the
+closures and satisfies
+\[
+ \psi|_{\partial V}=\psi_1,\qquad \psi|_{\partial U}=\psi_2.
+\]
 Now it is time to perform the surgery.
-% Author check: A_0 and the target of its closure follow the source despite boundary inconsistencies.
 
 % Source page 5
-On the annulus $V\setminus U$, use the quasiconformal map $\psi$ to glue
+On the annulus $A_0$, use the quasiconformal map $\psi$ to glue
 $f$ to the external holomorphic model. The resulting map supplies the
 invariant ellipse field that will be straightened to a circle field.
-Define $F\colon\mathbb C\to\mathbb C$, the result of surgery on $f$, by
+Define $F\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$, the result of surgery on $f$, by
 \[
  F(z):=
  \begin{cases}
   f(z),&z\in U,\\
   R^{-1}\bigl(\psi(z)^d\bigr),&z\in A_0,\\
-  R^{-1}\bigl(R(z)^d\bigr),&z\in\mathbb C\setminus V.
+  R^{-1}\bigl(R(z)^d\bigr),&z\in\widehat{\mathbb C}\setminus\overline V.
  \end{cases}
 \]
-Note that $F$ is quasiregular. If we find an $F$-invariant Beltrami form,
-the Mapping Theorem will conclude the proof.
+On the two boundary curves these formulas have the same continuous
+extensions. Note that $F$ is a quasiregular branched covering of degree
+$d$. If we find an $F$-invariant Beltrami form, the Mapping Theorem will
+conclude the proof.
+
+Let $\mu_0$ be the circle field and let $\mu_\psi=\psi^*\mu_0$. Put
+$E_0=A_0$ and, for $n\geq1$, put
+\[
+ E_n=\{z\in U:f^j(z)\in U\ (0\leq j<n),\ f^n(z)\in A_0\}.
+\]
 Define the Beltrami form $\mu$ by
 \[
- \mu(z):=
- \begin{cases}
-  \psi^*\mu_0,&\text{on }A_0,\\
-  R^*\mu_0,&\text{on }\mathbb C\setminus V,\\
-  (f^n)^*\mu,&\text{on }\{z\in U:f^n(z)\in A_0\},\\
-  \mu_0,&\text{elsewhere}.
- \end{cases}
+\mu(z):=
+\begin{cases}
+  (f^n)^*\mu_\psi,&z\in E_n,\quad n\geq0,\\
+  \mu_0,&z\in K(f)\cup(\widehat{\mathbb C}\setminus V).
+\end{cases}
 \]
-Clearly $\mu$ is $F$-invariant, so there exists a quasiconformal map
-$\phi\colon\mathbb C\to\mathbb C$ such that
-$\phi\circ F\circ\phi^{-1}$ is holomorphic on $\widetilde U=\phi(U)$,
-of degree $d$.
-% Source page 6
-Therefore $F$ is quasiconformally conjugate to a holomorphic map;
-in particular, $f$ is quasiconformally conjugate to a polynomial.
+On the remaining preimages of the boundary curves, which have area zero, set $\mu=\mu_0$.
+Since holomorphic pullback preserves eccentricity,
+$\|\mu\|_\infty=\|\mu_\psi\|_\infty<1$, and the construction gives
+$F^*\mu=\mu$. Hence there exists a quasiconformal map
+$\phi\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$, normalized by
+$\phi(\infty)=\infty$, such that
+\[
+ P:=\phi\circ F\circ\phi^{-1}
+\]
+is holomorphic on $\widehat{\mathbb C}$. It has degree $d$, and
+$P^{-1}(\infty)=\{\infty\}$, so $P$ is a polynomial of degree $d$.
+Since $F=f$ on $U$, the map $\phi$ conjugates $f$ to $P$ on a
+neighbourhood of $K(f)$. Moreover, $\mu=\mu_0$ on $K(f)$, so the
+Beltrami coefficient of $\phi$ vanishes almost everywhere there.
+Thus $f$ and $P$ are hybrid equivalent.
 \end{proof}
-% Author check: the pullback prescription and the global polynomial conclusion are abbreviated.
-
-The theorem in fact says something more. Set
-$K_f:=\bigcap_{n>0}f^{-n}(V)$.
-Then $K_f$ is the right analogue of the filled Julia set for polynomials:
-it is the set of points in $U$ that never escape $U$.
-Note that $f$ and
-$P=(\phi\circ F\circ\phi^{-1})|_{\phi(U)}$ are conjugate, but on $K_f$
-they are conjugate holomorphically. Such a phenomenon is called
-\emph{hybrid equivalence}.
-% Author check: “holomorphically on K_f” is the source wording, not a supplied neighbourhood conjugacy.
 % BLOG-CONTENT-END
+\bibliographystyle{amsalpha}
+\bibliography{tools/profiles/complex-dynamics-notes/references}
 \end{document}

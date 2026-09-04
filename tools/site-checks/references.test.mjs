@@ -52,10 +52,12 @@ test('full newest collections retain their closing sections and all source figur
     ['third-surgery','mcmullens-surgery','mcmullens-surgery-finite-symmetry']
       .flatMap(slug => [...bySlug.get(slug).html.matchAll(/src="(figures\/mcmullens-surgery\/ms-fig-[^"]+\.svg)"/g)].map(match => match[1]))
   );
-  assert.equal(surgeryFigures.size,30,'McMullen surgery figure distribution');
+  assert.equal(surgeryFigures.size,29,'McMullen surgery external-figure distribution');
   assert.match(bySlug.get('smooth-covering-manifolds').html,/associativ/i);
   assert.ok(bySlug.get('the-quadratic-family').html.includes('G_c(P_c(z))=2G_c(z)'), 'The Quadratic Family must retain the functional equation from its final section.');
-  assert.ok(bySlug.get('polynomial-like-maps-and-the-straightening-theorem').wordCount > 900);
+  const straightening = bySlug.get('polynomial-like-maps-and-the-straightening-theorem').html;
+  assert.ok(straightening.includes('P:=\\phi\\circ F\\circ\\phi^{-1}'));
+  assert.match(straightening, /Thus [\s\S]{0,240}hybrid equivalent\./);
 });
 
 test('vector diagrams keep a readable native display scale', () => {

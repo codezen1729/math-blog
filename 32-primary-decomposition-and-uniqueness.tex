@@ -9,17 +9,16 @@
 \setcounter{definition}{8}\begin{definition}
 An ideal $\qq<A$ is \emph{primary} if
 \[
-xy\in\qq\ \Longleftrightarrow\ x\in\qq\text{ or }y\in\qq\text{ or }x,y\in\rad(\qq).
+xy\in\qq\text{ and }x\notin\qq\ \Longrightarrow\ y^n\in\qq\text{ for some }n\geq1.
 \]
-Equivalently, every zero-divisor in $A/\qq$ is nilpotent. If $\rad(\qq)=\pp$, then $\qq$ is \emph{$\pp$-primary}.
-% Author check: the displayed equivalence is not silently replaced by the usual primary-ideal implication.
+Equivalently, $xy\in\qq$ implies $x\in\qq$ or $y\in\rad(\qq)$, and every zero-divisor in $A/\qq$ is nilpotent. If $\rad(\qq)=\pp$, then $\qq$ is \emph{$\pp$-primary}.
 \end{definition}
 \begin{claim}
 $\rad(\qq)$ is the smallest prime ideal containing $\qq$.
 \end{claim}
 \begin{proof}
 % Source page 6
-If $xy\in\rad(\qq)$, then $x^ny^n\in\qq$ for $n>0$. Hence $x^n\in\qq$, $y^n\in\qq$, or $x^n,y^n\in\rad(\qq)$; thus $x$ or $y$ belongs to $\rad(\qq)$.
+If $xy\in\rad(\qq)$, then $x^ny^n\in\qq$ for some $n>0$. Hence $x^n\in\qq$ or $(y^n)^m\in\qq$ for some $m>0$; thus $x$ or $y$ belongs to $\rad(\qq)$. Plainly $\qq\subseteq\rad(\qq)$, and every prime ideal containing $\qq$ also contains $\rad(\qq)$.
 \end{proof}
 \setcounter{example}{6}\begin{example}
 \begin{enumerate}[label=(\roman*)]
@@ -29,8 +28,8 @@ If $xy\in\rad(\qq)$, then $x^ny^n\in\qq$ for $n>0$. Hence $x^n\in\qq$, $y^n\in\q
 \end{enumerate}
 \end{example}
 \begin{remark}
-In $\Z$, unique factorization gives $n=p_1^{a_1}\cdots p_n^{a_n}$, where $n\in\Z$ and the $p_i$ are primes. Equivalently,
-\[(n)=\prod_{i=1}^n(p_i)^{a_i}=\bigcap_{i=1}^n(p_i)^{a_i}.\]
+In $\Z$, unique factorization gives $m=p_1^{a_1}\cdots p_r^{a_r}$, where $m\in\Z$ and the $p_i$ are primes. Equivalently,
+\[(m)=\prod_{i=1}^r(p_i)^{a_i}=\bigcap_{i=1}^r(p_i)^{a_i}.\]
 An appropriate generalization of this phenomenon to arbitrary rings requires replacing powers of primes by primary ideals. For certain rings, every ideal has an ``almost'' unique primary decomposition, $\aa=\bigcap_{i=1}^n\qq_i$, where $\qq_i$ is $\pp_i$-primary.
 \end{remark}
 % Source page 7
@@ -43,13 +42,12 @@ is a \emph{primary decomposition} of $\aa$. The set $\{\pp_i\}_{i=1}^n$ is the s
 If $\qq_j\supseteq\bigcap_{k=1}^{\ell}\qq_{i_k}$, then $\qq_j$ is redundant in (*). Henceforth we assume our primary decomposition is \emph{irredundant}, or minimal.
 \end{remark}
 \setcounter{theorem}{8}\begin{lemma}
-If the $\qq_i$ are $\pp$-primary, then so is $\bigcap_i\qq_i$.
+If $\qq_1,\ldots,\qq_n$ are $\pp$-primary, then so is $\bigcap_{i=1}^n\qq_i$.
 \end{lemma}
 \begin{proof}
-We have $\rad(\qq)=\rad(\bigcap_i\qq_i)=\bigcap_i\rad(\qq_i)$.
+Let $\qq:=\bigcap_{i=1}^n\qq_i$. We have $\rad(\qq)=\rad(\bigcap_{i=1}^n\qq_i)=\bigcap_{i=1}^n\rad(\qq_i)$.
 % Source page 8
-If $xy\in\qq$ and $y\notin\qq$, then there exists $i$ with $xy\in\qq_i$ and $y\notin\qq_i$, so $x\in\pp$.
-% Author check: finiteness of the intersection is implicit in the surrounding decomposition.
+If $xy\in\qq$ and $x\notin\qq$, then there exists $i$ with $xy\in\qq_i$ and $x\notin\qq_i$, so $y\in\pp$.
 \end{proof}
 \paragraph{Consequence.}
 If $\aa=\bigcap_{i=1}^n\qq_i$ is a primary decomposition, we can assume that the primes $\pp_i$ for which $\qq_i$ is $\pp_i$-primary are all distinct.
@@ -91,12 +89,15 @@ Let $S$ be a multiplicatively closed subset of $A$ and $\qq$ a $\pp$-primary ide
 
 (ii) If $\qq$ is $\pp$-primary, then $S^{-1}\qq$ is $S^{-1}\pp$-primary:
 \[
-\frac xs\frac yt\in S^{-1}\qq\ \Longrightarrow\ xy\in\qq
-\ \Longrightarrow\ x\in\qq\text{ or }y^n\in\qq
+\begin{aligned}
+\frac xs\frac yt\in S^{-1}\qq
+&\ \Longrightarrow\ uxy\in\qq\text{ for some }u\in S\subseteq A\setminus\pp
+\ \Longrightarrow\ xy\in\qq\\
+&\ \Longrightarrow\ x\in\qq\text{ or }y^n\in\qq
 \ \Longrightarrow\ \frac xs\in S^{-1}\qq\text{ or }\left(\frac yt\right)^n\in S^{-1}\qq.
+\end{aligned}
 \]
-Also, $\rad(S^{-1}\qq)=S^{-1}\rad(\qq)=S^{-1}\pp$. Similarly, one can show that if $S^{-1}\qq$ is $S^{-1}\pp$-primary, then $\qq$ is $\pp$-primary.
-% Author check: the final sentence has not been restricted to contracted ideals.
+Also, $\rad(S^{-1}\qq)=S^{-1}\rad(\qq)=S^{-1}\pp$. Conversely, the contraction of an $S^{-1}\pp$-primary ideal is $\pp$-primary.
 \end{proof}
 % Source page 11
 \subsection{Isolated and embedded primes}

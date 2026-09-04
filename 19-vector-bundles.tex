@@ -4,13 +4,11 @@
 \begin{document}
 \section*{Vector Bundles}
 % BLOG-CONTENT-BEGIN
-\section{Vector Bundles}
-
-
 A common theme in mathematics is to linearise the study of an object by associating a vector space or linear operator to it. Representation theory, differential geometry, Riemannian geometry, and rational homotopy theory all use this strategy. 
 Following this trend, let us try to linearize homotopy theory. \cite{atiyah2018k}
 
-\subsection*{Definition 3.1 — Vector Bundles} A \textbf{vector bundle} is a fibre bundle $\eta = (E, B, V, p)$ with the following specifications:
+\begin{definition}[Vector bundle]
+A \textbf{vector bundle} is a fibre bundle $\eta = (E, B, V, p)$ with the following specifications:
 \begin{enumerate}[(i)]
     \item $V\in \text{Ob(Vect)}$ (a vector space).
     \item $G = \text{Aut}(V)$ (linear automorphism).
@@ -19,6 +17,7 @@ Following this trend, let us try to linearize homotopy theory. \cite{atiyah2018k
 \end{enumerate}
 
 If $\text{dim}(V) = n$, then we say $(E, B, V, p)$ is a vector bundle of dimension $n$ over $B.$
+\end{definition}
 
 
 \textbf{Remarks} (on Definition 3.1):
@@ -34,7 +33,7 @@ If $\text{dim}(V) = n$, then we say $(E, B, V, p)$ is a vector bundle of dimensi
     \item Given a local frame, one can define a local trivialization by tracing back the argument above.
     \item If $V$ is a vector space over $\mathbb{C}$, $\mathbb{R}$, then $(E, B, V, p)$ is called a \textbf{complex or real vector bundle}, respectively.
     \item If $\text{dim}(V) < \infty$, then $\eta$ is called a \textbf{finite-dimensional vector bundle}.
-    \item From this point on we shall only care about real/complex finite-dimensional vector bundles. Denote by $\text{Vect}_{\mathbb{K}}^n(B)$ the category of $\mathbb{K}$-vector bundles over $B$ of dimension $n$ up to isomorphism, where $\mathbb{K}$ stands for $\mathbb{C}$ or $\mathbb{R}$.
+    \item From this point on we shall only care about real/complex finite-dimensional vector bundles. Denote by $\text{Vect}_{\mathbb{K}}^n(B)$ the set of isomorphism classes of $\mathbb{K}$-vector bundles over $B$ of dimension $n$, where $\mathbb{K}$ stands for $\mathbb{C}$ or $\mathbb{R}$.
     \item Denote by $\text{Vect}_{\mathbb{K}}(X)$ the category of continuously varying families of vector spaces over $X$. In particular, we make no restriction on the dimension of fibres, apart from those imposed by continuity\footnote{Dimension of fibres over a connected component should remain invariant}.
     \end{itemize}
 
@@ -46,10 +45,10 @@ If $\text{dim}(V) = n$, then we say $(E, B, V, p)$ is a vector bundle of dimensi
     \begin{itemize}
         \item $M = \big([0,1]\times\mathbb{R}\big)/\sim$.
         \item $(0, r) \sim (1, -r)$.
-        \item $p\big([t, r]\big) := t$.
+        \item $p\big([t, r]\big) := [t]\in S^1$.
     \end{itemize}
     is called the \textbf{M\"obius Bundle}.
-    \item Let $\eta = (E, B, V, p)$ and $V' \subseteq_{\text{subspace}} V$, define,
+    \item Let $\eta = (E, B, V, p)$ and let $V' \subseteq_{\text{subspace}} V$ be invariant under all transition functions, define,
     $$E':= \big\{\varphi_{\alpha}(b,v) |  \varphi_{\alpha} \in \{\varphi_{\alpha}\}_{\alpha}, b\in U_{\alpha}, v\in V'\big\}$$
     then, $$\eta' := \big(E', B, V', p\big|_{E'}\big)$$ is called the \textbf{sub-bundle} of $\eta$.
     \item $\eta = (B, B, \{0\}, \text{id}_B)$ is called the \textbf{0-bundle} over $B$.
@@ -70,51 +69,31 @@ $$\Delta: B \rightarrow B\times B$$
 $$\Delta(b):= (b,b)$$
 Consider the pullback square:
 $$\begin{tikzcd}
-    (E\cross\widetilde{E})\cross_B(B\cross B) \arrow[hookrightarrow]{r} \arrow[d, "\widehat{p}"'] &E\cross \widetilde{E} \arrow[d, "p\cross \widetilde{p}"]\\ B \arrow[r, "\Delta"'] & B\cross B
+    (E\cross\widetilde{E})\cross_{B\cross B}B \arrow[hookrightarrow]{r} \arrow[d, "\widehat{p}"'] &E\cross \widetilde{E} \arrow[d, "p\cross \widetilde{p}"]\\ B \arrow[r, "\Delta"'] & B\cross B
 \end{tikzcd}$$
 and define, 
-$$(E, B, V, p)\oplus (\widetilde{E}, B, \widetilde{B}, \widetilde{p}):= \big((E\times\widetilde{E})\times_B(B\times B), B, V\oplus\widetilde{V}, \widehat{p}\big)$$
+$$(E, B, V, p)\oplus (\widetilde{E}, B, \widetilde{V}, \widetilde{p}):= \big((E\times\widetilde{E})\times_{B\times B}B, B, V\oplus\widetilde{V}, \widehat{p}\big)$$
 Note, 
 $$\widetilde{\widehat{\varphi}}_{\alpha\beta}(x) = \begin{pmatrix}
-    \widetilde{\varphi}_{\alpha\beta}(x) & 0\\ 0 &\widetilde{\varphi}_{\alpha\beta}(x) 
+    \widetilde{\varphi}^{\,\eta}_{\alpha\beta}(x) & 0\\ 0 &\widetilde{\varphi}^{\,\widetilde\eta}_{\alpha\beta}(x)
 \end{pmatrix}$$
 
 
 Let us denote the total space of the pullback bundle $\Delta^*(\eta\times\widetilde{\eta})$ by $E\oplus\widetilde{E}$. We shall call the bundle $(E\oplus\widetilde{E}, B, V\oplus\widetilde{V}, \widehat{p})$ the \textbf{Whitney sum} of bundles $\eta$ and $\widetilde{\eta}$.
 
-Another way to look at it would be via the following gauge group homomorphisms:
+Another way to look at it would be via the following structure group homomorphisms:
 $$\rho: \text{Aut}(V)\times\text{Aut}(\widetilde{V}) \rightarrow \text{Aut}(V\oplus\widetilde{V})$$
 $$\rho(T, S):= T\oplus S$$
-Let $B':= \{(b, b) \in B\times B\}$, and $B'\xhookrightarrow{i} B$ be the inclusion of the diagonal $\Delta(B)$, then clearly,
+Let $B':= \{(b, b) \in B\times B\}$, and $B'\xhookrightarrow{i} B\times B$ be the inclusion of the diagonal $\Delta(B)$, then clearly,
 $$(E\oplus\widetilde{E}, B, V\oplus\widetilde{V}, \widehat{p}) \cong i^*\rho(\eta\times\widetilde{\eta})$$
 
-We are now in a position to prove an analogue of the Whitney Embedding Theorem for vector bundles.
-\subsection*{Theorem 3.1 — Embedding Theorem} Let $\eta = (E, B, F, p)$ be a vector bundle, $B$ a compact Hausdorff space. Then $\eta$ can be realized as a sub-bundle of a trivial bundle over $B$.
-
-\textit{Proof.}
-    Since $B$ is compact, it admits a finite partition of unity subordinate to $\{U_{\alpha}\}_{\alpha}$ (the local trivializing cover of $\eta$); denote it by $\{\psi_i\}_{i=1}^{k}$. Let $g_i \equiv (\psi_i)\times(\pi_i\circ\varphi_{\alpha_i}^{-1})$, where $\pi_i:U_{\alpha_i}\times\mathbb{R}^n \rightarrow \mathbb{R}^n$ is the canonical projection. Set $\mathbb{R}^N = \mathbb{R}^n\times\cdots\times\mathbb{R}^n$. Define,
-    $$g: E \rightarrow B\times\mathbb{R}^N$$
-    $$g(e):= (p(e), g_1(e),\ldots, g_k(e))$$
-    $g_i$ is a linear injection on fibres over $\supp{(\psi_i)}$, which implies, $g$ is a linear injection on fibres over $B$.
-    Therefore, $g(E)$ is a sub-bundle of $B\times\mathbb{R}^N$.
-
-
-\textbf{Remarks}:
-    \begin{enumerate}[(i)]
-        \item One could have defined the map $g$ to be the following:
-        $$g(e):= (\psi_1(e),\ldots, \psi_k(e), g_1(e),\ldots, g_k(e))$$
-        in which case one would have had a local embedding, and if $B$ were a compact manifold then one can redefine $g$ to make it into an embedding into $\mathbb{R}^M$.
-        \item Let $p(E)^{\perp}$ be the fibre-wise orthogonal complement to $p(E)$, then $\big(p(E)\oplus p(E)^{\perp}, B, p(F)\oplus p(F)^{\perp}, \pi\big)$ would be isomorphic to $(B\times\mathbb{R}^N, B, \mathbb{R}^N, \pi)$. In other words, for every bundle $\eta$ over a compact Hausdorff base, there exists another bundle $\eta^{\perp}$ that cancels the twisting of $\eta$.
-        \item If one loosens the hypothesis on $B$ to paracompact Hausdorff spaces, one would get an embedding into $B\times \mathbb{R}^{\infty}$ via the same proof technique. 
-        \item The same construction works over $\mathbb C$.
-    \end{enumerate}
     \item \textbf{Tensor Product}: Let $\eta$ and $\widetilde{\eta}$ be bundles as above. Define,
 $$\rho: \text{Aut}(V)\times\text{Aut}(\widetilde{V}) \rightarrow \text{Aut}(V\otimes\widetilde{V})$$
 $$\rho(T, S):= T\otimes S$$
 Let $B'$ and $i$ be as above, define,
 $$\eta\otimes\widetilde{\eta}:= i^*\rho(\eta\times\widetilde{\eta})$$
-$\eta\otimes\widetilde{\eta}$ is called the \textbf{tensor product} of the bundles $\eta$ and $\widetilde{\eta}$. Note that by definition, the gauge group element associated to the transition function of the tensor bundle will be the tensor product of the gauge group elements associated to the transition functions of $\eta$ and $\widetilde{\eta}$. Tensoring is a commutative operation: Let $\eta\otimes\widetilde{\eta}$ and $\widetilde{\eta}\otimes\eta$ be two bundles, and let $\{U_{\alpha}\}_{\alpha}$ be the common refinement of the local trivializing cover of $B$. Define, 
-$$h_{\alpha}:U_{\alpha}\times F\rightarrow U_{\alpha}\times F'$$
+$\eta\otimes\widetilde{\eta}$ is called the \textbf{tensor product} of the bundles $\eta$ and $\widetilde{\eta}$. Note that by definition, the structure group element associated to the transition function of the tensor bundle will be the tensor product of the structure group elements associated to the transition functions of $\eta$ and $\widetilde{\eta}$. Tensoring is a commutative operation: Let $\eta\otimes\widetilde{\eta}$ and $\widetilde{\eta}\otimes\eta$ be two bundles, and let $\{U_{\alpha}\}_{\alpha}$ be the common refinement of the local trivializing cover of $B$. Define,
+$$h_{\alpha}:U_{\alpha}\times (V\otimes\widetilde V)\rightarrow U_{\alpha}\times (\widetilde V\otimes V)$$
 $$h_{\alpha}\bigg(x, \sum_{i}{c_i(v_i\otimes w_i)}\bigg):= \bigg(x, \sum_{i}{c_i(w_i\otimes v_i)}\bigg)$$
 Let $\varphi_{\alpha\beta}^{\eta}\otimes\varphi_{\alpha\beta}^{\widetilde{\eta}}$ and $ \varphi_{\alpha\beta}^{\widetilde{\eta}}\otimes\varphi_{\alpha\beta}^{\eta}$ be the transition functions of $\eta\otimes\widetilde{\eta}$ and $\widetilde{\eta}\otimes\eta$, where $\varphi_{\alpha\beta}^{\eta}$, $\varphi_{\alpha\beta}^{\widetilde{\eta}}$ are transition functions of $\eta$, $\widetilde{\eta}$ respectively. Then,
 $$\big(\varphi_{\alpha\beta}^{\widetilde{\eta}}\otimes\varphi_{\alpha\beta}^{\eta}\big)\circ h_{\alpha} = h_{\beta}\circ\big(\varphi_{\alpha\beta}^{\eta}\otimes\varphi_{\alpha\beta}^{\widetilde{\eta}}\big)$$
@@ -147,7 +126,7 @@ Constructing bundles this way gives us the following for free: Let $\eta_1$, $\e
 
 These relations are consequences of the fact that the same relations hold for matrices representing the transition functions captured by $\rho$. For instance, associativity of Whitney sums is the trivial consequence of the following being a commutative square:
 
-\[\begin{tikzcd}
+\[\begin{tikzcd}[column sep=small]
 	\color{red}{{A\oplus (B\oplus C)}} &&& {A\oplus B\oplus C} \\
 	& {GL(V)\times GL(V)} & {GL(V)} \\
 	& {GL(V)\times GL(V)\times GL(V)} & {GL(V)\times GL(V)} \\
@@ -166,17 +145,15 @@ $$F: \bigg[\prod\limits_{i\in I}\text{Vect}\bigg]\rightarrow \text{Vect}$$
 Define, 
 $$\rho: \bigg[\prod\limits_{i\in I}\text{Aut}(V_i)\bigg]\rightarrow \text{Aut}\bigg(F\big((V_i)_{i\in I}\big)\bigg)$$
 $$\rho\big((T_i)_{i\in I})\big):= F\big((T_i)_{i\in I})\big)$$
-The above is a group homomorphism as $F$ is a functor. Let $B' = \{(b)_i\in \prod_iB  |  b\in B\}$ and $B'\xhookrightarrow{i} B$ be the inclusion, define,
+The above is a group homomorphism as $F$ is a functor. Let $B' = \{(b)_i\in \prod_iB  |  b\in B\}$ and $B'\xhookrightarrow{i} \prod_iB$ be the inclusion, define,
 $$F\big((\eta_i)_{i\in I})\big):= i^*\rho\bigg(\prod_j\eta_j\bigg)$$
-Following the prescription above one can construct bundles corresponding to the following functors. Let $V, W$ $\in \text{Ob}(\text{Vect}_{\mathbb{K}})$,
+Following the prescription above one can construct bundles corresponding to the following operations. Let $V, W$ $\in \text{Ob}(\text{Vect}_{\mathbb{K}})$,
 \begin{multicols}{3}
     \begin{enumerate}[(i)]
-    \item $(V, W) \rightarrow \text{Hom}(V, W)$
+    \item $(V, W) \rightarrow \text{Hom}(V, W)$, contravariantly in $V$ and covariantly in $W$
     \item $(V, W) \rightarrow V\oplus W$
     \item $(V, W) \rightarrow V\otimes W$
-    \item $V \rightarrow V^* = \text{Hom}(V, \mathbb{K})$
-    \item $V \rightarrow V^{\perp}$
-    \item $V \rightarrow V/W$
+    \item $V \rightarrow V^* = \text{Hom}(V, \mathbb{K})$, contravariantly
     \item $V \rightarrow \Lambda^k(V)$
     \item $V \rightarrow \text{Sym}^k(V)$
 \end{enumerate}
@@ -184,13 +161,37 @@ Following the prescription above one can construct bundles corresponding to the 
 
 \end{enumerate}
 
-\underline{\textbf{Reduction of Gauge Groups}}
+We are now in a position to prove an analogue of the Whitney Embedding Theorem for vector bundles.
+\begin{theorem}[Embedding theorem]
+Let $\eta = (E, B, F, p)$ be a vector bundle, $B$ a compact Hausdorff space. Then $\eta$ can be realized as a sub-bundle of a trivial bundle over $B$.
+\end{theorem}
 
-As we just saw, gauge groups play a crucial role in the construction of vector bundles as they govern how the fibres are glued together. A vector bundle acquires additional structure when its transition functions satisfy the following condition:
+\begin{proof}
+Since $B$ is compact, it admits a finite partition of unity subordinate to $\{U_{\alpha}\}_{\alpha}$ (the local trivializing cover of $\eta$); denote it by $\{\psi_i\}_{i=1}^{k}$. Let $g_i \equiv (\psi_i)\times(\pi_i\circ\varphi_{\alpha_i}^{-1})$, where $\pi_i:U_{\alpha_i}\times\mathbb{R}^n \rightarrow \mathbb{R}^n$ is the canonical projection. Set $\mathbb{R}^N = \mathbb{R}^n\times\cdots\times\mathbb{R}^n$. Define,
+$$g: E \rightarrow B\times\mathbb{R}^N$$
+$$g(e):= (p(e), g_1(e),\ldots, g_k(e))$$
+$g_i$ is a linear injection on fibres over $\supp{(\psi_i)}$, which implies, $g$ is a linear injection on fibres over $B$.
+Therefore, $g(E)$ is a sub-bundle of $B\times\mathbb{R}^N$.
+\end{proof}
+
+\begin{remark}
+\begin{enumerate}[(i)]
+    \item One could have defined the map $g$ to be the following:
+    $$g(e):= (\psi_1(e),\ldots, \psi_k(e), g_1(e),\ldots, g_k(e))$$
+    in which case one would have had a local embedding, and if $B$ were a compact manifold then one can redefine $g$ to make it into an embedding into $\mathbb{R}^M$.
+    \item Let $g(E)^{\perp}$ be the fibre-wise orthogonal complement to $g(E)$, then $g(E)\oplus g(E)^{\perp}$ would be isomorphic to the trivial bundle $B\times\mathbb{R}^N$. In other words, for every bundle $\eta$ over a compact Hausdorff base, there exists another bundle $\eta^{\perp}$ that cancels the twisting of $\eta$.
+    \item If one loosens the hypothesis on $B$ to paracompact Hausdorff spaces, one would get an embedding into $B\times \mathbb{R}^{\infty}$ via the same proof technique.
+    \item The same construction works over $\mathbb C$.
+\end{enumerate}
+\end{remark}
+
+\underline{\textbf{Reduction of Structure Groups}}
+
+As we just saw, structure groups play a crucial role in the construction of vector bundles as they govern how the fibres are glued together. A vector bundle acquires additional structure when its transition functions satisfy the following condition:
 
 $$\widetilde{\varphi}_{\alpha\beta}: U_{\alpha}\cap U_{\beta} \rightarrow H \subseteq_{\text{subgroup}} G$$
 
-The phenomenon described above is called \textbf{reduction of the gauge group $G$}. We shall now see an instance of such a reduction. To proceed we will need the following topological fact:
+The phenomenon described above is called \textbf{reduction of the structure group $G$}. We shall now see an instance of such a reduction. To proceed we will need the following topological fact:
 
 \begin{center}
     
@@ -209,14 +210,14 @@ $$\overline{f}_{\alpha}(x):= \begin{cases}
 0, & \text{ else }
 \end{cases}$$
 $\overline{f}_{\alpha}$ is defined continuously on $B$. Now set,
-$$f(x):= \sum_{\alpha}{\big(\psi_{\alpha}(x)\cdot\overline{f}_{\alpha}(x)\big)}$$
+$$f(x):= \sum_{\alpha}{\overline{f}_{\alpha}(x)}$$
 Note that, 
-$$f(x)(e, e') > \psi_{\alpha}(x)\overline{f}_{\alpha}(x)(e, e') >0$$
-where $\psi_{\alpha}$ is such that $\psi_{\alpha}(x) >0$. Thus the bundle can now be equipped with the additional structure of an inner product; such bundles are called \textbf{Euclidean bundles}. This additional structure is reflected in the structure group. Let $\{v_{\alpha}\}_{\alpha}$ be an orthonormal basis of $V$. Recall the local orthonormal frame $\{s_{\alpha}^{\beta}\}_{\alpha}$ on $U_{\beta}$. Let $\{s_{\alpha}^{\gamma}\}_{\alpha}$ be the same for $U_{\gamma}$. Then, 
+$$f(x)(e, e) \geq \overline{f}_{\alpha}(x)(e, e) >0$$
+for $e\ne0$, where $\psi_{\alpha}$ is such that $\psi_{\alpha}(x) >0$. Thus the bundle can now be equipped with the additional structure of an inner product; such bundles are called \textbf{Euclidean bundles}. This additional structure is reflected in the structure group. Let $\{v_{\alpha}\}_{\alpha}$ be an orthonormal basis of $V$. Recall the local orthonormal frame $\{s_{\alpha}^{\beta}\}_{\alpha}$ on $U_{\beta}$. Let $\{s_{\alpha}^{\gamma}\}_{\alpha}$ be the same for $U_{\gamma}$. Then,
 $$\widetilde{\varphi}_{\beta\gamma}: \text{span}_{\mathbb{K}}\big(\{s_{\alpha}^{\gamma}\}_{\alpha})\rightarrow \text{span}_{\mathbb{K}}\big(\{s_{\alpha}^{\beta}\}_{\alpha})$$
 $$\implies\widetilde{\varphi}_{\beta\gamma} \in O_{\mathbb{K}}(V)$$
 
-where $O_{\mathbb{K}}(V)$ is the orthogonal subgroup of $GL(V)$. Thus the original structure group has now been reduced to the subgroup $O_{\mathbb{K}}(V)$ 
+where $O_{\mathbb{K}}(V)$ denotes $O(V)$ when $\mathbb K=\mathbb R$ and $U(V)$ when $\mathbb K=\mathbb C$. Thus the original structure group has now been reduced to $O(V)$ or $U(V)$, respectively.
 
 \underline{\textbf{Notations/Conventions}}:
 
@@ -231,26 +232,20 @@ where $O_{\mathbb{K}}(V)$ is the orthogonal subgroup of $GL(V)$. Thus the origin
 \end{itemize}
 
 
-\underline{\textbf{Having described fibre bundles, we ask if vector bundles are familiar objects in disguise.}}
+\begin{center}
+\textbf{Having described fibre bundles, we ask if vector bundles are familiar objects in disguise.}
+\end{center}
 
 What separates a vector bundle from a fibre bundle with structure group $O(n)$ or $U(n)$ is that we demand the homomorphisms to preserve the linear structure. There is a way to encode this extra information via the language of principal $G$-bundles.
 
-Let $\big(E\xrightarrow{p} B\big)$ be a principal $G$-bundle, let $X$ be a left $G$-space, then define $E\times_G X:= (E\times X)/\sim$, with $(e\cdot g, x) \sim (e, gx)$, called the \textbf{balanced product}. Now, set $\overline{p}: E\times_G X \rightarrow B$ to be the map $[e, x] \rightarrow p(e)$. We shall begin by proving that $(E\times_G X, B, X, \overline{p})$ is a fibre bundle with gauge group $G$:
+Let $\big(E\xrightarrow{p} B\big)$ be a principal $G$-bundle, let $X$ be a left $G$-space, then define $E\times_G X:= (E\times X)/\sim$, with $(e\cdot g, x) \sim (e, gx)$, called the \textbf{balanced product}. Now, set $\overline{p}: E\times_G X \rightarrow B$ to be the map $[e, x] \rightarrow p(e)$. We shall begin by proving that $(E\times_G X, B, X, \overline{p})$ is a fibre bundle with structure group $G$:
 
 \begin{enumerate}[(i)]
     \item $\overline{p}$ is well-defined as $\overline{p}[eg, x] = p(eg) = p(e) = \overline{p}[e,gx]$.
-    \item Let $\overline{p}^{1}(b):= \{[e,x] |  e\in p^{-1}(x)\} \cong X$, as $p^{-1}(b)\times X \rightarrow X$, the projection onto X factors through $\overline{p}^{-1}(b)$ homeomorphically. By the universal property of quotients we have a map $\psi$:
-    \[\begin{tikzcd}
-	{p^{-1}(b)\times X} && X \\
-	& {(\overline{p})^{-1}(b)}
-	\arrow["{\pi_b \equiv((e, x)\rightarrow [e,x])}"', from=1-1, to=2-2]
-	\arrow[from=1-1, to=1-3]
-	\arrow["\psi"', dashed, from=2-2, to=1-3]
-\end{tikzcd}\]
-$\psi$ is clearly a surjection, and $\psi([e, x]) = \psi([e',x']) = x$, which implies $x = x'$ and $eg=e'$ for some $g\in G$ giving us injectivity of $\psi$. Let $O\subseteq_{\text{open}} (\overline{p})^{-1}(b)$, then $\pi_b^{-1}(O)$ is saturated in $p^{-1}(b)\times X$, and as projections are open maps, $\psi$ is open. In conjunction, $\psi$ is a homeomorphism.
+    \item Let $\overline{p}^{-1}(b):= \{[e,x] \mid e\in p^{-1}(b)\}$. After choosing $e_0\in p^{-1}(b)$, every equivalence class has a unique representative of the form $[e_0,x]$. Thus the map $X\to\overline{p}^{-1}(b)$ given by $x\mapsto[e_0,x]$ is a homeomorphism.
 \item Let $\{U_{\alpha}\}_{\alpha}$ be a locally trivializing cover for $(E\xrightarrow{p} B)$, then define,
 $$\psi_{\alpha}: (U_{\alpha}\times G)\times_G X \rightarrow U_{\alpha}\times X$$
-$$\psi_{\alpha}([u_{\alpha}, g, x]):= (u_{\alpha}, x)$$
+$$\psi_{\alpha}([(u_{\alpha}, g), x]):= (u_{\alpha}, gx)$$
 By an argument similar to that in (ii), $\psi_{\alpha}$ is a homeomorphism. Now let,
 $$\overline{\psi}_{\alpha}: (\overline{p})^{-1}(U_{\alpha}) \rightarrow (U_{\alpha}\times G)\times_G X$$
 $$\overline{\psi}_{\alpha}([e, x]):= [\varphi_{\alpha}^{-1}(e), x]$$
@@ -289,17 +284,18 @@ By the universal property of quotients, $\overline{\psi}_{\alpha}$ is continuous
 
 
 Explicitly, 
-$$\widehat{\psi}_{\alpha\beta}(b, x) = (b, \varphi_{\alpha\beta}(x))$$
+$$\widehat{\psi}_{\alpha\beta}(b, x) = \big(b, \widetilde\varphi_{\alpha\beta}(b)x\big)$$
 \end{enumerate}
 
 The bundle $(E\times_G X)$ is called the \textbf{bundle associated to $E$}. Note that all associated principal $GL_n(\mathbb{K})$- bundles are $\mathbb{K}$-vector bundles. In fact, the converse is also true.
 
-\subsection*{Theorem 3.2}
-    Let $\mathcal{P}_{GL_n(\mathbb{K})}(B)$ denote the category of principal $GL_n(\mathbb{K})$-bundles over $B$. The following is a bijective correspondence:
+\begin{theorem}
+    Let $\mathcal{P}_{GL_n(\mathbb{K})}(B)$ denote the set of isomorphism classes of principal $GL_n(\mathbb{K})$-bundles over $B$. The following is a bijective correspondence:
     $$\mathcal{P}_{GL_n(\mathbb{K})}(B) \longleftrightarrow \text{Vect}_{\mathbb{K}}^n(B)$$
+\end{theorem}
 
-\textit{Proof.}
-    We shall first define the map between the two categories, then prove that that map is bijective.
+\begin{proof}
+    We shall first define the map between the two sets, then prove that that map is bijective.
 
     \underline{Map}:  $ 
 \Phi: \mathcal{P}_{GL_n(\mathbb{K})}(B) \rightarrow \text{Vect}_{\mathbb{K}}^n(B)
@@ -307,20 +303,20 @@ The bundle $(E\times_G X)$ is called the \textbf{bundle associated to $E$}. Note
      $\Phi(E):= E\times_{GL_n{\mathbb{K}}}\mathbb{K}^n$
 
 
-\underline{Surjectivity}: Let $p: X \rightarrow B$ be a vector bundle with fibres $\{X_b |  b\in B\}$. Set $E_b = \text{Iso}(\mathbb{K}^n, X_b)$ and\\ $E= \coprod\limits_{b \in B}E_b$. Let $q:E\rightarrow B$ be given by the universal property of colimit for the functions $E_b \rightarrow \{b\}\in B$. Let $\{(U_{\alpha}, \varphi_{\alpha})\}_{\alpha}$ trivialize $X\rightarrow B$, then, $$\overline{\varphi}_{\alpha}: q^{-1}(U) = \coprod\limits_{b\in U}E_b \rightarrow U\times \text{Iso}(\mathbb{K}^n, \mathbb{K}^n)$$
+\underline{Surjectivity}: Let $p: X \rightarrow B$ be a vector bundle with fibres $\{X_b |  b\in B\}$. Set $E_b = \text{Iso}(\mathbb{K}^n, X_b)$ and\\ $E= \coprod\limits_{b \in B}E_b$. Let $q:E\rightarrow B$ be given by the universal property of colimit for the functions $E_b \rightarrow \{b\}\in B$. Let $\{(U_{\alpha}, \varphi_{\alpha})\}_{\alpha}$ trivialize $X\rightarrow B$, then, $$\overline{\varphi}_{\alpha}: q^{-1}(U_{\alpha}) = \coprod\limits_{b\in U_{\alpha}}E_b \rightarrow U_{\alpha}\times \text{Iso}(\mathbb{K}^n, \mathbb{K}^n)$$
 given by, $$e_b \in E_b \rightarrow \bigg(b, \varphi_{\alpha}^{-1}\big|_{p^{-1}(b)}\circ e_b\bigg)$$
 with transition functions, 
 $$(b, \gamma) \rightarrow \bigg(b, \varphi_{\beta}\big|_{p^{-1}(b)}\circ \varphi_{\alpha}^{-1}\big|_{p^{-1}(b)}\circ \gamma\bigg)$$
 which are homeomorphisms because $\varphi_{\beta}\big|_{p^{-1}(b)}\circ \varphi_{\alpha}^{-1}\big|_{p^{-1}(b)}$ are so too; "trivialize" $E$. That is, there exists a unique topology on $E$ that would make $q^{-1}(U)$ open in $E$ and $\{\overline{\varphi}_{\alpha}\}_{\alpha}$ homeomorphisms on $\{q^{-1}(U_{\alpha})\}_{\alpha}$. The fibre-wise right $GL_n(\mathbb{K})$ action becomes continuous, turning $\overline{\varphi}_{\alpha}$ equivariant. Combining these observations, $E\rightarrow B$ is a principal $GL_n(\mathbb{K})$-bundle, called the \textbf{frame bundle} of $X\rightarrow B$. Further,
-$$E\times_{GL_n(\mathbb{K})} \mathbb{K}^n \cong X   \text{(as vector bunles)}$$
+$$E\times_{GL_n(\mathbb{K})} \mathbb{K}^n \cong X   \text{(as vector bundles)}$$
 Indeed, as they both have the same transition functions.\\
 
-\underline{Injectivity}: Given two principal $GL_n(\mathbb{K})$-bundles $E$, $E'$, say we have: 
+\underline{Injectivity}: Given two principal $GL_n(\mathbb{K})$-bundles $E$, $E'$, say we have:
 $$E\times_{GL_n(\mathbb{K})} \mathbb{K}^n \xlongrightarrow[\sigma]{\cong} E'\times_{GL_n(\mathbb{K})} \mathbb{K}^n$$
-$$\sigma([b, g, v])= [b',g',v']$$
-By definition, $\sigma$ is a fibre-preserving map. Clearly, $\widetilde{\sigma}$ is fibre-preserving. Let $\widetilde{g}\in GL_n(\mathbb{K})$, then $\widetilde{\sigma}(b, g\widetilde{g}) = (b', g'\widetilde{g})$ (as $[b, g\widetilde{g}, v] = [b, g, \widetilde{g}v]$), which implies that $\widetilde{\sigma}$ is an isomorphism. 
+The vector-bundle isomorphism $\sigma$ induces an isomorphism of frame bundles by sending a frame $u:\mathbb K^n\to X_b$ to $\sigma_b\circ u$. The frame bundles of the two associated vector bundles are canonically isomorphic to $E$ and $E'$, respectively, so $E\cong E'$ as principal $GL_n(\mathbb K)$-bundles.
+\end{proof}
 
-With a little extra work, the correspondence above can be shown to induce an equivalence of categories. Therefore, vector bundles are \textbf{associated principal $GL_n(\mathbb{K})$-bundles}. In other words, associated principal $GL_n(\mathbb{K})$-bundles capture the required gauge group action on the fibres.
+With a little extra work, the correspondence above can be shown to induce an equivalence of categories. Therefore, vector bundles are \textbf{associated principal $GL_n(\mathbb{K})$-bundles}. In other words, associated principal $GL_n(\mathbb{K})$-bundles capture the required structure group action on the fibres.
 % BLOG-CONTENT-END
 \bibliographystyle{amsalpha}
 \bibliography{tools/profiles/k-theory/references}

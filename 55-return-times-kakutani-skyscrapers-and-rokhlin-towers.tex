@@ -31,7 +31,8 @@ Define $T_A\colon A\to A$ by $T_A(x):=T^{r_A(x)}(x)$. This is defined almost eve
 \end{definition}
 
 \begin{itemize}
-\item $r_A\colon X\to\mathbb N$ is measurable, because we have
+\item $r_A\colon A\to\mathbb N$ is defined almost everywhere and is measurable,
+because we have
 \[
 \begin{aligned}
  \text{``first return'':}\quad \{x\in A\mid r_A(x)=1\}&=A_1=A\cap T^{-1}(A),\\
@@ -41,15 +42,14 @@ Define $T_A\colon A\to A$ by $T_A(x):=T^{r_A(x)}(x)$. This is defined almost eve
 \end{aligned}
 \]
 As $A_n$ is measurable for every $n\geq1$, $r_A$ is measurable, for the sets $\{n\}$ generate the $\sigma$-algebra on $\mathbb N$.
-% Source writes X -> N although r_A may be infinite outside the returning set; retained.
 
-\item $T_A\colon A\to A$ is also measurable. Since $T$ is invertible, for $B\in\mathcal B$ with $B\subseteq A$, clearly $T_A^{-1}(B)=\widetilde B$ almost everywhere, so $T_A$ is measurable. Here notice that
+\item $T_A\colon A\to A$ is also measurable. Since $T$ is invertible, for
+$B\in\mathcal B$ with $B\subseteq A$, notice that
 \[
- \widetilde B=\bigcup_{n\geq1}T^{-n}(B\cap A_n)
+ T_A^{-1}(B)=\bigcup_{n\geq1}\bigl(A_n\cap T^{-n}(B)\bigr)
  \quad\text{almost everywhere},
 \]
 as $T^{-1}$ is defined almost everywhere.
-% Author check: the source places B cap A_n inside T^{-n}; retained exactly.
 \end{itemize}
 
 % Source page 3
@@ -69,15 +69,16 @@ Hence
  &=\frac1{\mu(A)}\sum_{n\geq1}\mu\bigl(T^n(B\cap A_n)\bigr)\\
  &=\frac1{\mu(A)}\sum_{n\geq1}\mu(B\cap A_n)
    &&\text{($T$ is $\mu$-invariant)}\\
- &=\mu(B).
+ &=\mu_A(B).
 \end{aligned}
 \]
-% Author check: source concludes mu(B), not mu_A(B); no mathematical correction made.
 If $T_A$ is not ergodic, there exists $B$ with $T_A^{-1}(B)=B$ and $0<\mu(B)<\mu(A)$, i.e. $0<\mu_A(B)<1$. Then
 \[
  \bigcup_{n\geq1}\ \bigcup_{j=0}^{n-1}T^j(B\cap A_n)
 \]
-is $T$-invariant and has nonzero measure.
+is $T$-invariant and has nonzero measure. The corresponding saturation of
+$A\setminus B$ also has nonzero measure, so the displayed invariant set does
+not have full measure. This contradicts ergodicity of $T$.
 \end{itemize}
 
 The induced transformation leads naturally to Kakutani skyscrapers. This construction yields two useful results, including the expected-return-time formula.
@@ -137,13 +138,12 @@ In the setting of Theorem~\ref{thm:l5-kac}, suppose that $\mu(\{x\})=0$ for all 
 % Source page 6
 \begin{proof}
 A nonatomic measure has no ``atoms''. More precisely, given $E\in\mathcal B$,
-there exists $F\in\mathcal B$ such that $0<\mu(F)<\mu(E)$. Then $\mu(F)$ or
+there exists $F\in\mathcal B$, $F\subset E$, such that $0<\mu(F)<\mu(E)$. Then $\mu(F)$ or
 $\mu(E\setminus F)$ is less than $\mu(E)/2$. Iterating this construction gives
 measurable sets satisfying
 \[
  \mu(\widetilde F)<\frac{\mu(E)}{2^n}<\frac1{2^n}.
 \]
-% Author check: source says ``replacing F by E'' and omits F subset E; retained.
 Now, given $n$ and $\varepsilon$, select $A\in\mathcal B$ such that $0<\mu(A)<\varepsilon/n$. The skyscraper yields the decomposition of $X$ into towers
 \[
  A_k\sqcup T(A_k)\sqcup\cdots\sqcup T^{k-1}(A_k).

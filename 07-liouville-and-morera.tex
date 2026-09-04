@@ -10,7 +10,7 @@ Let \(f\colon B_1(0)\to B_1(0)\)
 be holomorphic, with $f(0)=0$. Then:
 \begin{enumerate}
   \item[(i)] $|f(z)|\leq |z|$ for every $z\in B_1(0)$;
-  \item[(ii)] if $|f(z_0)|=|z_0|$ for some $z_0$, then $f$ is a rotation;
+  \item[(ii)] if $|f(z_0)|=|z_0|$ for some $z_0\ne0$, then $f$ is a rotation;
   \item[(iii)] $|f'(0)|\leq1$, and if equality holds, then $f$ is a rotation.
 \end{enumerate}
 
@@ -54,11 +54,11 @@ Then
       =f'(0).
 \]
 Since $|g(z)|\leq1$, \(|g(0)|=|f'(0)|\leq1.\)
-If equality holds, then $g(0)=1$, so $g$ is a constant and $f/z$ is a
+If equality holds, then $|g(0)|=1$, so $g$ is a constant and $f/z$ is a
 constant. Hence
 \[
   f=cz,
-  \qquad f'(0)=1,
+  \qquad f'(0)=c,
   \qquad |c|=1.
 \]
 
@@ -142,10 +142,11 @@ Set
 \]
 
 
-Given any compact set, there exists $r$ such that $B_r(z)$, for $z$ in that
-compact set, is in $\Omega$. Thus that compact set is contained in
-$\Omega_\delta$ for some $\delta$. Therefore it suffices to show the result on
-$\Omega_\delta$. Set $F=f_n-f$. We have
+Given any compact set $K$, there exists $r$ such that $B_r(z)$, for $z$ in that
+compact set, is in $\Omega$. Thus $K$ is contained in
+$\Omega_\delta$ for some $\delta$, and
+$K_\delta:=\{t:\operatorname{dist}(t,K)\leq\delta\}$ is compact in $\Omega$.
+Set $F=f_n-f$. We have
 \[
   F'(z)=\frac1{2\pi i}\int_{C_\delta(z)}\frac{F(t)}{(t-z)^2}\,dt,
 \]
@@ -154,12 +155,12 @@ Therefore
 \[
   |F'(z)|
   \leq\frac1{2\pi}\sup_{t\in C_\delta(z)}|F(t)|\frac1{\delta^2}(2\pi\delta)
-  \leq\frac1\delta\sup_{t\in\Omega}|F(t)|,
+  \leq\frac1\delta\sup_{t\in K_\delta}|F(t)|,
 \]
 and hence
 \[
-  \sup_{z\in\Omega_\delta}|F'(z)|
-  \leq\frac1\delta\sup_{t\in\Omega}|F(t)|.
+  \sup_{z\in K}|F'(z)|
+  \leq\frac1\delta\sup_{t\in K_\delta}|F(t)|.
 \]
 Thus $f_n'\to f'$ uniformly on all compact sets.
 
@@ -200,7 +201,7 @@ Thus, on $\overline D$, $f_n\to f$ uniformly, and hence $f\in H(\Omega)$.
 
 \textbf{Remark.}
 Using these two results, one can construct elements in $H(\Omega)$ such as
-$\sum_{n\geq0}f_n(z)$.
+$\sum_{n\geq0}f_n(z)$, provided the series converges uniformly on compact sets.
 
 
 \subsection*{Tool 18 — Schwarz Reflection Principle}
@@ -222,7 +223,7 @@ triangle in $U$.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.66\textwidth]{note4-fig-01.pdf}
+  \includegraphics[width=0.82\textwidth]{note4-fig-01.pdf}
 
 \end{figure}
 \emph{Annotation:} ``Pardon the asymmetry!''
@@ -283,7 +284,7 @@ We shall exploit the convexity of $D$. Let $T$ be a triangle in $\mathbb C$.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.48\textwidth]{note4-fig-02.pdf}
+  \includegraphics[width=0.62\textwidth]{note4-fig-02.pdf}
 
 \end{figure}
 
@@ -298,7 +299,7 @@ We now approximate the relevant arcs by polygons.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.44\textwidth]{note4-fig-03.pdf}
+  \includegraphics[width=0.62\textwidth]{note4-fig-03.pdf}
 
 \end{figure}
 
@@ -327,7 +328,7 @@ Similarly, one can prove
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.90\textwidth]{note4-fig-04.pdf}
+  \includegraphics[width=0.94\textwidth]{note4-fig-04.pdf}
 
 \end{figure}
 
@@ -386,12 +387,6 @@ Now put
   M_\theta:=\sum_{k=1}^N|z_k|\cos^+(\alpha_k-\theta).
 \]
 Then
-\[
-  2\pi\sup_\theta M_\theta
-  \approx
-  \sum_{i=1}^N M_{\theta_i}\left(\frac{N}{2\pi}\right)^{-1};
-\]
-that is,
 \[
   \sup_\theta M_\theta
   \geq\frac1{2\pi}\int_{-\pi}^{\pi}M_\theta\,d\theta.

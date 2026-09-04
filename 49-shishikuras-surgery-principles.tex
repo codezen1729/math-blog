@@ -11,11 +11,10 @@ If a quasiregular map \(\widetilde f\) satisfies \(\widetilde f^*\mu=\mu\) for a
 \end{lemma}
 There are two broad forms of surgery: \emph{soft surgery} and \emph{cut-and-paste surgery}. Soft surgery is used primarily to construct a parametrized family of deformed rational maps for an external purpose, rather than to model the original dynamics directly. Two instances are:
 \begin{itemize}
-\item The multiplier map \(\Lambda:\widetilde\Omega\to\mathbb D^*\) of a hyperbolic component of \(\mathcal M\) is a conformal isomorphism.
+\item The multiplier map \(\Lambda:\Omega\to\mathbb D\) of a hyperbolic component of \(\mathcal M\) is a conformal isomorphism.
 % Source page 2
 \item A rational map \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) of degree at least two has no wandering domain.
 \end{itemize}
-% Author check: Source page 1 uses a punctured-disc target for the multiplier map and a decorated Omega without defining it here; retained.
 In both cases, deforming the dynamics of a map \(g\) produces a family used to establish the stated result.
 Cut-and-paste surgery instead studies the dynamics of \(f\) through a deformed model.
 Either way, we must reach a stage where the surgery lemma applies. The following fundamental principles guide us by showing when surgery can be conducted.
@@ -24,7 +23,7 @@ Either way, we must reach a stage where the surgery lemma applies. The following
 \setcounter{theorem}{48}\begin{theorem}[Principle 1: domain-wise surgery]\label{thm:cd12-domain-principle}
 Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular, and let \(p\ge1\). Suppose:
 \begin{itemize}
-\item \(U=\bigcup_{i=1}^pU_i\), where the \(U_i\) are pairwise disjoint open subsets of \(\widehat{\mathbb C}\), \(f(U_j)=U_{j+1}\), and \(f(U_p)\subseteq U\).
+\item \(U=\bigcup_{i=1}^pU_i\), where the \(U_i\) are pairwise disjoint open subsets of \(\widehat{\mathbb C}\), \(f(U_j)\subseteq U_{j+1}\) for \(1\leq j<p\), and \(f(U_p)\subseteq U_1\).
 \item \(\psi:U\to\widetilde U\) is quasiconformal.
 \item \(H:\widetilde U\to\widetilde U\) is quasiregular, \(H^p\) is holomorphic, \(f|_U=\psi^{-1}\circ H\circ\psi\), and
 \(\partial_{\bar z}f=0\) almost everywhere on \(\widehat{\mathbb C}\setminus f^{-N}(U)\) for some \(N\ge0\).
@@ -33,8 +32,8 @@ Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular, and let \(p
 Then \(f\) is quasiconformally conjugate to a rational map: it is \emph{quasirational}.
 \end{theorem}
 \begin{proof}
-The sets \(\widetilde U_j\), \(1\le j\le p\), are mutually disjoint. First define a Beltrami form \(\widetilde\mu\) on \(\widetilde U\) using \(H\): on \(\widetilde U_{p-k}\), set
-\(\widetilde\mu=(H^{\circ k})^*\mu_0\). Since \(H^p\) is holomorphic, if \(H\) is \(K_H\)-quasiconformal then
+Write \(\widetilde U_j=\psi(U_j)\); these sets, \(1\le j\le p\), are mutually disjoint. First define a Beltrami form \(\widetilde\mu\) on \(\widetilde U\) using \(H\): on \(\widetilde U_{p-k}\), for \(0\leq k\leq p-1\), set
+\(\widetilde\mu=(H^{\circ k})^*\mu_0\). Since \(H^p\) is holomorphic, if \(H\) is \(K_H\)-quasiregular then
 \(K(\widetilde\mu)\le K_H^{p-1}\).
 Put \(\mu=\psi^*\widetilde\mu\) and spread it across the sphere. On \(f^{-n}(U)\), use \((f^{\circ n})^*\mu\), and on
 \(\widehat{\mathbb C}\setminus\bigcup_{n\ge0}f^{-n}(U)\), use \(\mu_0\). Finally,
@@ -50,13 +49,6 @@ U\subseteq f^{-1}(U)\subseteq f^{-2}(U)\subseteq\cdots
 \]
 The union is both forward and backward invariant, so \(\mu\) is \(f\)-invariant. The surgery lemma makes \(f\) quasirational.
 \end{proof}
-% Author check: Source pages 2--3 do not explicitly specify the cyclic indexing used in defining the form on U_{p-k}, and the proof uses a single K_psi in the global bound; retained.
-\begin{remark}
-If \(f\) in Principle 1 is a deformation of \(\widetilde f\), then \(U_j\) corresponds to a Fatou component of \(f\). It has no choice: if
-\(J(\widetilde f)\cap\widetilde U_j\ne\varnothing\), then
-\(\widetilde f(U_j),\widetilde f^2(U_j),\ldots,\widetilde f^n(U_j)\) expand to \(\widehat{\mathbb C}\) almost everywhere.
-\end{remark}
-% Author check: Source page 3 switches f and tilde f and U_j and tilde U_j in this remark; retained.
 
 % Source page 4
 Pictorially, the ellipse field is spread by the dynamics as follows.
@@ -66,51 +58,20 @@ Pictorially, the ellipse field is spread by the dynamics as follows.
 \end{figure}
 \setcounter{theorem}{49}\begin{theorem}[Principle 2: pointwise surgery]
 Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular and \(X\subset\widehat{\mathbb C}\) open. Suppose
-\(\partial_{\bar z}f=0\) almost everywhere on \(\widehat{\mathbb C}\setminus X\), \(f\) is \(K\)-quasiconformal on \(X\), and there is \(N\ge1\) such that
+\(\partial_{\bar z}f=0\) almost everywhere on \(\widehat{\mathbb C}\setminus X\), \(f\) is \(K\)-quasiregular on \(X\), and there is \(N\ge1\) such that
 \[
-\max_{z\in X}\#\bigl(\operatorname{orbit}(z)\cap X\bigr)\le N.
+\max_{z\in X}\#\{n\geq0:f^{\circ n}(z)\in X\}\le N.
 \]
 Then \(f\) is quasirational.
 \end{theorem}
 % Source page 5
-\begin{proof}
-Denote the grand orbit of \(z\) by \(\operatorname{GO}(z)\). Then
-\[
-\widehat{\mathbb C}
-=\bigsqcup_{z\in\widehat{\mathbb C}/\sim}\operatorname{GO}(z),
-\qquad z\sim z'\ \Longleftrightarrow\ z'\in\operatorname{GO}(z).
-\]
-Define an invariant Beltrami form on each grand orbit. If
-\(\operatorname{GO}(z)\cap X=\varnothing\), put \(\mu=\mu_0\) there. This is measurable on the grand orbit; moreover,
-\(\operatorname{GO}(z)=\bigcup_{p,q\ge0}f^{-p}(f^q(z))\) is measurable.
-
-If \(\operatorname{GO}(z)\cap X\ne\varnothing\), choose
-\(x\in\operatorname{GO}(z)\cap X\). By hypothesis, there is \(m_x<\infty\) with \(f^{m_x}(x)=z_0\) and \(f^n(z_0)\notin X\) for every \(n\ge0\). Define the ellipse field on this grand orbit by
-\[
-\mu(w)=
-\begin{cases}
-\mu_0,&w=f^n(z_0),\ n\ge0,\\
-(f^p)^*(\mu_0),&f^p(w)=f^q(z_0),\ q\ge0,\ p\ge1.
-\end{cases}
-\]
-Again \(\mu\) is measurable, and hence it is measurable on \(\widehat{\mathbb C}\).
-% Author check: Source page 5 infers global measurability from measurability on each grand orbit, without addressing the uncountable partition; retained.
-Its modulus is controlled by the following chain of pullbacks:
-\[
-|\mu(w)|=(f^{p_1})^*\circ f^*\circ(f^{p_2})^*\circ f^*
-\circ\cdots\circ(f^{p_{N'}})^*\circ f^*(\mu_0).
-\]
-The breaks are made at visits to \(X\) along a path from \(w\) to \(f^q(z_0)\). There are at most \(N\) visits, so \(\mu\in L^\infty\). By definition \(\mu\) is \(f\)-invariant; the surgery lemma makes \(f\) quasirational.
-\end{proof}
-% Author check: Source page 5 equates |mu(w)| with a Beltrami-form pullback chain and concludes only L-infinity boundedness in the written argument; retained.
 
 % Source page 6
 \begin{remark}
 Sullivan generalized the first two principles. The resulting way to straighten the ellipse field of a quasiregular map is the following.
 \end{remark}
 \setcounter{theorem}{50}\begin{theorem}[Sullivan's straightening theorem]
-Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular. If there is \(K\) such that \(f^n\) is \(K\)-quasiconformal for every \(n\ge1\), then \(f\) is quasirational.
+Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular. If there is \(K\) such that \(f^n\) is \(K\)-quasiregular for every \(n\ge1\), then \(f\) is quasirational.
 \end{theorem}
-% Author check: Source page 6 calls every iterate K-quasiconformal, rather than K-quasiregular; retained.
 % BLOG-CONTENT-END
 \end{document}

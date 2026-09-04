@@ -31,9 +31,8 @@ believed that $g(n)$ is roughly linear is that he constructed a configuration of
 Indeed, if $P=\{(0,1),(1,1),\ldots,(n-1,1)\}$, then $|\Delta(P)|=n-1$.
 Thus $g(n)\le n-1$ trivially, but Erd\H{o}s improved this by
 considering the following clever arrangement.
-% Author check: the source counts n distances in this n-point configuration.
-He considered an integer grid of size $\sqrt N\times\sqrt N$, as shown below:
-$[0,\sqrt N]\times[0,\sqrt N]\cap\mathbb Z^2$.
+For $N=m^2$, he considered the integer grid
+$P=\{0,1,\ldots,m-1\}^2$, as shown below.
 \begin{figure}[H]
  \centering\includegraphics[width=.72\textwidth]{m2-fig-02.pdf}
  \FigureTag{M2.2}{fig:m2-fig-02}
@@ -42,22 +41,33 @@ $[0,\sqrt N]\times[0,\sqrt N]\cap\mathbb Z^2$.
 % Source page 4
 We have
 \[
- \Delta(P)=\{\sqrt A:A=x^2+y^2,\ 0\le x,y\le\sqrt N\}
- \quad\Longrightarrow\quad 0\le A\le2N.
+ \Delta(P)=\{\sqrt A:A=x^2+y^2,\ 0\le x,y\le m-1,\ A>0\}
+ \quad\Longrightarrow\quad 1\le A<2N.
 \]
-Notice that $|\Delta(P)|=|\{0\le n\le2N:n\text{ is a sum of two squares}\}|$.
+Notice that $|\Delta(P)|$ is at most the number of positive integers below
+$2N$ that are sums of two squares.
 Therefore
 \[
- g(n)\le\bigl|\{0\le k\le2n:k\text{ is a sum of two squares}\}\bigr|.
+ g(N)\le\bigl|\{1\le k<2N:k\text{ is a sum of two squares}\}\bigr|.
 \]
+
+\setcounter{theorem}{1}\begin{theorem}[Two Squares Theorem]
+An integer $n$ is a sum of two squares if and only if, for every prime
+$p\mid n$ with $p\equiv3\pmod4$, the exponent $\nu_p(n)$ is even.
+\end{theorem}
+The Landau--Ramanujan theorem says that the number of positive integers at
+most $x$ that are sums of two squares is asymptotic to
+$Kx/\sqrt{\log x}$ for a positive constant $K$. The grid therefore gives
+$g(N)=O(N/\sqrt{\log N})$ along square values of $N$, and the same order of
+upper bound follows for every $N$ by taking a suitable subset of a square grid.
 
 \setcounter{theorem}{2}\begin{conjecture}[Erd\H{o}s Distance Conjecture]
 For every $c<1$, $g(n)=\Omega(n^c)$. This means that
 \[
- \limsup_{x\to\infty}|g(x)/x^c|>0.
+ \text{there exist $C>0$ and $N_0$ such that }g(n)\geq Cn^c
+ \text{ for every }n\geq N_0.
 \]
 \end{conjecture}
-% Author check: the source's O notation for a lower bound and limsup definition are retained.
 A colloquial way of saying it is that $g(n)$ is roughly $n$, up to a
 logarithmic decay.
 \begin{remark}
@@ -77,7 +87,7 @@ only in a two-dimensional manifold: they are in $\mathbb R^2$.
 The best lower bound one expects for $g(n)$ is $cn/\sqrt{\log n}$ for
 some $c$ and large $n$. People do not try to prove $g(n)=\Omega(n^c)$,
 for the arguments are not yet structural. What they instead do is get
-better and better lower bounds. Here is Erd\H{o}s's conjecture \emph{rephrased}.
+better and better lower bounds. Here is the sharper conjectured order.
 \setcounter{theorem}{3}\begin{conjecture}[Lower bound]
 For some $c>0$ and large $n$, $g(n)\ge cn/\sqrt{\log n}$.
 \end{conjecture}
@@ -87,21 +97,19 @@ $g(n)\ge c\sqrt n$.
 \end{theorem}
 \begin{proof}
 Let $P$ be a configuration such that $|P|=n$, and let $p_0\in P$.
-Draw $t$ circles centred at $p_0$ such that every point in $P$ belongs to
-one such circle and each circle has at least one point of $P$.
+Draw $t$ circles centred at $p_0$ such that every point in $P\setminus\{p_0\}$ belongs to
+one such circle and each circle has at least one point of $P\setminus\{p_0\}$.
 % Source page 8
-By the pigeonhole principle, at least one circle must have at least $n/t$
+By the pigeonhole principle, at least one circle must have at least $(n-1)/t$
 points of $P$. Again by the pigeonhole principle, at least one of the
-semicircles must have $n/(2t)$ points. Pick the rightmost point to see that
-it will have at least $n/(2t)$ distinct distances to points of $P$ on that
+semicircles must have $(n-1)/(2t)$ points. Pick the rightmost point to see that
+it will have at least $(n-1)/(2t)$ distinct distances to points of $P$ on that
 semicircle. Therefore
 \[
- |\Delta(P)|\ge\max\left(t,\frac n{2t}\right)
- \ge\sqrt{t\left(\frac n{2t}\right)}=\sqrt{\frac n2},
- \qquad g(n)\ge\sqrt{\frac n2}.
+ |\Delta(P)|\ge\max\left(t,\frac {n-1}{2t}\right)
+ \ge\sqrt{\frac {n-1}2}.
 \]
-Thus the constant $c$ here is $1/\sqrt2$.
-% Author check: the source includes the centre in its point count and uses "hemisphere".
+Thus $g(n)\geq c\sqrt n$ for a positive absolute constant $c$.
 \end{proof}
 \begin{remark}
 This argument can be generalised to $\mathbb R^d$ via induction to get
@@ -118,7 +126,6 @@ Moser's annular construction initiated a sequence of improvements toward the con
  \centering\includegraphics[width=.80\textwidth]{m2-fig-04.pdf}
  \FigureTag{M2.4}{fig:m2-fig-04}
 \end{figure}
-% Author check: historical names, dates, and bounds follow the handwritten timeline, without updating it.
 % Source page 12
 Subsequent work has drawn on Fourier analysis, number theory, graph theory,
 and information theory to improve the lower bounds substantially.

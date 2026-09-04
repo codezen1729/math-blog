@@ -3,24 +3,12 @@
 \input{styles/notes-preamble.tex}
 \graphicspath{{figures/lemma-book/}}
 \begin{document}
-\section*{An Inequality Toolkit: Jensen, Muirhead, and Schur}
+\section*{An Inequality Toolkit: Jensen, Muirhead, and Root Heuristics}
 % BLOG-CONTENT-BEGIN
-Prove that $\dfrac a{1+bc}+\dfrac b{1+ca}+\dfrac c{1+ab}\leq2$ if
-$0\leq a,b,c\leq1$.
-Without loss of generality, let $a\geq b\geq c$.
-Since $(1-a)(1-b)\geq0$, we have $1+ab\geq a+b$, so $1+2ab\geq a+b$.
-% Source page 4 - right
-Now $a+b+c\leq1+1+2ab=2(1+ab)$, and hence
-\[
-\frac a{1+bc}+\frac b{1+ca}+\frac c{1+ab}
-\leq\frac a{1+ab}+\frac b{1+ab}+\frac c{1+ab}\leq2.
-\]
-% Author check: the denominator comparison is retained as written, despite its direction.
-
 \setcounter{theorem}{14}\begin{lemma}[Cauchy's inequality application]
+If $x,y,z>1$, then
 $\dfrac{x^4}{(y-1)^2}+\dfrac{y^4}{(z-1)^2}+\dfrac{z^4}{(x-1)^2}\geq48$.
 \end{lemma}
-% Author check: no restrictions on x,y,z are recorded in the statement.
 Cauchy's inequality reduces the desired assertion to
 \[
 \left(\frac{x^2}{y-1}+\frac{y^2}{z-1}+\frac{z^2}{x-1}\right)^2\geq144,
@@ -38,7 +26,7 @@ $1-\frac12+\frac13-\frac14+\cdots+\frac1{2n-1}-\frac1{2n}
 =\sum_{k=1}^n\frac1{n+k}$.
 \end{lemma}
 \paragraph{Application.}
-Prove that
+For every integer $n\geq2$, prove that
 \[
 \frac1{n+1}\left(1+\frac13+\frac15+\cdots+\frac1{2n-1}\right)
 >\frac1n\left(\frac12+\frac14+\cdots+\frac1{2n}\right).
@@ -58,7 +46,6 @@ $\frac1{n+1}+\cdots+\frac1{2n}$ with $\frac1{2n}+\frac1{4n}+\cdots+\frac1{2n^2}$
 Add the inequalities
 $\frac1{2n}\geq\frac1{2n}$, $\frac1{2n-1}>\frac1{4n}$, $\ldots$,
 $\frac1{n+1}>\frac1{2n^2}$ to finish.
-% Author check: source does not exclude n=1, where equality holds.
 
 \setcounter{theorem}{22}\begin{lemma}[Homogenization]
 Homogenization rewrites an inequality so that all terms have the same degree.
@@ -78,14 +65,13 @@ Since $(4/3,1/3,1/3)\prec(2,0,0)$, Muirhead's theorem gives
 $\sum_{\mathrm{cyc}}a^{4/3}b^{1/3}c^{1/3}\leq\sum_{\mathrm{cyc}}a^2$.
 
 \setcounter{theorem}{23}\begin{lemma}[Second-derivative test]
-The best test for convexity or concavity is the second-derivative test:
+For a twice differentiable function, the second-derivative test says:
 if $f''(x)\geq0$, then $f$ is convex, while $f''(x)\leq0$ implies that $f$ is concave.
 \end{lemma}
-% Author check: the source's blanket ``otherwise'' is retained.
 Combined with Jensen's inequality or an extremal argument, this technique yields many elegant solutions.
 
 \setcounter{theorem}{24}\begin{lemma}[Jensen's inequality]
-Let $f:I\to\mathbb R$ be convex. For any $x_1,\ldots,x_n\in I$ and nonnegative reals $\omega_1,\ldots,\omega_n$,
+Let $f:I\to\mathbb R$ be convex. For any $x_1,\ldots,x_n\in I$ and nonnegative reals $\omega_1,\ldots,\omega_n$, not all zero,
 \[
 \omega_1f(x_1)+\cdots+\omega_nf(x_n)
 \geq\left(\sum_{i=1}^n\omega_i\right)
@@ -121,7 +107,6 @@ For majorization, let $f:I\to\mathbb R$ be convex and suppose $(x_n)\succ(y_n)$.
 Then $\sum_{i=1}^n f(x_i)\geq\sum_{i=1}^n f(y_i)$ (Karamata's inequality).
 \end{lemma}
 \emph{For a concave function, reverse the inequality.}
-% Author check: warning says not to reverse for concave f; retained verbatim in mathematical meaning.
 Here are two applications of these ideas.
 % Source page 8 - right
 Prove that, for positive reals $a,b,c$,
@@ -136,10 +121,9 @@ Notice $(3,3,0)\succ(2,2,2)$ and $(4,1,1)\succ(2,2,2)$.
 Thus Muirhead gives
 \[
 \sum_{\mathrm{sym}}a^3b^3c^0\geq\sum_{\mathrm{sym}}a^2b^2c^2,
-\qquad \sum_{\mathrm{sym}}a^4bc^0\geq\sum_{\mathrm{sym}}a^2b^2c^2.
+\qquad \sum_{\mathrm{sym}}a^4bc\geq\sum_{\mathrm{sym}}a^2b^2c^2.
 \]
 The conclusion follows.
-% Author check: source's last monomial is a^4 b c^0 despite preceding (4,1,1); retained.
 
 \setcounter{theorem}{52}\begin{lemma}[Sum-of-squares strategy]\label{lemma:lb1-58}
 If none of the standard techniques proves an inequality, try expressing it as a sum of squares greater than or equal to zero.
@@ -153,42 +137,6 @@ The expression has the following sum-of-squares decomposition.
 =\frac12\sum_{\mathrm{cyc}}(a^2-2ab+bc-c^2+ca)^2\geq0.
 \]
 This completes the proof.
-
-\setcounter{theorem}{59}\begin{lemma}[Schur's inequality]
-Define $T(a_1,\ldots,a_n)=\sum_{\mathrm{cyc}}x_1^{a_1}\cdots x_n^{a_n}$.
-For $\alpha\in\mathbb R$ and $\beta>0$, the following inequalities hold:
-\begin{align*}
-T(\alpha+2\beta,0,0)+T(\alpha,\beta,\beta)&\geq2T(\alpha+\beta,0,0),&&\text{first form},\\
-T(\alpha+\beta,\alpha+\beta,0)+T(2\alpha,\beta,\beta)&\geq2T(\alpha+\beta,\beta,\alpha),&&\text{second form}.
-\end{align*}
-\end{lemma}
-\emph{Important.}
-% Author check: first RHS exponents are alpha+beta,0,0 in source (degree mismatch); domain of x_i unspecified.
-\paragraph{Applications.}
-Prove that
-$a^4+b^4+c^4+a^2bc+b^2ca+c^2ab\geq2(a^3b+b^3c+c^3a)$.
-Standard Muirhead does not apply directly; Schur gives the short calculation
-\[
-T(2+2\cdot1,0,0)+T(2,1,1)\geq2T(3,0,0),
-\]
-which follows by setting $\alpha=2$, $\beta=1$.
-% Author check: displayed encoding T(3,0,0) is retained, not corrected to match the polynomial.
-
-Prove $3(x^2y+y^2z+z^2x)(xy^2+yz^2+zx^2)\geq xyz(x+y+z)^3$.
-The standard first moves do not simplify the expression, but a direct expansion gives
-\[
-2T(4,1,1)+3T(3,3,0)+T(2,2,2)\geq6T(3,2,1).
-\]
-We have
-\begin{align*}
-[3,3,0]+[2,2,2]&\geq2[3,2,1],&&\text{I},\\
-2[4,1,1]&\geq2[3,2,1],&&\text{II},\\
-2[3,3,0]&\geq2[3,2,1],&&\text{III}.
-\end{align*}
-I follows from Schur's second form with $\alpha=2$, $\beta=1$.
-Add I, II, and III to finish.
-% Author check: source switches between cyclic T and bracket notation without defining its normalization.
-% Author check: source annotates the second-form application with alpha=2, beta=1; retained even though this does not encode the displayed I.
 
 % Source page 27 - left
 The following IMO-style inequality resists the standard techniques.
@@ -222,7 +170,6 @@ If $\sum f(x)$ has $n$ terms, then
 \]
 This is analogous to the power-mean inequality.
 \end{lemma}
-% Author check: source labels this66.5; global numbering uses whole integers.
 % Source page 27 - right
 \paragraph{Application.}
 Prove $\sqrt x+\sqrt y+\sqrt z\leq\sqrt{3(x+y+z)}$.

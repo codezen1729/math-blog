@@ -13,27 +13,9 @@ Consider expanding finite Blaschke products. Given two Blaschke products $B_1,B_
 B_i(\D)=\D,
 \qquad B_i(\Chat\setminus\overline\D)=\Chat\setminus\overline\D.
 \]
-By Montel's theorem, $J(B_i)=S^1$ (a quasicircle contained in $S^1$). Thus $B_i\colon S^1\to S^1$ is a $d$-fold cover.
+By Montel's theorem, $J(B_i)=S^1$. Thus $B_i\colon S^1\to S^1$ is a $d$-fold cover.
 
-There is a homeomorphism $\psi\colon S^1\to S^1$ such that $\psi\circ B_1|_{S^1}\circ\psi^{-1}\equiv B_2|_{S^1}$, and $\psi$ is quasisymmetric. This follows from $J$-stability, since each $B_i$ lies in the principal hyperbolic component of $\operatorname{Rat}_d$.
-
-The following diagram records the domains and boundary identifications needed for the welding.
-\begin{figure}[H]
-\centering
-\includegraphics[width=11.8cm,height=6.6cm,keepaspectratio]{qf-fig-08.pdf}
-\FigureTag{QF8}{fig:qf-08}
-\end{figure}
-Then we can define
-\[
-F=\begin{cases}
-\widetilde R_U^{-1}\circ B_1\circ\widetilde R_U,&\overline U,\\
-\widetilde R_V^{-1}\circ B_2\circ\widetilde R_V,&\overline V.
-\end{cases}
-\]
-On $\gamma$, we have $F=\widetilde R_U^{-1}\circ B_1\circ\widetilde R_U
- =\widetilde R_V^{-1}\circ B_2\circ\widetilde R_V$.
-Therefore, on $S^1$, $(\widetilde R_V\circ\widetilde R_U^{-1})\circ B_1
-\circ(\widetilde R_U\circ\widetilde R_V^{-1})=B_2$.
+Since each restriction $B_i|_{S^1}$ is a real-analytic expanding orientation-preserving covering of degree $d$, the quasisymmetric classification of expanding circle maps gives a quasisymmetric homeomorphism $\psi:S^1\to S^1$ such that $\psi\circ B_1|_{S^1}\circ\psi^{-1}=B_2|_{S^1}$.
 
 % Source page 15
 Given $\psi\circ B_1\circ\psi^{-1}=B_2$, with $\psi$ quasisymmetric, can we realize $\psi$ as $\widetilde R_V\circ\widetilde R_U^{-1}$, where $\widetilde R_V,\widetilde R_U$ are extensions of Riemann maps to the boundary?
@@ -63,8 +45,31 @@ Consequently, the maps
  \longrightarrow(\phi(\Chat\setminus\overline\D),\mu_0)
 \end{aligned}
 \]
-are conformal. The curve $\gamma=\phi(S^1)$ is a quasicircle. Set $U=\phi(\D)$ and $V=\phi(\Chat\setminus\overline\D)$. The corresponding conformal maps are $\phi\circ\widehat\psi$ and $\phi$.
+are conformal. The curve $\gamma=\phi(S^1)$ is a quasicircle. Set $U=\phi(\D)$ and $V=\phi(\Chat\setminus\overline\D)$. Set
+\[
+\widetilde R_U=(\phi\circ\widehat\psi)^{-1}\colon U\to\D,
+\qquad
+\widetilde R_V=\phi^{-1}\colon V\to\Chat\setminus\overline\D.
+\]
 
 The map $\psi$ is called a \emph{conformal welding} of $\gamma$.
+
+The following diagram records the domains and boundary identifications needed for the welding.
+\begin{figure}[H]
+\centering
+\includegraphics[width=11.8cm,height=6.6cm,keepaspectratio]{qf-fig-08.pdf}
+\FigureTag{QF8}{fig:qf-08}
+\end{figure}
+Then we can define
+\[
+F(z)=\begin{cases}
+\widetilde R_U^{-1}\circ B_1\circ\widetilde R_U(z),&z\in\overline U,\\
+\widetilde R_V^{-1}\circ B_2\circ\widetilde R_V(z),&z\in\overline V.
+\end{cases}
+\]
+On $\gamma$, we have $F=\widetilde R_U^{-1}\circ B_1\circ\widetilde R_U
+ =\widetilde R_V^{-1}\circ B_2\circ\widetilde R_V$.
+Therefore, on $S^1$, $(\widetilde R_V\circ\widetilde R_U^{-1})\circ B_1
+\circ(\widetilde R_U\circ\widetilde R_V^{-1})=B_2$.
 % BLOG-CONTENT-END
 \end{document}

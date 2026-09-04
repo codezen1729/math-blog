@@ -47,7 +47,7 @@ Set \(H(t,s):=H''(t,s)+H_0(t,s).\)
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.21\linewidth]{note6-fig-01.pdf}
+  \includegraphics[width=0.52\linewidth]{note6-fig-01.pdf}
 
 \end{figure}
 
@@ -83,7 +83,7 @@ The following figures illustrate these deformations.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.45\linewidth]{note6-fig-02.pdf}
+  \includegraphics[width=0.66\linewidth]{note6-fig-02.pdf}
 
 \end{figure}
 
@@ -107,13 +107,13 @@ Also,
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.30\linewidth]{note6-fig-03.pdf}
+  \includegraphics[width=0.58\linewidth]{note6-fig-03.pdf}
 
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.40\linewidth]{note6-fig-04.pdf}
+  \includegraphics[width=0.62\linewidth]{note6-fig-04.pdf}
 
 \end{figure}
 
@@ -131,7 +131,7 @@ We write a homotopy as \(H(t,s)\), with \(t\) as the homotopy parameter. Also, o
 
 wording of Tool 21.
 
-If \(U\) is connected and \(\gamma_0,\gamma_1:[a,b]\to U\) are two continuous curves, then there exists a continuous map
+If \(U\) is a domain and \(\gamma_0,\gamma_1:[a,b]\to U\) are two continuous curves, then there exists a continuous map
 \[
   \gamma:[0,1]\times[a,b]\to U
 \]
@@ -342,7 +342,7 @@ them until they meet some other point on the polygon \(\gamma_P\). This will spl
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.35\linewidth]{note6-fig-05.pdf}
+  \includegraphics[width=0.62\linewidth]{note6-fig-05.pdf}
 
 \end{figure}
 
@@ -381,7 +381,7 @@ Note that \([b_0,a_1]\) is not in \(\operatorname{int}(\gamma)\). Two configurat
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.74\linewidth]{note6-fig-06.pdf}
+  \includegraphics[width=0.90\linewidth]{note6-fig-06.pdf}
 
 \end{figure}
 
@@ -392,30 +392,11 @@ Using the meaning of angle which we just mentioned, one can conclude that the an
   z_0,z_1\in\operatorname{int}(\gamma_P).
 \]
 
-\paragraph{Digression.}
-We claimed in the proof of Alexander's Numbering Rule that, by exploiting the \(C^1\)-ness of the curve, we can locally find a segment whose angle, with respect to slope, is the argument of the derivative of the point on the curve. Let us briefly justify it for the sake of completeness. Let \(\gamma(t_0)\) be in the interior of \([a,b]\), where \(\gamma:[a,b]\to\mathbb C\) is a smooth curve. Let \(\gamma'(t_0)=re^{i\theta}.\)
-We know \(\gamma\) is locally a rotated graph, so by Rolle's theorem
-
-
-there exists \(t'\in(a,b)\) such that \(\gamma'(t')=\frac{\gamma(b)-\gamma(a)}{b-a}.\)
-Essentially, these arguments are the same. So, locally, if we establish the fact that
-\[
-  \arg(\gamma'(t_0))
-\]
-is continuous in \(t_0\), then we are done. This is easy to see because, locally around \(\gamma(t_0)\), a branch of the logarithm is defined, say in \(B_\varepsilon(\gamma(t_0))\). Now, in \(B_\varepsilon(\gamma(t_0))\), \(\frac{\gamma'(t)}{|\gamma'(t)|}\)
-is continuous, so
-\[
-  \log_0\left(\frac{\gamma'(t)}{|\gamma'(t)|}\right)
-\]
-is continuous. Therefore, \(\arg(\gamma'(t))\) is continuous in \(B_\varepsilon(\gamma(t_0))\), which is precisely what we need.
-
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.38\linewidth]{note6-fig-07.pdf}
+  \includegraphics[width=0.62\linewidth]{note6-fig-07.pdf}
 
 \end{figure}
-
-Let us work through the details; readers familiar with the argument may wish to skip ahead.
 
 \subsection*{Jordan Curve Theorem (for simple closed polygonal paths)}
 \textit{Proof.}
@@ -479,9 +460,9 @@ are connected. Now the claim of contractibility is already dealt with. QED.
     \gamma_{13}^*\cap\gamma_{24}^*\ne\varnothing.
   \]
 
-  \item Let \(f:D\to\mathbb C\) be entire. If
+  \item Let \(f:D\to\mathbb C\) be holomorphic. If
   \[
-    2|f'(0)|=\sup_{z,w\in D}|H(z)-H(w)|,
+    2|f'(0)|=\sup_{z,w\in D}|f(z)-f(w)|,
   \]
   then \(f\) is linear. (Shakarchi.)
 

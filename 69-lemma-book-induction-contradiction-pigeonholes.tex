@@ -6,7 +6,7 @@
 \section*{Proof Strategies: Induction, Contradiction, and Pigeonholes}
 % BLOG-CONTENT-BEGIN
 \setcounter{theorem}{43}\begin{lemma}[Two proof methods]
-There are two methods of proof: mathematical induction and proof by contradiction.
+Two useful methods of proof are mathematical induction and proof by contradiction.
 Let me show two beautiful problems applying these strategies.
 \end{lemma}
 % Source page 19 - right
@@ -35,7 +35,8 @@ This gives $k\sqrt2+x\sqrt2>k+1$, a contradiction.
 
 % Source page 20 - left
 \paragraph{Three circles.}
-Given three mutually intersecting circles, prove that their common chords are concurrent.
+Given three mutually intersecting circles whose centres are not collinear,
+prove that their common chords are concurrent.
 \begin{figure}[H]\centering
 \includegraphics[width=.70\linewidth]{lb1-fig-14.pdf}
 \FigureTag{LB1.14}{fig:lb1-14}
@@ -52,7 +53,6 @@ A_1X\cdot XA_2=X_1X\cdot XC_2.
 \]
 Therefore $X_1X\cdot XC_2=Y_1X\cdot XC_2$, so $X_1X=Y_1X$ and
 $X_1=Y_1=\omega_2\cap\omega_3=C_1$, a contradiction.
-% Author check: general configurations with parallel radical axes are not discussed in source.
 
 \setcounter{theorem}{58}\begin{lemma}[Inductive determinant]
 Given an inequality $S(n)\gtreqless k$, where $S(n)$ is a sum satisfying $S(n+1)=f(S(n))$,
@@ -72,10 +72,9 @@ Guess $F(n)=1/n$. The starting case is $1/4\leq3/4-1/2$.
 If $a_1,a_2,\ldots,a_n$ is a permutation of $1,2,\ldots,n$, then
 $|a_1-1|+|a_2-2|+\cdots+|a_n-n|$ is even.
 \end{lemma}
-Here is a short proof. Let $|a_i-i|=|x_i|$.
+Here is a short proof. Let $x_i=a_i-i$.
 We note that $x_1+x_2+\cdots+x_n=0$, which implies that the number of odd $x_i$ is even.
 Therefore $\sum|x_i|$ is even. Q.E.D.!
-% Author check: only |x_i| is defined in the source, before the signed-sum assertion.
 \paragraph{Application: RMO (2011).}
 If $a_1,a_2,\ldots,a_{2011}$ is a permutation of $1,2,\ldots,2011$, prove that
 $|a_j-j|=|a_i-i|$ for some $1\leq i<j\leq2011$.
@@ -85,12 +84,6 @@ Assume no two are equal, and let us obtain a contradiction.
 Then these numbers form a permutation of $0,1,\ldots,2010$, so
 \[\sum|a_k-k|=\frac{2010\cdot2011}{2},\]
 which is odd. This is a contradiction.
-\paragraph{Colorado puzzle: 21st Colorado Mathematical Olympiad.}
-A hiker strolls 10 miles south, 10 miles west, and 10 miles north, and finds himself back at his initial position.
-Find all positions on Earth from which he could have started!
-% Source page 31 - right
-The North Pole is one solution, but there are infinitely many others.
-
 \setcounter{theorem}{77}\begin{lemma}[Pigeonhole principle; Dirichlet's principle]\label{lemma:lb1-80}
 If there are $kn+1$ pigeons sitting in $n$ pigeonholes, then at least one hole contains at least $k+1$ pigeons.
 \end{lemma}
@@ -101,10 +94,9 @@ Forty-one rooks are placed on a $10\times10$ chessboard. Prove that you can choo
 (Two rooks attack each other if they are in the same row or column of the chessboard.)
 
 The following solution is due to Russel Shaffer.
-He does something that no one could have even imagined.
 Let us make a cylinder out of the chessboard by gluing together two opposite sides of the board, and colour the cylinder diagonally in ten colours.
 \begin{figure}[H]\centering
-\includegraphics[width=.28\linewidth]{lb1-fig-19.pdf}
+\includegraphics[width=.52\linewidth]{lb1-fig-19.pdf}
 \FigureTag{LB1.19}{fig:lb1-19}
 \end{figure}
 The remaining diagonal classes are obtained similarly; three colours suffice
@@ -118,7 +110,6 @@ This proves the claim.
 The sum of all three angles in a triangle is $180^\circ$.
 That is, if $ABC$ is a triangle, then $\angle A+\angle B+\angle C=180^\circ$.
 \end{lemma}
-The reason for writing this lemma is to present the following problem, which is truly marvellous.
 \paragraph{Application.}
 For George's 100th birthday party, he invited 202 guests.
 They presented him with a rectangular birthday cake with, of course, 100 candles on it.
@@ -159,7 +150,7 @@ $\lfloor n/1\rfloor+\lfloor n/2\rfloor+\cdots+\lfloor n/n\rfloor+\lfloor\sqrt n\
 % Source page 9 - right
 Begin with the identity
 \[
-\lfloor n/1\rfloor+\cdots+\lfloor n/n\rfloor+\lfloor\sqrt n\rfloor
+\lfloor n/1\rfloor+\cdots+\lfloor n/n\rfloor
 =d(1)+d(2)+\cdots+d(n).
 \]
 In $P=\{1,2,\ldots,n\}$, the number of multiples of $q$ is $\lfloor n/q\rfloor$.
@@ -172,6 +163,5 @@ Therefore
 $\sum_{k=1}^n\lfloor n/k\rfloor+\lfloor\sqrt n\rfloor
 \equiv2\lfloor\sqrt n\rfloor\equiv0\pmod2$.
 
-% Author check: first displayed equality includes sqrt term only on LHS; subsequent identity differs and is retained separately.
 % BLOG-CONTENT-END
 \end{document}

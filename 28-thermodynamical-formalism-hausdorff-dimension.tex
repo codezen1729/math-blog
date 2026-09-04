@@ -9,178 +9,6 @@ How does thermodynamical formalism help us understand Hausdorff dimension?
 Our motivation is to understand \cite{denker1991hausdorff} and to be
 sufficiently equipped to extend its results to larger classes of functions
 for which the conventional methods introduced by Bowen et al. fail.
-\section{Overview of Ergodic Theory}
-Given an object of a category with a self-morphism, we wish to study its
-evolution. For a set $X$ with a group of automorphisms $G$, this is the realm
-of group actions. For a compact metric space $X$ with a continuous
-endomorphism $T$, it is the setting of topological dynamics. These objects
-may be equipped with more refined structures. Finally, if $(X,\mu)$ is a
-probability space and $T$ is measure-preserving, meaning that
-$\mu(B)=\mu(T^{-1}(B))$, the evolution of $(X,\mu,T)$ belongs to ergodic
-theory\footnote{For a complete treatment, see \cite{einsiedler2011ergodic}}.
-One can think of $T$ as a deterministic link between the likelihoods of $B$
-and $T^{-1}(B)$.
-
-\paragraph{Examples.} 
-\begin{enumerate}
-    \item $(\mathbb{R}/\mathbb{Z}, \text{Lebesgue}, t\rightarrow t+\alpha)$
-    \item $(\mathbb{R}/\mathbb{Z}, \text{Lebesgue}, t\rightarrow 2t)$
-    \item $(\{0,1\}^{\mathbb{N}}, \prod_{\mathbb{N}}\mu_{\frac{1}{2}}, (x_0, x_1, \ldots) \rightarrow (x_1, x_2, \ldots))$ where $\mu_{\frac{1}{2}}(\{0\}) = \mu_{\frac{1}{2}}(\{1\}) = \frac{1}{2}$.
-\end{enumerate}
-
-We ask two fundamental questions about the evolution of a given measure-preserving system $(X, \mu, T)$.\\
-
-
-1) What happens to $\{T^{\circ n}(x)\}_n$ or $\{T^{\circ n}(E)\}_n$ as $n\rightarrow \infty$?
-
-
-2) What happens to $\{f\circ T^{\circ n}(E)\}_n$, for $f:X \rightarrow \mathbb{C}$, measurable, as $n\rightarrow \infty$? 
-
-The answer to the first question leads us to the notions of recurrence and ergodicity. 
-\subsection*{Theorem 2.1 — Poincare Recurrence} Given a measure-preserving system $(X, \mu, T)$ and a measurable set $B$ with $\mu(B) >0$,
-$$\big|\{T^{\circ n}(x)\}_n\cap B\big| = \infty$$
-
-for a.e. $x\in B$. Said plainly, the orbit of almost all $x\in B$ recurs in $B$ infinitely often.
-
-
-Building on the theorem above, ask whether the same holds for $x\notin B$:
-can $T$ make $x$ land in $B$? There is an immediate set-theoretic
-obstruction. If $T^{-1}(B)=B$, then an orbit beginning outside $B$ cannot
-enter it. This motivates the following definition.
-\subsection*{Definition 2.1}
-    A measure-preserving system $(X, \mu, T)$ is \textbf{ergodic} if $\forall B$, $T^{-1}(B) = B$, implies $\mu(B) \in \{0,1\}$. 
-
-
-Ergodicity removes this obstruction, and recurrence then holds in the
-following stronger sense:
-$$\text{if }\mu(B)>0, \text{ then } \mu\Bigg(\bigcup_{n=1}^{\infty} T^{-n}(B)\Bigg) = 1$$
-
-
-For a quantitative description, pass from the system to an operator on a Hilbert space using the following dictionary.
-\begin{itemize}
-    \item $L^2(\mu) \longleftrightarrow (X,\mu)$ (replace $X$ with a naturally occurring Hilbert space).
-    \item $U_T \longleftrightarrow T$ (erect an operator $U_T$ on that Hilbert space).
-    \item $\big(U_T:L^2(\mu) \rightarrow L^2(\mu)\big)\longleftrightarrow \big(T:X\rightarrow X\big)$ (study the action of $T$ on $X$ through the action of $U_T$ on $L^2(\mu)$).
-\end{itemize}
-
-Here, $U_T(f):= f\circ T$ is called the Koopman operator. For
-$f_1,f_2\in L^2(\mu)$,
-$$\langle U_Tf_1, U_Tf_2\rangle := \int_X (f_1\circ T)\overline{(f_2\circ T)}d\mu = \int_Xf_1\overline{f_2}d\mu$$
-
-Since $T$ is measure-preserving, this implies
-$$\langle f_1, (U_T^*U_T-\text{Id})f_2\rangle = 0$$
-
-which forces, 
-$$\sup_{||f_1||, ||f_2||\leq 1} \bigg(\big|\langle f_1, (U_T^*U_T-\text{Id})f_2\rangle\big|\bigg) = ||U_T^*U_T-\text{Id}|| = 0$$
-
-Therefore, $U_T$ is unitary. The following theorem describes ergodicity from an operator theoretic perspective. 
-\subsection*{Theorem 2.2}
-    $(X, \mu, T)$ is ergodic if and only if $U_T(f) = f$ implies $f$ is some constant function $c$.
-
-
-The answers to the second question appear as ergodic theorems. The common feature of these theorems is that they all study the quantity,
-$$A_N^f:= \frac{1}{N}\sum_{n=0}^{N-1}U_T^n(f)$$
-
-as $N \rightarrow \infty$. The principal statements are as follows.
-\subsection*{Theorem 2.3 — von-Neumann Ergodic Theorem} Let the following be a projection operator,
-$$P_T:L^2(\mu) \rightarrow \{g\in L^2(\mu)  | U_Tg= g\}$$
-
-then, $\forall f\in L^2(\mu)$, 
-$$A_N^f \rightarrow P_T(f)$$
-
-in the $L^2$-norm.
-
-\subsection*{Theorem 2.4 — Mean Ergodic Theorem} Given $f \in L^1(\mu)$, we have,
-$$A_N^f \rightarrow f' (\in L^1(\mu))$$
-
-in the $L^1$-norm, where $U_Tf' = f'$. 
-
-As we have the following containment,
-$$L^{\infty}(\mu) \subseteq \cdots \subseteq L^2(\mu) \subseteq L^1(\mu)$$
-
-we see that Theorem $2.4$ extends Theorem $2.3$. 
-\subsection*{Theorem 2.5 — Birkhoff's Ergodic Theorem} If $f \in L^1(\mu)$, then,
-$$A_N^f(x) \rightarrow f^*(x)$$
-
-pointwise. Furthermore, $f^* \in L^1(\mu)$, $U_Tf^* = f^*$, and,
-$$\int_Xf^*d\mu = \int_Xfd\mu$$
-
-\textbf{Remark 2.1.} If $(X,\mu, T)$ is ergodic, then $f^* = c$, and this implies, 
-$$\int_Xf^*d\mu = c = \int_Xfd\mu$$
-
-Therefore, 
-$$\lim_{n\rightarrow\infty} \bigg(\frac{1}{n}\sum_{i=0}^{n-1}f(T^i(x))\bigg) = \int_Xfd\mu$$
-
-If $f=\chi_A$, then $A_N^f$ is the frequency with which the orbit of $x$
-visits $A$, called the time average. The right-hand side is the space average.
-Birkhoff's theorem therefore exhibits a duality between time and space
-averages.
-
-
-
-In summary, ergodic systems separate events on average, weakly mixing systems
-separate events asymptotically outside a density-zero set, and mixing systems
-separate events asymptotically. This gives the containment
-$$\text{Mixing } \subset \text{ Weakly Mixing } \subset \text{ Ergodic}$$
-
-
-Let us now apply the tools developed thus far to understand topological dynamical systems. Recall that this setting consists of a compact metric space $(X, d)$, and a continuous self-map $T:X\rightarrow X$. To proceed one must induce the structure of a measure-preserving system on $(X, d, T)$. The Riesz representation theorem gives the bijective correspondence
-$$\big(\Lambda \in C(X)^*\big) \longleftrightarrow \Bigg(f\rightarrow \int_Xfd\mu\Bigg)$$
-
-Let $M(X)$ be the space of probability measures on $X$, which by the correspondence above can be identified with functionals on $C(X)$ with $*$-topology. Observe the following,
-\begin{enumerate}
-    \item Given a sequence $\{\mu_n\}_n$ from $M(X)$, with $\mu_n\rightarrow \mu$, we have, 
-    $$\int_Xfd\mu_n \rightarrow \int_Xfd\mu$$
-    
-    If $f \equiv 1$, then $\mu(X) = 1$, and similarly one can also prove that $\mu > 0$. Therefore, $M(X)$ is closed.
-    \item As $X$ is compact, the following holds,
-    $$\Bigg|\int_xfd\mu\Bigg|\leq ||f||_{\infty}\int_X1d\mu$$
-    
-    which implies that $||\mu|| \leq 1$, giving us that $M(X)$ is bounded.
-    \item By Banach--Alaoglu theorem, $M(X)$ is compact.
-\end{enumerate}
-
-
-The set 
-$$M^T(X) := \{\mu\in M(X) |  \mu \text{ is }T-\text{invariant}\}$$
-
-also satisfies $(1), (2), $ and $(3)$. These properties yield the following theorems.
-\subsection*{Theorem 2.6}
-    $M^T(X) \neq \emptyset$. That is, one can do ergodic theory on $X$
-
-\subsection*{Theorem 2.7}
-    Ergodic elements of $M^T(X)$ are its extreme points (call it $E^T(X))$.
-
-\subsection*{Theorem 2.8 — Ergodic Decomposition} Given $(X, d, T)$, $\mu\in M^T(X)$, there exists unique $\lambda$ on $E^T(X)$ such that,
-\begin{itemize}
-    \item $\lambda(E^T(X)) = 1$
-    \item The following convex linear integral representation holds,
-    $$\int_Xfd\mu = \int_{E^T(X)}\bigg(\int_Xfd\nu\bigg)d\lambda$$
-\end{itemize}
-
-This has two consequences for the topological dynamical system.
-\subsection*{Theorem 2.9 — Unique Ergodicity}
-$A_N^f(x) \rightarrow C_f$
-
-is independent of $x$ ($\forall f \in C(X)$) iff $|M^T(X)| =1$.
-
-The second consequence is a notion of uniform distribution for sequences in
-$X$.
-\subsection*{Definition 2.4}
-A sequence $\{x_n\}_n \subset X$ is said to be \textbf{equidistributed} in $(X, d, T, \mu)$, if $\forall f\in C(X)$, 
-$$\lim_{n\rightarrow \infty} \frac{1}{n}\sum_{i=1}^{n}f(x_i) = \int_Xfd\mu$$
-
-Further, $x\in X$ is said to be \textbf{generic} if $\{T^{\circ n}(x)\}_n$ is equidistributed.
-
-\subsection*{Theorem 2.10}
-    $\mu\in M^T(X)$ is ergodic implies that almost every $x\in X$ is generic. 
-
-
-In this overview, ergodic theory arose from the evolution of a
-measure-preserving system. Questions about its orbits led to recurrence and
-ergodic theorems, which in turn gave a precise notion of equidistribution for
-topological dynamical systems.
-
 \section{Overview of Entropy}
 Suppose events $A_1,A_2,\ldots,A_n$ have probabilities
 $p_1,p_2,\ldots,p_n$. If $p_1=99\%$ and the remaining $1\%$ is distributed
@@ -189,16 +17,16 @@ every $i$, the uncertainty is much greater. How can this be quantified? The
 natural axioms for a function $H(p_1,p_2,\ldots,p_n)$ are the following.
 
 \begin{enumerate}
-    \item If $f(N):= H(1/N, 1/N, \ldots, 1/N)$, then $f$ is decreasing.
+    \item If $f(N):= H(1/N, 1/N, \ldots, 1/N)$, then $f$ is increasing.
     \item $f(ML) = f(M) + f(L)$
-    \item $H(p_1, \ldots, p_n) = h(p_A, p_B) + p_AH(p_1/p_A, \ldots, p_r/p_A) + p_BH(p_{r+1}/p_B, \ldots, p_N/p_B)$, where $A$ is the collection of the events $A_1, \ldots, A_r$, and $B$ is the collection of the remaining events.
+    \item $H(p_1, \ldots, p_n) = H(p_A, p_B) + p_AH(p_1/p_A, \ldots, p_r/p_A) + p_BH(p_{r+1}/p_B, \ldots, p_n/p_B)$, where $A$ is the collection of the events $A_1, \ldots, A_r$, and $B$ is the collection of the remaining events.
     \item The function $p\rightarrow H(p, 1-p)$ must be continuous on $(0,1)$.
 \end{enumerate}
 
-The axioms above roughly capture our intuition on uncertainty: As $N$ increases, the fact that we demand $f(N)$ to decrease captures the fact that each outcome has almost no chance of occurring, hence inviting no dynamic expectation regarding the outcome. Axiom $2$ talks about a scenario in which there are $M$, $L$ events (each equally likely), and we are to choose one from the set of $M$ events, and the other from the set of $L$. In all, there are $ML$ equally likely choices. We demand the complexities of the two choices, captured by $f(M)$ and $f(L)$, to add up to $f(ML)$, to indicate that one choice does not affect the other in any quantifiable way; they simply add up. Axiom $3$ is just a strengthening of the scenario that Axiom $2$ addresses, namely, suppose the first choice is made with probability $p_A$, and the second with probability $p_B$, and further that the events are not equally likely, then we demand the uncertainties to add up like above. The rationalization for Axiom $3$ can be extrapolated from that of Axiom $2$. Finally, Axiom $4$ is a regularity demand which captures the nature of the uncertainties not having strange jumps (or discontinuities). The upshot of these Axioms is the following theorem.
+Axiom $2$ talks about a scenario in which there are $M$, $L$ events (each equally likely), and we are to choose one from the set of $M$ events, and the other from the set of $L$. In all, there are $ML$ equally likely choices. We demand the complexities of the two choices, captured by $f(M)$ and $f(L)$, to add up to $f(ML)$, to indicate that one choice does not affect the other in any quantifiable way; they simply add up. Axiom $3$ is just a strengthening of the scenario that Axiom $2$ addresses, namely, suppose the first choice is made with probability $p_A$, and the second with probability $p_B$, and further that the events are not equally likely, then we demand the uncertainties to add up like above. The rationalization for Axiom $3$ can be extrapolated from that of Axiom $2$. Finally, Axiom $4$ is a regularity demand which captures the nature of the uncertainties not having strange jumps (or discontinuities). The upshot of these Axioms is the following theorem.
 \subsection*{Theorem 3.1}
     The functions satisfying Axioms $1, 2, 3, 4$ are all of the form,
-    $$H(p_1, p_2, \ldots, p_n) = -c\sum_{i=1}^np_i\log{p_i}$$
+    $$H(p_1, p_2, \ldots, p_n) = -c\sum_{i=1}^np_i\log{p_i},\qquad c>0.$$
 
 
 One can use this to inform our choices for a general probability space $(X,\mu)$. 
@@ -207,43 +35,32 @@ $$I(\alpha)(x):= -\sum_{A\in \alpha}\chi_A(x)\log{\mu(A)}$$
 
 \subsection*{Definition 3.2}
     With $\alpha$ as above, the \textbf{entropy} of $\alpha$ is defined to be,
-    $$H(\alpha):= -\int I(\alpha)d\mu = -\sum_{A\in \alpha}\mu(A)\log{\mu(A)}$$
+    $$H(\alpha):= \int I(\alpha)d\mu = -\sum_{A\in \alpha}\mu(A)\log{\mu(A)}$$
 
 
 The information function measures how much the partition $\alpha$ narrows
 down the location of $x\in X$. Large partition elements convey less
 information, which is why $\chi_A(x)$ is weighted by $\log(1/\mu(A))$.
-Entropy is the average value of this information function. Now suppose that
-$\mathcal A\subseteq\mathcal B$ is a $\sigma$-subalgebra. For any
-$f\in L^1(\mu)$, we have
-$$\Bigg(\int_Xfd\big(\mu|_{\mathcal{A}}\big)\Bigg) \ll \mu$$
-
-Let $E(f|\mathcal{A})$ be its Radon-Nikodym derivative. We now have an operator, 
-$$E(\cdot|\mathcal{A}):L^1(\mu) \rightarrow L^1(\mu|_{\mathcal{A}})$$
-
-such that, $\forall A\in \mathcal{A}$, and $\forall f\in L^1(\mu)$
-$$\int_AE(f|\mathcal{A})d\mu|_{\mathcal{A}} = \int_Afd\mu$$
-
-\subsection*{Definition 3.3}
-    The \textbf{conditional probability} of $B\in \mathcal{B}$ given $\mathcal{A}$ is,
-    $$\mu(B|\mathcal{A}) := E(\chi_B|\mathcal{A})$$
-
-\subsection*{Definition 3.4}
-    The \textbf{conditional information function} of $\alpha$ given $\mathcal{A}$ is,
-    $$I(\alpha|\mathcal{A})(x):= -\sum_{A\in \alpha}\chi_A(x)\log{\mu(A|\mathcal{A})}$$
-    
-    and the \textbf{conditional entropy} of $\alpha$ is defined to be,
-    $$H(\alpha|\mathcal{A}):= -\int I(\alpha|\mathcal{A})d\mu = -\sum_{A\in \alpha}\mu(A|\mathcal{A})\log{\mu(A|\mathcal{A})}$$
+Entropy is the average value of this information function.
 
 
 Now, let us upgrade our situation to a measure-preserving system $(X, \mu, T)$. Keeping in mind the terms introduced, we want to capture the complexity of the evolution induced by $T$ in $(X, \mu)$. Now, the information given by $\alpha$ to locate $x\in X$ is not absolute, for one can use $T$. Denote by $T^{-1}\alpha$ the partition $\{T^{-1}(A)\}_{A\in \alpha}$. For partitions $\alpha_1, \alpha_2$, denote by $\alpha_1\vee\alpha_2$ the partition $\{A_1\cap A_2\}_{A_i\in \alpha_i}$. Write,
-$$H_n(\alpha) := H\Bigg(\bigvee_{i=0}^{n-1}T^{-1}\alpha\Bigg)$$
+$$H_n(\alpha) := H\Bigg(\bigvee_{i=0}^{n-1}T^{-i}\alpha\Bigg)$$
 
 This measures the entropy accumulated through the first $n$ uses of $T$.
 Successive uses of $T$ are not independent from the viewpoint of entropy:
 in general $H_{n+m}(\alpha)\neq H_n(\alpha)+H_m(\alpha)$. Instead, the
 sequence $\{H_n(\alpha)\}_n$ is subadditive:
 $$H_{n+m}(\alpha)\leq H_{n}(\alpha) + H_{m}(\alpha)$$ 
+
+\subsection*{Definition 3.3}
+The \textbf{entropy of a measure-preserving transformation $T$ relative to a partition $\alpha$} is defined to be,
+$$h_{\mu}(T, \alpha):= \lim_{n\rightarrow\infty}\frac{1}{n}H\Bigg(\bigvee_{i=0}^{n-1}T^{-i}\alpha\Bigg).$$
+
+\subsection*{Definition 3.4}
+The \textbf{entropy of the measure-preserving system $(X, \mu, T)$} is defined to be,
+$$h_{\mu}(T) := \sup_{\alpha}h_{\mu}(T, \alpha),$$
+where $\alpha$ is a countable partition of $X$ with measurable parts.
 
 
 
@@ -254,7 +71,7 @@ measure-preserving system is likewise associated with a potential. This leads
 to the following notion.
 \subsection*{Definition 3.7}
     Let $(X, \mu)$ and $(X', \mu')$ be probability spaces. Let $T:X\rightarrow X'$ be a measurable map. We say a function $J$ is a \textbf{weak Jacobian} if there exists a measure $0$ set $E$ such that for all $A \subset X\backslash E$, on which $T$ is injective, the set $T(A)$ is measurable and,
-    $$\mu(T(A)) = \int_AJd\mu$$
+    $$\mu'(T(A)) = \int_AJd\mu$$
     
     We say, $J$ is a \textbf{Jacobian}, if the above holds for all $A\subset X$.
 
@@ -262,106 +79,68 @@ to the following notion.
 $$h_{\mu}(T) = \int \log{J_{\mu}}d\mu$$
 
 
-In short, the entropy of a measure-preserving system $(X,\mu,T)$ captures the
-average logarithmic rate of expansion of $T$. The analogous notion for a
-topological dynamical system is topological entropy; see
+The analogous notion for a topological dynamical system is topological entropy; see
 \cite{viana2016foundations}. For a fuller treatment of the material here, see
 \cite{przytycki2010conformal}.
 
-\section{Gibbs Measure}
+\section{Gibbs Measures and Pressure}
 This section gives an overview of Gibbs measures and their relation to the pressure functional; see \cite{przytycki2010conformal} for details. The setting of our story is the following:
 
 \begin{enumerate}
-    \item $X$, a compact metric space (with metric $\rho$)
-    \item $T$, an open continuous distance expanding map (topologically transitive)
+    \item $X$, a compact metric space (with metric $\rho$).
+    \item $T$, an open continuous distance expanding map (topologically mixing).
     \item $\varphi\in C(X)$ is H\"older-continuous.
 \end{enumerate}
-We begin in this generality and make three observations about the setting.
 
-First, note that $T:X \rightarrow X$ is a covering map, for one can show that it is a proper local homeomorphism. Further, one can find $\eta$, and $\xi$ such that:
-\begin{itemize}
-    \item $\rho(x, y)\leq 2\eta$ implies $\rho(T(x), T(y)) \geq \lambda\rho(x, y)$
-    \item $\rho(x, y)\leq 2\xi$ implies $\rho(T_1^{-1}(x), T_1^{-1}(y)) \leq \frac{1}{\lambda}\rho(x, y)$ where $T_1$ is $T$ restricted to the first slice of the evenly covered neighborhood given by the ball of radius $2\xi$ around $x$.
-    \item $B(T(x), \xi) \subset T(B(x, \eta))$
-\end{itemize}
+Also, if $T$ is open, continuous, and distance expanding, then
+$$\mu\in M^T(X)\longmapsto h_{\mu}(T)$$
+is upper semi-continuous, which implies that the entity (called the pressure of $\varphi$)\footnote{For more information on pressure functionals refer to \cite{viana2016foundations}},
+$$P(T,\varphi):=\sup_{\mu\in M^T(X)}
+\left\{h_{\mu}(T)+\int_X\varphi\,d\mu\right\}$$
+attains its supremum.
 
+\subsection*{Definition 4.1}
+Let $\mu$ be a Borel probability measure. Then $\mu$ is said to be a \textbf{Gibbs state} (or measure) for $\varphi\in C(X)$ if there exists $C\geq1$ such that, for all $n\geq1$,
+$$
+\frac{1}{C}\leq
+\frac{\mu(T_x^{-n}(B(T^n(x),\xi)))}
+{\exp\big(S_n\varphi(x)-nP(T,\varphi)\big)}
+\leq C,
+$$
+where $T_x^{-n}$ is the inverse branch of $T^n$ whose image contains $x$.
 
+\subsection*{Definition 4.2}
+Ruelle's transfer operator for $\varphi\in C(X)$ is a linear endomorphism on $C(X)$, and is given explicitly by
+$$
+L_{\varphi}(u)(x):=
+\sum_{\overline{x}\in T^{-1}(x)}
+u(\overline{x})\exp(\varphi(\overline{x})).
+$$
+Its dual $L_{\varphi}^*$ can be thought of as a linear endomorphism on the space of regular Borel measures on $X$ (by the Riesz Representation Theorem).
 
+One has the following central theorem that dictates most of what happens in thermodynamic formalism.
 
-\section{Transfer Operator}
-Transfer operators provide an operator-theoretic construction of invariant
-measures. Begin with
-$$m\circ T^{-1} \ll m$$
-this gives, 
-$$m(T^{-1}(A)) = \int_A \phi dm$$
-where $\phi$ is the Radon-Nikodym derivative. If $T$ is a local homeomorphism and the evenly covered neighbourhood $B(x,\xi)$ has slices $U_1,U_2,\ldots,U_n$, then 
-$$m\circ \bigg(T\big|_{U_j}\bigg)^{-1} \ll m$$
-so, 
-$$m(T^{-1}(A)\cap U_j) = m((T|_{U_j})^{-1}(A)) = \int_A \phi_j dm$$
-and by the uniqueness of the Radon-Nikodym derivative we have, 
-$$\phi = \sum_{j= 1}^{n} \phi_j$$
-Consider the map, 
-$$\frac{d\mu}{dm} \rightarrow \frac{d(T_*\mu)}{dm}$$
-where,
-$$\frac{d(T_*\mu)}{dm} = \sum_{j= 1}^{n} \frac{d(\mu\circ(T|_{U_j})^{-1})}{dm} = \sum_{j=1}^{n}\bigg[\frac{d\mu}{dm}\circ(T|_{U_j})^{-1}\bigg]\phi_j$$
-Define, 
-$$L_m: L^1(m) \rightarrow L^1(m)$$
-$$L_m(u)(x):= \sum_{\overline{x}\in T^{-1}(x)}u(\overline{x})\psi(\overline{x})$$
-where $\psi \equiv \phi_j\circ T$, and one can check that, 
-$$L_m\bigg(\frac{d\mu}{dm}\bigg) = \frac{d(T_*\mu)}{dm}$$
-Now, if there exists $h\in L^1(m)$, $h\geq0$, such that $\mu=hm$, then
-$$(\mu \text{ is }T\text{-invariant}) \iff (L_m(h) = h)$$
-This is an operator-theoretic way of constructing invariant measures. To
-construct invariant Gibbs measures for the Ruelle operator $L_{\varphi}$, our
-task is twofold: find $m$ such that
+\subsection*{Theorem 4.3 (Perron--Frobenius--Ruelle)}
+Keeping the setting and the notation introduced in mind, the following statements hold:
 \begin{enumerate}
-    \item $m\circ T^{-1} \ll m$
-    \item $\frac{d(m\circ T^{-1})}{dm} = \text{exp}(\varphi)$
+    \item There exists a simple eigenvalue $\beta>0$ of $L_{\varphi}$ and an associated eigenvector $h_{\varphi}>0$ in $C(X)$.
+    \item There exists a unique probability measure $\mu_{\varphi}$ on $X$ such that $L_{\varphi}^*(\mu_{\varphi})=\beta\mu_{\varphi}$, and, for all $v\in C(X)$,
+    $$
+    \frac{L_{\varphi}^n(v)}{\beta^n}
+    \longrightarrow
+    \frac{h_{\varphi}\int v\,d\mu_{\varphi}}
+    {\int h_{\varphi}\,d\mu_{\varphi}}.
+    $$
+    \item $\log\beta=P(T,\varphi)$.
 \end{enumerate}
-If $L_{\varphi}(h)=h$, then $hm$ is invariant and may also be a Gibbs state. If we see measures as functionals, we have the following,
 
-$$L_{\varphi}^*(\mu)(f) = \mu(L_{\varphi}(f)) = \int_{T(B)}[f\text{exp}(\varphi)]\circ (T|_B)^{-1}d\mu$$
-where $\text{supp}(f) \subseteq B$, and for $A\subseteq B$, one can find $\{f_n\}_n \in C(X)$ such that $f_n \rightarrow \chi_A$, which gives, 
-$$L_{\varphi}^*(\mu)(A) = \int_{T(A)}\text{exp}(\varphi\circ (T|_A)^{-1})$$
-for all $A$ such that $T|_A$ is injective. If $L_{\phi}^*(\mu) = \mu$, then we would have found the measure that satisfies $(1)$ and $(2)$ above. 
+Using this one can show that $\varphi$ has a unique Gibbs state which is explicitly given, after normalization, by $h_{\varphi}\mu_{\varphi}$. This is the spectral description of maximal measures and should be seen as analogous to such descriptions of ergodic measures using the Koopman operator. In fact, in a certain setup, the Koopman operator turns out to be the adjoint of the Ruelle operator.
 
-\subsection*{Theorem 5.1}
-    There exists a measure $m_{\varphi} \in M(X)$ such that,
-    $$L_{\phi}^*(\mu) = c\mu$$
-    where $c = P(T, \varphi)$.
+\subsection*{Theorem 4.4}
+A $T$-invariant Gibbs state $\mu$ for $\varphi$ is an equilibrium measure.
 
-\textit{Proof.}
-    Consider, 
-    $$l: M(X) \rightarrow M(X)$$
-    $$l(\mu):= \frac{L_{\varphi}^*(\mu)}{L_{\varphi}^*(\mu)(1)}$$
-    Now, $M(X)$ is a compact convex set, which implies by the Schauder-Tychnoff theorem: $\exists$ $m$ such that,
-    $$l(m) = m$$
-    and one can also show that $c = L_{\varphi}^*(\mu)(1) = P(T, \varphi)$.
-
-\subsection*{Theorem 5.2}
-    The measure $m$ obtained in Theorem~5.1 is a Gibbs measure for $\varphi$.
-
-\textit{Proof.}
-    It can be shown that,
-    $$m(B(T^n(x), \xi)) = \int_{T_x^{-n}(B(T^n(x), \xi))}c^n\text{exp}(-S_n\varphi)dm$$
-    and following an argument in the previous section we can also show,
-    $$1 \geq m(B(T^n(x), \xi)) \geq \alpha$$
-    as a result, 
-    $$1 \geq \int_{T_x^{-n}(B(T^n(x), \xi))}c^n\text{exp}(-S_n\varphi)dm \geq \alpha$$
-    using the pre-bounded distortion lemma, we get two things,
-    $$\alpha \leq Cc^n \text{exp}(-S_n\varphi(x)))m(T_x^{-n}(B(T^n(x), \xi)))$$
-    $$1 \geq C^{-1}c^n\text{exp}(-S_n\varphi(x))m(T_x^{-n}(B(T^n(x), \xi)))$$
-    these put together give,
-    $$\frac{\alpha}{C} \leq \frac{m(T_x^{-n}(B(T^n(x), \xi)))}{\text{exp}(S_n\varphi(x) - n\log(c))} \leq C$$
-
-\subsection*{Theorem 5.3}
-    Every invariant Gibbs measure is ergodic, and any two Gibbs measures for $\varphi$ are absolutely continuous.
-
-An immediate consequence is that there can be at most one invariant Gibbs
-measure. We have found $m_{\varphi}$; it remains to find $h_{\varphi}$ such
-that $L_{\varphi}(h_{\varphi})=h_{\varphi}$. Thus
-$$h_{\varphi}m_{\varphi}$$
-is the required unique Gibbs state for $\varphi$.
+\subsection*{Theorem 4.5}
+All equilibrium measures are Gibbs states.
 
 \section{Hausdorff Dimension}
 A thorough treatment of Hausdorff measures is given in
@@ -382,7 +161,7 @@ $$H_{\delta}^s(S) \geq \delta^{s-t}H_{\delta}^t(S)$$
 \subsection*{Definition 6.2}
     There is a unique number denoted by $HD(S)$ such that,
     \begin{equation*}
-        H^d(S) = \begin{cases}
+        H^t(S) = \begin{cases}
       \infty & \text{if } 0\leq t < HD(S) \\
       0        & \text{if } HD(S) < t <\infty
     \end{cases}
@@ -390,95 +169,63 @@ $$H_{\delta}^s(S) \geq \delta^{s-t}H_{\delta}^t(S)$$
     that number is called the Hausdorff dimension of the set $S$.
 
 
-Hausdorff measures extend the idea of Lebesgue measure to fractional dimensions. The following covering result is fundamental.
-
-\subsection*{Theorem 6.1}
-    Assume that $\mu$ is a Borel probability measure on $\mathbb{R}^n$ and
-    that $S$ is a bounded Borel subset of $\mathbb{R}^n$. For $C>0$, the
-    following statements hold:
-    \begin{enumerate}
-        \item for all but countably many $x\in S$, if
-        $$\limsup_{r\rightarrow 0} \frac{\mu(B(x, r))}{r^d} \geq C$$
-        then $H^d(A) \leq \frac{n}{C}\mu(A)$ for every Borel $A \subset S$.
-        \item if for all $x\in S$
-        $$\limsup_{r\rightarrow 0} \frac{\mu(B(x, r))}{r^d} \leq C < \infty$$
-        then $\mu(A) \leq CH^d(A)$ again for all Borel subsets $A \subset S$.
-    \end{enumerate}
-
-\subsection*{Theorem 6.2 — Frostman's Lemma}
-    Suppose $\mu$ and $S$ are as above. Then the following hold:
-    \begin{enumerate}
-        \item If $\mu(S)>0$ and there exists $\theta_1$ such that for every $x\in S$
-        $$\liminf_{r\rightarrow 0} \frac{\log(\mu(B(x, r)))}{\log(r)}\geq \theta_1$$
-        then $HD(S) \geq \theta_1$
-        \item If there exists $\theta_2$ such that for all $x\in S$,
-        $$\liminf_{r\rightarrow 0} \frac{\log(\mu(B(x, r)))}{\log(r)} \leq \theta_2$$
-        then $HD(S) \leq \theta_2$.
-    \end{enumerate}
-
-
-The preceding density estimates also describe the Hausdorff dimension of a measure; see \cite{falconer2004fractal}. We now introduce conformal repellers and connect them with the ergodic and entropy tools above.
+Hausdorff measures extend the idea of Lebesgue measure to fractional dimensions. We now introduce conformal repellers and connect them with the ergodic and entropy tools above.
 
 \subsection*{Definition 6.3}
     $(J, V, T)$ is a conformal repeller if for $T:V\rightarrow \mathbb{C}$ (a holomorphic function), one has:
     \begin{enumerate}
-        \item $\exists$ $C>0$ and $\alpha > 1$ such that $|(T^n)'(z)| \geq C\alpha$, $\forall$ $z\in J$, and $n\geq 1$.
+        \item $\exists$ $C>0$ and $\alpha > 1$ such that $|(T^n)'(z)| \geq C\alpha^n$, $\forall$ $z\in J$, and $n\geq 1$.
         \item $T^{-1}(V) \subset \subset V$, $J = \cap_{n\geq 1}T^{-n}(V)$.
         \item $\forall$ $U$, open, $U\cap J \neq \emptyset$, $\exists$ $n>0$ such that $J \subset T^n(U\cap J)$.
     \end{enumerate}
 
 These objects satisfy the standard topological properties summarized below.
-\subsection*{Theorem 6.3}
+\subsection*{Theorem 6.4}
     Given $(J, V, T)$ a conformal repeller, the following statements hold,
     \begin{enumerate}
         \item $T(J) = J$, and $T^{-1}(J) = J$.
         \item $J$ is perfect.
-        \item $\exists$ $\beta >0$, such that $\forall$ $x\neq y \in J$, $\exists$ $n$, such that, $|T^n(x) - T^n(y)|\geq \beta$ (i.e. $T$ is expanding on $J$).
+        \item $\exists$ $\beta >0$, such that $\forall$ $x\neq y \in J$, $\exists$ $n$, such that, $|T^n(x) - T^n(y)|\geq \beta$ (i.e. $T$ is expansive on $J$).
         \item $J$ admits a Markov partition $\{J_i\}_{1\leq i\leq k}$.
     \end{enumerate}
 
 
-\subsection*{Theorem 6.4 — Distortion Lemma}
-    Let $m$ be a Gibbs state on $X$, and $\varphi: X\rightarrow \mathbb{R}$ be H\"older-continuous. Assume $P(\varphi) =0$. Then there is a constant $E\geq 1$ such that for all $r$ small enough and all $x\in X$ there exists $n = n(x, r)$ such that,
+\subsection*{Theorem 6.5 — Distortion Lemma}
+    Let $m$ be a Gibbs state on $X$, and $\varphi: X\rightarrow \mathbb{R}$ be H\"older-continuous. Assume $P(T,\varphi) =0$. Then there is a constant $E\geq 1$ such that for all $r$ small enough and all $x\in X$ there exists $n = n(x, r)$ such that,
     $$\frac{\log(E) + S_n\varphi(x)}{-\log(E) - \log(|(T^n)'(x)|)} \leq \frac{\log(m(B(x, r)))}{\log(r)} \leq \frac{-\log(E) + S_n\varphi(x)}{\log(E) - \log(|(T^n)'(x)|)}$$
 
 The distortion estimate yields the volume lemma.
-\subsection*{Theorem 6.5 — Volume Lemma}
+\subsection*{Theorem 6.6 — Volume Lemma}
     Let $m$ be a Gibbs state for a topologically mixing conformal expanding
     repeller on $X$, and let $\varphi$ be a H\"older-continuous real function.
     Then, for almost every $x\in X$, the limit
 
     $$\lim_{r\rightarrow 0}\frac{\log(m(B(x, r)))}{\log(r)}$$
-    exists and is equal to $\frac{h_{\mu}(T)}{\chi_{\mu}(T)}$ (where $\chi_{\mu}(T)$ is the Lyapunov exponent. 
+    exists and is equal to $\frac{h_m(T)}{\chi_m(T)}$, where $\chi_m(T)$ is the Lyapunov exponent.
 
 \textit{Proof.}
-    Without loss of generality, assume that $P(\varphi) = 0$. We can achieve this by subtracting $P(\varphi)$ from $\varphi$. It can be shown that the Gibbs measure class remains the same up to constant perturbation of the H\"older potential $\varphi$. Now by Birkhoff's Ergodic Theorem, for almost every $x\in X$, we have, 
-    $$\lim_{n\rightarrow \infty }\frac{1}{n}S_n\varphi(x) = \int \varphi d\mu$$
-    $$\lim_{n\rightarrow \infty} \frac{1}{n}\log|(T^n)'(x)| = \chi_{\mu}(T)$$
+    Without loss of generality, assume that $P(T,\varphi) = 0$. We can achieve this by subtracting $P(T,\varphi)$ from $\varphi$. It can be shown that the Gibbs measure class remains the same up to constant perturbation of the H\"older potential $\varphi$. Now by \BlogPost{mean-maximal-and-pointwise-ergodic-theorems}{Birkhoff's Ergodic Theorem}, for almost every $x\in X$, we have,
+    $$\lim_{n\rightarrow \infty }\frac{1}{n}S_n\varphi(x) = \int \varphi dm$$
+    $$\lim_{n\rightarrow \infty} \frac{1}{n}\log|(T^n)'(x)| = \chi_m(T)$$
     Combining these equalities with the distortion lemma, noting that
     $n\rightarrow\infty$ as $r\rightarrow0$, and using the Variational
     Principle, we obtain
 
-    $$\lim_{r\rightarrow 0}\frac{\log(\mu(B(x, r)))}{\log(r)} = \frac{h_{\mu}(T)}{\chi_{\mu}(T)}$$
-
-
-This yields the following formula for an invariant ergodic measure $\mu$: 
-
-$$HD(\mu) = \frac{h_{\mu}(T)}{\chi_{\mu}(T)}$$
+    $$\lim_{r\rightarrow 0}\frac{\log(m(B(x, r)))}{\log(r)} = \frac{h_m(T)}{\chi_m(T)}$$
 
 
 The Markov partition of a conformal repeller produces a subshift system; see
 \cite{zinsmeister2000thermodynamic}. We omit the technical construction and
 turn to the result that motivates it.
 
-The function $\phi=-\log|T|'$ is H\"older continuous. Theorem $4.4$ shows
-that $\pi(t)=P(t\phi)$ is real analytic and that $\pi(0)$ is the positive
+The function $\phi=-\log|T'|$ is H\"older continuous. The function
+$\pi(t)=P(T,t\phi)$ is real analytic and $\pi(0)$ is the positive
 topological entropy of the resulting subshift system. One can further show
 that $\pi$ is strictly decreasing, with
 $$\lim_{t\rightarrow \infty}\pi(t) = -\infty$$
 
 which implies that there exists a $t>0$ such that $\pi(t) = 0$.
-\subsection*{Theorem 6.6 — Bowen} If $t=HD(J)$, then $\pi(t)=0$.
+\subsection*{Theorem 6.7 — Bowen} If $t=HD(J)$, then $\pi(t)=0$.
 % BLOG-CONTENT-END
 \bibliographystyle{amsalpha}
 \bibliography{tools/profiles/thermodynamic-formalism/references}

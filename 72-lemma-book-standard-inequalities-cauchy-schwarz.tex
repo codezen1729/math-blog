@@ -5,14 +5,6 @@
 \begin{document}
 \section*{Standard Inequalities and Ingenious Cauchy–Schwarz Applications}
 % BLOG-CONTENT-BEGIN
-\subsection{A motivating inequality}
-Let $a,b,c>0$ satisfy $0<\sqrt a+\sqrt b+\sqrt c\leq3\sqrt2$.
-Establish
-\[
-\frac{a^2+2a-2}{a\sqrt b}+\frac{b^2+2b-2}{b\sqrt c}
-+\frac{c^2+2c-2}{c\sqrt a}\leq3\sqrt2+\ln8.
-\]
-
 \setcounter{theorem}{70}\begin{lemma}[Arithmetic--geometric mean inequality]\label{lemma:lb1-74}
 For all positive reals $a_1,a_2,\ldots,a_n$,
 \[\frac{a_1+a_2+\cdots+a_n}{n}\geq\sqrt[n]{a_1a_2\cdots a_n},\]
@@ -21,6 +13,7 @@ with equality if $a_1=a_2=\cdots=a_n$.
 $(1,0,0,\ldots,0)\succ(1/n,1/n,\ldots,1/n)$: direct Muirhead!
 Alternatively, consider the constraint $\sum_{i=1}^n a_i=S$ and employ Lagrange's method to prove it.
 \paragraph{Application: Nesbitt's inequality.}
+For positive $a,b,c$, prove
 \[\frac a{b+c}+\frac b{c+a}+\frac c{a+b}\geq\frac32.\]
 Set
 \[
@@ -35,10 +28,10 @@ N+S=\frac{a+c}{b+c}+\frac{a+b}{c+a}+\frac{b+c}{a+b}\geq3.
 \]
 Thus $M+N+2S\geq6$, so $2S\geq3$ and $S\geq3/2$. Q.E.D.!
 \setcounter{theorem}{71}\begin{lemma}[Weighted AM--GM inequality]\label{lemma:lb1-75}
+For positive reals $a_1,\ldots,a_n$ and nonnegative weights $x_1,\ldots,x_n$, not all zero,
 \[\frac{a_1x_1+a_2x_2+\cdots+a_nx_n}{x_1+x_2+\cdots+x_n}
 \geq\sqrt[x_1+x_2+\cdots+x_n]{a_1^{x_1}a_2^{x_2}\cdots a_n^{x_n}}.\]
 \end{lemma}
-% Author check: hypotheses on the weights are not specified in the handwritten statement.
 
 % Source page 32 - left
 \paragraph{Application: RMO (1989).}
@@ -57,6 +50,7 @@ Indeed,
 \]
 Q.E.D.
 \paragraph{An ingenious application of AM--GM: AMTI Junior, finals (2014).}
+For $x,y,z>1$, prove that
 \[\frac{x^4}{(y-1)^2}+\frac{y^4}{(z-1)^2}+\frac{z^4}{(x-1)^2}\geq48.\]
 We have $x^2/(x-1)\geq4\Longleftrightarrow(x-2)^2\geq0$. Hence
 \[
@@ -67,11 +61,11 @@ We have $x^2/(x-1)\geq4\Longleftrightarrow(x-2)^2\geq0$. Hence
 \]
 Therefore $\sum_{\mathrm{cyc}}x^4/(y^2-2y+1)\geq3\cdot4^2=48$. Q.E.D.!
 This solution was communicated to me by Vedant. ``Thanks to him!''
-% Author check: the source does not state x,y,z>1 or other domain restrictions used in the displayed argument.
 
 \subsection{Standard inequalities}
 The following inequalities are useful enough to record as standard lemmas.
 \setcounter{theorem}{72}\begin{lemma}[Standard inequalities]\label{lemma:lb1-76}
+For positive reals $x,y,z$, the following inequalities hold:
 \begin{enumerate}
 \setcounter{enumi}{0}\item $(x+y)(y+z)(z+x)\geq8xyz$.
 \setcounter{enumi}{1}\item $x^2+y^2+z^2\geq xy+yz+zx$.
@@ -82,14 +76,13 @@ The following inequalities are useful enough to record as standard lemmas.
 \end{enumerate}
 Also important: $x^2+y^2+z^2\geq x+y+z$ when $xyz=1$.
 \end{lemma}
-% Author check: variable domains are not given in the handwritten list.
 \paragraph{Problems.}
 \begin{enumerate}
-\setcounter{enumi}{0}\item $x^2/y^2+y^2/z^2+z^2/x^2\geq x/y+y/z+z/x$ (SAT, 2000).
+\setcounter{enumi}{0}\item For positive $x,y,z$, prove $x^2/y^2+y^2/z^2+z^2/x^2\geq x/y+y/z+z/x$ (SAT, 2000).
 \setcounter{enumi}{1}\item Find all real triples $(x,y,z)$ satisfying
 \[3(x^2+y^2+z^2)=1,\qquad x^2y^2+y^2z^2+z^2x^2=xyz(x+y+z)^3\]
 (AMTI Inter, final, 2014).
-\setcounter{enumi}{2}\item $(1+a)^8+(1+b)^8\geq128ab(a+b)^2$ (IMOTC, 2014).
+\setcounter{enumi}{2}\item For positive $a,b$, prove $(1+a)^8+(1+b)^8\geq128ab(a+b)^2$ (IMOTC, 2014).
 \setcounter{enumi}{3}\item $R/r\geq b/c+c/b$ (favourite problem at CSL!).
 \end{enumerate}
 Here is a solution to the third problem, from IMOTC 2014:
@@ -117,9 +110,9 @@ The last step uses RMS $\geq$ AM.
 % Source page 34 - right
 The power-mean inequality organizes several familiar comparisons between means.
 \setcounter{theorem}{73}\begin{lemma}[Power-mean inequality]\label{lemma:lb1-77}
-\[\left(\frac{a_1^m+a_2^m+\cdots+a_n^m}{n}\right)^{1/m}
-\geq\left(\frac{a_1^n+a_2^n+\cdots+a_n^n}{n}\right)^{1/n}
-\qquad\text{if }m\geq n.\]
+For positive $a_1,\ldots,a_n$ and $r\geq s>0$,
+\[\left(\frac{a_1^r+a_2^r+\cdots+a_n^r}{n}\right)^{1/r}
+\geq\left(\frac{a_1^s+a_2^s+\cdots+a_n^s}{n}\right)^{1/s}.\]
 \end{lemma}
 This is the power-mean inequality. We already dealt with one special case, the ``square-root heuristic''; here is another:
 \[\sqrt{\frac{a_1^2+a_2^2+\cdots+a_n^2}{n}}\geq\frac{a_1+a_2+\cdots+a_n}{n}.\]
@@ -145,13 +138,18 @@ We have
 and
 \[\frac2{ad}+\frac2{bd}+\frac2{cd}
 \geq\frac{18}{ad+bd+cd}\geq\frac{16}{a^2+b^2+c^2+d^2}.\]
-% Author check: some intermediate inequalities in this abbreviated application require checking; retained, not completed or repaired.
+For the second inequality, Cauchy--Schwarz and AM--GM give
+\[
+d(a+b+c)\leq\sqrt3d\sqrt{a^2+b^2+c^2}
+\leq\frac{\sqrt3}{2}(a^2+b^2+c^2+d^2),
+\]
+and $8\sqrt3<18$.
 
 % Source page 35 - left
 Also,
 \[\frac8{bc+ac}\geq\frac8{a^2+b^2+c^2},\qquad
 \frac4{b^2+c^2}\geq\frac1{b^2+c^2+a^2}.\]
-Now add the results to finish the proof.
+Now add the results, together with $1/d^2\geq0$, to finish the proof.
 \setcounter{theorem}{75}\begin{corollary}[To the reciprocal-sum lemma]
 \[\frac x{a_1}+\frac x{a_2}+\cdots+\frac x{a_n}
 \geq\frac{xn^2}{a_1+a_2+\cdots+a_n}.\]
@@ -164,7 +162,7 @@ In fact, P. K. Hung thought of a generalization and conjectured that
 
 \subsection{Q.E.D.s using Cauchy--Schwarz}
 \paragraph{Iran (1998).}
-Prove that if $x,y,z>0$ satisfy $1/x+1/y+1/z=2$, then
+Prove that if $x,y,z\geq1$ satisfy $1/x+1/y+1/z=2$, then
 \[\sqrt{x-1}+\sqrt{y-1}+\sqrt{z-1}\leq\sqrt{x+y+z}.\]
 The usual square-root heuristic does not help here.
 In fact, if we make the following adjustment, there is some hope:
@@ -176,7 +174,6 @@ In fact, if we make the following adjustment, there is some hope:
 \end{aligned}
 \]
 Now comes the crucial move: take $a=x$, $b=y$, $c=z$. Q.E.D.!
-% Author check: x,y,z>=1 is not stated, although the square roots require it over the reals.
 % Source page 36 - right
 \paragraph{Kvant: Vasile C\^irtoaje.}
 Prove that for any real numbers $a,b,c,x,y,z$,
@@ -198,7 +195,7 @@ The identity is valid for all real $x,y,z$, and the result follows.
 
 
 \paragraph{A square-root heuristic: China (1982).}
-Let $a_1,a_2,\ldots,a_n$ be positive numbers such that $a_1+\cdots+a_n=1$.
+Let $n\geq2$ and let $a_1,a_2,\ldots,a_n$ be positive numbers such that $a_1+\cdots+a_n=1$.
 Prove that
 \[\frac{a_1}{\sqrt{1-a_1}}+\cdots+\frac{a_n}{\sqrt{1-a_n}}
 \geq\frac1{\sqrt{n-1}}(\sqrt{a_1}+\cdots+\sqrt{a_n}).\]
@@ -218,7 +215,7 @@ By Cauchy--Schwarz,
 The latter reduces to $\sqrt{n(n-1)}\geq\sum\sqrt{1-a_i}$.
 By square-root heuristics,
 \[\sum_{\mathrm{cyc}}\sqrt{1-a_i}\leq\sqrt{n\sum_{\mathrm{cyc}}(1-a_i)}=\sqrt{n(n-1)}.\]
-W$^5$. Q.E.D.
+Q.E.D.
 \paragraph{A two-case AM--GM argument.}
 For $x,y,z\in\mathbb R$,
 \[x^2+y^2+z^2\geq x\sqrt{y^2+z^2}+y\sqrt{x^2+z^2}.\]
@@ -268,13 +265,12 @@ As an additional constraint, use only RMS $\geq$ AM $\geq$ HM.
 The same ideas suggest two further challenges.
 \paragraph{A stronger inequality.}
 \begin{enumerate}
-\setcounter{enumi}{0}\item Given $x,y,z\in[0,1]$ with $x+y+z=2$, prove
+\setcounter{enumi}{0}\item Given $x,y,z\in(0,1]$ with $x+y+z=2$, prove
 $\sqrt{(1-x)/x}+\sqrt{(1-y)/y}+\sqrt{(1-z)/z}>\sqrt3$.
-\setcounter{enumi}{1}\item Given positive $a_1,\ldots,a_n$ with sum $n$, prove
+\setcounter{enumi}{1}\item Given $n\geq2$ and positive $a_1,\ldots,a_n$ with sum $n$, prove
 $\sum_{\mathrm{cyc}}\dfrac{a_i^2}{a_i^4+1}>\dfrac{n}{n^3+1}$.
 \end{enumerate}
 The second problem is the more difficult of the two.
-% Author check: first challenge includes zero denominators; second is strict even at n=1; retained.
 
 \paragraph{Clever AM--GM: AMTI inter-final.}
 Let $a,b,c,d>0$ satisfy

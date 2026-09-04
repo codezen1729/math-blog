@@ -181,6 +181,7 @@ def render_diagrams(text: str, collection: str) -> str:
                     r"\usepackage{graphicx,tikz,tikz-cd,pgfplots}",
                     r"\pgfplotsset{compat=1.18}",
                     r"\usetikzlibrary{arrows.meta,calc,positioning,patterns,decorations.pathreplacing}",
+                    r"\DeclareMathOperator{\id}{id}",
                     shared_math_macro_preamble(),
                     r"\providecommand{\cross}{\times}",
                     r"\begin{document}",

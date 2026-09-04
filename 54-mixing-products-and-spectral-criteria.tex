@@ -104,7 +104,8 @@ between its probabilistic, operator-theoretic, and measure-theoretic forms.
 
 \setcounter{theorem}{14}\begin{theorem}[Mixing equivalences]
 \label{thm:l4-mixing-equivalences}
-Given a system $(X,\mathcal B,\mu,T)$, the following are equivalent:
+Given a system $(X,\mathcal B,\mu,T)$ in which $T$ is invertible modulo null
+sets, the following are equivalent:
 \begin{enumerate}[label=(\arabic*)]
  \setcounter{enumi}{0}\item $T$ is weakly mixing.
  \setcounter{enumi}{1}\item $T\times T$ is ergodic with respect to $\mu\times\mu$.
@@ -112,8 +113,9 @@ Given a system $(X,\mathcal B,\mu,T)$, the following are equivalent:
  \setcounter{enumi}{3}\item If $(Y,\mathcal B',\nu,S)$ is ergodic, then
  $(X\times Y,\mathcal B\times\mathcal B',\mu\times\nu,T\times S)$
  is ergodic.
- \setcounter{enumi}{4}\item $U_T$ has \emph{continuous spectrum}: its only eigenvalue is $1$,
- and the corresponding eigenspace consists of constant functions.
+ \setcounter{enumi}{4}\item The only eigenfunctions of $U_T$ are the constant
+ functions; equivalently, its point spectrum consists only of the eigenvalue
+ $1$ on the constants.
 \end{enumerate}
 \end{theorem}
 The proof uses the following lemma of Koopman and von Neumann.
@@ -153,9 +155,8 @@ so $\operatorname{density}(J_k)=0$ for all $k\geq1$.
 Choose $0<\ell_1<\ell_2<\cdots$ such that
 $\frac1n|J_k\cap[0,n)|\leq1/k$ for all $n\geq\ell_k$, and set
 \[
- J=\bigcup_{k=0}^\infty\bigl(J_k\cap[\ell_k,\ell_{k+1})\bigr).
+ J=\bigcup_{k=1}^\infty\bigl(J_k\cap[\ell_k,\ell_{k+1})\bigr).
 \]
-% Author check: the source starts this union at k=0 although J_k and ell_k were introduced for k>=1.
 Since $J_k\subseteq J_{k+1}$,
 $J_k\cap[\ell_{k+1},\ell_{k+2})\subseteq
  J_{k+1}\cap[\ell_{k+1},\ell_{k+2})$, so
@@ -166,14 +167,14 @@ Let $n\in[\ell_k,\ell_{k+1})$. Then
 \[
  \begin{aligned}
  J\cap[0,n)
- &=\left(\bigcup_{i=0}^\infty J_i\cap[\ell_i,\ell_{i+1})\right)\cap[0,n)\\
- &\subseteq\left(\bigcup_{i=0}^{k}J_i\cap[\ell_i,\ell_{i+1})\right)\cap[0,n)
+ &=\left(\bigcup_{i=1}^\infty J_i\cap[\ell_i,\ell_{i+1})\right)\cap[0,n)\\
+ &\subseteq\left(\bigcup_{i=1}^{k}J_i\cap[\ell_i,\ell_{i+1})\right)\cap[0,n)
  \subseteq J_k\cap[0,n),
  \end{aligned}
 \]
-because $J_i\subseteq J_{i+1}$ for all $i\geq0$.
+because $J_i\subseteq J_{i+1}$ for all $i\geq1$.
 Therefore $\frac1n|J\cap[0,n)|\leq\frac1n|J_k\cap[0,n)|\leq1/k$,
-by our choice of $\{\ell_k\}_{k\geq0}$. Thus $J$ has density zero.
+by our choice of $\{\ell_k\}_{k\geq1}$. Thus $J$ has density zero.
 
 Now suppose $a_n\to0$ with $n\notin J$. Since $\{a_n\}_n$ is bounded,
 there exists $R>0$ such that $a_n\leq R$ for every $n\geq1$.
@@ -251,17 +252,16 @@ If $T\times T$ is weakly mixing, then
 \[
  \begin{aligned}
  \lim_{n\to\infty}\frac1n\sum_{i=0}^{n-1}
- \bigl|&(\mu\times\mu)((A\times X)\cap(T\times T)^{-n}(B\times X))\\
+ \bigl|&(\mu\times\mu)((A\times X)\cap(T\times T)^{-i}(B\times X))\\
  &-(\mu\times\mu)(A\times X)(\mu\times\mu)(B\times X)\bigr|=0.
  \end{aligned}
 \]
 Therefore
 \[
  \lim_{n\to\infty}\frac1n\sum_{i=0}^{n-1}
- |\mu(A\cap T^{-n}B)-\mu(A)\mu(B)|=0,
+ |\mu(A\cap T^{-i}B)-\mu(A)\mu(B)|=0,
 \]
 and $T$ is weakly mixing.
-% Author check: both sums above use i as the summation variable but n as the iterate in the source.
 
 \paragraph{$(1)\Longrightarrow(4)$.}
 Let $(Y,\mathcal B',\nu,S)$ be an ergodic system, and let $T$ be weakly
@@ -292,8 +292,7 @@ the algebra of rectangles to the $\sigma$-algebra.
 
 \paragraph{$(4)\Longrightarrow(2)$.}
 Let $(Y,\mathcal B',\nu,S)$ be the ergodic system with $Y=\{y\}$,
-$T=\id$, and $\nu(\{y\})=1$.
-% Author check: the source calls the singleton map T rather than S here.
+$S=\id$, and $\nu(\{y\})=1$.
 Then
 \[
  (X\times Y,\mathcal B\times\mathcal B',\mu\times\nu,T\times S)
@@ -338,8 +337,37 @@ unitary. Define $g(x_1,x_2)=f(x_1)\overline{f(x_2)}$. Then
  U_{T\times T}g(x,y)=g(Tx,Ty)=\lambda\overline\lambda\,g(x,y)=g(x,y).
 \]
 By ergodicity of $T\times T$, $g$ must be constant almost everywhere.
-Also, $U_Tf=\lambda f$ gives $f\circ T=\lambda f$, so $\lambda=1$.
-Hence $U_T$ has continuous spectrum.
+Since $g(x,y)=f(x)\overline{f(y)}$ is constant and $f$ is nonzero, $f$ must
+itself be constant almost everywhere. Then $f\circ T=\lambda f$ gives
+$\lambda=1$. Hence the only eigenfunctions are the constants.
+
+\paragraph{$(5)\Longrightarrow(2)$.}
+Suppose $T\times T$ is not ergodic. There exists a nonconstant
+$f\in L^2_{\mu\times\mu}(X\times X)$ with
+$f(Tx,Ty)=f(x,y)$ almost everywhere. Replacing $f$ by one of
+$f(x,y)+\overline{f(y,x)}$ and
+$i(f(x,y)-\overline{f(y,x)})$, and then subtracting its integral, we may
+assume that
+\[
+ f(x,y)=\overline{f(y,x)},\qquad \int_{X\times X}f\,d(\mu\times\mu)=0.
+\]
+Define the Hilbert--Schmidt operator
+\[
+ (F(g))(x):=\int_Xf(x,y)g(y)\,d\mu(y).
+\]
+The operator $F$ is nonzero, compact, and self-adjoint. It therefore has a
+nonzero eigenvalue $\lambda$, and the eigenspace
+$N_\lambda=\ker(F-\lambda I)$ is finite-dimensional. If $g\in N_\lambda$,
+invariance of $\mu$ and $f$ gives
+\[
+ \lambda g(Tx)=\int_Xf(Tx,Ty)g(Ty)\,d\mu(y)
+ =\int_Xf(x,y)g(Ty)\,d\mu(y)=F(U_Tg)(x).
+\]
+Thus $N_\lambda$ is invariant under $U_T$. The restriction of $U_T$ to this
+finite-dimensional space is unitary, so it has an eigenvector $g$. This
+eigenvector cannot be constant: otherwise integrating $Fg=\lambda g$ would
+give $\lambda g=0$, because $\int f\,d(\mu\times\mu)=0$. Hence $U_T$ has a
+nonconstant eigenfunction, contradicting (5).
 
 
 \end{proof}

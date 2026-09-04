@@ -6,7 +6,8 @@
 \section*{Polynomial Roots, Identities, and Algebraic Systems}
 % BLOG-CONTENT-BEGIN
 \setcounter{theorem}{13}\begin{lemma}[Detecting nonreal roots]
-If one is asked to prove that a polynomial has complex roots, focus on showing that the sum of the squares of its roots is negative.
+If one is asked to prove that a real polynomial has nonreal roots, one useful
+strategy is to show that the sum of the squares of its roots is negative.
 \end{lemma}
 \paragraph{Application.}
 Show that $ax^4+bx^3+x^2+x+1=0$, where $a,b\in\mathbb R$ and $a\ne0$, has complex roots.
@@ -23,15 +24,14 @@ $\sum_{i<j}\beta_i\beta_j=1$. Thus
 \sum_{i=1}^4\beta_i^2=\left(\sum_{i=1}^4\beta_i\right)^2
 -2\sum_{i<j}\beta_i\beta_j=(-1)^2-2=-1<0.
 \]
-One of the $\beta_i$, and therefore one of the $\alpha_i$, must be complex.
+One of the $\beta_i$, and therefore one of the $\alpha_i$, must be nonreal.
 
 \setcounter{theorem}{49}\begin{lemma}[Polynomial agreement]
-If $f$ is a polynomial and $f(x)=g(x)$ for $x\in\{1,2,\ldots,k\}$, then
+If $f$ and $g$ are polynomials and $f(x)=g(x)$ for $x\in\{1,2,\ldots,k\}$, then
 $f(x)-g(x)=(x-1)(x-2)\cdots(x-k)h(x)$.
-Moreover, if $f$ has degree $k$, then
+Moreover, if $f$ has degree $k$ and $g$ has degree less than $k$, then
 $f(x)-g(x)=k'(x-1)(x-2)\cdots(x-k)$, where $k'$ is its leading coefficient.
 \end{lemma}
-% Author check: no degree/polynomial hypotheses on g are stated.
 Let $f$ be a monic polynomial of degree $5$, with
 $f(2)=3$, $f(3)=8$, $f(4)=15$, $f(5)=24$, $f(6)=35$. Find $f(1)$.
 Observe that $f(x)=x^2-1$ at $x=2,3,4,5,6$.
@@ -44,13 +44,14 @@ If $x^4+1/x^4$ and $x^5+1/x^5$ are rational for real $x$, prove that $x+1/x$ is 
 One can work with the powers of $x$ and $1/x$, but this notation simplifies
 the manipulation.
 Let $T_k=x^k+1/x^k$. Observe
-$T_mT_n=T_{m+n}+T_{m-n}$ and $T_{2k}=T_k^2+2$.
+$T_mT_n=T_{m+n}+T_{m-n}$ and $T_{2k}=T_k^2-2$.
 The purpose is to show $T_1\in\mathbb Q$.
 From $T_4T_2=T_2+T_6$ and $T_8T_2=T_6+T_{10}$,
-we get $T_2(T_8-T_4+1)=T_{10}$, so $T_2,T_6$ are rational.
+we get $T_2(T_8-T_4+1)=T_{10}$. Here $T_{10}=T_5^2-2$ is rational,
+and $T_8-T_4+1=T_4^2-T_4-1>0$ because $T_4\geq2$ for real
+$x\ne0$. Thus $T_2$, and then $T_6=T_4T_2-T_2$, are rational.
 % Source page 26 - left
-Finally $T_1T_5=T_6+T_4$, so $T_1$ is rational.
-% Author check: T_{2k}=T_k^2+2 is the source sign; denominator nonzero is not discussed.
+Finally $T_1T_5=T_6+T_4$, and $T_5\ne0$ for real $x\ne0$, so $T_1$ is rational.
 
 \setcounter{theorem}{57}\begin{lemma}[Lagrange interpolation]
 Let $x_0,x_1,\ldots,x_n$ be distinct real numbers and $y_0,y_1,\ldots,y_n$ arbitrary real numbers.
@@ -85,12 +86,11 @@ $a^3+b^3+c^3=-3(a+b)(b+c)(c+a)=(-3)(-c)(-a)(-b)=3abc$.
 If $x^n+p_1x^{n-1}+p_2x^{n-2}+\cdots+p_n=0$ has roots $\alpha_1,\ldots,\alpha_n$, then
 \[
 \sum_{i=1}^n\alpha_i=-p_1,\qquad
-\sum_{\mathrm{cyc}}\alpha_{i_1}\alpha_{i_2}=p_2,\qquad
-\sum_{\mathrm{cyc}}\alpha_{i_1}\cdots\alpha_{i_k}=(-1)^kp_k,\qquad
+\sum_{1\leq i<j\leq n}\alpha_i\alpha_j=p_2,\qquad
+\sum_{1\leq i_1<\cdots<i_k\leq n}\alpha_{i_1}\cdots\alpha_{i_k}=(-1)^kp_k,\qquad
 \prod_{i=1}^n\alpha_i=(-1)^np_n.
 \]
 \end{lemma}
-% Author check: source labels the elementary symmetric sums ``cyc''; retained.
 Given such symmetric expressions as a system, form a polynomial: its roots are the quantities of interest.
 % Source page 28 - right
 \paragraph{Application.}
@@ -100,7 +100,8 @@ $P(t)=t^3-6t^2+11t-6=(t-1)(t-2)(t-3)$.
 Its roots are $(1,2,3)$, which is what we wanted.
 
 \setcounter{theorem}{67}\begin{lemma}[Number of polynomial roots]
-A polynomial of degree $n$ has at most $n$ roots, and exactly $n$ roots in the complex domain.
+A nonzero polynomial of degree $n$ has at most $n$ distinct roots, and exactly
+$n$ complex roots when counted with multiplicity.
 \end{lemma}
 \paragraph{Applications: USAMO, rephrased.}
 \begin{enumerate}
@@ -113,7 +114,7 @@ with $P(x)=x/(x+1)$ for $x=0,1,\ldots,n$. Find all possible values of $P(2014)$.
 
 \subsection{Identity principle and inequalities}
 \setcounter{theorem}{68}\begin{lemma}[Identity principle]\label{lemma:lb1-72}
-If $\deg(P)=\deg(Q)<n$ and $P(x)=Q(x)$ for $n$ values, then $P\equiv Q$.
+If $\max\{\deg(P),\deg(Q)\}<n$ and $P(x)=Q(x)$ for $n$ distinct values, then $P\equiv Q$.
 \end{lemma}
 Apply the polynomial root bound to $P-Q$: it has $n$ roots and degree less
 than $n$, so it must vanish identically.
@@ -123,7 +124,7 @@ than $n$, so it must vanish identically.
 Factor $ab(a^2-b^2)+bc(b^2-c^2)+ca(c^2-a^2)$.
 Let
 \[P(t)=tb(t^2-b^2)+bc(b^2-c^2)+tc(c^2-t^2).\]
-Observe that $P(b),P(c),P(-b-c)$ all equal zero. ($P$ is a biquadratic polynomial.)
+Observe that $P(b),P(c),P(-b-c)$ all equal zero. The polynomial $P$ is cubic.
 Thus $P(t)=K(t-b)(t-c)(t+b+c)$.
 Now make another crucial observation:
 \[
@@ -132,15 +133,14 @@ P(t)=t[bt^2-b^3+c^3-ct^2]+bc(b^2-c^2)
 \]
 Hence $b-c\mid P(t)$, so $K$ must be $b-c$; it is the only linear factor we missed!
 % Source page 32 - right
-Thus $|P(t)|=|(b-c)(t-b)(t-c)(t+b+c)|$ and
+Thus $P(t)=(b-c)(t-b)(t-c)(t+b+c)$ and
 \[
-P(a)=|(b-c)(a-b)(a-c)(a+b+c)|.
+P(a)=(b-c)(a-b)(a-c)(a+b+c).
 \]
 Therefore
-\[\left|ab(a^2-b^2)+bc(b^2-c^2)+ca(c^2-a^2)\right|
-=\left|(b-c)(a-b)(a-c)(a+b+c)\right|.\]
+\[ab(a^2-b^2)+bc(b^2-c^2)+ca(c^2-a^2)
+=(b-c)(a-b)(a-c)(a+b+c).\]
 This completes the proof.
-% Author check: source calls this polynomial biquadratic and its displayed final formulas use absolute-value bars.
 Euler's product computation for the Basel problem motivates the name.
 Let us compute the series $1+1/2^2+1/3^2+\cdots$.
 The Taylor expansion of the sine function is
@@ -201,12 +201,13 @@ Thus $P(x)=(x-1/2)^8$, which determines all six constants.
 Given $a/(b+c)+b/(c+a)+c/(a+b)=1$, find
 $a^2/(b+c)+b^2/(c+a)+c^2/(a+b)$.
 Nesbitt's inequality does not apply because nonnegativity is not assumed.
+The hypothesis forces $a+b+c\ne0$: if $a+b+c=0$, each denominator is the
+negative of its numerator and the given sum would be $-3$.
 We have
 \[\frac a{b+c}+\frac b{c+a}+\frac c{a+b}=\frac{a+b+c}{a+b+c},
 \qquad (a+b+c)\sum\frac a{b+c}=a+b+c.\]
 Thus $a^2/(b+c)+b^2/(c+a)+c^2/(a+b)+(a+b+c)=a+b+c$.
 It follows that $\sum_{\mathrm{cyc}}a^2/(b+c)=0$. This completes the proof.
-% Author check: the source introduces (a+b+c)/(a+b+c) without discussing a+b+c=0.
 
 \paragraph{IMO shortlist (1967).}
 Solve the cyclic system $x_i^2+x_i-1=x_{i+1}$ for $1\leq i\leq n$, where $x_{n+1}=x_1$.
@@ -215,11 +216,15 @@ It is not obvious. Note two things:
 \sum_{\mathrm{cyc}}(x_i^2+x_i-1)=\sum_{\mathrm{cyc}}x_i
 \Longrightarrow\sum_{\mathrm{cyc}}x_i^2=n,
 \]
-and $x_i(x_i+1)=x_{i+1}+1$, so
+If one $x_i=-1$, the recurrence forces every $x_i=-1$. Otherwise
+$x_i(x_i+1)=x_{i+1}+1$, so
 $\prod_{\mathrm{cyc}}x_i(x_i+1)=\prod_{\mathrm{cyc}}(x_{i+1}+1)$,
-giving $\prod_{\mathrm{cyc}}x_i=1$. 
-Then $\sum_i x_i^2/n\geq\prod_i x_i$, so $\prod_i x_i\leq1$ and
-$x_1=x_2=\cdots=x_n=\pm1$. This completes the argument.
-% Author check: zero factors and AM--GM powers/sign conditions are not treated; retained.
+giving $\prod_{\mathrm{cyc}}x_i=1$. Applying AM--GM to the nonnegative
+numbers $x_i^2$ gives
+\[
+ 1=\frac1n\sum_i x_i^2\geq\left(\prod_i x_i^2\right)^{1/n}=1.
+\]
+Equality forces $|x_i|=1$ for every $i$, and the recurrence forces either
+all $x_i=1$ or all $x_i=-1$. This completes the argument.
 % BLOG-CONTENT-END
 \end{document}

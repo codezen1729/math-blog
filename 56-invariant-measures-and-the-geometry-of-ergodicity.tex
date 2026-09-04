@@ -14,7 +14,7 @@ naturally supplies measures on $X$. We want these measures to capture the
 theorem identifies the positive linear functionals in $C(X)^*$ with bounded
 Borel measures on $X$:
 \[
- \boxed{\Lambda\in C(X)^*\ \sim\ \int_X d\mu,
+ \boxed{\Lambda\in C(X)^*\ \sim\ \Lambda(f)=\int_X f\,d\mu,
  \qquad \mu\text{ a bounded Borel measure}.}
 \]
 Thus the compact metric structure on $X$ naturally determines its space of
@@ -37,8 +37,7 @@ Clearly, the norm of the operator $\mu$ is $\mu(X)$, for
 \[
  \left|\int_Xf\,d\mu\right|\leq\|f\|_\infty\int_X1\,d\mu
 \]
-(now set $f=1$). Thus $\mathcal M(X)$ is compact in the weak-$*$ topology: by the Banach--Alaoglu theorem, the unit ball in $C(X)^*$, under the usual operator norm, is weak-$*$ compact, and $\mathcal M(X)$ is closed in the unit ball. Further, if $\mu_1,\mu_2\in\mathcal M(X)$, then $s\mu_1+(1-s)\mu_2\in\mathcal M(X)$, so $\mathcal M(X)$ is a convex compact subspace of $C(X)^*$.
-% Source omits the range of s in the convex-combination assertion; retained.
+(now set $f=1$). Thus $\mathcal M(X)$ is compact in the weak-$*$ topology: by the Banach--Alaoglu theorem, the unit ball in $C(X)^*$, under the usual operator norm, is weak-$*$ compact, and $\mathcal M(X)$ is closed in the unit ball. Further, if $\mu_1,\mu_2\in\mathcal M(X)$ and $s\in[0,1]$, then $s\mu_1+(1-s)\mu_2\in\mathcal M(X)$, so $\mathcal M(X)$ is a convex compact subspace of $C(X)^*$.
 
 \begin{remark}
 $\mathcal M(X)$ is also metrizable, but only compactness is needed
@@ -81,12 +80,11 @@ Now let $\nu_n\in\mathcal M(X)$ and set $\mu_n:=\frac1n\sum_{j=0}^{n-1}T_*^j(\nu
  \left|\int f\circ T\,d\mu_{n(j)}-\int f\,d\mu_{n(j)}\right|
  &=\frac1{n(j)}\left|\int\sum_{i=0}^{n(j)-1}
     (f\circ T^{i+1}-f\circ T^i)\,d\nu_{n(j)}\right|\\
- &=\frac1{n(j)}\left|\int(f\circ T^{n(j)+1}-f)\,d\nu_{n(j)}\right|\\
+ &=\frac1{n(j)}\left|\int(f\circ T^{n(j)}-f)\,d\nu_{n(j)}\right|\\
  &\leq\frac2{n(j)}\|f\|_\infty\longrightarrow0
  \qquad(j\to\infty).
 \end{aligned}
 \]
-% Author check: source telescopes to T^{n(j)+1}, although the sum ends at n(j)-1; retained.
 Thus $\int f\circ T\,d\mu=\int f\,d\mu$ for every $f\in C(X)$, implying that $\mu\in\mathcal M^T(X)$. Hence $\mathcal M^T(X)\neq\varnothing$.
 \end{proof}
 
@@ -118,7 +116,7 @@ For every $f\in C(X)$, by the pointwise ergodic theorem,
  \qquad\text{and}\qquad
  A_n^f(x)\longrightarrow\int f\,d\mu_2\quad(\star).
 \]
-Now choose $f\in C(X)$ such that $\int f\,d\mu_1\neq\int f\,d\mu_2$. If $A=\{x\mid(*)\text{ holds}\}$ and $B=\{x\mid(\star)\text{ holds}\}$, then $\mu_1(A)=\mu_2(B)=1$.
+Now choose $f\in C(X)$ such that $\int f\,d\mu_1\neq\int f\,d\mu_2$. If $A=\{x\mid(*)\text{ holds}\}$ and $B=\{x\mid(\star)\text{ holds}\}$, then $\mu_1(A)=\mu_2(B)=1$ and $A\cap B=\varnothing$. Consequently the partition $A\sqcup(X\setminus A)=X$ satisfies $\mu_1(X\setminus A)=\mu_2(A)=0$.
 \end{proof}
 
 \begin{remark}
@@ -126,8 +124,7 @@ One can generalize this to $n$ ergodic measures by induction. It suffices to cho
 \[
  E_{ij}:=\{f\mid\Lambda_i f\neq\Lambda_j f\}
 \]
-is open and dense in $C(X)$. Thus $\bigcap_{i,j}E_{ij}$ is nonempty, as $C(X)$ is a Baire space. Therefore, if $\mathcal M^T(X)$ were the convex hull of finitely many ergodic extreme points, then the state space $X$ would have a finite decomposition into ergodic components.
-% Author check: the source writes intersection over i,j without excluding i=j; retained.
+is open and dense in $C(X)$. Thus $\bigcap_{i\ne j}E_{ij}$ is nonempty, as $C(X)$ is a Baire space. Therefore, if $\mathcal M^T(X)$ were the convex hull of finitely many ergodic extreme points, then the state space $X$ would have a finite decomposition into ergodic components.
 \end{remark}
 \begin{figure}[htbp]
  \centering

@@ -42,7 +42,7 @@ The first argument is the destination's stable slug—the part after `#/post/` i
 
 Changes pushed to this public repository, including their history, are public. Drafts kept only in Overleaf are not published until pushed. Pull GitHub changes before editing if the website was updated elsewhere.
 
-The numbered posts include the mathematical content of the supplied `main.tex` documents and the chapters they load. `handout-style.tex` is formatting, not post content. Original Lemma Book lemmas 27–34 remain excluded. Unfinished passages already present in the supplied sources remain as written; no replacement proofs were added.
+The numbered posts include the mathematical content of the supplied `main.tex` documents and the chapters they load. `handout-style.tex` is formatting, not post content. Original Lemma Book lemmas 27–34 remain excluded. Repeated versions are omitted; retained passages keep the manuscript wording except where an objective mathematical or typographical correction is required.
 
 Equation and theorem labels retain the numbering from the source manuscripts; they are not automatically renumbered between posts. References and citations link to their exact destinations in the blog. For new notation, put definitions in the post body so both converters see them. Dependencies and bundled figures/fonts retain their existing rights and licences.
 

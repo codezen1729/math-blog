@@ -12,7 +12,7 @@
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=.68\linewidth]{note1-fig-01.pdf}
+  \includegraphics[width=0.72\linewidth]{note1-fig-01.pdf}
 
 \end{figure}
 
@@ -84,14 +84,7 @@ h\big|_{S^1\times\{\pm1\}}
 \]
 is a homeomorphism between $S^1\times\{\pm1\}$ and $S^1$. By Tool 3, however, $S^1\times\{\pm1\}$ is not connected while $S^1$ is connected, a contradiction.
 
-Thus ``$\log$'' cannot be defined on any domain containing $S^1$. In fact, there is the following general version.
-
-\subsection*{General version}
-There is a continuous branch of the logarithm, \(f\colon\Omega\longrightarrow\mathbb C,\)
-for a domain $\Omega\subset\mathbb C\setminus\{0\}$ if and only if $\{0\}$ and $\{\infty\}$ belong to different components of $\Omega^c$.
-
-\textbf{Exercise.}
-Use the general version to deduce the preceding nonexistence result.
+Thus ``$\log$'' cannot be defined on any domain containing $S^1$.
 
 
 Suppose \(f^2,\ \overline f\in H(\Omega).\)
@@ -200,7 +193,7 @@ Since $G$ has at least two linearly independent elements and is a group, the par
 
 \end{figure}
 
-If there are elements $z'\in G$ arbitrarily close to $\langle t g_\varepsilon:t\in\mathbb R\rangle$, then, since $G$ is closed, $G=\mathbb C$. Otherwise, choose a thin strip with no element of $G$ in the strip apart from $\langle t g_\varepsilon:t\in\mathbb R\rangle$. The interior and exterior of the strip form a separation. This is impossible, so $G=\mathbb C$ (as $z_0\in G$).
+If there are elements $z'\in G$ arbitrarily close to $\langle t g_\varepsilon:t\in\mathbb R\rangle$, then, since $G$ is closed, $G=\mathbb C$. Otherwise, choose a thin strip with no element of $G$ in the strip apart from $\langle t g_\varepsilon:t\in\mathbb R\rangle$. The interior and exterior of the strip form a separation. This is impossible, so $z_0\in G$, a contradiction. Hence $G=\mathbb C$.
 
 \paragraph{Case 2.}
 Suppose there is no $\varepsilon>0$ such that $B_\varepsilon(0)\cap G$ has no two linearly independent elements. Choose
@@ -227,18 +220,6 @@ Therefore the only connected closed additive subgroups of $(\mathbb C,+)$ are
 \mathbb C,\qquad\langle0\rangle,
 \qquad\left\langle tz:t\in\mathbb R\right\rangle.
 \]
-Now, if \(\left\langle re^{i\theta}:re^{i\theta}\in G\right\rangle\)
-is a connected closed subgroup of $\mathbb C^*$, then
-\[
-\left\langle \log r+i\theta:re^{i\theta}\in G\right\rangle
-\]
-is a connected closed subgroup of $(\mathbb C,+)$. To see this, all one has to observe is that
-\[
-f\colon\mathbb R_+\times[0,2\pi)\longrightarrow\mathbb C,
-\qquad f(r,\theta)=\log r+i\theta,
-\]
-is closed and continuous.
-
 \textbf{Remark.}
 The geometry of $\mathbb C$ connects its additive and multiplicative substructures.
 % BLOG-CONTENT-END

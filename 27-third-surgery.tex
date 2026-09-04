@@ -63,17 +63,17 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
 
     \subsection*{Proposition 6.7}: Let $U$ be a disk. We have the following:
     \begin{enumerate}
-        \item $\phi:\overline{U}\rightarrow\overline{U}$ be a homeomorphism and $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$ then $\phi\big|_{I(U)} \equiv \text{Id}\big|_{I(U)}$
-        \item $\phi:U\rightarrow U$ be a quasiconformal map and $\phi\big|_{I(U)} \equiv \text{Id}\big|_{I(U)}$, then $\phi$ extends quasiconformally by the identity to $\hat{\mathbb{C}}$ and $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$.
+        \item Let $\phi:\overline{U}\rightarrow\overline{U}$ be a homeomorphism. If $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$, then $\phi\big|_{I(U)} \equiv \text{Id}\big|_{I(U)}$.
+        \item Let $\phi:U\rightarrow U$ be a quasiconformal map. If $\phi\big|_{I(U)} \equiv \text{Id}\big|_{I(U)}$, then $\phi$ extends quasiconformally by the identity to $\hat{\mathbb{C}}$ and $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$.
     \end{enumerate}
 
 
     \textit{Proof.}: $(1)$ $\phi$ is continuous on $\overline{U}$ implies $\phi$ is uniformly continuous as $\overline{U}$ is compact. Let $\{C_n\}_n$ be a sequence of crosscuts. As $\phi$ is a homeomorphism and $\text{diam}(C_n) \rightarrow 0$, uniform continuity ensures that if $\{C_n\}_n$ defines a prime end, then so does $\{\phi(C_n)\}_n$. Let $U_1 \supset U_2 \supset \cdots \supset U_n \supset \cdots$ be the prime end corresponding to $\{C_n\}$. Then an easy consequence of Jordan Curve Theorem would tell us that $C_l \subset U_k$ for all $l>k$.\\
-    Set $Q_k$ to be the quadrilateral bounded by $C_k\cup C_{k+1}$ in $U$ for large $k$. Fix n. Suppose there exists an increasing sequence $\{k_i\}_i$ such that $Q_{k_i}$ and $\phi(Q_{k_i})$ belong to different components of $U\backslash C_n$. Pick a sequence of points $x_k \in Q_k$ such that $x_k \rightarrow x \in \partial U$ (one can arrange for it from $\mathcal{E}\cap \partial U$, being a compact connected set on $\partial U$, where $\mathcal{E}$ happens to be the impression of the prime end $\{U_k\}_k$).\\
-    As $\phi$ is uniformly continuous, $\phi(x_k) \rightarrow \phi(x) = x$ ($\phi$ is identity on $\partial U$), but this forces $\phi(x_{k_i})$ and $x_{k_i}$ to eventually land in the same component of $U\backslash C_n$. Contradiction\\
-    So for large enough $k$, $\phi(U_k) \in U_n$, now repeat the same argument with the fundamental chain $\{\phi({U_k})\}_k$ and the map $\phi^{-1}$ to get the desired result. Or, roughly speaking, $\{U_k\}_k$, $\{\phi(U_k)\}_k$ can either be the same as prime ends or must be eventually disjoint as fundamental chains. But here, the components of $U\backslash C_k$ and $U\backslash \phi(C_k)$ will always intersect. This implies that they can't be eventually disjoint $\implies$ $\{U_k\}_k \sim \{\phi(U_k)\}_k$.
+    Set $Q_k$ to be the quadrilateral bounded by $C_k\cup C_{k+1}$ in $U$ for large $k$. Fix $n$. Suppose there exists an increasing sequence $\{k_i\}_i$ such that $Q_{k_i}$ and $\phi(Q_{k_i})$ belong to different components of $U\backslash C_n$. After passing to a subsequence, choose $x_{k_i}\in Q_{k_i}$ with $x_{k_i}\rightarrow x\in\mathcal{E}\subset\partial U$, where $\mathcal{E}$ is the impression of the prime end.\\
+    As $\phi$ is uniformly continuous, $\phi(x_{k_i}) \rightarrow \phi(x) = x$ ($\phi$ is identity on $\partial U$), but this forces $\phi(x_{k_i})$ and $x_{k_i}$ to eventually land in the same component of $U\backslash C_n$. Contradiction.\\
+    Thus, for every fixed $n$, $\phi(U_k)\subset U_n$ for all sufficiently large $k$. Applying the same argument to $\{\phi(U_k)\}_k$ and $\phi^{-1}$ shows that the two chains define the same prime end.
 
-    (2) Observe that if $\phi$ is identity on the ideal boundary of $U$ then $\sup_{z\in U}{|\phi(z)-z|_P} < \infty$. Here $|.|_P$ is the Poincar\'e metric bestowed on the hyperbolic surface $U$; in fact, $U \cong \mathbb{D}$. This is the standard bounded-displacement property of a quasiconformal self-map of the disk with identity boundary values. Suppose $\sup_{z\in U}{|\phi(z)-z|_P} < K$. Given any $\{x_k\}_k$ such that $x_k\rightarrow x \in \partial U$, note that $\phi(x_k) \in B_K(x_k)$, the ball of radius $K$ around $x_k$. Since $\overline{U}$ is compact in $\hat{\mathbb{C}}$ and $U$ is hyperbolic, we know that $B_K(x_k) \rightarrow x \in \partial U$. In particular, $\phi(x_k) \rightarrow x$ $\implies$ $\phi$ extends to $\partial U$ continuously and $\hat{\phi}\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$. A direct application of Rickman's lemma now completes the proof.
+    (2) Observe that if $\phi$ is identity on the ideal boundary of $U$ then $\sup_{z\in U}d_U(\phi(z),z) < \infty$, where $d_U$ is the Poincar\'e distance on the hyperbolic surface $U\cong\mathbb{D}$; this is the bounded-displacement property of a quasiconformal self-map of the disk with identity boundary values \cite{mcmullen1988automorphisms}. Suppose $\sup_{z\in U}d_U(\phi(z),z) < K$. Given any $\{x_k\}_k$ such that $x_k\rightarrow x \in \partial U$, note that $\phi(x_k) \in B_K(x_k)$, the ball of radius $K$ around $x_k$. Since $\overline{U}$ is compact in $\hat{\mathbb{C}}$ and $U$ is hyperbolic, we know that $B_K(x_k) \rightarrow x \in \partial U$. In particular, $\phi(x_k) \rightarrow x$ $\implies$ $\phi$ extends to $\partial U$ continuously and $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$. A direct application of Rickman's lemma now completes the proof.
 
     \begin{figure}[H]\centering
     \includegraphics[width=12cm]{ms-fig-13.pdf}
@@ -165,7 +165,7 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
     \includegraphics[width=10cm]{ms-fig-11.pdf}
     \FigureTag{MS11}{fig:ms-11}
     \end{figure}
-    If $I(U)$ is a fixed component of $\hat{f}$, then $g(U) = U$ and $g^{\circ n}(U) = \phi^{-1}\circ B^{\circ n}\circ \phi(U)$. Hence, we have $K(g^{\circ n}) \leq K(\phi)^2$ on $U$. If $z \notin U$, it may have several iterates in $\hat{\mathbb{C}}\backslash U$ before falling into $U$. Hence, $K(g^{\circ n}) \leq K(f^{\circ n})\cdot K(\phi)^2\leq K\cdot K(\phi)^2$, where $f$ is quasirational so that $K(f^{\circ n}) \leq K$ for all $n$ and some $K \geq 1$ (by Sullivan's Straightening Theorem). Hence, $g$ is quasirational.\\
+    If $I(U)$ is a fixed component of $\hat{f}$, then $g(U) = U$ and $g^{\circ n}\big|_U = \phi^{-1}\circ B^{\circ n}\circ \phi$. Hence, we have $K(g^{\circ n}) \leq K(\phi)^2$ on $U$. If $z \notin U$, it may have several iterates in $\hat{\mathbb{C}}\backslash U$ before falling into $U$. Hence, $K(g^{\circ n}) \leq K(f^{\circ n})\cdot K(\phi)^2\leq K\cdot K(\phi)^2$, where $f$ is quasirational so that $K(f^{\circ n}) \leq K$ for all $n$ and some $K \geq 1$ (by Sullivan's Straightening Theorem). Hence, $g$ is quasirational.\\
     In the non-recurrent case, the dilatation is $K(g^{\circ n}) \leq K\cdot K(\phi_U)\cdot K(\phi_V)$, since no orbit can pass through $U$ more than once.
 
 
@@ -178,7 +178,7 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
         is quasirational.
 
 
-    \textit{Proof.}: Note that $g^{\circ p}$ is quasiconformally conjugate to a Blaschke product of degree $d = \prod_{j=0}^{p-1}{\text{deg}(B_j)}$ on any of the $U_j$'s. Therefore, $K(g^{\circ n})$ is uniformly bounded forcing $g$ to be quasirational by Straightening Theorem.
+    \textit{Proof.}: Note that $g^{\circ p}$ is quasiconformally conjugate to a Blaschke product of degree $d = \prod_{j=0}^{p-1}{\text{deg}(B_j)}$ on any of the $U_j$'s. Since the cycle contains only finitely many $U_j$, this bound is uniform on their union, while the original bound for $f$ applies off the cycle. Therefore, $K(g^{\circ n})$ is uniformly bounded forcing $g$ to be quasirational by Straightening Theorem.
 
     \begin{figure}[H]\centering
     \includegraphics[width=11.5cm]{ms-fig-14.pdf}

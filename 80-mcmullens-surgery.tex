@@ -20,6 +20,8 @@ In \BlogPost{third-surgery}{Part I}, the Gluing Lemma gave us the mechanism for 
         $$P_d(z):= \frac{z^d + a}{1+az^d}   \text{for}   a = \frac{d-1}{d+1}$$
     \end{enumerate}
 
+    Thus $P_d(\mathbb{S}^1)=\mathbb{S}^1$, and $P_d$ is orientation-preserving. Hence $P_d(\mathbb{D})=\mathbb{D}$ and $P_d(\widehat{\mathbb{C}}\setminus\overline{\mathbb{D}})=\widehat{\mathbb{C}}\setminus\overline{\mathbb{D}}$. By Montel's theorem, $P_d$ is normal on $\mathbb{D}$ and $\widehat{\mathbb{C}}\setminus\overline{\mathbb{D}}$. Since $\mathbb{S}^1$ is their common boundary, $J(P_d)=\mathbb{S}^1$.
+
 
 
     Let $B(z) = e^{2\pi i\theta}z$, and let $\phi$ be an orientation preserving circle homeomorphism such that $\phi\circ B = B\circ\phi$. A lift initially satisfies $F(z+\theta)=F(z)+\theta+k$ for some integer $k$, while $F(z+1)=F(z)+1$. Since $F(z)-z$ is bounded and iterating the first identity would produce the term $nk$, we must have $k=0$. Thus $F(z+\theta) = F(z) + \theta$, and $F(z)-z$ is $1$-periodic. This implies $F(m\theta + n) = F(0) + m\theta+n$; now as $m\theta + n$ is dense in $\mathbb{R}$, we get that $F(z) = z+\alpha$ $\implies$ $\phi$ is a rotation.\\
@@ -29,7 +31,7 @@ In \BlogPost{third-surgery}{Part I}, the Gluing Lemma gave us the mechanism for 
     \FigureTag{MS15}{fig:ms-15}
     \end{figure}
     Let $B(z) = z^d$, and let $h$ be a topological orientation preserving map satisfying $h(z^d) = h(z)^d$ for all $z \in \mathbb{S}^1$. Set $\tilde{h} = h/h(1)$. Since $h(1)=h(1)^d$, $h(1)$ is a $(d-1)$th root of unity and $\tilde{h}$ still commutes with $z^d$. If $\zeta^{d^k}=1$, then commutation gives $\tilde{h}(\zeta)^{d^k}=1$. Thus $\tilde{h}$ permutes the $d^k$th roots of unity; as it preserves orientation and fixes $1$, it fixes each of them. Their union is dense in $\mathbb{S}^1$, so $\tilde{h} = \text{Id}$ on $\mathbb{S}^1$. Therefore, $h(z) = h(1)z$, making it a rotation map.\\
-    Further note that $\phi_1(z) = z$ and $\phi_2(z) = \frac{z+a}{1+az}$ provide an equivalence between $z \rightarrow z^d$ and $z \rightarrow P_d(z)$, since $P_d=\phi_2\circ(z\mapsto z^d)$. They are nevertheless not quasisymmetrically conjugate: one can see this by looking at their indifferent and repelling periodic points. A quasisymmetric automorphism of $P_d$ must fix its unique indifferent fixed point and is therefore the identity.\\
+    Further note that $\phi_1(z) = z$ and $\phi_2(z) = \frac{z+a}{1+az}$ provide an equivalence between $z \rightarrow z^d$ and $z \rightarrow P_d(z)$, since $P_d=\phi_2\circ(z\mapsto z^d)$. They are not even topologically conjugate on $\mathbb{S}^1$: $P_d$ has a parabolic fixed point, with nearby points converging to it from one side, whereas every fixed point of $z\mapsto z^d$ is repelling.\\
     These three observations in conjunction establish some sense of rigidity as far as these objects' conjugacy classes are concerned. Now let us state the main theorem in which the core of McMullen's surgery resides.
 
     \subsection*{Theorem 6.15}{(Main Theorem)}: Let $f$ be a rational map and $C \subset J(f)$ a component different from a single point such that $f(C)=C$. Then there exists a rational map $g$ and a quasiconformal homeomorphism $\phi: \hat{\mathbb{C}} \rightarrow \hat{\mathbb{C}}$ such that $\phi$ stable conjugates $f\big|_C$ to $g\big|_{J(g)}$. Moreover, $g$ has the following properties. The Julia set $J(g)$ is connected and the periodic Fatou components of $g$ are Siegel discs, basins of superattraction or parabolic basins. On each periodic Fatou component, the first return map is conjugate to one of the three rigid models. Moreover, if $c$ is a critical point in a strictly preperiodic Fatou component, and $n$ is the smallest number for which $g^{\circ n}(c)$ is in a periodic component $U$, then:
@@ -53,7 +55,7 @@ In \BlogPost{third-surgery}{Part I}, the Gluing Lemma gave us the mechanism for 
         \item Every component of $I(C)$ is preperiodic and there are only finitely many periodic ones.
         \item For any component $I(U)$ of $I(C)$, there exist quasisymmetric maps $\hat{\phi}_1$ and $\hat{\phi}_2$ mapping $I(U)$ and $\hat{f}(I(U))$ respectively to $\mathbb{S}^1$ that provide an equivalence between $\hat{f}$ and $z\rightarrow z^d$ for some $d\geq 1$. If $I(U)$ is fixed, $\hat{f}$ and $z\rightarrow z^d$ may not be quasisymmetrically conjugate.
     \end{enumerate}
-    (Note: The equivalence between $\hat{f}$  and $z\rightarrow z^d$ for some $d\geq 1$ can be changed to an equivalence between $\hat{f}$  and any Blaschke product of degree $d$ on $\mathbb{S}^1$. There is also a lot of freedom in the choices of the quasisymmetric maps $\hat{\phi}_1$ and $\hat{\phi}_2$ providing the equivalence, in that, for an arbitrary choice of one, one can obtain the other).
+    The equivalence between $\hat{f}$ and $z\rightarrow z^d$ for some $d\geq 1$ can be changed to an equivalence between $\hat{f}$ and any Blaschke product of degree $d$ on $\mathbb{S}^1$. There is also a lot of freedom in the choices of the quasisymmetric maps $\hat{\phi}_1$ and $\hat{\phi}_2$ providing the equivalence: an arbitrary choice of one determines the other.
 
 
     \subsection*{Proposition 6.17}{(Dynamics of $\hat{f}$ on Periodic Components of $I(C)$)}: On each periodic component of $I(C)$, the first return map is quasisymmetrically conjugate to one of the three rigid models.
@@ -76,7 +78,14 @@ In \BlogPost{third-surgery}{Part I}, the Gluing Lemma gave us the mechanism for 
     \end{figure}
 
     \begin{figure}[H]\centering
-    \includegraphics[width=9cm]{ms-fig-25.pdf}
+    \[
+    \begin{tikzcd}[column sep=huge,row sep=large]
+    U' \arrow[r,"f"] \arrow[d,"\psi_1"']
+    & f(U') \arrow[d,"\psi_2"] \\
+    \mathbb{A}_r \arrow[r,"z\mapsto z^d"']
+    & \mathbb{A}_R
+    \end{tikzcd}
+    \]
     \FigureTag{MS25}{fig:ms-25}
     \end{figure}
 
@@ -84,8 +93,6 @@ In \BlogPost{third-surgery}{Part I}, the Gluing Lemma gave us the mechanism for 
     \includegraphics[width=7cm]{ms-fig-26.pdf}
     \FigureTag{MS26}{fig:ms-26}
     \end{figure}
-
-    (Note: The choice of $\psi_1$ determines $\psi_2$).
 
     Now let us devote some time to prove Proposition $6.17$ through a sequence of lemmas which shall study each type of periodic component of $I(C)$ separately. Let $U$ be a component of $\hat{\mathbb{C}}\backslash C$ for which $I(U)$ is periodic under $\hat{f}$. Replacing $f$ by a suitable iterate, we may assume that $I(U)$ is fixed. Recall from the discussion above that there is a collar annulus $U' \subset U$, whose boundary component facing $C$ represents $I(U)$, such that $f$ is a covering onto its image.
 
@@ -131,7 +138,7 @@ In \BlogPost{third-surgery}{Part I}, the Gluing Lemma gave us the mechanism for 
 
 
 
-    Now we are left to handle the cases $\partial U \subset \partial V$, where $V \subset U$ is a Fatou component. By the classification theorem of periodic Fatou components for rational maps, $V$ can only be a Siegel disk, a Herman ring, a basin of (super)attraction, or a parabolic basin. We deal with these cases separately in a bunch of lemmas to follow.
+    Now we are left to handle the cases $\partial U \subset \partial V$, where $V \subset U$ is a Fatou component. By the classification theorem of periodic Fatou components for rational maps, $V$ can only be a Siegel disk, a Herman ring, a basin of (super)attraction, or a parabolic basin. We deal with these cases separately in the lemmas that follow.
 
     \subsection*{Lemma 6.22}: If $V$ is fixed Siegel disk or a fixed Herman ring of rotation number $\theta \in \mathbb{R}\backslash\mathbb{Q}$, then $\hat{f}$ is real analytically conjugate to the rigid rotation $R_{\theta} = e^{2\pi i \theta}z$
 
@@ -154,7 +161,7 @@ In \BlogPost{third-surgery}{Part I}, the Gluing Lemma gave us the mechanism for 
 
     and $\bigcup_{n}{W_n} = V$. In the parabolic case, $\partial U$ cannot contain any point in the grand orbit of the parabolic point since $f(\partial U) = \partial U$, so $W_n \cap \partial U = \emptyset$ for all $n>0$. Observe that, if $V$ is not simply connected, $W_n$ will become multiply connected after a certain $n_0$, since the union of all the $W_n$'s must account for all of $V$.\\
     For every $n$, there is a component of $\partial W_n$ which together with $\partial U$ bounds an annulus $A_n$ disjoint from $W_n$. In general, $A_n$ may contain infinitely many different components of the Julia set. Each annulus lies in an $\epsilon_n$-neighbourhood of $\partial U$, where $\epsilon_n \rightarrow 0$ as $n\rightarrow \infty$. Otherwise there is a continuum in $\partial V$ which lies in $U$ and meets $\partial U$, contradicting the fact that $C$ is a component of the Julia set.\\
-    Choose $n$ sufficiently large so that $A_n$ contains no critical values. The component of $\partial W_n$ which, together with $\partial U$, bounds $A_n$ is essentially the component that hits rays from $\partial U$ to $W_n$ first. This fact, along with $f(W_{n+1}) = W_n$, ensures that $A_{n+1}$ is a component of $f^{-1}(A_n)$ and a proper subset of $A_n$. Lemma $6.18$ now applies.
+    Choose $n$ sufficiently large so that $A_n$ contains no critical values. The component of $\partial W_n$ which, together with $\partial U$, bounds $A_n$ is the first boundary component met by a crosscut from $\partial U$ to $W_n$. This fact, along with $f(W_{n+1}) = W_n$, ensures that $A_{n+1}$ is a component of $f^{-1}(A_n)$ and a proper subset of $A_n$. Lemma $6.18$ now applies.
 
     \begin{figure}[H]\centering
     \includegraphics[width=10.5cm]{ms-fig-36.pdf}
@@ -179,7 +186,7 @@ In \BlogPost{third-surgery}{Part I}, the Gluing Lemma gave us the mechanism for 
     \FigureTag{MS38}{fig:ms-38}
     \end{figure}
     We may carry out the same discussion on another copy of the unit disk for the map $P_d$, obtaining analogous sets $W'_n$, $\gamma_n'$, $A'_n$, etc.\\
-    To construct the conjugacy, we start by fixing $n$ sufficiently large and by choosing a $C^1$-diffeomorphism $\phi$ from the curve $\gamma_n$ onto $\gamma_n'$, fixing $z=1$, and sending preimages of $z=1$ to their analogues in an appropriate fashion (To do this one basically has to construct a smooth graph joining points $(x_i, x_i')$). Using the map $f$, we define $\phi$ on $\gamma_{n+1}$ so that $P_d\circ \phi = \phi \circ f$. We then extend $\phi$ quasiconformally to the different components of $A_n$ sending them to their analogues $A_n'$. Using the dynamics of $f$ and $P_d$ we extend recursively to the whole pinched annulus in between $\mathbb{S}^1$ and $\gamma_n$, so that it conjugates $f$ and $P_d$. Such a map extends quasiconformally to the whole unit disk, and quasisymmetrically to $\mathbb{S}^1$, conjugating $\hat{f}$ and $P_d$ as required.
+    To construct the conjugacy, we start by fixing $n$ sufficiently large and by choosing a $C^1$-diffeomorphism $\phi$ from the curve $\gamma_n$ onto $\gamma_n'$, fixing $z=1$, and sending preimages of $z=1$ to their analogues in an appropriate fashion. Such a diffeomorphism is obtained by smoothly interpolating between the finitely many corresponding marked points. Using the map $f$, we define $\phi$ on $\gamma_{n+1}$ so that $P_d\circ \phi = \phi \circ f$. We then extend $\phi$ quasiconformally to the different components of $A_n$ sending them to their analogues $A_n'$. Using the dynamics of $f$ and $P_d$ we extend recursively to the whole pinched annulus in between $\mathbb{S}^1$ and $\gamma_n$, so that it conjugates $f$ and $P_d$. Such a map extends quasiconformally to the whole unit disk, and quasisymmetrically to $\mathbb{S}^1$, conjugating $\hat{f}$ and $P_d$ as required.
 
     \begin{figure}[H]\centering
     \includegraphics[width=13cm]{ms-fig-39.pdf}
@@ -220,13 +227,13 @@ In \BlogPost{third-surgery}{Part I}, the Gluing Lemma gave us the mechanism for 
 
 
     The conditions in \BlogPost{third-surgery}{Corollary $6.13$} are therefore satisfied. Hence, by replacing $f$ on $U_j$ by the map $\phi_{j+1}^{-1}\circ B_j\circ \phi_j$ for $j = 0, 1, \ldots, p-1$ and keeping $f$ outside $\bigcup_{j=0}^{p-1}{U_j}$ we obtain a new quasirational map.\\
-    After having dealt with all the periodic components of $I(C)$ we work backwards along the preimages of each of them. If $I(V)$ is one of them, and $\hat{f}(I(V)) = I(W)$, then $\hat{f}$ is quasisymmetrically equivalent to $z\rightarrow z^d$ for some $d\geq 1$. If $d=1$ we keep the conformal isomorphism $f\big|_V:V\rightarrow W$. Only if $d>1$ shall we replace the map. Suppose this has been done up to $V$. We construct as before gluing maps $\phi_1$ and $\phi_2$ using Riemann mappings $R_V$ and $R_W$, and define the new map on $V$ by $\phi_2^{-1}\circ z^d\circ \phi_1$. The new critical point $c$ equals $\phi_1^{-1}(0) \in V$, with critical value equal to $\phi_2^{-1}(0)$. The orbit of $c$ satisfies one of the conditions in the main theorem if the orbit of its critical value does. We choose the Riemann mapping $R_W$ so that $\phi_2^{-1}(0)$ has the correct orbital behaviour. Keep repeating this. By Proposition $6.16$ (1), after a finite number of steps we have constructed a quasirational map $q$ satisfying the conditions of the main theorem. After integration, let $\Phi$ be a quasiconformal map such that $\Phi\circ q=g\circ\Phi$ for the desired rational map $g$.\\
+    After having dealt with all the periodic components of $I(C)$ we work backwards along the preimages of each of them. If $I(V)$ is one of them, and $\hat{f}(I(V)) = I(W)$, then $\hat{f}$ is quasisymmetrically equivalent to $z\rightarrow z^d$ for some $d\geq 1$. If $d=1$ we keep the conformal isomorphism $f\big|_V:V\rightarrow W$. Only if $d>1$ shall we replace the map. Suppose this has been done up to $V$. We construct as before gluing maps $\phi_1$ and $\phi_2$ using Riemann mappings $R_V$ and $R_W$, and define the new map on $V$ by $\phi_2^{-1}\circ z^d\circ \phi_1$. The new critical point $c$ equals $\phi_1^{-1}(0) \in V$, with critical value equal to $\phi_2^{-1}(0)$. The orbit of $c$ satisfies one of the conditions in the main theorem if the orbit of its critical value does. We choose the Riemann mapping $R_W$ so that $\phi_2^{-1}(0)$ satisfies the corresponding condition in the main theorem. Iterating this construction backwards through the finitely many branched complementary components produces a quasirational map $q$ satisfying the conditions of the main theorem. After integration, let $\Phi$ be a quasiconformal map such that $\Phi\circ q=g\circ\Phi$ for the desired rational map $g$.\\
 
     \begin{figure}[H]\centering
     \includegraphics[width=9cm]{ms-fig-29.pdf}
     \FigureTag{MS29}{fig:ms-29}
     \end{figure}
-    Now, to prove that the set carried over from $C$ is exactly the Julia set of $g$, first note that $q$ agrees with $f$ on $C$ and satisfies $q^{-1}(C)=C$. Set $F=\Phi(C)$. Then $(C,f)\sim(F,g)$, and $F$ is a connected, nowhere dense, totally invariant set for $g$. We must show that $F=J(g)$. It is enough to show that the boundaries of the periodic components of $\hat{\mathbb{C}}\backslash F$ lie in $J(g)$, since their grand orbits are dense in $F$. This is clear for the hyperbolic and parabolic models. In the elliptic case, the only obstruction would be that $g$ is an irrational rotation of the whole Riemann sphere and $F$ is an invariant circle. But this would force $C$ to be a quasicircle bounding a Siegel disk or Herman ring on both sides. The iterates of $f$ would then form a normal family on an annular neighbourhood of $C$, contradicting the fact that $C$ is a component of the Julia set. Hence $F=J(g)$.
+    Now, to prove that the set carried over from $C$ is exactly the Julia set of $g$, first note that $q$ agrees with $f$ on $C$ and satisfies $q^{-1}(C)=C$. Set $F=\Phi(C)$. Then $(C,f)\sim(F,g)$, and $F$ is a connected, nowhere dense, totally invariant set for $g$. We must show that $F=J(g)$. It is enough to show that the boundaries of the periodic components of $\hat{\mathbb{C}}\backslash F$ lie in $J(g)$, since their grand orbits are dense in $F$. For the hyperbolic and parabolic models, the corresponding boundary is the Julia set of the model and hence lies in $J(g)$. In the elliptic case, the only obstruction would be that $g$ is an irrational rotation of the whole Riemann sphere and $F$ is an invariant circle. But this would force $C$ to be a quasicircle bounding a Siegel disk or Herman ring on both sides. The iterates of $f$ would then form a normal family on an annular neighbourhood of $C$, contradicting the fact that $C$ is a component of the Julia set. Hence $F=J(g)$.
 
     The preceding lemmas prove Proposition $6.17$, and the surgery construction proves Theorem $6.15$. Therefore, the stable conjugacy establishes the isomorphism $\text{Mod}(C, f) \cong \text{Mod}(J(g), g)$ and proves Theorem $6.3$ (1). The following proposition shall handle Theorem $6.3$ (2), thereby finishing the proof of the central theorem behind this surgery.
 

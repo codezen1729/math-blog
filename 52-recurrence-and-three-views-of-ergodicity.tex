@@ -98,15 +98,14 @@ Let $f=\chi_B$. Then
 so $T$ is $\mu$-invariant. Conversely, as $\mu(X)<\infty$,
 $L^1(\mu)\supset L^2(\mu)\supset\cdots\supset L^\infty(\mu)$, and we have
 $\int f\,d\mu=\int f\circ T\,d\mu$ for all simple functions $f$.
-Now let $f\in L^1(\mu)$. There exist $f_n\nearrow f$, so the dominated
-convergence theorem gives
+Now let $f\in L^\infty(\mu)$. There exist simple functions $f_n$ such that
+$f_n\to f$ pointwise and $|f_n|\leq\|f\|_\infty$. The dominated convergence
+theorem gives
 \[
   \int f\,d\mu=\int f\circ T\,d\mu
   \qquad\text{for every }f\in L^\infty(\mu).
 \]
 \end{proof}
-% Author check: approximation by f_n increasing to f, and invocation of
-% dominated convergence for a general L^1 function, are retained as written.
 
 Now define the following measure on $\mathbb R$:
 \[
@@ -117,21 +116,14 @@ The map $T\colon\mathbb R\to\mathbb R$ given by
 \[
   T(x)=\frac12\left(x-\frac1x\right),\qquad T(0)=0,
 \]
-is $\mu$-invariant, because, for $f\in L^1(\mu)$, we have
-\[
-  \int_{-\infty}^{\infty}f(T(x))\frac{dx}{\pi(1+x^2)}
-  =\int_{-\infty}^{\infty}f(T(x))\frac{dT(x)}{\pi(1+T(x)^2)}.
-\]
-Set $y=T(x)$ to obtain $\int f\circ T\,d\mu=\int f\,d\mu$. It is now easy to
-check that
+is $\mu$-invariant. Indeed, it is easy to check that
 \[
   \phi\colon(\mathbb R,\mathcal B_{\mathbb R},\mu,T)
   \longrightarrow(\mathbb R/\mathbb Z,\mathcal B_{S^1},m_{S^1},T_2),
   \qquad \phi(x)=\frac1\pi\arctan(x)+\frac12,
 \]
-is an isomorphism.
-% Author check: the displayed change-of-variables equality and the claimed
-% arctangent conjugacy are retained exactly in mathematical substance.
+is an isomorphism outside null sets: $\phi_*\mu=m_{S^1}$ and
+$\phi\circ T=T_2\circ\phi$ almost everywhere. Hence $T$ is $\mu$-invariant.
 But $\mathbb R$ is by no means bounded. Thus a measure-preserving system
 ensures that transformations do not blow points off to infinity, and that is
 why it can accommodate unbounded sets in its realm as well.
@@ -227,9 +219,8 @@ $\mu(T^{-1}(A))=\mu(A)>0$. Thus
 \[
   \mu\left(\bigcup_{n=1}^{\infty}T^{-n}(A)\right)=1.
 \]
-Therefore, any point $x\in X$ recurs on a given set of positive measure via
+Therefore, almost every point $x\in X$ recurs on a given set of positive measure via
 an ergodic map.
-% Author check: the source says "any point", rather than "almost every point".
 
 \emph{$(3)\Rightarrow(4)$.} If $\mu(A)\mu(B)>0$, then $\mu(A)>0$ and
 $\mu(B)>0$, so $\mu\bigl(\bigcup_{n=1}^{\infty}T^{-n}(A)\bigr)=1$.
@@ -237,12 +228,11 @@ $\mu(B)>0$, so $\mu\bigl(\bigcup_{n=1}^{\infty}T^{-n}(A)\bigr)=1$.
 % Source page 8
 Since the $T^{-n}(A)$ cover $X$ almost everywhere, we have
 \[
-  0<\mu(B)<\mu\left(B\cap\bigcup T^{-n}(A)\right)
+  0<\mu(B)=\mu\left(B\cap\bigcup_{n=1}^{\infty}T^{-n}(A)\right)
   \leq\sum_{n=1}^{\infty}\mu(B\cap T^{-n}(A)).
 \]
 Hence there exists $n\geq1$ such that $\mu(B\cap T^{-n}(A))>0$.
 This criterion also appears in the study of mixing.
-% Author check: the strict inequality after mu(B) is present in the source.
 
 \emph{$(4)\Rightarrow(1)$.} If $T^{-1}(A)=A$, then
 \[
@@ -266,13 +256,11 @@ Let $f_1,f_2\in L^2(\mu)$. Then
   =\int f_1\overline{f_2}\,d\mu=\langle f_1,f_2\rangle,
 \]
 by the second litmus test. From this we see
-$\langle f_1,U_T^*U_Tf_2\rangle=\langle f_1,f_1\rangle$, so
+$\langle f_1,U_T^*U_Tf_2\rangle=\langle f_1,f_2\rangle$, so
 \[
   \langle f_1,(U_T^*U_T-\id)f_2\rangle=0
   \qquad\text{for all }f_1,f_2\in L^2(\mu).
 \]
-% Author check: the preceding right-hand inner product reads <f_1,f_1> in
-% the manuscript, although the next deduction uses <f_1,f_2>.
 Taking the operator norm
 % Source page 9
 gives
@@ -281,9 +269,8 @@ gives
   \left|\langle f_1,(U_T^*U_T-\id)f_2\rangle\right|
   =\|U_T^*U_T-\id\|=0.
 \]
-Thus $U_T$ is a unitary operator, called the \emph{Koopman operator}.
-% Author check: the source concludes "unitary" from U_T^* U_T = id, without
-% an invertibility or surjectivity assumption on T.
+Thus $U_T$ is an isometry, called the \emph{Koopman operator}. If $T$ is
+invertible modulo null sets, then $U_T$ is unitary.
 
 \setcounter{theorem}{6}\begin{proposition}\label{prop:ergodicity-operator}
 $T$ is ergodic if and only if the eigenvectors of $U_T$ associated to $1$ are
@@ -293,9 +280,6 @@ constants in $L^2_\mu(X)$.
 If $B$ is such that $\mu(T^{-1}(B)\mathbin\triangle B)=0$, then
 $\chi_B=\chi_B\circ T$ almost everywhere. Thus $U_T\chi_B=\chi_B$, so $\chi_B$
 is a constant. Hence $\mu(B)=0$ or $\mu(B)=1$, and $T$ is ergodic.
-If $U_Tf=f$ implies $f\equiv0$ almost everywhere, then $T$ is ergodic.
-% Author check: the manuscript says f identically 0 here, not "f constant".
-
 Conversely, let $f\colon X\to\mathbb R$ be measurable. Let $k\in\mathbb Z$
 and $n\geq1$, and define
 \[
@@ -334,11 +318,10 @@ given $f\in L^2_{m_X}(X)$, we have the following character-theoretic expansion:
 
 \setcounter{theorem}{7}\begin{proposition}\label{prop:ergodicity-fourier}
 In the setup above, a continuous surjective homomorphism $T\colon X\to X$
-is $m_X$-invariant if and only if, for a character $\chi\in\widehat X$,
-$\chi(T^n(x))=\chi(x)$ implies that $\chi$ is trivial, i.e. $\chi\equiv1$.
+is ergodic if and only if, for every character $\chi\in\widehat X$ and every
+$n\geq1$, $\chi\circ T^n=\chi$ implies that $\chi$ is trivial, i.e.
+$\chi\equiv1$.
 \end{proposition}
-% Author check: the source says "m_X-invariant" rather than "ergodic" in
-% this statement, and does not quantify n explicitly; retained without repair.
 \begin{proof}
 Suppose $T$ is ergodic and let $\chi$ be nontrivial such that
 $\chi\circ T^n=\chi$, with $n$ the least such integer. Set
@@ -355,12 +338,11 @@ Conversely, if $U_Tf=f$, first write $f\in L^2_{m_X}$ as
 $f(x)=\sum_{\chi\in\widehat X}c_\chi\chi(x)$. Since $U_Tf=f$, we have
 % Source page 11
 $c_\chi=c_{\chi\circ T}=c_{\chi\circ T^2}=\cdots$.
-Now, as $\sum_{\chi\in\widehat X}|c_\chi|^2$ converges to $\|f\|^2$, we must
-have $c_\chi=0$, or $\{c_{\chi\circ T^n}\}_n$ is periodic. But that would
-imply $\chi\equiv1$. Hence $f$ is a constant, so $T$ is ergodic.
+Now, as $\sum_{\chi\in\widehat X}|c_\chi|^2$ converges to $\|f\|^2$, a
+nonzero $c_\chi$ forces the orbit $\{\chi\circ T^n:n\geq0\}$ to be finite.
+Since the dual map is injective, this makes $\chi$ periodic. The hypothesis
+then implies $\chi\equiv1$. Hence $f$ is a constant, so $T$ is ergodic.
 \end{proof}
-% Author check: the source's periodicity assertion concerns the coefficients
-% c_{chi o T^n}, rather than explicitly the orbit of the characters.
 
 
 % BLOG-CONTENT-END
