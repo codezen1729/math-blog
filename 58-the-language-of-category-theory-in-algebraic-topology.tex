@@ -49,7 +49,7 @@ $\mathbb C\setminus\{0\}\mapsto\mathbb Z$, $\partial\mathbb D\mapsto\mathbb Z$,
 and $z\mapsto z^2$ maps to $n\mapsto2n$.
 % Author check: source changes PCTop to CTop and omits base points.
 \end{example}
-Functors give us ways to understand certain relations in a category better
+Functors help us better understand relations in a category
 by translating them to a different category. Given two such translations,
 is there a way not to get lost in translation?
 \setcounter{definition}{2}\begin{definition}[Natural transformation]
@@ -70,11 +70,9 @@ Every statement in category theory has a dual statement obtained by replacing
 $f\circ g$ with $g\circ f$ and domain with codomain, essentially flipping the
 arrows of the morphisms.
 
-Let us now look at some examples to gather some context. But before that,
-a small digression. In set theory, certain sets, such as the set of all
-groups or the set of all singletons, cannot exist. Hence the need to write
-a new set of axioms to create what are called classes, whose elements are
-sets that satisfy given properties. But for our purposes, let us stick to
+Before turning to examples, there is a small set-theoretic point. Certain collections, such as the collection of all
+groups or of all singletons, cannot be sets. This motivates the language of classes,
+whose elements are sets satisfying specified properties. For our purposes, we restrict attention to
 small or locally small categories, thereby avoiding the set-versus-class
 conundrum.
 \subsection{Some Pillars of Category Theory}
@@ -100,9 +98,9 @@ $h_X\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$ by
 We say that a functor $F\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$ is
 \emph{representable} if there exists $C\in\Ob(\mathcal C)$ such that $F\cong h_C$.
 
-Everything in category theory can be studied via appropriate representable
-functors. This is akin to studying the category $\mathcal C$ by acting it on
-$\mathcal C$, where the action is given by $\Hom_{\mathcal C}(-,-)$.
+Many features of a category can be studied through representable functors.
+This is akin to studying $\mathcal C$ through its action on itself via
+$\Hom_{\mathcal C}(-,-)$.
 \subsubsection{Final and Initial Objects}
 Let $F\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$ be given by
 $F(C)=*$ (a singleton) and $F(f)=\id_*$. We say $I$ is an \emph{initial object}
@@ -184,7 +182,7 @@ functor $G\colon\mathcal D\to\mathcal C$ such that
 \[
  \Hom_{\mathcal C}(C,G(D))\cong\Hom_{\mathcal D}(F(C),D).
 \]
-This can be given the coating of a representable functor. Define
+This can be rephrased in terms of a representable functor. Define
 \[
  \overline F\colon\mathcal C\to\cat{Sets},\qquad
  C\longmapsto\Hom_{\mathcal D}(F(C),D),
@@ -200,23 +198,19 @@ Suppose $\overline F$ is representable. Then there exists $\overline D$ such tha
 \[
  \Hom_{\mathcal C}(C,\overline D)\cong\Hom_{\mathcal D}(F(C),D).
 \]
-Set $G(D):=\overline D$. It is easy to see how $G$ should behave on
-morphisms $f\colon D\to D'$.
+Set $G(D):=\overline D$. The action of $G$ on morphisms is induced by naturality of the representing isomorphism.
 \subsection{Constructing New Categories from Old}
 \subsubsection{Cone Category}
-We already saw this being done for a different purpose. Objects in a cone
+The cone construction above is one example. Objects in a cone
 category generalize the notion of a morphism. A morphism relates a particular
-object to another, but a cone object relates to a bunch of objects already
-related
+object to another, but a cone object relates to a collection of objects that are already related to one another.
 % Source page 9
-to each other.
 \begin{figure}[H]
  \centering\includegraphics[width=.74\textwidth]{m1-fig-06.pdf}
  \FigureTag{M1.6}{fig:m1-fig-06}
 \end{figure}
 % Author check: source's schematic cone arrows point toward C, unlike the earlier definition.
-\subsubsection{Subcategory}
-The definition is obvious.
+
 \subsubsection{Quotient Category}
 Let $\mathcal C$ be a category. For every $X,Y\in\Ob(\mathcal C)$, an
 equivalence relation $\sim$ is set up on $\Hom_{\mathcal C}(X,Y)$ such that
@@ -320,7 +314,7 @@ $\overline f\colon A\times B\to C^B$ for which the following diagram commutes.
  \FigureTag{M1.9}{fig:m1-fig-09}
 \end{figure}
 We say $\mathcal C$ is \emph{Cartesian closed} if it contains exponentials
-and products (which you shall encounter soon).
+and products, as defined below.
 \subsubsection{Group Objects in Categories}
 % Source page 14
 Let $\mathcal C$ be a category closed under finite products, and let
@@ -329,7 +323,7 @@ of morphisms
 \[
  \mu\colon G\times G\to G,\qquad \nu\colon G\to G,\qquad e\colon *\to G,
 \]
-where $*$ is a final product, such that the following diagrams commute.
+where $*$ is a terminal object, such that the following diagrams commute.
 % Author check: source says final product; associativity labels use e, not id_G.
 \begin{figure}[H]
  \centering\includegraphics[width=.43\textwidth]{m1-fig-10.pdf}
@@ -348,7 +342,7 @@ where $*$ is a final product, such that the following diagrams commute.
 \setcounter{example}{4}\begin{example}
 In $\cat{Sets}$, a group object is a group; in $\cat{Top}$, it is a topological
 group; in $\cat{Man}$, it is a Lie group. In $k\text{-}\cat{Top}_*/{\sim}$,
-we shall call it an $H$-space. This category shall be explained soon.
+it is an $H$-space; the ambient category is described below.
 \end{example}
 \subsection{Certain Limit Constructions in Algebraic Topology}
 \subsubsection{Products and Coproducts}
@@ -375,7 +369,7 @@ $\pi_2(x,y)=y$. Explicitly,
  X*Y=(X\times Y\times[0,1])/{\sim},\qquad
  \begin{cases}
  (x,y,0)\sim(x',y,0),\\
- (x,y,1)\sim(x,y',0),
+ (x,y,1)\sim(x,y',1),
  \end{cases}
 \]
 which is essentially all the line segments joining points in $X$ and $Y$.
@@ -394,8 +388,7 @@ Also $\Sigma S^n\cong S^{n+1}$. Therefore a purely category-theoretic way
 of constructing an $n$-sphere would be to take
 $S^n=\underbrace{S^0*\cdots*S^0}_{n+1\text{ times}}$.
 \subsubsection{Pushouts and Pullbacks}
-A pushout is a colimit of the first diagram below (sometimes also called
-fibre products). The second gives the example
+A pushout is a colimit of the first diagram below. The second gives the example
 $\Cone(f):=(X\amalg CA)/{\sim}$, where $(a,1)\sim f(a)$.
 % Author check: the parenthetical "fibre products" occurs beside pushouts in the source.
 \begin{figure}[H]
@@ -419,11 +412,9 @@ In $\cat{Grps}$, putting together the same diagram would give
  (X*Y)/N\bigl(f(a)g(a)^{-1}:a\in A\bigr),
 \]
 the amalgamated product.
-Essentially, given $\mathcal C$, one has to look for appropriate analogues
-of $\prod$ and $\coprod$, and then put objects together preserving the
-relations in the diagram.
+In a category $\mathcal C$, limits and colimits play the roles of $\prod$ and $\coprod$ while preserving the relations in the diagram.
 
-Having seen all this, let us (sort of) look at the only lemma in category theory.
+We now arrive at the central lemma of category theory.
 \setcounter{theorem}{0}\begin{lemma}[Yoneda's lemma]\label{lem:m1-yoneda}
 Let $F\in\PSh(\mathcal C)$. For any $X\in\Ob(\mathcal C)$, there is an
 isomorphism of sets
@@ -446,9 +437,9 @@ Let $a\in F(X)$. Then $\Psi(a)\in\Hom_{\PSh(\mathcal C)}(h_X,F)$ is given by
 \[
  \Psi(a)_A(f):=F(f)(a)\qquad(f\in h_X(A)),
 \]
-the natural evaluation. Verify the rest.
+the natural evaluation. Naturality and the two inverse identities follow directly from the definitions.
 \end{proof}
-We shall conclude by giving two applications of Yoneda's lemma.
+We conclude with two applications of Yoneda's lemma.
 \subsubsection{Application 1}
 If $\mathcal C$ is Cartesian closed, then for any three objects $X,Y,Z$,
 \[
@@ -456,7 +447,7 @@ If $\mathcal C$ is Cartesian closed, then for any three objects $X,Y,Z$,
  \cong\Hom_{\mathcal C}(X\times Y,Z),
 \]
 often written as $Z^{X\times Y}\cong(Z^Y)^X$.
-It turns out that $\cat{Top}$ is not Cartesian closed. Hence one considers
+$\cat{Top}$ is not Cartesian closed. Hence one considers
 $k\text{-}\cat{Top}$, a full subcategory of $\cat{Top}$ consisting of
 compactly generated spaces. Using this, in
 $k\text{-}\cat{Top}_*/{\sim}\cong(*\downarrow k\text{-}\cat{Top})/{\sim}$,

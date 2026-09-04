@@ -13,7 +13,7 @@ If $f$ is differentiable at $z_0$, then we have
 
 
 \subsection*{Goursat's Theorem}
-Let $T$ be the convex hull of $z_1,z_2,z_3$. Let $T\subset U$.
+Let $T\subset U$ be the convex hull of $z_1,z_2,z_3$.
 Then, if $f\colon U\to\mathbb C$ is holomorphic,
 \[
   \int_{\partial T} f(z)\,dz=0,
@@ -39,7 +39,7 @@ $\gamma_{z_1\to z_2\to z_3\to z_1}$.
   \centering
   \includegraphics[width=.50\textwidth]{note3-fig-03.pdf}
 
-  \emph{Annotation:} ``Orient it yourself!''
+
 \end{figure}
 
 
@@ -104,12 +104,9 @@ Let $n\to\infty$. Since $\varepsilon_n\to0$,
 \]
 
 \textbf{Remark.}
-Here we do not need to assume holomorphicity everywhere. Suppose that at some
-point $z_0$ in the solid triangle the function
-
-
-is merely bounded. Then, without loss of generality, one can assume that $z_0$
-is one of the vertices of the triangle. Otherwise:
+Holomorphicity at every point is unnecessary here. Suppose that $f$ is merely
+bounded near a point $z_0$ in the solid triangle. By subdividing the triangle
+as illustrated below, one may reduce to the case in which $z_0$ is a vertex.
 
 \begin{figure}[H]
   \begin{minipage}[t]{.48\textwidth}
@@ -119,7 +116,7 @@ is one of the vertices of the triangle. Otherwise:
       \includegraphics[width=.708\linewidth]{note3-fig-04.pdf}
     \end{minipage}
 
-    \emph{Annotation:} Integrate on $\langle T_i;\gamma\rangle$.
+
   \end{minipage}
   \begin{minipage}[t]{.48\textwidth}
     If $z_0$ is on $T_0$,\par
@@ -128,7 +125,7 @@ is one of the vertices of the triangle. Otherwise:
       \includegraphics[width=.792\linewidth]{note3-fig-05.pdf}
     \end{minipage}
 
-    \emph{Annotation:} Integrate on $\langle T_i;\gamma\rangle$.
+
   \end{minipage}
 \end{figure}
 
@@ -241,180 +238,12 @@ was seen previously.
 
 \end{figure}
 
-\textit{Proof of Tool 9.}
-Let $\gamma\colon[0,1]\to\Omega$ be the curve. Then
-$\gamma|_{[0,1]}$ is compact. For every $z\in\gamma|_{[0,1]}$, there exists
-$\varepsilon_z$ such that $B_{\varepsilon_z}(z)\subset\Omega$, and
-\[
-  \gamma|_{[0,1]}\subseteq\bigcup_z B_{\varepsilon_z}(z).
-\]
-This has a finite cover. Also, as $[0,1]$ is connected, every open set in the
-finite cover will have nonempty intersection with at least one open set other
-than itself in the finite cover. Let $\{U_i\}_{i=1}^n$ be the finite balls that
-cover $\gamma|_{[0,1]}$. If it is not already present, add the ball
-$B_{\varepsilon_{\gamma(0)}}(\gamma(0))$ to the finite collection. Let
-$B_{\varepsilon_{\gamma(i)}}(\gamma(i))$ be such that
-\[
-  B_{\varepsilon_{\gamma(i)}}(\gamma(i))
-  \cap B_{\varepsilon_{\gamma(0)}}(\gamma(0))\neq\varnothing.
-\]
-Let $i$ be the smallest value in $[0,1]$ for which the first ball centered at
-$\gamma(i)$ is in $\{U_i\}$ and
-$B_{\varepsilon_{\gamma(i)}}(\gamma(i))
-\cap B_{\varepsilon_{\gamma(0)}}(\gamma(0))\neq\varnothing$.
-
-Note that, as $\gamma|_{[0,i]}$ is connected,
-\[
-  \gamma|_{[0,i]}
-  \subset
-  B_{\varepsilon_{\gamma(0)}}(\gamma(0))
-  \cup B_{\varepsilon_{\gamma(i)}}(\gamma(i));
-\]
-otherwise, the minimality would be contradicted. Arrange \(U_{i_n}=B_{\varepsilon_{\gamma(i_n)}}(\gamma(i_n))\)
-so that minimality is demanded consecutively; that is,
-\[
-  \gamma|_{[i_n,i_{n+1}]}
-  \subset
-  B_{\varepsilon_{\gamma(i_n)}}(\gamma(i_n))
-  \cup
-  B_{\varepsilon_{\gamma(i_{n+1})}}(\gamma(i_{n+1})),
-\]
-where $\{i_n\}$ partitions $[0,1]$. Again, if
-$B_{\varepsilon_{\gamma(1)}}(\gamma(1))$ does not belong to $\{U_i\}$, just
-add it. Now \(\gamma_{\gamma(0)\to\gamma(i_1)\to\cdots\to\gamma(1)}\)
-is the required polygonal path. The following figures illustrate the ideas in
-the proof.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=.49\textwidth]{note3-fig-10.pdf}
-
-\end{figure}
-
-Thus there exists
-$B_{\varepsilon_{\gamma(j)}}(\gamma(j))$, with $j<i$, such that
-\[
-  B_{\varepsilon_{\gamma(j)}}(\gamma(j))
-  \cap B_{\varepsilon_{\gamma(0)}}(\gamma(0))\neq\varnothing.
-\]
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=.85\textwidth]{note3-fig-11.pdf}
-
-\end{figure}
-
-One can ``see'' the polygonal paths here. After some stage we will have
-\[
-  B_{\varepsilon_{\gamma(i_n)}}(\gamma(i_n))
-  \cap B_{\varepsilon_{\gamma(1)}}(\gamma(1))\neq\varnothing.
-\]
-We stop there, piecewise.
-
-\textbf{Remark.}
-One can observe here that, by construction, $\gamma_p$ and $\gamma$ are
-piecewise homotopic.
-
-
-\textbf{Correction to the preceding minimality argument.}
-The minimality argument as presented will not work. One must tweak it. Let
-\[
-  i=\inf\left(
-    \gamma^{-1}\left(
-      \partial B_{\varepsilon_{\gamma(0)}}(\gamma(0))
-      \cap\gamma|_{[0,1]}
-    \right)
-  \right).
-\]
-Since
-$\partial B_{\varepsilon_{\gamma(0)}}(\gamma(0))\cap\gamma|_{[0,1]}$
-is closed, we would have
-\[
-  \gamma(i)\in
-  \partial B_{\varepsilon_{\gamma(0)}}(\gamma(0))
-  \cap\gamma|_{[0,1]}.
-\]
-Choose, among the $\{U_i\}$, a ball that covers $\gamma(i)$; let that be
-$B_{\varepsilon_{\gamma(j)}}(\gamma(j))$. Note that
-\[
-  \gamma|_{[0,i)}\subset B_{\varepsilon_{\gamma(0)}}(\gamma(0)).
-\]
-If not, there exists $j<i$ such that
-$\gamma(j)\notin B_{\varepsilon_{\gamma(0)}}(\gamma(0))$, and, for
-\[
-  B_{\varepsilon_{\gamma(0)}}(\gamma(0))\cap\gamma|_{[0,j]}
-  \quad\text{and}\quad
-  \overline{B_{\varepsilon_{\gamma(0)}}(\gamma(0))}^{\,c}
-  \cap\gamma|_{[0,j]}
-\]
-not to be a separation of $\gamma|_{[0,j]}$, there exists $l<j<i$ such that
-$l\in\partial B_{\varepsilon_{\gamma(0)}}(\gamma(0))$, thereby
-contradicting minimality. Now we have
-
-\[
-  \gamma|_{[0,i]}
-  \subset
-  B_{\varepsilon_{\gamma(0)}}(\gamma(0))
-  \cup B_{\varepsilon_{\gamma(j)}}(\gamma(j)).
-\]
-Proceed.
-
-
-Now it is an easy exercise to note that, if $\gamma$ is rectifiable, the
-polygonal path we obtained (denote it by $\gamma_p$) yields
-\[
-  \int_\gamma f(z)\,dz=\int_{\gamma_p}f(z)\,dz.
-\]
-Note the $\langle a_i\rangle$ and $\langle b_i\rangle$ marked in the figure
-above. Denote by $\operatorname{Tube}(\gamma)$ the quantity
-\[
-  \min_i|a_i-b_i|.
-\]
-
-\textbf{Exercise.}
-Construct a ``tube'' of ``width'' $\operatorname{Tube}(\gamma)$ around
-$\gamma$ in $\Omega$.
-
 \subsection*{Cauchy's Theorem}
 Let $f\in H(U)$, where $U$ is a domain, and let $\gamma_0$ and $\gamma_1$ be
 rectifiable and homotopic in $U$. Then
 \[
   \int_{\gamma_0}f(z)\,dz=\int_{\gamma_1}f(z)\,dz.
 \]
-
-\textit{Proof.}
-By compactness of the homotopy
-$\gamma\colon[0,1]\times[0,1]\to U$, there exists $r$ such that
-\[
-  B_r(\gamma(s,t))\subset U
-  \qquad\forall(s,t)\in[0,1]\times[0,1].
-\]
-The map $\gamma$ is also uniformly continuous. Hence, whenever
-$|s-s'|<\delta$ and $|t-t'|<\delta$, \(|\gamma(s',t')-\gamma(s,t)|<\frac r4.\)
-With these two observations, the proof is in pictures.
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=.9\textwidth]{note3-fig-12.pdf}
-
-\end{figure}
-
-
-Let
-\[
-  C_{ij}:=
-  \gamma_{\gamma(s_i,t_{j-1})\to\gamma(s_i,t_j)
-  \to\gamma(s_{i-1},t_j)\to\gamma(s_{i-1},t_{j-1})
-  \to\gamma(s_i,t_{j-1})}.
-\]
-Choose the stages $s_i$ such that $\gamma(s_{i+1},t)$ is in the tube of width
-$\operatorname{Tube}(\gamma(s_i,t))$. This will ensure that these polygonal
-paths are all in $\Omega$; that is, one can find an ``approximate'' homotopy or
-deformation and carry $\int_{\gamma_0}f(z)\,dz$ via convex sets to
-$\int_{\gamma_1}f(z)\,dz$.
-
-\textbf{Exercise.}
-Fill in the details.
 
 It is worth mentioning two important corollaries of Cauchy's Theorem, which are
 more useful than the theorem itself.
@@ -440,15 +269,15 @@ $\operatorname{int}C_R\cup C_R\subset\Omega$.
   \qquad\bigl(\forall z_0, z\in\operatorname{int}C_R\bigr).
 \]
 
-Tool 12 is a consequence of the combination of Cauchy's Tool 10 and Tool 11.
+Tool 12 follows from Cauchy's integral formulas, Tools 10 and 11.
 \subsubsection*{Application — Consequences of Cauchy's formulas}
-Let us see some applications of Tool 10, Tool 11, and Tool 12 which may seem
-too standard or classical to do. We shall do so because they are worth
-recalling and remembering.
+The following applications of Tools 10, 11, and 12 may seem
+standard, but they record useful consequences worth
+recalling.
 
 
 \subsection*{Tool 13 — Identity Theorem}
-(This is also a standard technique: to invoke the Identity Theorem.)
+
 Let $f\in H(\Omega)$. If $z_n\to z_0$ in $\Omega$ and $f(z_n)=0$, then
 $f\equiv0$.
 
@@ -500,7 +329,7 @@ $f^{(n)}(z_0)=0$ for some $n$. Then $f$ is a polynomial.
 \textit{Proof.}
 For every $z_0\in\mathbb C$, $f^{(n)}(z_0)=0$ for some $n$. By the
 Pigeonhole Principle, for a fixed $n$, $f^{(n)}(z_0)=0$ for uncountably many
-$z_0$. Thus $f^{(n)}$ must have a limit point if we restrict it to a disc, and
+$z_0$. Thus the zero set of $f^{(n)}$ has a limit point in some disc, and
 hence \(f^{(n)}(z)\equiv0.\)
 Therefore $f$ is a polynomial, because
 \[
@@ -513,7 +342,7 @@ Thus $f$ is locally a polynomial, and, by the Identity Theorem, $f$ is globally
 a polynomial.
 
 \textbf{Remark.}
-Although we said that $f$ is a local power series, it can be extended up to the
+The local power-series expansion about a point converges up to the
 nearest point of singularity.
 % BLOG-CONTENT-END
 \end{document}

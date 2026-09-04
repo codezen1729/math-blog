@@ -61,7 +61,7 @@ $\frac1{n+1}>\frac1{2n^2}$ to finish.
 % Author check: source does not exclude n=1, where equality holds.
 
 \setcounter{theorem}{22}\begin{lemma}[Homogenization]
-Homogenization is a useful technique for solving problems: apply the technique of ``jugaad'' to make the degrees the same.
+Homogenization rewrites an inequality so that all terms have the same degree.
 \end{lemma}
 \paragraph{Application.}
 Let $a,b,c>0$ and $abc=1$. Prove that $a+b+c\leq a^2+b^2+c^2$.
@@ -74,15 +74,15 @@ To homogenize the inequality, multiply by $\sqrt[3]{abc}$:
 a^{4/3}b^{1/3}c^{1/3}+a^{1/3}b^{4/3}c^{1/3}+a^{1/3}b^{1/3}c^{4/3}
 \leq a^2+b^2+c^2.
 \]
-Since $(4/3,1/3,1/3)\prec(2,0,0)$, the notes invoke Muirhead's theorem to obtain
+Since $(4/3,1/3,1/3)\prec(2,0,0)$, Muirhead's theorem gives
 $\sum_{\mathrm{cyc}}a^{4/3}b^{1/3}c^{1/3}\leq\sum_{\mathrm{cyc}}a^2$.
 
 \setcounter{theorem}{23}\begin{lemma}[Second-derivative test]
 The best test for convexity or concavity is the second-derivative test:
-if $f''(x)\geq0$, then $f$ is convex; otherwise $f$ is concave.
+if $f''(x)\geq0$, then $f$ is convex, while $f''(x)\leq0$ implies that $f$ is concave.
 \end{lemma}
 % Author check: the source's blanket ``otherwise'' is retained.
-This technique, combined with Jensen's inequality or a maxima-minima argument, yields many beautiful and elegant solutions.
+Combined with Jensen's inequality or an extremal argument, this technique yields many elegant solutions.
 
 \setcounter{theorem}{24}\begin{lemma}[Jensen's inequality]
 Let $f:I\to\mathbb R$ be convex. For any $x_1,\ldots,x_n\in I$ and nonnegative reals $\omega_1,\ldots,\omega_n$,
@@ -111,7 +111,7 @@ Now Jensen's inequality gives
 \end{align*}
 
 \setcounter{theorem}{25}\begin{lemma}[Muirhead and majorization]
-Muirhead's theorem and majorization techniques are analogues of each other.
+Muirhead's theorem and majorization techniques are analogous.
 If $(a_1,\ldots,a_n)\succ(b_1,\ldots,b_n)$, then for positive $x_1,\ldots,x_n$,
 \[
 \sum_{\mathrm{sym}}x_1^{a_1}\cdots x_n^{a_n}
@@ -120,13 +120,13 @@ If $(a_1,\ldots,a_n)\succ(b_1,\ldots,b_n)$, then for positive $x_1,\ldots,x_n$,
 For majorization, let $f:I\to\mathbb R$ be convex and suppose $(x_n)\succ(y_n)$.
 Then $\sum_{i=1}^n f(x_i)\geq\sum_{i=1}^n f(y_i)$ (Karamata's inequality).
 \end{lemma}
-\emph{Warning: Like Jensen's, do not flip the sign if $f$ is concave!}
+\emph{For a concave function, reverse the inequality.}
 % Author check: warning says not to reverse for concave f; retained verbatim in mathematical meaning.
-Let me show some beautiful applications of these ideas.
+Here are two applications of these ideas.
 % Source page 8 - right
 Prove that, for positive reals $a,b,c$,
 $(a^2b+b^2c+c^2a)(ab^2+bc^2+ca^2)\geq9a^2b^2c^2$.
-Let us expand this ``dumbass'' to obtain another ``dumbass'':
+Expanding the product gives
 \begin{align*}
 (a^2b+b^2c+c^2a)(ab^2+bc^2+ca^2)
 ={}&a^3b^3+b^3c^3+c^3a^3+3a^2b^2c^2\\
@@ -146,13 +146,13 @@ If none of the standard techniques proves an inequality, try expressing it as a 
 \end{lemma}
 \paragraph{Application: V. C\^{i}rtoaje.}
 For real $a,b,c$, prove $(a^2+b^2+c^2)^2\geq3(a^3b+b^3c+c^3a)$.
-The solution is like magic! Have a look.
+The expression has the following sum-of-squares decomposition.
 % Source page 24 - right
 \[
 (a^2+b^2+c^2)^2-3(a^3b+b^3c+c^3a)
 =\frac12\sum_{\mathrm{cyc}}(a^2-2ab+bc-c^2+ca)^2\geq0.
 \]
-The source celebrates this with ``$(\text{Q.E.D.})^\infty$.''
+This completes the proof.
 
 \setcounter{theorem}{59}\begin{lemma}[Schur's inequality]
 Define $T(a_1,\ldots,a_n)=\sum_{\mathrm{cyc}}x_1^{a_1}\cdots x_n^{a_n}$.
@@ -167,7 +167,7 @@ T(\alpha+\beta,\alpha+\beta,0)+T(2\alpha,\beta,\beta)&\geq2T(\alpha+\beta,\beta,
 \paragraph{Applications.}
 Prove that
 $a^4+b^4+c^4+a^2bc+b^2ca+c^2ab\geq2(a^3b+b^3c+c^3a)$.
-First realize that standard Muirhead fails; with Schur, the solution is two lines:
+Standard Muirhead does not apply directly; Schur gives the short calculation
 \[
 T(2+2\cdot1,0,0)+T(2,1,1)\geq2T(3,0,0),
 \]
@@ -175,8 +175,7 @@ which follows by setting $\alpha=2$, $\beta=1$.
 % Author check: displayed encoding T(3,0,0) is retained, not corrected to match the polynomial.
 
 Prove $3(x^2y+y^2z+z^2x)(xy^2+yz^2+zx^2)\geq xyz(x+y+z)^3$.
-First try all the nonsense tricks and conclude that the problem is impenetrable.
-Then gather courage to expand that big bull, obtaining
+The standard first moves do not simplify the expression, but a direct expansion gives
 \[
 2T(4,1,1)+3T(3,3,0)+T(2,2,2)\geq6T(3,2,1).
 \]
@@ -192,14 +191,14 @@ Add I, II, and III to finish.
 % Author check: source annotates the second-form application with alpha=2, beta=1; retained even though this does not encode the displayed I.
 
 % Source page 27 - left
-There are true villains on the IMO jury who pose problems like this one.
+The following IMO-style inequality resists the standard techniques.
 Prove
 \[
 x^4+y^4+z^4+3(x^2y^2+y^2z^2+z^2x^2)
 \geq2\bigl(x^3(y+z)+y^3(z+x)+z^3(x+y)\bigr).
 \]
 It is homogeneous and symmetric, but none of the standard techniques works.
-Recall Lemma~\ref{lemma:lb1-58}, where we learned that magical spell.
+Apply the sum-of-squares strategy from Lemma~\ref{lemma:lb1-58}.
 Write $[4,0,0]+3[2,2,0]\geq4[3,1,0]$.
 Bring everything to the left and rearrange to obtain
 $(x-y)^4+(y-z)^4+(z-x)^4\geq0$.
@@ -229,10 +228,10 @@ This is analogous to the power-mean inequality.
 Prove $\sqrt x+\sqrt y+\sqrt z\leq\sqrt{3(x+y+z)}$.
 Apply the square-root heuristic with $f(a)=a$.
 
-\paragraph{What was that! P. K. Hung.}
+\paragraph{A one-line identity, due to P. K. Hung.}
 For positive $a,b,c$ with $a+b+c=1$, prove
 $1/a+1/b+1/c\geq25/(1+48abc)$.
-Here is the magical one-liner:
+The following identity proves the claim:
 \[
 \frac1a+\frac1b+\frac1c-\frac{25}{1+48abc}
 =\sum_{\mathrm{cyc}}\frac{(a+b-3c)^2(a-b)^2}{ab(1+48abc)}\geq0.

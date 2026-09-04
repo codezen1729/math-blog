@@ -6,7 +6,7 @@
 \section*{From Complex Dynamics to Measure-Preserving Systems}
 % BLOG-CONTENT-BEGIN
 \subsection{Motivation from Complex Dynamics}
-Let me present to you one of my reasons for learning ergodic theory. Consider
+One motivation for ergodic theory comes from complex dynamics. Consider
 \[
   f\colon S\longrightarrow S,
   \qquad f\in\operatorname{Hol}(S),\quad S\text{ a Riemann surface}.
@@ -34,7 +34,7 @@ More precisely:
 F(f):=\left\{x\in S:\text{there is a neighbourhood }U_x\text{ of }x
 \text{ such that }\{f^{\circ n}|_{U_x}\}_n\text{ is a normal family}\right\}.
 \]
-$F(f)$ is called the \emph{Fatou set} of $S$, which is open by definition.
+$F(f)$ is called the \emph{Fatou set} of $f$; it is open by definition.
 It corresponds to stability.
 \end{definition}
 
@@ -42,8 +42,7 @@ It corresponds to stability.
 $J(f):=S\setminus F(f)$ is called the \emph{Julia set}. It corresponds to chaos.
 \end{definition}
 
-When one says one wants to study the dynamics of $f$, among other things one
-usually means studying stable and chaotic sets (or Fatou and Julia sets).
+Studying the dynamics of $f$ includes studying stable and chaotic sets (or Fatou and Julia sets).
 The following is the general philosophy for undertaking such a study.
 
 \paragraph{Philosophy of complex dynamics.}
@@ -84,8 +83,7 @@ $\varphi\colon S\to S'$ be a biholomorphism.
 \end{figure}
 
 % Source page 4
-Notice that, since we have merely changed our coordinates (of the surface)
-via $f$, the dynamics should remain the same. Indeed, we have:
+Since $\varphi$ is only a change of coordinates on the surface, the dynamics should remain unchanged. Indeed:
 % Author check: "via f" is the handwritten wording, although the coordinate
 % change introduced just above is varphi.
 \begin{itemize}
@@ -105,15 +103,14 @@ But if $\widehat z$ is a fixed or critical point, then:
   \item $\widetilde f'(\varphi(z_k))=0$, by the chain rule.
 \end{itemize}
 % Author check: the manuscript changes from z-hat to z_k in these two bullets.
-This is the reason for focusing one's study on critical points and fixed
-points. Zeros and poles of $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$
+This motivates the focus on critical and fixed points. Zeros and poles of $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$
 are merely points that map to the two poles. If you change your coordinates
 on $\widehat{\mathbb C}$ via a M\"obius transformation
 \[
   z\longmapsto\frac{az+b}{cz+d},
   \qquad \begin{pmatrix}a&b\\c&d\end{pmatrix}\in\operatorname{PSL}_2(\mathbb C),
 \]
-then the zeros and poles shall be thrown out to points $a/c$, $b/d$ on the
+then the zeros and poles are sent to the points $a/c$, $b/d$ on the
 Riemann sphere.
 \begin{figure}[H]
   \centering
@@ -123,12 +120,9 @@ Riemann sphere.
 Therefore, saying that one wants to study zeros
 % Source page 5
 and poles of $f$ is equivalent to saying that one has a preferred set of
-coordinates. This, mind you, is extremely useful while doing analysis, but
-irrelevant for dynamics. One of the many ways we propose to study dynamics is
-by reducing the function to a simpler one, in the right set of coordinates.
+coordinates. This choice is useful in analysis but irrelevant to the underlying dynamics. A useful strategy is to choose coordinates in which the function is simpler.
 In particular, if $U\subset S$ and there is
-$\varphi\colon U\to\varphi(U)\subseteq\mathbb C$, then among all such
-$\varphi$'s we shall hunt for one that makes
+$\varphi\colon U\to\varphi(U)\subseteq\mathbb C$, we seek a $\varphi$ that makes
 $\varphi\circ f\circ\varphi^{-1}$ simplest to study. For instance:
 \begin{figure}[H]
   \centering
@@ -156,19 +150,16 @@ is fundamental to complex dynamics.
 How is $\{f^{\circ n}(\widehat z)\}_n$ distributed on $S$, where $\widehat z$
 is a critical point of $f$?
 
-Ergodic theory comes along with many qualitative answers to such questions.
-In this course we shall focus only on those that shall lead us to the proof
-of Szemer\'edi's theorem. Having motivated the need for ergodic theory for me,
-I encourage you to find a need of your own that would help you cling on to
-the kind of mathematics we shall be doing.
+Ergodic theory offers many qualitative answers to such questions. Here we
+develop the parts of the theory that lead towards Szemer\'edi's theorem,
+beginning with measure-preserving systems.
 
 \subsection{Introduction to Measure-Preserving Systems}
 Let $X$ be a set and $T\colon X\to X$ a map. We shall refer to $X$ as the
 \emph{state space} and $T$ as the \emph{transformation} (or deformation).
 
 % Source page 7
-If, in addition, you impose some structure on $X$, then we end up with the
-following.
+Additional structure on $X$ leads to the following settings.
 \begin{description}[style=nextline,leftmargin=1.5em,labelindent=0pt]
   \item[Group structure.]
   If $\Gamma\triangleleft G$, or $\Gamma<G$, then there is a transitive
@@ -180,11 +171,11 @@ following.
   in addition, $X$ is compact and metrizable and $T$ is a homeomorphism, one
   is in the realm of topological dynamical systems.
   \item[Measure structure.]
-  If it is a probability measure, one ends up with ergodic theory.
+  If $X$ is equipped with a probability measure preserved by $T$, one enters
+  the setting of ergodic theory.
 \end{description}
-Of the three basic structures one can impose on a set, we shall impose the
-structure of a probability space. I will end by introducing the setup of
-ergodic theory.
+We now equip $X$ with the structure of a probability space and introduce the
+basic setup of ergodic theory.
 
 % Source page 8
 \setcounter{definition}{2}\begin{definition}[Measure-preserving system]
@@ -205,8 +196,7 @@ $T$-invariant.
 \leavevmode\par
 \begin{itemize}
   \item To obtain qualitative results, we need some means to compare, so we
-  introduce a measure-theoretic structure on our state space $X$. We shall
-  address the need for it to be a probability measure later.
+  introduce a measure-theoretic structure on our state space $X$. The recurrence results below require it to be a probability measure.
   \item Probabilistically, $\varphi\colon X\to Y$ being measurable means that
   events of $Y$ relate to events of $X$.
   \item $\mu$ being $\varphi$-invariant means that the link $\varphi^{-1}$ is
@@ -232,8 +222,7 @@ $T$-invariant.
 \end{itemize}
 \end{remark}
 
-Having seen this, let us see what it means to preserve the structure of a
-measure-preserving system on $X$.
+We next define isomorphisms of measure-preserving systems.
 \setcounter{definition}{3}\begin{definition}[Measurable isomorphism]
 We write
 \[
@@ -250,8 +239,7 @@ almost everywhere, such that the following diagram commutes.
 \end{figure}
 
 % Source page 10
-At this point one must ask: how does one check for the measure-preserving
-property? Is there a litmus test?
+The following criterion checks whether a transformation is measure-preserving.
 
 \setcounter{theorem}{0}\begin{lemma}[Litmus test]
 Given $(X,\mathcal B,\mu,T)$, with $T\colon X\to X$ measurable, $T$ will be
@@ -348,7 +336,7 @@ Also, $\phi\circ\sigma=T_2\circ\phi$. Hence the Bernoulli system is
 measurably isomorphic to the circle-doubling system.
 \end{example}
 
-\subsection{Our Goals and Motives}
+\subsection{Questions and applications}
 We have a means to measure, hence a way to compare, and we wish to compare
 $E$ with its iterates $T^{\circ n}(E)$. As $T$ is measure-preserving, we are
 justified in asking how $\{T^{\circ n}(E)\}_n$ behaves, because $T$ preserves
@@ -364,9 +352,7 @@ With that in mind, we ask the following questions:
   \item What happens to $f\circ T^n$ as $n\to\infty$, for measurable
   $f\colon X\to\mathbb R$ (or $\mathbb C$)?
 \end{itemize}
-We shall develop tools and techniques to understand the implications of these
-questions, and answer them to the extent we can, culminating in Furstenberg's
-multiple recurrence theorem (FMRT).
+These questions lead to Furstenberg's multiple recurrence theorem (FMRT), the ergodic-theoretic input to Szemer\'edi's theorem.
 
 \setcounter{theorem}{1}\begin{theorem}[Furstenberg's multiple recurrence theorem (FMRT)]
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. Let
@@ -388,6 +374,6 @@ Let $E\subset\mathbb Z$ satisfy
 \]
 Then $E$ has arbitrarily large arithmetic progressions.
 \end{theorem}
-And declare victory!
+This is the target combinatorial application.
 % BLOG-CONTENT-END
 \end{document}

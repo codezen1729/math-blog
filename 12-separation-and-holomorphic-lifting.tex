@@ -4,8 +4,6 @@
 \begin{document}
 \section*{Separation by a Polygonal Path/Arc and Holomorphic Lifting}
 % BLOG-CONTENT-BEGIN
-\textit{Following the framework of T. Tao.}
-
 \subsection*{Separation by a Polygonal Path/Arc}
 
 Let $U$ be a bounded domain in $\mathbb C$. Then $U$ is simply connected if and only if $\mathbb C\setminus U$ is connected.
@@ -20,10 +18,7 @@ because $\overline{z_0x}$ cuts $\gamma$ too many times. Hence
 \[
   W_\gamma(z_0)\ne0,
 \]
-so $U$ is not simply connected. Let us first illustrate this idea before
-
-
-moving on to prove the converse.
+so $U$ is not simply connected. The following figure illustrates the construction.
 
 
 \subsubsection*{Construction of the Separating Curve $\gamma$}
@@ -34,7 +29,7 @@ moving on to prove the converse.
 
 \end{figure}
 
-This is the technique of separation by polygonal arcs. Refer to Tao's Notes 13, proof of the Jordan curve theorem, to see another instance. ``Store this image in your mind!''
+This is the technique of separation by polygonal arcs.
 
 
 The converse is relatively simple. Let $\mathbb C\setminus U$ be connected, where $U$ is a bounded domain. Then $U$ is simply connected. Let us prove the contrapositive.
@@ -49,7 +44,7 @@ Let $x\in H^*\cap U^c$. Note that the images of $H$ and $\partial U$ are both co
   =H^*,
 \]
 a contradiction. Hence \(H^*\cap\partial U\ne\varnothing.\)
-Let $H$ be the straight-line homotopy. Every line will cross $\partial U$ at least twice, since $U$ is bounded, so $x$ must belong to a bounded component. Notice that one can WLOG assume $\gamma$ to be simple; otherwise approximate it by a concatenation of simple closed polygons. Now
+Let $H$ be the straight-line homotopy. Every line will cross $\partial U$ at least twice, since $U$ is bounded, so $x$ must belong to a bounded component. One may assume without loss of generality that $\gamma$ is simple; otherwise approximate it by a concatenation of simple closed polygons. Now
 \[
   \operatorname{int}(\gamma)\cap U^c\ne\varnothing.
 \]
@@ -78,8 +73,7 @@ Then prove that
 Take any bounded component of $(\gamma_0^*)^c$ and, using the separation-via-arc technique, contradict the fact that $W_{\gamma_0}(z_0)=0$.
 
 
-Another place to apply this separation-by-polygon method is to give a complete characterization of branches of the logarithm. First note, very quickly, that a continuous branch of the logarithm is a continuous function on a domain $U\subset\mathbb C$, together with the domain $(f,U)$, such that \(f:U\to\mathbb C\)
-is continuous and
+Another place to apply this separation-by-polygon method is to give a complete characterization of branches of the logarithm. First note, very quickly, that a continuous branch of the logarithm on a domain \(U\subset\mathbb C\setminus\{0\}\) is a continuous function \(f:U\to\mathbb C\) such that
 \[
   \exp(f(z))=z.
 \]
@@ -118,7 +112,7 @@ There exists a continuous branch of the logarithm $(f,U)$ if and only if $0$ and
 
 The existence of a continuous branch on $U$ certainly implies that $0$ and $\infty$ are not separated by $U$, since $1/z$ has a primitive---it is conservative in $U$---because any simple closed curve in $U$ cannot contain $0$ in its interior.
 
-To prove the other direction, do the same construction on a Riemann sphere, assuming a variant of the Jordan curve theorem on it. Instead of the segments $\overline{xz_0}$, take longitudes joining the North and South poles, $0$ and $\infty$, and then project them back to $\mathbb C$.
+For the converse, apply the same construction on the Riemann sphere, using the corresponding form of the Jordan Curve Theorem. Instead of the segments $\overline{xz_0}$, take longitudes joining the North and South poles, $0$ and $\infty$, and then project them back to $\mathbb C$.
 
 \subsection*{Counting the Number of Crossings (Parity Argument)}
 
@@ -134,7 +128,7 @@ Then
 \[
   \mathbb C\setminus\gamma([0,+\infty))
 \]
-is nonempty and simply connected. These are the branch cuts which must be removed so that the logarithm stays single-valued, hence well-defined.
+is nonempty and simply connected. The image $\gamma([0,+\infty))$ is a branch cut: removing it produces a nonempty simply connected domain on which a single-valued logarithm can be defined.
 
 
 Since $\lim_{t\to\infty}\gamma(t)=\infty$, we have $\gamma(t)>M$ whenever $t>b$. Consider $\gamma([a,b])$, and let $\gamma(b)=z_1$. Choose coordinates so that $\gamma(b)=i$; this can be ensured by an appropriate rotation and dilation. Let $c\in(a,b)$ be such that
@@ -149,10 +143,7 @@ By simplicity, if
   \qquad
   \gamma_2=\left.\gamma\right|_{[c,b]},
 \]
-then we have
-
-
-by compactness a number $\delta'$, with $0<\delta'<1/10$, such that \(|\gamma_1(t_1)-\gamma_2(t_2)|\ge\delta'\)
+then compactness gives a number $\delta'$, with $0<\delta'<1/10$, such that \(|\gamma_1(t_1)-\gamma_2(t_2)|\ge\delta'\)
 whenever
 \[
   |\operatorname{Re}(\gamma_1(t_1))|,
@@ -208,20 +199,15 @@ so
 \[
   \mathbb C\setminus\gamma([0,+\infty))\ne\varnothing.
 \]
-To prove that it is simply connected, take any simple closed curve in $\mathbb C$ and note that the interior of that curve cannot intersect $\gamma([0,\infty))$, as $\gamma$ explores, it
+To prove that it is simply connected, take any simple closed curve in $\mathbb C$ and note that the interior of that curve cannot meet $\gamma([0,\infty))$; otherwise, as $\gamma$ runs to infinity, it would have to cross the curve. Thus all simple closed curves in $\gamma([0,\infty))^c$ are contractible, so $\gamma([0,\infty))^c$ is simply connected.
 
-
-is forced to cross the curve. Thus all simple closed curves in $\gamma([0,\infty))^c$ are contractible, so $\gamma([0,\infty))^c$ is simply connected.
-
-\textbf{Remark.} The crucial facts that we exploited are the injectivity of $\gamma$ and the fact that it does not turn back eventually; that is, $\gamma(t)\to\infty$ as $t\to\infty$. The idea is to break the image of $\gamma$ into two compact sets and look at their approximations on a segment. Luckily, polygons cut segments discretely; hence we can find points that are distant from the broken pieces by looking at their approximations. A neat application of the Bolzano--Weierstrass theorem would then conclude the proof.
+\textbf{Remark.} The crucial facts that we exploited are the injectivity of $\gamma$ and the fact that it does not turn back eventually; that is, $\gamma(t)\to\infty$ as $t\to\infty$. The idea is to break the image of $\gamma$ into two compact sets and look at their approximations on a segment. The chosen polygonal approximations meet the transverse segment in finitely many points; hence we can find points that are distant from the broken pieces by looking at their approximations. The Bolzano--Weierstrass theorem then completes the proof.
 
 \subsection*{Holomorphic Lifting}
 
 One way to construct a logarithm is by looking at appropriate domains where $1/z$ can have a primitive, once we make sure it is conservative. There is yet another slick way to do that, via the construction of holomorphic lifts, exploiting concepts in covering-space theory.
 
 \subsection*{Definition: Covering Spaces and Covering Maps}
-
-Refer to Tao. But here is an image to remember!
 
 Let $f:M\to N$. For every $x\in N$, there exists $U\subseteq N$ such that
 \[
@@ -246,10 +232,7 @@ is a homeomorphism.
 
 \end{figure}
 
-Here, in the proof, we took $0=a$. Sorry for that confusion! The shaded portion of the curve is cut off.
-
-
-Given this setup, we have the lifting lemma, whose proof again is in Tao. Let us merely state it. Refer to Munkres for a more visual proof.
+This setup leads to the lifting lemma.
 
 \subsection*{Tool 29 — Lifting Lemma}
 
@@ -268,9 +251,9 @@ where $U$ is a simply connected domain and $0\notin U$. The map
   e^z:\mathbb C\setminus\{0\}\to\mathbb C\setminus\{0\}
 \]
 is a covering map. (Exercise.) Hence there exists a holomorphic function $f:U\to\mathbb C\setminus\{0\}$ such that \(\exp(f)=z.\)
-Done!
 
-The same goes for $h(z)\ne0$: there exists $g$ such that \(e^{g(z)}=h(z).\)
+
+More generally, if $h$ is holomorphic and nonvanishing on the simply connected domain $U$, then there exists a holomorphic $g$ such that \(e^{g(z)}=h(z).\)
 If we look at
 \[
   z^n:\mathbb C\setminus\{0\}\to\mathbb C\setminus\{0\},

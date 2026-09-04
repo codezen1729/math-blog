@@ -10,7 +10,7 @@ Consider a fixed point $f(\widehat p)=\widehat p$ whose multiplier satisfies $\l
 \includegraphics[width=.55\textwidth]{cd3-fig-01.pdf}
 \FigureTag{CD3.1}{fig:cd3-01}
 \end{figure}
-The map $f$ throws $1,-1$ violently away, while pulling $i,-i$ violently towards $\widehat p=0$. Notice that it pushes and pulls from two directions. The following theorem tells us that such patterns reappear. For now, no neighbourhood of $\widehat p=0$ can be expected to be a ``basin'', since $\widehat p$ is a sink only in certain directions.
+The map $f$ repels $1,-1$ and attracts $i,-i$ towards $\widehat p=0$. Notice that it pushes and pulls from two directions. The following theorem tells us that such patterns reappear. For now, no neighbourhood of $\widehat p=0$ can be expected to be a ``basin'', since $\widehat p$ is a sink only in certain directions.
 % Source page 2
 \setcounter{definition}{10}\begin{definition}
 Let $f(z)=z+az^{n+1}+O(z^{n+2})$. A vector $v\in\mathbb C$ is attracting if $nav^n=+1$, and repelling if $nav^n=-1$.
@@ -35,16 +35,16 @@ If an orbit $\{z_k\}_k$ of $z_0$ tends to $0$ and $z_k\ne0$ for every $k$, then 
 \end{theorem}
 % Source page 3
 \begin{proof}
-We employ the same technique mentioned earlier. First let us state explicitly what we expect. Set $v_j=e^{\pi ij/n}v_0$: $v_j$ is attracting if $2\nmid j$, and repelling if $2\mid j$.
+We conjugate the dynamics to a translation on a slit plane. First let us state explicitly what we expect. Set $v_j=e^{\pi ij/n}v_0$: $v_j$ is attracting if $2\nmid j$, and repelling if $2\mid j$.
 \begin{figure}[H]\centering
 \includegraphics[width=.58\textwidth]{cd3-fig-02.pdf}
 \FigureTag{CD3.2}{fig:cd3-02}
 \end{figure}
-As illustrated, we expect the rays $\{v_j\}_j$ to fall on each other as the arrows indicate. Some domain in
+As illustrated, we expect points on these rays to map into one another as indicated by the arrows. The orbit must eventually enter a domain in
 \[
 \Delta_j=\{re^{i\theta}v_j:r>0,\ |\theta|<\pi/n\}
 \]
-must contain the orbit eventually; it must also approach $0$ asymptotically in direction $v_j$ ($2\nmid j$). We hope to obtain the necessary bounds by conjugating the iterates to another hyperbolic surface, leaving the rest to Pick's theorem. Define the biholomorphism
+must contain the orbit eventually; it must also approach $0$ asymptotically in direction $v_j$ ($2\nmid j$). We obtain the necessary bounds by conjugating the iterates to another hyperbolic surface and applying Pick's theorem. Define the biholomorphism
 \[
 \varphi\colon\Delta_j\longrightarrow\mathbb C\setminus\mathbb R_{(-1)^j},
 \qquad\varphi(z)=\frac c{z^n},\quad c=-\frac1{na}.
@@ -68,7 +68,7 @@ Writing the same calculation with big-$O$ notation yields
 F_j(w)=w+1+O\!\left(\frac1{\sqrt[n]{|w|}}\right).
 \tag{*}\label{cd3:translation-estimate}
 \]
-This follows by writing $f(z)=z(1+az^n+O(z^n))$ and following the same steps. We shall use this later.
+This follows by writing $f(z)=z(1+az^n+O(z^n))$ and following the same steps. This estimate will be used below.
 % Author check: source writes O(z^n) here, rather than the stronger remainder needed for the displayed estimate.
 % Source page 5
 For $|w|>R$, with $R$ large, $|F_j(w)-w-1|<1/2$. Thus $\Re F_j(w)>\Re w+1/2$.
@@ -95,7 +95,7 @@ Having seen this, let us identify the basin of attraction for $\widehat p$.
 The set $\mathcal A_j(\widehat p)$ consists of all $p_0$ whose orbit $p_0\mapsto p_1\mapsto p_2\mapsto\cdots$ under $f$ tends to $\widehat p$ along $v_j$. Since $P_j(R)\subset\mathcal A_j(\widehat p)$, there is a unique connected component $\mathcal A_j^0$ with $f(\mathcal A_j^0)\subseteq\mathcal A_j^0$. This is called the immediate basin.
 \end{definition}
 % Source page 7
-We now know vaguely that there are domains in $\Delta_j$ around $\widehat p$ where $f$ pushes or pulls. We do not yet know whether those domains surround $\widehat p$; nothing so far prevents gaps. The domain $P_j(R)\subset\Delta_j$ satisfies $f(P_j(R))\subseteq P_j(R)$, and an orbit tending to $\widehat p$ along $v_j$ eventually enters it. Let us generalise this phenomenon.
+The construction above gives forward-invariant domains in $\Delta_j$ around $\widehat p$, but it does not yet show that their union surrounds $\widehat p$; gaps may remain. The domain $P_j(R)\subset\Delta_j$ satisfies $f(P_j(R))\subseteq P_j(R)$, and an orbit tending to $\widehat p$ along $v_j$ eventually enters it. Let us generalise this phenomenon.
 \setcounter{definition}{12}\begin{definition}[Attracting and repelling petals]
 Let $N$ be a neighbourhood of $\widehat p$ on which $f$ is univalent. A set $P\subset N$ is an attracting petal for $f$ at $\widehat p$, associated with an attracting vector $v_j$, if
 \begin{itemize}
@@ -120,7 +120,7 @@ Then $P_j=\psi_j(W_R)\subset\Delta_j$ is an attracting petal for odd $j$ and lar
 \FigureTag{CD3.4}{fig:cd3-04}
 \end{figure}
 % Source page 9
-Now note the following correspondence, since $\varphi$ preserves orientation by being locally conformal around $\widehat p$.
+Now note the following correspondence, since $\varphi$ preserves orientation because it is locally conformal around $\widehat p$.
 \begin{figure}[H]\centering
 \includegraphics[width=.64\textwidth]{cd3-fig-05.pdf}
 \FigureTag{CD3.5}{fig:cd3-05}
@@ -140,7 +140,7 @@ Also $\psi_j(P_j\cap P_{j+1})=V_R^+$ or $V_R^-$, where $V_R^\pm$ are components 
 \end{figure}
 \end{proof}
 % Source page 10
-We now ask the question suggested by the case $0<|\lambda|<1$: can we understand the dynamics separately in at least each of the $2n$ petals? The next theorem addresses this completely.
+We now ask the question suggested by the case $0<|\lambda|<1$: can we understand the dynamics separately on each of the $2n$ petals? The next theorem addresses this completely.
 \setcounter{theorem}{18}\begin{theorem}[Parabolic linearisation]\label{cd3:linearisation}
 For any petal $P$, there is a conformal embedding $\alpha\colon P\to\mathbb C$, unique up to translation, making the following diagram commute. In the literature, $\alpha$ is called a \emph{Fatou coordinate}.
 \begin{figure}[H]\centering
@@ -183,7 +183,7 @@ Multiplying \eqref{cd3:ratio-bound} and \eqref{cd3:product-bound}, with $k-1$ in
 \[
 |\beta_k(w)-\beta_{k-1}(w)|\le\frac{PC'|w-\widehat w|}{k^{1+\varepsilon}}.
 \]
-Thus $\beta_0(w)+\sum_{k=1}^{\infty}(\beta_k(w)-\beta_{k-1}(w))$ is absolutely convergent, since the corresponding series of bounds is. We obtain $\beta_k(w)\to\beta(w)$ and $\beta_k(w)/\beta_0(w)\to\beta(w)/\beta_0(w)$, so $\beta$ is holomorphic.
+Thus $\beta_0(w)+\sum_{k=1}^{\infty}(\beta_k(w)-\beta_{k-1}(w))$ is absolutely convergent, because the corresponding series of bounds does. We obtain $\beta_k(w)\to\beta(w)$ and $\beta_k(w)/\beta_0(w)\to\beta(w)/\beta_0(w)$, so $\beta$ is holomorphic.
 
 To see univalence, choose $k_0$ such that $1-C'/k_0^{1+\varepsilon}>0$. Then $|\beta_k(w)/\beta_{k-1}(w)|>0$, so $F_j^{\circ k}$ is eventually univalent: the positive lower bound is independent of $w,\widehat w$ for every $k\ge k_0$. Hence $\beta$ is univalent.
 \begin{observation}[2]
@@ -208,7 +208,7 @@ Since $\beta(w)\sim w$, for sufficiently large $S$ we have $|\beta(w)-w|<|w|/3$ 
 % Source page 14
 On its boundary, $|\beta(w)-w|<|w-w_0|$. Thus $w-w_0$ and $(\beta(w)-w)+(w-w_0)$ have the same number of roots. It follows that $w_0\in\beta(B_{|w_0|/2}(w_0))$, proving $\bigcup_{n\in\mathbb Z}(U+n)=\mathbb C$.
 
-Having observed these three crucial facts, let us prove existence and uniqueness of the Fatou coordinate.
+
 \begin{proof}[Proof of Theorem~\ref{cd3:linearisation}]
 \emph{Existence.} For any petal $P$ and $z\in P$, some iterate enters $P_j(R)$. We have the following commutative diagram.
 \begin{figure}[H]\centering

@@ -6,22 +6,20 @@
 \section*{Mixing, Products, and Spectral Criteria}
 % BLOG-CONTENT-BEGIN
 \subsection{Mixing}
-Ergodic theorems give you all the equidistribution theorems one would hope
-for, so let us now abandon the study of orbits. Recall that we studied
-ergodicity from three different perspectives:
+Ergodic theorems connect orbit averages with equidistribution. Mixing asks a
+different question: how do measurable sets become statistically independent
+under iteration? Three complementary perspectives will be useful:
 \begin{itemize}
  \item Measure-theoretic: to obtain dynamical information.
  \item Operator-theoretic: to obtain equidistribution theorems.
  \item Fourier-analytic: for some examples.
 \end{itemize}
-Now let us focus on the study of ``set-orbits''
+Consider the ``set-orbits''
 $\{T^{\circ n}(E)\}_{n\in\mathbb Z}$. The measure-theoretic perspective
 gave us information about $\{T^{\circ n}(x)\}_{n\in\mathbb Z}$, namely
 recurrence theorems; the operator-theoretic perspective told us about
-$\{f\circ T^n\}_{n\in\mathbb Z}$. Now it is time to give up these
-perspectives and look at it for what it is: a probability space.
-Let us view the system $(X,\mathcal B,\mu,T)$ probabilistically.
-Before we jump into that, here is a small observation. We saw that
+$\{f\circ T^n\}_{n\in\mathbb Z}$. We now view the system
+$(X,\mathcal B,\mu,T)$ probabilistically. The starting observation is that
 \[
  \frac1N\sum_{n=0}^{N-1}f\circ T^n\longrightarrow\int f\,d\mu
  \quad\text{in $L^2_\mu$, as $N\to\infty$.}
@@ -45,16 +43,8 @@ of ergodicity:
  \item Conversely, if $T^{-1}(A)=A$, set $B=X\setminus A$. We obtain
  $\mu(A)\mu(X\setminus A)=0$, so $\mu(A)\in\{0,1\}$.
 \end{itemize}
-Thus, on average, $T$ pulls back an event and \emph{tries} to make it
-independent of $A$. If $T^{-n}(B)$ and $A$ were independent, then
-\[
- \mu(A\cap T^{-n}(B))
- =\mu(A)\mu(T^{-n}(B))=\mu(A)\mu(B),
-\]
-and convergence would be assured. In general, however, an ergodic map just
-tries to separate events and is not always successful. Keeping this in
-mind, let us look at maps that asymptotically make $T^{-n}(B)$ and $A$
-independent.
+Thus ergodicity gives asymptotic independence only after averaging. Mixing
+strengthens this to $\mu(A\cap T^{-n}(B))\to\mu(A)\mu(B)$ without averaging.
 
 \setcounter{definition}{5}\begin{definition}[Mixing]
 A system $(X,\mathcal B,\mu,T)$ is \emph{mixing} if, for all
@@ -99,21 +89,18 @@ Said differently:
  this is mixing.
  \item $T^{-1}$ makes $A$ and $B$ asymptotically independent except on
  a zero-density set: this is weak mixing.
- \item $T^{-1}$ \emph{tries} to make $A$ and $B$ independent on average:
+ \item $T^{-1}$ makes $A$ and $B$ independent on average:
  this is ergodicity.
 \end{itemize}
 \end{remark}
 \begin{remark}
-Since $T^{-1}$ tries to separate events in whatever manner we prescribe,
-we say that the inverse of $T^{-1}$, namely $T$, mixes events. Hence we
-call such systems mixing or weakly mixing. It turns out that weak mixing
-(a formulation due to von Neumann) is quite a natural thing, as it has so
-many equivalent formulations. A generalisation of this concept will be
-crucial for us in establishing Szemer\'edi's theorem.
+Since $T^{-1}$ separates events in the senses described above, we say that
+$T$ mixes events. Hence we
+call such systems mixing or weakly mixing. Weak mixing has several equivalent formulations, one of which is central to ergodic proofs of Szemer\'edi's theorem.
 \end{remark}
-Now let us see other equivalent formulations of weak mixing, to find
+We now turn to equivalent formulations of weak mixing and the connections
 % Source page 4
-connections between the probabilistic interpretation and the others.
+between its probabilistic, operator-theoretic, and measure-theoretic forms.
 
 \setcounter{theorem}{14}\begin{theorem}[Mixing equivalences]
 \label{thm:l4-mixing-equivalences}
@@ -129,8 +116,7 @@ Given a system $(X,\mathcal B,\mu,T)$, the following are equivalent:
  and the corresponding eigenspace consists of constant functions.
 \end{enumerate}
 \end{theorem}
-This is a long proof, so hang tight. We will first prove an interesting
-technical lemma due to Koopman and von Neumann.
+The proof uses the following lemma of Koopman and von Neumann.
 
 \setcounter{theorem}{15}\begin{lemma}[Koopman--Neumann]
 \label{lem:l4-koopman-neumann}
@@ -216,8 +202,7 @@ Similarly,
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:l4-mixing-equivalences}]
-We shall use the Koopman--Neumann lemma without mentioning it explicitly.
-Keep in mind henceforth that
+We shall use the Koopman--Neumann lemma repeatedly in the equivalent form
 \[
  \begin{aligned}
  &\frac1N\sum_{n=0}^{N-1}
@@ -258,74 +243,7 @@ so $J$ has density zero. Therefore
  \end{aligned}
 \]
 by the definition and \eqref{eq:l4-pair-limits}.
-The $\sigma$-algebra $\mathcal B\times\mathcal B$ contains the algebra of
-rectangles $\mathcal J'$. Let $\widetilde\mu=\mu\times\mu$, and let
-\[
- \mathcal J:=\left\{A\in\mathcal B\times\mathcal B:
- \begin{array}{l}
- \text{for all }A_1,A_2\in\mathcal J,\\
- \widetilde\mu(A_1\cap T^{-n}A_2)
- \xrightarrow[n\notin J_{A_1A_2}]{}\widetilde\mu(A_1)\mu(A_2),\\
- \operatorname{density}(J_{A_1A_2})=0
- \end{array}\right\}.
-\]
-% Author check: this self-referential class definition and the unadorned mu(A_2) are preserved from the source.
-Clearly, $\mathcal J'\subseteq\mathcal J$. It would now suffice to prove
-that $\mathcal J$ is a monotone class. If $A_i\nearrow A$, then
-$\widetilde\mu(A_i\cap T^{-n}A_2)
-\to\widetilde\mu(A_i)\widetilde\mu(A_2)$ with $n\notin J_{A_iA_2}$.
-We therefore have
-\[
- \widetilde\mu(A_i\cap T^{-n}A_2)
- -\widetilde\mu(A_i)\widetilde\mu(A_2)\longrightarrow0
- \quad\left(n\notin\bigcup_{i=1}^{n}J_{A_iA_2},\quad1\leq i\leq n\right).
-\]
-% Author check: the source uses n both as the time variable and as the finite-union bound here.
-Let $J_k=\bigcup_{i=1}^kJ_{A_iA_2}$, so $J_1\subseteq J_2\subseteq\cdots$.
-Now mimic the proof of
-% Source page 8
-Koopman--Neumann by finding $0<\ell_1<\ell_2<\cdots$ such that
-$\frac1n|J_k\cap[0,n)|\leq1/k$, and define
-\[
- J=\bigcup_{k=0}^\infty J_k\cap[\ell_k,\ell_{k+1}).
-\]
-Clearly, for any $k$, $J_k\cap[\ell_k,\infty)\subseteq J$.
-Thus, for $n\notin J$ and $n\geq\ell_k$,
-\[
- \widetilde\mu(A_i\cap T^{-n}A_2)
- -\widetilde\mu(A_i)\widetilde\mu(A_2)\longrightarrow0
- \qquad(i\leq k).
-\]
-It follows that
-\[
- \widetilde\mu(A_i\cap T^{-n}A_2)
- -\widetilde\mu(A_i)\widetilde\mu(A_2)
- \xrightarrow[n\in J]{}0\qquad(i\geq1).
-\]
-% Author check: the source says n in J in this line, unlike n not in J above.
-As $A_i\nearrow A$, we know that
-\[
- \widetilde\mu(A_i\cap T^{-n}A_2)-\widetilde\mu(A_i)\widetilde\mu(A_2)
- \longrightarrow
- \widetilde\mu(A\cap T^{-n}A_2)-\widetilde\mu(A)\widetilde\mu(A_2),
-\]
-and $\widetilde\mu(A\cap T^{-n}A_2)-\widetilde\mu(A)\widetilde\mu(A_2)\to0$.
-The exchange of limits can be justified by the fact that
-\[
- \lim_{(m,n)\to\infty}
- \bigl(\widetilde\mu(A_m\cap T^{-n}A_2)
- -\widetilde\mu(A_m)\widetilde\mu(A_2)\bigr)=0,
-\]
-and that, for every $m$,
-$\lim_{n\to\infty}\bigl(\widetilde\mu(A_m\cap T^{-n}A_2)
--\widetilde\mu(A_m)\widetilde\mu(A_2)\bigr)$ exists, while, for every $n$,
-$\lim_{m\to0}\bigl(\widetilde\mu(A_m\cap T^{-n}A_2)
--\widetilde\mu(A_m)\widetilde\mu(A_2)\bigr)$ exists.
-Hence Fubini's theorem, together with dominated convergence for counting
-measure on $(\mathbb N\setminus J)\times\mathbb N$, yields the result.
-% Author check: the last limit is written m->0 in the source; the interchange argument is retained, not repaired.
-Thus $\mathcal J$ is a monotone class, as the case $A_i\searrow A$ can be
-handled similarly. Consequently, $\mathcal J=\mathcal B\times\mathcal B$.
+
 
 \paragraph{$(3)\Longrightarrow(1)$.}
 % Source page 9
@@ -369,8 +287,8 @@ Thus
  ((A_1\times A_2)\cap(T\times S)^{-n}(B_1\times B_2))
  \longrightarrow\mu(A_1)\mu(B_1)\nu(A_2)\nu(B_2),
 \]
-and $T\times S$ is ergodic. Again, one has to extend this result from the
-algebra of rectangles to the $\sigma$-algebra by exchanging limits.
+and $T\times S$ is ergodic. A monotone-class argument extends this result from
+the algebra of rectangles to the $\sigma$-algebra.
 
 \paragraph{$(4)\Longrightarrow(2)$.}
 Let $(Y,\mathcal B',\nu,S)$ be the ergodic system with $Y=\{y\}$,
@@ -423,62 +341,10 @@ By ergodicity of $T\times T$, $g$ must be constant almost everywhere.
 Also, $U_Tf=\lambda f$ gives $f\circ T=\lambda f$, so $\lambda=1$.
 Hence $U_T$ has continuous spectrum.
 
-\paragraph{$(5)\Longrightarrow(2)$.}
-Suppose $T\times T$ is not ergodic. There exists a nonconstant
-$f\in L^2_\mu(X\times X)$. We can assume without loss of generality that
-$f(x,y)=\overline{f(y,x)}$. If both
-$f(x,y)+\overline{f(y,x)}$ and $i(f(x,y)-\overline{f(y,x)})$ were constant,
-then $f(x,y)$ would also be constant. Thus we may either work with one of
-them or assume the symmetry $f(x,y)=\overline{f(y,x)}$.
-Now subtract $\int f\,d\mu^2$ from $f$. Then
-$\int(f-\int f\,d\mu^2)\,d\mu^2=0$, so we may also assume
-$\int f\,d\mu^2=0$. Define the Hilbert--Schmidt operator
-\[
- (F(g))(x):=\int_X f(x,y)g(y)\,d\mu(y).
-\]
-% Source page 12
-\begin{itemize}
- \item $F$ is self-adjoint, by Fubini's theorem.
- \item $F$ is nontrivial, because $f$ is.
- \item $\|F\|_{\mathrm{HS}}=\|f\|_{\mu^2}<\infty$.
- The Hilbert--Schmidt norm is bounded, so $F$ is compact.
- \item Since $F$ is self-adjoint,
- $\sup_{\|x\|\leq1}|\langle Fx,x\rangle|=\|F\|$.
- Since $F$ is nontrivial, this supremum is nonzero. Therefore $\|F\|$
- or $-\|F\|$ is an eigenvalue of $F$, again a consequence of $F$ being
- a nontrivial compact self-adjoint operator.
- \item There exists $\lambda\ne0$ such that the nullspace of $T-\lambda I$
- is nontrivial. The closed subspace $N_\lambda$ is Banach, and
- $\lambda^{-1}T:N_\lambda\to N_\lambda$. Since $T/\lambda$ is compact,
- $N_\lambda$ is locally compact, equivalently finite-dimensional.
-\end{itemize}
-% Author check: the last bullet switches from F to T in the source; this notation is preserved.
-Thus $F(g)=\lambda g$ for some $g$, with $\lambda\ne0$. Then
-\[
- \begin{aligned}
- \lambda g(Tx)
- &=\int_X f(Tx,y)g(y)\,d\mu(y)\\
- &=\int_X f(Tx,Ty)g(Ty)\,d\mu(y)
- =\int_X f(x,y)g(Ty)\,d\mu(y).
- \end{aligned}
-\]
-The second equality uses the $\mu$-invariance of $T$, and the last uses the
-$T\times T$-invariance of $f$. Hence $F(g\circ T)=\lambda(g\circ T)$,
-so $g\in N_\lambda$ implies $g\circ T\in N_\lambda$.
-Therefore $U_T:N_\lambda\to N_\lambda$, and $U_T$ has a nontrivial
-eigenvalue. If $g$ is an eigenvector corresponding to it, then
-% Source page 13
-\[
- \int_X\lambda(g\circ T)\,d\mu
- =\int_X\int_X f(g\circ T)\,d\mu^2.
-\]
-If $g$ were constant, then $\lambda=\int_{X^2}f\,d\mu^2=0$, a
-contradiction. Thus $U_T$ has a nontrivial eigenvector and does not have
-continuous spectrum.
+
 \end{proof}
 
-Let us stop this session by setting up the premise for the infamous
-Rokhlin problem.
+We finish with the Rokhlin problem.
 \setcounter{definition}{7}\begin{definition}[$k$-fold mixing]
 A system $(X,\mathcal B,\mu,T)$ is \emph{$k$-fold mixing} if
 \[

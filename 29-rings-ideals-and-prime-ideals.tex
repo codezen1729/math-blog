@@ -46,7 +46,7 @@ For rings $A$ and $B$, a \emph{ring homomorphism} $f:A\to B$ is a map satisfying
 Denote by $\CRing$ the category of commutative rings. Then:
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item $\Z$ is an \emph{initial object} of $\CRing$: for $A\in\Ob(\CRing)$ there exists a unique $f:\Z\to A$.
-\setcounter{enumi}{1}\item $\{0\}$ is the \emph{final object}: for a given $A$ there exists a unique $g:A\to\{0\}$.
+\setcounter{enumi}{1}\item $\{0\}$ is the \emph{terminal object}: for a given $A$ there exists a unique $g:A\to\{0\}$.
 \setcounter{enumi}{2}\item If $\{A_i\}_{i=1}^n\subseteq\Ob(\CRing)$, then there exists $A\in\Ob(\CRing)$, called the \emph{product},
 \[
 A=\prod_{i=1}^n A_i,
@@ -60,7 +60,7 @@ there exists a unique $f:A\to B$ such that the diagram below commutes.
 \FigureTag{CA1.1}{fig:ca-1-01}
 \end{figure}
 Of all rings $B$ projecting onto $A_i$, $A$ is ``universal''.
-\setcounter{enumi}{3}\item Coproducts need not exist in $\CRing$, that is, $\bigoplus_{i=1}^n A_i$ may not exist. Said differently, among all rings $B$ which include $A_i$ ($A_i\hookrightarrow B$), there may not be any universal element.
+\setcounter{enumi}{3}\item Coproducts need not exist in $\CRing$, that is, $\bigoplus_{i=1}^n A_i$ may not exist. Said differently, among all rings $B$ containing the $A_i$ ($A_i\hookrightarrow B$), there may not be any universal element.
 % Author check: this assertion concerns ring coproducts and is retained verbatim in substance.
 Note that if $A_i\in\Ob(\mathsf{AbGps})$, then $\bigoplus_{i=1}^n A_i$ exists; it is universal among maps $(A_i\to B)\in\Hom_{\Ab}(A_i,B)$. If the $A_i$ are decorated with ring structure $(A_i,\times,1)$, then
 \[
@@ -70,7 +70,7 @@ So $a_i=1$ for all $i$, which is absurd.
 \end{enumerate}
 \end{remark}
 \setcounter{definition}{2}\begin{definition}
-For an ideal $\aa\subseteq A$, one can check that $A/\aa$ is a ring. As an abelian group, its multiplication is well defined because $A\aa\subseteq\aa$.
+For an ideal $\aa\subseteq A$, the quotient $A/\aa$ is an abelian group, and its multiplication is well defined because $A\aa\subseteq\aa$.
 % The handwritten definition at the foot of p.4 is overwritten; the legible quotient and absorption statements are retained.
 % Source page 5
 Indeed,
@@ -85,7 +85,7 @@ One can view ideals $\aa$ as subgroups of $A$ with an action of $A$, captured by
 \psi\in\Hom_{\CRing}(A,\End_{\Ab}(\aa)),\qquad
 \psi(x)(a):=xa\quad(x\in A,\ a\in\aa).
 \]
-We shall return to this soon.
+
 \end{remark}
 \setcounter{example}{2}\begin{example}
 \begin{enumerate}[label=(\roman*)]
@@ -141,7 +141,7 @@ If $\mm^c=\{x\mid x^{-1}\in A\}$, then $\mm$ is the unique maximal ideal. Such a
 \end{aligned}
 \]
 % Author check: the nonzero condition on y is absent in the first source set.
-Clearly, $D_0\cap D_1=\varnothing$. In any ring an element belongs to either $D_0$, $D_1$, or $D_0^c\cap D_1^c$.
+Clearly, $D_0\cap D_1=\varnothing$. In any ring an element belongs either to $D_0$, to $D_1$, or to $D_0^c\cap D_1^c$.
 \begin{figure}[H]\centering
 \includegraphics[width=.26\textwidth]{ca1-fig-03.pdf}
 \FigureTag{CA1.3}{fig:ca-1-03}
@@ -160,7 +160,7 @@ y=\sum_{i=1}^n x_1\cdots x_{i-1}x_{i+1}\cdots x_n.
 Then $y\in\aa$, but $y\notin\bigcup_i\pp_i$, a contradiction.
 \end{proof}
 % Source page 9
-Consequently, no ideal is covered by a bunch of prime ideals as depicted here.
+Consequently, no ideal is covered by finitely many prime ideals as depicted here.
 \begin{figure}[H]\centering
 \includegraphics[width=.48\textwidth]{ca1-fig-04.pdf}
 \FigureTag{CA1.4}{fig:ca-1-04}
@@ -184,7 +184,7 @@ If $f\notin\rad((0))$, let $\Sigma$ be the poset of all ideals $\aa$ such that $
 % Source page 10
 Let $x,y\notin\mm$. Then $\mm+(x),\mm+(y)\notin\Sigma$ by maximality. Therefore, $f^a\in\mm+(x)$ and $f^b\in\mm+(y)$, so $f^{a+b}\in\mm+(xy)$ and thus $xy\notin\mm$. Therefore $f\notin\mm$, implying $f\notin\bigcap_{\pp\text{ prime}}\pp$.
 \end{proof}
-The following picture summarizes what we have seen thus far.
+The following picture summarizes these relationships.
 \begin{figure}[H]\centering
 \includegraphics[width=.86\textwidth]{ca1-fig-05.pdf}
 \FigureTag{CA1.5}{fig:ca-1-05}

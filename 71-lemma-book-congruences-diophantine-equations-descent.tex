@@ -22,7 +22,7 @@ m^6+n^6=(m^2)^3+(n^2)^3
 =(m^2+n^2)(m^4-m^2n^2+n^4)
 =(m^2+n^2)\bigl((m^2-n^2)^2+(mn)^2\bigr).
 \]
-This tells us to call Lagrange for help. Set $a=m$, $b=n$, $c=m^2-n^2$, $d=mn$.
+This suggests using Lagrange's identity. Set $a=m$, $b=n$, $c=m^2-n^2$, and $d=mn$.
 Then $m^6+n^6=(m^3-2mn^2)^2+(n^3-2nm^2)^2$.
 
 \setcounter{theorem}{47}\begin{lemma}[A prime in one denominator]
@@ -30,7 +30,7 @@ If $\sum_i a_i/b_i=N/D$, $p\mid b_k$, $p\nmid a_i$ for every $i$, and $p\nmid b_
 \end{lemma}
 Prove that $1+1/2+1/3+\cdots+1/n$ is never an integer for $n>1$.
 Let $2^k$ be the maximum power of $2$ dividing $n$.
-If $\sum_{k=1}^n1/k=N/D$, then $N$ is odd and $D$ is even, and the notes conclude $\gcd(N,D)=1$.
+Write $\sum_{k=1}^n1/k=N/D$ in lowest terms. The argument aims to show that $N$ is odd and $D$ is even.
 % Author check: source selects the maximum power dividing n, not largest power <=n; odd/even does not alone imply coprimality.
 
 % Source page 23 - left
@@ -48,21 +48,21 @@ a contradiction.
 \setcounter{theorem}{50}\begin{lemma}[Fermat's last theorem]
 $x^n+y^n=z^n$ has no solution for $n>2$.
 \end{lemma}
-Knowing this theorem is always good: it reduces the bulk of the solution.
+Fermat's last theorem shortens the following argument.
 If $x,y,z$ are natural numbers and $n>1$, with $x^n+y^n=z^n$, show that $\min(x,y,z)>n$.
 Fermat's last theorem gives $n=2$, since $n>1$.
 Thus $x^2+y^2=z^2$, and one can finish the proof with ease.
 % Author check: domain restrictions for FLT are supplied only in the following application, as in source.
 
-\emph{Experimentation, observation, and insight bottled together possess the capability to perform wonders.}
+\emph{Experimentation, observation, and insight together can work wonders.}
 Given
 \[
 \overline{abc}_{10}+\overline{acb}_{10}+\overline{bac}_{10}
 +\overline{bca}_{10}+\overline{cab}_{10}+\overline{cba}_{10}=3194,
 \]
 find $\overline{abc}_{10}$.
-This is a problem from my fruitful problem-solving experience. I employed a unique, original technique.
-Let $\overline{abc}_{10}=100a+10b+c$. The notes write
+The following calculation gives a quick route to the answer.
+Let $\overline{abc}_{10}=100a+10b+c$. Then
 $3194=122a+212b+221c=f(a,b,c)$.
 % Source page 24 - left
 Guess: $f(7,6,8)=3894$. This exceeds $3194$ by $700$.
@@ -90,9 +90,9 @@ Show that, for each positive $n$, there are natural numbers $a_1,\ldots,a_n$ suc
 S(a_1)<S(a_2)<\cdots<S(a_n),\qquad S(a_i)=P(a_{i+1})\quad(1\leq i\leq n),
 \]
 where $a_{n+1}=a_1$.
-After some analysis, I would stick to the sequence
+After some analysis, choose the sequence
 $(a_n)=(11,\allowbreak211,\allowbreak221111,\allowbreak22211111111,\allowbreak\ldots)$.
-Guessing the pattern is not difficult. This is somewhat close to a magical solution!
+The emerging pattern gives an almost magical construction.
 % Author check: source gives the displayed sequence without verifying the cyclic final condition.
 
 \setcounter{theorem}{55}\begin{lemma}[Subtract the two sides]
@@ -125,13 +125,12 @@ Then
 \quad0\leq\frac{7x}{8}-2014\leq3.
 \]
 Thus $2014\leq7x/8\leq2017$, or $x\in[16112/7,16136/7]$.
-Similarly, solve problems using inequalities.
 % Author check: source presents a necessary interval but does not determine all solutions within it; fractional-part endpoint1 retained.
 
-Now let me present some problems and their standout solutions!
+Here are two problems with particularly striking solutions.
 Find $a,b,c>0$ such that $1/2014=1/a+1/b+1/c$.
-This was asked in class. One student boldly gave the unexpected solution:
-``We know $1=1/2+1/3+1/6$; now divide this by $2014$ to obtain $a,b,c$!''
+An unexpected construction is immediate from the identity
+$1=1/2+1/3+1/6$: dividing by $2014$ gives suitable values of $a$, $b$, and $c$.
 
 \setcounter{theorem}{66}\begin{lemma}[Transform one solution into another]
 In some Diophantine equations, it helps to observe that if $(a,b,c)$ is a solution, then $(f(a),f(b),f(c))$ is also a solution.
@@ -140,7 +139,7 @@ In some Diophantine equations, it helps to observe that if $(a,b,c)$ is a soluti
 Let $a,b$ be positive integers with $ab+1\mid a^2+b^2$.
 Show that $(a^2+b^2)/(ab+1)$ is an integer square.
 Write $(a^2+b^2)/(ab+1)=k$, or $a^2-kab+b^2=k$.
-If $(a,b)$ solves this equation, then $(b,kb-a)$ also solves it. Substitute to verify!
+If $(a,b)$ solves this equation, then a direct substitution shows that $(b,kb-a)$ also solves it.
 If $a=b$, then $(2-k)a^2=k>0$, so $k=1$ is a solution.
 Without loss of generality, assume $a>b$. Then
 \[
@@ -151,9 +150,9 @@ Since $(b,kb-a)$ is also a solution, the above bound gives $kb<a+b$, hence $kb-a
 This contradicts the minimality of $b$. Thus $k=1$ is the only solution.
 % Author check: source proof omits positivity of kb-a and claims only k=1, stronger than the stated square conclusion.
 
-\emph{What a mind-blowing guess, buddy!}
+Here is a useful parametric construction.
 Prove that $x^2=y^3+z^5$ has infinitely many positive integer solutions.
-The solution is like magic. Have a look.
+The following family gives the required solutions.
 % Source page 30 - right
 \[
 x_n=n^{10}(n+1)^8,\qquad y_n=n^7(n+1)^5,\qquad z_n=n^4(n+1)^3,
@@ -164,7 +163,7 @@ x_n=n^{10}(n+1)^8,\qquad y_n=n^7(n+1)^5,\qquad z_n=n^4(n+1)^3,
 \setcounter{theorem}{79}\begin{lemma}[A greatest-common-divisor strategy]\label{lemma:lb1-82}
 When solving some Diophantine equations in two variables, case-by-case analysis using $\gcd(x,y)=d$ turns out to be useful.
 \end{lemma}
-There are tons of problems that are killed by this strategy, mostly national-contest problems.
+This strategy appears frequently in national olympiad problems.
 \paragraph{Application: Belarus Mathematical Olympiad (2000).}
 Find all pairs of positive integers $(m,n)$ satisfying
 \[(m-n)^2(n^2-m)=4m^2n.\]
@@ -172,8 +171,7 @@ Assume $m>n$ and let $\gcd(m,n)=d$, so $m=dx$ and $n=dy$.
 Then
 \[(dx-dy)^2(d^2y^2-dx)=4d^3xy
 \quad\Longrightarrow\quad (x-y)^2(dy^2-x)=4xy.\]
-This directly implies $x\mid y$. Oh! Sorry, no, no: $y\mid x$ (I forgot that we assumed $m>n$).
-Thus $y\mid x$ because $x>y$, and $m=nk$ for $k\in\mathbb N$.
+This directly implies $y\mid x$. Since $x>y$, write $m=nk$ for some $k\in\mathbb N$.
 Hence
 \[(nk-n)^2(n^2-nk)=4n^3k^2
 \quad\Longrightarrow\quad(k-1)^2(n-k)=4k^2.\]
@@ -236,7 +234,7 @@ Here are some lemmas:
 \setcounter{enumi}{6}\item $v_p(x^n+y^n)=v_p(x+y)$ if $n$ is odd, $\gcd(p,n)=1$, and $p\mid x+y$.
 \end{enumerate}
 \end{lemma}
-Tons and tons of problems are killed by this lemma, but always remember to check its validity!
+The lemma has many applications, provided its hypotheses are checked.
 % Author check: the heading calls these Hensel's lemma; v_p is described as a power though used as its exponent. Prime/coprimality hypotheses such as p not dividing xy are missing from several source formulas.
 % Source page 57 - right
 \paragraph{Application: Ireland (1996).}
@@ -270,7 +268,7 @@ The last term is $1/12$. Use the following fact:
 \equiv1+2+3+4\pmod5.
 \]
 Thus $\sum_{5\nmid k,\,k\leq100}1/k\equiv200\equiv0\pmod5$,
-and write this sum as $5X_1/Y_1$ with $(Y_1,5)=1$.
+so write this sum as $5X_1/Y_1$ with $(Y_1,5)=1$.
 Further,
 \[
 1+\frac12+\frac13+\frac14=\frac{25}{12}\equiv0\pmod{25},\qquad
@@ -288,7 +286,7 @@ Consequently
 so $5\nmid AB$.
 % Author check: source equates the sum over16--19 with that over6--9 termwise modulo25; retained.
 
-Remember the secret lemma? Here it is.
+The needed result is Zsigmondy's theorem.
 \subsection{Zsigmondy's theorem}
 \setcounter{theorem}{100}\begin{lemma}[Zsigmondy's theorem]\label{lemma:lb2-104}
 If $a,b,n$ are positive integers with $\gcd(a,b)=1$, then $a^n-b^n$ has a prime factor dividing none of $a^k-b^k$ for $k<n$,
@@ -300,73 +298,23 @@ $a^n+b^n$ has a prime factor dividing none of $a^k+b^k$ for $k<n$, except $2^3+1
 % Author check: first clause lacks a>b and n>1 restrictions; second lacks explicit coprimality; preserved.
 \paragraph{Application: IMO shortlist (2000).}
 Find positive integer triples $(a,m,n)$ with $a^m+1\mid(a+1)^n$.
-The obvious solution is $(2,3,n)$, since $2^3+1\mid3^n$ for all $n$. Prove this!
+The family $(2,3,n)$ satisfies the divisibility because $2^3+1\mid3^n$.
 For $(a,m)\ne(2,3)$, Zsigmondy's theorem supplies a prime factor of $a^m+1$ not dividing $a+1$,
 so it does not divide $(a+1)^n$. Hence there are no other solutions.
-\emph{Quite quickly done.}
-``Is it seriously an IMO-shortlisted problem?'' is the usual reaction.
+
+
 % Author check: n=1 and m=1 cases, among others, are omitted in the source claim.
-Solve the following using Zsigmondy.
-\paragraph{Round 1: Fight. Japanese MO (2011).}
-Find all positive integer quintuples $(a,n,p,q,r)$ such that
-$a^n-1=(a^p-1)(a^q-1)(a^r-1)$.
-\paragraph{Round 2: Fight.}
-Prove Fermat's last theorem, asserting that $x^n+y^n=z^n$ has no solutions with $xyz\ne0$.
-Take $z$ to be prime!
-\paragraph{Final round: Fight. Balkan MO (2009).}
-Solve $5^x-3^y=z^2$ for $x,y,z\in\mathbb N$.
+
 
 % Source page 9 - left
-\paragraph{You used calculus in that!}
-If $a^n+n$ is a multiple of $b^n+n$ for every positive integer $n$, prove that $a=b$, where $a,b\in\mathbb N$.
-Suppose there exists such an $n$ and seek $(a,b)$, with $a\geq b$.
-Let $f(a)=a^n+n$ and $f(b)=b^n+n$, with $f(a)=kf(b)$, $k\in\mathbb N$.
-Then the notes differentiate:
-\[
-\frac{df(a)}{da}=\frac{d[kf(b)]}{db}
-\Longrightarrow na^{n-1}=nkb^{n-1}
-\Longrightarrow k=(a/b)^{n-1}.
-\]
-Also $k=(a^n+n)/(b^n+n)=a^{n-1}/b^{n-1}$, so
-$n=\dfrac{a^{n-1}b^{n-1}(a-b)}{a^{n-1}-b^{n-1}}$.
-A contradiction follows from Zsigmondy's theorem!
-% Author check: differentiating the integer equality with respect to different variables is not justified; retained.
-We have proved a stronger case: ``$b^n+n\nmid a^n+n$ for $a>b$, with the exception $1^2+1\mid2^2+2$.''
-Can you guess where that exception came from?
+
 
 \paragraph{Challenge: Kiran S. Kedlaya, Crux Mathematicorum.}
 For positive integers $x,y,z$, prove that $(xy+1)(yz+1)(zx+1)$ is a perfect square
 if and only if $xy+1$, $yz+1$, and $zx+1$ are each perfect squares.
-Soumik Ghosh communicated a solution that seems deceptively correct.
-Hats off to the ingenious use of infinite descent. Dangerous!
-% Source page 10 - left
-Call $(x,y,z)$ good if $(xy+1)(yz+1)(zx+1)$ is a perfect square.
-The claim is that every three-element subset of $(x,y,z,t)$ is good, where
-\[
-t=x+y+z+2xyz-2\sqrt{(xy+1)(yz+1)(zx+1)}.
-\]
-This $t$ is a root of
-\[
-x^2+y^2+z^2+t^2-2(xy+yz+zx+xt+yt+zt)-4xyzt-4=0,
-\]
-which may be rewritten as
-\[
-(x+y-z-t)^2=4(xy+1)(zt+1),\quad
-(y+z-x-t)^2=4(yz+1)(xt+1),\quad
-(z+x-y-t)^2=4(zx+1)(yt+1).
-\]
-Wow! This is equivalent to a Ramanujan move.
-Multiply $4(xy+1)(zt+1)$, $4(yz+1)(xt+1)$, and $(xy+1)^2$, then divide by
-$(xy+1)(yz+1)(zx+1)$ to obtain that $(xy+1)(yt+1)(zt+1)$ is a perfect square.
-Similarly, $(yz+1)(yt+1)(zt+1)$ and $(xz+1)(xt+1)(zt+1)$ are perfect squares.
-Thus every three-element subset is good.
-Now, without loss of generality, let $z\geq x,y$. Then $z\geq t$, so replace $(z,y,x)$ by $(t,y,x)$.
-At every step the maximal element decreases, until eventually $t=0$.
-It follows, by arguing correspondingly, that $xy+1$, $yz+1$, and $zx+1$ are perfect squares.
-\emph{Quite dangerously done.}
-% Author check: multiplication factors do not algebraically match stated target; descent nonnegativity/strictness omitted in source.
 
-I recently created another problem for you!
+
+Here is another problem.
 \paragraph{Challenge.}
 For $a_1,\ldots,a_n,x,y\in\mathbb N$, prove the following system has solutions if and only if $x=y$:
 % Source page 10 - right
@@ -375,10 +323,10 @@ a_1^x+\cdots+a_n^x=b^x,\qquad a_1^y+\cdots+a_n^y=b^y,
 \]
 where $b$ is a natural number.
 
-\subsection{Calculus---oh, not again!}
+\subsection{An exponential Diophantine equation}
 \paragraph{IMO (1997).}
 Solve $a^{b^2}=b^a$ in positive integers.
-Let $a\geq b$. The source takes $(a,b)=b$, so $a=bk$.
+Let $a\geq b$ and suppose $\gcd(a,b)=b$, so $a=bk$.
 Then $b^{b^2}k^{b^2}=b^{bk}$ and $k^{b^2}=b^{bk-b^2}$.
 Put $k=b^x$. This gives
 \[
@@ -396,21 +344,20 @@ Thus the only pairs $(a,b)$ are $(1,1),(27,3),(16,2)$.
 Here is a legendary problem due to Paul Erd\H{o}s.
 Each positive integer $a_1,\ldots,a_n$ is less than $1951$, and the least common multiple of any two exceeds $1951$.
 Show $1/a_1+\cdots+1/a_n<1+n/1951$.
-The solution is magical!
+A counting argument gives the bound.
 The number of multiples of $a_i$ in $\{1,\ldots,1951\}$ is $\lfloor1951/a_i\rfloor$, so
 $\sum_i\lfloor1951/a_i\rfloor\leq1951$.
 Since $x-1<\lfloor x\rfloor$, we obtain
 $\sum_i(1951/a_i-1)<1951$, proving the claim.
 
 % Source page 15 - left
-Only Paul Erd\H{o}s could pose these problems! Here is another.
+Here is another problem of Erd\H{o}s.
 \paragraph{Magical solution: Erd\H{o}s--Straus problem.}
 Given $3\mid n+1$, prove that there are integers $x,y,z$ with $4xyz=n(xy+yz+zx)$.
 Take $x=n$, $y=(n-2)/3+1$, and $z=n(n+1)/3$.
-The source celebrates with ``$(\text{Q.E.D.})^\infty$!''
-Solve the problem when $4\mid n+1$. Homework!
+This proves the claim. The case $4\mid n+1$ leads to a related problem.
 
-Let me show more problems with magical solutions. I hope you have understood what that means.
+Two related problems are recorded below.
 \paragraph{Problem 1.}
 Given $\alpha,\beta\in\mathbb Z^+$ and primes $p_1,\ldots,p_n,q$, show that, for every $\alpha$, there exists an $n$ such that
 $p_1^\alpha+p_2^\alpha+\cdots+p_n^\alpha=q^\beta$.
@@ -422,7 +369,6 @@ $x_1,x_2,x_3,y_1,y_2,y_3,z_1,z_2,z_3$ of
 (x_1^2+x_2^2+x_3^2)+(y_1^2+y_2^2+y_3^2)=z_1^2+z_2^2+z_3^2,
 \]
 even if no three of the numbers form a Pythagorean triple.
-I posed these two problems long ago, and both have magical solutions.
-I will not spoil the eagerness and curiosity by revealing them now; perhaps in a later volume. Try them!
+Both admit unexpectedly concise constructions.
 % BLOG-CONTENT-END
 \end{document}

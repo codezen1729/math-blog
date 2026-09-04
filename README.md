@@ -5,14 +5,27 @@
 ## Editing in Overleaf
 
 1. Open the numbered `.tex` file for the post you want to edit. Each is a complete, independently compilable document.
-2. Edit the writing between `% BLOG-CONTENT-BEGIN` and `% BLOG-CONTENT-END`. Keep those two marker lines: the website reads the content between them.
-3. Click **Recompile** for a PDF preview. If Overleaf shows a different post, select your post under **Settings → Compiler → Main document**, or change the filename in `main.tex`.
-4. When ready to make your changes public, choose **Integrations → GitHub → Push Overleaf changes to GitHub**.
-5. GitHub checks the LaTeX and rebuilds the website. A failed build leaves the last successful website online. Publishing progress is in the repository’s **Actions** tab.
+2. To rename it, change the single `\section*{Post title}` line above `% BLOG-CONTENT-BEGIN`. Use ordinary title text rather than a displayed formula. That line is the title used in the blog index, search results, article page, navigation, and browser metadata. You do not need to edit either JSON file in `tools/`, and changing a title does not change the post's stable web address.
+3. Edit the writing between `% BLOG-CONTENT-BEGIN` and `% BLOG-CONTENT-END`. Keep both marker lines: the website reads the content between them.
+4. Click **Recompile** for a PDF preview. If Overleaf shows a different post, select your post under **Settings → Compiler → Main document**, or change the filename in `main.tex`.
+5. When ready to make your changes public, choose **Integrations → GitHub → Push Overleaf changes to GitHub**.
+6. GitHub checks the LaTeX and rebuilds the website. A failed build leaves the last successful website online. Publishing progress is in the repository’s **Actions** tab.
 
 Recompile does not publish. GitHub sync requires an active Premium entitlement. Keep this Overleaf project owner-only if you want only yourself to publish; collaborators can use its GitHub sync button too.
 
 The PDF is a writing preview; the website keeps its own typography and layout. Original manuscript files and the withdrawn Research Statement are not included.
+
+## Shared typesetting and links
+
+Every numbered post loads `styles/blog-preamble.tex`. It supplies the common AMS mathematics and theorem environments, notation commands, colours, figures, captions, TikZ diagrams, plots, and hyperlink support. Put improvements that should apply to every PDF in that shared preamble; do not copy a long list of `\usepackage` or `\newtheorem` declarations into each post.
+
+To link naturally to another entry in both the PDF preview and the website, write
+
+```tex
+\BlogPost{complex-differentiation}{Complex Differentiation}
+```
+
+The first argument is the destination's stable slug—the part after `#/post/` in its web address—and the second is the visible wording. The publishing check rejects an unknown slug or a blank label instead of creating a broken link. Ordinary external links continue to use `\href{https://example.org}{visible wording}`.
 
 ## Project contents
 

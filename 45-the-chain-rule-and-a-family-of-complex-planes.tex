@@ -5,7 +5,7 @@
 \begin{document}
 \section*{The Chain Rule and a Family of Complex Planes}
 % BLOG-CONTENT-BEGIN
-Given a manifold \(M\), local coordinates \((U,x_1,\ldots,x_n)\) tell us the whereabouts of points in \(U\). Directions, however, cannot be represented in terms of the \(x_i\). That luxury is available only in Euclidean spaces such as \(\mathbb R^n\), where \(x_i\) is projection onto the \(i\)-th coordinate. There, moving in the \(i\)-th coordinate means moving in the direction \(x_i\). To say something similar on a manifold, we introduce \emph{tangent spaces}.
+Given a smooth manifold \(M\), a coordinate chart \((U,x_1,\ldots,x_n)\) assigns coordinates to points of \(U\). At each \(p\in U\), the corresponding coordinate tangent vectors \(\left.\partial/\partial x_i\right|_p\) form a basis of the tangent space \(T_pM\).
 
 If a path allows us to associate a direction coherently at every point, for instance a smooth curve \(\gamma:[0,1]\to M\), then \(\gamma'(t)\) is a point of \(T_{\gamma(t)}M\cong\mathbb R^n\).
 \begin{figure}[H]\centering
@@ -21,7 +21,7 @@ By identifying \(\gamma'(t)\) with a vector in \(\mathbb R^n\), one can associat
 % Source page 2
 As in \(\mathbb R^n\), moving in the \(i\)-th coordinate on \(M\), or moving along \(x_i\), means moving only along \(x_i\): the rate of change along \(x_j\), for \(j\ne i\), is zero. Thus
 \(\{\left.\partial/\partial x_i\right|_p\}_{i=1}^n\) is an appropriate basis for \(T_pM\).
-After a first course in differential geometry, this is made precise: one says that one is going in the direction \(x_i\) if
+One possible formulation uses Lie derivatives: one says that one is going in the direction \(x_i\) if
 \[
 L_{\chi_j}(\widetilde\gamma)=0\quad(j\ne i),\qquad
 \chi_j(p)=\left.\frac{\partial}{\partial x_j}\right|_p.
@@ -35,7 +35,7 @@ If the coordinates change from \((U,x_1,\ldots,x_n)\) to \((U,y_1,\ldots,y_n)\),
 \]
 The simplest way to find this change of basis is to evaluate both sides on \(y_k\). This gives \(a_k=\partial y_k/\partial x_i\); the matrix is
 \(\bigl(\partial y_k/\partial x_i\bigr)_{1\le i,k\le n}\).
-Changing coordinates is therefore no trouble: this matrix acts like a dictionary!
+This matrix is the change-of-basis matrix between the two coordinate frames.
 
 % Source page 3
 The same can be done for complex manifolds. On a real or complex manifold, the directions along \(\gamma(t)\) are
@@ -45,22 +45,22 @@ The same can be done for complex manifolds. On a real or complex manifold, the d
 \]
 where \(TM\) is the tangent bundle.
 
-There is a dual notion to navigation on a manifold: \emph{obstruction}. Suppose the curve moves in the direction
+Covectors provide a dual way to measure tangent directions. Suppose the curve moves in the direction
 \[
 \gamma_1'(t)\left.\frac{\partial}{\partial x_1}\right|_{\gamma(t)}
 +\gamma_2'(t)\left.\frac{\partial}{\partial x_2}\right|_{\gamma(t)}.
 \]
-To know what obstructs \(\gamma\) from moving purely in the \(x_1\)-direction, we must retrieve the extra luggage
-\(\gamma_2'(t)\left.\partial/\partial x_2\right|_{\gamma(t)}\), which is \emph{misdirecting} its flow.
-To study flow, or navigation, we looked naturally at functions \(\gamma:\mathbb R\to M\). To study its dual, obstruction, focus instead on \(f:M\to\mathbb R\), \(f\in C^\infty(M)\).
+The covector \(dx_2\) extracts the \(x_2\)-component
+\(\gamma_2'(t)\left.\partial/\partial x_2\right|_{\gamma(t)}\) of the tangent vector.
+Curves \(\gamma:\mathbb R\to M\) describe motion, whereas smooth functions \(f:M\to\mathbb R\) yield covectors through their differentials.
 
 Define the differential of \(f\) at \(p\) by \(df_p(v)=v_p(f)\), where \(v\in T_pM\). Thus \(df_p\) is a covector: it is a linear functional on \(T_pM\), given by evaluation. The family \(\{dx_i\}_{i=1}^n\) is a smooth coframe on \(U\), so
 \[
-df_p=a_i(p)(dx_i)|_p,\qquad
+df_p=\sum_{i=1}^n a_i(p)(dx_i)|_p,\qquad
 a_i(p)=df_p\left(\left.\frac{\partial}{\partial x_i}\right|_p\right)
 =\left.\frac{\partial f}{\partial x_i}\right|_p.
 \]
-Consequently \(df_p=\left.(\frac{\partial f}{\partial x_i}\,dx_i)\right|_p\).
+Consequently \(df_p=\left.\sum_{i=1}^n\frac{\partial f}{\partial x_i}\,dx_i\right|_p\).
 
 % Source page 4
 Since \(\partial f(p)/\partial x_i\) is smooth, \(df\) is a smooth covector field. Set \(f=x_2\). Then
@@ -72,13 +72,13 @@ df_{\gamma(t)}\bigl(\gamma'(t)\bigr)
 \]
 The obstruction to the flow \(\gamma(t)\) along \(x_2\) is therefore given by
 \((dx_2)_{\gamma(t)}(\gamma'(t))\), and \(df_p\in T_p^*M\), the dual tangent space.
-Flows and obstructions can be discussed using the two bundles \(TM\) and \(T^*M\) hovering over the manifold.
+Tangent vectors and covectors are organized globally by the bundles \(TM\) and \(T^*M\).
 
 Let us now combine flow and obstruction. For a smooth curve \(\gamma:J\to M\) and \(f:M\to\mathbb R\), \(f\in C^\infty(M)\), one has
 \[
 (f\circ\gamma)'(t)=df_{\gamma(t)}\bigl(\gamma'(t)\bigr).
 \]
-In plain English, the obstruction to \(\gamma(t)\) along \(f\) is the same as the flow of \(f\circ\gamma\). In modest terms, the chain rule chains together flows and obstructions in a very intricate manner! Let us see what more it can offer.
+Thus the derivative of \(f\circ\gamma\) is obtained by applying the covector \(df\) to the tangent vector \(\gamma'\). The same chain rule also controls Wirtinger derivatives.
 
 % Source page 5
 For \(f:\mathbb C\to\mathbb C\), viewed as a map \(\mathbb R^2\to\mathbb R^2\), we know
@@ -172,6 +172,6 @@ d\bigl((\mathbb C,\mu_h),(\mathbb C,\mu_f)\bigr)
 
 % Source page 8
 This \(d\) is called the \emph{Teichm\"uller distance} between the complex planes. The chain rule therefore also tells us when a family of complex planes is close to our complex plane.
-In these two ways, the chain rule quite literally chains together concepts and structures!
+Thus the chain rule controls both the composition of Beltrami coefficients and the resulting distance between complex structures.
 % BLOG-CONTENT-END
 \end{document}

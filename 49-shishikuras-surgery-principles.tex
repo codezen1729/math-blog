@@ -9,15 +9,15 @@ Surgery is needed because we want to change the parameters of dynamics while kee
 \setcounter{theorem}{47}\begin{lemma}[Key lemma for surgery]
 If a quasiregular map \(\widetilde f\) satisfies \(\widetilde f^*\mu=\mu\) for a Beltrami form \(\mu\), then \(\widetilde f\) is quasiconformally conjugate to a holomorphic function. That is, there is a \(K\)-quasiconformal map \(\varphi\) such that \(\varphi\circ\widetilde f\circ\varphi^{-1}\) is holomorphic.
 \end{lemma}
-There are essentially two forms of surgery: \emph{soft surgery} and \emph{cut-and-paste surgery}. The former is mostly used to obtain a parametrized family of deformed rational maps, to construct something very specific and unrelated to the dynamics of the original map. Soft surgery is more like a postmortem, performed purely for purposes demanded elsewhere. Two instances are:
+There are two broad forms of surgery: \emph{soft surgery} and \emph{cut-and-paste surgery}. Soft surgery is used primarily to construct a parametrized family of deformed rational maps for an external purpose, rather than to model the original dynamics directly. Two instances are:
 \begin{itemize}
 \item The multiplier map \(\Lambda:\widetilde\Omega\to\mathbb D^*\) of a hyperbolic component of \(\mathcal M\) is a conformal isomorphism.
 % Source page 2
 \item A rational map \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) of degree at least two has no wandering domain.
 \end{itemize}
 % Author check: Source page 1 uses a punctured-disc target for the multiplier map and a decorated Omega without defining it here; retained.
-In both cases, the dynamics of some \(g\) was deformed to obtain a family of maps, used strategically to establish the statements.
-Cut-and-paste surgery, by contrast, is about the dynamics of \(f\), usually studying it by modelling it through deformations.
+In both cases, deforming the dynamics of a map \(g\) produces a family used to establish the stated result.
+Cut-and-paste surgery instead studies the dynamics of \(f\) through a deformed model.
 Either way, we must reach a stage where the surgery lemma applies. The following fundamental principles guide us by showing when surgery can be conducted.
 
 \Needspace{15\baselineskip}
@@ -42,7 +42,7 @@ Put \(\mu=\psi^*\widetilde\mu\) and spread it across the sphere. On \(f^{-n}(U)\
 \|\mu\|_\infty\le k=\frac{K-1}{K+1},
 \qquad K=K_\psi K_H^{p-1}K_f^N,
 \]
-where \(K_\psi,K_f\) are defined like \(K_H\).
+where \(K_\psi,K_f\) are defined analogously to \(K_H\).
 This is well-defined since
 \[
 U\subseteq f^{-1}(U)\subseteq f^{-2}(U)\subseteq\cdots
@@ -95,7 +95,7 @@ If \(\operatorname{GO}(z)\cap X\ne\varnothing\), choose
 \]
 Again \(\mu\) is measurable, and hence it is measurable on \(\widehat{\mathbb C}\).
 % Author check: Source page 5 infers global measurability from measurability on each grand orbit, without addressing the uncountable partition; retained.
-The source expresses its modulus by a chain of pullbacks,
+Its modulus is controlled by the following chain of pullbacks:
 \[
 |\mu(w)|=(f^{p_1})^*\circ f^*\circ(f^{p_2})^*\circ f^*
 \circ\cdots\circ(f^{p_{N'}})^*\circ f^*(\mu_0).

@@ -29,7 +29,7 @@ Checking that this is well-defined is important and not so difficult. Let \(f\in
 \]
 Thus, our definition is independent of the domain and the specific choice of rectifiable curve.
 
-But even now, functions integrated on different equivalence classes would yield different values. Let us eliminate this possibility too by demanding our domain \(U\) to be simply connected. Note here that if \(\gamma:[0,1]\to U\) is any closed curve, then
+Integrating a holomorphic function over curves in different homotopy classes can yield different values. To make every closed-curve integral vanish, assume that \(U\) is simply connected. Note here that if \(\gamma:[0,1]\to U\) is any closed curve, then
 \[
   \int_\gamma f(z)\,dz=0.
 \]
@@ -99,13 +99,13 @@ For \(z\) close to \(z^*\),
   |F(z)|\le \int_{\gamma_{z^*\to z}}|f(z)|\,dz
   \qquad\text{in }B_\varepsilon(z^*)\subset U.
 \]
-Thus, \(F\) is bounded near \(z^*\) and \(z_0\). By a similar argument, we can conclude that \(F\) vanishes on contours that are closed. By Morera, \(F\in H(U)\), and therefore \(F'=f\in H(U)\).
+Thus, \(F\) is bounded near \(z^*\) and \(z_0\). By a similar argument, the integral of \(F\) over every closed contour vanishes. By Morera, \(F\in H(U)\), and therefore \(F'=f\in H(U)\).
 
 Replacing \(f\) with \(g\), we see that \(g(z)=\frac{H(z)-H(z_0)}{z-z_0}\)
 is holomorphic on \(U\).
 
 \textbf{Note.}
-The reason we yearn for uniform continuity is that the image of a Cauchy sequence is Cauchy: if \(x_n\to x\), then \(f(x_n)\to f(x)\); moreover, if \(y_n\to x\), then \(f(y_n)\to f(x)\). This property helps us extend functions and fill gaps in their domains.
+Uniform continuity is useful here because the image of a Cauchy sequence is Cauchy: if \(x_n\to x\), then \(f(x_n)\to f(x)\); moreover, if \(y_n\to x\), then \(f(y_n)\to f(x)\). This property helps us extend functions and fill gaps in their domains.
 
 Finally, for any closed curve \(\gamma\) in \(U\), with \(z_0\notin\gamma([0,1])\), we have
 \[
@@ -117,10 +117,7 @@ This terse generalization of the Cauchy Integral Formula leaves us with a rather
   \frac{1}{2\pi i}\int_\gamma\frac{dz}{z-z_0},
   \qquad z_0\notin\gamma([0,1]).
 \]
-The reason we think so is that, given any continuous closed curve (let us assume injectivity for simplicity), we intuitively have an
-
-
-idea of what is ``inside'' \(\gamma\) and what is outside. Let
+The reason we think so is that, given any continuous closed curve (let us assume injectivity for simplicity), we intuitively have an idea of what is ``inside'' \(\gamma\) and what is outside. Let
 \[
   \operatorname{dist}(z_0,\gamma):=\inf_t|z_0-\gamma(t)|=d>0.
 \]
@@ -153,22 +150,19 @@ Therefore,
 \]
 Now we know what the interior of a closed polygonal, simple path is. Thus, if \(z_0\) is in the interior,
 \[
-  \int_{\gamma_P}\frac{dz}{z-z_0}=1
+  \frac{1}{2\pi i}\int_{\gamma_P}\frac{dz}{z-z_0}=1
 \]
 by the Cauchy Integral Formula, and if \(z_0\) is in the exterior of \(\gamma_P\), then
 \[
-  \int_{\gamma_P}\frac{dz}{z-z_0}=0
+  \frac{1}{2\pi i}\int_{\gamma_P}\frac{dz}{z-z_0}=0
 \]
 by Cauchy's theorem. Hence,
 \[
-  \int_\gamma\frac{dz}{z-z_0}
-  =\int_{\gamma_P}\frac{dz}{z-z_0}
+  \frac{1}{2\pi i}\int_\gamma\frac{dz}{z-z_0}
+  =\frac{1}{2\pi i}\int_{\gamma_P}\frac{dz}{z-z_0}
   =1\text{ or }0,
 \]
-based on where \(z_0\) is. There is good reason to believe that this integral captures the notion of interior and exterior. But does this integral
-
-
-also capture the notion of interior and exterior topologically? That is, given any \(z_0\) in the ``interior'' of \(\gamma\), can we also say that there exists \(\varepsilon>0\) such that \(B_\varepsilon(z_0)\) is also in the ``interior'' of \(\gamma\)? The answer is affirmative here too.
+based on where \(z_0\) is. There is good reason to believe that this integral captures the notion of interior and exterior. But does this integral also capture the notion of interior and exterior topologically? That is, given any \(z_0\) in the ``interior'' of \(\gamma\), can we also say that there exists \(\varepsilon>0\) such that \(B_\varepsilon(z_0)\) is also in the ``interior'' of \(\gamma\)? The answer is affirmative here too.
 
 If we define
 \[
@@ -204,7 +198,7 @@ where each \(\gamma_{P_i}\) is simple. Clearly,
 \]
 Partition the curves directly and invoke Goursat to see that
 \[
-  \int_{\gamma_{P_i}}\frac{dz}{z-z_0}=\pm1\text{ or }0,
+  \frac{1}{2\pi i}\int_{\gamma_{P_i}}\frac{dz}{z-z_0}=\pm1\text{ or }0,
 \]
 depending on the orientation of \(\gamma_{P_i}\) and the position of \(z_0\).
 
@@ -224,10 +218,9 @@ and hence
 \[
   e^{-g(t)}=\frac{\gamma(0)-z_0}{\gamma(t)-z_0}.
 \]
-As \(\gamma(0)=\gamma(1)\), \(e^{-g(1)}=1\), and therefore \(g\) is an integer.
+As \(\gamma(0)=\gamma(1)\), \(e^{-g(1)}=1\), and therefore \(g(1)\in2\pi i\mathbb Z\). Hence \(g(1)/(2\pi i)\) is an integer.
 
-\paragraph{Conclusion.}
-The \(1/(2\pi i)\) factor is missing in both proofs.
+
 
 
 So, the mystery is finally resolved: the integral basically computes how many times \(\gamma\) loops or winds around \(z_0\). If it does not, then \(z_0\) is not ``in it,'' and if it does wind around it, then \(z_0\) is ``in it.''
@@ -252,7 +245,7 @@ We have thus far seen that \(\mathbb C\setminus\gamma([0,1])\) has at least two 
   \quad\text{and}\quad
   \{z\mid W_\gamma(z)=0\}.
 \]
-Assume \(\gamma\) to be a simple closed curve. The essential question we now ask is: how many components does \(\mathbb C\setminus\gamma([0,1])\) have? We know that there are at least two. The \emph{Jordan Curve Theorem} states that there are exactly two. That is, the sets
+Assume that \(\gamma\) is a simple closed curve. The essential question we now ask is: how many components does \(\mathbb C\setminus\gamma([0,1])\) have? We know that there are at least two. The \emph{Jordan Curve Theorem} states that there are exactly two. That is, the sets
 \[
   \{z\mid W_\gamma(z)=1\}
   \quad\text{and}\quad
@@ -328,10 +321,10 @@ a contradiction. Hence,
 
 
 Therefore, \(\operatorname{int}(\gamma_P)\subset\operatorname{int}(\gamma).\)
-Now take any point in \(\operatorname{int}(\gamma_P)\), say \(z_0\). Notice that the straight-line path fails to be the candidate because the polygon can be concave. Thus, one must find a way to smooth off these concavities. To do that, one must ask for a classic theorem in polygon theory.
+Now take any point in \(\operatorname{int}(\gamma_P)\), say \(z_0\). A straight-line contraction is not available when the polygon is concave, so the concave vertices must first be removed. To do that, one must ask for a classic theorem in polygon theory.
 
 \subsection*{Two-Ears Theorem}
-An ear is a vertex such that the segment between the vertices adjacent to the vertex is in the polygon. The theorem states that every simple polygon has at least two ears.
+An ear of a polygon is a vertex for which the segment joining its two neighboring vertices lies inside the polygon. The theorem states that every simple polygon has at least two ears.
 
 Thus, for our purposes, note that given \(\gamma_P\), there exist vertices \(v_1,v_2\) of \(\gamma_P\) such that \(\gamma_{v_1\to v_2}\subset\operatorname{int}(\gamma_P)\). Now one can induct on the number of edges. Every triangle, being convex, can be ``contracted'' to any one of its edges via a straight-line homotopy.
 
@@ -347,12 +340,12 @@ The homotopy
 \]
 takes \(\gamma_1+\gamma_2\) to \(\gamma_3\).
 
-Now assume it is true for all polygons with fewer than \(N\) edges. Let \(\gamma_P\) be a polygon with \(N\) edges. We know all polygons with fewer than \(N\) edges can be deformed to any one of their edges. Using the Two-Ears Theorem, split the polygon into two, \(\gamma_{P'}\) and a triangle, with \(\gamma_{a\to b}\) the common edge. Contract \(\gamma_{P'}\) to the edge \(\gamma_{a\to b}\), and similarly do the same for the triangle. If \(H(s,t)\) and \(H'(s,t)\)
+Now assume it is true for all polygons with fewer than \(N\) edges. Let \(\gamma_P\) be a polygon with \(N\) edges. We know all polygons with fewer than \(N\) edges can be deformed to any one of their edges. Using the Two-Ears Theorem, split the polygon into two, \(\gamma_{P'}\) and a triangle, with \(\gamma_{a\to b}\) the common edge. Contract \(\gamma_{P'}\) to the edge \(\gamma_{a\to b}\), and apply the same argument to the triangle. If \(H(s,t)\) and \(H'(s,t)\)
 
 
 denote these homotopies, then \(H(s,t)+H'(s,t)\) is the required one.
 
-Therefore, what we essentially proved is that polygons are null-homotopic because segments are null-homotopic, being a degenerate convex set.
+Therefore polygons are null-homotopic because each segment is a degenerate convex set and hence null-homotopic.
 
 Now let \(\gamma_P\) be any closed polygonal curve. Again, one can write it as a union, or concatenation, of simple closed polygonal curves. Here too, by contracting each \(\gamma_{P_i}\) in
 \[
@@ -379,7 +372,7 @@ Therefore, \(\gamma_2\) avoids the interior of \(\gamma_1\), \(\gamma_1\) avoids
 \]
 
 \textit{Proof.}
-The argument in this case too is very similar to what we gave previously. We have
+The same separation argument used above for $\gamma_P$ and $\gamma$ applies here. We have
 \[
   \gamma_1\cap\gamma_2=\varnothing,
   \qquad
@@ -497,10 +490,7 @@ Recall that, via this technique of local constancy, we established the notion of
   \frac{1}{2\pi i}\int_{P\circ Re^{it}}\frac{dz}{z}
   =\frac{1}{2\pi i}\int_{Re^{it}}\frac{P'(z)}{P(z)}\,dz=0.
 \]
-This contradicts local
-
-
-constancy. Therefore, \(P(z)\) has zeros on a large enough disc.
+This contradicts local constancy. Therefore, \(P(z)\) has zeros on a large enough disc.
 
 \subsection*{Higher-Order Cauchy Integral Formula}
 \[
@@ -545,7 +535,7 @@ If \(\deg(P)>2\), then \(P\) is reducible, which is not possible. Thus \(\deg(P)
 \[
   P(z)=az^2+bz+c.
 \]
-Completing the square, under a suitable linear transform, \(P(z)=z^2+a^2.\)
+After an affine change of variable and rescaling, the quadratic has the form \(P(z)=z^2+a^2.\)
 Therefore,
 \[
   \mathbb C\cong\mathbb R(\sqrt{-a})
@@ -553,11 +543,8 @@ Therefore,
   \cong\mathbb R(\sqrt{-1})
   \cong\mathbb C.
 \]
-Thus, \(x^2+1\) is the natural
+Thus, \(x^2+1\) is the natural choice. The resulting quadratic extension is unique up to isomorphism.
 
-
-choice that there is. The field we constructed is one of its kind!
-
-To be in a position to procure as much geometric information stored in the regularity of a holomorphic function, one must be sound with deformations of curves, because, as we recently saw, one can integrate our holomorphic function on any continuous curve. Moreover, if two curves are homotopic, with the homotopy in the domain of holomorphy of \(f\), then the value of the integral slides via the homotopy from one curve to the other without any change.
+To extract geometric information from a holomorphic function, we need a precise understanding of curve homotopies. Holomorphic functions can be integrated along continuous curves, and the integral is invariant under homotopies that remain in the domain of holomorphy.
 % BLOG-CONTENT-END
 \end{document}

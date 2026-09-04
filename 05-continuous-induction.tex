@@ -10,7 +10,7 @@ Recall strong induction. If a property $P$ is true for $n=1$, and if one can pro
 P\text{ holds for every }k\leq n
 \Longrightarrow P\text{ holds for }n+1,
 \]
-then $P$ holds for $\mathbb N$. There is a way to extend this to an interval $[0,1]$. Naturally, we expect $P$ to hold at $0$. There are many problems in devising the ``induction'' hypothesis for an interval.
+then $P$ holds for $\mathbb N$. There is a way to extend this to an interval $[0,1]$. Naturally, we expect $P$ to hold at $0$. There are several difficulties in devising an ``induction'' hypothesis for an interval.
 
 
 \paragraph{Problem 1.}
@@ -23,11 +23,11 @@ then the induction stops at $0$.
 
 \paragraph{Problem 2.}
 If you demand that, whenever $P$ holds for $t\in[0,1]$, it holds for all \(t'\in(t,t+\delta)\)
-for some $\delta$ depending on $t$, then the induction starts. But after the fact that $P$ holds on $[0,\delta)$, if $t\in[0,\delta)$, what if $\delta_t$ is such that
+for some $\delta$ depending on $t$, then the induction starts. But once $P$ holds on $[0,\delta)$, what if some $t\in[0,\delta)$ has $\delta_t$ such that
 \[
 (t,t+\delta_t)\subset[0,\delta)?
 \]
-The induction would fall dead right there.
+The induction would stop there.
 
 
 \paragraph{Problem 3.}
@@ -42,13 +42,13 @@ P\text{ holds for }t
 \Longrightarrow
 P\text{ holds for every }t'\in(t,t+\delta_t).
 \]
-Then too we have a problem. The induction runs well in this case, but it may not cover $[0,1]$. Start with $0$. The property holds for $0$, hence on $[0,\delta_0)$. It holds for every $t<\delta_0$, hence it holds for $\delta_0$. It then holds in a $\delta_0$-neighborhood of $\delta_0$, and then near the next endpoint, and so on. But the resulting sequence may converge to a point less than $1$. In fact, it may converge to a point arbitrarily close to $0$, in which case we have hardly covered $[0,1]$.
+Then too we have a problem. The induction progresses in this case, but it may not cover $[0,1]$. Start with $0$. The property holds for $0$, hence on $[0,\delta_0)$. It holds for every $t<\delta_0$, hence it holds for $\delta_0$. It then holds in a $\delta_0$-neighborhood of $\delta_0$, and then near the next endpoint, and so on. But the resulting sequence may converge to a point less than $1$. In fact, it may converge to a point arbitrarily close to $0$, in which case we have hardly covered $[0,1]$.
 
 \paragraph{Problem 4.}
 Let us say that the limit point is $\delta_1$. Since the assertion is true for every $\delta<\delta_1$, it holds for $\delta_1$. Start the induction again. We may end up with another limit point $\delta_2$. What if $\delta_2$ is also very close to $0$? In fact, what if the limit point of the sequence $\{\delta_n\}_n$ is very close to $0$?
 
 \paragraph{Problem 5.}
-What if you demand the induction machine never to stop? If you hit a limit point, just keep going ahead. You would keep getting limit points of limit points of limit points, and so on. The crux of the problem is that you simply cannot say, ``just keep going on.'' There is no mathematical way to say that here. Or is there?
+What if we require the induction process never to stop? At a limit point, we would continue from that point, producing iterated limit points. The remaining task is to express this continuation precisely.
 
 
 What do we do? We observe that $[0,1]$ is connected, so first demand that the set of points for which $P$ holds be closed in $[0,1]$. Then proceed as suggested: $P$ holds for $0$, and if $P$ holds for $t\in[0,1]$, then there is a $\delta_t$ such that every point of
@@ -64,7 +64,7 @@ Assume:
 \item $A$ is closed;
 \item if $P$ holds for $t\in A$, then $P$ holds on $(t,t+\delta_t)$.
 \end{itemize}
-A set being closed is a mathematical way of saying that all limit points of limit points of limit points, and so on, remain in the set: now one can say ``keep going on.'' Then $P$ holds on $[0,1]$.
+Closedness ensures that every limit point remains in the set, so the process can continue through limit points. Then $P$ holds on $[0,1]$.
 
 This method is used to prove that $[0,1]$ is compact, which leads to the Heine--Borel theorem. Let us see two other instances of this method.
 
@@ -107,7 +107,7 @@ For the other direction, it is enough to argue that, given any $\varepsilon>0$, 
 \[
 S_P(\gamma)>|\gamma|-\varepsilon.
 \]
-To prove this weakened version, we invoked the fundamental theorem of calculus. Here too we weaken the inequality and prove
+Here we use the same strategy: weaken the target inequality and prove
 \[
 |\gamma|\geq\int_a^b\bigl(|\gamma'(t)|-\varepsilon\bigr)\,dt.
 \]
@@ -231,6 +231,6 @@ F(\gamma(t))-F(\gamma(a))
 \int_{\gamma|_{[a,t]}}f(z)\,dz
 \]
 is \(f(a)(\gamma(t)-\gamma(a))\)
-when $a$ and $t$ are close enough. This linear approximation is usually another standard technique, which we have exploited twice now. We might as well present it.
+when $a$ and $t$ are close enough. This is the standard linear-approximation technique.
 % BLOG-CONTENT-END
 \end{document}

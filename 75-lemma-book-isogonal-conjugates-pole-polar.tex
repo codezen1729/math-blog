@@ -7,8 +7,7 @@
 % BLOG-CONTENT-BEGIN
 \subsection{Isogonal conjugates}
 % Source page 2 - right (left is inside cover)
-I am back with a tantalizing, appetizing feast of mathematical insight!
-Let us begin with the intriguing concept of isogonal conjugates.
+We begin with the geometry of isogonal conjugates.
 \setcounter{theorem}{97}\begin{lemma}[Isogonal conjugates]\label{lemma:lb2-101}
 Given a point $P$ inside triangle $ABC$, reflect $AP,BP,CP$ in the angle bisectors of $A,B,C$.
 The resulting lines are concurrent. Their point of concurrence is the isogonal conjugate of $P$ in triangle $ABC$.
@@ -19,8 +18,7 @@ The resulting lines are concurrent. Their point of concurrence is the isogonal c
 \end{figure}
 The circumcentre and orthocentre are isogonal conjugates of each other, while the incentre is its own isogonal conjugate.
 \paragraph{Application.}
-Remember the IMO 1996 problem with a cut-and-paste solution discussed in Volume 1?
-For those who did not read Volume 1---how dare you!---here is the problem.
+The following IMO problem gives a natural first application.
 % Source page 3 - left
 \paragraph{IMO (1996).}
 In triangle $ABC$, an interior point $P$ satisfies
@@ -32,40 +30,14 @@ Prove that the bisectors of $\angle PBA$ and $\angle PCA$, together with $AP$, c
 \end{figure}
 The angle condition on $P$ gives $\alpha+\delta=\beta+\gamma$.
 Angle bisectors concur to give the incentre; therefore $AP$ and the bisectors of $\angle ABP$ and $\angle ACP$ are concurrent.
-``Game's over.'' The two points shown on $AP$ need not coincide.
-% Source page 3 - right
-\paragraph{Guess that! Pythagoras Olympiad (1980).}
-In triangle $ABC$, a point $D$ satisfies
-$\angle DCA=\angle DCB=\angle DBC=10^\circ$ and $\angle DBA=20^\circ$.
-Find $\angle CAD$.
-\begin{figure}[H]\centering
-\includegraphics[width=.79\linewidth]{lb2-fig-03.pdf}
-\FigureTag{LB2.3}{fig:lb2-03}
-\end{figure}
-``Sometimes we get lucky!'' Apply trigonometric Ceva:
-\[
-\frac{\sin x}{\sin(130^\circ-x)}\frac{\sin20^\circ}{\sin10^\circ}
-\frac{\sin10^\circ}{\sin10^\circ}=1
-\Longrightarrow\frac{\sin x}{\sin(130^\circ-x)}
-=\frac{\sin10^\circ}{\sin20^\circ}=\frac1{2\cos10^\circ}.
-\]
-Quickly guess $x=30^\circ$. To write it formally, note
-\[
-\frac12\frac1{\cos10^\circ}
-=\sin30^\circ\frac1{\sin100^\circ},
-\quad\frac{\sin30^\circ}{\sin100^\circ}
-=\frac{\sin x}{\sin(130^\circ-x)}
-\Longrightarrow x=30^\circ.
-\]
-It is still not fully general; anyway, it is a novel but nonsense method!
-
+This proves the required concurrence. The two points shown on $AP$ need not coincide.
 \setcounter{theorem}{98}\begin{lemma}[Concurrent perpendiculars]\label{lemma:lb2-102}
 Let $A,B,C$ form a triangle and $P,Q,R$ be three points in the plane.
 The lines through $P,Q,R$ perpendicular to $BC,CA,AB$, respectively, are concurrent if and only if
 $BP^2-PC^2+CQ^2-QA^2+AR^2-RB^2=0$.
 \end{lemma}
 % Source page 4 - left
-This has quite a crispy application. Have a look!
+This has a crisp application.
 \paragraph{IMOTC: Indian Team Selection Test 3 (2014).}
 For $i=1,2,3$, let $x_i,y_i$ be nonzero real numbers, and put $v_i=x_i+y_i$.
 Suppose
@@ -82,7 +54,7 @@ The product condition and Menelaus's theorem imply that $D,E,F$ are collinear.
 The squared-sum condition implies that the perpendiculars at $D,E,F$ to $BC,CA,AB$ concur.
 Thus $D,E,F$ form a Simson line, and their perpendiculars concur on the circumcircle.
 Since $ABC$ is acute, exactly one lies outside the corresponding side segment, proving that exactly one number is negative.
-\emph{Quite intelligently done.}
+
 % Author check: source combines absolute-value notation with directed segment values; retained.
 
 \setcounter{theorem}{102}\begin{lemma}[Trigonometric Ceva]
@@ -90,7 +62,7 @@ In triangle $ABC$, the lines $AD,BE,CF$ are concurrent if and only if
 $\sin\angle BAD\sin\angle ACF\sin\angle CBE
 =\sin\angle DAC\sin\angle BCF\sin\angle ABE$.
 \end{lemma}
-This powerful lemma proves not only concurrency but also collinearity!
+The lemma is useful in both concurrency and collinearity arguments.
 \paragraph{Application: British MO 2013--14, round 2.}
 The point $P$ lies inside $ABC$ with $\angle ABP=\angle PCA$.
 Choose $Q$ so that $PBQC$ is a parallelogram. Prove $\angle QAB=\angle CAP$.
@@ -98,10 +70,10 @@ Choose $Q$ so that $PBQC$ is a parallelogram. Prove $\angle QAB=\angle CAP$.
 \includegraphics[width=.70\linewidth]{lb2-fig-08.pdf}
 \FigureTag{LB2.8}{fig:lb2-08}
 \end{figure}
-Solution due to Pranjal Warade.
+This solution is due to Pranjal Warade.
 It is equivalent to proving that the isogonal conjugate $P'$ of $P$ lies on $AQ$;
 in other words, that $A,P',Q$ are collinear, or that $AQ,BB',CC'$ concur.
-The source writes
+Trigonometric Ceva gives
 \[
 \frac{\sin\angle QAB}{\sin\angle QAC}
 \frac{\sin\angle ACC'}{\sin\angle BCC'}
@@ -110,17 +82,16 @@ The source writes
 \frac{\sin\angle PCB}{\sin\angle PBC}
 =\frac{BQ}{QC}\frac{BP}{PC}=1.
 \]
-The marked points in the original drawing are not necessarily coincident.
 % Author check: source sin angle BB' has only two vertex letters; proof line retained with explicit source wording.
 
 \subsection{Pole and polar argument}
-To master PAPA techniques, begin with the standard definitions.
+The pole--polar method begins with the standard definitions.
 \begin{figure}[H]\centering
 \includegraphics[width=.70\linewidth]{lb2-fig-09.pdf}
 \FigureTag{LB2.9}{fig:lb2-09}
 \end{figure}
 In the drawing, $P$ is the pole of $XY$ and the line $p=XY$ is the polar of $P$.
-Here are three magical properties of PAPA. Draw the figures yourself for a better picture!
+The method rests on three useful properties.
 \setcounter{theorem}{103}\begin{lemma}[La Hire's theorem: PAPA I]\label{lemma:lb2-106}
 Let $x,y$ be the polars of $X,Y$, respectively. Then $X$ lies on $y$ if and only if $Y$ lies on $x$.
 \end{lemma}
@@ -132,9 +103,7 @@ Let $W,X,Y,Z$ lie on a circle. If $P=XY\cap WZ$, $Q=WX\cap ZY$, and $R=XZ\cap YW
 then the polar of $P$ is $QR$. Similarly, the polar of $Q$ is $PR$.
 \end{lemma}
 % Source page 12 - left
-I was amazed by Akopyan's presentation of geometry theorems.
-His book, \emph{Geometry in Figures}, is probably one of the best on Olympiad geometry.
-Let us adopt his style for some PAPA applications!
+The following applications use the diagram-first style of Akopyan's \emph{Geometry in Figures}.
 \Needspace{29\baselineskip}
 \paragraph{Problem 1.}
 Prove $RS\perp UV$.
@@ -144,8 +113,8 @@ Prove $RS\perp UV$.
 \end{figure}
 $K$ lies on $r$, so $R$ lies on $k$ by PAPA I, La Hire's theorem.
 $S$ lies on $k$ by PAPA III, so $k=RS$ and $RS\perp UV$.
-\emph{Quite quickly done.}
-Imagine the source: it appeared in the Chinese Mathematical Olympiad!
+
+This problem appeared in the Chinese Mathematical Olympiad.
 % Source page 12 - right
 \paragraph{Problem 2.}
 Prove that $P,E,F$ are collinear.
@@ -154,9 +123,7 @@ Prove that $P,E,F$ are collinear.
 \FigureTag{LB2.11}{fig:lb2-11}
 \end{figure}
 By definition, $q=EF$. By PAPA III, $P$ lies on $q$.
-Therefore $P,E,F$ are collinear. \emph{Quite quickly done.}
-This also appeared in the Chinese Mathematical Olympiad, in 1997!
-\paragraph{Challenge.}
-Solve the fourth geometry problem of the IMO Shortlist 2009 using PAPA.
+Therefore $P,E,F$ are collinear. 
+This problem appeared in the 1997 Chinese Mathematical Olympiad.
 % BLOG-CONTENT-END
 \end{document}

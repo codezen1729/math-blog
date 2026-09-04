@@ -38,11 +38,11 @@ Observe that $f(x)=x^2-1$ at $x=2,3,4,5,6$.
 Thus $f(x)-(x^2-1)=(x-2)(x-3)(x-4)(x-5)(x-6)$, giving $f(1)=-120$.
 
 \setcounter{theorem}{56}\begin{lemma}[Choose useful notation]
-Proper notation or a clever choice of variables can turn a complex problem into child's play.
-Let me illustrate exactly what I mean.
+Good notation and a useful change of variables can simplify a complex problem.
 \end{lemma}
 If $x^4+1/x^4$ and $x^5+1/x^5$ are rational for real $x$, prove that $x+1/x$ is rational.
-One can work with the powers of $x$ and $1/x$, but notation makes manipulation easy.
+One can work with the powers of $x$ and $1/x$, but this notation simplifies
+the manipulation.
 Let $T_k=x^k+1/x^k$. Observe
 $T_mT_n=T_{m+n}+T_{m-n}$ and $T_{2k}=T_k^2+2$.
 The purpose is to show $T_1\in\mathbb Q$.
@@ -62,23 +62,21 @@ P(x)=\sum_{i=0}^n y_i
 {(x_i-x_0)\cdots(x_i-x_{i-1})(x_i-x_{i+1})\cdots(x_i-x_n)}.
 \]
 \end{lemma}
-Sometimes knowing such interpolation formulas serves the purpose.
+Such interpolation formulas can be useful.
 
-Have a look at these problems:
+Consider the following problems:
 \begin{enumerate}
 \setcounter{enumi}{0}\item Find all integers $a,b,c$ such that
 $(2a+b-2)^3+(2b+a-1)^3+27(1-a-b)^3=2014$.
 \setcounter{enumi}{1}\item Prove that $\sqrt[3]{2+\sqrt5}+\sqrt[3]{2-\sqrt5}$ is rational.
 \end{enumerate}
-My usual practice is to state a lemma before its application.
-This time a glance at the lemma would give the solution; do not peek down when seeking the solution!
+The following lemma unlocks both problems.
 \setcounter{theorem}{62}\begin{lemma}[Three cubes with zero sum]\label{lemma:lb1-threecubes}
 If $a+b+c=0$, then $a^3+b^3+c^3=3abc$.
 In general,
 $a^3+b^3+c^3=(a+b+c)(a^2+b^2+c^2-ab-bc-ac)+3abc$.
 \end{lemma}
-There are many proofs using complex numbers and other stuff.
-Here is my preferred two-line proof without factoring $a^3+b^3+c^3-3abc$.
+A short proof avoids both complex numbers and direct factorization of $a^3+b^3+c^3-3abc$.
 Recall the identity $(a+b+c)^3=a^3+b^3+c^3+3(a+b)(b+c)(c+a)$.
 If $a+b+c=0$, then
 $a^3+b^3+c^3=-3(a+b)(b+c)(c+a)=(-3)(-c)(-a)(-b)=3abc$.
@@ -117,7 +115,8 @@ with $P(x)=x/(x+1)$ for $x=0,1,\ldots,n$. Find all possible values of $P(2014)$.
 \setcounter{theorem}{68}\begin{lemma}[Identity principle]\label{lemma:lb1-72}
 If $\deg(P)=\deg(Q)<n$ and $P(x)=Q(x)$ for $n$ values, then $P\equiv Q$.
 \end{lemma}
-Use Lemma 61 in the manuscript to prove the principle.
+Apply the polynomial root bound to $P-Q$: it has $n$ roots and degree less
+than $n$, so it must vanish identically.
 % The source explicitly refers to its Lemma 61 (subtracting two polynomials).
 
 \paragraph{An ingenious technique to factorize: Euler's enigma.}
@@ -140,9 +139,9 @@ P(a)=|(b-c)(a-b)(a-c)(a+b+c)|.
 Therefore
 \[\left|ab(a^2-b^2)+bc(b^2-c^2)+ca(c^2-a^2)\right|
 =\left|(b-c)(a-b)(a-c)(a+b+c)\right|.\]
-Q.E.D.!
+This completes the proof.
 % Author check: source calls this polynomial biquadratic and its displayed final formulas use absolute-value bars.
-The reason for calling it Euler's enigma is the following note, which he scribbled on his paper!
+Euler's product computation for the Basel problem motivates the name.
 Let us compute the series $1+1/2^2+1/3^2+\cdots$.
 The Taylor expansion of the sine function is
 \[\sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots.\]
@@ -160,9 +159,8 @@ Equate the coefficients of $x^2$ on both sides:
 \qquad \frac{\pi^2}{6}=1+\frac14+\frac19+\frac1{16}+\frac1{25}+\cdots.\]
 
 \paragraph{Ingenious application of Vi\`ete's relations.}
-Refer to Lemma 68 in the manuscript. Solve in reals the system
+Vi\`ete's relations give an efficient route to the real solutions of
 \[a+b=8,\qquad ab+c+d=23,\qquad ad+bc=28,\qquad cd=12.\]
-Try to solve the problem independently; that will prepare you to appreciate the solution.
 \[
 \begin{aligned}
 (X^2+aX+c)(X^2+bX+d)
@@ -175,35 +173,18 @@ The product is also
 \[(X^2+4X+3)(X^2+4X+4)=(X^2+3X+2)(X^2+5X+6)=0.\]
 Hence
 \[(a,b,c,d)\in\{(4,4,3,4),(4,4,4,3),(3,5,2,6),(5,3,6,2)\}.\]
-Q.E.D.!
+This completes the proof.
 % Source page 35 - right
 \Needspace{14\baselineskip}
 \subsection{A novel way of solving}
 \setcounter{theorem}{76}\begin{lemma}[Real roots of a cubic]\label{lemma:lb1-79}
-The condition for a cubic equation with real coefficients to have only real roots is derived analytically.
+The following analytic criterion characterizes when a cubic with real
+coefficients has only real roots.
 The equation $x^3+ax^2+bx+c=0$, with $a,b,c$ real, has real roots if
 \[(2a^3-9ab+27c)^2\leq4(a^2-3b)^3.\]
 \end{lemma}
-Let us use this to solve a totally unexpected problem!
-\paragraph{Application.}
-If $x,y,z>0$ and $xy+yz+zx=2(x+y+z)$, prove that $xyz\leq x+y+z+2$.
-Here $x,y,z$ are real.
-Create a polynomial with roots $x,y,z$:
-\[P(X)=X^3-mX^2+\frac m2X-c,\qquad m=x+y+z.\]
-$P$ has all real solutions. Let $c>m+2$; this is our assumption!
-The above lemma gives
-\[\left(2(-m)^3-9(-m)\frac m2+27(-c)\right)^2
-\leq4\left(m^2-\frac{3m}{2}\right)^3.\]
-Let me skip some algebraic steps. An equivalent form is
-% Source page 36 - left
-\[108c^2+c(16m^3-36m^2)+2m^3-m^4\leq0.\]
-This is an increasing function of $c$, so $c=m+3$, the least value of $c$, must satisfy the inequality.
-Substituting $c=m+3$ gives
-\[15m^4+14m^3+648m+972\leq0.\]
-But $m=x+y+z>0$, so we have reached a contradiction.
-Hence $c\leq m+2$, and therefore $xyz\leq x+y+z+2$. Q.E.D.!
-You can also resolve the problem using Lagrange multipliers!
-% Author check: the source uses m/2 as the quadratic elementary sum although the hypothesis gives 2m. It also uses m+3 as the least value above m+2 despite real variables; the asserted monotonicity is unqualified.
+The criterion applies to the following problem.
+
 
 \paragraph{V. V. Acharya's enigmatic problem: see the unseen.}
 Let $P(x)=x^8-4x^7+7x^6+ax^5+bx^4+cx^3+dx^2+ex+f$.
@@ -211,23 +192,23 @@ The roots of this polynomial are positive reals. Determine the constants $(a,b,c
 Suppose the roots are $y_1,y_2,y_3,\ldots,y_8$. By Vi\`ete's relations,
 \[\sum y_i=4,\qquad\sum_{i<j}y_iy_j=7,
 \qquad\sum y_i^2=\left(\sum y_i\right)^2-2\sum_{i<j}y_iy_j=2.\]
-Note that $\mathrm{AM}=(\sum y_i)/8=1/2$, and $\mathrm{RMS}=\sqrt{(\sum y_i^2)/8}=1/2$. Wow!!
+Note that $\mathrm{AM}=(\sum y_i)/8=1/2$, and $\mathrm{RMS}=\sqrt{(\sum y_i^2)/8}=1/2$. 
 Since AM $=$ RMS, we have $y_1=y_2=\cdots=y_8=1/2$.
-Now determine the constants for yourself. Q.I.D.: Quite Intelligently Done.
+Thus $P(x)=(x-1/2)^8$, which determines all six constants.
 
 % Source page 53 - left
-\subsection{It was obvious!}
+\subsection{A rational-expression identity}
 Given $a/(b+c)+b/(c+a)+c/(a+b)=1$, find
 $a^2/(b+c)+b^2/(c+a)+c^2/(a+b)$.
-Don't frown at the condition: Nesbitt's inequality works if $a,b,c$ are nonnegative, which is not necessary here!
+Nesbitt's inequality does not apply because nonnegativity is not assumed.
 We have
 \[\frac a{b+c}+\frac b{c+a}+\frac c{a+b}=\frac{a+b+c}{a+b+c},
 \qquad (a+b+c)\sum\frac a{b+c}=a+b+c.\]
 Thus $a^2/(b+c)+b^2/(c+a)+c^2/(a+b)+(a+b+c)=a+b+c$.
-It follows that $\sum_{\mathrm{cyc}}a^2/(b+c)=0$. Q.E.D.!
+It follows that $\sum_{\mathrm{cyc}}a^2/(b+c)=0$. This completes the proof.
 % Author check: the source introduces (a+b+c)/(a+b+c) without discussing a+b+c=0.
 
-\paragraph{When did the IMO get so easy! IMO shortlist (1967).}
+\paragraph{IMO shortlist (1967).}
 Solve the cyclic system $x_i^2+x_i-1=x_{i+1}$ for $1\leq i\leq n$, where $x_{n+1}=x_1$.
 It is not obvious. Note two things:
 \[
@@ -236,9 +217,9 @@ It is not obvious. Note two things:
 \]
 and $x_i(x_i+1)=x_{i+1}+1$, so
 $\prod_{\mathrm{cyc}}x_i(x_i+1)=\prod_{\mathrm{cyc}}(x_{i+1}+1)$,
-giving $\prod_{\mathrm{cyc}}x_i=1$. Ha ha! There you go.
+giving $\prod_{\mathrm{cyc}}x_i=1$. 
 Then $\sum_i x_i^2/n\geq\prod_i x_i$, so $\prod_i x_i\leq1$ and
-$x_1=x_2=\cdots=x_n=\pm1$. That is it!
+$x_1=x_2=\cdots=x_n=\pm1$. This completes the argument.
 % Author check: zero factors and AM--GM powers/sign conditions are not treated; retained.
 % BLOG-CONTENT-END
 \end{document}

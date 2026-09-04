@@ -23,9 +23,9 @@ Thus one must look for an invariant of $f$ that is preserved even after a suitab
 \includegraphics[width=.31\textwidth]{cd1-fig-02.pdf}
 \FigureTag{CD1.2}{fig:cd1-02}
 \end{figure}
-Here $\varphi$ changes coordinates, i.e. it biholomorphically changes the base space. One naturally expects the dynamics to be preserved. Investigation along these lines leads us to two natural invariants: fixed points and critical points (check!).
+Here $\varphi$ changes coordinates, i.e. it biholomorphically changes the base space. One naturally expects the dynamics to be preserved. Investigation along these lines leads us to two natural invariants: fixed points and critical points.
 
-We shall base our study entirely on these invariants. Dynamics is essentially the study of taming the iterates of $f$ on sets where minor changes in points lead to major changes in their iterated images. More precisely:
+These invariants organize the study. Dynamics studies the behaviour of the iterates of $f$, especially on sets where small changes in the initial point lead to large changes in its iterated images. More precisely:
 \setcounter{definition}{0}\begin{definition}[Fatou set]
 Let $f\colon S\to S$ be a holomorphic function on a Riemann surface $S$. A point $z$ belongs to the Fatou set $F$ of $f$ if there is a neighbourhood $U$ of $z$ such that $\{f^{\circ n}|_U\}_n$ is normal.
 \end{definition}
@@ -33,7 +33,7 @@ Let $f\colon S\to S$ be a holomorphic function on a Riemann surface $S$. A point
 The set $J=S\setminus F$ is defined to be the Julia set.
 \end{definition}
 % Source page 3
-Motivations aside, when we say that we want to study the dynamics of $f$ on $S$, we essentially want to study the structure of the Fatou and Julia sets of $f$. We propose to do this by studying the invariants mentioned above.
+Motivations aside, when we say that we want to study the dynamics of $f$ on $S$, we essentially want to study the structure of the Fatou and Julia sets of $f$. We do this through fixed points and critical points.
 \setcounter{definition}{2}\begin{definition}[Classification of fixed points]
 A fixed point $f(\widehat p)=\widehat p$ is
 \begin{itemize}
@@ -43,7 +43,7 @@ A fixed point $f(\widehat p)=\widehat p$ is
 \end{itemize}
 Here $f'(\widehat p)$ means the derivative of the coordinate function of $f$.
 \end{definition}
-There is a natural dilemma at this juncture. The dynamics of $f$ and $f^{\circ n}$ must be the same, for if $\{f^{\circ m}|_U\}_m$ is normal, so is $\{f^{\circ mn}|_U\}_m$. Should we merely focus our study on the fixed points and critical points of $f$, or should we pick a suitable iterate $f^{\circ10000}$ and study its critical and fixed points? The following lemmas will help clear this dilemma.
+The Fatou and Julia sets are unchanged when $f$ is replaced by an iterate. The next two lemmas make this precise and explain why periodic points may be studied as fixed points of suitable iterates.
 \setcounter{theorem}{0}\begin{lemma}[Invariance lemma]\label{cd1:invariance}
 $z\in J$ if and only if $f(z)\in J$.
 \end{lemma}
@@ -73,7 +73,7 @@ By the previous lemma, it suffices to show $F(f^{\circ n})=F(f)$. Certainly $z\i
 and this finite union is again compact.
 \end{proof}
 % Source page 5
-It therefore does not matter which iterate of $f$ one chooses to work with: the dynamics loses no information, so there is no compromise. What does it mean to work with fixed points of $f^{\circ m}$?
+Passing to an iterate therefore loses no dynamical information. What does it mean to work with fixed points of $f^{\circ m}$?
 \setcounter{definition}{3}\begin{definition}[Periodic orbits]
 Let $f\colon S\to S$ be holomorphic. An orbit
 $f\colon z_0\mapsto z_1\mapsto\cdots\mapsto z_m=z_0$,
@@ -83,11 +83,11 @@ with all $z_i$ distinct before returning to $z_0$, is called a periodic orbit of
 \]
 often called the multiplier of the orbit.
 \end{definition}
-We shall not deal separately with periodic orbits of different periods. We shall prove theorems for fixed points and expect the reader to extend the argument to their favourite iterate of $f$. As far as we are concerned, our study, as proposed, will be complete by looking at period-$1$ orbits (fixed points) and critical points. Before proceeding further, we explain the classification topologically.
+Results stated for fixed points apply to periodic points after passing to the appropriate iterate. We now describe the classification topologically.
 % Source page 6
 \subsection{Attraction, repulsion, and indifference}
 \paragraph{Attraction: multiplier $|\lambda|<1$.}
-This is usually called topological attraction. Let us first state explicitly the intuitive idea of attraction to a point $\widehat p$. A point $\widehat p\in S$ is said to be attracting if there is a neighbourhood $U$ of $\widehat p$ such that $\{f^{\circ n}|_U\}_n$ converges uniformly on $U$ to the constant map $z\mapsto\widehat p$.
+The following is the topological definition of attraction. Let us first state explicitly the intuitive idea of attraction to a point $\widehat p$. A point $\widehat p\in S$ is said to be attracting if there is a neighbourhood $U$ of $\widehat p$ such that $\{f^{\circ n}|_U\}_n$ converges uniformly on $U$ to the constant map $z\mapsto\widehat p$.
 \begin{figure}[H]\centering
 \includegraphics[width=.40\textwidth]{cd1-fig-03.pdf}
 \FigureTag{CD1.3}{fig:cd1-03}
@@ -100,7 +100,7 @@ Let $\widehat f$ be the coordinate expression of $f$ locally at $\widehat p$, ce
 \[
 |f(z)|\le |\lambda z|+C|z|^2\le (|\lambda|+C|z|)|z|.
 \]
-If $z\in\mathbb D_{r_0}$ is small enough that $|\lambda|+C|z|<1$, then $f$ becomes a contraction mapping, proving what we want.
+If $z\in\mathbb D_{r_0}$ is small enough that $|\lambda|+C|z|<1$, then $f$ becomes a contraction mapping, proving that $0$ is attracting.
 % Source page 7
 One can choose $|\lambda|<c<1$ and $0<r\le r_0$ with $|\lambda|+Cr<c$. In particular, $|\lambda|+C|z|<c<1$ for all $z\in\mathbb D_r$. Hence $|f(z)|<c|z|$, $f(z)\in\mathbb D_r$, and $|f^{\circ n}(z)|<c^n|z|$, so $f^{\circ n}\to(z\mapsto0)$.
 
@@ -132,13 +132,13 @@ Let $U_k$ be the component of $N_k$ containing $\widehat p$. Then $f^{-1}\colon 
 \end{proof}
 % Source page 9
 \paragraph{Indifference: $|\lambda|=1$.}
-This does not have an easy-to-visualise topological picture. We will deal with this case in detail in the post on parabolic points.
+This does not have an easy-to-visualise topological picture. The indifferent case is treated in \BlogPost{parabolic-fixed-points-and-the-flower-theorem}{\emph{Parabolic Fixed Points and the Flower Theorem}}.
 
-Having seen this, let us collect all points $z\in S$ such that $\{f^{\circ n}(z)\}_n$ converges to an attracting point $\widehat p$. This set is called the \emph{basin of attraction} of $\widehat p$. Such basins belong to the Fatou set; repelling points belong to the Julia set, as do indifferent points of certain kinds. Checking that basins of attraction belong to the Fatou set is a rather generic analysis.
+Having seen this, let us collect all points $z\in S$ such that $\{f^{\circ n}(z)\}_n$ converges to an attracting point $\widehat p$. This set is called the \emph{basin of attraction} of $\widehat p$. Such basins belong to the Fatou set; repelling points belong to the Julia set, as do indifferent points of certain kinds. The verification that a basin of attraction lies in the Fatou set is standard.
 
 If $z\in\mathcal A(\widehat p)$, the basin of attraction, then $\{f^{\circ n}(z)\}_n\to z_0$. There is a neighbourhood $U$ of $z_0$ with $U\subset F(f)$, and some $N$ such that $f^{\circ N}(z)\in U$. Hence $f^{\circ N}(z)\in F(f)$, and the invariance lemma gives $z\in F(f)$.
 
-Repelling points are to be placed in the Julia set. Let us introduce a subclass of fixed points, to be taken up in detail later.
+Repelling points lie in the Julia set. Let us introduce a subclass of fixed points, to be taken up in detail later.
 \setcounter{definition}{4}\begin{definition}[Parabolic fixed point]
 A fixed point $f(\widehat p)=\widehat p$ is parabolic if $|f'(\widehat p)|$ is a root of unity and $f^{\circ n}\ne\id$ for every $n$.
 \end{definition}
@@ -158,9 +158,9 @@ Thus $\{f^{\circ n}\}_n$ cannot converge locally uniformly, for then the sequenc
 % Author check: source implicitly uses an iterate with multiplier 1 and divergence in modulus.
 Therefore attracting basins lie in the Fatou set, while repelling and parabolic points belong to the Julia set.
 
-In the next few posts we shall see our initial proposal---studying dynamics through fixed and critical points---in action. For now, let us briefly illustrate it when $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ is rational with $\deg(f)\ge2$.
+Fixed and critical points provide the framework when $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ is rational with $\deg(f)\ge2$.
 \subsection{Dynamics of rational maps on the Riemann sphere}
-We shall see how the Julia set spreads across the sphere, its topological structure, and more.
+We begin with several general features of Julia sets on the sphere.
 % Source page 11
 First things first: is $J$ nonempty?
 \setcounter{theorem}{5}\begin{proposition}[Nonemptiness]\label{cd1:nonempty}
@@ -175,7 +175,7 @@ If $J(f)=\varnothing$, there is a sequence $\{n_j\}_j$ such that $\{f^{\circ n_j
 Define $H\colon I\times\widehat{\mathbb C}\to\widehat{\mathbb C}$ by
 $H(t,z)=\gamma_{g(z)\to f^{\circ n_j}(z)}(t)$, where $\gamma$ is the unique geodesic path between those two points. Since $\gamma_{a\to b}$ is continuous in both $a$ and $b$, $H$ is continuous. Thus $f^{\circ n_j}$ and $g$ are homotopic. By Rouch\'e's theorem, their numbers of zeros and poles must be the same, giving $\deg(f^{\circ n_j})=\deg(g)$. But $\deg(f^{\circ n_j})\to\infty$ as $j\to\infty$, a contradiction.
 \end{proof}
-Before revealing the expansive nature of the Julia set, let us distinguish periodic orbits from eventually periodic orbits.
+We next distinguish periodic orbits from eventually periodic orbits.
 \setcounter{definition}{5}\begin{definition}[Grand-orbit-finite points]
 For $z\in S$, define
 \[
@@ -185,11 +185,11 @@ A point whose grand orbit is finite is called \emph{exceptional}.
 % Source page 12
 The set of all such points is denoted by $\mathcal E(f)$ and called the grand-orbit-finite set. The set $\operatorname{GO}(z,f)$ is the grand orbit of $z$.
 \end{definition}
-The reason for calling $\mathcal E(f)$ grand-orbit-finite is evident. We now state the following lemma.
+Exceptional points are severely constrained:
 \setcounter{theorem}{6}\begin{lemma}\label{cd1:exceptional}
 $|\mathcal E(f)|\le2$. All exceptional points are superattracting.
 \end{lemma}
-\emph{This sounds good! No?!}
+
 \begin{proof}
 For $z\in\mathcal E(f)$, $\operatorname{GO}(z,f)$ is a single periodic orbit; otherwise one can keep tracing back. For any $\widehat z\in\widehat{\mathbb C}$, $f^{-1}(\widehat z)$ has $d$ preimages counted with multiplicity, since
 \[
@@ -219,7 +219,7 @@ If $\operatorname{Int}(J)\ne\varnothing$, there is a point $z$ with a neighbourh
 $J\supseteq\overline{\widehat{\mathbb C}\setminus\mathcal E(f)}=\widehat{\mathbb C}$, giving the assertion.
 \end{proof}
 % Source page 14
-Recall that basins belong to the Fatou set: there open sets shrink, whereas for the Julia set, open sets expand to fill almost all of $\widehat{\mathbb C}$. Let us put these two concepts together.
+Within attracting basins, open sets shrink under iteration, whereas near the Julia set they expand to cover almost all of $\widehat{\mathbb C}$. Let us put these two concepts together.
 \setcounter{theorem}{9}\begin{proposition}[Basin boundary equals Julia set]\label{cd1:boundary}
 If $\mathcal A$ is an attracting basin, then $\partial\mathcal A=J$.
 \end{proposition}
@@ -229,7 +229,7 @@ The Julia set expands open sets around it. If $z\in J$ and $N$ is a neighbourhoo
 Now let $z\in\partial\mathcal A$. Every neighbourhood $N$ of $z$ meets both $\mathcal A$ and $\mathcal A^c$. For $z'\in N\cap\mathcal A$, $f^{\circ n}(z')$ converges to a point, whereas this is not so for $z''\in N\cap\mathcal A^c$. Thus there is a discontinuity (jump) across the boundary, and $\partial\mathcal A\subseteq J$. Therefore $J=\partial\mathcal A$.
 \end{proof}
 \begin{remark}
-This property essentially spells out the nature of the dynamics of $f$. An attracting basin has connected components, or islands, separated by a thin set $J$ (it has no interior). Along with these are the Fatou components of $f$.
+This property essentially spells out the nature of the dynamics of $f$. An attracting basin has connected components, or islands, separated by a thin set $J$ (it has no interior). The connected components of the Fatou set are called the Fatou components of $f$.
 \end{remark}
 % Source page 15
 Let us analyse the topological structure of $J$ further, for the nature of a boundary also reveals what it bounds.

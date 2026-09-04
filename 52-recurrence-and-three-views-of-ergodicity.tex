@@ -6,8 +6,7 @@
 \section*{Recurrence and Three Views of Ergodicity}
 % BLOG-CONTENT-BEGIN
 \subsection{Recurrence Theorems}
-Of all the impositions on a measure-preserving system, the one that is perhaps
-ill-motivated is the demand that $\mu(X)<\infty$. Let's look at why it matters.
+The condition $\mu(X)<\infty$ may initially seem unmotivated; recurrence explains why it matters.
 
 \setcounter{theorem}{3}\begin{theorem}[Poincar\'e recurrence]
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system and let
@@ -16,7 +15,7 @@ $\mu(F)=\mu(E)$ and, for every $x\in F$, $T^n(x)\in E$ for infinitely many
 $n\geq1$.
 \end{theorem}
 \begin{proof}
-Let us first look at sets that escape $E$ in one go:
+First consider the points of $E$ that never return:
 \[
   B:=\{x\in E:T^nx\notin E\text{ for every }n\geq1\}.
 \]
@@ -66,7 +65,7 @@ such results PHP (pigeonhole principle); we call them recurrence theorems.
 
 % Source page 3
 \begin{remark}
-We crucially used the fact that $\mu$ is a bounded measure. This turns out to
+We crucially used the fact that $\mu$ is a finite measure. This turns out to
 be the right analogue of a compact metric-space structure on $X$ in a
 topological dynamical system. Recurrence is an important feature, because
 recurrence is the first emergence of a pattern in a measure-preserving
@@ -74,21 +73,11 @@ system. Thus $\mu$ being a probability measure ensures that no information is
 lost under the transformation $T$ of $X$.
 \end{remark}
 
-\begin{remark}
-Define $T\colon\mathbb R^2\to\mathbb R^2$ by $T(x):=x+1$. Then $T$ is
-$m$-invariant, where $m$ is Lebesgue measure on $\mathbb R^2$. But notice that
-the set $T(\mathbb D)$ escapes to infinity. In such cases we have nothing in
-$\mathbb R$ to compare $\mathbb D$ with: $\mathbb D$ runs off to infinity.
-But if you had a measure-preserving system, $\mathbb D$ would return to itself,
-almost, and hence studying the orbit amounts to studying a finite set of sets
-that have almost-everywhere overlap, providing us with a means to compare!
-\end{remark}
-% Author check: R^2, x+1, R, and the assertions about a finite collection and
-% overlap are the manuscript's notation and claims, retained without repair.
+
 
 \begin{remark}
-Bounded measure need not mean that the set $X$ is bounded, as shall be
-illustrated now.
+A finite measure does not require the set $X$ itself to be bounded, as the
+following example shows.
 \end{remark}
 
 \setcounter{theorem}{4}\begin{lemma}[Another litmus test for measure-preserving systems]
@@ -151,12 +140,12 @@ why it can accommodate unbounded sets in its realm as well.
 \subsection{Ergodicity}
 As far as the behaviour of orbits goes, we know that if $E$ is measurable in
 $X$, then, for almost every $x\in E$, $\{T^{\circ n}(x)\}_n$ returns to $E$
-infinitely often. Let us extend this madness further. Say $x\in X$ and
+infinitely often. We now ask a stronger question. Say $x\in X$ and
 $E\subset X$ is measurable: can we have some sort of recurrence for the orbit
 of $x$, $\{T^{\circ n}(x)\}_n$, if $x\notin E$?
 
 There are some set-theoretic obstructions to such a recurrence, because if
-$T^{-1}(E)=E$, the orbit of $x$ shall not intersect $E$. So let us replace
+$T^{-1}(E)=E$, the orbit of $x$ cannot intersect $E$. So let us replace
 $X$ by $E$ and $E$ by some measurable $F\subseteq E$. Notice immediately that
 we are looking for some sort of irreducibility criterion here.
 
@@ -166,8 +155,7 @@ Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. We say $T$ is
 $\mu(B)=0$ or $\mu(B)=1$.
 \end{definition}
 
-We shall now try to understand ergodicity from three essentially distinct
-perspectives, each revealing an interconnection.
+Ergodicity admits three complementary perspectives.
 
 \Needspace{14\baselineskip}
 \subsubsection{Measure-Theoretic Ergodicity}
@@ -218,7 +206,7 @@ $x\in T^{-n}(B)\setminus B$ to get
   \subseteq\bigcup_{i=0}^{n-1}\bigl(T^{-i}(B)\mathbin\triangle T^{-i-1}(B)\bigr),
 \]
 so $\mu(B\mathbin\triangle T^{-n}(B))=0$.
-Set $C_N=\bigcup_{n=N}^{\infty}T^{-n}(B)$. Then, of course,
+Set $C_N=\bigcup_{n=N}^{\infty}T^{-n}(B)$. Then
 \[
   C_0\supseteq C_1\supseteq C_2\supseteq C_3\supseteq C_4\supseteq\cdots,
   \qquad \mu(C_N\mathbin\triangle B)=0.
@@ -253,8 +241,7 @@ Since the $T^{-n}(A)$ cover $X$ almost everywhere, we have
   \leq\sum_{n=1}^{\infty}\mu(B\cap T^{-n}(A)).
 \]
 Hence there exists $n\geq1$ such that $\mu(B\cap T^{-n}(A))>0$.
-We shall see the relevance of such statements when we introduce the notion
-of mixing systems.
+This criterion also appears in the study of mixing.
 % Author check: the strict inequality after mu(B) is present in the source.
 
 \emph{$(4)\Rightarrow(1)$.} If $T^{-1}(A)=A$, then
@@ -267,7 +254,7 @@ ergodic.
 \end{proof}
 
 \subsubsection{Operator-Theoretic Ergodicity}
-Let us begin by associating an operator $U_T$ to $T$ as follows:
+Associate to $T$ the operator
 \[
   U_T\colon L^2(\mu)\longrightarrow L^2(\mu),\qquad U_T(f):=f\circ T.
 \]
@@ -286,15 +273,15 @@ $\langle f_1,U_T^*U_Tf_2\rangle=\langle f_1,f_1\rangle$, so
 \]
 % Author check: the preceding right-hand inner product reads <f_1,f_1> in
 % the manuscript, although the next deduction uses <f_1,f_2>.
-A standard argument
+Taking the operator norm
 % Source page 9
-would tell you that
+gives
 \[
   \sup_{\substack{\|f_1\|\leq1\\\|f_2\|\leq1}}
   \left|\langle f_1,(U_T^*U_T-\id)f_2\rangle\right|
   =\|U_T^*U_T-\id\|=0.
 \]
-Thus $U_T$ is a unitary operator, which goes by the name \emph{Koopman operator}.
+Thus $U_T$ is a unitary operator, called the \emph{Koopman operator}.
 % Author check: the source concludes "unitary" from U_T^* U_T = id, without
 % an invertibility or surjectivity assumption on T.
 
@@ -331,15 +318,14 @@ Letting $n\to\infty$ shows that $f$ is a constant almost everywhere.
 \end{proof}
 
 \begin{remark}
-Thus ergodicity can be rephrased in operator theory too. Properties possessing
-such translations are called \emph{unitary properties}.
+Thus ergodicity also has an operator-theoretic formulation. This formulation connects ergodicity with spectral properties of the Koopman operator.
 \end{remark}
 
 % Source page 10
 \subsubsection{Fourier-Analytic Ergodicity}
 Here we impose a compact abelian group structure on $X$. Then it has a unique
 translation-invariant measure $m_X$, called the \emph{Haar measure} of $X$.
-We will not prove the existence of $m_X$ here. We shall further assume that,
+Assume the standard character expansion: for
 given $f\in L^2_{m_X}(X)$, we have the following character-theoretic expansion:
 \[
   f(x)=\sum_{\chi\in\widehat X}c_\chi\chi(x),
@@ -376,30 +362,6 @@ imply $\chi\equiv1$. Hence $f$ is a constant, so $T$ is ergodic.
 % Author check: the source's periodicity assertion concerns the coefficients
 % c_{chi o T^n}, rather than explicitly the orbit of the characters.
 
-\begin{remark}
-Having seen ergodicity, it is natural to ask whether we can reduce a
-measure-preserving system into ``ergodic components''. Given any $E\subset X$,
-one has a natural $T$-invariant set $\{T^n(E)\}_{n\in\mathbb Z}$.
-Now $X$ being ergodic assures us that $\{T^n(E)\}_{n\in\mathbb Z}$ covers $X$
-almost everywhere. But if $X$ were not ergodic, there is no apparent reason
-why a subset of $X$ would exist such that $\{T^n(F)\}_{n\in\mathbb Z}$ covers
-$E$ almost everywhere, where $F\subseteq E$. If we hope to use some form of
-Zorn's lemma, the existence of an ergodic subsystem
-$(E,\mathcal B|_E,\mu|_E,T|_E)$ is required. Thus this problem of decomposing
-measure-preserving systems into ergodic components is natural. We shall deal
-with it later.
-\end{remark}
-% Author check: the source refers to the family {T^n(E)} as an invariant set,
-% uses n in Z without assuming invertibility, and omits positive measure here.
 
-\begin{remark}
-Using Proposition~\ref{prop:ergodicity-fourier}---I mean the ideas in it---one
-can prove that the circle-doubling map and the rotation map are ergodic.
-Finally, as the Bernoulli system is isomorphic to the circle-doubling system,
-the Bernoulli shift map is ergodic too. Thus almost all the examples we saw
-are ergodic transformations.
-\end{remark}
-% Author check: no irrationality condition is given for "the rotation map"
-% in this final remark; the wording has been retained.
 % BLOG-CONTENT-END
 \end{document}

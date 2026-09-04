@@ -5,7 +5,7 @@
 \begin{document}
 \section*{Boundary Behaviour of Quasiconformal Maps}
 % BLOG-CONTENT-BEGIN
-Quasiconformal surgery involves, among other things, gluing together quasiconformal maps of different qualities and then returning to conformal maps via the mapping theorem and Weyl's lemma. The surgery mostly alters maps by adding other qualities. One essential construction is appending two quasiconformal maps. Suppose we want to glue \(f_1\), a \(K_1\)-quasiconformal map, to \(f_2\), a \(K_2\)-quasiconformal map, as below.
+Quasiconformal surgery often glues maps with different dilatations and then returns to a conformal model via the mapping theorem and Weyl's lemma. Suppose we want to glue \(f_1\), a \(K_1\)-quasiconformal map, to \(f_2\), a \(K_2\)-quasiconformal map, as below.
 \begin{figure}[H]\centering
 \includegraphics[width=.72\textwidth]{cd11-fig-01.pdf}
 \FigureTag{CD11.1}{fig:cd11-01}
@@ -13,10 +13,10 @@ Quasiconformal surgery involves, among other things, gluing together quasiconfor
 % Source page 2
 Two questions arise:
 \begin{enumerate}
-\setcounter{enumi}{0}\item Can \(f_i\), defined on \(D_i\), be extended with some regularity to \(\partial D_i\)? (Called Question 2 in the source.)
-\setcounter{enumi}{1}\item Can the maps \(\widehat f_i\) on \(\partial D_i\) be extended to a quasiconformal map \(F\) on \(D\), whose boundary is \(\partial D_1\cup\partial D_2\)? (Called Question 1 in the source.)
+\setcounter{enumi}{0}\item Can \(f_i\), defined on \(D_i\), be extended with some regularity to \(\partial D_i\)?
+\setcounter{enumi}{1}\item Can the maps \(\widehat f_i\) on \(\partial D_i\) be extended to a quasiconformal map \(F\) on \(D\), whose boundary is \(\partial D_1\cup\partial D_2\)?
 \end{enumerate}
-If both can be answered, we can combine the qualities of \(f_1,f_2\) with the gluing map \(F\) into a single quasiconformal map, provided \(\partial D_1\cup\partial D_2\) is thin, that is, has Lebesgue measure zero.
+If both can be answered, we can combine \(f_1,f_2\), and the gluing map \(F\) into a single quasiconformal map, provided \(\partial D_1\cup\partial D_2\) is thin, that is, has Lebesgue measure zero.
 This last criterion tells us that the boundaries must be sufficiently nice---at least rectifiable curves.
 % Author check: Source page 2 treats rectifiability as a necessary minimum for a measure-zero boundary; retained.
 We introduce the objects that describe the regularity expected of boundaries and their maps in such surgery.
@@ -44,16 +44,16 @@ then
 =k^2\left|\frac{x-y}{y-z}\right|,
 \]
 and similarly the ratio is at least \(k^{-2}|(x-y)/(y-z)|\). Take \(\lambda(t)=k^2t\).
-Since \(h\) is \(C^1\), \(H\) is \(C^1\); \(H'\) is continuous on \(S^1\), hence uniformly continuous, so \(H\) is uniformly differentiable. In the source's abuse of notation,
+Since \(h\) is \(C^1\), \(H\) is \(C^1\); \(H'\) is continuous on \(S^1\), hence uniformly continuous, so \(H\) is uniformly differentiable. Therefore
 \[
-\lim_{x\to y}\left|\frac{H(x)-H(y)}{x-y}\right|=H'(x)=H'(y).
+\lim_{x\to y}\left|\frac{H(x)-H(y)}{x-y}\right|=|H'(y)|.
 \]
 Thus the function
 \[
 G(x,y)=
 \begin{cases}
 \left|\dfrac{H(x)-H(y)}{x-y}\right|,&x\ne y,\\
-H'(x),&x=y,
+|H'(x)|,&x=y,
 \end{cases}
 \qquad G:S^1\times S^1\to\mathbb R,
 \]
@@ -84,7 +84,7 @@ For (b), set
 \[
 \lambda(t)=\frac1{\lambda_2^{-1}(1/\lambda_1(t))}.
 \]
-This function is strictly increasing. The inequalities for \(h_2\), and its injectivity, give
+This function is strictly increasing. The inequalities for \(h_2\) and its injectivity give
 \[
 \frac1{\lambda_2\!\left(
 \left|\frac{h_2^{-1}(x)-h_2^{-1}(y)}
@@ -129,7 +129,7 @@ A Jordan curve \(\gamma\) is a \emph{quasiarc} if there is \(c>0\) such that
 \]
 If \(\gamma\) is closed, it is called a \emph{quasicircle}.
 \end{definition}
-We now state two theorems connecting these objects for the unit disc. Let's use this special case in other settings.
+We now state two theorems connecting these objects for the unit disc; they will serve as models for other domains.
 
 % Source page 6
 \setcounter{theorem}{41}\begin{theorem}[Domain to boundary]\label{thm:cd11-domain-boundary}
@@ -176,7 +176,7 @@ A Riemann map \(\varphi:\mathbb D\to G\) extends continuously to \(S^1\) by Cara
 One can in fact prove that \(f:\mathbb D\to G\) extends quasisymmetrically to \(S^1\). Working with this boundary regularity is therefore rather forced.
 % Author check: Source page 8 asserts quasisymmetric boundary extension for an arbitrary Jordan G, without the quasicircle assumption from the earlier theorem; retained.
 
-We need analogues of Theorems~\ref{thm:cd11-domain-boundary} and~\ref{thm:cd11-boundary-domain} for domains other than \(\mathbb D\). General domains are difficult because we lack tools to capture all their analytic qualities. Extension constructions use many of those qualities, especially in choosing covering spaces. We illustrate the ideas for an annulus; such results provide partial answers to the initial questions.
+We need analogues of Theorems~\ref{thm:cd11-domain-boundary} and~\ref{thm:cd11-boundary-domain} for domains other than \(\mathbb D\). General domains are difficult because extension constructions depend on analytic properties of the domain, especially those used to choose covering spaces. We illustrate the ideas for an annulus; such results provide partial answers to the initial questions.
 
 % Source page 9
 \setcounter{theorem}{45}\begin{theorem}[Annulus: domain to boundary]
@@ -191,7 +191,7 @@ First, the picture:
 Let \(R:\mathbb D\to\operatorname{Int}(\gamma^o)\) be a Riemann map. Then \(R^{-1}\circ f:A_r\to\mathbb D\).
 % Source page 10
 Schwarz reflection extends this to \(A_{r,1/r}=\{z:r<|z|<1/r\}\), so its restriction to \(S^1\) is analytic.
-Set \(\widehat f=\widehat R\circ\widehat{R^{-1}\circ f}\), where \(\widehat R\) is the boundary extension of \(R\), and the second hat denotes restriction to \(S^1\). Then
+Let \(b=(R^{-1}\circ f)|_{S^1}\) and set \(\widehat f=\widehat R\circ b\), where \(\widehat R\) is the boundary extension of \(R\). Then
 \[
 \widehat f\text{ is quasisymmetric}
 \ \Longleftrightarrow\ 
@@ -245,7 +245,7 @@ Thus
 {(A+D+F)+i(B-C-E)}.
 \end{aligned}
 \]
-The source uses the following bound:
+The preceding computation uses the following bound:
 \[
 \left|\frac{\partial_{\bar z}(Bf)}{\partial_z(Bf)}\right|_2<\infty
 \ \Longleftrightarrow\
@@ -302,7 +302,7 @@ Mathematically, put
 F=c\circ B\widetilde F_2\circ c^{-1},
 \qquad c(z)=\bar z+3i.
 \]
-Then \(F(x+2i)=x+\alpha_2+2i\). The picture so far is:
+Then \(F(x+2i)=x+\alpha_2+2i\). The figure shows the two extensions on the outer strips:
 \begin{figure}[H]\centering
 \includegraphics[width=.88\textwidth]{cd11-fig-06.pdf}
 \FigureTag{CD11.6}{fig:cd11-06}

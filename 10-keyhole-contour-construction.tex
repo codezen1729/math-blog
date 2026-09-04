@@ -4,7 +4,7 @@
 \begin{document}
 \section*{Keyhole Contour Construction}
 % BLOG-CONTENT-BEGIN
-To talk about a point where the function is ``yet not defined'' or ``can never be defined,'' we need some curve $\gamma$ with the point $z_0\in\operatorname{int}(\gamma)$. Thus, exploiting the regularity of $f$ (which, as we saw before, is merely the fact that the boundary values of $f$ fix the values in the interior), one may, if possible, extend the analyticity of $f$ to $z_0$. We shall mostly deal with isolated singularities; in other words, punctures in the domain. The basic philosophy that helps settle the matter of isolated singularities is:
+To study a point at which a function is not yet defined, we need some curve $\gamma$ with the point $z_0\in\operatorname{int}(\gamma)$. Thus, exploiting the regularity of $f$ (which, as we saw before, is merely the fact that the boundary values of $f$ fix the values in the interior), one can ask whether $f$ extends holomorphically to $z_0$. We shall mostly deal with isolated singularities; in other words, punctures in the domain. The basic philosophy that helps settle the matter of isolated singularities is:
 
 \begin{quote}
 If $f$ can be extended and the gaps in its domain can be filled, then it can and must be done with the help of the boundary of a set containing those punctures in its interior, because certainly the extended function is regular.
@@ -27,7 +27,7 @@ and we also saw that
 \[
   g(z_0):=\int_\gamma\frac{f(z)}{z-z_0}\,dz
 \]
-is a holomorphic function of $z_0$; in fact, $g\in H(\mathbb C\setminus\gamma^*)$. One must just find a way to see that
+is a holomorphic function of $z_0$; in fact, $g\in H(\mathbb C\setminus\gamma^*)$. It remains to show that
 \[
   \left.g\right|_{U\setminus\gamma^*}=f.
 \]
@@ -117,7 +117,7 @@ The keyhole is
 
 \textbf{Exercise.} Similarly construct a multiple keyhole.
 
-\textbf{Remark.} The reason it is called a keyhole, even though it might look like neither a keyhole nor even a hole to begin with, is that it rather looks like, or has a similar orientation switch as, a keyhole.
+\textbf{Remark.} The name refers to the contour's narrow connecting passage and the reversal of orientation around the inner boundary.
 
 \begin{figure}[H]
   \centering
@@ -201,7 +201,7 @@ and on $\operatorname{int}(\gamma_1)\cap\operatorname{ext}(\gamma_2)$, \(f(z)=f_
 Note that $f_1$ and $f_2$ are defined on two separate domains and are patched together by $f(z)$.
 
 
-\textbf{Remark.} Although $f_1\in H(\mathbb C\setminus\gamma_1^*)$, we did not use the full power of the continuation of the integral, because we needed it to connect to $f(z)$. So we used $\operatorname{int}(\gamma_1)\cap\operatorname{ext}(\gamma_2)$ as the gluing domain where $f$ is existing, defined, and analytic. Notice that there is no gluing domain with which to extend $f_1$ beyond $\operatorname{int}(\gamma_1)$, because the decomposition is true only in the domain $\operatorname{int}(\gamma_1)\cap\operatorname{ext}(\gamma_2)$. Or, we have to consider another $\gamma_0$ in $U$ such that $\gamma_1\subset\operatorname{int}(\gamma_0)$, which is in some sense what we already have with $\gamma_1$ and $\gamma_2$.
+\textbf{Remark.} Although $f_1\in H(\mathbb C\setminus\gamma_1^*)$, we did not use the full power of the continuation of the integral, because we needed it to connect to $f(z)$. So we used $\operatorname{int}(\gamma_1)\cap\operatorname{ext}(\gamma_2)$ as the gluing domain where $f$ is defined and holomorphic. Notice that there is no gluing domain with which to extend $f_1$ beyond $\operatorname{int}(\gamma_1)$, because the decomposition is true only in the domain $\operatorname{int}(\gamma_1)\cap\operatorname{ext}(\gamma_2)$. Alternatively, we must consider another $\gamma_0$ in $U$ such that $\gamma_1\subset\operatorname{int}(\gamma_0)$, which is in some sense what we already have with $\gamma_1$ and $\gamma_2$.
 
 \textbf{Remark.} Note that $|f_2(z)|\to0$ as $|z|\to\infty$, since $\gamma_2$ is compact. Thus the decomposition is unique. Suppose not: let \(f=f_1+f_2=g_1+g_2,\)
 with $f_2,g_2\to0$ as $|z|\to\infty$. Then
@@ -233,7 +233,7 @@ Then, if $f\in H(U)$,
 \]
 
 
-A geometric digression is much needed to explain how this decomposition, or the keyhole contour integration method in general, can fix holes.
+A geometric digression is necessary to explain how this decomposition, or the keyhole contour integration method in general, can fix holes.
 
 \subsection*{Proposition}
 
@@ -258,10 +258,9 @@ In short, if $\bigcup_iD_i$ is connected, we have the setup needed to decompose 
 \[
   f\in H\Bigl(\bigcup_iD_i\Bigr).
 \]
-\emph{(Draw!)}
 
 \textit{Proof.}
-Let us do this via induction. For $n=2$, it is evident. Let it be true for $n=k$. Consider $n=k+1$. Note that $\partial D_{k+1}$ will either belong to $\operatorname{int}(\gamma_{c_j})$ or to $\operatorname{ext}(\gamma_{c_j})$. The curve $\gamma_{c_j}$ will cut $\partial D_{k+1}$ at finitely many points; call them $d_1,d_2,\ldots,d_r$. Look at two consecutive points $d_i$ and $d_{i+1}$, where the $d_i$ are arranged in increasing argument, under a WLOG assumption that $D_{k+1}=S^1$.
+Let us do this via induction. For $n=2$, it is evident. Assume it holds for $n=k$. Consider $n=k+1$. Note that $\partial D_{k+1}$ will either belong to $\operatorname{int}(\gamma_{c_j})$ or to $\operatorname{ext}(\gamma_{c_j})$. The curve $\gamma_{c_j}$ will cut $\partial D_{k+1}$ at finitely many points; call them $d_1,d_2,\ldots,d_r$. Look at two consecutive points $d_i$ and $d_{i+1}$, where the $d_i$ are arranged in increasing argument, after normalizing $D_{k+1}$ to $S^1$ without loss of generality.
 
 Let $\gamma_{c_0}$ cut $\partial D_{k+1}$ at $d_i$ and $d_j$. Then the minor and major arcs will belong, respectively, to the interior and exterior (or the other way around) of $\gamma_{c_0}$. Consider the arc that belongs to the exterior, and replace the portion of $\gamma_{c_0}$ in $D_{k+1}$ by that arc. None of the arcs $\gamma_{c_j}$, $j>1$, will intersect that arc, since
 \[
@@ -278,7 +277,7 @@ By a connectedness argument, note that if $\gamma_{c_j}$, $j>1$, cuts $\partial 
 Now one can modify the $\gamma_{c_j}$ similarly, for we have shown that all the others lie toward one arc.
 
 
-\subsection*{Painlev\'e's Theorem (almost an exercise now!)}
+\subsection*{Painlev\'e's Theorem}
 
 Let $U$ be open and connected, and let $S$ be compact. For every $\varepsilon>0$, suppose there exists
 \[
@@ -290,109 +289,7 @@ such that
   \qquad
   \sum_n\varepsilon_n<\varepsilon.
 \]
-If $f\in H(U\setminus S)$ is bounded, show that one can extend $f$ to $S$.
-
-Let $\gamma$ be a simple closed curve in $U$ such that \(S\subset\operatorname{int}(\gamma).\)
-Use the previous proposition to obtain such a $\gamma$ after covering $S$ by finitely many disks. Now $\operatorname{int}(\gamma)\subset U$ by construction. Let
-\[
-  \{B_{\varepsilon_n}(z_n)\}_{n=0}^{N}
-\]
-be the finite subcover of $S$. Group them into connected components and again use the previous exercise to obtain disjoint curves $\{\gamma_{c_j}\}_{j=1}^{m}$ such that
-\[
-  S\subset\bigcup_j\operatorname{int}(\gamma_{c_j}).
-\]
-We do not need the full strength of the previous proposition. Note that
-\[
-  \operatorname{int}(\gamma)\cap\bigcap_j\operatorname{ext}(\gamma_{c_j})
-  \subset U\setminus S.
-\]
-Let $z_0\in U\setminus S$. If
-\[
-  d=\inf_{z\in S}|z-z_0|
-\]
-and $\varepsilon<d$, then
-\[
-  z_0\in\operatorname{int}(\gamma)\cap\bigcap_j\operatorname{ext}(\gamma_{c_j})
-  =:\Omega.
-\]
-On $\Omega$ we have
-\[
-  f(z_0)=\frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz
-  -\sum_{j=1}^{m}\frac{1}{2\pi i}
-  \int_{\gamma_{c_j}}\frac{f(z)}{z-z_0}\,dz.
-\]
-We have thus found a candidate for our extension:
-\[
-\widetilde f(z_0):=
-\begin{cases}
-\displaystyle \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
-  &z_0\in\operatorname{int}(\gamma),\\[1.2ex]
-\displaystyle f(z_0)+\sum_{j=1}^{m}\frac{1}{2\pi i}
-  \int_{\gamma_{c_j}}\frac{f(z)}{z-z_0}\,dz,
-  &z_0\in U\cap\bigcap_j\operatorname{ext}(\gamma_{c_j}).
-\end{cases}
-\]
-
-
-Note that
-\[
-  \left|\frac{1}{2\pi i}\int_{\gamma_{c_j}}
-  \frac{f(z)}{z-z_0}\,dz\right|
-  \le \frac{\varepsilon}{d}M,
-\]
-and also
-\[
-  \sum_j\left|\frac{1}{2\pi i}\int_{\gamma_{c_j}}
-  \frac{f(z)}{z-z_0}\,dz\right|
-  <\frac{\varepsilon}{d}M.
-\]
-As $\varepsilon\to0$, we see that
-\[
-\widetilde f(z_0):=
-\begin{cases}
-\displaystyle \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
-  &z_0\in\operatorname{int}(\gamma),\\[1.2ex]
-\displaystyle f(z_0)+\sum_j\frac{1}{2\pi i}
-  \int_{\gamma_{c_j}}\frac{f(z)}{z-z_0}\,dz,
-  &z_0\in\Omega':=U\cap\bigcap_j\operatorname{ext}(\gamma_{c_j}).
-\end{cases}
-\]
-This function is not yet done, for the last line makes no sense. Note that, for every $\varepsilon$, we have the decomposition
-\[
-  f(z_0)=\frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz
-  -\sum_j\frac{1}{2\pi i}
-  \int_{\gamma_{c_j}}\frac{f(z)}{z-z_0}\,dz,
-\]
-where $\gamma^*\subset\bigcap_j\operatorname{ext}(\gamma_{c_j})$. Now take the limit:
-\[
-  f(z_0)=\lim_{\varepsilon\to0}(\mathrm{RHS})
-  =\frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
-\]
-which is true for all $z_0$ satisfying
-\[
-  \inf_{z\in S}|z_0-z|>0.
-\]
-Thus we have
-\[
-  \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz
-\]
-on $U\setminus\gamma^*$, and $f(z_0)$ on $\gamma^*$, as the required extension. This is holomorphic, since a limit of holomorphic functions is holomorphic. Note that the convergence is uniform because $f$ is bounded near $S$, and $S$ has measure $0$.
-
-\textbf{Remark.} We saw before that
-\[
-  \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz
-\]
-is holomorphic on $\mathbb C\setminus\gamma^*$. But that barrier of the curve itself is a bit hard to remove, because we simply cannot define
-\[
-f:=
-\begin{cases}
-\displaystyle \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
-  &\text{on }\mathbb C\setminus\gamma^*,\\[1.2ex]
-f,
-  &\text{on }\gamma^*.
-\end{cases}
-\]
-
+If $f\in H(U\setminus S)$ is bounded, then $f$ extends holomorphically across $S$.
 
 Painlev\'e's theorem is just one instance---a generalization of Riemann-removable singularities---in which one can extend. But, to even begin tackling such questions, we have to investigate the nature of problems one might encounter in extending such functions.
 
@@ -458,7 +355,7 @@ This is but a Fourier expansion: if $0<r<1<R<\infty$ and $z\in S^1+z_0$, then
 
 \subsection*{Classification of Singularities}
 
-We at present focus only on isolated singularities, that is, punctures in the domain. Let us look at an annulus of the form \(\{z:0<|z-z_0|<r\}\subset U,\)
+At present we focus only on isolated singularities, that is, punctures in the domain. Let us look at an annulus of the form \(\{z:0<|z-z_0|<r\}\subset U,\)
 and let $f\in H(U)$. Consider the Laurent series of $f$:
 \[
   f(z)=\sum_{n=-\infty}^{\infty}a_n(z-z_0)^n.
@@ -472,9 +369,9 @@ and let $f\in H(U)$. Consider the Laurent series of $f$:
 \item If $a_k\ne0$ for infinitely many $k<0$, then $f$ is said to have an essential singularity.
 \end{enumerate}
 
-Now look: if $f$ has too many poles, then $f(1/z)$ will have poles clustering around $0$. Clearly $f(1/z)$ is not bounded near $0$. If $f(1/z)$ were to have a pole at $0$, then $1/f(1/z)$ would have a cluster of zeros near $0$ and $f$ would explode. Therefore, for its own survival, it demands a new kind of singularity, thus named an essential singularity.
+Now look: if $f$ has too many poles, then $f(1/z)$ will have poles clustering around $0$. Clearly $f(1/z)$ is not bounded near $0$. If $f(1/z)$ were to have a pole at $0$, then $1/f(1/z)$ would have a cluster of zeros near $0$ and $f$ would explode. This behavior requires a third class, called an essential singularity.
 
-WLOG, let $0\in U\setminus S$ and let $\operatorname{int}(\gamma)$ contain all the poles of $f$. Then
+Without loss of generality, let $0\in U\setminus S$ and let $\operatorname{int}(\gamma)$ contain all the poles of $f$. Then
 \[
   \frac{1}{2\pi i}\int_{\gamma_z\circ\gamma}f(z)\,dz
   =\frac{1}{2\pi i}\int_\gamma f(z)\,dz

@@ -16,7 +16,7 @@ Then $d$ is the \emph{dimension} of $R$, written $\dim(R)=d$.
 % Author check: max, rather than supremum, is retained from the source.
 \end{definition}
 \paragraph{Comment.}
-We shall focus on Noetherian rings, for Artinian rings will turn out to be Noetherian of dimension zero.
+Every Artinian ring is Noetherian of dimension zero, as proved below; we begin with Noetherian rings.
 \setcounter{example}{7}\begin{example}
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item $\Z/n\Z$, as a $\Z$-module, is Artinian and Noetherian.
@@ -99,12 +99,12 @@ Since $\aa$ is irreducible, so is $(0)$ in $A/\aa$. As $y\ne0$, we get $x^n=0$. 
 Every ideal in a Noetherian ring admits primary decomposition.
 \end{theorem}
 \begin{proof}
-Set $\Sigma=\{\aa<A\mid\aa\text{ is not a finite intersection of irreducible ideals}\}$. If $\Sigma\ne\varnothing$, then, as every chain in $A$ stabilizes, $\Sigma$ qualifies for Zorn's
+Set $\Sigma=\{\aa<A\mid\aa\text{ is not a finite intersection of irreducible ideals}\}$. If $\Sigma\ne\varnothing$, then, as every chain in $A$ stabilizes, $\Sigma$ satisfies the hypotheses of Zorn's
 % Source page 5
 lemma, which yields a maximal element $\aa$. This ideal is reducible, so $\aa=\bb\cap\mathfrak c$ with $\aa\subset\bb$ and $\aa\subset\mathfrak c$. By maximality, $\bb,\mathfrak c\notin\Sigma$; they are finite intersections of irreducible ideals, and hence so is $\aa$. This is absurd. Therefore $\Sigma=\varnothing$.
 \end{proof}
 \subsection{Artinian rings}
-In the following chain of propositions we sketch why Artinian rings are a special kind of Noetherian ring, thereby justifying our focus on Noetherian modules.
+The following propositions show that Artinian rings are Noetherian of dimension zero.
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item In an Artinian ring every prime is maximal. If $\pp$ is prime, then $A/\pp$ is an Artinian integral domain. For $0\ne x\in A/\pp$, there is some $n$ with $(x^n)=(x^{n+1})$. Thus $x^n=x^{n+1}y$. Since $A/\pp$ is a domain, $x^n\ne0$ and $xy=1$. Hence $A/\pp$ is a field and $\pp$ is maximal.
 \setcounter{enumi}{1}\item An Artinian ring has only finitely many maximal ideals. Define
@@ -127,7 +127,7 @@ If $A$ is Artinian, then $\dim(A)=0$. Let $\{\mm_i\}_{i=1}^n$ be the maximal ide
 
 Indeed, $A$ is Noetherian if and only if $\mm_1$ and $A/\mm_1$ are Noetherian. The latter is a field, hence Noetherian, so $A$ is Noetherian if and only if $\mm_1$ is Noetherian. Further, $\mm_1$ is Noetherian if and only if $\mm_1\mm_2$ and $\mm_1/\mm_1\mm_2$ are Noetherian. Since $\mm_2(\mm_1/\mm_1\mm_2)=0$, the quotient is an $A/\mm_2$-vector space. The module $\mm_1$ is Artinian because $A$ is Artinian; hence $\mm_1/\mm_1\mm_2$ is an Artinian $A/\mm_2$-module, thus a finite-dimensional vector space. It is therefore a Noetherian $A/\mm_2$-module, and consequently a Noetherian $A$-module. Thus $\mm_1$ is Noetherian if and only if $\mm_1\mm_2$ is Noetherian.
 
-Proceeding inductively to $\mm_1\mm_2\cdots\mm_n=0$ yields the fact.
+Proceeding inductively to $\mm_1\mm_2\cdots\mm_n=0$ shows that $A$ is Noetherian.
 \end{proof}
 % Source page 7
 \begin{remark}

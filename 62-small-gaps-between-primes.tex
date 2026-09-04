@@ -5,7 +5,6 @@
 \begin{document}
 \section*{Small Gaps between Primes}
 % BLOG-CONTENT-BEGIN
-\begin{center}\small S. Viswanathan\end{center}
 % Source page 1
 Let $\mathbb P$ denote the set of primes. Enumerate them in increasing
 order as $p_1,p_2,p_3,\ldots,p_n,\ldots$, where $p_n$ denotes the $n$th prime.
@@ -13,26 +12,21 @@ We ask a very basic question about the additive distribution of $\mathbb P$.
 Fix a width parameter $h$. How many primes can you find in the interval
 $[x,x+h]$, and how often?
 
-Let us begin by making the question concrete. If there are $k$ primes in
-$[x,x+h]$, of which $p_n$ is the smallest, then $p_{n+k}-p_n\le h$.
-It would suffice to study $H_m:=\liminf_{n\to\infty}(p_{n+m}-p_n)$.
-Set $\widehat H_m:=\{p_{n+m}-p_n:p_n\in\mathbb P\}$.
-If $\widehat H_m$ is bounded, then, by the Bolzano--Weierstrass theorem,
-so is $H_m$. Further, one can say that in infinitely many intervals of
-size $H_m$ there are at least $m$ primes.
+Let us make the question concrete. If $[x,x+h]$ contains $k+1$ primes and $p_n$ is the smallest, then $p_{n+k}-p_n\le h$.
+It therefore suffices to study
+\[H_m:=\liminf_{n\to\infty}(p_{n+m}-p_n).\]
+When $H_m<\infty$, infinitely many intervals of bounded length contain at least $m+1$ primes.
 % Author check: the source's off-by-one counts and bounded-set argument are retained.
-Studying $\{H_m\}_m$, assuming that its terms are indeed numbers, is
-extremely hard because of the additive nature of the problem.
+Studying the quantities $\{H_m\}_m$ is difficult because of the additive nature of the problem.
 Primes appear naturally only as factors, so they are suited for
 multiplicative studies. Regardless, there are deep conjectures about this.
-Of them all, the
+The best known of these is the
 % Source page 2
-famous, perhaps even mythical, one is the Twin Prime Conjecture.
+Twin Prime Conjecture.
 \setcounter{theorem}{17}\begin{conjecture}[Twin Prime Conjecture]
 $H_1=2$, or equivalently, there are infinitely many twin primes.
 \end{conjecture}
-Recently, by deploying advanced sieve-theoretic tools, highly nontrivial
-bounds for $H_m$ have been found, establishing that they are indeed numbers!
+Modern sieve-theoretic tools give highly nontrivial finite bounds for $H_m$.
 The first breakthrough came from Goldston, Pintz, and Y{\i}ld{\i}r{\i}m,
 who developed a sieve technique to find at least two primes in an interval
 $[a,b]$.
@@ -51,8 +45,7 @@ from all over to optimise Zhang's technique.
 It turns out that Zhang, and subsequently the Polymath group, used
 Deligne's theorem, which proves the Riemann hypothesis for finite fields.
 % Source page 3
-A postdoc named James Maynard found a shortcut and surprised everyone.
-He used elementary sieve methods.
+In 2013, James Maynard found an independent route using elementary sieve methods.
 \paragraph{2013: J. Maynard, independently.}
 $H_1\le600$. Subsequently, Maynard and Tao's group joined forces.
 \paragraph{2014: Maynard and Polymath.}
@@ -62,18 +55,14 @@ They were also able to prove the following bound for $H_m$.
 $H_m\ll m^3e^{4m}$, asserting for the first time that $\{H_m\}_m$ is a
 sequence of integers.
 % Author check: the historical narrative and dated claims are reproduced, not updated.
-This talk is about the 2005 work of Goldston, Pintz, and Y{\i}ld{\i}r{\i}m.
-Let us heuristically motivate
-$\liminf_{n\to\infty}(p_{n+1}-p_n)/\log p_n=0$ and then see the technique
-that went into its proof.
-Since the problem is additive and the role of primes as factors does not
-seem to be to the fore, we shall model $\mathbb P$ by a sequence just as
+We now focus on the 2005 work of Goldston, Pintz, and Y{\i}ld{\i}r{\i}m: first motivate $\liminf_{n\to\infty}(p_{n+1}-p_n)/\log p_n=0$, then examine the technique behind its proof.
+Since the problem is additive and the multiplicative structure of primes does not appear directly, we model $\mathbb P$ by a sequence just as
 sparse as $\mathbb P$. Collect the numbers $\{1,2,3,\ldots,n\}$.
 In this set there are $n/\log n$ primes.
 % Source page 4
 The probability of $n$ being prime is therefore $1/\log n$.
 \begin{remark}[Caution]
-These arguments must be taken with a pinch of salt.
+This heuristic model must be interpreted cautiously.
 Firstly, the probability of $n$ being prime in $\{1,2,\ldots,n+1\}$ is
 $1/\log(n+1)$, and in $\{1,2,\ldots,n+k\}$ it is $1/\log(n+k)$,
 yet we choose $1/\log n$.
@@ -88,7 +77,7 @@ This is Cram\'er's model of primes.
 Let us use it to count primes in $(p+\alpha\log p,p+\beta\log p)$ for a
 large prime $p$. For some $h\in(\alpha\log p,\beta\log p)$, the probability
 \[
- \mathbb P\bigl(X(p+i)=0,\ 1\le i\le h-1,\ \text{and }X(p+h)=0\bigr)
+ \mathbb P\bigl(X(p+i)=0,\ 1\le i\le h-1,\ \text{and }X(p+h)=1\bigr)
 \]
 is
 \[
@@ -110,7 +99,7 @@ $(p+\alpha\log p,p+\beta\log p)$ is
 \[
  \begin{aligned}
  &\sum_{\alpha\log p<h<\beta\log p}
- \mathbb P\bigl(X(p+i)=0,\ 1\le i\le h-1,\ X(p+h)=0\bigr)\\
+ \mathbb P\bigl(X(p+i)=0,\ 1\le i\le h-1,\ X(p+h)=1\bigr)\\
  &\qquad\sim
  \sum_{\alpha\log p<h<\beta\log p}
  e^{-(h-1)/\log p}\frac1{\log p}
@@ -143,13 +132,7 @@ With Theorem~\ref{thm:m5-gpy}, one can ask whether
 $\liminf_{p\to\infty}(p_{\mathrm{next}}-p)<\infty$, that is, whether
 bounded gaps between primes exist.
 
-The Prime Number Theorem tells us that if $p_{n+1}-p_n\not<\log p_n$
-infinitely often, then eventually the intervals
-$(k\log n,(k+1)\log n)$ would not have primes, so the prime count for
-large $n$ would be off. But one can ask what the largest possible gap is,
-infinitely often. We have a powerful conjecture, again a consequence
-of Cram\'er's model.
-% Author check: the source's negated inequality and ensuing implication are retained.
+
 \setcounter{theorem}{20}\begin{conjecture}
 $\displaystyle\limsup_{p\to\infty}
 \frac{p_{\mathrm{next}}-p}{(\log p)^2}=1$.
@@ -160,16 +143,12 @@ $\sim\log x/\log\log x$, which is far less than $(\log x)^2$.
 In fact, it is dominated even by the average gap.
 
 % Source page 7
-Regardless, one must be ambitious. Goldston, Pintz, and Y{\i}ld{\i}r{\i}m
-were! They wanted to prove $\boxed{H_1\le16}$.
-Their idea is rather benign.
+Goldston, Pintz, and Y{\i}ld{\i}r{\i}m aimed for the much stronger bound $\boxed{H_1\le16}$.
+Their strategy begins with an admissible tuple.
 Let $\mathcal H=\{h_1,h_2,\ldots,h_k\}$, where $h_1<h_2<\cdots<h_k$.
-It is called an \emph{admissible $k$-tuple} if $\mathcal H$ has minimal
-diameter and misses one congruence class modulo every prime.
+It is called an \emph{admissible $k$-tuple} if it misses at least one congruence class modulo every prime.
 % Author check: minimal diameter is included in the source's definition of admissibility.
-Given an admissible $k$-tuple, it makes sense to ask whether there can be
-two primes in $\{n+h_1,n+h_2,\ldots,n+h_k\}$, since $\mathcal H$ misses
-one congruence class, so the iterates can be primes.
+Given an admissible $k$-tuple, ask whether two primes can occur in $\{n+h_1,n+h_2,\ldots,n+h_k\}$, because avoiding a residue class modulo every prime removes the obvious congruence obstruction.
 Suppose one can find a sequence $\{a(n)\}_n$ of nonnegative numbers such
 that, for every $j=1,2,\ldots,k$,
 \begin{equation}
@@ -185,114 +164,15 @@ Then
 \]
 Hence $\#\{1\le j\le k:n+h_j\in\mathbb P\}\ge2$, giving
 $p_{n+1}-p_n\le\diam(\{h_j\}_{j=1}^k)$.
-Inspired by Selberg, their choice of $\{a(n)\}_n$ is as follows.
-The idea is to choose $a(n)=1$ if the numbers
-$\{n+h_j\}_{j=1}^k$ are all prime, because, even without
-\eqref{eq:m5-star}, we would at least have an upper bound on the number
-of prime $k$-tuples.
-% Source page 8
-Let $\{\lambda_d\}_d$ be a sequence of real numbers such that
-$\lambda_1=1$ and $\lambda_d=0$ for all $d>R$. Set
-\[
- a(n):=\left(\sum_{d\mid(n+h_1)\cdots(n+h_k)}\lambda_d\right)^2.
-\]
-If $R<x\le n$ and all the $n+h_j$ are prime, then $a(n)=1$.
-Expanding the square, one has
-\[
- \sum_{d_1,d_2}\lambda_{d_1}\lambda_{d_2}
- \left(\sum_{\substack{x\le n\le2x\\
- d_1\mid(n+h_1)\cdots(n+h_k)\\d_2\mid(n+h_1)\cdots(n+h_k)}}1\right)
- =
- \sum_{d_1,d_2}\lambda_{d_1}\lambda_{d_2}
- \left(\sum_{\substack{x\le n\le2x\\{}[d_1,d_2]\mid(n+h_1)\cdots(n+h_k)}}1\right),
-\]
-since $[d_1,d_2]\mid m$ if and only if $d_1\mid m$ and $d_2\mid m$.
-Thus $\sum_{x\le n\le2x,\ n+h_j\in\mathbb P}a(n)$ and
-$\sum_{x\le n\le2x}a(n)$ are quadratic forms with coefficients
-$\sum_{x\le n\le2x,\ [d_1,d_2]\mid\prod_{i=1}^k(n+h_i)}1$.
-One needs to choose $\{\lambda_d\}_d$ to maximise
-\[
- \frac{\displaystyle\sum_{\substack{x\le n\le2x\\n+h_j\in\mathbb P}}a(n)}
- {\displaystyle\sum_{x\le n\le2x}a(n)},
- \qquad\text{preferably making it greater than }1/k.
-\]
-The two quadratic forms need not commute and hence cannot be simultaneously
-diagonalised. Also, the coefficients are too complicated for Lagrange
-multipliers. Somehow, they narrowed the choice down to
-\[
- \lambda_d=\mu(d)P\left(\frac{\log(R/d)}{\log R}\right)
-\]
-for some polynomial $P$. Perhaps the motivation lies in Selberg's sieve.
-% Source page 9
-With that choice of $\lambda_d$, they were able to obtain
-\[
- \sum_{x\le n\le2x}a(n)\sim
- \frac{x}{(\log R)^k}\mathfrak S(\mathcal H)
- \int_0^1\frac{y^{k-1}}{(k-1)!}\bigl(P^{(k)}(1-y)\bigr)^2\,dy.
-\]
-For the numerator in the ratio, however, they have to evaluate
-\[
- \sum_{d_1,d_2\le R}\lambda_{d_1}\lambda_{d_2}
- \left(\sum_{\substack{x\le n\le2x\\
- [d_1,d_2]\mid\prod_{i=1}^k(n+h_i)\\n+h_j\in\mathbb P}}1\right).
-\]
-This amounts to evaluating the inner sum
-$\sum_{x\le n\le2x,\ [d_1,d_2]\mid\prod_{i=1}^k(n+h_i),\
-n+h_j\in\mathbb P}1$.
-We have
-$[d_1,d_2]\mid(n+h_1)\cdots(n+h_k)\Longrightarrow
-n\equiv-h_i\pmod{[d_1,d_2]}$.
-Of the congruence classes modulo $[d_1,d_2]$, let $g([d_1,d_2])$ count
-those that are coprime. For each, we have to calculate the number of $n$
-such that $n+h_j$ is prime. Here is where we need really strong
-equidistribution theorems.
-% Author check: divisibility of the product is replaced by a single-factor congruence in the source.
-We know
-\[
- \#\{p\in\mathbb P:p\le x,\ p\equiv a\pmod q\}
- \sim\frac{x}{\varphi(q)\log x},
-\]
-but this is for $x\gg q$; here $[d_1,d_2]\sim R^2\sim x^{1/2}$!
-% Source page 10
-Assuming the strongest such equidistribution result,\footnote{Bombieri--Vinogradov's
-theorem (as strong as the Riemann hypothesis).}
-they obtained an asymptote for the numerator:
-\[
- \sum_{\substack{x\le n\le2x\\
- [d_1,d_2]\mid\prod_{i=1}^k(n+h_i)\\n+h_j\in\mathbb P}}a(n)
- \sim
- \frac{x}{(\log x)(\log R)^{k-1}}\mathfrak S(\mathcal H)
- \int_0^1\frac{y^{k-2}}{(k-2)!}\bigl(P^{(k-1)}(1-y)\bigr)^2\,dy.
-\]
-But unfortunately this ratio is less than $1/k$. Disappointing!
-They had to use the Elliott--Halberstam conjecture, perhaps the strongest
-equidistribution statement, to prove the following.
-\setcounter{theorem}{21}\begin{theorem}[Assuming the Elliott--Halberstam conjecture]
-$H_1\le16$.
-\end{theorem}
-Unconditionally, they were only able to retrieve an average result,
-Theorem~\ref{thm:m5-gpy}.
-In estimating $\{p\in\mathbb P:p\le x,\ p\equiv a\pmod q\}$,
-the Bombieri--Vinogradov theorem allows $q$ to be as large as $\sqrt x$
-while still giving equidistribution.
-It goes to show how immaculate primes are!
-In fact, the Elliott--Halberstam conjecture says that the exponent $1/2$
-in the Bombieri--Vinogradov theorem can be improved to $1-\varepsilon$
-for every $\varepsilon>0$.
-% Author check: the source's summation restriction and simplified equidistribution formulations are retained.
+
 % Source page 11
-This failed attempt to get $H_1\le16$ led to decades of fascinating
-progress, leading up to the following state-of-the-art theorems.
+This attempt to prove $H_1\le16$ led to subsequent improvements and the following bounds.
 \setcounter{theorem}{22}\begin{theorem}[Polymath]
 $H_1\le246$.
 \end{theorem}
 \setcounter{theorem}{23}\begin{theorem}[Assuming the Elliott--Halberstam conjecture]
 $H_1\le6$.
 \end{theorem}
-It was argued that one cannot beat $6$ using sieve-theoretic tools because
-of something called the \emph{parity obstruction}. Thus this theory is,
-at the moment, stagnant. Tao remarks that progress is one or two clever
-ideas away!
-% The historical "at the moment" and conditional hypothesis are retained as source content, not current claims.
+The \emph{parity obstruction} explains why this family of sieve methods alone cannot improve the conditional bound below $6$.
 % BLOG-CONTENT-END
 \end{document}

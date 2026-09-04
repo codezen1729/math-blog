@@ -12,16 +12,16 @@ This elegant inequality has two nontrivial applications.
 \paragraph{Classical application.}
 Let $A,B$ be two points on the same side of a line $XY$.
 Find $M$ on that line such that $AM+MB$ is minimal.
-This gives an alternative proof of the law of reflection. How?
+This gives an alternative proof of the law of reflection.
 \begin{figure}[H]\centering
 \includegraphics[width=.80\linewidth]{lb1-fig-13.pdf}
 \FigureTag{LB1.13}{fig:lb1-13}
 \end{figure}
 The figure itself is the solution: $A'M'+M'B\geq A'B$.
-I like the following explanation. Since $AM+MB$ must be the shortest path,
+The geometric interpretation is as follows. Since $AM+MB$ must be the shortest path,
 light sent from $A$ to $B$ after reflection must meet the line at the required $M$.
-It should satisfy the law of reflection, which we proved.
-Thus choose $M$ so that $\angle AMX=\angle BMY$. ``Finished!''
+It should satisfy the law of reflection.
+Thus choose $M$ so that $\angle AMX=\angle BMY$.
 
 % Source page 19 - left
 The second application is the following lemma.
@@ -50,15 +50,15 @@ This reduces to $8xyz\leq(x+y)(y+z)(z+x)$.
 \begin{remark}
 The cosine formula also proves the inequality. Put $b^2+c^2-a^2=2bc\cos A$.
 Then $\sum_{\mathrm{cyc}}2abc\cos A\leq3abc$ becomes
-$\sum_{\mathrm{cyc}}\cos A\leq3/2$, obvious after applying Jensen's inequality.
-This is the intuitive way to solve it!
+$\sum_{\mathrm{cyc}}\cos A\leq3/2$, which follows from Jensen's inequality.
+This gives a geometric proof.
 \end{remark}
 
-I will soon write an extensive explanation of trigonometric substitution. Have a look at the trailer.
+The same geometric idea suggests a useful trigonometric substitution.
 \setcounter{theorem}{51}\begin{lemma}[Trigonometric substitution]
 If $x^2+y^2=1$, then $x=\sin\theta$ and $y=\cos\theta$.
 \end{lemma}
-This elementary idea resolves a deceptively difficult IMOTC 2014 problem.
+This elementary idea solves a deceptively difficult IMOTC 2014 problem.
 Let $x,y$ be rational and $x^5+y^5=2x^2y^2$. Prove that $1-xy$ is a rational square.
 Then
 \[
@@ -73,7 +73,7 @@ xy=\frac{x^3}{y^2}\frac{y^3}{x^2}=4\sin^2\theta\cos^2\theta=\sin^22\theta,
 \]
 % Author check: positivity, zero cases, and rationality of the final square root are not discussed.
 
-I do not encourage bombarding students with formulas. The following should be analyzed, not memorized.
+These formulas are most useful when understood rather than memorized.
 \subsection{Ravi substitution}
 \begin{center}
 \renewcommand{\arraystretch}{1.75}
@@ -89,16 +89,16 @@ $\displaystyle r_c=\frac{\sqrt{xyz(x+y+z)}}z$ &
 \end{center}
 % Author check: source gives no explicit mapping of x,y,z to s-a,s-b,s-c here; earlier side substitution uses another ordering.
 
-\setcounter{theorem}{65}\begin{lemma}[Substitutions to kill problems]
+\setcounter{theorem}{65}\begin{lemma}[Useful substitutions]
 The following substitutions are useful:
 \begin{enumerate}
 \setcounter{enumi}{0}\item If $xyz=x+y+z+2$, use $x=(a+b)/c$, $y=(b+c)/a$, $z=(c+a)/b$.
 Apply $(a+b)(b+c)(c+a)=ab(a+b)+bc(b+c)+ca(c+a)+2abc$.
 % Source page 29 - right
 \setcounter{enumi}{1}\item If $xy+yz+zx+2xyz=1$, use $x=a/(b+c)$, $y=b/(a+c)$, $z=c/(a+b)$.
-Divide by $xyz$ and convince yourself of its validity!
+Its validity follows after dividing by $xyz$.
 \setcounter{enumi}{2}\item If $x^2+y^2+z^2-xyz=4$, use $x=a+1/a$, $y=b+1/b$, $z=c+1/c$.
-Expand $xyz=(a+1/a)(b+1/b)(c+1/c)$ and verify it yourself.
+Its validity follows by expanding $xyz=(a+1/a)(b+1/b)(c+1/c)$.
 \setcounter{enumi}{3}\item If $x^2+y^2+z^2+xyz=4$, use $x=2\cos A$, $y=2\cos B$, $z=2\cos C$.
 Equivalently, if $x^2+y^2+z^2+2xyz=1$, use $x=\cos A$, $y=\cos B$, $z=\cos C$.
 Apply $\cos^2A+\cos^2B+\cos^2C+2\cos A\cos B\cos C=1$.
@@ -130,8 +130,7 @@ Apply the cosine rule $c^2=a^2+b^2-2ab\cos C$. Then
 \sin C\frac{\sqrt3}{2}+\cos C\frac12=\sin(C+30^\circ).
 \]
 We have $(a^2+b^2)/(2ab)\geq1\geq\sin(C+30^\circ)$. Q.E.D.!
-This can also be resolved using Ravi substitutions. Do it!
-(There are 12 more solutions to the above problem; refer to P.S.T.)
+This can also be solved using Ravi substitutions.
 \paragraph{Romania (2002).}
 If $a,b,c\in(0,1)$, prove that
 \[\sqrt{abc}+\sqrt{(1-a)(1-b)(1-c)}<1.\]
@@ -141,7 +140,7 @@ Let $a=\cos^2 A$, $b=\cos^2 B$, $c=\cos^2 C$. We have
 Q.E.D.!
 % Author check: angle ranges are unstated; the source's first comparison is strict.
 
-Recall the application of Lemma 30 in the manuscript: it can be resolved without Schur's inequality.
+The following inequality can be proved without Schur's inequality.
 For positive reals $a,b,c$, prove that
 \[(a+b-c)(b+c-a)(a+c-b)\leq abc.\]
 Let $x=a+b-c$, $y=b+c-a$, and $z=a+c-b$.
@@ -149,13 +148,13 @@ Then $a=(x+z)/2$, $b=(x+y)/2$, and $c=(y+z)/2$.
 The inequality reduces to
 \[xyz\mathrel{\stackrel{?}{\leq}}\frac{x+y}{2}\frac{y+z}{2}\frac{z+x}{2},
 \qquad (x+y)(y+z)(z+x)\geq8xyz.\]
-A.W.D.! And we are done!
+This completes the proof.
 % Author check: x,y,z need not all be positive under the stated a,b,c>0 assumption; the source does not discuss this.
 \paragraph{Clever AM--GM.}
 If $a,b,c$ are positive reals satisfying $a+b+c=1$, prove that
 \[\sqrt{a+bc}+\sqrt{b+ca}+\sqrt{c+ab}\leq2.\]
 We cannot do much with the nonhomogeneous expression inside the radical.
-So let's homogenize!
+Homogenize the expression:
 % Source page 49 - right
 \[\sqrt{a+bc}=\sqrt{a(a+b+c)+bc}=\sqrt{(a+b)(a+c)}\leq\frac{2a+b+c}{2}.\]
 Add the three similar inequalities to obtain
@@ -182,8 +181,8 @@ Then $1/2\geq PC'/PA=\sin\angle PAB$, giving $\angle PAB\leq30^\circ$ or $\angle
 If $\angle PAB\geq150^\circ$, then $\angle PBC<30^\circ$. Q.E.D.!
 
 % Source page 58 - left
-\subsection{Pull the trigger}
-There are some trigonometric identities you should be aware of. Take them as standard lemmas.
+\subsection{A trigonometric toolkit}
+We begin with a collection of standard trigonometric identities.
 \setcounter{theorem}{95}\begin{lemma}[Trigonometric identities]\label{lemma:lb1-98}
 \begin{enumerate}
 \setcounter{enumi}{0}\item $\sin^2x+\cos^2x=1$.
@@ -234,10 +233,10 @@ We require $\sqrt{ab}+\sqrt{bc}+\sqrt{ca}\leq3/2$, which follows by squaring the
 $\sqrt a+\sqrt b+\sqrt c\leq\sqrt{a+b+c+3}$ and cancelling terms.
 It becomes $\sin(\alpha/2)+\sin(\beta/2)+\sin(\gamma/2)\leq3/2$, which follows from Jensen's inequality.
 Q.E.D.!
-\paragraph{Ingenious trigonometric substitution!}
+\paragraph{A trigonometric substitution.}
 Let $a,b,c$ be positive reals with $a+b+c=1$. Prove that
 \[\sqrt{\frac{ab}{c+ab}}+\sqrt{\frac{bc}{a+bc}}+\sqrt{\frac{ca}{b+ca}}\leq\frac32.\]
-Once you get that sparkling idea, the solution is two lines!
+The substitution gives a two-line solution.
 \[\sum_{\mathrm{cyc}}\sqrt{\frac{ab}{c+ab}}
 =\sum_{\mathrm{cyc}}\sqrt{\frac{ab}{c(a+b+c)+ab}}
 =\sum_{\mathrm{cyc}}\sqrt{\frac{ab}{(c+a)(c+b)}}.\]
@@ -246,7 +245,7 @@ Therefore the last sum is $\sin(\alpha/2)+\sin(\beta/2)+\sin(\gamma/2)\leq3/2$.
 Q.E.D.!
 
 % Source page 59 - left (upside-down content in the scan)
-\paragraph{Let's bash that system!}
+\paragraph{Solving a trigonometric system.}
 Find all triples $(x,y,z)$ of real numbers satisfying
 \[3(x+1/x)=4(y+1/y)=5(z+1/z)\tag{1}\]
 and
@@ -265,12 +264,12 @@ Therefore $x=\tan(\alpha/2)=1/3$, $y=\tan(\beta/2)=1/2$, and $z=\tan(\gamma/2)=1
 So $(x,y,z)=(1/3,1/2,1)$ or $(-1/3,-1/2,-1)$. Q.E.D.!
 % Author check: the argument assumes triangle-angle branches for a real-valued system and appends the all-negative solution without explaining that reduction; preserved.
 
-\subsection{Pull the trigger}
+\subsection{Two applications}
 \paragraph{Problem 1.}
 Triangle $ABC$ is isosceles with $AB=AC$ and $\angle BAC=20^\circ$.
 Point $P$ is on $AC$ such that $AP=BC$. Find $\angle PBA$.
 
-Let's pull the trigger! The sine rule for $\triangle ABP$ and $\triangle BPC$ yields the following
+The sine rule for $\triangle ABP$ and $\triangle BPC$ yields
 (angles in the calculations below are measured in degrees):
 \[
 \frac{BP}{\sin80}=\frac{BC}{\sin(x+20)},\qquad
@@ -302,17 +301,13 @@ Now we obtain $\sin x=\sin(20-x)\Rightarrow x=20-x\Rightarrow x=10^\circ$;
 or we could also have $x=180k-(20-x)\Rightarrow x=180k-20+x\Rightarrow180k=20^\circ$,
 which is equivalent to the solution $x=10$. Therefore $\angle PBA=10^\circ$. Q.E.D.!
 
-\emph{P.S.} A gifted ninth grader by the name of Sergey Yusin proposed
-\unclear{the continuation is cut off at the bottom of the scan}.
-
 % Source page 61
 \paragraph{Problem 2.}
 Let the incircle of $\triangle ABC$ touch $BC,CA,AB$ at $D,E,F$, respectively.
-If $DI$ extended meets $EF$ at $K$, where $I$ is the incentre of $\triangle ABC$,
+If the extension of $DI$ meets $EF$ at $K$, where $I$ is the incentre of $\triangle ABC$,
 prove that $A,K,M$ are collinear, where $M$ is the midpoint of $BC$.
 
-It suffices to show that $AK$ extended meets $BC$ at $M$, where $BM=MC$.
-Let's proceed! Let's pull the trigger!
+It suffices to show that the extension of $AK$ meets $BC$ at $M$, where $BM=MC$.
 \begin{figure}[htbp]
 \centering\includegraphics[width=.70\linewidth]{lb1-fig-40.pdf}
 \FigureTag{LB1.40}{fig:lb1-40}
@@ -345,12 +340,11 @@ This implies $[ABM]=[ACM]\Rightarrow BM=MC$.
 \paragraph{Ingenious trigonometric substitution.}
 Let $x,y,z>0$ satisfy $xy+yz+zx=3xyz$. Prove $(2y+2z+x)^2>12xyz$.
 % Source page 4 - right
-Let us pull the trigger!
 From the condition,
 $1/(3x)+1/(3y)+1/(3z)=1$, hence $1/(3x)+(y+z)/(3yz)=1$.
 Put $1/(3x)=\cos^2\theta$ and $(y+z)/(3yz)=\sin^2\theta$.
 Then $\cos\theta=1/\sqrt{3x}$ and $\sin\theta=\sqrt{(y+z)/(3yz)}$.
-Using the obvious fact $\sin\theta+\cos\theta>1$, we obtain
+Using $\sin\theta+\cos\theta>1$, we obtain
 \begin{align*}
 \frac1{\sqrt{3x}}+\frac{\sqrt{y+z}}{\sqrt{3yz}}>1
 &\Longrightarrow \sqrt{3yz}+\sqrt{3x(y+z)}>3\sqrt{xyz}\\
@@ -358,28 +352,8 @@ Using the obvious fact $\sin\theta+\cos\theta>1$, we obtain
 \end{align*}
 Since $\sqrt{yz}\leq(y+z)/2$ and $\sqrt{x(y+z)}\leq(x+y+z)/2$,
 we get $y+z+x/2>\sqrt{3xyz}$, proving the result.
-\emph{Quite innovatively done.}
 
-That inequality using trigonometric substitution was all pure dumbass; sorry I did not realize it.
-Pranjal pointed out that one should substitute $12xyz=4xy+4yz+4zx$ and prove it directly.
-It was that obvious! Let me rephrase it.
-Let $x,y,z$ be positive integers satisfying $xy+yz+zx=3xyz$.
-Prove $27xyz>8(x+y+z)$ in two different ways.
-
-\paragraph{It was obvious!}
-Let $a,b,c$ be sides of a triangle similar to $ABC$. Prove
-$2c^3+ab+bc+ca>a^3+b^3+c^3+3abc$.
-One may prove $(a+b+c)(ab+bc+ca)+c^3>a^3+b^3+3abc$ by using
-\[
-a^3+b^3-c^3+3abc-\left(\sum ab\right)\left(\sum a\right)
-=\left(\sum a\right)\left(\sum a^2-2\sum ab\right)<0.
-\]
-Now, because it is homogeneous, assume $a+b+c=1$.
-This also exploits the fact that $a,b,c$ are the sides of a triangle similar to $ABC$.
-The actual problem was to find the range of the area, given that $ABC$ is equilateral. Try it!
-% Author check: original nonhomogeneous statement and displayed factorization are preserved.
-
-\paragraph{APMO 1996: a wonder.}
+\paragraph{APMO (1996).}
 For the side lengths $a,b,c$ of a triangle, prove
 $\sqrt{a+b-c}+\sqrt{b+c-a}+\sqrt{c+a-b}\leq\sqrt a+\sqrt b+\sqrt c$.
 
@@ -392,6 +366,6 @@ Now use $(\sqrt x+\sqrt y)/2\leq\sqrt{(x+y)/2}$ to obtain
 \frac{\sqrt{a+b-c}+\sqrt{b+c-a}}2\leq\sqrt b,\qquad
 \frac{\sqrt{b+c-a}+\sqrt{c+a-b}}2\leq\sqrt c.
 \]
-Now what? Q.E.D.!
+Adding these three inequalities proves the result.
 % BLOG-CONTENT-END
 \end{document}

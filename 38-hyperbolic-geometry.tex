@@ -19,7 +19,7 @@ Let us address these one by one. Riemann's brilliant insight is that geometry on
 \end{figure}
 Constructing smooth sections of $T^*M\otimes T^*M$ is also easy, since $TM\cong M\times\mathbb R^n$.
 % Source page 2
-Hyperbolic spaces are not like that. Moreover, we ask for more than just some metric: that can always be obtained by locally pushing the Euclidean metric to $M$ and patching with a partition of unity, however abstract this may be. First, some context.
+A Riemannian metric can always be constructed by pushing Euclidean metrics through local charts and patching them with a partition of unity. For a hyperbolic surface, we seek a metric that is also invariant under its conformal automorphisms. First, some context.
 \setcounter{theorem}{25}\begin{theorem}[Uniformisation]
 Every simply connected Riemann surface is conformally isomorphic to one of
 $\widehat{\mathbb C}$ (spherical), $\mathbb C$ (Euclidean), or $\mathbb H\cong\mathbb D$ (hyperbolic).
@@ -36,7 +36,7 @@ In other words, every $g\in\operatorname{Aut}(\mathbb H)$ is an isometry. This c
 \end{figure}
 A symmetric Riemannian metric has the form
 $g_{11}\,dx\otimes dx+2g_{12}\,dx\otimes dy+g_{22}\,dy\otimes dy$.
-For a conformal map $f=u+iv$, taking the $(dx,dy)$ tangent plane to the $(du,dv)$ tangent plane,
+For a conformal map $f=u+iv$, the coordinate differentials satisfy
 \[
 du=u_x\,dx+u_y\,dy,\qquad dv=v_x\,dx+v_y\,dy,
 \qquad
@@ -73,10 +73,10 @@ g_{w_0}\left(c\partial_x+d\partial_y,a\partial_x+b\partial_y\right)
 &=\widehat g_{w_0}\left(-d\partial_x+c\partial_y,-b\partial_x+a\partial_y\right),
 \end{align*}
 where $\widehat g$ is the pushforward. Thus
-$\widehat g_{w_0}=g_{22}dv^2-2g_{12}dv\,du+g_{11}du^2$, forcing $g_{12}=0$ and $g_{11}=g_{22}$. An invariant metric is therefore conformal, and unique up to constant multiplication.
+$\widehat g_{w_0}=g_{22}dv^2-2g_{12}dv\,du+g_{11}du^2$, forcing $g_{12}=0$ and $g_{11}=g_{22}$. An invariant metric is therefore conformal, and unique up to multiplication by a constant.
 % Author check: source cross coefficient 2bc and the displayed pushed-forward diagonal terms are retained.
 % Source page 5
-A conformal metric is $ds^2=\gamma(x+iy)^2(dx^2+dy^2)$, positive definite, so its norm is $ds=\gamma(z)|dz|$. Invariance under $f$ reads $\gamma(f(z))|df(z)|=\gamma(z)|dz|$. Evaluate this on $\partial_x$, which maps to $v=u_x\partial_x+v_x\partial_y$:
+A positive-definite conformal metric has the form $ds^2=\gamma(x+iy)^2(dx^2+dy^2)$; its associated norm is $ds=\gamma(z)|dz|$. Invariance under $f$ reads $\gamma(f(z))|df(z)|=\gamma(z)|dz|$. Evaluate this on $\partial_x$, which maps to $v=u_x\partial_x+v_x\partial_y$:
 \[
 \gamma(z)\sqrt{dx^2(\partial_x,\partial_x)+dy^2(\partial_x,\partial_x)}
 =\gamma(f(z))\sqrt{dx^2(v,v)+dy^2(v,v)}.
@@ -91,9 +91,9 @@ Let $S$ be hyperbolic, with universal cover $P\colon\mathbb D\to S$. For $y\in S
 \[
 \gamma_a(P|_{V_a}(z))=\frac{\rho(z)}{|P'(z)|},
 \]
-where $\rho(z)|dz|$ is the Poincar\'e metric on $\mathbb D$. Let $\{\psi_y\}_y$ be a partition of unity subordinate to
+where $\rho(z)|dz|$ is the Poincar\'e metric on $\mathbb D$. Let $\{\psi_y\}_y$ be a partition of unity subordinate to $\{U_y\}_{y\in S}$.
 % Source page 6
-$\{U_y\}_{y\in S}$. Patch by setting
+Patch by setting
 \[
 g=ds^2=\sum_y\psi_y\bigl(\gamma_a(P|_{V_a}(z))\bigr)^2(dx^2+dy^2).
 \]
@@ -110,11 +110,11 @@ This metric defines distances. For a smooth or piecewise smooth path $p\colon[0,
 \operatorname{length}(p)=\int_pds=\int_0^1|p'(t)|\,dt,
 \qquad |p'(t)|=\sqrt{ds\otimes ds(p'(t),p'(t))}.
 \]
-The formula for smooth paths extends in the same way to piecewise smooth paths.
+
 \setcounter{definition}{18}\begin{definition}[Poincar\'e distance]
 For $z_0,z_1\in S$, let $\mathcal Z$ be the smooth or piecewise smooth paths joining them. Define $\dist_S(z_0,z_1)=\inf_{p\in\mathcal Z}\operatorname{length}(p)$.
 \end{definition}
-Let us prove an important fact about hyperbolic spaces with this newly endowed distance.
+We now prove an important fact about hyperbolic surfaces with the Poincar\'e distance.
 % Source page 7
 \setcounter{theorem}{27}\begin{lemma}[Completeness]\label{cd7:complete}
 The space $(S,\dist_S)$ is complete. Given any $z_0,z_1\in S$, there is a path $p$ with $\operatorname{length}(p)=\dist_S(z_0,z_1)$; in other words, there is at least one geodesic.
@@ -145,12 +145,12 @@ Now let $S$ be any hyperbolic surface. For small enough $\varepsilon$, the set $
 \[
 \dist_S(P(z_0),P(z_1))\le\dist_{\mathbb D}(z_0,z_1),
 \]
-since a path in $\mathbb D$ of length $\ell$ projects to a path of the same length. A closed metric ball of radius $r$ is compact, being a closed subset in $\overline{B_{2r}(0)}$. For a Cauchy sequence $\{x_n\}$, there is $N$ such that its tail lies in $\{z:\dist_S(x_N,z)\le\varepsilon\}$. It therefore converges.
+since a path in $\mathbb D$ of length $\ell$ projects to a path of the same length. A closed metric ball of radius $r$ is compact, being a closed subset of $\overline{B_{2r}(0)}$. For a Cauchy sequence $\{x_n\}$, there is $N$ such that its tail lies in $\{z:\dist_S(x_N,z)\le\varepsilon\}$. It therefore converges.
 \end{proof}
 \begin{remark}
 Heine--Borel holds for hyperbolic spaces: $N_r(z_0)=\{z\in S:\dist_S(z,z_0)\le r\}$ is compact for every $r>0$.
 \end{remark}
-An explicit geodesic construction is sketched below. Let $B$ be a ball of local isometry about $z_0$, and choose a path $p$ to $z_1$ with $\operatorname{length}(p)=\dist(z_0,z_1)+\varepsilon$, possible by the definition of infimum.
+An explicit geodesic construction is sketched below. Let $B$ be a ball of local isometry about $z_0$, and choose a path $p$ to $z_1$ with $\operatorname{length}(p)=\dist(z_0,z_1)+\varepsilon$, which is possible by the definition of the infimum.
 \begin{figure}[H]\centering
 \includegraphics[width=.85\textwidth]{cd7-fig-03.pdf}
 \FigureTag{CD7.3}{fig:cd7-03}
@@ -221,6 +221,6 @@ Hyperbolic surfaces matter in complex dynamics because they help identify spaces
 A family $\mathcal F$ of holomorphic functions from $S$ to $T$ is normal.
 \end{lemma}
 % Author check: the source leaves the hypotheses on S,T and the convention allowing compact divergence implicit.
-We defer the proof of this lemma and other Montel-like lemmas. We will soon see how hyperbolic surfaces are integral to complex dynamics.
+This normal-family property is central to complex dynamics.
 % BLOG-CONTENT-END
 \end{document}

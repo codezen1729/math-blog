@@ -26,11 +26,12 @@ We shall show that strict inequality can never occur. Suppose it does. Then $u$ 
 \[
 z_0\in\operatorname{int}(K).
 \]
-Let $B_\varepsilon(z_0)\subset\operatorname{int}(K)$. Consider the function
+Let $B_\varepsilon(z_0)\subset\operatorname{int}(K)$, where $z_0=x_0+iy_0$. Consider the restriction
 \[
-u(x+iy_0)\colon[0,\varepsilon/2]\xrightarrow{\,+x_0\,}\mathbb R.
+x\longmapsto u(x+iy_0),
+\qquad x\in[x_0,x_0+\varepsilon/2].
 \]
-(Typo: the interval is $[x_0,x_0+\varepsilon/2]$, where $z_0=x_0+iy_0$.) The second derivative test gives
+The second derivative test gives
 \[
 \frac{\partial^2u}{\partial x^2}(z_0)\leq0.
 \]
@@ -122,7 +123,7 @@ By the ``linearity'' of arc length, or rather its additivity,
 +\left|\gamma\big|_{[T,T+h]}\right|
 =\left|\gamma\big|_{[0,T+h]}\right|.
 \]
-Analyzing the oscillations under the assumption that $g$ is not continuous leaves us with the assertion above. Thus there is a partition $P$ of $[t,t+h]$ such that
+If $g$ is not continuous, its oscillation yields the assertion above. Thus there is a partition $P$ of $[t,t+h]$ such that
 \[
 S(P,\overline\gamma)>\varepsilon,
 \qquad
@@ -135,7 +136,7 @@ P:t=t_0<t_1<\cdots<t_n=t+h,
 S(P,\overline\gamma)=\sum_{i=0}^{n-1}
 |\gamma(t_{i+1})-\gamma(t_i)|.
 \]
-Since $\gamma$ is continuous, it has bounded oscillations, and that bound tends to $0$ as $h\to0$. Since $\gamma$ is continuous on a compact set, it is uniformly continuous. Choose $P$ so that \(|\gamma(t_i)-\gamma(t_0)|<\varepsilon/2.\)
+Since $\gamma$ is continuous on a compact interval, it is uniformly continuous; consequently, its oscillation on intervals of length $h$ tends to $0$ as $h\to0$. Choose $P$ so that \(|\gamma(t_i)-\gamma(t_0)|<\varepsilon/2.\)
 Then
 \[
 \sum_{i=1}^{n-1}|\gamma(t_{i+1})-\gamma(t_i)|>\varepsilon/2,
@@ -212,7 +213,7 @@ Therefore images of rectifiable curves have measure $0$.
 Space-filling curves are not rectifiable. In fact, any curve with Hausdorff dimension greater than $1$ is unrectifiable.
 
 
-Note that this double induction gives a rather strong result. Observe instantly from the picture below that Riemann-integrable functions have graphs of measure $0$.
+Note that this double induction gives a rather strong result. The picture below shows that Riemann-integrable functions have graphs of measure $0$.
 
 \begin{figure}[htbp]
   \centering
@@ -222,7 +223,7 @@ Note that this double induction gives a rather strong result. Observe instantly 
 
 In particular, graphs of continuous or almost-continuous functions also have measure $0$. If we invoke Littlewood's principle, namely Lusin's theorem, then the graph of any measurable function whose support is a set of finite measure has measure $0$, since such functions are ``almost'' continuous. Sadly, none of these capture the notion of rectifiability, since there is no implicit function theorem for continuous functions.
 
-We are not done with Tool 5, or for that matter with any of the tools; these shall keep coming back. So watch out.
+
 
 \subsection*{Tool 6 — Fundamental Theorem of Calculus}
 Let $f$ be Riemann integrable, and let $F$ satisfy $F'=f$. Then
@@ -249,9 +250,9 @@ v(x+iy)=v(0)
 -\int_0^x\frac{\partial u}{\partial y}(t)\,dt
 +\int_0^y\frac{\partial u}{\partial x}(x+it)\,dt.
 \]
-Denote the two integrals by $H(x,y)$. The function $u$ fixes $H(x,y)$, so another conjugate of $u$ can differ only by a constant.
+Denote the two integrals by $H(x,y)$. The function $u$ determines $H(x,y)$, so another conjugate of $u$ can differ only by a constant.
 
-Now let us establish existence. Since $u$ fixes $H(x,y)$, define
+Now let us establish existence. Since $u$ determines $H(x,y)$, define
 \[
 v(x+iy):=H(x,y)
 =-\int_0^x\frac{\partial u}{\partial y}(t)\,dt
@@ -365,6 +366,6 @@ is entire and bounded. Hence
 \[
 u=v+k.
 \]
-If equality in $u\leq v+M$ is attained, then $u=v+M$. ``A function in harmony never dominates another of the same kind.'' Realize the consequence of this for entire functions.
+If equality in $u\leq v+M$ is attained, then $u=v+M$. ``A function in harmony never dominates another of the same kind.'' The same argument shows that an entire function with bounded real part is constant.
 % BLOG-CONTENT-END
 \end{document}
