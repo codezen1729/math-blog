@@ -7,13 +7,13 @@
 \section{Generalized Cohomology}
 
 
-The functor $\text{Vect}_{\mathbb{K}}^n$ is representable. We now aim to give it more structure by lifting it to commutative rings, after some minor adjustments. This is a generic categorical trend: one yearns to understand elements of a category by studying presheaves on it, which is akin to studying groups by studying its action. Then one asks if the presheaves can be lifted to some nice category to obtain, for instance, algebraic invariants like the homotopy groups. The ideas developed here can be found in \cite{atiyah1961vector} 
+The functor $\text{Vect}_{\mathbb{K}}^n$ is representable. We now aim to give it more structure by lifting it to commutative rings, after some minor adjustments. This is a generic categorical trend: one yearns to understand elements of a category by studying presheaves on it, which is akin to studying a group through its actions. Then one asks if the presheaves can be lifted to some nice category to obtain, for instance, algebraic invariants like the homotopy groups. This discussion follows Atiyah and Hirzebruch \cite{atiyah1961vector}. 
 
 \underline{\textbf{Stable Isomorphism Classes of Vector Bundles}}
 
-Given a compact Hausdorff space $X$, theorems on $\text{Vect}_{\mathbb{K}}^n(X)$ proved in the previous section can easily be extended to $\text{Vect}_{\mathbb{K}}(X)$ component by component. Note that, $\text{Vect}_{\mathbb{K}}(X)$ is a contravariant functor,
+Given a compact Hausdorff space $X$, the homotopy-invariance and classification theorems for $\text{Vect}_{\mathbb K}^n(X)$ can easily be extended to $\text{Vect}_{\mathbb{K}}(X)$ component by component. Note that, $\text{Vect}_{\mathbb{K}}(X)$ is a contravariant functor,
 $$\text{Vect}_{\mathbb{K}}: \tau_c^{\text{op}} \rightarrow \text{Sets}$$
-Clearly, $\text{Vect}_{\mathbb{K}}$ lifts to the category of commutative monoids (denoted by CMon), (i.e.) one has:-
+Clearly, $\text{Vect}_{\mathbb{K}}$ lifts to the category of commutative monoids (denoted by CMon), (i.e.) one has:
 \[\begin{tikzcd}
 	& {\text{CMon}} \\
 	{\tau_c^{\text{op}}} & {\text{Sets}}
@@ -22,7 +22,7 @@ Clearly, $\text{Vect}_{\mathbb{K}}$ lifts to the category of commutative monoids
 	\arrow["{U (\text{forgetful functor})}", from=1-2, to=2-2]
 \end{tikzcd}\]
 
-Given any commutative monoid $M$, one can create a group $Gk(M)$ via what's called a \textbf{groupification}, such that the following universal property holds:- Given $f:M \rightarrow G$, $G$ a group, $f$ a monoid homomorphism, there exists a unique group homomorphism $\widetilde{f}: Gk(M) \rightarrow G$ such that the following commutes:- 
+Given any commutative monoid $M$, one can create a group $Gk(M)$ via \textbf{group completion}, such that the following universal property holds: Given a monoid homomorphism $f:M\to G$ to a group $G$, there exists a unique group homomorphism $\widetilde{f}: Gk(M) \rightarrow G$ such that the following commutes: 
 
 \[\begin{tikzcd}
 	M && G \\
@@ -35,10 +35,10 @@ Let us now construct the functor $Gk: \text{CMon} \rightarrow \text{CGrps} \text
 $$Gk(M):= (M\times M)/\sim$$
 where $(m, m') \sim (n,n')$ if $m+n'+a = m'+n+a$ for some $a\in M$. Give $Gk(M)$ the additive structure borrowed from $M$ (imposed component-wise).
 \begin{enumerate}[(i)]
-    \item Associativity and commutativity of addition is clear.
+    \item Associativity and commutativity of addition are clear.
     \item $[(e, e)]$ is the identity.
     \item $[(m, n)]$ is the inverse of $[(n,m)]$ as $[(n+m, m+n)] = [(e, e)]$.
-    \item $\widetilde{f}([(m,n)]):= f(m)f(n)^{-1}$. $\widetilde{f}$ clearly satisfies the universal property. Indeed, the inclusion, $M\hookrightarrow Gk(M)$ is given by, $m\rightarrow [(m, e)]$, then as:-
+    \item $\widetilde{f}([(m,n)]):= f(m)f(n)^{-1}$. $\widetilde{f}$ clearly satisfies the universal property. Indeed, the inclusion, $M\hookrightarrow Gk(M)$ is given by, $m\rightarrow [(m, e)]$, then as:
     \[\begin{tikzcd}
 	M && G \\
 	& {Gk(M)}
@@ -52,7 +52,7 @@ we have, $\widetilde{f}([(m, e)]) = f(m)$, which implies $\widetilde{f}([(m, n)]
 We define the functor, 
 $$K: \tau_c^{\text{op}} \rightarrow \text{CGrps}$$
 $$K:= Gk\circ \text{Vect}_{\mathbb{K}}$$
-In other words, we have the following diagram:-
+In other words, we have the following diagram:
 \[\begin{tikzcd}
 	{\text{CGrps}} && {\text{CMon}} \\
 	{\tau_c^{\text{op}}} && {\text{Sets}}
@@ -67,14 +67,11 @@ Elements of $K(X)$ are called \textbf{stable isomorphism classes of vector bundl
 Let $(E, E') \in \text{Vect}_{\mathbb{K}}(X)\times \text{Vect}_{\mathbb{K}}(X)$, then $(E, E') \sim (F, F')$ iff $E\oplus F'\oplus A \cong E'\oplus F\oplus A$. Now, $\forall A \in \text{Vect}_{\mathbb{K}}(X)$, there exists $A' \in \text{Vect}_{\mathbb{K}}(X)$ such that $A\oplus A' \cong \epsilon^n$, where $\epsilon^n$ is a trivial bundle of dimension $n$ over $X$. So, 
 $$(E, E') \sim (F,F') \iff \exists \epsilon^n \text{ such that,}$$
 $$E\oplus F'\oplus \epsilon^n \cong E'\oplus F\oplus \epsilon^n$$
-Also, for $E'\in \text{Vect}_{\mathbb{K}}(X)$, let $E''$ be such that $E'\oplus E'' \cong \epsilon^m$, this gives us that:-
+Also, for $E'\in \text{Vect}_{\mathbb{K}}(X)$, let $E''$ be such that $E'\oplus E'' \cong \epsilon^m$, this gives us that:
 $$(E, E') \sim (E\oplus E'', E' \oplus E'') = (E\oplus E'', \epsilon^m)$$
 Therefore,
 $$K(X) = \{[(E, \epsilon)] \in Gk(\text{Vect}_{\mathbb{K}}(X))\}$$
-In other words, embedding theorem gives us the above elegant description of the stable isomorphism classes of vector bundles. Define, 
-$$\otimes: K(X)\times K(X) \rightarrow K(X)$$
-$$[(E, \epsilon^m)]\otimes [(E, \epsilon^n)] := [(E\otimes E' \oplus \epsilon^m\otimes \epsilon^n, E'\otimes \epsilon^m\oplus E\otimes \epsilon^n)]$$
-From our discussion on the tensor products of bundles and Whitney sums, it is clear that $K$ lifts to CRings, (i.e.) we have:-
+In other words, the embedding theorem gives us the above elegant description of the stable isomorphism classes of vector bundles. From our discussion of tensor products and Whitney sums, $K$ lifts to CRings; that is, we have:
 \[\begin{tikzcd}
 	& {\text{CRings}} \\
 	{\tau_c^{\text{op}}} & {\text{CGrps}}
@@ -84,17 +81,17 @@ From our discussion on the tensor products of bundles and Whitney sums, it is cl
 \end{tikzcd}\]
 This lifted commutative ring object $K(X)$ is called the \textbf{Grothendieck ring of vector bundles over $X$}.
 
-Question:- Is the functor $K\in \text{PSh}(\tau_c)$ representable? 
+Question: Is the functor $K\in \text{PSh}(\tau_c)$ representable? 
 
 \underline{\textbf{Representation of the $K$-functor}}
 
-Let $\{x_0\} \in X$, then $\{x_0\} \xhookrightarrow{i} X$ induces the map:-
+Let $x_0\in X$. Then $\{x_0\} \xhookrightarrow{i} X$ induces the map:
 $$i^*: K(X) \rightarrow K(x_0)$$
 Define, 
 $$\widetilde{K}(X) := \text{Ker}(i^*)$$
-called the \textbf{reduced} ring over $X$. Note that $K(x_0) = \{[(\epsilon^n, \epsilon^m)]\}_{n, m} \cong \mathbb{Z}$, and that one has the following exact sequence:-
+called the \textbf{reduced} ring over $X$. Note that $K(x_0) = \{[(\epsilon^n, \epsilon^m)]\}_{n, m} \cong \mathbb{Z}$, and that one has the following exact sequence:
 $$0\rightarrow \widetilde{K}(X) \rightarrow K(X) \rightarrow K(X_0) \rightarrow 0$$
-As $K(x_0)$ is free, the above sequence splits to give:-
+As $K(x_0)$ is free, the above sequence splits to give:
 $$K(X)\cong \widetilde{K}(X)\oplus K(x_0)$$
 Suppose $[(E, \epsilon^n)] = [(E', \epsilon^m)]$ belong to $\text{Ker}(i^*)$, then by definition there exists $\epsilon^k$ such that $E\oplus \epsilon^{n+k} \cong E'\oplus \epsilon^{m+k}$. Say $E\sim_s E'$ whenever such an isomorphism holds. Let,
 $$i_{n, m}: \text{Vect}_{\mathbb{K}}^n(X) \rightarrow \text{Vect}_{\mathbb{K}}^{n+m}(X)$$
@@ -103,7 +100,7 @@ Then, $\{i_{n, m}\}_{n, m}$ defines the following diagram of a directed system i
 $$D:   \text{Vect}_{\mathbb{K}}^0(X) \xhookrightarrow{i_{0,1}} \text{Vect}_{\mathbb{K}}^1(X) \xhookrightarrow{i_{1,1}} \text{Vect}_{\mathbb{K}}^2(X) \xhookrightarrow{i_{2,1}} \text{Vect}_{\mathbb{K}}^n(X) \xhookrightarrow{i_{3,1}} \cdots$$
 Observe that,
 $$\text{colim}(D) = \bigg(\coprod\limits_{n}\text{Vect}_{\mathbb{K}}^n(X)\bigg)\bigg/\sim_s  = \widetilde{K}(X)$$
-We now look for maps $\{j_{n,m}\}_{n,m}$ such that the following commutes:-
+We now look for maps $\{j_{n,m}\}_{n,m}$ such that the following commutes:
 \begin{equation*}
     \begin{tikzcd}
 	{[X, Gr(n, \mathbb{K}^{\infty})]} & {[X, Gr(n+m, \mathbb{K}^{\infty})]} \\
@@ -134,22 +131,22 @@ Now, $K(X) \cong \widetilde{K}(X) \oplus \mathbb{Z}$ gives,
 Therefore the colimit of infinite Grassmannians $\big[\text{colim}_{j_{n,m}}Gr(n, \mathbb{K}^{\infty})\times \mathbb{Z}\big]$ represents the presheaf $K$. Now note that the function,
 $$\xi_{n,m}: Gr(n, \mathbb{K}^{\infty}) \rightarrow Gr(n+m, \mathbb{K}^{\infty})$$
 $$\xi_{n,m}(P):= \mathbb{K}^m\oplus P$$
-leading to;
+which induces
 $$j_{n, m}: [X, Gr(n, \mathbb{K}^{\infty})] \rightarrow [X, Gr(n+m, \mathbb{K}^{\infty})]$$
 $$j_{n,m}(f):= \xi_{n,m}\circ f$$
-by the very construction of Whitney sums and pullbacks gives us a canditate family of morphisms $\{j_{n,m}\}_{n,m}$ that make $(\dagger)$ commute. The discussion above is summarized as,
+by the very construction of Whitney sums and pullbacks gives us a candidate family of morphisms $\{j_{n,m}\}_{n,m}$ that make $(\dagger)$ commute. The discussion above is summarized as,
 \subsection*{Theorem 4.1}
-    Let $X$ be a compact Hausdorff space, we have, $$K(X) \cong [X, Gr(\infty, \mathbb{K}^{\infty})\times \mathbb{Z}]$$
+    Let $X$ be a compact Hausdorff space. Then $$K(X) \cong [X, Gr(\infty, \mathbb{K}^{\infty})\times \mathbb{Z}]$$
 (i.e.) the space $Gr(\infty, \mathbb{K}^{\infty})\times \mathbb{Z}$ represents the functor $K$.
 
-\textbf{Remark} (Notation):- Recall that for a group $G$, we denote by $BG$ its classifying space, and by $EG$ the universal bundle. Turns out, for $U:= \text{colim} U(n)$, the classifying space $BU \cong Gr(\infty, \mathbb{K}^{\infty})$, and $BU(n) \cong Gr(\infty, \mathbb{K}^{n})$, so we shall use the symbol $BU$ for $Gr(\infty, \mathbb{K}^{\infty})$. Similarly, we use $BU(n)$, $EU(n)$, to denote analogous objects. From now on, by a bundle we shall mean a finite dimensional complex vector bundle over a compact Hausdorff space.
+\textbf{Remark} (Notation): Recall that for a group $G$, we denote by $BG$ its classifying space, and by $EG$ the universal bundle. It turns out that, for $U:= \text{colim} U(n)$, the classifying space $BU \cong Gr(\infty, \mathbb{K}^{\infty})$, and $BU(n) \cong Gr(\infty, \mathbb{K}^{n})$, so we shall use the symbol $BU$ for $Gr(\infty, \mathbb{K}^{\infty})$. Similarly, we use $BU(n)$, $EU(n)$, to denote analogous objects. In the remainder of this post, ``bundle'' means a finite-dimensional complex vector bundle over a compact Hausdorff space.
 
-\textbf{Remark} Note that $(\dagger)$ does not talk about the ring structure of $K(X)$. To say that $[X, BU]$ with the usual direct sum and tensor product of maps induced point-wise by $BU$ is isomorphic to $\widetilde{K}(X)$, we need to check the following two things:-
+\textbf{Remark.} Note that $(\dagger)$ does not encode the ring structure of $K(X)$. To say that $[X, BU]$ with the usual direct sum and tensor product of maps induced point-wise by $BU$ is isomorphic to $\widetilde{K}(X)$, we need to check the following two things:
 \begin{enumerate}[(i)]
     \item $(f\oplus' g)^*EU(n+m) \cong f^*EU(n)\oplus g^*EU(m)$
     \item $(f\otimes' g)^*EU(nm) \cong f^*EU(n)\otimes g^*EU(m)$
 \end{enumerate}
-where $\oplus'$ and $\otimes'$ denote the sum and product in the ring of maps. The isomorphisms (i), (ii), are nearly tautological if one appeals to the tautological bundle rather than looking at $EU(n)$\footnote{This, in a way justifies the name.}. Then, passing on to colimits would give us an isomorphism that preserves the algebraic structure.
+where $\oplus'$ and $\otimes'$ denote the sum and product in the ring of maps. The isomorphisms (i) and (ii) are nearly tautological if one appeals to the tautological bundle rather than looking at $EU(n)$\footnote{This, in a way, justifies the name.}. Then, passing to colimits would give us an isomorphism that preserves the algebraic structure.
 % BLOG-CONTENT-END
 \bibliographystyle{amsalpha}
 \bibliography{tools/profiles/k-theory/references}

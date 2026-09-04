@@ -5,18 +5,22 @@
 \begin{document}
 \section*{Invariant Measures and the Geometry of Ergodicity}
 % BLOG-CONTENT-BEGIN
-Let's put both a topological structure and a measure on our state space $X$.
+Equip the state space $X$ with both a topology and a measure.
 
-Let $(X,d)$ be a compact metric space and $T\colon X\to X$ be a continuous map. This is the setup of a \emph{topological dynamical system}. It turns out that, the moment you have this, there are some measures you can impose on $X$ naturally, which is precisely why we studied measure-preserving systems first. We want our measures to capture the ``size'' of sets, so we require our measures to be positive. Riesz's representation theorem tells you that all positive linear functionals in $C(X)^*$ are in one-to-one correspondence with bounded Borel measures on $X$:
+Let $(X,d)$ be a compact metric space and let $T\colon X\to X$ be continuous.
+This is a \emph{topological dynamical system}. The compact metric structure
+naturally supplies measures on $X$. We want these measures to capture the
+``size'' of sets, so we require them to be positive. Riesz's representation
+theorem identifies the positive linear functionals in $C(X)^*$ with bounded
+Borel measures on $X$:
 \[
  \boxed{\Lambda\in C(X)^*\ \sim\ \int_X d\mu,
  \qquad \mu\text{ a bounded Borel measure}.}
 \]
-Thus, the set of all possible Borel probability measures that one can impose on $X$ can be naturally obtained from the structure imposed on $X$, i.e. the structure of a compact metric space.
+Thus the compact metric structure on $X$ naturally determines its space of
+Borel probability measures.
 
-Denote by $\mathcal M(X)$ the space of Borel probability measures on $X$. Our
-% Source page 2
-attempts at building a geometric perspective on ergodicity begin by endowing $\mathcal M(X)$, again, with a natural metric-space structure.
+Denote by $\mathcal M(X)$ the space of Borel probability measures on $X$. To develop a geometric view of ergodicity, give $\mathcal M(X)$ its weak-$*$ topology.
 
 Give $C(X)^*$ the weak-$*$ topology. Notice first that the set
 \[
@@ -37,12 +41,14 @@ Clearly, the norm of the operator $\mu$ is $\mu(X)$, for
 % Source omits the range of s in the convex-combination assertion; retained.
 
 \begin{remark}
-$\mathcal M(X)$ can also be metrizable, but that aspect of it is not relevant
+$\mathcal M(X)$ is also metrizable, but only compactness is needed
 % Source page 3
-to us as of now.
+here.
 \end{remark}
 
-Given a topological dynamical system $(X,d,T)$, we have a way to associate probability measures on $X$ using the topological structure imposed on $X$. Of these, let us now look at those measures $\mu\in\mathcal M(X)$ such that $\mu$ is $T$-invariant. Then we shall have a measure-preserving system to which we can export our knowledge developed so far.
+For a topological dynamical system $(X,d,T)$, consider the measures
+$\mu\in\mathcal M(X)$ that are $T$-invariant. Each such measure turns the
+system into a measure-preserving dynamical system.
 
 The map $T$ induces a continuous map $T_*\colon\mathcal M(X)\to\mathcal M(X)$, defined by
 \[
@@ -60,14 +66,14 @@ If $\mathcal M^T(X):=\{\mu\in\mathcal M(X)\mid\mu\text{ is $T$-invariant}\}$, th
 
 % Source page 4
 \setcounter{theorem}{18}\begin{theorem}[Krylov--Bogolyubov]\label{thm:l6-kb}
-We can do ergodic theory on $(X,d,T)$: given a topological dynamical system $(X,d,T)$, we have $\mathcal M^T(X)\neq\varnothing$.
+Every topological dynamical system $(X,d,T)$ admits a $T$-invariant Borel probability measure; equivalently, $\mathcal M^T(X)\neq\varnothing$.
 \end{theorem}
 \begin{proof}
 We have $\mathcal M(X)\neq\varnothing$ because $\delta_x\in\mathcal M(X)$, where, for every Borel set $A\subseteq X$,
 \[
  \delta_x(A):=\begin{cases}1,&x\in A,\\0,&\text{otherwise}.\end{cases}
 \]
-The measures $\delta_x$ can be identified with points in $X$. As $\mathcal M(X)$ is convex, if $X$ has at least two points then $\mathcal M(X)$ will be uncountable.
+The measures $\delta_x$ can be identified with points in $X$. As $\mathcal M(X)$ is convex, if $X$ has at least two points then $\mathcal M(X)$ is uncountable.
 
 Now let $\nu_n\in\mathcal M(X)$ and set $\mu_n:=\frac1n\sum_{j=0}^{n-1}T_*^j(\nu_n)$. Since $\mathcal M(X)$ is compact, there exists $\mu_{n(j)}\to\mu$. Let $f\in C(X)$. Then
 \[
@@ -84,38 +90,27 @@ Now let $\nu_n\in\mathcal M(X)$ and set $\mu_n:=\frac1n\sum_{j=0}^{n-1}T_*^j(\nu
 Thus $\int f\circ T\,d\mu=\int f\,d\mu$ for every $f\in C(X)$, implying that $\mu\in\mathcal M^T(X)$. Hence $\mathcal M^T(X)\neq\varnothing$.
 \end{proof}
 
-\begin{remark}
-Replace $(X,d,T)$ with $(\mathcal M(X),\widetilde d,T_*)$, where $\widetilde d$ is the metric that generates its weak-$*$ topology. By the
-% Source page 5
-previous theorem, $\mathcal M^{T_*}(\mathcal M(X))\neq\varnothing$, so there exists a $T_*$-invariant measure on $\mathcal M(X)$. Birkhoff's theorem tells us that, given almost every $\nu\in\mathcal M(X)$,
-\[
- \widetilde\mu_n=A_n^\nu:=\frac1n\sum_{i=0}^{n-1}U_{T_*}^i f(\nu)
- \longrightarrow f'(\nu),
-\]
-where $f'$ is $T_*$-invariant. Since $\{\nu\}$ is a Borel set in the metric space $\mathcal M(X)$, set $f=\chi_{\{\nu\}}$. Now
-\[
- \int_{\mathcal M(X)}f'\,d\widetilde\nu
- =\int_{\mathcal M(X)}f\,d\widetilde\nu
- =\widetilde\nu(\{\nu\}),
-\]
-where $\widetilde\nu$ is the $T_*$-invariant measure. Hence $f'=\chi_{\{\nu\}}$ almost everywhere (only if $f'\geq0$).
-% Author check: the source uses A_n^nu for an average of f and asserts f'=chi_{nu}; retained.
-\end{remark}
 
-Therefore, we have this dual notion in play here: consider the fact that $\mathcal M(X)$ in some sense also contains $X$.
+
+This reveals a useful duality: $\mathcal M(X)$ contains a natural copy of $X$.
 \[
  \boxed{\begin{gathered}\text{Equidistribution theorems}\\\text{in }\mathcal M(X)\end{gathered}
  \quad\approx\quad
  \begin{gathered}\text{Invariant measures}\\\text{on }X\end{gathered}}
 \]
 
-Now recall that $\mathcal M^T(X)$ is convex, so one can talk about its extreme points: points in $\mathcal M^T(X)$ which cannot be further broken down into linear, convex combinations of other elements in $\mathcal M^T(X)$. Denote the set of extreme points by $\mathcal E^T(X)$. For measures in $\mathcal E^T(X)$, we have the following lemma.
+The space $\mathcal M^T(X)$ is convex, so we may consider its extreme points:
+the measures that cannot be written as nontrivial convex combinations of
+other elements of $\mathcal M^T(X)$. Denote their set by $\mathcal E^T(X)$.
+These measures satisfy the following lemma.
 
 \setcounter{theorem}{19}\begin{lemma}
-If $\mu_1,\mu_2\in\mathcal E^T(X)$ with $\mu_1\neq\mu_2$, then $\mu_1$ and $\mu_2$ are mutually singular, if $\mu_1$ and $\mu_2$ are ergodic. That is, there exist measurable sets $A,B$ such that $A\cap B=\varnothing$, $A\cup B=X$, and $\mu_1(B)=\mu_2(A)=0$.
+If $\mu_1,\mu_2\in\mathcal E^T(X)$ are distinct ergodic measures, then they
+are mutually singular. That is, there exist measurable sets $A,B$ such that
+$A\cap B=\varnothing$, $A\cup B=X$, and $\mu_1(B)=\mu_2(A)=0$.
 \end{lemma}
 \begin{proof}
-This is a very simple consequence of the ergodic theorem.
+This is a consequence of the ergodic theorem.
 % Source page 6
 For every $f\in C(X)$, by the pointwise ergodic theorem,
 \[
@@ -127,11 +122,11 @@ Now choose $f\in C(X)$ such that $\int f\,d\mu_1\neq\int f\,d\mu_2$. If $A=\{x\m
 \end{proof}
 
 \begin{remark}
-One can generalize this to $n$ ergodic measures by induction. All you need is a function $f\in C(X)$ such that $\{\int f\,d\mu_i\}_{i=1}^n$ is a sequence of distinct elements. Since linear functionals on a topological vector space are open maps, if $\Lambda_i$ represents $\int d\mu_i$, then
+One can generalize this to $n$ ergodic measures by induction. It suffices to choose a function $f\in C(X)$ such that $\{\int f\,d\mu_i\}_{i=1}^n$ is a sequence of distinct elements. Since linear functionals on a topological vector space are open maps, if $\Lambda_i$ represents $\int d\mu_i$, then
 \[
  E_{ij}:=\{f\mid\Lambda_i f\neq\Lambda_j f\}
 \]
-is open and dense in $C(X)$. Thus $\bigcap_{i,j}E_{ij}$ is nonempty, as $C(X)$ is a Baire space. Therefore, if $\mathcal M^T(X)$ were pictorially a convex hull of finitely many ergodic extreme points, then the state space $X$ would have a finite decomposition into ergodic components.
+is open and dense in $C(X)$. Thus $\bigcap_{i,j}E_{ij}$ is nonempty, as $C(X)$ is a Baire space. Therefore, if $\mathcal M^T(X)$ were the convex hull of finitely many ergodic extreme points, then the state space $X$ would have a finite decomposition into ergodic components.
 % Author check: the source writes intersection over i,j without excluding i=j; retained.
 \end{remark}
 \begin{figure}[htbp]
@@ -141,7 +136,7 @@ is open and dense in $C(X)$. Thus $\bigcap_{i,j}E_{ij}$ is nonempty, as $C(X)$ i
 \end{figure}
 
 % Source page 7
-The following theorem ensures that such a geometric decomposition of the space can always be done.
+The next theorem identifies the ergodic measures with the extreme points.
 \setcounter{theorem}{20}\begin{theorem}[Extremal Ergodicity]
 The ergodic elements of $\mathcal M^T(X)$ are precisely $\mathcal E^T(X)$.
 \end{theorem}
@@ -153,9 +148,12 @@ If $\mu\in\mathcal M^T(X)$ is not ergodic, then there exists $B$ such that $0<\m
 \]
 a convex linear combination.
 
-If $\mu\in\mathcal M^T(X)$ is ergodic and $\mu=s\nu_1+(1-s)\nu_2$, then, since $s,1-s>0$, clearly $\nu_1\ll\mu$ and $\nu_2\ll\mu$. One of these would suffice. The Radon--Nikodym theorem tells you that there exists $f\in L_\mu^1$ such that $f=d\nu_1/d\mu$, implying $\nu_1(A)=\int_Af\,d\mu$.
+If $\mu\in\mathcal M^T(X)$ is ergodic and $\mu=s\nu_1+(1-s)\nu_2$, then,
+since $s,1-s>0$, we have $\nu_1\ll\mu$ and $\nu_2\ll\mu$. It suffices to
+consider $\nu_1$. The Radon--Nikodym theorem gives $f\in L_\mu^1$ such that
+$f=d\nu_1/d\mu$, and hence $\nu_1(A)=\int_Af\,d\mu$.
 
-Here is the cheeky part of the proof. Set $B:=\{x\mid f(x)<1\}$. Then
+The key step is the following. Set $B:=\{x\mid f(x)<1\}$. Then
 \[
 \begin{aligned}
  \int_{B\cap T^{-1}B}f\,d\mu+\int_{B\setminus T^{-1}B}f\,d\mu
@@ -188,9 +186,9 @@ This implies $\mu(B\mathbin\triangle T^{-1}B)=0$, so $\mu(B)\in\{0,1\}$. If $\mu
 a contradiction. Hence $\mu(B)=0$. Similarly, $\mu(\{x\mid f(x)>1\})=0$, so $f(x)=1$ almost everywhere. Thus $\nu_1=\mu$, implying $\mu\in\mathcal E^T(X)$: it is an extreme point.
 \end{proof}
 
-The argument made in the remark above can be extended to a countable collection of elements in $\mathcal E^T(X)$. In such cases, using the ergodic theorem, one can get an explicit decomposition of the state space. But a more interesting question is: what about the case when $\mathcal E^T(X)$ is a continuum? How is one supposed to get down to the minimal dynamical nuts and bolts of a given measure-preserving topological dynamical system? In that case, Choquet's representation theorem
+The same argument extends to countable collections in $\mathcal E^T(X)$ and gives an explicit decomposition via the ergodic theorem. When $\mathcal E^T(X)$ is a continuum, Choquet's representation theorem
 % Source page 9
-comes in handy to yield ergodic components of the state space as infinitesimal components of an integral representation!
+instead expresses an invariant measure as an integral of ergodic measures.
 
 \setcounter{theorem}{21}\begin{theorem}[Ergodic Decomposition]
 Given a topological dynamical system $(X,T)$ and any $\mu\in\mathcal M^T(X)$, there exists a unique probability measure $\lambda$ on the Borel sets of $\mathcal M^T(X)$ such that
@@ -204,7 +202,7 @@ These correspond, respectively, to the finite expressions $\sum_{i=1}^n c_i=1$ a
 \end{theorem}
 
 \begin{remark}
-Notice also that the uniqueness of $\lambda$ tells you that the decomposition is unique!
+The uniqueness of $\lambda$ makes the decomposition unique.
 \end{remark}
 % BLOG-CONTENT-END
 \end{document}

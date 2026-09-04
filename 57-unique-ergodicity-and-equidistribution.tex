@@ -5,10 +5,8 @@
 \begin{document}
 \section*{Unique Ergodicity and Equidistribution}
 % BLOG-CONTENT-BEGIN
-Let's explore the interplay between equidistribution and ergodicity. Birkhoff's theorem told us that, if a system is ergodic, then its
-orbits are all equidistributed. Now we are looking for a converse of this
-statement, and it turns out that the converse is pretty surprising indeed.
-Without any further delay, let's reveal it.
+Birkhoff's theorem connects ergodicity with the distribution of orbits. The
+converse question leads to a surprisingly rigid condition: unique ergodicity.
 
 \setcounter{theorem}{22}\begin{theorem}[Unique ergodicity]\label{thm:unique-ergodicity}
 The convergence
@@ -20,13 +18,11 @@ where $C_f$ is independent of $x$, is equivalent to
 $\lvert\mathcal M^T(X)\rvert=1$.
 \end{theorem}
 
-\emph{How did that happen!}
-
 \begin{proof}
 % [source: the handwritten proof labels this direction with a downward arrow,
 % although it starts from uniqueness of the invariant measure.]
-$(\Downarrow)$ Choose some $\delta_x\in\mathcal M(X)$. Then, by a theorem we
-proved in the previous post,
+$(\Downarrow)$ Choose some $\delta_x\in\mathcal M(X)$. By the existence theorem
+for invariant measures,
 \[
   \frac1N\sum_{n=0}^{N-1}\delta_{T^nx}\overset{*}{\longrightarrow}\mu,
 \]
@@ -57,7 +53,7 @@ if $\lvert\mathcal E^T(X)\rvert=1$, for $\mathcal M^T(X)$ consists of
 
 \begin{remark}[2]
 When $(X,T)$ is uniquely ergodic, the convergence in the theorem above is
-uniform. Otherwise, there exists $x$, for a given $\varepsilon$, such that
+uniform. Otherwise, for some $\varepsilon>0$ there exists $x$ such that
 \[
   \left|\frac1N\sum_{n=0}^{N-1}g(T^nx)-C_g\right|\geq\varepsilon.
 \]
@@ -65,16 +61,14 @@ Set $\mu_N=\frac1N\sum_{n=0}^{N-1}\delta_{T^nx}$. By weak-$*$ compactness,
 we have $\mu_{N(k)}\to\nu$, and therefore
 $\left|\int_X g\,d\nu-C_g\right|\geq\varepsilon$. Now
 $C_g=\int_X g\,d\mu$, where $\mu\in\mathcal M^T(X)$, so $\nu\ne\mu$.
-A contradiction!
+This is a contradiction.
 
-Thus the convergence is independent of both $x$ and $n$; it is really
-well-distributed!
+Thus the convergence is uniform in $x$; the orbit averages are
+well-distributed.
 \end{remark}
 
 % Source page 3
-This therefore leads us to the right definition of equidistribution of a
-given sequence $(x_j)_j$. This can help us visually and mathematically
-understand ergodic orbits.
+This motivates the following definition of equidistribution for a sequence $(x_j)_j$.
 
 \setcounter{definition}{9}\begin{definition}[Equidistribution]
 We say that $(x_n)_n$, with $x_n\in X$, is \emph{equidistributed} in $(X,T)$
@@ -86,29 +80,12 @@ if, for every $f\in C(X)$, we have
 \end{definition}
 
 \begin{remark}
-The discussion of unique ergodicity yields another startling duality between
-equidistribution and invariance of measures. It shows that the spaces $X$ and
-$\mathcal M(X)$ are intricately connected.
+Unique ergodicity links equidistribution in $X$ with invariant measures in $\mathcal M(X)$.
 \end{remark}
 
-\setcounter{definition}{10}\begin{definition}[Generic point]
-We say that $x\in X$ is \emph{generic} if either of two equivalent conditions
-holds:
-\begin{enumerate}[label=(\roman*)]
-  \setcounter{enumi}{0}\item \emph{Invariant measure in $\mathcal M(X)$:}
-  $\frac1n\sum_{j=1}^n\delta_{T^jx}\overset{*}{\longrightarrow}\mu$.
-  \setcounter{enumi}{1}\item \emph{Equidistribution in $X$:}
-  % [source: the upper summation limit is infinity in the handwriting.]
-  \[
-    \lim_{n\to\infty}\frac1n\sum_{j=1}^{\infty}f(T^jx)
-    \longrightarrow\int_X f\,d\mu
-    \qquad\bigl(\forall f\in C(X)\bigr).
-  \]
-\end{enumerate}
-\end{definition}
 
-Let us see one easy consequence of the ergodic theorem before moving on to
-the probabilistic interpretation of equidistribution.
+
+The following proposition is an immediate consequence of the ergodic theorem.
 
 \setcounter{theorem}{23}\begin{proposition}
 If $\mu\in\mathcal M^T(X)$ is ergodic, then almost every $x\in X$ is generic.
@@ -118,8 +95,7 @@ If $\mu\in\mathcal M^T(X)$ is ergodic, then almost every $x\in X$ is generic.
 By the Stone--Weierstrass theorem, $(C(X),\lVert\cdot\rVert_\infty)$ is
 separable. Let
 % Source page 4
-$(f_n)_n$ be dense in $C(X)$. The reason we are going for a dense subset is
-that
+$(f_n)_n$ be dense in $C(X)$. We use a dense subset because
 % [source: the summation index is j, but the displayed iterate is T^n x.]
 \[
   \lim_{n\to\infty}\frac1n\sum_{j=1}^n f(T^nx)
@@ -160,8 +136,7 @@ for all $x\in X'$, $\lim_{N\to\infty}A_N^f(x)=\int_X f\,d\mu$.
 \end{proof}
 
 % Source page 5
-To see what equidistribution means probabilistically, one must go to $[0,1]$.
-There we have the following.
+For a probabilistic interpretation, consider $[0,1]$ with Lebesgue measure.
 
 \setcounter{theorem}{24}\begin{lemma}
 Let $[0,1]$, equipped with Lebesgue measure, be our setting. If $(x_n)_{n\geq1}$
@@ -173,10 +148,9 @@ is equidistributed, then
 \end{lemma}
 
 In other words, equidistribution means being uniformly distributed over
-$[0,1]$. We have the same for ergodic orbits in the more general setting of
-a probability measure space, but those are special sequences regardless of
-how general the setting is: notice that $\mathcal E^T(X)$ is merely the set
-of extremal points of $\mathcal M^T(X)$.
+$[0,1]$. The same interpretation applies to ergodic orbits in a probability
+space. These sequences correspond to ergodic measures, the extreme points of
+$\mathcal M^T(X)$.
 
 \Needspace{7cm}
 \begin{proof}
@@ -192,7 +166,7 @@ $f^-\leq\chi_{[a,b]}\leq f^+$, and one can arrange $f^\pm$ so that
 \]
 
 % Source page 6
-Putting them together as we did in the proposition above,
+Using the same approximation argument,
 \begin{align*}
   b-a-2\varepsilon
   &\leq\int_0^1f^-\,dx
@@ -205,11 +179,11 @@ Thus $\liminf_{N\to\infty}A_N^{\chi_{[a,b]}}
 \end{proof}
 
 \begin{remark}
-Therefore, all equidistribution theorems can be consequences of ergodic
+Therefore, equidistribution theorems can be derived from ergodic
 theory, provided one finds the right transformation that is uniquely
 ergodic. For instance, rotation, namely $P(x)=x+\alpha$ with
 $\alpha\notin\mathbb Q$, is equidistributed in $[0,1]$, for $R_\alpha$ is
-uniquely ergodic. There is a general theorem due to Weyl which talks about
+uniquely ergodic. Weyl's theorem describes
 equidistribution of a degree-$n$ polynomial $P(n)$ where at least one
 coefficient is irrational.
 \end{remark}
@@ -237,11 +211,9 @@ then the isomorphism does not preserve any structure on $\mathcal M^T(X)$,
 because, in the image, $\lvert\mathcal M^T(X)\rvert=1$ regardless of what
 $\mathcal M^T(X)$ is.
 
-Thus invariance of measures is entirely a topological attribute of a system,
-not a measurable one!
+Thus this invariant-measure structure is topological rather than purely measurable.
 
-We have dealt with one of the problems raised in Lecture 5, that of ergodic
-decomposition. In the next few lectures, let us deal with the problem of
-classifying systems up to measurable isomorphisms.
+Ergodic decomposition addresses one side of the picture. The other is the
+classification of systems up to measurable isomorphism.
 % BLOG-CONTENT-END
 \end{document}

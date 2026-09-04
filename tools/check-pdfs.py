@@ -10,7 +10,15 @@ import tempfile
 
 def check(project: Path, output: Path):
     output.mkdir(parents=True, exist_ok=True)
-    files = json.loads((project / "tools/manifest.json").read_text())
+    published = json.loads((project / "tools/manifest.json").read_text())
+    published_by_file = {item["file"]: item for item in published}
+    source_paths = sorted(project.glob("[0-9][0-9]-*.tex"))
+    files = [published_by_file.get(path.name, {"file": path.name}) for path in source_paths]
+    if not source_paths:
+        raise RuntimeError("No numbered blog-post sources were found")
+    for path in source_paths:
+        if r"\input{styles/blog-preamble.tex}" not in path.read_text():
+            raise RuntimeError(f"{path.name}: the shared blog preamble is missing")
     latex, bibtex = shutil.which("pdflatex"), shutil.which("bibtex")
     if not latex or not bibtex:
         raise RuntimeError("pdfLaTeX and BibTeX are required")

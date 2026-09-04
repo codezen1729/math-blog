@@ -33,12 +33,12 @@ Then
 \[
   \gamma_0\sim(-\gamma_2)+(\gamma_2)+\gamma_1+(-\gamma_2)+(\gamma_2).
 \]
-As before, one can construct a homotopy between the constant curve \(z_0\) and \((-\gamma_2)+(\gamma_2)\), where \(z_0\) is the base point for \(\gamma_0\), by taking \(H(t,s)=z_0\). Let \(H_1\) be the homotopy taking
+As before, one can construct a homotopy between the constant curve \(z_0\) and \((-\gamma_2)+(\gamma_2)\), where \(z_0\) is the base point for \(\gamma_0\), by taking \(H(t,s)=z_0\). Let \(H_1\) be a homotopy from
 \[
   -\gamma_2+\gamma_2\longrightarrow\gamma_0.
 \]
 Then \(H_1(t,s)+\gamma_1(s)+H_2(t,s)=:H_0(t,s)\)
-is the homotopy taking
+is a homotopy from
 \[
   (-\gamma_2)+(\gamma_2)+\gamma_1+(-\gamma_2)+(\gamma_2)
   \longrightarrow\gamma_1.
@@ -61,7 +61,7 @@ Let \(H(t,s)\) be the deformation between \(\gamma_0\) and \(\gamma_1\). Then
   +\left.(-\gamma_1)\right|_{[t,1]}(s)
   =:H'(t,s).
 \]
-Then \(H'\) shrinks \(\gamma_0+(-\gamma_1)\) to a point, one of its terminals. If \(H'(t,s)\) deforms a point to \(\gamma_0+(-\gamma_1)\), then
+Then \(H'\) shrinks \(\gamma_0+(-\gamma_1)\) to a point at one endpoint of the homotopy. If \(H'(t,s)\) deforms a point to \(\gamma_0+(-\gamma_1)\), then
 \[
   \left.\gamma_0\right|_{[t,1]}(s)
   +H'(t,s)
@@ -126,7 +126,7 @@ Here,
 \]
 
 \textbf{Remark.}
-We denote a homotopy by \(H(t,s)\) to register the fact that \(t\) stands for the time variable in the event of deformation. Also, one must keep in mind the ways we collected curves from a homotopy and used curves to create a homotopy, thus justifying the
+We write a homotopy as \(H(t,s)\), with \(t\) as the homotopy parameter. Also, one must keep in mind the ways we collected curves from a homotopy and used curves to create a homotopy, thus justifying the
 
 
 wording of Tool 21.
@@ -162,96 +162,14 @@ and define
   \gamma_t:=\left.\overline{\gamma}\right|_{[t,\,1/3+t]}(s),
   \qquad 0\le t\le\frac23.
 \]
-After suitable normalization, one obtains what is needed.
-
 \textbf{Remark.}
-Because of these slides, which make the demand of a deformation rather trivial, we impose conditions such as \(H(s,0)=H(s,1)\qquad(\forall s),\)
-which give us the notion of homotopy under closed curves, or the stronger condition that \(H(s,0)\) and \(H(s,1)\) are constants.
+Because unrestricted sliding gives a weak notion of deformation, we impose conditions such as \(H(s,0)=H(s,1)\qquad(\forall s),\) which give the notion of a homotopy through closed curves, or the stronger condition that \(H(s,0)\) and \(H(s,1)\) are constants.
 
-\subsection*{Tool 22 — Morera Technique}
-We have seen two instances of this, one in the Schwarz Reflection Principle and the other in a variant of it. So, we shall briefly expound on it.
-
-Suppose you are given a ``free'' homotopy \(H(t,s)\), a collection of curves \(\gamma_t(s):=H(t,s)\)
-for a given \(t\). Let
-\[
-  H:[0,1]\times[0,1]\to\Omega,
-\]
-where \(\Omega\) is a domain. Then, by compactness of \([0,1]\times[0,1]\), we know \(H\) is uniformly continuous. Here we impose no particular conditions on \(H(t,0)\) and \(H(t,1)\). Let \(f\in C(\Omega)\). Then notice
-\[
-  \int_{\gamma_t(s)}f\sim\int_{\gamma_{t'}(s)}f
-  \qquad\text{if }|t-t'|<\varepsilon.
-\]
-
-For every \(\varepsilon\), there exists \(\delta\) such that
-\[
-  |\gamma_t(s)-\gamma_{t'}(s)|<\varepsilon
-  \quad\Longleftrightarrow\quad
-  |t-t'|<\delta.
-\]
-Now note that
-\[
-  \int_{\gamma_t(s)}f
-  :=\lim_{P}
-  \sum_P f(\gamma_t(s_j^*))
-  |\gamma_t(s_j)-\gamma_t(s_{j-1})|,
-\]
-where \(P\) is a partition of \([0,1]\). The restriction \(\left.f\right|_{H([0,1]\times[0,1])}\)
-is also uniformly continuous, and so are \(\gamma_t(s)\) and \(\gamma_{t'}(s)\).
-
-Given \(\varepsilon\),
-\begin{align*}
-  \left|\sum_{j=1}^n f(\gamma_t(s_j^*))
-  |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right|
-  &\le
-  \left|\sum_{j=1}^n
-    \bigl(f(\gamma_t(s_j^*))-f(\gamma_{t'}(s_j^*))\bigr)
-    |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right| \tag{1}\\
-  &\quad+
-  \left|\sum_{j=1}^n f(\gamma_{t'}(s_j^*))
-    |\gamma_{t'}(s_j)-\gamma_{t'}(s_{j-1})|\right| \tag{2}\\
-  &\quad+
-  \left|\sum_{j=1}^n f(\gamma_{t'}(s_j^*))
-    |\gamma_{t'}(s_{j-1})-\gamma_t(s_{j-1})|\right|. \tag{3}
-\end{align*}
-Note that \((1)<\varepsilon/3\), \((2)<\varepsilon/3\), and \((3)<\varepsilon/3\) if the mesh size of the partition and \(|t-t'|\) are small enough. Hence,
-\[
-  \left|\sum_{j=1}^n f(\gamma_t(s_j^*))
-  |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right|
-  <\left|\int_{\gamma_{t'}}f\right|+\varepsilon.
-\]
-
-Therefore,
-\[
-  \left|\int_{\gamma_t}f-
-  \sum_{j=1}^n f(\gamma_t(s_j^*))
-  |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right|<\varepsilon,
-\]
-and
-\[
-  \left|\int_{\gamma_t}f\right|
-  <\left|\int_{\gamma_{t'}}f\right|+\varepsilon
-  \qquad(\forall\varepsilon).
-\]
-Thus,
-\[
-  \left|\int_{\gamma_t}f\right|
-  =\left|\int_{\gamma_{t'}}f\right|.
-\]
-In particular, if one is \(0\), the other too is bound to be \(0\).
-
-The technique is this: if \(f\in H(\Omega)\) and \(f\in C(\partial\Omega)\), then one can, as in the Reflection Principle, ``push down'' triangles past \(\partial\Omega\) and conclude that \(f\) can be extended.
-
-\textbf{Exercise.}
-Fill in the gaps, and remove the modulus.
-
-% BLOG-PART
 \subsection*{Tool 23 — Two-Ears Theorem}
 Two-Ears Theorem (or the existence of a triangulation of any polygon).
 
 
 \subsection*{Alexander Numbering Rule}
-Refer to the statement in Tool 23. Draw the proof!
-
 We first note that simple smooth curves locally look like rotated graphs. Let \(\gamma\) be a simple smooth curve, with
 \[
   \gamma'(t_0)=re^{i\theta},
@@ -282,10 +200,7 @@ Then \(\varphi'(t_0)\ne0\), so \(\varphi\) is invertible locally. Let \(\varphi(
 \[
   f(s)=\operatorname{Im}(g)\circ\varphi^{-1}(s).
 \]
-Thus, locally, for \(\varepsilon\) small enough, we shall have the following to
-
-
-be true:
+Thus, locally, for \(\varepsilon\) small enough,
 \[
   \gamma([a,b])\cap B_\varepsilon(\gamma(t_0))
   =\left\{\gamma(t_0)+e^{i\theta}(s+if(s))
@@ -320,14 +235,7 @@ Denote this open set by \(\Omega\). Let \(\gamma^*\) and \(\sigma^*\) denote the
 choose \(\varepsilon_{t_0}\) such that \(B_{\varepsilon_{t_0}}(\gamma(t_0))\subset(\sigma^*)^c.\)
 Similarly for \(\sigma(t_0)\). For \(\{w_\ell\}_{\ell=1}^k\), choose \(\varepsilon_{w_\ell}\) so that in \(B_{\varepsilon_{w_\ell}}(w_\ell)\) the contours \(\gamma\) and \(\sigma\) look like rotated graphs. Note that the axioms of transverse intersection guarantee such an \(\varepsilon_{w_\ell}\) for every \(\ell\). Ensure all these balls lie in \(\Omega\).
 
-Since \(\gamma^*\cup\sigma^*\) is compact, it has a finite cover. Let the balls covering \(\sigma^*\setminus\{w_\ell\}\) be \(\{\Sigma_i\}\), and those covering \(\gamma^*\setminus\{w_\ell\}\) be \(\{T_i\}\). The balls \(B_{\varepsilon_{w_\ell}}(w_\ell)=:B(w_\ell)\) must belong to the finite cover by the way such a cover is constructed. Repeat the
-
-
-An important consequence of this is that every contour will be a concatenation of simple smooth curves, because the points in the set \(\{t\mid\gamma(t)=k,\ k\in\mathbb R^2\}\)
-cannot accumulate in \([0,1]\), for these are locally like rotated graphs, which are one-manifolds, as ``non-loopy'' as an interval. Corollary: every polygon is a sum of simple polygons.
-
-
-argument in the complex tube lemma, or assume without any further ``cherry-picking'' that the balls are successive. That is, there exists a partition
+Since \(\gamma^*\cup\sigma^*\) is compact, it has a finite cover. Let the balls covering \(\sigma^*\setminus\{w_\ell\}\) be \(\{\Sigma_i\}\), and those covering \(\gamma^*\setminus\{w_\ell\}\) be \(\{T_i\}\). The balls \(B_{\varepsilon_{w_\ell}}(w_\ell)=:B(w_\ell)\) belong to the finite cover by construction. Repeat the argument from the complex tube lemma to arrange that the balls are successive. That is, there exists a partition
 \[
   P=\{0=t_0<t_1<\cdots<t_n=1\}
 \]
@@ -338,14 +246,14 @@ such that
   \cup B_{\varepsilon_{t_{i+1}}}(\gamma(t_{i+1})).
 \]
 
-One can similarly do so for \(\sigma\). Let us assume \(\{\Sigma_i\}\) and \(\{T_j\}\) are such consecutive balls. Exploiting the \(C^1\)-ness of \(\sigma\) and \(\gamma\), arrange matters so that
+One can similarly do so for \(\sigma\). Let us assume \(\{\Sigma_i\}\) and \(\{T_j\}\) are such consecutive balls. Using the \(C^1\) regularity of \(\sigma\) and \(\gamma\), arrange matters so that
 
 \[
   \arg\bigl(\gamma'_{\sigma(t)\to\sigma(t_i)}\bigr)
   =\arg\bigl(\sigma'(s_j)\bigr)+\varepsilon,
   \qquad \sigma(s_j)=w_\ell.
 \]
-Similarly for \(\sigma\). Let \(\Sigma_i\) and \(\Sigma_{i+1}\) be consecutive to \(B(w_\ell)\), with \(\sigma\), and let \(T_i\) and \(T_{i+1}\) be consecutive with \(\gamma\). Pick \(\sigma(t')\in\sigma^*\cap\partial B(w_\ell)\cap\Sigma_{i+1}\)
+Similarly for \(\sigma\). Let \(\Sigma_i\) and \(\Sigma_{i+1}\) be the balls adjacent to \(B(w_\ell)\) along \(\sigma\), and let \(T_i\) and \(T_{i+1}\) be the balls adjacent to it along \(\gamma\). Pick \(\sigma(t')\in\sigma^*\cap\partial B(w_\ell)\cap\Sigma_{i+1}\)
 and, similarly, a point for \(\gamma\), and complete the polygonal paths. By construction, all those quantities will be preserved.
 
 \textbf{Exercise.}
@@ -389,13 +297,12 @@ where \(\gamma'(t_0)=re^{i\theta}\). This is true for all close translates of th
   z_0+e^{i\theta}\bigl(s+i(f(s)+u)\bigr),
   \qquad u<\varepsilon.
 \]
-Draw!
 
 \textbf{Remark.}
-The previous remark essentially says that, if you traverse along the closed contour that is oriented anticlockwise, then the interior is to its left and the exterior is to the right. A symmetric statement can be made for clockwise orientation. Draw!
+The previous remark says that, when an anticlockwise closed contour is traversed, its interior lies to the left and its exterior to the right. The corresponding statement for clockwise orientation is obtained by reversing left and right.
 
 \subsection*{Tool 24 — Jordan Curve Theorem}
-We stated before what it says, but what more it says is: if \(\operatorname{int}(\gamma)\subset U,\)
+The Jordan Curve Theorem states that the complement of a simple closed curve has exactly two components. It also implies that if \(\operatorname{int}(\gamma)\subset U,\)
 where \(U\) is some open set, then \(\gamma\) is null-homotopic in \(U\).
 
 Here \(U\) is a domain. Therefore,
@@ -415,13 +322,13 @@ But \(z_0\) is in the interior, so \(W_\gamma(z_0)\ne0\), a contradiction. There
 Hence \(\gamma\) is contractible in \(U\), and \(U\) is simply connected.
 
 \textbf{Remark.}
-These singularity spikes ensure that there are no holes in the domain, for if there is one, they shall explode with a residue. So, if all smooth functions are conservative, in the sense that they have no residue, then ``there are no holes in \(U\).''
+The test function \(1/(z-z_0)\) detects holes: if a hole contains \(z_0\), its integral around a surrounding curve has nonzero residue. Thus, if every holomorphic function on \(U\) is conservative, then \(U\) has no holes.
 
 \paragraph{Observation.}
 As in every star-shaped region, \(f\) has a primitive and is conservative; therefore, star-shaped regions are simply connected.
 
 \textbf{Exercise.}
-Using the ideas expounded in the remark following Alexander's Numbering Rule and the facts about \(W_\gamma(z)\), prove the Jordan Curve Theorem for polygonal paths, closed and simple. ``All the hard work has been done for this; one must merely connect the dots.''
+Using the remark following Alexander's Numbering Rule and the properties of \(W_\gamma(z)\), prove the Jordan Curve Theorem for simple closed polygonal paths.
 
 \textbf{Remark.}
 We do not need to invoke the Two-Ears Theorem to induct on the number of edges. If \(\gamma_P\) is a concave polygon oriented anticlockwise, let \(v\) be a vertex that has angle greater than \(\pi\) to the left of \(\gamma_P\), as in, towards the interior. Let the adjacent edges be \(e\) and \(f\), and extend
@@ -439,7 +346,7 @@ them until they meet some other point on the polygon \(\gamma_P\). This will spl
 
 \end{figure}
 
-Regardless, it is worthy that we explore the proof of the Two-Ears Theorem. But, for our silly purposes, there is no need for any black boxes.
+It is nevertheless useful to examine a proof of the Two-Ears Theorem; the argument requires no additional black box.
 
 \textbf{Remark.}
 One nice consequence of the above remark is the following. Now that we know how to define angles of a polygonal path, simple and closed, how do we do it? Pick a vertex, without loss of generality assume it is a base vertex, and let the edges meeting at \(v\) be \(e\) and \(f\). Let \(z_0\in e\), with \(z_0=\gamma(i)\), and \(z_1\in f\), with \(z_1=\gamma(j)\), where \(j>i\). Then separate \(v\) and \(\gamma|_{[i,j]}\). Let \(B_\varepsilon(v)\) be such that \(B_\varepsilon(v)\cap\gamma|_{[i,j]}=\varnothing.\)
@@ -470,7 +377,7 @@ Without loss of generality, assume \(\operatorname{int}(\gamma)\cap\mathbb R\ne\
   I_1=(a_1,b_1),
   \qquad a_0<b_0<a_1<b_1.
 \]
-Note that \([b_0,a_1]\) is not in \(\operatorname{int}(\gamma)\). One can argue that either of the following two situations can happen:
+Note that \([b_0,a_1]\) is not in \(\operatorname{int}(\gamma)\). Two configurations are possible:
 
 \begin{figure}[htbp]
   \centering
@@ -478,7 +385,7 @@ Note that \([b_0,a_1]\) is not in \(\operatorname{int}(\gamma)\). One can argue 
 
 \end{figure}
 
-Using the meaning of angle which we just mentioned, one can conclude that the angle at \(c\) is greater than \(\pi\). So now one can have a topological view on convexity. We say that \(\gamma\), a simple closed curve, is convex if, for all \(z_0,z_1\in\operatorname{int}(\gamma)\), there exists a convex polygon \(\gamma_P\) such that
+Using the meaning of angle which we just mentioned, one can conclude that the angle at \(c\) is greater than \(\pi\). This gives a topological description of convexity. We say that \(\gamma\), a simple closed curve, is convex if, for all \(z_0,z_1\in\operatorname{int}(\gamma)\), there exists a convex polygon \(\gamma_P\) such that
 \[
   \gamma_P\cap\operatorname{ext}(\gamma)=\varnothing,
   \qquad
@@ -512,7 +419,7 @@ Let us work through the details; readers familiar with the argument may wish to 
 
 \subsection*{Jordan Curve Theorem (for simple closed polygonal paths)}
 \textit{Proof.}
-We saw before that, if \(\gamma_P\) is a simple smooth polygonal path, then \((\gamma_P^*)^c\) is a union of at least two components where \(W_{\gamma_P}\) is constant. Let \(\Omega\) be a region in \((\gamma_P^*)^c\). The function \(W_{\gamma_P}(z)\) is constant for \(z\in\Omega\). If \(W_{\gamma_P}(z)=k\), then \(W_{\gamma_P}\) attains \(k\) near \(\partial\Omega\), and hence \(W_{\gamma_P}\) attains \(k\) near \(\gamma_P\). Now, as was done in the argument of the remark following Alexander's Rule, conclude that, as \(z\) crosses the polygon, the winding number shifts by \(\pm1\). Hence, near \(\gamma_P([a,b])\), \(W_{\gamma_P}(z)\in\{k,k+1\}\)
+If \(\gamma_P\) is a simple smooth polygonal path, then \((\gamma_P^*)^c\) is a union of at least two components where \(W_{\gamma_P}\) is constant. Let \(\Omega\) be a region in \((\gamma_P^*)^c\). The function \(W_{\gamma_P}(z)\) is constant for \(z\in\Omega\). If \(W_{\gamma_P}(z)=k\), then \(W_{\gamma_P}\) attains \(k\) near \(\partial\Omega\), and hence \(W_{\gamma_P}\) attains \(k\) near \(\gamma_P\). Now, as was done in the argument of the remark following Alexander's Rule, conclude that, as \(z\) crosses the polygon, the winding number shifts by \(\pm1\). Hence, near \(\gamma_P([a,b])\), \(W_{\gamma_P}(z)\in\{k,k+1\}\)
 in a neighborhood of \(z\) on \(\gamma_P\). Use the construction in the tube lemma to conclude that
 \[
   W_{\gamma_P}(z)\in\{k,k+1\}
@@ -578,7 +485,7 @@ are connected. Now the claim of contractibility is already dealt with. QED.
   \]
   then \(f\) is linear. (Shakarchi.)
 
-  \item Using (4), or somehow devising a method, get a simple polygon homotopically close to a given simple closed curve. Let \(\gamma\) be any non-simple closed curve; again find a simple polygon homotopically close to it.
+  \item Using Problem 4, construct a simple polygon homotopic to a given simple closed curve. Then investigate whether an analogous construction is possible for a non-simple closed curve.
 \end{enumerate}
 % BLOG-CONTENT-END
 \end{document}

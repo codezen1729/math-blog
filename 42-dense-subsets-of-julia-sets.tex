@@ -27,7 +27,7 @@ The number of indifferent, nonparabolic cycles is at most $4d-4$.
 We separate the proof into two stages.
 \emph{Perturbation.} We will holomorphically deform $f(z)=P(z)/Q(z)$ into the polynomial $z^d$, the simplest rational map of degree $d$.
 % Source page 2
-We do this for two important reasons (revisit them):
+We do this for two important reasons:
 \begin{enumerate}
 \setcounter{enumi}{0}\item If $\{z_j\}_j$ is an indifferent cycle, deform the $z_j$ holomorphically, along with their multipliers $\lambda_j$. We plan to convert them into attracting cycles and use the bound on attracting cycles.
 \setcounter{enumi}{1}\item Deforming to $z^d$ helps ensure that this conversion happens for a ``large proportion'' of indifferent cycles.
@@ -41,12 +41,12 @@ This remains a degree-$d$ map unless, for some $t\in\widehat{\mathbb C}$, zeros 
 Let $\{f_0^{\circ k}(z_j)\}_{k=1}^n$ be an $n$-cycle of $f_0$ with $|\lambda_j(0)|=0$. Set $\widetilde f(t,z)=f_t^{\circ n}(z)-z$. Since $\widetilde f(0,z_j)=0$, the implicit function theorem gives neighbourhoods $U$ of $0$ and $V$ of $z_j$ and a holomorphic map $z_j(t)\colon U\to V$ with $\widetilde f(t,z_j(t))=0$.
 % Author check: source writes |lambda_j(0)|=0, although the surrounding argument concerns indifferent cycles.
 % Source page 3
-The multiplier $\lambda_j(t)=(f_t^{\circ n})'(z_j(t))$ is also locally holomorphic. If it were locally constant, the identity theorem would shatter all hope of turning these indifferent points into attracting ones.
+The multiplier $\lambda_j(t)=(f_t^{\circ n})'(z_j(t))$ is also locally holomorphic. If it were locally constant, the multiplier could not be perturbed from the unit circle to produce an attracting cycle.
 \setcounter{theorem}{20}\begin{lemma}\label{cd4:nonconstant}
 The map $t\mapsto\lambda_j(t)$ is not locally constant.
 \end{lemma}
 \begin{proof}
-Suppose it is, and let us see how far this paralysis extends. Choose a ray $\{re^{i\theta}:0\le r\le+\infty\}$ avoiding every parameter where $\deg(f_t)<d$. Extend $\lambda_j(t)$ to a neighbourhood of this ray so that $f_t$ has an indifferent periodic point $z_j(t)$ with multiplier $\lambda_j(t)$.
+Suppose it is locally constant. Choose a ray $\{re^{i\theta}:0\le r\le+\infty\}$ avoiding every parameter where $\deg(f_t)<d$. Extend $\lambda_j(t)$ to a neighbourhood of this ray so that $f_t$ has an indifferent periodic point $z_j(t)$ with multiplier $\lambda_j(t)$.
 
 If $z_j(t)\to z_j(\widehat t)$ along the ray as $t\to\widehat t$, continuity gives
 $\widetilde f(t,z_j(t))\to\widetilde f(\widehat t,z_j(\widehat t))=0$.
@@ -54,7 +54,7 @@ The implicit function theorem makes $z_j$, and hence $\lambda_j$, analytic near 
 % Source page 4
 and roots of unity, none of whose multipliers lie on $S^1$.
 \end{proof}
-There is therefore hope: the functions $\lambda_j(t)$ are not paralysed; they are indeed ``dynamic''.
+Therefore the functions $\lambda_j(t)$ vary nontrivially with $t$.
 
 \emph{Converting cycles.} Near $t=0$, write
 \[
@@ -78,15 +78,15 @@ We now prove that there are infinitely many repelling periodic points. The asser
 \setcounter{theorem}{21}\begin{proposition}\label{cd4:density}
 The closure of the set of repelling periodic points is the Julia set.
 \end{proposition}
-\begin{proof}[Proof due to Fatou]
+The following proof is due to Fatou.
+\begin{proof}
 Let $z_0\in J(f)$ be neither a fixed point nor a critical value of $f$. Then $f^{-1}(z_0)=\{z_i\}_{i=1}^d$, with all $z_i$ distinct. Choose a neighbourhood $N$ of $z_0$ on which $f^{-1}$ has $d$ branches $\varphi_j$, with $\varphi_j(z_0)=z_j$.
 \begin{figure}[H]\centering
 \includegraphics[width=.57\textwidth]{cd4-fig-01.pdf}
 \FigureTag{CD4.1}{fig:cd4-01}
 \end{figure}
-For some $n$ and some $z\in N$, $f^{\circ n}(z)\in\{z,\varphi_1(z),\varphi_2(z)\}$. Otherwise take $N$ small enough to be hyperbolic and
+For some $n$ and some $z\in N$, $f^{\circ n}(z)\in\{z,\varphi_1(z),\varphi_2(z)\}$. Otherwise take $N$ small enough to be hyperbolic and set
 % Source page 6
-set
 \[
 g_n(z)=\left(\frac{f^{\circ n}(z)-\varphi_1(z)}{f^{\circ n}(z)-\varphi_2(z)}\right)
 \left(\frac{z-\varphi_2(z)}{z-\varphi_1(z)}\right).
@@ -111,6 +111,6 @@ By the previous proposition, only finitely many of these periodic points are non
 \overline{\{\text{repelling periodic points}\}}=J(f).
 \]
 \end{proof}
-There are therefore infinitely many repelling periodic points. A small topological argument is needed.
+There are therefore infinitely many repelling periodic points.
 % BLOG-CONTENT-END
 \end{document}

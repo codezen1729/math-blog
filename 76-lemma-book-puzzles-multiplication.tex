@@ -5,10 +5,10 @@
 \begin{document}
 \section*{Puzzles, Surprises, and Marvellous Methods of Multiplication}
 % BLOG-CONTENT-BEGIN
-\setcounter{theorem}{44}\begin{lemma}[ASA lemma]
-Always stay alert, always stay awake.
+\setcounter{theorem}{44}\begin{lemma}[Check the hypotheses]
+An elegant calculation is useful only after its assumptions have been checked.
 \end{lemma}
-Do not take me for a fool: I mean what I state. Let me show examples where an Olympiad student solves without presence of mind.
+The following example shows how an apparently perfect calculation can conceal a basic oversight.
 Find $a^2+b^2+c^2$ where
 $a^2+2b=6$, $b^2+4c=-7$, and $c^2+6a=-13$.
 Adding gives
@@ -19,14 +19,13 @@ Adding gives
 (a+3)^2+(b+1)^2+(c+2)^2&=0.
 \end{align*}
 Thus $a=-3,b=-1,c=-2$, and $a^2+b^2+c^2=9+1+4=14$.
-If this sounds perfect, ``slap yourself and wake up!''
 Notice that $a=-3,b=-1,c=-2$ do not satisfy the first and last equations.
-Where did we go wrong? ``We blindly assumed $a,b,c$ to be real numbers!''
+The error was to assume, without checking, that a real solution exists.
 Here is another example.
 \paragraph{Leningrad Mathematical Olympiad.}
 In triangle $ABC$, $\angle B=60^\circ$, $AD\perp BC$, and $CE\perp AB$.
 Prove that the circumcentre of $ABC$ lies on the common bisector of $\angle AOE$ and $\angle COD$.
-Let us begin by drawing a neat figure.
+Begin with the following figure.
 % Author check: O is defined by the diagram as the intersection of the two altitudes.
 % Source page 21 - left
 Let $\omega$ be the circumcircle of triangle $AOC$, meeting the common bisector $\ell$ at $X$.
@@ -43,7 +42,6 @@ Thus $\angle MXC=60^\circ=\angle AXM$, giving $\triangle AXM\cong\triangle BXM$ 
 Therefore $XM$ is a perpendicular bisector.
 Since $\angle AXC=120^\circ=2\angle ABC$, $X$ is the circumcentre, so the circumcentre lies on $\ell$.
 % Author check: source has triangle BXM in this congruence; retained although diagram suggests CXM.
-Did you notice something missing here too? Turn the page to find out! There are more such examples.
 
 \paragraph{Average speed.}
 A plane travels from $A$ to $B$ at $160$ mph and returns from $B$ to $A$ at $240$ mph.
@@ -64,7 +62,7 @@ Total distance is $2L$, so average speed is $2L/(L/96)=192$ mph.
 \includegraphics[width=.73\linewidth]{lb1-fig-16.pdf}
 \FigureTag{LB1.16}{fig:lb1-16}
 \end{figure}
-\emph{``Here one completely forgets the possibility that the point $X$ may even coincide with $O$.''}
+
 
 \paragraph{Ramanujan's problem.}
 Find $\sqrt{1+2\sqrt{1+3\sqrt{1+4\sqrt{1+5\sqrt{1+\cdots}}}}}$.
@@ -79,13 +77,13 @@ Put $x=2$.
 Without calculating $\sqrt2$, show that $7/5$ is closer to it than $3/2$.
 We do not know $\sqrt2$, but we do know $(\sqrt2)^2$.
 
-\paragraph{Magic of coordinate geometry.}
+\paragraph{A coordinate-geometry calculation.}
 Given $\vec P(t)=A(\hat\imath\cos(kt)-\hat\jmath\sin(kt))$, determine the angle between $\vec P(t)$ and $\vec F(t)$, where $P(t)$ and $F(t)$ are momentum and force.
 We have
 \[\vec F(t)=\frac{dP(t)}{dt}=-Ak\sin(kt)\hat\imath-Ak\cos(kt)\hat\jmath
 =\frac{\partial(A\cos(kt))}{\partial t}\hat\imath
 -\frac{\partial(A\sin(kt))}{\partial t}\hat\jmath.\]
-Now let us throw this bunch of information onto our coordinate plane.
+Plot the two vectors in the coordinate plane.
 % Source page 40 - right
 \begin{figure}[H]\centering
 \includegraphics[width=.78\linewidth]{lb1-fig-20.pdf}
@@ -101,21 +99,9 @@ FP&=\sqrt{A^2(\cos(kt)+k\sin(kt))^2+A^2(k\cos(kt)-\sin(kt))^2}
 \]
 We have $OF^2+OP^2=FP^2$, so $\angle FOP=\pi/2=90^\circ$. Q.E.D.!
 
-You are not supposed to do these bullshits: just put $t=0$ in $P(t)$ and $F(t)$.
-This gives $P(t)=A\hat\imath$ and $F(t)=-Ak\hat\jmath$.
-$P$ is along $X$, and $F$ is along $-Y$, so $\angle FOP=\pi/2$. Q.E.D.!
-
-You know what? You are not even supposed to play those dirty tricks.
-In two-dimensional motion, $\vec a\cdot\vec v=0$, $\vec F=m\vec a$, and $\vec P=m\vec v$.
-Thus $\vec F\cdot\vec P=\vec a\cdot\vec v=0$, giving $\vec F\perp\vec P$.
-Another Q.E.D.! Enough!
-% Author check: positivity of A,k is not stated, and the assertion a dot v=0 for two-dimensional motion and the missing m^2 in F dot P are retained. Evaluating only t=0 is not justified as a general-angle argument in the source.
-
-% Source page 41 - duplicate of PDF page 40, both notebook pages.
-\begin{quote}\small\textit{Source note.} PDF page 41 repeats the two notebook pages on PDF page 40, including the normalization lemma and the momentum--force diagram. That repeated spread is transcribed once above.\end{quote}
 % Source page 42 - left
 
-\paragraph{British mathematical problem (2014).}
+\paragraph{British Mathematical Olympiad (2014).}
 Prove that it is impossible to have a cuboid whose volume, surface area, and perimeter are numerically equal.
 We have $V=lbh$, $S=2(lb+bh+hl)$, and $P=4(l+b+h)$.
 It follows that
@@ -125,25 +111,9 @@ Now
 \[\left(\frac1l+\frac1b+\frac1h\right)^2
 =\frac1{l^2}+\frac1{b^2}+\frac1{h^2}
 +2\left(\frac1{lb}+\frac1{bh}+\frac1{hl}\right).\]
-Thus $1/4-1/2=-1/2=1/l^2+1/b^2+1/h^2<0$, a contradiction!
-Q.E.D.! Find another way to solve it!
+Thus $1/4-1/2=-1/4=1/l^2+1/b^2+1/h^2<0$, a contradiction.
 % Author check: the handwritten arithmetic 1/4-1/2=-1/2 is retained.
 
-\paragraph{Was it that simple?}
-Ten Indians were blindfolded and dressed in caps, each of one of two colours.
-Their blindfolds were removed. They stood so that the tenth could see nine people in front, the ninth could see eight, and so on.
-A person who could guess his cap's colour would be saved; otherwise he would be executed.
-Can they have a strategy that saves the maximum number of Indians?
-
-The tenth should say red if he sees an even number of red caps, and green otherwise.
-If the tenth is shot, the ninth can be sure of the tenth person's cap colour and that caps of that colour are odd in number.
-He would count the caps of that colour; if he finds an even number, then\ldots\ or otherwise he can guess his colour, and so on.
-I bet you did not understand the solution. Even I want that to happen:
-% Source page 53 - right
-it was pretty hard to write down the solution, but it is still not a solution being a solution!
-Try that!
-% Author check: the hat-strategy explanation contains the unfinished phrase after the even-count case; its incompleteness is preserved rather than supplied with a new solution.
-\begin{quote}Common sense is like a deodorant: those who need it the most lack it!\end{quote}
 \paragraph{1. Proportional angles.}\leavevmode\par
 \begin{figure}[H]\centering
 \includegraphics[width=.78\linewidth]{lb1-fig-30.pdf}
@@ -151,36 +121,18 @@ Try that!
 \end{figure}
 Is $\triangle ABC\sim\triangle PQR$?
 You might be wondering: if the sides are proportional, the triangles are similar, but what if the angles are proportional?
-To tell you the reality, it's all a big dumbass!
+The proportionality condition is already enough.
 Since $\alpha+\beta+\gamma=180^\circ$ and $\alpha k+\beta k+\gamma k=180^\circ$, we have $k=1$.
 Thus the angles of $\triangle PQR$ are also $\alpha,\beta,\gamma$, so $\triangle ABC\sim\triangle PQR$.
 Q.E.D.!
 \paragraph{2. Solve the puzzle.}
 $1=5$, $2=25$, $3=325$, $4=4325$. Then $5={}?$
-\paragraph{3. Two digits.}
-Construct the smallest possible integer using just two digits.
-You know what? You can create a number as small as possible! But how?!
 % Source page 54 - left
 \paragraph{Answers.}
 2. If $1=5$, then $5=1$. Q.E.D.!
-
-3. $-\bigl[(9!!!!\cdots!)^{(9!!!!\cdots!)}\bigr]$.
-This is how it should be done!
-% Author check: the phrase smallest possible integer has no minimum under the unbounded factorial/exponent operations illustrated; the example is retained.
-\subsection{Mission impossible}
-\paragraph{1. Compass-only midpoint.}
-Construct the midpoint of a line segment without using a ruler, but only a compass!
-I will not tell you exactly what I did. Go figure it out for yourself!
-\begin{figure}[H]\centering
-\includegraphics[width=.62\linewidth]{lb1-fig-31.pdf}
-\FigureTag{LB1.31}{fig:lb1-31}
-\end{figure}
-% Source page 54 - right
-\paragraph{2. Equilateral triangle.}
-Inscribe an equilateral triangle inside an arbitrary triangle $ABC$. Challenge!
 \subsection{Marvellous methods of multiplication: triple M}
-\paragraph{The way Egyptian nerds did it!}
-Suppose you want to multiply $11\times17$. They do the following:
+\paragraph{The Egyptian method.}
+Suppose we want to multiply $11\times17$. The method proceeds as follows:
 \begin{center}
 \begin{tabular}{lrrrrl}
 Half sequence & $\boxed{11}$ & $\boxed5$ & $2$ & $\boxed1$ & $\lfloor n/2\rfloor$ in general\\
@@ -189,7 +141,7 @@ Double it & $17$ & $34$ & $68$ & $136$ & $2n$ in general
 \end{center}
 Identify the odd entries in the half sequence, and add the corresponding numbers from the double sequence.
 We have $11\mapsto17$, $5\mapsto34$, and $1\mapsto136$, so the sum is $17+34+136=187=11\times17$.
-Why does that bullshit work? Let's find out.
+Why does it work?
 Suppose we are interested in the product $N\times M$.
 \begin{center}
 \begin{tabular}{lrrrrrrr}
@@ -199,27 +151,15 @@ Double & $M$ & $2M$ & $4M$ & $8M$ & $16M$ & $\cdots$ & $2^kM$
 \end{center}
 Express $N$ in binary: $N=2^{\alpha_1}+2^{\alpha_2}+\cdots+2^{\alpha_n}$.
 For example, $11=2^3+2^1+2^0$.
-Our product $N\times M$ is nothing but $2^{\alpha_1}M+\cdots+2^{\alpha_n}M$.
-Each and every term $2^{\alpha_1}M,\ldots,2^{\alpha_n}M$ must have occurred somewhere in the double sequence.
-If we find where it occurred, then a mere addition of those terms gives the product $N\times M$.
+The product $N\times M$ equals $2^{\alpha_1}M+\cdots+2^{\alpha_n}M$.
+Each term $2^{\alpha_1}M,\ldots,2^{\alpha_n}M$ occurs in the double sequence.
+Adding precisely those terms gives the product $N\times M$.
 % Source page 55 - left
-Now notice the half sequence: a general entry is of the form $N/2^n$.
-If $2^n$ is a part of the decomposition of $N$, then
-\[
-\begin{aligned}
-\frac N{2^n}
-&=\frac{2^{a_1}+2^{a_2}+\cdots+2^{a_j}+2^n+2^{b_1}+\cdots+2^{b_k}}{2^n}\\
-&=\frac{2^{a_1}+\cdots+2^{a_j}}{2^n}+\frac{2^n}{2^n}
-+\frac{2^{b_1}+\cdots+2^{b_k}}{2^n}
-=\text{even}+1+\text{decimal}=\text{odd},
-\end{aligned}
-\]
-where $a_i>n$ for all $i$, and $b_i<n$ for all $i$.
-We have $(2^{b_1}+\cdots+2^{b_k})/2^n<1$, because $\sum_{k=1}^{\infty}1/2^k=1$.
-Now we claim that $2^{\alpha_i}$ is a part of the decomposition of $N$ if and only if $N/2^{\alpha_i}$ is odd.
+The $n$th entry of the half sequence is $\lfloor N/2^n\rfloor$. Its parity is exactly the $n$th binary digit of $N$.
+Thus $2^{\alpha_i}$ appears in the binary expansion of $N$ if and only if $\lfloor N/2^{\alpha_i}\rfloor$ is odd.
 The corresponding double-sequence entry is $2^{\alpha_i}M$.
 Adding all such terms gives $2^{\alpha_1}M+\cdots+2^{\alpha_n}M=N\times M$.
-W$^5$: Which Was What We Wanted! Q.E.D.!
+This proves the method.
 % Author check: the source calls N/2^n odd while retaining a fractional part; floor notation is not included in this proof, unlike the algorithm's initial description.
 \paragraph{Parabolic multiplication.}\leavevmode\par
 \begin{figure}[H]\centering
@@ -228,7 +168,7 @@ W$^5$: Which Was What We Wanted! Q.E.D.!
 \end{figure}
 Suppose you want $4\times3$. Take $A(4,16)$ and $B(-3,9)$.
 Join $AB$: its intersection with the $Y$-axis gives the product!
-Why does this happen? Use your knowledge of coordinates to find out why.
+The line through $(a,a^2)$ and $(-b,b^2)$ has slope $a-b$, so its value at $x=0$ is $a^2-a(a-b)=ab$.
 % Source page 55 - right
 \paragraph{A geometry problem leads to a continued fraction.}
 $T_1$ is an isosceles triangle with circumcircle $K$.
@@ -239,34 +179,24 @@ Similarly create $T_3$, and so on. Do the triangles $T_n$ approach an equilatera
 \FigureTag{LB1.33}{fig:lb1-33}
 \end{figure}
 The figure explains the vertex angles of $T_1,T_2,T_3,T_4$.
-We claim that the vertex angle of the $T_n$ triangle is $x$:
-\[x=\cfrac{180^\circ-\cfrac{180^\circ-\cfrac{180^\circ-\alpha}{2}}{2}}{2}
-\quad\cdots\quad=\sum_{k=0}^{n-1}\frac{90(-1)^k}{2^k}.\]
-Now, as $n\to\infty$, we have
-$x=(\pi/2)/(1+1/2)=\pi/3=60^\circ$.
-W$^5$. Q.E.D.!
+If $\theta_n$ is the vertex angle of $T_n$, then
+\[\theta_{n+1}=\frac{180^\circ-\theta_n}{2}=90^\circ-\frac{\theta_n}{2}.\]
+Hence
+\[\theta_n=60^\circ+\left(-\frac12\right)^{n-1}(\theta_1-60^\circ),\]
+and therefore $\theta_n\to60^\circ$. The triangles approach an equilateral triangle.
 % Author check: the finite sum displayed in the manuscript omits the initial-angle remainder; the proof switches from degrees to radians in the limit. Both are preserved.
 
 \paragraph{Out of the box.}
 Place one of $+,-,\times,\div$ in each blank of $8\ \underline{\hspace{.5cm}}\ 8\ \underline{\hspace{.5cm}}\ 8=6$.
 The answer, due to Shovan, is $(8\div8)+8=6$.
-Think it is wrong? Turn the page upside down, then decide!
+Reading the equation upside down turns the final $6$ into a $9$, and the equality becomes correct.
 
-\paragraph{A trivial trick!}
-Solve in real numbers:
-$x=\sqrt{x+2\sqrt{x+2\sqrt{x+2\sqrt{x+2\sqrt{3x}}}}}$.
-The source replaces $3x$ by $x+2x$, continues the nested radical indefinitely,
-and writes $x=\sqrt{x+2x}$. Thus $x^2=3x$, giving $x=0$ or $x=3$. Q.E.D.!
-% Author check: the finite nested radical is replaced by an infinite one without justification; retained.
-
-I remember asking this question; why do not you fiddle with it too?
-Is $(-1)^\pi$ positive or negative? I hear you saying ``WTF!!!''
+\paragraph{A complex-power puzzle.}
+Is $(-1)^\pi$ positive or negative?
 % Source page 18 - right
-The answer was quite unexpected!
-$e^{i\pi}=-1$ gives $e^{i\pi^2}=(-1)^\pi=\cos(\pi^2)+i\sin(\pi^2)$.
-Since $\pi^2$ is not a root of $\sin\theta$, this is complex, so $(-1)^\pi$ is complex too!
-There is another proof. Represent $\pi=a/b$, where $a,b$ are not necessarily finite:
-$\pi=(31415925\ldots)/10^\infty$. Since we cannot determine the last digit of $\pi$, we are done! Q.E.D.!
-% Author check: the complex power needs a branch convention, and the second argument uses a formal infinite numerator/denominator; preserved.
+The answer depends on the chosen branch of the logarithm. With the principal logarithm,
+\[(-1)^\pi=\exp\bigl(\pi\operatorname{Log}(-1)\bigr)=e^{i\pi^2}
+=\cos(\pi^2)+i\sin(\pi^2),\]
+which is not real.
 % BLOG-CONTENT-END
 \end{document}

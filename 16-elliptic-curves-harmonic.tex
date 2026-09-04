@@ -8,7 +8,7 @@
 
 Let us begin with a calculation. 
 
-\textbf{Calculation}:- We shall first compute the Laurent series of the Weierstrass function,
+\textbf{Calculation}: We shall first compute the Laurent series of the Weierstrass function,
 \begin{center}
     \begin{equation*}
     \begin{aligned}
@@ -19,10 +19,10 @@ Let us begin with a calculation.
 \end{equation*}
 \end{center}
 
-as the series converges absolutely, the odd terms cancel off each other, where, 
+Because the series converges absolutely, the odd terms cancel each other. Here 
 $$G_{2k} = \sum_{\omega \in \Lambda\backslash\{0\}} \omega^{-2k}$$
 
-Now consider the following Laurent expansions:-
+Now consider the following Laurent expansions:
 
 \begin{equation*}
     \begin{aligned}
@@ -36,7 +36,7 @@ Now consider the following Laurent expansions:-
 The cubic in $\wp_{\Lambda}(z)$ given by $a\wp_{\Lambda}(z)^3 + b\wp_{\Lambda}(z)^2 + c\wp_{\Lambda}(z) + d$ has the following Laurent series around $0$,
 $$\frac{a}{z^6}+\frac{b}{z^4} + \frac{(9aG)4 + c)}{z^2} + (15aG_6 + 6bG_4 + d) + \cdots$$
 
-If the above cubic has to be equal to $(\wp_{\Lambda}'(z))^2$, by comparing coefficients we must have, 
+If the cubic is to equal $(\wp_{\Lambda}'(z))^2$, by comparing coefficients we must have, 
 $$a = 4, b = 0, c = -60G_4, d = -140G_6$$
 Set,
 $$g_2 = 60G_4 = \sum_{\omega \in \Lambda\backslash\{0\}} \frac{60}{\omega^4}, \text{ and } g_3 = 140G_6 = \sum_{\omega \in \Lambda\backslash\{0\}} \frac{140}{\omega^6}$$
@@ -49,7 +49,7 @@ to get,
     \end{aligned}
 \end{equation*}
 
-Consider the constants $g_2$, $g_3$, or more generally look at $G_{2k}$ which seem to be in the flesh of every elliptic curve parameterized by a lattice. They can be treated as functions of lattice viz a viz its generators $\omega_1$, $\omega_2$. This view forces the newly declared functions to satisfy the following demands:-
+The constants $g_2$, $g_3$, and more generally $G_{2k}$ occur naturally for every elliptic curve parametrized by a lattice. Regard them as functions of the lattice expressed through its generators $\omega_1$ and $\omega_2$. They then satisfy:
 \begin{equation*}
     \begin{aligned}
         &G_{2k}(\mu\Lambda) = \sum_{\omega \in \mu\Lambda\backslash\{0\}}\frac{1}{\omega^{2k}} = \mu^{-2k}G_{2k}(\Lambda)  \text{      (seen as functions of }\Lambda)\\
@@ -66,9 +66,9 @@ Note, $G_{2k}(\omega_1, \omega_2) = \omega_2^{2k}G_{2k}(\omega_1/\omega_2, 1)$. 
 $$\color{red}\omega_2^{2k}f\bigg(\frac{\omega_1}{\omega_2}\bigg) = (c\omega_1+d\omega_2)^{2k}f\bigg(\frac{a\omega_1+b\omega_2}{c\omega_1+d\omega_2}\bigg)$$
 
 
-Henceforth we shall look at lattices of the form $\mathbb{Z}\oplus\mathbb{Z}\tau$, with $\tau \in \mathbb{H}$. The caculation above propels us to study the following:-
+Henceforth we shall look at lattices of the form $\mathbb{Z}\oplus\mathbb{Z}\tau$, with $\tau \in \mathbb{H}$. The calculation above motivates the following definition.
 
-\subsection*{Definition 0.1} A meromorphic function $f$ on $\mathbb{H}$ is \textbf{weakly modular of weight $2k$} if it satisfies the following symmetry law:- 
+\subsection*{Definition 0.1} A meromorphic function $f$ on $\mathbb{H}$ is \textbf{weakly modular of weight $2k$} if it satisfies the following symmetry law: 
 $$f(z) = (cz+d)^{2k}f\bigg(\frac{az+b}{cz+d}\bigg)$$
 
 $\forall$ $\begin{pmatrix}
@@ -76,45 +76,44 @@ $\forall$ $\begin{pmatrix}
 \end{pmatrix}\in PSL_2(\mathbb{Z})$. A weakly modular function is \textbf{modular} if $f(q)$ is meromorphic at $0$, where $q = e^{2\pi i z}$.
 
 
-\textbf{Remark.} A natural domain for weight $0$ modular forms is $\mathbb{H}$ upto symmetries of the modular group. The image in the first page shows you how these quotient spaces look if one considers the ball model for the hyperbolic space.
+\textbf{Remark.} A natural domain for weight $0$ modular forms is $\mathbb{H}$ up to symmetries of the modular group. The following figure illustrates how these quotient spaces look if one considers the ball model for the hyperbolic space.
 
-\textbf{Remark.} The holomorphicity of $f(q)$ in $q$ is explained here: The exponential map is a covering map of the punctured disk by $\mathbb{H}$, and modular forms are invariant under deck transformation of that cover, for they are integer translation. Therefore, one can think of $f$ being evaluated locally on evenly covered neighbourhoods of the punctured disk. Evidently, this is well-defined.    
+\textbf{Remark.} The holomorphicity of $f(q)$ in $q$ is explained here: The exponential map is a covering map of the punctured disk by $\mathbb{H}$, and modular forms are invariant under deck transformations of that cover, since they are integer translations. Therefore, one can evaluate $f$ locally on evenly covered neighbourhoods of the punctured disk. Evidently, this is well-defined.    
 
-Let $v_p(f)$ denote the order of zero or pole at $p$ of $f$. By $v_{\infty}(f)$ we mean the order of $f(q)$ at $q=0$ ((i.e.) if $f(q) = c_{-N}q^{-N} +\cdots$ with $c_{-N} \neq 0$, then $v_{\infty}(f) = -N$. With the help of the following lemma we shall yet again compute the moduli space of elliptic curves in a novel way. 
+Let $v_p(f)$ denote the order of a zero or pole of $f$ at $p$. By $v_{\infty}(f)$ we mean the order of $f(q)$ at $q=0$; that is, if $f(q)=c_{-N}q^{-N}+\cdots$ with $c_{-N}\neq0$, then $v_{\infty}(f)=-N$. With the help of the following lemma we shall yet again compute the moduli space of elliptic curves in a novel way. 
 
 
 \subsection*{Lemma 0.1}Let $f$ be modular of weight $2k$, then,
 $$v_{\infty}(f) +\frac{1}{3}v_{\rho}(f) + \frac{1}{2}v_{i}(f) + \sum_{p} v_p(f) = \frac{k}{6}$$
 
-where $\rho = \frac{1+i\sqrt{3}}{2}$, $p\in \overline{D}/PSL_2(\mathbb{Z})$, and $D$ the fundamental domain.
+where $\rho = \frac{1+i\sqrt{3}}{2}$, $p\in \overline{D}/PSL_2(\mathbb{Z})$, and $D$ is the fundamental domain.
 
 
 \textit{Proof.}
-    We shall integrate $df/f$ on the contour below in two distinct ways:-
+    We shall integrate $df/f$ on the contour below in two distinct ways:
 
     \begin{figure}[htp]
             \centering
             \includegraphics[width=15cm]{Contour.png}
-            \caption{The bumps ensure that the contour $C$ does not step on a pole or a zero of $f$.}
         \end{figure}
 
 
-By Argument Principle, 
+By the Argument Principle, 
 $$\int_{C}\frac{f'(z)}{f(z)}dz = \sum_{p\neq i, \rho}v_p(f)$$
 
-Let $\beta$, $\beta'$ be the vertical parts of the contour, $\alpha$ the horizontal segment. Let the bumps around $\rho, \rho^2, i$ be $\gamma_{\rho}, \gamma_{\rho^2}, \gamma_{i}$, and let the remaining portion be $\gamma$. Slash action tells us that $f(z+1) = f(z)$, which implies,
+Let $\beta$ and $\beta'$ be the vertical parts of the contour, and let $\alpha$ be the horizontal segment. Let the bumps around $\rho, \rho^2, i$ be $\gamma_{\rho}, \gamma_{\rho^2}, \gamma_{i}$, and let the remaining portion be $\gamma$. Slash action tells us that $f(z+1) = f(z)$, which implies,
 $$\int_{\beta}\frac{df}{f} + \int_{\beta'}\frac{df}{f} = 0$$
 
-Consider the change of variables $z\rightarrow e^{2\pi i z}$, it sends the segment $\alpha$ to a circle around $0$, which gives, 
+The change of variables $z\rightarrow e^{2\pi i z}$ sends the segment $\alpha$ to a circle around $0$, giving 
 $$\int_{\alpha}\frac{df}{f} = \int_{\text{exp}(\alpha)}\frac{df(q)}{f(q)} = -2\pi i v_{\infty}(f)$$
 
-Completing the bumps $\gamma_{\rho}, \gamma_{\rho^2}, \gamma_{i}$ to circles $\widetilde{\gamma}_{\rho}, \widetilde{\gamma}_{\rho^2}, \widetilde{\gamma}_{i}$ we note that:-
+Completing the bumps $\gamma_{\rho}, \gamma_{\rho^2}, \gamma_{i}$ to circles $\widetilde{\gamma}_{\rho}, \widetilde{\gamma}_{\rho^2}, \widetilde{\gamma}_{i}$ we note that:
 $$\int_{\widetilde{\gamma}_{i}} = 2\pi i v_i(f),  \int_{\widetilde{\gamma}_{\rho}} = 2\pi i v_{\rho}(f),  \int_{\widetilde{\gamma}_{\rho^2}} = 2\pi i v_{\rho^2}(f)$$
 
 Now as, 
 $$\int_{\delta_n}\frac{dz}{z} = \frac{2\pi}{n}$$
 
-where $\delta_n$ is the $1/n$th portion of the unit circle; we see that,
+where $\delta_n$ is the $1/n$ of the of the unit circle; we see that,
 \begin{equation*}
     \begin{aligned}
         \frac{1}{2\pi i}\int_{\gamma_{\rho}+ \gamma_{\rho^2}+ \gamma_{i}} \frac{df}{f} &=-\frac{1}{2}v_i(f) - \frac{1}{6}v_{\rho}(f) - \frac{1}{6}v_{\rho^2}(f)\\
@@ -133,7 +132,7 @@ $$\int_{\overline{\gamma}}\frac{df(-1/z)}{f(-1/z)} = \int_{\overline{\gamma}}\fr
 implying, 
 $$\int_{\gamma} \frac{df}{f} = k\int_{\overline{\gamma}}\frac{dz}{z}$$
 
-Now as the bumps tend to $0$, the integral in the RHS approaches $k/6$ (as $\gamma$ would approach $1/6$th of the unit circle) giving us,
+Now as the bumps tend to $0$, the integral on the right-hand side approaches $k/6$ (as $\gamma$ would approach $1/6$th of the unit circle) giving us,
 
 $$\frac{1}{2\pi i}\int_{C}\frac{df}{f} = -v_{\infty}(f) - \frac{1}{3}v_{\rho}(f) - \frac{1}{2}v_{i}(f) + \frac{k}{6}$$
 
@@ -158,21 +157,21 @@ $$\frac{6}{6} = v_{\infty}(g_3^2 - \lambda\Delta) +\frac{1}{3}v_{\rho}(g_3^2 - \
 implies, 
 $v_{\infty}(g_3^2 - \lambda\Delta) = 1$, or $v_{i}(g_3^2 - \lambda\Delta) = 2$, or $v_{\rho}(g_3^2 - \lambda\Delta) = 3$, or $v_p(g_3^2 - \lambda\Delta) = 1$. In each case, $j(z) = \lambda$ has a unique solution modulo the action of the modular group. 
 
-\textbf{Remark.} $j(z)$ being a weight $0$ modular form factors through $D/PSL_2(\mathbb{Z})$. For each $\lambda$ in the fundamental domain one has a unique class of elliptic curves $[\mathbb{C}/\Lambda_0, [\Lambda_0]]$, and $j$ maps that to $\mathbb{C}$. In other words, to each equivalence class of elliptic curves $j$ associates an invariant. This function in the literature is called the $j$-invariant. Said differently, two elliptic curves $E_1, E_2$ are isomorphic iff $j(E_1) = j(E_2)$.
+\textbf{Remark.} $j(z)$ being a weight $0$ modular form factors through $D/PSL_2(\mathbb{Z})$. For each $\lambda$ in the fundamental domain one has a unique class of elliptic curves $[\mathbb{C}/\Lambda_0, [\Lambda_0]]$, and $j$ maps that to $\mathbb{C}$. In other words, to each equivalence class of elliptic curves $j$ associates an invariant. This function is called the $j$-invariant in the literature. Said differently, two elliptic curves $E_1, E_2$ are isomorphic iff $j(E_1) = j(E_2)$.
 
 
-\textbf{Remark.} Note that $j(\infty) = \infty$. If one contemplates on the elliptic curve corresponding to $\lambda = \infty$, one can convince oneself that it is the infinite cylinder. This happens to the the surface that seals off all elliptic curves in a nice and compact genus 0 surface.
+\textbf{Remark.} Note that $j(\infty) = \infty$. If one considers the elliptic curve corresponding to $\lambda = \infty$, one can convince oneself that it is the infinite cylinder. This compactifies the moduli space of elliptic curves to a genus-$0$ surface.
 
-We shall end by stating how the harmonic perspective fits in among the other two natural seeming ones. Let $E: y^2 = 4x^3 - g_2x - g_3$ be an elliptic curve with $g_2, g_3 \in \mathbb{Z}$, and $\Delta \neq 0$. Define,
+We shall end by stating how the harmonic perspective fits in among the other two natural-seeming ones. Let $E: y^2 = 4x^3 - g_2x - g_3$ be an elliptic curve with $g_2, g_3 \in \mathbb{Z}$, and $\Delta \neq 0$. Define,
 $$a_p(E) = p - \#\{\text{integer solutions to $E$ modulo $p$}\}$$
 
-for a prime $p$. Taniyama in $1950$s conjectured that for such curves there is a modular form,
+for a prime $p$. In the 1950s, Taniyama conjectured that for such curves there is a modular form,
 $$f(\tau) = \sum_{n = 0}^{\infty}a_n(f)e^{2\pi i \tau}$$
 
 such that,
 $$a_p(f) = a_p(E)$$
 
-for all primes $p$. Later, Frey constructed for an odd prime and the triple $(a, b, c)$ such that $a^p + b^p = c^p$ the elliptic curve:-
+for all primes $p$. Later, For an odd prime $p$ and a triple $(a,b,c)$ satisfying $a^p+b^p=c^p$, Frey constructed the elliptic curve
 $$y^2 = x(x-a^p)(x+b^p)$$
 
 and conjectured that these curves wouldn't be modular in the sense described above. Ribet and Serre proved Frey's conjecture, and the final blow was delivered by Andrew Wiles and Richard Taylor by proving Taniyama's conjecture (now known as \textbf{Modularity Theorem}), thereby also proving \textbf{Fermat's Last Theorem}!

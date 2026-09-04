@@ -10,9 +10,9 @@ An ellipse field on a Riemann surface is essentially an ellipse, modulo scaling,
 The mapping theorem says that if $S$ is simply connected, hence by uniformisation one of $\mathbb C$, $\widehat{\mathbb C}$, or $\mathbb D$, then there is a quasiconformal map $\phi\colon S\to\mathbb D$. This does not say much by itself. But once an ellipse field on $S$ is fixed by a measurable complex dilatation $\mu$ (the Beltrami coefficient), with $\esssup_{z\in S}|\mu(z)|<\infty$, the map $\phi$ is the unique such map pulling back the circle field on $\mathbb C$, $\widehat{\mathbb C}$, or $\mathbb D$ to the ellipse field given by $\mu$.
 % Author check: source states target D in the first sentence, bounds ||mu|| by infinity rather than 1, and claims uniqueness without normalisation.
 
-This is also called the integrability theorem or measurable Riemann mapping theorem. We shall see an elementary example in which the mapping theorem joins forces with Weyl's lemma to change the quantitative features of dynamics while keeping its topology
+The measurable Riemann mapping theorem, together with Weyl's lemma, can change quantitative features of a dynamical system while preserving its topology.
 % Source page 2
-the same. Start with $M_0\colon\mathbb D\to\mathbb D$, $z\mapsto\lambda_0z$. View this as a map $\mathbb D^*\to\mathbb D^*$ and lift it to the universal cover $\mathbb H_\ell$.
+As an elementary example, start with $M_0\colon\mathbb D\to\mathbb D$, $z\mapsto\lambda_0z$. View this as a map $\mathbb D^*\to\mathbb D^*$ and lift it to the universal cover $\mathbb H_\ell$.
 \begin{figure}[H]\centering
 \includegraphics[width=.42\textwidth]{cd6-fig-01.pdf}
 \FigureTag{CD6.1}{fig:cd6-01}
@@ -35,7 +35,7 @@ Finally descend $\zeta\mapsto\zeta+v$ to $\mathbb D^*$, obtaining the following 
 \end{figure}
 This is an instance in which a holomorphic map is quasiconformally conjugate to another holomorphic map. Here we constructed the conjugacy explicitly. Alternatively, pull back the circle field $\mu_0$ on the bottom copy of $\mathbb D^*$ to obtain $\mu_v=\phi_v^*\mu_0$, then appeal to the mapping theorem. It gives a $K$-quasiconformal map $\phi_v\colon\mathbb D\to\mathbb D$ pulling back the circle field. But how can we ensure that $\phi_v\circ(z\mapsto\lambda_0z)\circ\phi_v^{-1}$ is conformal?
 % Source page 4
-Usually quasiconformal conjugation does not yield a holomorphic map. It does yield a dynamical conjugate: a map with essentially the same dynamics, but with quantities of our choosing. In the preceding example we changed the multiplier from $\lambda_0$ to $e^v$! In some lucky cases the following is prescribed.
+Usually quasiconformal conjugation does not yield a holomorphic map. It does yield a dynamical conjugate: a map with essentially the same dynamics, but with quantities of our choosing. In the preceding example we changed the multiplier from $\lambda_0$ to $e^v$! When an invariant Beltrami form is available, the following definition is useful.
 \setcounter{definition}{14}\begin{definition}[$K$-quasiregular map]
 A map $g\colon U\to\mathbb C$, $U\subseteq\mathbb C$, is $K$-quasiregular if $g=f\circ\phi$, where $\phi\colon U\to\phi(U)$ is $K$-quasiconformal and $f\colon\phi(U)\to g(U)$ is holomorphic.
 \end{definition}
@@ -52,9 +52,9 @@ Then $f^*\mu_0=\mu_0$, so $f$ is $1$-quasiconformal and therefore conformal by W
 \end{proof}
 % Author check: source calls the resulting potentially branched map 1-quasiconformal/conformal, rather than 1-quasiregular/holomorphic.
 % Source page 5
-Taking our cue from this lemma, after surgically altering the dynamics quantitatively we want to retain a holomorphic map so that complex analysis remains available. For that, the conjugate $\phi\circ g\circ\phi^{-1}$ must be a Beltrami-form-preserving quasiregular map.
+The surgery lemma suggests the central goal: after changing quantitative dynamical data, retain a holomorphic representative so that complex-analytic tools remain available. For that, the conjugate $\phi\circ g\circ\phi^{-1}$ must be a Beltrami-form-preserving quasiregular map.
 
-In our original example, $\phi_v\circ(z\mapsto\lambda_0z)\circ\phi_v^{-1}$ was conformal, hence circle-field-preserving and $1$-quasiregular. To stitch the incision after changing the quantitative dynamics, we must hope for an ellipse-field-preserving quasiregular map. Otherwise it is surgery gone wrong! More perspective on quasiregular maps may shed light on this.
+In our original example, $\phi_v\circ(z\mapsto\lambda_0z)\circ\phi_v^{-1}$ was conformal, hence circle-field-preserving and $1$-quasiregular. The modified quasiregular map must therefore preserve an ellipse field. The following equivalent descriptions make that condition easier to verify.
 \setcounter{definition}{15}\begin{definition}[Second definition of $K$-quasiregularity]
 A map $g\colon U\to\mathbb C$ is $K$-quasiregular if it is locally $K$-quasiconformal except on a discrete set.
 \end{definition}
@@ -65,7 +65,7 @@ For every $z\in U$, there are neighbourhoods $N_z,N_{g(z)}$ of $z,g(z)$, a $K$-q
 \]
 \end{definition}
 % Source page 6
-We show that the three definitions are equivalent; this reveals enough content to perform a good surgery. The implication $(1)\Rightarrow(2)$ is clear.
+The three definitions are equivalent. The implication $(1)\Rightarrow(2)$ is clear.
 
 For $(2)\Rightarrow(1)$, the Lindel\"of property gives a countable family $\{U_i\}_{i\in\mathbb N}$ on each of which $g$ is $K$-quasiconformal except at a discrete set. Then $\partial_zg,\partial_{\overline z}g\in L^2_{\mathrm{loc}}$. Define $\widehat\mu(z)=0$ outside $U_i$, and $\mu(z)=\partial_{\overline z}g(z)/\partial_zg(z)$ inside. There is a map $\widehat\phi\colon\mathbb C\to\mathbb C$ pulling back the circle field to this ellipse field. Put $\phi=\widehat\phi|_{U_i}$ and $f=g\circ\phi^{-1}$.
 \begin{figure}[H]\centering
@@ -85,14 +85,14 @@ If $\phi(z)\in\operatorname{Crit}(f)$, choose these neighbourhoods so that $f$ i
 \includegraphics[width=.74\textwidth]{cd6-fig-06.pdf}
 \FigureTag{CD6.6}{fig:cd6-06}
 \end{figure}
-Now consider the following self-explanatory diagram. Shrink $N_{g(z)}$ to be simply connected, take its Riemann map $R$, and lift $R$ to $\widetilde R$ (basically a deck transformation).
+Shrink $N_{g(z)}$ to be simply connected, let $R$ be its Riemann map, and choose an appropriate lift $\widetilde R$ as shown in the diagram.
 \begin{figure}[H]\centering
 \includegraphics[width=.54\textwidth]{cd6-fig-07.pdf}
 \FigureTag{CD6.7}{fig:cd6-07}
 \end{figure}
 Then $R\circ g\circ(\widetilde R\circ\phi)^{-1}$ is the required map.
 % Source page 8
-Among the many things one must look out for in a good surgery, knowing one's way around quasiregularity is important. There are deeper principles and schemes, due to Shishikura, governing how and when surgery can be performed. We will see them later. This gives a peek into the role of quasiconformality in loosening dynamics. As promised, the flexibility in conformality is deeply connected with flexibility in the resulting dynamics.
+Quasiregularity is therefore the bridge between a quasiconformal deformation and a holomorphic dynamical model.
 \subsection{Addendum: two properties of quasiconformal maps}
 \begin{enumerate}
 \setcounter{enumi}{0}\item H\"older's inequality:
@@ -128,7 +128,7 @@ f_n(w)&=\iint_{|w-z|<1/n}\varphi_n(w-z)f(z)\,dx\,dy\\
 &=\int_0^{2\pi}\int_0^{1/n}
 \frac{n^2f(w+re^{i\theta})r}{\exp(1/(1-n^2r^2))}\,dr\,d\theta,
 \end{align*}
-while $f(w)=\iint_{\mathbb D}f(w)\varphi(z)\,dx\,dy$. Thus $|f_n-f|\to0$ uniformly on $K$, independently of the input by continuity of $f$. Hence $f_n\to f$ uniformly on compact sets and $f$ is holomorphic.
+while $f(w)=\iint_{\mathbb D}f(w)\varphi(z)\,dx\,dy$. Thus $|f_n-f|\to0$ uniformly on $K$ by uniform continuity of $f$ on a compact neighbourhood of $K$. Hence $f_n\to f$ uniformly on compact sets and $f$ is holomorphic.
 % Author check: the source omits the normalising constant C in the polar-coordinate integral and uses the open disc for the support.
 \begin{remark}
 This immediately implies the Looman--Menchoff theorem.

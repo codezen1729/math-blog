@@ -12,7 +12,7 @@ Recall the construction of $\Q$ from $\Z$:
 (x_1,y_1)\sim(x_2,y_2)\ \Longleftrightarrow\ x_1y_2-y_1x_2=0.
 \]
 % Author check: the source does not exclude zero denominators in this recollection.
-We want to generalize this to arbitrary commutative rings. If $X$ is a variety and $x\in X$, then a neighbourhood $U$ of $x$ corresponds to a localization of the coordinate ring $A(X)$. Thus localization is the geometric equivalent of seeing a point locally.
+We want to generalize this to arbitrary commutative rings. If $X$ is a variety and $x\in X$, then a neighbourhood $U$ of $x$ corresponds to a localization of the coordinate ring $A(X)$. Thus localization is the algebraic analogue of examining a neighbourhood of a point.
 \setcounter{definition}{7}\begin{definition}
 Let $S\subseteq A$ be a multiplicatively closed set in a commutative ring. Consider the equivalence relation on $A\times S$ given by
 \[
@@ -51,7 +51,7 @@ These properties determine the initial object in (iii) uniquely up to isomorphis
 \setcounter{example}{4}\begin{example}
 If $\pp<A$ is prime, then $S=A\setminus\pp$ is multiplicatively closed. We write $S^{-1}A$ as $A_{\pp}$. The set $\mm:=\{a/s\mid a\in\pp,\ s\in S\}$ is an ideal. If $\aa\nsubseteq\mm$, there exists $b/t\in\aa$ with $b/t\notin\mm$. Hence $b\notin\pp$, so $b$ is a unit. Thus $A_{\pp}$ is a local ring.
 \end{example}
-Localization can be attempted on $A$-modules in exactly the same way. For an $A$-module $M$, let
+Localization extends to $A$-modules in the same way. For an $A$-module $M$, let
 \[S^{-1}M:=\{(m,s)\mid m\in M,\ s\in S\}/{\sim}.\]
 % Source page 3
 For $f:M\to N$, one has $S^{-1}f:S^{-1}M\to S^{-1}N$, $m/s\mapsto f(m)/s$.
@@ -72,7 +72,7 @@ A property $P$ of an $A$-module $M$ is a \emph{local property} if
 \setcounter{example}{5}\begin{example}[Local properties]
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item $M=0\Longleftrightarrow M_{\pp}=0\Longleftrightarrow M_{\mm}=0$ for every maximal $\mm$. To see this, let $x\in M$, $x\ne0$, and $\aa=\Ann(x)$, say $\aa\subseteq\mm$. Then $x/1\in M_{\mm}$ and $x/1=0$, so $x$ is killed by some element in $A\setminus\mm$.
-\setcounter{enumi}{1}\item A map $\varphi:M\to N$ is injective if and only if $\varphi_{\pp}:M_{\pp}\to N_{\pp}$ is injective, if and only if $\varphi_{\mm}:M_{\mm}\to N_{\mm}$ is injective. Indeed, $\ker\varphi=0\Longleftrightarrow\ker\varphi_{\pp}=0\Longleftrightarrow\ker\varphi_{\mm}=0$.
+\setcounter{enumi}{1}\item A map $\varphi:M\to N$ is injective if and only if every localized map $\varphi_{\pp}:M_{\pp}\to N_{\pp}$ is injective; equivalently, it is enough to check every maximal ideal $\mm$. Indeed, $\ker\varphi=0\Longleftrightarrow\ker\varphi_{\pp}=0\Longleftrightarrow\ker\varphi_{\mm}=0$.
 \setcounter{enumi}{2}\item Surjectivity of $\varphi:M\to N$ is also a local property.
 \end{enumerate}
 \end{example}
@@ -102,7 +102,7 @@ x\in\aa^{ec}=(S^{-1}\aa)^c
 &\Longleftrightarrow x\in\bigcup_{s\in S}(\aa:s).
 \end{aligned}
 \]
-(iii) $\aa\in\mathcal C\Longleftrightarrow\aa^{ec}\subseteq\aa\Longleftrightarrow(sx\in\aa\text{ for some }s\in S\Rightarrow x\in\aa)$. In other words, we can extend $\aa$, cancel $s$, and contract. This is equivalent to no $s\in S$ being a zero-divisor in $A/\aa$.
+(iii) $\aa\in\mathcal C\Longleftrightarrow\aa^{ec}\subseteq\aa\Longleftrightarrow(sx\in\aa\text{ for some }s\in S\Rightarrow x\in\aa)$. In other words, extend $\aa$ to $S^{-1}A$, use the invertibility of $s\in S$, and then contract the resulting ideal back to $A$. This is equivalent to no $s\in S$ being a zero-divisor in $A/\aa$.
 
 (iv) If $\qq$ is prime in $S^{-1}A$, then $\qq^c$ is clearly prime. If $\pp$ is prime in $A$, then $A/\pp$ is an integral domain. Let $\overline S$ be the image of $S$ in $A/\pp$. Then
 \[
@@ -112,7 +112,6 @@ which is either zero or contained in the field of fractions of $A/\pp$, hence an
 % Source page 5
 Thus $S^{-1}\pp$ is prime or $(1)$, and $S^{-1}\pp=(1)$ if and only if $S\cap\pp\ne\varnothing$.
 
-(v) Exercise.
 \end{proof}
 \setcounter{theorem}{7}\begin{corollary}
 \begin{enumerate}[label=(\roman*)]

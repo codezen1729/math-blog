@@ -13,8 +13,7 @@ The action $\MCG(g)\curvearrowright T_g$ is properly discontinuous.
 Consequently $M_g$ is a complex orbifold of dimension $3g-3$.
 \setcounter{definition}{3}\begin{definition}[Teichm\"uller curve]
 We say that $V\subset M_g$ is a Teichm\"uller curve if the inclusion
-$(V\cong\mathbb H/\Gamma)\hookrightarrow M_g$ is an isometry. The inclusion
-is assumed to be in the regular set. On $V$ we have the usual hyperbolic
+$(V\cong\mathbb H/\Gamma)\hookrightarrow M_g$ is an isometry. Its image lies in the regular locus. On $V$ we have the usual hyperbolic
 metric coming from a torsion-free discrete subgroup
 $\Gamma\subset\PSL_2(\mathbb R)$.
 \end{definition}
@@ -33,7 +32,7 @@ One obtains a metric on $M_g$ in a similar fashion.
  \centering\includegraphics[width=.79\textwidth]{m3-fig-02.pdf}
  \FigureTag{M3.2}{fig:m3-fig-02}
 \end{figure}
-Here $\sigma\in\MCG(g)$; the fibre should be discrete.
+
 On $T_g$ one has the Weil--Petersson metric $\omega_{\mathrm{WP}}$.
 \begin{enumerate}
  \setcounter{enumi}{0}\item The symplectic form is
@@ -55,9 +54,9 @@ On $T_g$ one has the Weil--Petersson metric $\omega_{\mathrm{WP}}$.
 The real part $\operatorname{Re}(\widetilde\omega_{\mathrm{WP}})$ is a
 Riemannian metric on $T_g$, and its imaginary part is a symplectic form
 on $T_g$. Together they give a K\"ahler structure on $T_g$.
-\setcounter{theorem}{6}\begin{theorem}[Ivanov, H. Masur, M. Wolf]
+\setcounter{theorem}{6}\begin{theorem}
 $\operatorname{Isom}_{\mathrm{WP}}(T_{g,n})=\MCG(g,n)$.
-For $n=0$, this was Royden's work.
+
 \end{theorem}
 % Author check: the theorem attribution and WP designation are retained.
 We do not need the full power of the theorem above to get a metric on
@@ -77,8 +76,7 @@ Here $d$ is the distance induced by
 $\operatorname{Re}(\widetilde\omega_{\mathrm{WP}})$ on $T_g$.
 % Author check: the source combines the quasiconformal distance formula with the WP distance.
 \setcounter{definition}{4}\begin{definition}[Complex geodesic]
-If $f\colon\mathbb H\to M_g$ is an isometry, then $f$, or $f(\mathbb H)$,
-is called a complex geodesic in $M_g$.
+If $f\colon\mathbb H\to M_g$ is an isometry, then its image $f(\mathbb H)$ is called a complex geodesic in $M_g$.
 \end{definition}
 
 % Source page 4
@@ -115,7 +113,7 @@ Since $\pi_1(U_p)=0$, the map $z_p\circ x_p$ is well-defined.
 By the Fundamental Theorem of Calculus,
 $\frac{dz_p}{dx_p}(x_p(q))=\phi_p(x_p(q))$.
 Define $\widetilde z_p:=z_p\circ x_p$. Then $\omega=d\widetilde z_p$.
-This is an elaborate way of saying: work with $\phi_{x_p}\circ x_p$.
+Equivalently, $\widetilde z_p$ is obtained by integrating the local coefficient $\phi_{x_p}\circ x_p$.
 But we notice that
 \[
  \frac{d\widetilde z_p}{d\widetilde z_q}=1
@@ -123,47 +121,12 @@ But we notice that
  \widetilde z_p=\widetilde z_q+c
  \qquad\text{(translation charts).}
 \]
-Let $p\in\Sigma$. Locally in $(U_p,x_p)$, write
-$\omega=\phi_{x_p}\,dx_p$. If $\phi_{x_p}(p)=0$ of order $n$, then
-$\phi_{x_p}\equiv z^nh(z)\,dz$.
-Again, since $U_p$ is simply connected, one can find $h(z)^{1/n}$.
-Modify $x_p$ to
-$\widetilde z_p:=\bigl(zh(z)^{1/n}\bigr)\circ x_p$.
-Then $\omega=(\widetilde z_p)^n\,d\widetilde z_p$.
-% Author check: the extra dz in phi and this coordinate change are retained as written.
-% Source page 6
-\begin{figure}[H]
- \centering\includegraphics[width=.83\textwidth]{m3-fig-06.pdf}
- \FigureTag{M3.6}{fig:m3-fig-06}
-\end{figure}
-The map
-$\phi\colon(\text{sector},\widetilde z_p^n\,d\widetilde z_p)
-\longrightarrow(\mathbb H,dz)$ is an isometry, where
-\[
- \phi(\widetilde z_p)=\frac1{n+1}(\widetilde z_p)^{n+1},
- \qquad
- dz=d\phi=\frac d{d\widetilde z_p}
- \left(\frac1{n+1}(\widetilde z_p)^{n+1}\right)d\widetilde z_p.
-\]
-We have thus obtained a flat metric $dz$ on $X$, with cone singularities
-of angle $2(n+1)\pi$ at points of $\Sigma$.
-\begin{figure}[H]
- \centering\includegraphics[width=.48\textwidth]{m3-fig-07.pdf}
- \FigureTag{M3.7}{fig:m3-fig-07}
-\end{figure}
-We have $\phi_3=\phi_2\circ\phi_1$ and
-$\phi_3'=\phi_2'(\phi_1)\cdot\phi_1'=0$.
-By the Identity Theorem, $\phi_1,\phi_2$ are also translations.
-% Author check: the zero derivative and the conclusion are reproduced from the source.
-Thus $(X,\omega)$ gives $(U_p,\widetilde z_p)$, a translation structure;
-in the reverse direction, pull back $d\widetilde z_p$ by $\widetilde z_p^*$.
+
 
 % Source page 7
 Now consider the space
 $\Omega M_g:=\{(X,\omega):\omega\in\Omega X,\ \omega\ne0\}$.
-The projection $\Omega M_g\xrightarrow{\pi}M_g$ is a holomorphic vector
-bundle of rank $g$, since $\operatorname{rank}(\Omega X)=g$, with its zero
-section removed. A \emph{stratum} is
+The projection $\Omega M_g\xrightarrow{\pi}M_g$ is the complement of the zero section in a holomorphic vector bundle of rank $g$, since $\dim\Omega X=g$. A \emph{stratum} is
 \[
  \Omega M_g(p_1,\ldots,p_n)
  :=\{(X,\omega):(\omega)=p_ix_i,\ x_i\in X,\ p_i\ge0\}
@@ -188,7 +151,7 @@ rotating the translation structure.
 $(M_g,\operatorname{Re}(\widetilde\omega_{\mathrm{WP}}))$ is a highly
 inhomogeneous space:
 $(T_XM_g,|\cdot|_{\mathrm{WP}})\not\cong(T_YM_g,|\cdot|_{\mathrm{WP}})$
-for $X\ne Y$. Hence we built a bundle of forms on $M_g$.
+for $X\ne Y$. Thus $\Omega M_g$ is a bundle of nonzero holomorphic forms over $M_g$.
 The space $\Omega M_g$ admits an $\SL_2(\mathbb R)$ action and is therefore
 highly homogeneous. One can easily observe that $\SL_2(\mathbb R)$
 preserves $\Omega M_g(p_1,\ldots,p_n)$.
@@ -208,11 +171,7 @@ linear transformations, with
 $\operatorname{Stab}(i)=\operatorname{SO}_2(\mathbb R)$ and
 $\operatorname{Orb}(i)=\mathbb H$.
 % Source page 9
-\setcounter{theorem}{7}\begin{theorem}
-\label{thm:m3-complex-geodesic}
-The map $f\colon\mathbb H\to M_g$ is a complex geodesic.
-\end{theorem}
-We shall defer the proof to the end. Here are a few consequences.
+
 \paragraph{Geodesic rays in $M_g$.}
 Every point has a real geodesic through it. For fixed $(X,\omega)$, set
 \[
@@ -233,40 +192,32 @@ Then
 If $\SL(X,\omega)$ were a lattice in $\SL_2(\mathbb R)$, then the
 normalisation map
 $V\cong\mathbb H/\SL(X,\omega)\longrightarrow M_g$
-would give examples of Teichm\"uller curves in $M_g$, generated by $(X,\omega)$.
+would define a Teichm\"uller curve in $M_g$ generated by $(X,\omega)$.
 % Source page 10
-\begin{proof}[Proof of Theorem~\ref{thm:m3-complex-geodesic}]
-Let $x,y\in\mathbb H$, with $x=i$ and $y=it$.
-Then $f(i)=X$, since $\operatorname{SO}_2(\mathbb R)=\operatorname{Stab}(i)$
-fixes the complex structure on $X$.
-Let us first compute the coset of
-$\SL_2(\mathbb R)/\operatorname{SO}_2(\mathbb R)$ that sends $i\mapsto it$.
-We have
-\[
- \frac{ai+b}{ci+d}=it
- \quad\Longrightarrow\quad a=dt,\quad b=-ct,\qquad t=u^2>0.
-\]
-Thus
-\[
- A(t)=\begin{pmatrix}a/u&b/u\\-bu&au\end{pmatrix}\colon i\mapsto it,
- \qquad a^2+b^2=1,\quad(a,b)\in S^1.
-\]
-We have $f(it)=(U_p,A(t)\circ\widetilde z_p)$. Finally,
-\[
- d_{M_g}(f(i),f(it))=\log(\text{dilatation of }A(t)),\qquad
- d_{\mathbb H}(i,it)=\log t=\int_1^t\frac{dy}{y}.
-\]
-For general $x,y\in\mathbb H$, use a M\"obius map $\varphi\in\PSL_2(\mathbb R)$
-sending $x\mapsto i$ and $y\mapsto it$ for some $t$.
-The map $A(t)$ is linear, and computing its dilatation is standard.
-% Author check: the displayed matrix maps i to i/t with the usual action; the distance formula and missing t restriction are retained.
-\end{proof}
+
 % Source page 11
 \setcounter{theorem}{8}\begin{proposition}
 $\SL(X,\omega)$ is a discrete subgroup of $\SL_2(\mathbb R)$, and the
 quotient is never compact.
 \end{proposition}
-We shall see the proof later.
+\begin{proof}
+$\SL(X,\omega)$ is discrete because, for $g\in\SL_2(\mathbb R)$ close
+ to $\id$, $\operatorname{dilatation}(g)=1$ if and only if
+ $g\in\operatorname{SO}_2(\mathbb R)$, but
+ $\operatorname{SO}_2(\mathbb R)$ does not preserve $\SL(X,\omega)$.
+ $\SL(X,\omega)$ is not cocompact, because otherwise
+ \[
+ \SL_2(\mathbb R)/\SL(X,\omega)\cong
+ \SL_2(\mathbb R)\cdot(X,\omega)=\operatorname{Orb}(X,\omega)
+ \]
+ would be compact, but
+ \[
+ \left(g_t=\begin{pmatrix}e^{-t}&0\\0&e^t\end{pmatrix}\right)
+ \cdot(X,\omega)\xrightarrow{\pi}X_t
+ \]
+ is noncompact in $M_g$.
+ % Author check: the source's abbreviated discreteness and noncompactness arguments are retained.
+\end{proof}
 \paragraph{Remarks.}
 \begin{enumerate}
  \setcounter{enumi}{0}\item If $\omega\in\Omega X$, then in a chart $(U_p,x_p)_p$,
@@ -276,53 +227,7 @@ We shall see the proof later.
  $p\in X\setminus\Sigma$. Thus
  $\frac{d\widetilde z_p}{d\widetilde z_q}=1$, so
  $\widetilde z_p=\widetilde z_q+c$.
- \setcounter{enumi}{1}\item If $p\in\Sigma$, look at the chart $(U_p,x_p)$:
- $\omega=\phi_{x_p}\,dx_p=x_p^ng(x_p)\,dx_p$.
- Define
- \[
- h(x_p(q)):=\int_0^{x_p(q)}
- x_p^n(\gamma(t))g(x_p(\gamma(t)))\,dx_p(\gamma(t)).
- \]
- Then $\frac{dh}{dx_p}(x_p(q))=x_p^n(q)g(x_p(q))$.
- Thus $h$ has a zero at $0$ of order $n+1$, so one can take an $(n+1)$st root.
- \begin{figure}[H]
-  \centering\includegraphics[width=.38\textwidth]{m3-fig-10.pdf}
-  \FigureTag{M3.10}{fig:m3-fig-10}
- \end{figure}
- % Source page 12
- Set $\widetilde w(x_p(q)):=(k+1)^{1/(k+1)}h(x_p(q))^{1/(k+1)}$. Then
- \[
- \begin{aligned}
- \frac{d\widetilde w}{dx_p}(x_p(q))
- &=\frac1{k+1}(k+1)^{1/(k+1)}
- h(x_p(q))^{-k/(k+1)}\frac{dh}{dx_p}(x_p(q))\\
- &=\widetilde w(x_p(q))^{-k}\phi_{x_p}.
- \end{aligned}
- \]
- We have $\phi_{x_p}=x_p^ng(x_p)$ and
- $\widetilde w(x_p)=(k+1)^{1/(k+1)}h(x_p)^{1/(k+1)}$. Therefore
- \[
- \begin{aligned}
- \widetilde w(x_p(q))^{-k}\phi_{x_p}
- &=x_p^ng(x_p)(k+1)^{-k/(k+1)}h(x_p)^{-k/(k+1)}\\
- &=\frac1{k+1}(k+1)^{1/(k+1)}
- h(x_p)^{-k/(k+1)}\frac{dh}{dx_p}(x_p)
- =\frac{d\widetilde w}{dx_p}.
- \end{aligned}
- \]
- Replace $x_p$ by $\widetilde w\circ x_p=:\widetilde z_p$.
- Then $\omega=\widetilde w^n\,d\widetilde w$.
- % Author check: the source alternates n and k in the root calculation.
- The map
- \[
- \phi:=\frac1{n+1}(\widetilde w)^{n+1}
- \colon U_p\cap\widetilde w^{-1}(\text{sector})\longrightarrow\mathbb H
- \]
- satisfies $\omega=d\phi$. There are $2(n+1)$ sectors.
- \begin{figure}[H]
-  \centering\includegraphics[width=.82\textwidth]{m3-fig-11.pdf}
- \FigureTag{M3.11}{fig:m3-fig-11}
- \end{figure}
+
 \end{enumerate}
 % Source page 13 (continuation of the preceding remarks).
 \begin{figure}[H]
@@ -393,23 +298,7 @@ We have $\frac{d\phi}{d\widetilde z_p}=1$, so $\phi=\widetilde z_p+c$.
  % Author check: the source does not exclude isomorphisms or the identity in this definition.
  If $(X,\omega)$ is primitive, then $\Aut(X,\omega)=\{\id\}$.
  Hence $\SL(X,\omega)\cong\operatorname{Aff}^+(X,\omega)$.
- \setcounter{enumi}{4}\item \textbf{Proof of the proposition.}
- $\SL(X,\omega)$ is discrete because, for $g\in\SL_2(\mathbb R)$ close
- to $\id$, $\operatorname{dilatation}(g)=1$ if and only if
- $g\in\operatorname{SO}_2(\mathbb R)$, but
- $\operatorname{SO}_2(\mathbb R)$ does not preserve $\SL(X,\omega)$.
- $\SL(X,\omega)$ is not cocompact, because otherwise
- \[
- \SL_2(\mathbb R)/\SL(X,\omega)\cong
- \SL_2(\mathbb R)\cdot(X,\omega)=\operatorname{Orb}(X,\omega)
- \]
- would be compact, but
- \[
- \left(g_t=\begin{pmatrix}e^{-t}&0\\0&e^t\end{pmatrix}\right)
- \cdot(X,\omega)\xrightarrow{\pi}X_t
- \]
- is noncompact in $M_g$.
- % Author check: the source's abbreviated discreteness and noncompactness arguments are retained.
+
 \end{enumerate}
 % Source page 16
 \subsection{Summary}
@@ -417,7 +306,7 @@ We have $\frac{d\phi}{d\widetilde z_p}=1$, so $\phi=\widetilde z_p+c$.
  \setcounter{enumi}{0}\item $\operatorname{Re}(\widetilde\omega_{\mathrm{WP}})$ descends to $M_g$.
  \setcounter{enumi}{1}\item Every $(X,\omega)\in\Omega M_g$ gives a translation structure.
  \setcounter{enumi}{2}\item $\SL_2(\mathbb R)\curvearrowright\Omega M_g$ stretches the translation structure.
- \setcounter{enumi}{3}\item Fix $(X,\omega)\in\Omega M_g$. We have the following diagram,
+ \setcounter{enumi}{3}\item Fix $(X,\omega)\in\Omega M_g$. We have the following diagram:
  where $F(A)=A\cdot(X,\omega)$ and $f$ is an isometric immersion.
  \begin{figure}[H]
   \centering\includegraphics[width=.64\textwidth]{m3-fig-14.pdf}
@@ -437,11 +326,11 @@ We have $\frac{d\phi}{d\widetilde z_p}=1$, so $\phi=\widetilde z_p+c$.
  \setcounter{enumi}{8}\item Define the \emph{trace field}
  $K:=\mathbb Q\{\operatorname{tr}(A):A\in\SL(X,\omega)\}\subset\mathbb R$.
  This is a totally real number field with $\deg(K/\mathbb Q)\le g$.
- This is a connection to number theory.
+ Thus the trace field connects the geometry of Teichm\"uller curves with number theory.
  \setcounter{enumi}{9}\item A Teichm\"uller curve generated by $(X,\omega)$ has the following
  invariants:
  \begin{enumerate}[label=(\roman*)]
-  \setcounter{enumii}{0}\item $\SL(X,\omega)$ is unique to $V\hookrightarrow M_g$ up to
+  \setcounter{enumii}{0}\item $\SL(X,\omega)$ is determined by $V\hookrightarrow M_g$ up to
   conjugacy, since $\SL(X,\omega)\cong\Deck(\mathbb H/V)$;
   \setcounter{enumii}{1}\item the trace field $K$;
   \setcounter{enumii}{2}\item the stratum to which $(X,\omega)$ belongs.
@@ -459,8 +348,7 @@ We have $\frac{d\phi}{d\widetilde z_p}=1$, so $\phi=\widetilde z_p+c$.
 % Source page 18
 \subsection{Billiards and Teichm\"uller Curves}
 Let $P$ be a polygon with angles in $\mathbb Q\pi$, that is, rational
-multiples of $\pi$, such that every edge has a pairing with another
-parallel edge of the same length.
+multiples of $\pi$, such that every edge is paired with another parallel edge of the same length.
 \begin{figure}[H]
  \centering\includegraphics[width=.90\textwidth]{m3-fig-15.pdf}
  \FigureTag{M3.15}{fig:m3-fig-15}
@@ -474,7 +362,7 @@ charts are given by translations away from singular points.
 \end{figure}
 In general, $dz$ descends to a flat metric with cone singularities at
 finitely many points. How many points? Say $k$.
-Triangulate the surface, or the polygon. Then
+Triangulating the surface, or equivalently the polygon, gives
 \[
  \chi(X)=\chi(P/{\sim})=-(2g-2)=f-e+v,\qquad e=\frac32f.
 \]
@@ -486,17 +374,15 @@ $\pi f=(4g-4)\pi+2\pi v$.
 The angle at a cone singularity is a multiple of $2\pi$.
 \end{proposition}
 \begin{proof}
-How do you compute cone angles from $P/{\sim}$?
+The cone angles of $P/{\sim}$ can be computed from the edge identifications.
 \begin{figure}[H]
  \centering\includegraphics[width=.85\textwidth]{m3-fig-17.pdf}
  \FigureTag{M3.17}{fig:m3-fig-17}
 \end{figure}
-The cone angle at $e$ is $\sum_{i=1}^n\theta_i$. For every $v_i$ in the
-sequence above, there is a $v_j\parallel v_i$. To come back to $v_1$,
-one must have completed several rounds of the circle. Consequently
+The cone angle at $e$ is $\sum_{i=1}^n\theta_i$. For every edge vector $v_i$ around the identified vertex, there is a parallel partner $v_j$. Returning to $v_1$ requires an integral number of full turns. Consequently
 $2\pi\mid\sum_{i=1}^n\theta_i$.
 \end{proof}
-Say the cone angles are $2\pi(n_i+1)$ at $p_i$ in $P/{\sim}$. Then
+Let the cone angles be $2\pi(n_i+1)$ at $p_i$ in $P/{\sim}$. Then
 \[
  2\pi\sum_{i=1}^k n_i=\pi f-2\pi k=(4g-4)\pi,
  \qquad 2\pi n_i=2\pi(n_i+1)-2\pi.
@@ -531,9 +417,9 @@ points. Therefore one obtains a polygonal representation.
  \centering\includegraphics[width=.77\textwidth]{m3-fig-19.pdf}
  \FigureTag{M3.19}{fig:m3-fig-19}
 \end{figure}
-Reference: H. Masur, \emph{Rational Billiards and Flat Structures}.
+For background, see H. Masur, \emph{Rational Billiards and Flat Structures}.
 Let $G_Q$ be the group generated by reflections along the sides.
-Set $N=|G_Q|<\infty$. For $\theta\in S^1$, look at
+Set $N=|G_Q|<\infty$. For $\theta\in S^1$, consider the orbit
 $G_Q\cdot\theta=\{\theta_1,\ldots,\theta_{|G_Q|}\}
 =\{\theta_1,\ldots,\theta_N\}$.
 Consider $2N$ copies of $Q$. Pick a side $s$ of $Q_i$ and reflect
@@ -555,15 +441,15 @@ for $i=1,\ldots,k$.
  \FigureTag{M3.20}{fig:m3-fig-20}
 \end{figure}
 \paragraph{Topologically optimal.}
-$\gamma(t)$ is dense or periodic.
+Every trajectory $\gamma(t)$ is dense or periodic.
 \paragraph{Ergodically optimal.}
-$\gamma(t)$ is periodic or equidistributed:
+Every trajectory $\gamma(t)$ is periodic or equidistributed:
 \[
  \underbrace{\lim_{T\to\infty}\frac1T\int_0^T f(\gamma(t))\,dt}_{\text{time average}}
  =
  \underbrace{\frac1{\Area(P)}\int_P f(z)|dz|^2}_{\text{space average}}.
 \]
-Reference: L. DeMarco, \emph{Conformal Geometry of Billiards}.
+For background, see L. DeMarco, \emph{Conformal Geometry of Billiards}.
 \paragraph{Polygonal lattice.}
 If $(X,\omega)$ is obtained from $P$ by unfolding and $\SL(X,\omega)$
 is a lattice, we call $P$ a polygonal lattice.
@@ -572,12 +458,9 @@ is a lattice, we call $P$ a polygonal lattice.
  \Longrightarrow\text{topologically optimal}.
 \]
 % Source page 24
-\setcounter{theorem}{11}\begin{theorem}[Veech]
-Every regular polygon is a primitive Teichm\"uller curve.
-\end{theorem}
-% Author check: the source's unrestricted regular-polygon/primitive assertion is retained.
+
 Thus billiard dynamics gives us curves in $M_g$.
-For $g=2$: the pentagon, octagon, and decagon.
+In genus $2$, examples arise from the pentagon, octagon, and decagon.
 \setcounter{theorem}{12}\begin{theorem}[McMullen]
 If $\operatorname{genus}(X)=2$, then the following are equivalent:
 $(X,\omega)$ is ergodically optimal; $(X,\omega)$ is topologically optimal;

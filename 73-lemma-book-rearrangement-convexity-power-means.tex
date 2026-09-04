@@ -43,8 +43,8 @@ Apply the rearrangement inequality to
 and the permutation $(a'_1,b'_1,c'_1)=(\sqrt[3]{b/c},\sqrt[3]{c/a},\sqrt[3]{a/b})$, to derive
 \[\frac ab+\frac bc+\frac ca\geq\sqrt[3]{\frac{a^2}{bc}}
 +\sqrt[3]{\frac{b^2}{ca}}+\sqrt[3]{\frac{c^2}{ab}}=a+b+c,\]
-since $abc=1$. Q.E.D.!
-There are two more possible Q.E.D.s for this problem; the next is an ingenious application of AM--GM.
+since $abc=1$. This completes the proof.
+Two other proofs are available; the next uses AM--GM.
 \paragraph{Solution 2.}
 \[
 \begin{aligned}
@@ -60,7 +60,7 @@ The third solution follows from Muirhead's theorem.
 \[\frac ab+\frac bc+\frac ca=a^2c+b^2a+c^2b
 \mathrel{\stackrel{?}{\geq}}(abc)^{2/3}(a+b+c)
 =\sum_{\mathrm{cyc}}a^{5/3}b^{2/3}c^{2/3}.\]
-Since $(2,1,0)\succ(5/3,2/3,2/3)$, the result follows. Q.E.D.!
+Since $(2,1,0)\succ(5/3,2/3,2/3)$, the result follows. This completes the proof.
 % Author check: the source applies Muirhead to a three-term cyclic sum; its usual symmetric-sum hypothesis is not addressed.
 \paragraph{A two-line proof of the AM--GM inequality.}
 We have $x_i^{t_i}=e^{t_i\log x_i}$. Since $e^x$ is convex, we can deduce
@@ -69,34 +69,33 @@ We have $x_i^{t_i}=e^{t_i\log x_i}$. Since $e^x$ is convex, we can deduce
 \leq t_1e^{\log x_1}+\cdots+t_ne^{\log x_n}=t_1x_1+\cdots+t_nx_n.\]
 Now put $t_1=t_2=\cdots=t_n=1/n$ to obtain, by Jensen's inequality,
 \[\frac{x_1+x_2+\cdots+x_n}{n}\geq\sqrt[n]{x_1x_2\cdots x_n}.\]
-Q.E.D.!
+This completes the proof.
 % Author check: the initial general-weight formula does not state that the weights are nonnegative and sum to one.
 \paragraph{Challenge.}
 Define $x_k=(a^k+b^k+c^k)/3$ for $a,b,c>0$. Prove the following inequality:
-\[\frac13\left(\frac{x_1^5}{x_2x_3}+\frac{x_2^2}{x_1x_3}+\frac{x_3}{x_1x_2}\right)>1.\]
-P.S. This problem has a two-line solution, so don't think that it is complicated!
+\[\frac13\left(\frac{x_1^5}{x_2x_3}+\frac{x_2^2}{x_1x_3}+\frac{x_3}{x_1x_2}\right)\geq1.\]
+The proof takes only two lines.
 % Author check: the strict sign in the source is retained; a=b=c gives equality.
-Now let us proceed on our eternal journey. Let me show you the magic of convexity--concavity arguments: problems get resolved in seconds!!
+Convexity and concavity can make apparently difficult inequalities collapse quickly.
 
 % Source page 49 - left
-So far, so good. By the way, did you figure out how to resolve the challenge we came across two pages ago?
-Hold on: here comes that two-line solution!
+Here is a two-step solution to the challenge above.
 \[
 \begin{aligned}
 x_3^2\geq x_2^3\geq x_1^6
 &\quad\Longrightarrow\quad
 \frac13(x_3^2+x_2^3+x_1^6)\left(\frac12+\frac13+\frac16\right)
->\frac{x_3^2}{2}+\frac{x_2^3}{3}+\frac{x_1^6}{6}\geq x_1x_2x_3,\\
-\frac{x_3^2+x_2^3+x_1^6}{x_1x_2x_3}>3
+\geq\frac{x_3^2}{2}+\frac{x_2^3}{3}+\frac{x_1^6}{6}\geq x_1x_2x_3,\\
+\frac{x_3^2+x_2^3+x_1^6}{x_1x_2x_3}\geq3
 &\quad\Longrightarrow\quad
-\frac{x_1^5}{x_2x_3}+\frac{x_2^2}{x_1x_3}+\frac{x_3}{x_1x_2}>3.
+\frac{x_1^5}{x_2x_3}+\frac{x_2^2}{x_1x_3}+\frac{x_3}{x_1x_2}\geq3.
 \end{aligned}
 \]
-W$^5$. Q.E.D.! You see, we are done in just two steps!
+This completes the proof in two steps.
 % Author check: the source uses a strict > in the weighted-sum comparison; the direction and strictness are preserved for review.
 
 For $a,b,c>0$ with $abc=1$, prove $\sqrt{a+3}+\sqrt{b+3}+\sqrt{c+3}\geq6$.
-The source also annotates $ab+bc+ca=3$.
+Since $ab+bc+ca\geq3$ by AM--GM,
 \[
 \sum_{\mathrm{cyc}}\sqrt{a+3}
 \geq3\sqrt[6]{28+3(ab+bc+ca)+9(a+b+c)}

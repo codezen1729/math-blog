@@ -8,11 +8,11 @@
 % BLOG-CONTENT-BEGIN
 % Source page 1
 \section{Coverings and smooth structures}
-Covering maps and covers are studied for a wide range of reasons. Of them all, one that is fundamental is the problem of classifying topological manifolds. Taking our cue from invariance of domain, which states that, given a Euclidean space $X$, there is a unique $n$ such that $X\cong\mathbb R^n$, we ask: is there a list of all possible $n$-manifolds, up to homeomorphism?
+A fundamental application of covering spaces is the classification of topological manifolds. Taking our cue from invariance of domain, which states that, given a Euclidean space $X$, there is a unique $n$ such that $X\cong\mathbb R^n$, we ask: is there a list of all possible $n$-manifolds, up to homeomorphism?
 
-Covering-space theory aids us in answering this question because manifolds are semilocally simply connected and locally path connected. Thus, if $M$ is a manifold, for every subgroup $H<\pi_1(M,m)$ it provides a covering map $p:E\to M$ such that $p_*(\pi_1(E,e))=H$. Set $H=\{1\}$. The way $E$ is constructed for this $H$ forces $E$ to be simply connected. Regardless, $p:E\to M$ would be a normal covering, so $M\cong E/G$, where $G<\Aut(E)$ is a subgroup acting properly discontinuously.
+Covering-space theory aids us in answering this question because manifolds are semilocally simply connected and locally path connected. Thus, for every subgroup $H<\pi_1(M,m)$, covering-space classification provides a map $p:E\to M$ such that $p_*(\pi_1(E,e))=H$. Set $H=\{1\}$. The way $E$ is constructed for this $H$ forces $E$ to be simply connected. Moreover, $p:E\to M$ is a normal covering, so $M\cong E/G$, where $G<\Aut(E)$ is a subgroup acting properly discontinuously.
 
-Therefore, covering-space theory has helped us reduce the classification problem for arbitrary topological manifolds to that of classifying simply connected manifolds. What happens when we give this story a smooth structure? Let's begin with two questions:
+Therefore, covering-space theory has helped us reduce the classification problem for arbitrary topological manifolds to that of classifying simply connected manifolds. We now ask whether this construction is compatible with smooth structures. Two questions guide the discussion:
 \begin{enumerate}[label=Q\arabic*.]
  \setcounter{enumi}{0}\item When is a topological covering map between smooth manifolds a smooth covering map?
 % Source page 2
@@ -41,11 +41,11 @@ Let $M$ be a smooth $n$-manifold, $E$ a connected topological space, and $p:E\to
  \includegraphics[width=.78\linewidth,height=5.2cm,keepaspectratio]{sc-fig-01.pdf}
  \FigureTag{SC1}{fig:sc-01}
 \end{figure}
-Forget second countability for the time being.
+
 
 % Source page 3
 \paragraph{Compatible charts.}
-Now let us dress $E$ with a smooth structure. Let $y\in E$, put $x=p(y)$, and let $U_x$ be an evenly covered neighbourhood of $x$. Let $(\varphi,U'_x)$ be a chart containing $x$, so $x\in U'_x$. Shrink $U_x$ (or $U'_x$) to $U_x\cap U'_x=U$. Then $(\varphi,U)$ is still a chart, and $U$ is still an evenly covered neighbourhood of $x$.
+We now equip $E$ with a smooth structure. Let $y\in E$, put $x=p(y)$, and let $U_x$ be an evenly covered neighbourhood of $x$. Let $(\varphi,U'_x)$ be a chart containing $x$, so $x\in U'_x$. Shrink $U_x$ (or $U'_x$) to $U_x\cap U'_x=U$. Then $(\varphi,U)$ is still a chart, and $U$ is still an evenly covered neighbourhood of $x$.
 
 Write $p^{-1}(U)=\bigsqcup_{\alpha\in I}V_\alpha$. Say $y\in V_\alpha$; then $(V_\alpha,\varphi\circ p|_{V_\alpha})$ is a chart for $E$. These charts are compatible. Let $(\widetilde V,\widetilde\varphi)$ and $(\widetilde W,\widetilde\psi)$ be two such charts for $E$. The transition map is
 \[
@@ -83,10 +83,10 @@ Another immediate fact is that, with this smooth structure, $p$ is a smooth map.
 \]
 which is smooth from $\widetilde\varphi(V)$ to $\varphi(U)$. Thus $p$ is a smooth covering map. What we have in particular managed to prove here is that $p|_V:V\to U$ is smooth; one can similarly prove that the inverse branch $p^{-1}|_U:U\to V$ is smooth.
 
-\emph{Therefore, $p$ is a smooth covering map, and $E$ a smooth manifold of dimension $n$?}
+
 
 \paragraph{Uniqueness.}
-Now let us see why this smooth structure is unique. For that, one needs to shave off a bunch of open sets. Let $E$ and $E'$ denote the topological space $E$ with two smooth structures, of which $E$ is the one we constructed. In order to show $E\sim E'$, meaning that these two structures are the same, one must show that charts of $E'$ and charts of $E$ are compatible.
+It remains to prove uniqueness. For this purpose, restrict the relevant open sets. Let $E$ and $E'$ denote the topological space $E$ with two smooth structures, of which $E$ is the one we constructed. In order to show $E\sim E'$, meaning that these two structures are the same, one must show that charts of $E'$ and charts of $E$ are compatible.
 
 % Source page 5
 Let us now consider the following diagram. Here $E$ and $E'$ denote the same topological space $E$, but with different smooth structures.
@@ -117,7 +117,7 @@ It follows that $\id_E=\widetilde p'\circ\widetilde p$ and $\id_{E'}=\widetilde 
 
 % Source page 6
 \paragraph{Second countability.}
-Now let us show that $E$ is a topological manifold. The thing left to prove is that $E$ is second countable. Notice that second countability is what allowed us a countable partition of unity, with which we constructed smooth exhaustion functions and level sets, which became the backbone of a lot of submanifold theory. Here is how we shall prove that $E$ is second countable.
+Now let us show that $E$ is a topological manifold. It remains to prove that $E$ is second countable. Notice that second countability allowed us to construct a countable partition of unity, with which we constructed smooth exhaustion functions and level sets, which is used throughout submanifold theory. Here is how we shall prove that $E$ is second countable.
 
 Consider the monodromy action of $\pi_1(M,q)$ on the fibre $p^{-1}(q)$, given by $P_0\mapsto f\cdot P_0=\widetilde f(1)$, where $\widetilde f(0)=P_0$. Fix $P_0\in p^{-1}(q)$ and define
 \[
@@ -126,7 +126,7 @@ Consider the monodromy action of $\pi_1(M,q)$ on the fibre $p^{-1}(q)$, given by
 \]
 If $E$ is connected, it is path connected, so $\Phi$ is surjective. Now, if we prove that $\pi_1(M,q)$ is countable, then the rest follows. Since $M$ is second countable, it is Lindel\"of. If $\{U_x\}_{x\in M}$ is the cover of $M$ by evenly covered neighbourhoods, a countable subcover $\{U_i\}_{i=1}^{\infty}$ exists. Countability of $\pi_1(M,q)$ implies that $p^{-1}(q)$ is countable. Consequently, $p^{-1}(U_i)$ has countably many slices, and each slice, being diffeomorphic to $U_i$, is second countable.
 
-Thus, by merging all the countable bases of $\{p^{-1}(U_i)\}_{i=1}^{\infty}$, one obtains a countable basis of $E$. The following lemma will finish our proof.
+Thus, by taking the union of the countable bases of $\{p^{-1}(U_i)\}_{i=1}^{\infty}$, one obtains a countable basis of $E$. The following lemma will finish our proof.
 \end{proof}
 
 % Source page 7
@@ -190,7 +190,7 @@ Now replace each $U_i$ by $U=\bigcap_{i=1}^{n}U_i$ and each $V_i$ by $V_i\cap(p|
 The set $K=\bigl(\bigcup_{i=1}^{n}V_i\bigr)^c$ is closed in $E$, so $p(K)$ is closed. Replace $U$ by $U\setminus p(K)$.
 
 % Source page 10
-Then $p^{-1}(U)\subseteq\bigcup_{i=1}^{n}V_i$. Finally, replace $V_i$ by $V_i\cap p^{-1}(U)$. After these shavings, we have
+Then $p^{-1}(U)\subseteq\bigcup_{i=1}^{n}V_i$. Finally, replace $V_i$ by $V_i\cap p^{-1}(U)$. After these restrictions, we have
 \[
 p^{-1}(U)=\bigsqcup_{i=1}^{n}V_i,
 \qquad p|_{V_i}\colon V_i\longrightarrow U
@@ -201,9 +201,9 @@ Thus $p$ is a smooth covering map.
 
 \subsection{Covering Lie groups}
 
-Now let us impose further structures on our original setting and see where it leads us. We saw before that covering space theory helped reduce the classification problem by a lot. We then saw how the structure was still preserved once we shifted our course to the category of smooth manifolds. More precisely, we saw that a topological cover of a manifold also preserves the smooth structure. If we now lift this to the category of Lie groups and ask whether smooth covering maps preserve the group structure, the following proposition answers this in its full glory!
+The lifted-smooth-structure result extends naturally to Lie groups: the universal cover of a connected Lie group inherits a compatible Lie-group structure.
 
-\setcounter{theorem}{3}\begin{proposition}[Yes, group structure is preserved!]\label{prop:lie-group}
+\setcounter{theorem}{3}\begin{proposition}[Lifting the group structure]\label{prop:lie-group}
 Let $G$ be a connected Lie group, and let $\pi\colon\widetilde{G}\to G$ be a smooth covering map with $\widetilde{G}$ simply connected. Then one can endow $\widetilde{G}$ with a Lie group structure for which $\pi$ is a Lie group homomorphism. Furthermore, $\widetilde{G}$ is unique up to Lie group isomorphism.
 \end{proposition}
 
@@ -241,8 +241,7 @@ such that $(\psi\circ\pi)\circ\widetilde m\circ\varphi^{-1}$ is smooth.
 This can be done for every $q$ and $\pi(p)$.
 
 % Source page 12
-Therefore, $\widetilde m$ is smooth.) Thus one has a smooth
-multiplication function.
+Therefore, $\widetilde m$ is smooth. Thus $\widetilde m$ is a smooth multiplication map.
 
 Similarly, by lifting $i\circ\pi$, where $i$ is the inverse map on $G$,
 one gets a smooth inverse map $\widetilde i$ on $\widetilde G$. Now it
@@ -251,8 +250,7 @@ $\widetilde m$ and $\widetilde i$ as its operations.
 
 Pick $\widetilde e\in\pi^{-1}(e)$. One can arrange $\widetilde m$ and
 $\widetilde i$ so that $\widetilde m(\widetilde e,\widetilde e)=\widetilde e$
-and $\widetilde i(\widetilde e)=\widetilde e$. Now these $\widetilde m$ and
-$\widetilde i$ are unique. Let $f\colon\widetilde G\to\widetilde G$ be
+and $\widetilde i(\widetilde e)=\widetilde e$. These choices are unique. Let $f\colon\widetilde G\to\widetilde G$ be
 defined by $f(x)=\widetilde e\cdot x$. Then
 \[
   (\pi\circ f)(x)=\pi(\widetilde e\cdot x)
@@ -274,8 +272,7 @@ $\alpha_L,\alpha_R\colon\widetilde G\times\widetilde G\times\widetilde G
 Note that $(\pi\circ\alpha_L)(x,y,z)=(\pi\circ\alpha_R)(x,y,z)
 =\pi(x)\pi(y)\pi(z)$. Thus $\alpha_L$ and $\alpha_R$ are lifts of
 $\pi(x)\pi(y)\pi(z)$, and they agree at the base point
-$(\widetilde e,\widetilde e,\widetilde e)$. Therefore one can borrow
-associativity from $G$ by claiming that the lifts must be unique.
+$(\widetilde e,\widetilde e,\widetilde e)$. Since the two lifts agree at the base point, uniqueness of lifts gives $\alpha_L=\alpha_R$, proving associativity.
 
 % Source page 13
 One can similarly show that $x\cdot x^{-1}=x^{-1}\cdot x=\widetilde e$.
@@ -284,7 +281,7 @@ $\pi\colon\widetilde G\to G$ is a Lie group homomorphism.
 \end{proof}
 
 \begin{remark}
-Notice that the demand that $\widetilde G$ be simply connected was
+Notice that the assumption that $\widetilde G$ is simply connected was
 crucial: it helped us literally lift the group structure on $G$. Such a
 lift might not be possible for some other smooth covers of $G$.
 \end{remark}
@@ -313,12 +310,7 @@ $p_1$ and $p_2$ are covering maps, so $\widetilde p_2$ is a covering map
 that is smooth; hence $\widetilde p_2$ is a group homomorphism.
 
 % Source page 14
-All three versions of $\widetilde p_2$ coincide. It is not difficult to
-see that the group structure with respect to which $\widetilde p_2$ is a
-Lie group homomorphism coincides with that of $G_2$. The reason that
-$\widetilde p_2$ as a diffeomorphism coincides with $\widetilde p_2$ as a
-homeomorphism is clear. The only issue is the last $\widetilde p_2$; let
-us resolve that.
+The continuous lift is a diffeomorphism. It remains to show that this same map is a group homomorphism.
 
 Notice that
 \begin{align*}
@@ -339,15 +331,13 @@ of lifts would tell us that
 $\widetilde p_2(xy)=\widetilde p_2(x)\widetilde p_2(y)$.
 
 Now one can choose $\widetilde p_2$ from the group of deck
-transformations so that $\widetilde p_2(e_2)=e_1$, with
-$e_1\in p_1^{-1}(e_1)$. For that $\widetilde p_2$, one can similarly
+transformations so that $\widetilde p_2(e_2)=e_1$, where $e_1$ is the identity of $G_1$. For that $\widetilde p_2$, one can similarly
 prove $\widetilde p_2(x^{-1})=(\widetilde p_2(x))^{-1}$. Thus
 $\widetilde p_2$ is a group homomorphism, hence a group isomorphism,
 and therefore, of course, a covering map.
 
 % Source page 15
-Thus all the $\widetilde p_2$ coincide, and the respective structures
-fall into place.
+Thus the topological, smooth, and group-theoretic constructions yield the same map $\widetilde p_2$.
 
 \section{Classification and complex structures}
 
@@ -356,16 +346,13 @@ It turns out that the initial simplification of classifying topological
 manifolds, when translated to the category of smooth manifolds, would
 pertain to classifying all simply connected smooth manifolds and their
 groups of automorphisms. One finds that $G<\operatorname{Aut}(E)$, acting
-properly discontinuously on $E$ to yield all manifolds, itself takes up a
-discrete Lie group structure. Most often, for some specific $E$, the
+properly discontinuously on $E$ to yield all manifolds, inherits a discrete Lie-group structure. Most often, for some specific $E$, the
 group $\operatorname{Aut}(E)$ is a Lie group. Thus our original
 classification problem boils down to classifying all discrete Lie
 subgroups of a given Lie group, which is itself a field of study.
 Therefore, Lie groups enter into this story quite naturally!
 
-One sees the full strength of this simplification the moment one gives
-this a complex structure. Firstly, one can translate this simplification
-word for word. So, given the following:
+The same reduction applies in the complex category, as summarised in the following diagram.
 
 \begin{figure}[H]
   \centering
@@ -395,6 +382,6 @@ topology course.
 
 Now it merely remains to classify the discrete subgroups of the Lie
 group $\operatorname{Aut}(\mathbb D)\cong\operatorname{PSL}_2(\mathbb R)$.
-Therefore, the story we have told so far is not a mere \emph{tell-tale heart}!
+
 % BLOG-CONTENT-END
 \end{document}

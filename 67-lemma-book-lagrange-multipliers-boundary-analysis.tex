@@ -7,14 +7,13 @@
 % BLOG-CONTENT-BEGIN
 \subsection{Lagrange multipliers}
 \setcounter{theorem}{38}\begin{lemma}[Lagrange multipliers]\label{lemma:lb1-44}
-This is a powerful technique employed by Lagrange to resolve geometric maxima-minima problems.
-To understand this divine technique completely, do not get scared by the following lines.
-Get acquainted with partial derivatives before proceeding.
+Lagrange multipliers are a powerful technique for solving constrained extremum problems.
+The method uses partial derivatives.
 \end{lemma}
 Suppose one is given the multivariable function
 $f(x,y,z)=x^2+x+2y^2+3z^2$ and $x^2+y^2+z^2=1$, and is asked to prove that
 $x^2+x+2y^2+3z^2\leq25/8$.
-This should blow your mind: ``Where did that $25/8$ come from?'' ``That is not homogeneous!'' ``What should I do with that $x$?''
+The constant $25/8$ may look unmotivated; Lagrange multipliers reveal it naturally.
 Lagrange observed that the partial derivatives of $f$ can be equated to $\lambda$ times the partial derivatives of $x^2+y^2+z^2$.
 Here $\lambda$ is the Lagrange multiplier. This is like writing $\vec a=\lambda\vec b$.
 \[
@@ -27,11 +26,11 @@ Thus we solve
 2x+1=2\lambda x,\qquad4y=2\lambda y,\qquad6z=2\lambda z,
 \qquad x^2+y^2+z^2=1.
 \]
-We now have four variables and four equations. Determine those variables; the resulting $(x,y,z)$, substituted into $f$, yields an extremal point.
+We now have four variables and four equations. Solving them produces candidates; substituting those candidates into $f$ gives the candidate extremal values.
 This statement is sometimes called Lagrange's theorem.
 % Author check: necessary conditions are described as sufficient for extrema in the source.
 % Source page 15 - right
-The following example should give you confidence to use it.
+The arithmetic--geometric mean inequality provides a first example.
 Prove that $(x+y+z)/3\geq\sqrt[3]{xyz}$.
 Find the maximum of $f(x,y,z)=xyz$ with $g(x,y,z)=x+y+z=S$.
 The three equations $\partial f/\partial x=\lambda\partial g/\partial x$,
@@ -54,12 +53,12 @@ Introduce the notation ``gradient of a function $f$,'' written $\nabla f$:
 \]
 
 % Source page 16 - left
-Instead of the first three equations in the previous problem, it suffices to write
+Instead of the first three equations in the AM--GM example, it suffices to write
 $\nabla f(x,y,z)=\lambda\nabla g(x,y,z)$.
 \paragraph{USAMO.}
 Let $a,b,c\geq0$ and $a^2+b^2+c^2+abc=4$. Prove that $0\leq ab+bc+ca-abc\leq2$.
 Put $f(a,b,c)=ab+bc+ca-abc$. We are to find its maximum and minimum under the given condition, called a constraint.
-Let us call Lagrange to rescue us:
+The Lagrange equations are
 \[
 \nabla f=\lambda\nabla(a^2+b^2+c^2+abc),
 \quad (b+c-bc,a+c-ac,a+b-ab)=\lambda(2a+bc,2b+ac,2c+ab).
@@ -82,7 +81,7 @@ Thus $0\leq f(a,b,c)\leq2$.
 % Source page 16 - right
 \paragraph{IMO (1984).}
 With $x+y+z=1$, prove that $0<xy+yz+zx-2xyz\leq7/27$.
-The technique of Lagrange multipliers is frequently a victim of hostile review.
+The use of Lagrange multipliers requires careful justification.
 Before equating gradients, it is essential to show that the gradients are continuous.
 Let $f(x,y,z)=xy+yz+zx-2xyz$ and $g(x,y,z)=x+y+z=1$.
 Both are polynomials and have continuous first-order partial derivatives.
@@ -104,14 +103,13 @@ Therefore $0<1/4\leq xy+yz+zx-2xyz\leq7/27$.
 % Author check: domain restrictions are missing; asserted minimum1/4 and boundary reasoning are retained.
 
 % Source page 17 - left
-\setcounter{theorem}{39}\begin{lemma}[Warning about Lagrange multipliers]
-Lagrange multipliers could prove lethal. These stunts on the previous pages are performed only by experts.
-Please do not imitate them in the RMO or INMO; if left with no other option, perform them at your own risk!
+\setcounter{theorem}{39}\begin{lemma}[A warning about Lagrange multipliers]
+Lagrange multipliers identify stationary candidates, but boundary and sufficiency checks remain essential.
 \end{lemma}
 There is a strong reason for this warning. Consider the following problem.
 If $a,b,c$ are the sides of a triangle of perimeter $2$, prove that $a^2+b^2+c^2+2abc<2$.
 Our constraint is $g(a,b,c)=a+b+c=2$, and we seek the maximum of
-$f(a,b,c)=a^2+b^2+c^2+2abc$. Before proceeding, let me write another lemma.
+$f(a,b,c)=a^2+b^2+c^2+2abc$. The following lemma summarizes the procedure.
 
 \setcounter{theorem}{40}\begin{lemma}[The multiplier procedure]\label{lemma:lb1-46}
 In a problem where Lagrange multipliers are applied, search for a constraint on the variables.
@@ -133,13 +131,12 @@ From $a+bc=b+ac$, we get $a-b=c(a-b)$, so $a=b$ or $c=1$.
 Similarly, $b=c$ or $a=1$, and $c=a$ or $b=1$.
 Case analysis yields $(2/3,2/3,2/3)$ and $(1,1,0)$, for which
 $f(2/3,2/3,2/3)=52/27$ and $f(1,1,0)=2$.
-The notes say ``$52/27$ is largest and $2$ is smallest,'' and conclude
+If one incorrectly treats these candidates as the extrema, one obtains
 \[
 2\leq f(a,b,c)\leq52/27
 \Longrightarrow2\leq a^2+b^2+c^2+2abc.
 \]
-\emph{``!! Bullshit!!''} Think where we might have gone wrong.
-Meanwhile, here is a simple, clever solution using elementary algebra.
+This contradicts the desired inequality, so something has gone wrong. An elementary factorization reveals the missing point.
 We have $a+b+c=p=2$, so $s=(a+b+c)/2=1$.
 The desired inequality can be rewritten successively as
 \begin{align*}
@@ -155,12 +152,10 @@ The desired inequality can be rewritten successively as
 This proves $a^2+b^2+c^2+2abc<2$.
 
 % Source page 18 - left
-The error is hidden. Did you notice that $a,b,c$ were given as sides of a triangle?
-Thus $a+b>c$ when $c=\max(a,b,c)$. This constraint was overlooked, so the checker will not notice your solution: ``Tit for tat!''
+The multiplier calculation overlooked the triangle inequalities. In particular, if $c=\max(a,b,c)$, then $a+b>c$.
 The sides of a triangle are nonzero.
-This technique is so powerful that it proves some interesting results. Look at the following.
-\paragraph{Prove the law of reflection.}
-First reaction: ``Are you kidding? Come on, be serious!''
+The same technique gives a variational proof of the law of reflection.
+\paragraph{The law of reflection.}
 \begin{figure}[H]\centering
 \includegraphics[width=.70\linewidth]{lb1-fig-12.pdf}
 \FigureTag{LB1.12}{fig:lb1-12}
@@ -183,128 +178,55 @@ Also $\angle AA'P=\angle BB'P$.
 % Source page 18 - right
 Therefore $\triangle APA'\sim\triangle BPB'$, giving $\angle APA'=\angle BPB'$.
 
-\paragraph{Vedant's enigma.}
-Given three positive reals $x\geq y\geq z$ such that $x^2+y^2+z^2+2xyz=1$, prove that
-\[2xz+y^2\leq\frac34.\]
-I asked him for a hint, to which he responded by saying that
-% Source page 39 - right
-we have $2xz=xz+xz$. I was like, ``Are you serious?!''
-He makes the following threatening move:
-\[2xz+y^2=xz+y^2+zx=x\cdot z+y\cdot y+z\cdot x.\]
-Since $x\geq y\geq z$, we have
-\[xz+yy+zx\leq\frac13(x+y+z)(x+y+z)=\frac{(x+y+z)^2}{3}.\]
-Now substitute $x=\cos A$, $y=\cos B$, and $z=\cos C$. (Don't ask me why!!)
-Then
-\[\cos A+\cos B+\cos C\leq3\cos\left(\frac{A+B+C}{3}\right)
-=3\cos60^\circ,\qquad x+y+z\leq\frac32.\]
-Thus $(x+y+z)^2/3=\tfrac13\cdot\tfrac94=\tfrac34$, giving
-$xz+y^2+zx\leq3/4$, and therefore $2xz+y^2\leq3/4$. (Q.E.D.)--1.
-% Author check: the source writes equality when substituting the upper bound for (x+y+z)^2/3; the angle conditions and their existence are not explained.
 
-I gave him the following solution: ``Lagrange! Lagrange! Help!''
-Let's leave it to the expert now.
-Let $g(x,y,z)=x^2+y^2+z^2+2xyz=1$ be the constraint function, and maximize $f(x,y,z)=2xz+y^2$.
-The condition $\nabla f=\lambda\nabla g$ gives
-\[(2z,2y,2x)=\lambda(2x+2yz,2y+2zx,2z+2xy).\]
-Therefore $2z=\lambda(2x+2yz)$, $2y=\lambda(2y+2zx)$, and $2x=\lambda(2z+2xy)$, so
-\[\frac{x+yz}{z}=\frac{y+zx}{y}=\frac{z+xy}{x}=\frac1\lambda.
-\]
-It follows that $x/z+y=z/x+y$, hence $z=x$.
-Also $x/z+y=1+zx/y$, so $x+y=x+x^2/y$, giving $x=y$ and thus $x=y=z=1/2$.
-Consequently $(1/2,1/2,1/2)$ is the only solution, and
-\[f(x,y,z)\leq f(1/2,1/2,1/2)
-=2\cdot\frac12\cdot\frac12+\frac12\cdot\frac12=\frac34.\]
-% Source page 40 - left
-Thus $f(x,y,z)\leq3/4$, giving $2xz+y^2\leq3/4$. (Q.E.D.)--2.
-% Author check: x+y=x+x^2/y is retained from the source; no boundary/global-maximality argument accompanies the stationary-point calculation.
 \setcounter{theorem}{80}\begin{lemma}[Normalization]\label{lemma:lb1-83}
-Given a homogeneous inequality, such as
+For a homogeneous inequality, such as
 \[\sum_{\mathrm{cyc}}\frac{(a+b)^2+(b+c)^2}{(a+b)(a+b+c)}>\frac{2014}{1024},\]
-you can assume $a+b+c$ equals any number you feel like! Surprised?
+one may normalize $a+b+c$ to any convenient positive value.
 \end{lemma}
-Don't expect me to explain the reason for this, since we crossed these things a few pages ago.
-\paragraph{Application.}
-``What do you think? Every time I'll write applications for you? Go find one for yourself!'' $\longrightarrow$ ``Shu, shu\ldots!''
-Sorry! I am not that rude; I did this just for a change.
-Anyway, I have already applied this in this book. Go search!
+This follows because scaling all variables multiplies both sides by the same power.
 
-\paragraph{Magic of 3.}
+\paragraph{A four-term AM--GM construction.}
 Find the maximum value of $x(1-x^3)$ for $0\leq x\leq1$.
-We cannot do much with the product unless you have a nice command of calculus; then you can use methods such as second-derivative analysis, blah, blah, blah\ldots
-But can we think of something else? Yes! Of course.
+A four-term AM--GM estimate handles the product directly.
 Let $y=x(1-x^3)$. Then $3y^3=3x^3(1-x^3)(1-x^3)(1-x^3)$.
-Did you notice that our magic worked?
+Apply AM--GM:
 \[3y^3\leq\left(\frac{3x^3+(1-x^3)+(1-x^3)+(1-x^3)}4\right)^4
 =\left(\frac34\right)^4.\]
 Thus $y\leq3/(4\sqrt[3]4)$; the maximum value is $3/(4\sqrt[3]4)$.
 It is attained when $3x^3=1-x^3$, that is, $x=1/\sqrt[3]4$. Q.E.D.!
 
-The blah, blah, blah that I mentioned was actually the following:
+For comparison, the calculus solution is:
 $f(x)=x-x^4$, so $f'(x)=1-4x^3=0$ gives $x=1/\sqrt[3]4$.
-Thus $f'(1/\sqrt[3]4)$ is either a minimum or a maximum, that is, an extreme value.
-We also have $f''(x)=-12x^2<0$, so $f'(1/\sqrt[3]4)$ is indeed the maximum value.
-Therefore $f'(1/\sqrt[3]4)=3/(4\sqrt[3]4)$. Another Q.E.D.!
+Thus $x=1/\sqrt[3]4$ is the only interior critical point.
+We also have $f''(x)=-12x^2<0$ for $x>0$, so this point gives the maximum.
+Therefore $f(1/\sqrt[3]4)=3/(4\sqrt[3]4)$.
 % Author check: the source repeatedly evaluates f' rather than f when naming the extremal function value; it also writes f''<0 without excluding x=0.
 
-Now let me present a surprising inequality that can be resolved using normalization.
-% Source page 43 - right
-\paragraph{Application.}
-If $x,y,z$ are real numbers, show that
-\[(x^2+y^2+z^2)^3\geq(x^3+y^3+z^3)^2.\]
-It is equivalent to prove $\sqrt[3]{x^3+y^3+z^3}\leq\sqrt{x^2+y^2+z^2}$.
-Observe that the inequality is homogeneous.
-Assume $x^2+y^2+z^2=1$, because if $x^2+y^2+z^2=k^2$ with $k\in\mathbb R_+$, then
-$(x/k)^2+(y/k)^2+(z/k)^2=1$, or $X^2+Y^2+Z^2=1$ (where $x\mapsto X$).
-Now, to normalize the situation, divide by $k$:
-\[\frac{\sqrt[3]{x^3+y^3+z^3}}k\mathrel{\stackrel{?}{\leq}}
-\frac{\sqrt{x^2+y^2+z^2}}k.
-\]
-This is equivalent to
-\[\sqrt[3]{\left(\frac xk\right)^3+\left(\frac yk\right)^3+\left(\frac zk\right)^3}
-\leq\sqrt{\left(\frac xk\right)^2+\left(\frac yk\right)^2+\left(\frac zk\right)^2},\]
-that is, $\sqrt[3]{X^3+Y^3+Z^3}\leq1$.
-It is not important to have capitals in your solution, so let $x^2+y^2+z^2=1$.
-Let us prove $x^3+y^3+z^3\leq1$ using Lagrange multipliers.
-Set $G(x,y,z)=x^2+y^2+z^2=1$ and $F(x,y,z)=x^3+y^3+z^3$.
-Then $\nabla G=(2x,2y,2z)$ and $\nabla F=(3x^2,3y^2,3z^2)$.
-Thus $\nabla F=\lambda\nabla G$ gives
-\[
-\begin{aligned}
-3x^2=2\lambda x&\quad\Longrightarrow\quad x=0\text{ or }x=2\lambda/3,\\
-3y^2=2\lambda y&\quad\Longrightarrow\quad y=0\text{ or }y=2\lambda/3,\\
-3z^2=2\lambda z&\quad\Longrightarrow\quad z=0\text{ or }z=2\lambda/3.
-\end{aligned}
-\]
-We obtain $(x,y,z)=(1,0,0)$, $(1/\sqrt3,1/\sqrt3,1/\sqrt3)$, and $(1/\sqrt2,1/\sqrt2,0)$.
-Since
-\[F(1,0,0)\geq F(1/\sqrt2,1/\sqrt2,0)\geq F(1/\sqrt3,1/\sqrt3,1/\sqrt3),\]
-we have $1/\sqrt3\leq x^3+y^3+z^3\leq1$. Q.E.D.!
-% Author check: over arbitrary reals, the one-sided cube-root inequality is not equivalent to the squared claim, negative stationary points are omitted, and the asserted positive lower bound is not valid. All are retained from the source.
+
 
 \subsection{Boundary-analysis techniques}
-To master boundary-analysis techniques, you must gather some boundary-analysis lemmas (BALLs).
-I wrote two Ls because there are two basic lemmas.
+Boundary analysis begins with two elementary principles.
 \setcounter{theorem}{85}\begin{lemma}[Boundary-analysis lemma I]\label{lemma:lb1-88}
 Given any linear function, its maximum or minimum is attained at the boundary of its domain.
 \end{lemma}
 \setcounter{theorem}{86}\begin{lemma}[Boundary-analysis lemma II]\label{lemma:lb1-89}
 Given a convex function, its maximum is attained at an endpoint of its domain.
 \end{lemma}
-Weierstrass's theorem.
 % Author check: the source gives no compactness/domain qualifications for these two extrema claims and attributes the second to Weierstrass.
-Now let us look at some convexity--concavity arguments that will give you an idea of how things are done!
+The following examples illustrate the method.
 \paragraph{Problem 1: Romanian team selection test.}
 For a given positive number $a$, find the maximum of
 \[\sum_{k=1}^n(a-a_1)(a-a_2)\cdots(a-a_{k-1})a_k(a-a_{k+1})\cdots(a-a_n),\]
 where $a_1,\ldots,a_n$ range independently over $[0,a]$.
 Pick any one variable, say $a_k$, and consider all other $a_i$ to be constant.
 You get a linear function in $a_k$, which ranges over $[0,a]$.
-By BALL I, the maximum is attained at an endpoint, that is, $a_k=0$ or $a$.
+By Lemma~\ref{lemma:lb1-88}, the maximum is attained at an endpoint, that is, $a_k=0$ or $a$.
 Argue similarly for all $a_i$. Therefore the sum reaches its maximum for a certain choice of $a_k=0$ or $a$, $k=1,\ldots,n$.
 % Source page 47 - right
 If all $a_k=0$, the sum is zero. If two or more $a_k=a$, the sum is zero.
 If one $a_k=a$ and the others are zero, the sum is $a^n$.
-Thus the maximum value is $a^n$. BAT I.
+Thus the maximum value is $a^n$. 
 \paragraph{Problem 2: Titu Andreescu.}
 Let $0\leq a,b,c,d\leq1$. Prove that
 \[(1-a)(1-b)(1-c)(1-d)+a+b+c+d\geq1.\]
@@ -314,17 +236,16 @@ Argue similarly for all four variables, giving $(a,b,c,d)=0$ or $1$.
 If one variable is zero, the value is $3$; if all equal one, the value is $4$.
 If two variables are zero, the value is $2$; if three or all of them are zero, the value is $1$.
 We observe that $1$ is the smallest of all the values obtained, so the minimum of the function is $1$.
-The conclusion follows. BAT I.
+The conclusion follows. 
 % Author check: the source says maximum at the reduction step before comparing minimum endpoint values.
 These are some standard techniques, but there are one or two more problems with quite a different way of sorting things.
 \paragraph{Problem 3: W. L. Putnam Mathematical Competition.}
 Let $n$ be a natural number and $x_i\in[0,1]$ for $i=1,2,\ldots,n$.
 Find the maximum of $\sum_{i<j}|x_i-x_j|$.
 % Source page 48 - left
-I am assuming that you are capable enough to argue and conclude that the maximum of the sum is attained when all $x_i$ equal zero or one.
-Now let us proceed from here. Let $p$ of them be zero and $n-p$ of them be one.
-Then the sum is $p(n-p)$; look below the summation sign carefully to realize why!
-Now maximize $p(n-p)$ for yourself. Q.E.D.! BALL II; BAT II.
+Applying the endpoint argument successively shows that the maximum is attained when every $x_i$ equals zero or one.
+Let $p$ of them be zero and $n-p$ of them be one.
+Then the sum is $p(n-p)$, whose maximum over integral $p$ is $\lfloor n^2/4\rfloor$.
 \paragraph{Problem 4: USAMO.}
 If $a,b,c,d,e\in[p,q]$ with $p>0$, prove that
 \[(a+b+c+d+e)\left(\frac1a+\frac1b+\frac1c+\frac1d+\frac1e\right)
@@ -332,38 +253,34 @@ If $a,b,c,d,e\in[p,q]$ with $p>0$, prove that
 Fix $a,b,c,d$ to be constants. The left-hand side is now of the form
 $\widehat a x+\widehat b/x+\widehat c$, where $\widehat a,\widehat b,\widehat c>0$ and $x\in[p,q]$.
 This is a convex function, so it attains its maximum at an endpoint.
-Thus $(a,b,c,d,e)=p$ or $q$.
+Thus each of $a,b,c,d,e$ is either $p$ or $q$.
 If $n$ of them equal $p$ and $5-n$ equal $q$, then the left-hand side has the form
 \[n^2+(5-n^2)+n(5-n)\left(\frac pq+\frac qp\right)
 =25+n(5-n)\left(\sqrt{\frac pq}-\sqrt{\frac qp}\right)^2.\]
-W$^5$. Q.E.D. BAT II.
+This completes the endpoint argument.
 % Author check: the source's intermediate term is written (5-n^2), not (5-n)^2; preserved.
-So now you have two bats and two balls. What are you waiting for?
-Go play with some problems and enjoy yourself.
-Okay, I'll give you problems to throw away\ldots\ here they come!
+Here are three problems on which to test the method.
 % Source page 48 - right
-\paragraph{Game 1, round 1: fight!}
+\paragraph{Problem 1.}
 The nonnegative numbers $a,b,c,A,B,C,k$ satisfy $a+A=b+B=c+C=k$.
 Prove that $aB+bC+cA\leq k^2$.
-\paragraph{Round 2: fight!}
+\paragraph{Problem 2.}
 Prove that for $a,b,c\in[0,1]$,
 \[\frac a{b+c+1}+\frac b{c+a+1}+\frac c{a+b+1}+(1-a)(1-b)(1-c)\leq1.\]
-\paragraph{Final round: fight!}
+\paragraph{Problem 3.}
 Prove that if $1\leq x_k\leq2$ for all $k=1,2,\ldots,n$, then
 \[\left(\sum_{k=1}^n x_k\right)\left(\sum_{k=1}^n\frac1{x_k}\right)^2\leq n^3.\]
-I know you might have hit a K.O. in the first two and got your ass kicked in the last one.
-I know it is comparatively difficult. Let us solve the last one.
+The third is more difficult; here is a solution.
 \[\sqrt[3]{\left(\sum_{k=1}^n x_k\right)\left(\sum_{k=1}^n\frac1{x_k}\right)^2}
 \leq\frac13\left(\sum_{k=1}^n x_k+\sum_{k=1}^n\frac1{x_k}+\sum_{k=1}^n\frac1{x_k}\right)
 =\sum_{k=1}^n\frac{x_k+2/x_k}{3}.\]
 The function $x+2/x$ is convex, with its maximum at an endpoint of the interval, that is, $x_k=1$ or $2$.
 In both cases we end up with $3$, so $(x_k+2/x_k)/3\leq1$.
 Thus $\sum_{k=1}^n(x_k+2/x_k)/3\leq n$.
-W$^5$ $\longrightarrow$ K.O. $\longrightarrow$ You win!!
+This proves the claim.
 
 
-When finding the maximum or minimum area of a triangle, one may use the deadly move of coordinate bashing.
-Carry the following lemma in your pocket.
+Coordinate methods can also help with extremal questions about the area of a triangle.
 \setcounter{theorem}{101}\begin{lemma}[Hadamard's inequality]
 If $A=(a_{ij})$ is an $n\times n$ matrix, then
 $|\det A|^2\leq\prod_{i=1}^n\bigl(\sum_{j=1}^n|a_{ij}|^2\bigr)$.
@@ -380,8 +297,8 @@ Then $x_i^2+y_i^2=R_i^2$ and
 \begin{vmatrix}1&x_1&y_1\\1&x_2&y_2\\1&x_3&y_3\end{vmatrix}^{\!2}
 \leq(R_1^2+1)(R_2^2+1)(R_3^2+1).
 \]
-The source concludes $[ABC]\leq\sqrt{(R_1^2+1)(R_2^2+1)(R_3^2+1)}$.
-AWD: ``And we're done!''
+The determinant estimate gives
+\[[ABC]\leq\frac12\sqrt{(R_1^2+1)(R_2^2+1)(R_3^2+1)}.\]
 % Author check: final bound drops factor1/2; no attainment analysis or numeric maximum recorded.
 
 % Source page 11 - left

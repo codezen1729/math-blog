@@ -13,9 +13,21 @@ def anchor_id(collection, label):
 def reference_index(documents):
     """Read the source counters before theorem environments become HTML headings."""
     index = {}
-    families = {'theorem': 'theorem', 'lemma': 'theorem', 'proposition': 'theorem', 'corollary': 'theorem', 'conjecture': 'theorem', 'definition': 'definition', 'example': 'example', 'namedtool': 'namedtoolcounter'}
-    unnumbered = {'remark', 'claim', 'exercise', 'question', 'observation'}
-    tokens = re.compile(r'\\setcounter\{([^{}]+)\}\{(\d+)\}|\\begin\{(' + '|'.join(families) + '|' + '|'.join(unnumbered) + r'|equation)\}|\\begin\{tool\}\{([^{}]+)\}|\\FigureTag\{([^{}]+)\}\{([^{}]+)\}|\\tag\{([^{}]+)\}|\\label\{([^{}]+)\}')
+    families = {
+        'theorem': 'theorem', 'thm': 'theorem',
+        'lemma': 'theorem', 'lem': 'theorem',
+        'proposition': 'theorem', 'prop': 'theorem',
+        'corollary': 'theorem', 'cor': 'theorem',
+        'conjecture': 'theorem', 'prob': 'theorem', 'task': 'theorem',
+        'numberedquestion': 'theorem', 'numberedremark': 'theorem',
+        'definition': 'definition', 'defn': 'definition',
+        'example': 'example', 'namedtool': 'namedtoolcounter',
+        'cl': 'cl', 'thmx': 'thmx',
+    }
+    unnumbered = {'remark', 'claim', 'exercise', 'question', 'question*', 'observation'}
+    environments = sorted([*families, *unnumbered, 'equation'], key=len, reverse=True)
+    environment_pattern = '|'.join(re.escape(name) for name in environments)
+    tokens = re.compile(r'\\setcounter\{([^{}]+)\}\{(\d+)\}|\\begin\{(' + environment_pattern + r')\}|\\begin\{tool\}\{([^{}]+)\}|\\FigureTag\{([^{}]+)\}\{([^{}]+)\}|\\tag\{([^{}]+)\}|\\label\{([^{}]+)\}')
     for item, source in documents:
         counters = defaultdict(int)
         current = ''
@@ -36,7 +48,8 @@ def reference_index(documents):
                 else:
                     counter = families.get(match[3], match[3])
                     counters[counter] += 1
-                    current = str(counters[counter])
+                    value = counters[counter]
+                    current = chr(64 + value) if counter == 'thmx' and 1 <= value <= 26 else str(value)
             elif match[4]:
                 current, label = match[4], 'tool:' + match[4]
             elif match[5]:
@@ -117,12 +130,13 @@ def restore_anchors(fragment, markers):
 def link_numbered_references(posts, manifest):
     """Link the author's plain 'Theorem 4.1' references when the target is unique."""
     targets = defaultdict(list)
-    kinds = r'Theorem|Lemma|Proposition|Corollary|Definition|Tool'
+    kinds = r'Theorem|Lemma|Proposition|Corollary|Definition|Example|Conjecture|Problem|Question|Task|Remark|Claim|Tool'
+    number = r'(?:\d+(?:\.\d+)*|[A-Z])'
     heading = re.compile(r'<h[1-6]\b[^>]*\bid="([^"]+)"[^>]*>(.*?)</h[1-6]>', re.S)
     for item, post in zip(manifest, posts):
         for match in heading.finditer(post['html']):
             plain = html.unescape(re.sub(r'<[^>]*>', '', match[2]))
-            label = re.match(r'\s*(' + kinds + r')\s+(\d+(?:\.\d+)*)\b', plain)
+            label = re.match(r'\s*(' + kinds + r')\s+(' + number + r')\b', plain)
             if label:
                 key = (item['collection'], label[1].lower(), label[2])
                 targets[key].append((post['slug'], match[1]))
@@ -156,7 +170,7 @@ def link_numbered_references(posts, manifest):
                     slug, anchor = choices[0]
                     href = '#' + anchor if slug == self.item['slug'] else '#/post/' + slug + '?ref=' + anchor
                     return '<a class="mathematical-reference" href="' + html.escape(href, quote=True) + '">' + match[0] + '</a>'
-                data = re.sub(r'\b(' + kinds + r')\s+(\d+(?:\.\d+)*)\b', replace, data)
+                data = re.sub(r'\b(' + kinds + r')\s+(' + number + r')\b', replace, data)
             self.parts.append(data)
 
         def handle_entityref(self, name):

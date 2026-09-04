@@ -5,13 +5,13 @@
 \begin{document}
 \section*{Prime Ends and Landing of External Rays}
 % BLOG-CONTENT-BEGIN
-Recall the Riemann mapping theorem.
+The starting point is the Riemann mapping theorem.
 \setcounter{theorem}{32}\begin{theorem}[Riemann mapping theorem]
 For a simply connected domain $U\subset\mathbb C$, there is a biholomorphism $\varphi\colon U\to\mathbb D$, unique after prescribing suitable initial values, namely $\varphi^{-1}(0)$ and $(\varphi^{-1})'(0)$.
 \end{theorem}
 Nothing in this theorem says that the map extends homeomorphically to $\overline U$. We first sketch Carath\'eodory's work on extension, then interpret it for a monic polynomial $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ of degree at least two, with $J=\partial K$ connected. Equivalently, $\mathcal A(\infty)$ contains no finite critical point of $f$.
 \subsection{A sketch of Carath\'eodory's work}
-Let $\varphi\colon U\to\mathbb D$ be a conformal isomorphism. For now we avoid hyperbolic geometry: the spherical metric $\rho(z)|dz|$ on $\widehat{\mathbb C}$ captures Carath\'eodory's strategy. Impose it on both $\mathbb D$ and $U$.
+Let $\varphi\colon U\to\mathbb D$ be a conformal isomorphism. For now we avoid hyperbolic geometry: the spherical metric $\rho(z)|dz|$ on $\widehat{\mathbb C}$ captures Carath\'eodory's strategy. Equip both $\mathbb D$ and $U$ with the spherical metric.
 % Source page 2
 For a square $I^2\subset\widehat{\mathbb C}$, its area is $\iint_{I^2}\rho(x+iy)^2\,dx\,dy$, and the length of a horizontal segment $y=C$ is $\int_I\rho(x+iC)\,dx$. Cauchy--Schwarz gives
 \[
@@ -27,21 +27,21 @@ For almost every $\theta\in(0,2\pi]$, this gives a candidate for $\varphi^{-1}(e
 
 The idea is to divide $U$ by crosscuts $A\subset U$, with $A\cong(0,1)$, $\overline A\cong[0,1]$, and $|\partial A\cap\overline U|=2$.
 % Source page 3
-For example, a crosscut $A$ joins boundary points $x,y$. Since $U\cong\mathbb D$, every sequence $x_i\to\partial U$ has its image accumulating on $\partial\mathbb D$. Thus there is a homeomorphism $\widetilde\varphi\colon\overline U/\partial U\to\overline{\mathbb D}/\partial\mathbb D\cong S^2$.
+For example, a crosscut $A$ joins boundary points $x,y$. Since $U\cong\mathbb D$, for every sequence $x_i\in U$ tending to $\partial U$, the sequence $\varphi(x_i)$ accumulates on $\partial\mathbb D$. Thus there is a homeomorphism $\widetilde\varphi\colon\overline U/\partial U\to\overline{\mathbb D}/\partial\mathbb D\cong S^2$.
 \begin{figure}[H]\centering
 \includegraphics[width=.51\textwidth]{cd8-fig-02.pdf}
 \FigureTag{CD8.2}{fig:cd8-02}
 \end{figure}
 Viewed in $S^2$, $A$ is a Jordan curve, so it divides $U$ into $U^+,U^-$, the signs depending on the orientation of $A$. These are called crosscut neighbourhoods.
 
-To prevent failure of boundary continuity of $\varphi$ or $\varphi^{-1}$, build a lasso around boundary points: a fundamental chain $\mathcal N=\{N_j\}_j$ of crosscut neighbourhoods with $N_1\supset N_2\supset\cdots$. If $A_j$ are the corresponding crosscuts, require $\overline A_j\cap\overline A_i=\varnothing$ for $i\ne j$, and $\diam(\overline A_j)\to0$.
+To prevent failure of boundary continuity of $\varphi$ or $\varphi^{-1}$, use nested crosscut neighbourhoods around boundary points: a fundamental chain $\mathcal N=\{N_j\}_j$ of crosscut neighbourhoods with $N_1\supset N_2\supset\cdots$. If $A_j$ are the corresponding crosscuts, require $\overline A_j\cap\overline A_i=\varnothing$ for $i\ne j$, and $\diam(\overline A_j)\to0$.
 \begin{figure}[H]\centering
 \includegraphics[width=.52\textwidth]{cd8-fig-03.pdf}
 \FigureTag{CD8.3}{fig:cd8-03}
 \end{figure}
 Combining measure-theoretic and topological arguments, using $\mathbb H^+$ as the universal cover of $\mathbb D\setminus\{0\}$, Carath\'eodory shows that fundamental chains are a topological invariant. This makes the following natural.
 \setcounter{definition}{19}\begin{definition}[Carath\'eodory compactification]
-For two fundamental chains $\mathcal N,\mathcal N'$ of $U$, put $\mathcal N\sim\mathcal N'$ if some $N_j\subset N_k'$ or some $N_k'\subset N_j$. Let $\mathcal E$ denote this equivalence class, called the prime end for $(\overline U,\partial U)$. The compactification is
+For two fundamental chains $\mathcal N,\mathcal N'$ of $U$, put $\mathcal N\sim\mathcal N'$ if some $N_j\subset N_k'$ or some $N_k'\subset N_j$. Let $\mathcal E$ denote an equivalence class, called the prime end for $(\overline U,\partial U)$. The compactification is
 \[
 \widehat U=U\sqcup\left(\bigsqcup_{\mathcal N\in\mathcal E}\mathcal N\right).
 \]
@@ -50,9 +50,9 @@ For two fundamental chains $\mathcal N,\mathcal N'$ of $U$, put $\mathcal N\sim\
 % Source page 4
 Clearly $\overline{\mathbb D}\cong\widehat{\mathbb D}\cong\widehat U$. To extend $\varphi$ continuously, it remains to compare the topologies of $\widehat U$ and $\overline U$. Thus Carath\'eodory shows that extension is independent of the particular map and depends entirely on the topology of the domain.
 \setcounter{theorem}{33}\begin{theorem}[Carath\'eodory]
-A conformal isomorphism $\psi\colon\mathbb D\to U$ extends continuously onto $\widetilde\psi\colon\overline{\mathbb D}\to\overline U$ if and only if $\partial U$ is locally connected.
+A conformal isomorphism $\psi\colon\mathbb D\to U$ extends continuously to a map $\widetilde\psi\colon\overline{\mathbb D}\to\overline U$ if and only if $\partial U$ is locally connected.
 \end{theorem}
-In our setting the conformal isomorphism is the B\"ottcher map $\phi\colon\mathbb C\setminus K\to\mathbb C\setminus\overline{\mathbb D}$. The sets $\{z:\arg\phi(z)=\theta\}$ are external rays, incident at angle $\theta$. For $\theta\in\mathbb R/\mathbb Z$, let $R_\theta=\{re^{2\pi i\theta}:r>1\}$ in the exterior disc. Set
+In our setting the conformal isomorphism is the B\"ottcher map $\phi\colon\mathbb C\setminus K\to\mathbb C\setminus\overline{\mathbb D}$. The sets $\{z:\arg\phi(z)=\theta\}$ are external rays of angle $\theta$. For $\theta\in\mathbb R/\mathbb Z$, let $R_\theta=\{re^{2\pi i\theta}:r>1\}$ in the exterior disc. Set
 \[
 \gamma(t)=\lim_{r\to1}\phi^{-1}(re^{2\pi it}).
 \]
@@ -70,8 +70,8 @@ The following are equivalent:
 \begin{proof}
 Immediate from Carath\'eodory's theorem.
 \end{proof}
-We offer a slightly deeper insight than the landing criterion.
-\setcounter{theorem}{35}\begin{theorem}[Rational rays land]\label{cd8:rational-rays}
+The next result strengthens the landing criterion.
+\setcounter{theorem}{35}\begin{theorem}[Periodic rational rays land]\label{cd8:rational-rays}
 Every periodic rational ray $R_t$ lands at a repelling or parabolic periodic point, or an eventually periodic point.
 \end{theorem}
 Before proving this, we need a preparatory lemma that is significant in its own right.
@@ -104,7 +104,7 @@ Recall the parametrisation $f(p(s))=p(s+\log n)$. Then
 R_t=p(\mathbb R)=\bigcup_{k\in\mathbb Z}I_k
 =\bigcup_{k\in\mathbb Z}p([k\log n,(k+1)\log n]),
 \]
-with $f(I_k)=I_{k+1}$. Also $G(p(s))=e^s\to0$ as $s\to-\infty$. Thus any limit point $\widehat z$ of $p(s)$ has $\log|\phi(\widehat z)|=0$, so $\phi(\widehat z)\in\partial\mathbb D$ and $\widehat z\in\partial K=J$. Such a limit point exists because $\overline{\mathbb C\setminus K}$ is compact in $\widehat{\mathbb C}$. We are in the right setting for the lemma, illustrated again below.
+with $f(I_k)=I_{k+1}$. Also $G(p(s))=e^s\to0$ as $s\to-\infty$. Thus any limit point $\widehat z$ of $p(s)$ has $\log|\phi(\widehat z)|=0$, so $\phi(\widehat z)\in\partial\mathbb D$ and $\widehat z\in\partial K=J$. Such a limit point exists because $\overline{\mathbb C\setminus K}$ is compact in $\widehat{\mathbb C}$. The limit-point configuration is illustrated below; once fixedness is established, the preparatory lemma applies.
 \begin{figure}[H]\centering
 \includegraphics[width=.65\textwidth]{cd8-fig-05.pdf}
 \FigureTag{CD8.5}{fig:cd8-05}

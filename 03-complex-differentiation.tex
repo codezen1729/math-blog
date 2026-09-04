@@ -5,7 +5,7 @@
 \section*{Complex Differentiation}
 % BLOG-CONTENT-BEGIN
 \subsection*{Tool 5 — Epsilon-Room Method}
-This is called the ``creating an $\varepsilon$ of room'' method, a very standard technique one encounters in a graduate measure theory course. Often it is not easy to prove a sharp equality or inequality. Thus, to prove something of the form $A=B$ or $A\leq B$, one tries to prove
+This is the ``leaving an $\varepsilon$-margin'' method, a standard technique in analysis. Often it is not easy to prove a sharp equality or inequality. Thus, to prove something of the form $A=B$ or $A\leq B$, one tries to prove
 \[
 A=B+\varepsilon\quad(\forall\varepsilon>0)
 \qquad\text{or}\qquad
@@ -13,7 +13,7 @@ A\leq B+\varepsilon\quad(\forall\varepsilon>0).
 \]
 
 
-From this need for an $\varepsilon$ of room, we have the following recurring, famous statement in mathematics: ``Let $\varepsilon>0$.'' This idea is a special form of routine analysis:
+This need for an $\varepsilon$-margin leads to a standard recurring argument: ``Let $\varepsilon>0$.'' This idea is a special form of routine analysis:
 \[
 a<b_k\ (\forall k)\Longrightarrow a<\inf_k b_k,
 \qquad
@@ -46,10 +46,7 @@ We say that $f$ is complex differentiable if
 \]
 exists for every $z\in\mathbb C$. This is an algebraic notion of differentiation, since it exploits the field structure of $\mathbb C$.
 
-As metric spaces, $\mathbb C$ and $\mathbb R^2$ are homeomorphic; as vector spaces, they are isomorphic. But do these two definitions match? They ought to because $\mathbb C\cong\mathbb R^2$, and functions on $\mathbb R^2$ can be seen as functions on $\mathbb C$ and vice versa. As it turns out, a differentiable function on $\mathbb R^2$ need not be complex differentiable. Why do they not match, and how do
-
-
-we reconcile them? Let \(f\colon\mathbb R^2\longrightarrow\mathbb R^2\)
+As metric spaces, $\mathbb C$ and $\mathbb R^2$ are homeomorphic; as vector spaces, they are isomorphic. But do these two definitions match? They ought to because $\mathbb C\cong\mathbb R^2$, and functions on $\mathbb R^2$ can be seen as functions on $\mathbb C$ and vice versa. As it turns out, a differentiable function on $\mathbb R^2$ need not be complex differentiable. Why do they not match, and how do we reconcile them? Let \(f\colon\mathbb R^2\longrightarrow\mathbb R^2\)
 be differentiable, with $f'(x)=A$. Then $A$ can be realized as an $\mathbb R$-linear map from $\mathbb C$ to $\mathbb C$. But the derivative $f'(z)$ of a complex differentiable function $f\colon\mathbb C\to\mathbb C$ is a $\mathbb C$-linear map between copies of $\mathbb C$. Note that $\mathbb C$ is a field and hence a vector space over itself. Thus we demand much more from a complex differentiable function. What is it that we demand?
 
 Write
@@ -90,10 +87,7 @@ Therefore
 \qquad
 \frac{\partial f_1}{\partial y}=-\frac{\partial f_2}{\partial x}}
 \]
-These are precisely the Cauchy--Riemann equations. We demand that an $\mathbb R^2$-differentiable function satisfy the Cauchy--Riemann equations. Now that we know precisely what we demand, let us walk our way from
-
-
-$\mathbb R^2$-differentiability, or Fr\'echet differentiability, to complex differentiability.
+These are precisely the Cauchy--Riemann equations. We demand that an $\mathbb R^2$-differentiable function satisfy the Cauchy--Riemann equations. Now that the condition is precise, we proceed from $\mathbb R^2$-differentiability, or Fr\'echet differentiability, to complex differentiability.
 
 Let $f\colon\mathbb R^2\to\mathbb R^2$ be Fr\'echet differentiable and satisfy the Cauchy--Riemann equations. Then
 \[
@@ -134,7 +128,7 @@ exists. Hence $f$ is complex differentiable. One can trace back, too.
 
 
 \textbf{Remark.}
-As we saw with the construction of $\mathbb C$, the algebraic structure imposed rigidity on it. We shall see that exploiting the algebraic structure of $\mathbb C$ to define a notion of differentiability makes this class of functions, often called holomorphic functions, far more regular than Fr\'echet differentiable functions, or even real differentiable functions.
+As in the construction of $\mathbb C$, its algebraic structure imposes rigidity. Exploiting that structure to define differentiability makes holomorphic functions far more regular than Fr\'echet differentiable functions, or even real differentiable functions.
 
 \subsection*{Summary}
 A function $f$ is holomorphic if and only if, seen as a map from $\mathbb R^2$ to $\mathbb R^2$, it is Fr\'echet differentiable and satisfies the Cauchy--Riemann equations; equivalently, its derivative, viewed as an $\mathbb R$-linear map from $\mathbb C$ to $\mathbb C$, turns out to be $\mathbb C$-linear.
@@ -144,7 +138,7 @@ If $f$ is continuous on $\Omega$ and obeys the Cauchy--Riemann equations, then \
 This is just for fun.
 
 \textbf{Remark.}
-A quick realization of the fact that holomorphic functions are regular, far more than Fr\'echet differentiable functions, can be seen in their derivative. If $f=u+iv$, then
+The derivative already shows that holomorphic functions are far more regular than merely Fr\'echet differentiable functions. If $f=u+iv$, then
 \[
 f'(z_0)=
 \begin{pmatrix}
@@ -198,7 +192,7 @@ Assuming $\theta$ and $\psi$ are both acute, we have
 \boxed{\theta=\psi.}
 \]
 
-Thus $f\in H(\Omega)$ does not deform curves haphazardly: it does so in such a manner that neither the rate of variance nor the angle of intersection changes. If $f\in H(\Omega)$ and $f'\neq0$ on $\Omega$, then $f$ is called a conformal map. Mind you, these maps are very rare. In this theme there is one result of relevance:
+Thus $f\in H(\Omega)$ does not deform curves haphazardly: it does so in such a manner that neither the rate of change nor the angle of intersection changes. If $f\in H(\Omega)$ and $f'\neq0$ on $\Omega$, then $f$ is called a conformal map. Mind you, these maps are very rare. One result is especially useful here:
 
 The only smooth conformal maps on $\mathbb R^n\cup\{\infty\}$ are the M\"obius transformations.
 % BLOG-CONTENT-END

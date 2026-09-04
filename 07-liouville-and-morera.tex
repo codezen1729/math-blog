@@ -63,7 +63,7 @@ constant. Hence
 \]
 
 \subsection*{Tool 15 — Morera's Theorem}
-(We saw a proof of this recently.)
+If $f$ is continuous on a domain $\Omega$ and $\int_P f(z)\,dz=0$ for every closed polygonal path $P\subset\Omega$, then $f$ is holomorphic.
 
 
 \subsection*{Tool 16 — Liouville's Theorem}
@@ -71,7 +71,7 @@ An entire bounded function is constant.
 
 
 \subsubsection*{Application — Liouville and Morera}
-Let us see two instances of each.
+The next examples apply Liouville's theorem and Morera's theorem.
 
 \subsection*{Fundamental Theorem of Algebra}
 
@@ -111,8 +111,8 @@ compact sets. Then $f\in H(\Omega)$.
 
 
 \textbf{Note.}
-This result is intended to be shown as an instance of Morera's Theorem, but it
-turns out to be a technique in itself. So we prove it to serve our purpose.
+This result follows from Morera's Theorem and
+is useful in its own right.
 
 \textit{Proof.}
 Let $D$ be a disc in $\Omega$, and let $\gamma$ be a polygonal path in $D$.
@@ -127,7 +127,7 @@ As $f_n\to f$ uniformly in $\overline D$,
 so $\int_\gamma f=0$. Also, $f$ is continuous, and hence $f\in H(D)$. This is
 true for all $D$ in $\Omega$, so $f\in H(\Omega)$.
 
-Let us see two instances of Tool 17 before we show another instance of Morera
+The next two applications illustrate Tool 17 before another application of Morera
 in action.
 
 \subsubsection*{Application — Convergence of derivatives}
@@ -165,7 +165,7 @@ Thus $f_n'\to f'$ uniformly on all compact sets.
 
 \subsubsection*{Application — Holomorphic parameter integrals}
 Let $F$ be continuous on $\Omega\times[0,1]$, and
-suppose that, for every $s\in[0,1]$, $F(z,s)\in H(\Omega)$. Let
+suppose that, for every $s\in[0,1]$, the function $z\mapsto F(z,s)$ belongs to $H(\Omega)$. Let
 \[
   f(z)=\int_0^1F(z,s)\,ds.
 \]
@@ -245,9 +245,8 @@ As $\varepsilon\to0$, we see that
 \[
   \int_T f(z)\,dz=0.
 \]
-Morera gives the result. The only apparently clear subtlety is in seeing that
-the integrals of these triangles vary continuously as $\varepsilon\to0$; that
-is seen once one writes the parametrizations.
+Morera gives the result. The only subtlety is to justify that
+the integrals of these triangles vary continuously as $\varepsilon\to0$; this follows by writing the parametrizations explicitly.
 
 
 \textbf{Remark.}
@@ -261,7 +260,7 @@ $\overline{U^+}$ can be extended to $U$ once we set
 Here is an interesting instance of the Schwarz Reflection Principle.
 
 \subsubsection*{Application}
-Suppose $f(z)\neq0$ is continuous on $\overline D$ and
+Suppose $f$ is continuous and nonvanishing on $\overline D$ and
 $f\in H(D)$, and \(|f(z)|=1\iff |z|=1.\)
 Then $f$ is a constant.
 
@@ -288,13 +287,13 @@ We shall exploit the convexity of $D$. Let $T$ be a triangle in $\mathbb C$.
 
 \end{figure}
 
-Push $T_\varepsilon\to T_1$ so that we have
+Deform $T_\varepsilon$ to $T_1$ within the domain; then
 \[
   \int_{T_\varepsilon}f(z)\,dz
   =\int_{T_1}f(z)\,dz
   =0.
 \]
-Now let us construct polygons.
+We now approximate the relevant arcs by polygons.
 
 
 \begin{figure}[htbp]
@@ -317,7 +316,7 @@ Therefore
   =0.
 \]
 
-Now approximate the arc with polygons to finally get
+Approximating the arc by polygons gives
 \[
   \int_\gamma f(z)\,dz=0.
 \]
@@ -339,7 +338,7 @@ Hence
 so $f\in H(\mathbb C)$. But $f$ is bounded, and therefore $f$ is constant.
 
 \textbf{Exercise.}
-Make this geometric argument analytic. Do it!
+Give an analytic version of this geometric argument.
 
 
 The following is not a standard technique, but it is a useful tool to have in
@@ -373,7 +372,7 @@ where
 \[
   \cos^+\theta:=\max(\cos\theta,0).
 \]
-Let $\theta_0$ be such that the last sum is maximum in $[-\pi,\pi]$, and let
+Let $\theta_0\in[-\pi,\pi]$ maximize the last sum, and let
 $S=S(\theta_0)$. Then
 \begin{align*}
   \left|\sum_S z_k\right|

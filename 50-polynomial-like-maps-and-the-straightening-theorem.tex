@@ -18,10 +18,9 @@ $S=\mathbb C$ or $\widehat{\mathbb C}$, $f$ is rational, and $\deg(f)\ge2$.
  \item Rate of expansion, if $f$ is hyperbolic.
  \item Holomorphic degree of $f$, if $f$ is a branched covering.
 \end{itemize}
-\emph{Cut and paste surgery} is essentially a way to alter these parameters
-by gluing together two maps with different dynamical parameters after
-cutting off certain sets from their domains of definition. Let's illustrate this kind of surgery by proving the \emph{Straightening Theorem}.
-So, what does the theorem say?
+\emph{Cut-and-paste surgery} alters these parameters by gluing maps with
+different dynamical data along selected subdomains. The Straightening
+Theorem is a central example.
 
 % Source page 2
 Let $f\colon U\to V$, with $f\in\Hol(U)$. Locally around critical points,
@@ -37,15 +36,10 @@ B\"ottcher coordinate change. One can extend this polynomial behaviour
 until $\widetilde f$ hits the nearest other critical point.
 % Author check: distinct coordinate maps are called a conjugacy; the extension claim is informal.
 
-Such local behaviours, clubbed together, can either explain $f$ totally
-on $U$ or may not, depending entirely on the domain covered by the
-collective union of B\"ottcher domains. Regardless, holomorphic maps,
-in particular rational maps $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$,
-may locally behave like polynomials. This led Douady and Hubbard on a
-venture, trying to find connections between ``polynomial-like'' maps
-and polynomials. For us, this venture shall culminate with the
-Straightening Theorem. But before we proceed, let us make certain things
-precise.
+Together, these local models may or may not describe $f$ on all of $U$,
+depending on the union of their B\"ottcher domains. This local polynomial
+behaviour led Douady and Hubbard to investigate polynomial-like maps and
+their relation to polynomials.
 
 \setcounter{definition}{26}\begin{definition}[Polynomial-like map]
 Let $U,V$ be bounded simply connected domains of $\mathbb C$ such that
@@ -59,11 +53,11 @@ proper branched holomorphic covering of degree $d$.
 \begin{remark}[1]
 With this definition we are trying to study $f$ locally around its
 critical points, where it was observed to have polynomial-like behaviour.
-Also note that polynomials indeed are polynomial-like. This hammers home
-the point that what we have defined is a generalisation.
+Polynomials are polynomial-like, so this definition genuinely generalises
+them.
 \end{remark}
 \begin{remark}[2]
-One can loosen the rigidity of the boundaries $\partial U,\partial V$.
+One can weaken the regularity required of the boundaries $\partial U,\partial V$.
 If the domains given to us are $U',V'$ and $f\colon U'\to V'$, construct
 a polygonal region in $V'\setminus\overline{U'}$.
 By the Jordan Curve Theorem, if $\gamma$ is the polygon and
@@ -71,8 +65,8 @@ $V=\operatorname{Int}(\gamma)$, we have
 $U'\subset\overline{U'}\subset V\subset\overline V\subset V'$.
 Let $U=f^{-1}(V)$; then $\partial U$ and $\partial V$ are piecewise
 analytic. One can smooth the corners of $\gamma$ by choosing appropriately
-scaled mollifiers. Since our goal is local behaviour, studying $f|_U$
-is no compromise.
+scaled mollifiers. For questions about local behaviour, it is therefore enough to study
+$f|_U$.
 \end{remark}
 % Author check: the smoothing discussion does not establish real-analytic boundaries as written.
 
@@ -84,10 +78,9 @@ quasiconformally conjugate to a polynomial of degree $d$.
 \paragraph{Note.}
 In other words, the ellipse field of a polynomial-like map can be
 straightened into a circle field, hence the name.
-We shall prove this by cutting open polynomial-like maps and gluing on
-some extra stuff, which we shall then use to pull the ellipse field
+The proof glues the polynomial-like map to an external polynomial model,
+then straightens the resulting invariant ellipse field.
 % Source page 4 (continuation of the previous sentence).
-back to a circle field.
 
 \begin{proof}
 Let $\rho>1$, and let
@@ -125,11 +118,9 @@ Now it is time to perform the surgery.
 % Author check: A_0 and the target of its closure follow the source despite boundary inconsistencies.
 
 % Source page 5
-Tear off the domain of $f$ from its codomain, obtaining $V\setminus U$.
-On this we have a quasiconformal map $\psi$. Let us use it to glue $f$
-to a holomorphic map, which we shall later use as a hook to pull the
-flattened circle field back to its original shape, that is, to straighten
-an ellipse field to a circle field.
+On the annulus $V\setminus U$, use the quasiconformal map $\psi$ to glue
+$f$ to the external holomorphic model. The resulting map supplies the
+invariant ellipse field that will be straightened to a circle field.
 Define $F\colon\mathbb C\to\mathbb C$, the result of surgery on $f$, by
 \[
  F(z):=

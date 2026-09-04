@@ -5,12 +5,12 @@
 \begin{document}
 \section*{Integral Dependence}
 % BLOG-CONTENT-BEGIN
-We introduced rings and modules and various operations on them: sums, products, intersections, quotients, radicals, and localizations. We then introduced certain functors on $\AMod$ and outlined their features. Two essential theorems to keep in mind are Cayley--Hamilton for finitely generated modules and Nakayama's lemma.
+Two algebraic tools will be used repeatedly: the Cayley--Hamilton theorem for finitely generated modules and Nakayama's lemma.
 
 If $\varphi\in\End_{\AMod}(M)$ and $\varphi(M)\subseteq\aa M$ for an ideal $\aa<A$, then there exist $a_i\in\aa$ such that $\varphi^n+a_1\varphi^{n-1}+\cdots+a_n=0$. For $\varphi=\id$, there exists $x\in A$ with $x\equiv1\pmod\aa$ and $xM=0$. Further, if $\varphi=\id$, $\varphi(M)=\aa M$, and $\aa$ is contained in the Jacobson radical, then $x$ divides $1$; thus $x^{-1}(xM)=M=0$.
 
-We also introduced primary ideals and saw how ideals in Noetherian rings can be factorized, or decomposed, into primary ideals. Let's introduce a little geometry.
-\subsection{Generalization of integers}
+Primary decomposition expresses ideals in Noetherian rings as intersections of primary ideals. We now turn to integral dependence.
+\subsection{Generalising integrality from the integers}
 Consider $\Z\hookrightarrow\Q$, and let $r/s\in\Q$. Then
 \[
 r/s\in\Z\ \Longleftrightarrow\ \exists f\in\Z[x]\text{ such that }f(r/s)=0\text{ in }\Q.
@@ -18,7 +18,7 @@ r/s\in\Z\ \Longleftrightarrow\ \exists f\in\Z[x]\text{ such that }f(r/s)=0\text{
 % Author check: ``monic'' is absent here and in the subsequent definition.
 Indeed, if $r/s\in\Z$, then $s=\pm1$, and $f(x):=x-sr$ works. Conversely, if $(r/s)^n+a_1(r/s)^{n-1}+\cdots+a_n=0$, then $r^n+a_1r^{n-1}s+\cdots+a_ns^n=0$.
 % Source page 2
-Thus $s\mid r^n$, a contradiction, since we can require $\gcd(r,s)=1$. Hence $y\in\Q$ is integral if and only if some $f\in\Z[x]$ satisfies $f(y)=0$. We generalize this concept to arbitrary rings.
+Thus $s\mid r^n$, a contradiction, since we may choose $\gcd(r,s)=1$. Hence $y\in\Q$ is integral if and only if some $f\in\Z[x]$ satisfies $f(y)=0$. We generalize this concept to arbitrary rings.
 \setcounter{definition}{13}\begin{definition}
 Let $A$ be a subring of $B$. An element $y\in B$ is \emph{integral over $A$} if there exists $f\in A[x]$ such that $f(y)=0$ in $B$. If every $y\in B$ is integral over $A$, we say $B$ is \emph{integral over $A$}, or that $A$ is \emph{integrally closed in $B$}. If $A$ is a domain, we say $A$ is \emph{integrally closed} if it is integrally closed in its field of fractions $K$.
 % Author check: the phrase ``integrally closed in B'' is used this way in the source, conflicting with the later closure construction.
@@ -54,9 +54,9 @@ For (iii), let $x\in C$. There exist $b_i\in B$ such that $x^n+b_1x^{n-1}+\cdots
 
 For (iv), if $x\in B$ is integral over $\overline A$, apply (iii) to $A\subseteq\overline A\subseteq B$ to conclude that $x$ is integral over $A$.
 \end{proof}
-These observations culminate in the fact that the integral closure of $A$ in $B$ is integrally closed in $B$, as expected!
+Thus the integral closure of $A$ in $B$ is integrally closed in $B$.
 
-Now we see how integrality behaves under a few operations on rings.
+Integrality is preserved by the following operations on rings.
 \setcounter{theorem}{22}\begin{proposition}
 Let $A\subseteq B$ be rings, with $B$ integral over $A$.
 \begin{enumerate}[label=(\roman*)]

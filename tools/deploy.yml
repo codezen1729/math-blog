@@ -271,6 +271,8 @@ jobs:
           persist-credentials: false
       - name: Unpack the website application
         run: unzip -q site-source.zip -d website
+      - name: Install the current publication checks
+        run: cp tools/site-checks/*.mjs website/scripts/
       - name: Install the LaTeX toolchain
         run: |
           sudo apt-get update -qq
@@ -282,6 +284,7 @@ jobs:
       - name: Check the Overleaf PDFs
         run: |
           if [ -f tools/test-references.py ]; then python3 tools/test-references.py; fi
+          if [ -f tools/test-render.py ]; then python3 tools/test-render.py; fi
           python3 tools/check-pdfs.py
       - name: Convert the current blog writing
         run: python3 tools/render.py --site website

@@ -23,7 +23,7 @@ A presheaf $\mathcal F$ is a \emph{sheaf} if, for $U=\bigcup_i U_i$, the sequenc
 is exact, where $d_0:s\mapsto s|_{U_i}$ and
 % Source page 5
 $d_1:\prod_i s_i\mapsto s_i|_{U_i\cap U_j}-s_j|_{U_i\cap U_j}$.
-Here $\ker d_0=0$ is \emph{uniqueness}, and $\operatorname{im}d_0=\ker d_1$ is \emph{gluing}.
+The condition $\ker d_0=0$ encodes uniqueness, and $\operatorname{im}d_0=\ker d_1$ encodes gluing.
 \end{definition}
 \setcounter{definition}{19}\begin{definition}
 The \emph{stalk} of $\mathcal F$ at $p$, denoted $\mathcal F_p$, is
@@ -84,7 +84,7 @@ f:U\to\coprod_{x\in U}\mathcal F_x\ \middle|\
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item $(X,\mathcal O_X)$ is a \emph{ringed topological space} if $X\in\mathsf{Top}$ and $\mathcal O_X$ is a sheaf of rings such that $\mathcal O_{X,x}$ is a local ring for every $x\in X$. Here $\mathcal O_X$ is the \emph{structure sheaf}, and $\mathcal O_{X,x}/\mm_x$ is the \emph{residue field}.
 % Author check: this is called ``ringed'' rather than ``locally ringed'' in the source.
-\setcounter{enumi}{1}\item A morphism $(f,f^{\#}):(X,\mathcal O_X)\to(Y,\mathcal O_Y)$ of ringed topological spaces consists of a continuous $f:X\to Y$ and a sheaf map $f^{\#}:\mathcal O_Y\to f_*\mathcal O_X$, where $f_*\mathcal F(V):=\mathcal F(f^{-1}(V))$, such that
+\setcounter{enumi}{1}\item A morphism $(f,f^{\#}):(X,\mathcal O_X)\to(Y,\mathcal O_Y)$ of ringed topological spaces consists of a continuous map $f:X\to Y$ and a sheaf map $f^{\#}:\mathcal O_Y\to f_*\mathcal O_X$, where $f_*\mathcal F(V):=\mathcal F(f^{-1}(V))$, such that
 \[
 f_x^{\#}:\mathcal O_{Y,f(x)}\longrightarrow f_*\mathcal O_{X,x}
 \]
@@ -94,7 +94,7 @@ is a local homomorphism, that is, $f_x^{\#}(\mm_{f(x)})\subseteq\mm_x$.
 % Author check: the stalk-isomorphism requirement for closed immersions is retained.
 \end{enumerate}
 \end{definition}
-For $X=\Spec(A)$, define $\mathcal O_X(D(f)):=A_f$. On the left these are functions where $f$ does not vanish; on the right is the ring in which $f$ is invertible.
+For $X=\Spec(A)$, define $\mathcal O_X(D(f)):=A_f$. On the left, $D(f)$ is the locus where $f$ does not vanish; on the right, $A_f$ is the ring in which $f$ is invertible.
 \setcounter{theorem}{32}\begin{lemma}
 $V(I)\subseteq V(J)$ if and only if $J\subseteq\sqrt I$.
 \end{lemma}
@@ -104,9 +104,7 @@ Thus $f$ is invertible in $A_g$, giving a map $A_f\to A_g$. Hence $\mathcal O_X$
 % Author check: the sheaf axiom verification is not supplied in the source.
 \setcounter{definition}{22}\begin{definition}
 \begin{enumerate}[label=(\roman*)]
-\setcounter{enumi}{0}\item An \emph{affine scheme} is something isomorphic to a ringed topological space $(X,\mathcal O_X)$ as above.
-\setcounter{enumi}{1}\item A \emph{scheme} is a ringed topological space with an open cover \sourcegap.
-% Author check: the handwritten file ends here, without the condition on the cover.
+\setcounter{enumi}{0}\item An \emph{affine scheme} is a ringed topological space isomorphic to some $(X,\mathcal O_X)$ as above.
 \end{enumerate}
 \end{definition}
 % BLOG-CONTENT-END

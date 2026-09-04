@@ -6,45 +6,44 @@
 % BLOG-CONTENT-BEGIN
 \textbf{II) \underline{Algebraic Perspective}}
 
-A plane cubic curve is the following set,
+A plane cubic curve is the following set:
 $$C = \big\{[x:y:z]\in \mathbb{CP}^2  \big|   F(x, y, z) = 0,   \text{deg}(F) = 3,   F\text{ is homogeneous}\big\}$$
-Let $P\in C$ be one of the 9 points of inflection, and $Q$ be a point on the tangent of $C$ at $P$. By an affine transformation of variables $x, y, z$, the points $P, Q$ seen as points in $\mathbb{C}^3\backslash \{(0,0,0)\}$ can be sent to points $(0,1,0)$ and $(1,0,0)$. Let the polynomial be, 
+Let $P\in C$ be one of the nine points of inflection, and let $Q$ be a point on the tangent to $C$ at $P$. After choosing representatives of $P$ and $Q$ in $\mathbb{C}^3\backslash\{(0,0,0)\}$, an affine change of coordinates sends them to $(0,1,0)$ and $(1,0,0)$. Let the polynomial be 
 $$F(x,y,z) = \sum_{0\leq i, j\leq 3}a_{ij}x^iy^jz^{3-i-j}$$
 $[0:1:0] \in C$ implies $x=0$ is a root of the polynomial,
 $$a_{30}x^3 + a_{21}x^2y+ a_{12}xy^2 + a_{03}y^3$$
-By the way things have been set up, the line $[t:1:0]$ is tangent at $[0:1:0]$. Now as $[0:1:0]$ is an inflection point, the multiplicity of $x=0$ in the polynomial above is $3$, implying that $a_{21} = a_{12} = a_{03} = 0$, and that $a_{30} \neq 0$. Let's now look at $F$ in the affine coordinate $z\neq 0$,
+By the way things have been set up, the line $[t:1:0]$ is tangent at $[0:1:0]$. Since $[0:1:0]$ is an inflection point, $x=0$ has multiplicity $3$ in the polynomial above. Hence $a_{21}=a_{12}=a_{03}=0$ and $a_{30}\neq0$. Let's now look at $F$ in the affine coordinate $z\neq 0$,
 $$F(x,y,1) = y^2 -2(ax+b)y - P_3(x)$$
 
-where the terms in the RHS have been extracted from the monomials $yz^2, xyz, z^2y$, and $x^3$, in that order. Complete the square by sending $y \rightarrow y - ax - b$ to get,
+where the terms on the right-hand side have been extracted from the monomials $yz^2, xyz, z^2y$, and $x^3$, in that order. Complete the square by sending $y \rightarrow y-ax-b$ to obtain
 $$y^2 = P_3(x) = (x-a)(x-b)(x-c)$$
 
-to be the zero locus of $F$ in the transformed affine chart. Note that for the curve to be smooth $a, b, c$ must be distinct. Further change the coordinates by sending $x \rightarrow (x+a)/(a-b)$ to get,
+This is the zero locus of $F$ in the transformed affine chart. Note that for the curve to be smooth $a, b, c$ must be distinct. Make a further change of coordinates by sending $x \rightarrow (x+a)/(a-b)$ to get,
 $$y^2 = x(x-1)(x-\lambda)$$
 
 which with the transformation $x \rightarrow x + (1+\lambda)/3$ becomes,
 $$y^2 = x^3 + ax + b$$
 
-The above is called the \textbf{Weierstrass normal form} of the cubic curve, which when graphed would look like:- 
+The above is called the \textbf{Weierstrass normal form} of the cubic curve, which when graphed would look like: 
 
 \begin{figure}[htp]
             \centering
             \includegraphics[width=9cm]{Elliptic Curve.png}
-            \caption{The graph of the curve $y^2 = x^3 - 2x + 1$. It represents the real section of the complex cubic curve in a local chart.}
         \end{figure}
 
 
-In the geometric perspective, lattices appeared naturally as groups of symmetries. We shall now incorporate lattices to illuminate the algebraic perspective. Let $\Lambda = \mathbb{Z}\omega_1\oplus \mathbb{Z}\omega_2$ wih $\text{Im}(\omega_1/\omega_2) >0$ ((i.e.) it is $z \rightarrow z/\omega_2$ away from being a lattice of the form $\mathbb{Z}\oplus\mathbb{Z}\tau$ in its equivalence class). Define,
+In the geometric perspective, lattices appeared naturally as groups of symmetries. We shall now incorporate lattices to illuminate the algebraic perspective. Let $\Lambda = \mathbb{Z}\omega_1\oplus \mathbb{Z}\omega_2$ with $\text{Im}(\omega_1/\omega_2) >0$ (after scaling by $1/\omega_2$, it is equivalent to a lattice of the form $\mathbb{Z}\oplus\mathbb{Z}\tau$). Define,
 $$\wp_{\Lambda} : \mathbb{C} \rightarrow \mathbb{C}$$
 
 
 $$\wp_{\Lambda}(z) := \frac{1}{z^2} + \sum_{\omega \in \Lambda\backslash \{0\}}\bigg(\frac{1}{(z-\omega)^2} - \frac{1}{\omega^2}\bigg)$$
 
-The object defined above goes by the name \textbf{Weierstrass $\wp$ function}. Let us study its nature to reveal the cameo of lattices for cubic curves; we shall do it in four steps. 
+The object defined above goes by the name \textbf{Weierstrass $\wp$ function}. We now study it in four steps to relate lattices to cubic curves. 
 
-\underline{STEP 1 (Convergence)}:- Note that, 
+\subsection*{Convergence} Note that, 
 $$\bigg|\frac{1}{(z-\omega)^2} - \frac{1}{\omega^2}\bigg| = \bigg|\frac{2z\omega - z^2}{\omega^2(z-\omega)^2)}\bigg| = \bigg|\frac{\omega}{\omega^4}\bigg(\frac{2z-z^2\omega^{-1}}{(z\omega^{-1} - 1)^2}\bigg)\bigg| =: \frac{A(z,w)}{|\omega|^3}$$
 
-If $z\in K$ (compact in $\mathbb{C}$), then dist$(K, \Lambda) > \epsilon$, as a result $z\omega^{-1} - 1$ is bounded. For $|\omega|$ large enough note that $A(z, w) \sim 2z$, and as $z\in K$, we see that $A(z, w)$ is uniformly bounded on $K$. Hence, 
+If $K\subset\mathbb C$ is compact and $z\in K$, then dist$(K, \Lambda) > \epsilon$, as a result $z\omega^{-1} - 1$ is bounded. For $|\omega|$ large enough note that $A(z, w) \sim 2z$, and as $z\in K$, we see that $A(z, w)$ is uniformly bounded on $K$. Hence, 
 
 $$\bigg|\frac{1}{(z-\omega)^2} - \frac{1}{\omega^2}\bigg| = \mathcal{O}\bigg(\frac{1}{|\omega|^3}\bigg)$$
 
@@ -58,19 +57,18 @@ where $h$ is the smaller of the heights of the parallelogram generated by $0$, $
 \begin{figure}[htp]
             \centering
             \includegraphics[width=15cm]{Inequality.jpg}
-            \caption{The colors represent the sequence in which the double sum is carried over, and note that there are 8 blue dots, 16 orange dots, and 24 pink dots, and so on.}
         \end{figure}
 
 
-Now as uniform limit of holomorphic functions is holomorphic, we have $\wp_{\Lambda}(z) \in \mathcal{O}(\mathbb{C}\backslash\Lambda)$ with poles of order $2$ on $\Lambda$.
+Since a uniform limit of holomorphic functions is holomorphic, we have $\wp_{\Lambda}(z) \in \mathcal{O}(\mathbb{C}\backslash\Lambda)$ with poles of order $2$ on $\Lambda$.
 
-\underline{STEP 2 (Periodicity)}:- Clearly, 
+\subsection*{Periodicity} Clearly, 
 $$\wp_{\Lambda}'(z) = \frac{-2}{(z-\omega)^3}$$
 
-has periods $\omega_1$ and $\omega_2$. So does, 
+has periods $\omega_1$ and $\omega_2$. The same is true of 
 $$\wp_{\Lambda}(z) = \frac{1}{z^2} + \sum_{\omega \in \Lambda\backslash \{0\}}\bigg(\frac{1}{(z-\omega)^2} - \frac{1}{\omega^2}\bigg)$$
 
-\underline{STEP 3 (Zeroes and Poles)}:- Note that $\wp_{\Lambda}(z)$, $\wp_{\Lambda}'(z)$ being doubly periodic factor down to a ramified cover $\mathbb{C}/\Lambda \rightarrow \mathbb{CP}^1$ of degree $2, 3$, respectively. Now as $\wp_{\Lambda}'(z)$ is odd we get,
+\subsection*{Zeros and poles} Note that The doubly periodic functions $\wp_{\Lambda}$ and $\wp_{\Lambda}'$ descend to ramified covers $\mathbb{C}/\Lambda\to\mathbb{CP}^1$ of degrees $2$ and $3$, respectively. Now as $\wp_{\Lambda}'(z)$ is odd we get,
 
 $$\wp_{\Lambda}'(\omega_i/2) = -\wp_{\Lambda}(-\omega_i/2) = -\wp_{\Lambda}'(\omega_i - \omega_i/2)$$
 which implies, 
@@ -80,9 +78,9 @@ $$\wp_{\Lambda}'\bigg(\frac{\omega_1+\omega_2}{2}\bigg) = \wp_{\Lambda}'\bigg(\f
 These are the only zeroes of $\wp_{\Lambda}'$ since it induces a $3$-fold ramified cover. Let,
 $$e_1 = \wp_{\Lambda}'\bigg(\frac{\omega_1}{2}\bigg),   e_2 = \wp_{\Lambda}'\bigg(\frac{\omega_1+\omega_2}{2}\bigg),   \text{and }e_3 = \wp_{\Lambda}'\bigg(\frac{\omega_2}{2}\bigg)$$
 
-By Riemann-Hurwitz formula $\{e_i\}_i$ and $[\Lambda]$ are the only branch points of the $2$-fold cover that $\wp_{\Lambda}$ induces with ramification index $2$ for their preimages (as the derivatives vanishes at those points); which would force them to be distinct.
+By Riemann-Hurwitz formula $\{e_i\}_i$ and $[\Lambda]$ are the only branch points of the $2$-fold cover that $\wp_{\Lambda}$ induces with ramification index $2$ for their preimages (as the derivatives vanish at those points); which would force them to be distinct.
 
-\underline{STEP 4 (Differential Equation)}:- Consider,
+\subsection*{Differential equation} Consider,
 
 $$H(z) = \frac{\wp_{\Lambda}'(z)}{(\wp_{\Lambda}(z) - e_1)(\wp_{\Lambda}(z) - e_2)(\wp_{\Lambda}(z) - e_3)}$$
 
@@ -91,7 +89,7 @@ $$\wp_{\Lambda}(z) = \frac{1}{z^2} + \cdots \text{ and } \wp_{\Lambda}'(z) = \fr
 implying $c = 4$. Therefore, 
 $$\wp_{\Lambda}'(z)^2 = 4(\wp_{\Lambda}(z) - e_1)(\wp_{\Lambda}(z) - e_2)(\wp_{\Lambda}(z) - e_3)$$
 
-With the help of basic properties of the Weierstrass function expounded above, we construct the following the map:-
+With the help of basic properties of the Weierstrass function expounded above, we construct the following map:
 
 $$\Phi : \mathbb{C} \rightarrow \mathbb{CP}^2$$
 
@@ -109,11 +107,11 @@ Clearly, $\Phi$ factors through the complex torus to yield $\widetilde{\Phi}$,
 	\arrow["{\widetilde{\Phi}}"', from=2-2, to=1-3]
 \end{tikzcd}\]
 
-The map $\widetilde{\Phi}$ is clearly an analytic embedding with the image in the smooth cubic curve. Indeed, the map near $0$ is given by $$z \rightarrow \bigg[\frac{\wp_{\Lambda}(z)}{\wp_{\Lambda}'(z)}:1:\frac{1}{\wp_{\Lambda}'(z)}\bigg]$$
+The map $\widetilde{\Phi}$ is clearly an analytic embedding whose image lies in the smooth cubic curve. Indeed, the map near $0$ is given by $$z \rightarrow \bigg[\frac{\wp_{\Lambda}(z)}{\wp_{\Lambda}'(z)}:1:\frac{1}{\wp_{\Lambda}'(z)}\bigg]$$
 
-proving its analyticity at $0$, and the inverse image of $[0:1:0]$ in $\mathbb{C}/\Lambda$ is $[\Lambda]$ establishing that it's a $1$-fold ramified cover, ((i.e.) an embedding). Therefore, lattices parameterize smooth cubic curves.
+This proves analyticity at $0$. Moreover, the inverse image of $[0:1:0]$ in $\mathbb{C}/\Lambda$ is $[\Lambda]$, so the map is one-to-one and hence an embedding. Therefore, lattices parameterize smooth cubic curves.
 
 
-\textbf{Remark.} We managed to show that all genus $1$ Riemann surfaces can be embedded onto a smooth cubic curve. It is important to note that we haven't proved the equivalence of geometric and algebraic perspectives, for such a thing would amount to constructing a cubic curve whose zero locus is a given genus $1$ Riemann surface; we're merely capable of constructing one isomorphic to it.
+\textbf{Remark.} We managed to show that all genus $1$ Riemann surfaces can be embedded into a smooth cubic curve. It is important to note that we haven't proved the equivalence of geometric and algebraic perspectives, for such a thing would amount to constructing a cubic curve whose zero locus is a given genus $1$ Riemann surface; we're merely capable of constructing one isomorphic to it.
 % BLOG-CONTENT-END
 \end{document}

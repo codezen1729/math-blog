@@ -151,8 +151,6 @@ Let $a\in\Int(\M)$, and suppose $P_a$ has an attracting cycle of length $m$. Let
 \begin{proof}
 Consider $P_c^{\circ m}(z)-z$. By the implicit function theorem, we obtain an attracting periodic point of period $m$, say $z_1(c)$, in a small neighbourhood of $a$. The sequence $\{P_c^{\circ jm}(0)\}$ is bounded. Hence all subsequences of this sequence converge to an analytic continuation of $z_1(c)$ over $W$.
 
-The point $z_1(c)$ could be repelling, but convergence $P_c^{\circ jm}(0)\to z_1(c)$ would then imply $P_c^{\circ jm}(0)=z_1(c)$, by the local Koenigs dynamics. This happens for countably many points (false by the implicit function theorem).
-
 % Source page 6
 Thus $|(P_c^{\circ m})'(z_1(c))|\le1$. By the maximum modulus principle, $z_1(c)$ is an attracting fixed point on all of $W$. The other functions are $\{P_c^{\circ i}(z_1(c))\}_{0\le i<m}$.
 \end{proof}
@@ -171,7 +169,7 @@ Suppose $U$ has no $c$ for which $0$ is periodic under $P_c$. Consider a branch 
 \[
 \left\{\frac{P_c^{\circ n}(0)}{\sqrt{-c}}\right\}_n
 \]
-omits $\{0,1,\infty\}$ and is normal in $c$. But $U$ meets $\partial\M$, so for some $c\in U$ the sequence explodes, whereas for some $c$ it remains bounded, violating normality.
+omits $\{0,1,\infty\}$ and is normal in $c$. But $U$ meets $\partial\M$, so for some $c\in U$ the sequence escapes to infinity, whereas for some $c$ it remains bounded, violating normality.
 \end{proof}
 
 \setcounter{theorem}{5}\begin{corollary}[$J$-stability]
@@ -185,7 +183,7 @@ By definition, if $c\in\Int(\M)$, the sequence $\{P_c^{\circ n}(0)\}_n$ is bound
 
 % Source page 7
 \Needspace{13\baselineskip}
-\section{Components, invariant line fields, and corrections}
+\section{Components and invariant line fields}
 \subsection{Summary}
 \begin{enumerate}
 \setcounter{enumi}{0}\item $\M$ is closed and simply connected, and is contained in $\{c\mid |c|\le2\}$.
@@ -235,22 +233,6 @@ We prove that $c(t)$ is injective. If $c(t_1)=c(t_2)$ and $\phi_{t_1},\phi_{t_2}
 \end{proof}
 
 % Source page 9
-\subsection{MLC and a few corrections}
-\paragraph{MLC.} $\partial\M$ is locally connected.
-
-\textit{(i) Correction to Theorem~\ref{thm:attracting-continuation}.}
-The point $z_1(c)$ could be repelling at uncountably many $c$. Then there is a $j$ such that $P_c^{\circ jm}(0)=z_1(c)$ for uncountably many $c$. By the identity theorem, $z_1(c)$ is a polynomial in $c$, and $P_c^{\circ m}(z_1(c))=z_1(c)$ can have only finitely many solutions. Hence $z_1(c)$ is repelling only at countably many points.
-
-\textit{(ii) Indifferent points lie on $\partial\M$.}
-Here the parameters in question are $\{c\mid P_c\text{ has an indifferent point}\}$. Consider the variety $P_c^{\circ m}(z)-z=0$ in $\C^2$, of dimension one. It has finitely many singular points. Away from these finitely many points, we have a Riemann surface $V$, and $V\to\C$, $(z,c)\mapsto c$, is a $2^m$-sheeted branched cover.
-
-Consider an indifferent point in $\Int(\M)$, say $a$. Let $V_0$ be an irreducible component of $V$ containing $a$. The map
-\[
-V_0\longrightarrow\C,
-\qquad (z,c)\longmapsto(P_c^{\circ m})'(z)
-\]
-would be locally constant around $a$, hence constant on $V_0$ (but $V_0$ projects onto $\C$).
-
 % Source page 10
 \section{Quasicircles and uniformisation}
 \subsection{The principal hyperbolic component}
@@ -351,7 +333,7 @@ Using $\varphi_c(P_c(z))=\varphi_c(z)^2$, we can extend $\varphi_c$ conformally 
 G_c(P_c(z))=2G_c(z).
 \tag{$\star$}
 \end{equation}
-This can be extended to all of $\widetilde A_c(\infty)$.
+The Green function $G_c$ extends to all of $\widetilde A_c(\infty)$.
 
 For $G_c(z)>G_c(0)$, the map $\varphi_c(z)$ is analytic and maps that set conformally to $\{\zeta\mid |\zeta|>e^{G_c(0)}\}$. Also,
 \[
@@ -361,7 +343,7 @@ P_c^{-n}\bigl(\{z\mid G_c(z)\le G_c(0)\}\bigr).
 By \eqref{eq:green-functional}, as $z\to\partial\widetilde A_c(\infty)$, that is, $J(P_c)$, we have $G_c(z)\to0$. Extend $G_c$ to the whole plane by defining it to be zero elsewhere.
 
 % Source page 13
-One can show that $G_c(z)$ is jointly continuous in $c$ and $z$, via some basic calculus. Notice that
+The function $G_c(z)$ is jointly continuous in $c$ and $z$. Notice that
 \[
 P_c(0)=c\quad\Longrightarrow\quad G_c(c)=2G_c(0)>G_c(0).
 \]
