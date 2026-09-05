@@ -25,6 +25,7 @@ test('legacy topic names still resolve to their present series', () => {
 });
 test('post links, laboratory and retired academic links remain distinguishable', () => {
   for (const route of ['post/abels-theorem', 'lab', 'blog/dynamics', 'vita', 'research', 'missing']) assert.equal(normalizeBlogRoute(`#/${route}`), route);
+  assert.equal(normalizeBlogRoute('#/recommendations'), 'blog');
   assert.equal(personalWebpage, 'https://sites.google.com/view/viswanathan1729/navigate');
 });
 test('site metadata describes the blog, not the former personal website', () => {
@@ -49,7 +50,7 @@ test('publication order and the Olympiad series label come from the current mani
   assert.ok(olympiadPosts.length > 0);
   assert.ok(olympiadPosts.every(post => post.phaseLabel === 'Lemma Book (Olympiad Days)'));
 });
-test('every blog preview is the first readable paragraph of its post', () => {
+test('every blog preview begins at the first passage and continues in order', () => {
   const candidate = paragraph => paragraph
     .replace(/<span\b[^>]*class="[^"]*\bmath display\b[^"]*"[^>]*>[\s\S]*?<\/span>/g, ' ')
     .replace(/<a\b(?=[^>]*class="[^"]*\bfootnote-ref\b[^"]*")[^>]*>[\s\S]*?<\/a>/g, '')
@@ -65,9 +66,18 @@ test('every blog preview is the first readable paragraph of its post', () => {
       && !romanSectionLabel;
   };
   for (const post of posts) {
-    const first = [...post.html.matchAll(/<p(?:\s[^>]*)?>[\s\S]*?<\/p>/g)].map(match => match[0]).find(paragraph => readable(candidate(paragraph))) ?? '';
-    assert.ok(first, post.slug);
-    assert.equal(post.excerptHtml, first, post.slug);
+    const allParagraphs = [...post.html.matchAll(/<p(?:\s[^>]*)?>[\s\S]*?<\/p>/g)].map(match => match[0]);
+    const previewParagraphs = [...post.excerptHtml.matchAll(/<p(?:\s[^>]*)?>[\s\S]*?<\/p>/g)].map(match => match[0]);
+    const genuine = allParagraphs.filter(paragraph => readable(candidate(paragraph)));
+    const previewGenuine = previewParagraphs.filter(paragraph => readable(candidate(paragraph)));
+    assert.ok(genuine.length >= 3, post.slug);
+    assert.ok(previewGenuine.length >= 3, post.slug);
+    assert.equal(previewGenuine[0], genuine[0], post.slug);
+    let position = -1;
+    for (const paragraph of previewParagraphs) {
+      position = post.html.indexOf(paragraph, position + 1);
+      assert.notEqual(position, -1, post.slug);
+    }
   }
 });
 test('blog previews skip manuscript navigation and section-label furniture', () => {
@@ -77,6 +87,25 @@ test('blog previews skip manuscript navigation and section-label furniture', () 
   for (const slug of ['elliptic-curves-algebraic', 'elliptic-curves-harmonic', 'abels-theorem']) {
     assert.doesNotMatch(posts.find(post => post.slug === slug).excerptHtml, /^<p>[IVXLCDM]+\s*[.)]/);
   }
+  for (const slug of ['liouville-and-morera', 'elliptic-curves-geometric', 'locally-trivial-bundles']) {
+    assert.match(posts.find(post => post.slug === slug).excerptHtml, /<(?:ul|ol)(?:\s[^>]*)?>/);
+  }
+});
+test('the blog sidebar retains every supplied recommendation', () => {
+  const app = readFileSync(new URL('../components/site-app.tsx', import.meta.url), 'utf8');
+  const urls = [
+    'https://sketchesoftopology.wordpress.com/', 'https://lamington.wordpress.com/',
+    'https://golem.ph.utexas.edu/category/', 'https://terrytao.wordpress.com/',
+    'https://gowers.wordpress.com/', 'https://johncarlosbaez.wordpress.com/',
+    'https://witheredstumps.wordpress.com/', 'https://sebastianraschka.com/',
+    'https://karpathy.github.io/', 'https://lilianweng.github.io/',
+    'https://proofsandprompts.com/', 'https://gilkalai.wordpress.com/',
+    'https://ldtopology.wordpress.com/', 'https://mathscholar.org/',
+    'https://matthewkahle.wordpress.com/page/2/',
+  ];
+  assert.match(app, /<h2>Blog Recommendations<\/h2><ul className="journal-topics journal-blogroll">/);
+  assert.doesNotMatch(app, /href="#\/recommendations"/);
+  for (const url of urls) assert.match(app, new RegExp(url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 });
 test('vector figures enlarge with consistent labels and drawing-specific canvas space', () => {
   const metadata = JSON.parse(readFileSync(new URL('../lib/figure-metadata.json', import.meta.url), 'utf8'));
@@ -105,7 +134,7 @@ test('the distributed application excludes personal pages and photographs', () =
   assert.match(app, /articleFigureWidth/);
   assert.match(app, /maxWidth: figureScale <= 1 \? '100%' : 'none'/);
   assert.match(app, /scrollWidth > scroller\.clientWidth/);
-  assert.match(app, /mathematicalLength > 150/);
+  assert.doesNotMatch(app, /excerpt-equation-ellipsis|mathematicalLength/);
   const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
   assert.doesNotMatch(css, /profile\//);
 });

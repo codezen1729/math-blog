@@ -8,6 +8,7 @@ import math
 import re
 import shutil
 import xml.etree.ElementTree as ET
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote
 import latex_to_web as converter
@@ -107,29 +108,148 @@ def expand_blog_post_links(text: str, filename: str, slugs: set[str]) -> str:
     return text
 
 
-def opening_excerpt(fragment: str) -> str:
-    """Return the first genuine prose paragraph, rather than a later teaser."""
-    for paragraph in re.findall(r"<p(?:\s[^>]*)?>.*?</p>", fragment, flags=re.S):
-        candidate = re.sub(r'<span\b[^>]*class="[^"]*\bmath display\b[^"]*"[^>]*>.*?</span>', ' ', paragraph, flags=re.S)
-        candidate = re.sub(r'<a\b(?=[^>]*class="[^"]*\bfootnote-ref\b[^"]*")[^>]*>.*?</a>', '', candidate, flags=re.S)
-        candidate = re.sub(r'<img\b[^>]*>', '', candidate, flags=re.S)
-        plain = html.unescape(re.sub(r"<[^>]+>", " ", candidate))
-        plain = re.sub(r"\s+", " ", plain).strip()
-        navigation_parts = re.findall(r"\bPart\s+[IVXLCDM]+\b", plain, flags=re.I)
-        roman_section_label = re.fullmatch(
-            r"[IVXLCDM]+\s*[.)]\s*(?:Prologue|[^.!?]{1,70}\bPerspective)\.?",
-            plain,
-            flags=re.I,
+_VOID_HTML_TAGS = frozenset({
+    "area", "base", "br", "col", "embed", "hr", "img", "input", "link",
+    "meta", "param", "source", "track", "wbr",
+})
+
+
+class _TopLevelBlockParser(HTMLParser):
+    """Retain complete top-level HTML blocks without flattening lists."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.blocks: list[str] = []
+        self._stack: list[str] = []
+        self._current: list[str] | None = None
+
+    def _append(self, value: str):
+        if self._current is not None:
+            self._current.append(value)
+
+    def _finish_if_top_level(self):
+        if self._current is not None and not self._stack:
+            self.blocks.append("".join(self._current))
+            self._current = None
+
+    def handle_starttag(self, tag, attrs):
+        if self._current is None:
+            self._current = []
+        self._append(self.get_starttag_text() or f"<{tag}>")
+        if tag not in _VOID_HTML_TAGS:
+            self._stack.append(tag)
+        self._finish_if_top_level()
+
+    def handle_startendtag(self, tag, attrs):
+        if self._current is None:
+            self._current = []
+        self._append(self.get_starttag_text() or f"<{tag} />")
+        self._finish_if_top_level()
+
+    def handle_endtag(self, tag):
+        self._append(f"</{tag}>")
+        if tag in self._stack:
+            position = len(self._stack) - 1 - self._stack[::-1].index(tag)
+            del self._stack[position:]
+        self._finish_if_top_level()
+
+    def handle_data(self, data):
+        self._append(data)
+
+    def handle_entityref(self, name):
+        self._append(f"&{name};")
+
+    def handle_charref(self, name):
+        self._append(f"&#{name};")
+
+    def handle_comment(self, data):
+        self._append(f"<!--{data}-->")
+
+    def close(self):
+        super().close()
+        if self._current:
+            self.blocks.append("".join(self._current))
+            self._current = None
+
+
+def _top_level_blocks(fragment: str) -> list[str]:
+    parser = _TopLevelBlockParser()
+    parser.feed(fragment)
+    parser.close()
+    return parser.blocks
+
+
+def _is_genuine_prose(paragraph: str) -> bool:
+    candidate = re.sub(r'<span\b[^>]*class="[^"]*\bmath display\b[^"]*"[^>]*>.*?</span>', ' ', paragraph, flags=re.S)
+    candidate = re.sub(r'<a\b(?=[^>]*class="[^"]*\bfootnote-ref\b[^"]*")[^>]*>.*?</a>', '', candidate, flags=re.S)
+    candidate = re.sub(r'<img\b[^>]*>', '', candidate, flags=re.S)
+    plain = html.unescape(re.sub(r"<[^>]+>", " ", candidate))
+    plain = re.sub(r"\s+", " ", plain).strip()
+    navigation_parts = re.findall(r"\bPart\s+[IVXLCDM]+\b", plain, flags=re.I)
+    roman_section_label = re.fullmatch(
+        r"[IVXLCDM]+\s*[.)]\s*(?:Prologue|[^.!?]{1,70}\bPerspective)\.?",
+        plain,
+        flags=re.I,
+    )
+    return bool(
+        len(plain) >= 8
+        and re.search(r"[A-Za-z]", plain)
+        and not re.fullmatch(r"(?:proof|remark|note|example|definition|theorem)\.?", plain, flags=re.I)
+        and len(navigation_parts) < 2
+        and not roman_section_label
+    )
+
+
+def _truncate_opening_list(block: str, needed: int) -> tuple[str, int]:
+    """Keep complete leading list entries until the excerpt has enough prose."""
+    match = re.fullmatch(r'\s*(<(?P<tag>ul|ol|dl)\b[^>]*>)(.*)(</(?P=tag)>)\s*', block, flags=re.S | re.I)
+    if not match:
+        return block, sum(
+            _is_genuine_prose(paragraph)
+            for paragraph in re.findall(r"<p(?:\s[^>]*)?>.*?</p>", block, flags=re.S)
         )
-        if (
-            len(plain) >= 8
-            and re.search(r"[A-Za-z]", plain)
-            and not re.fullmatch(r"(?:proof|remark|note|example|definition|theorem)\.?", plain, flags=re.I)
-            and len(navigation_parts) < 2
-            and not roman_section_label
-        ):
-            return paragraph
-    return ""
+    kept = []
+    count = 0
+    list_tag = match.group("tag").lower()
+    for item in _top_level_blocks(match.group(3)):
+        child_tag = re.match(r"\s*<([a-z0-9]+)\b", item, flags=re.I)
+        if not child_tag or child_tag.group(1).lower() not in ({"li"} if list_tag in {"ul", "ol"} else {"dt", "dd"}):
+            continue
+        kept.append(item)
+        count += sum(
+            _is_genuine_prose(paragraph)
+            for paragraph in re.findall(r"<p(?:\s[^>]*)?>.*?</p>", item, flags=re.S)
+        )
+        if count >= needed and (list_tag != "dl" or child_tag.group(1).lower() == "dd"):
+            break
+    if not kept:
+        return block, 0
+    return match.group(1) + "".join(kept) + match.group(4), count
+
+
+def opening_excerpt(fragment: str, paragraph_limit: int = 3) -> str:
+    """Keep the opening passage intact through at least three prose paragraphs."""
+    selected = []
+    paragraph_count = 0
+    started = False
+    for block in _top_level_blocks(fragment):
+        paragraphs = re.findall(r"<p(?:\s[^>]*)?>.*?</p>", block, flags=re.S)
+        genuine = sum(_is_genuine_prose(paragraph) for paragraph in paragraphs)
+        if not started:
+            if not genuine:
+                continue
+            started = True
+        if re.match(r"\s*<(?:figure|table)\b", block, flags=re.I):
+            continue
+        if re.fullmatch(r'\s*<p(?:\s[^>]*)?>\s*<img\b[^>]*>\s*</p>\s*', block, flags=re.S | re.I):
+            continue
+        if genuine and re.match(r"\s*<(?:ul|ol|dl)\b", block, flags=re.I):
+            block, genuine = _truncate_opening_list(block, paragraph_limit - paragraph_count)
+        selected.append(block)
+        paragraph_count += genuine
+        if paragraph_count >= paragraph_limit:
+            break
+    return "".join(selected)
 
 def render(project: Path, site: Path):
     manifest = json.loads((project / "tools/manifest.json").read_text())

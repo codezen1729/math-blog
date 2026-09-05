@@ -19,6 +19,7 @@ const bySlug = new Map(posts.map(post => [post.slug, post]));
 const decode = value => value.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&#x([\da-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16))).replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(+n));
 const mathIssues=[];
 const requiredPassages = {
+  'connectedness-and-compactness': ['Given a function'],
   'vector-bundles': ['A paracompact Hausdorff space is normal and also admits a partition of unity'],
   'classification-vector-bundles': ['pullback of bundles via maps', 'images lie in orthogonal summands'],
   'first-surgery': ['have no wandering Fatou components'],
@@ -57,9 +58,19 @@ for(const post of posts) {
   }
   assert.ok(post.wordCount > 75, `${post.slug} has no publishable text`);
   assert.equal(post.dek,'');
-  assert.ok(typeof post.excerptHtml === 'string' && post.excerptHtml.length > 0 && post.html.includes(post.excerptHtml), `${post.slug} has no opening preview`);
+  assert.ok(typeof post.excerptHtml === 'string' && post.excerptHtml.length > 0, `${post.slug} has no opening preview`);
+  let previewCursor = 0;
+  for (const match of post.excerptHtml.matchAll(/<p(?:\s[^>]*)?>[\s\S]*?<\/p>/g)) {
+    const position = post.html.indexOf(match[0], previewCursor);
+    assert.ok(position >= previewCursor, `${post.slug} preview is not drawn from its opening in order`);
+    previewCursor = position + match[0].length;
+  }
   assert.ok(!/the cited result|preserved in the linked TeX source|A technique-led field note/.test(post.html));
   for(const passage of requiredPassages[post.slug] ?? []) assert.ok(decode(post.html).includes(passage), `Missing source passage in ${post.slug}: ${passage}`);
+  if(post.slug==='connectedness-and-compactness') {
+    assert.ok(post.html.includes('Given a function <span class="math inline">\\(f\\in L^1(\\mu)\\)</span>, we have,'), 'Connectedness and Compactness reverted its opening application');
+    assert.ok(!decode(post.html).includes('(CMI Entrance)'), 'Connectedness and Compactness reverted an Overleaf deletion');
+  }
   if(post.slug==='classification-vector-bundles') assert.ok(post.html.includes('\\tag{1}'));
   if(post.slug==='bott-periodicity-k-theory') for(const n of [2,3,4]) assert.ok(post.html.includes(`\\tag{${n}}`));
   for(const slug of post.prerequisites) assert.ok(bySlug.has(slug) && bySlug.get(slug).order<post.order,`Invalid prerequisite ${slug}`);

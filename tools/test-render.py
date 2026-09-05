@@ -100,15 +100,18 @@ class BlogPostLinkTests(unittest.TestCase):
 
 
 class OpeningExcerptTests(unittest.TestCase):
-    def test_uses_the_first_readable_lines_even_when_they_are_short(self):
+    def test_uses_the_first_three_readable_paragraphs_in_order(self):
         fragment = (
             '<p>A short but genuine opening paragraph.</p>'
-            '<p>This much longer paragraph used to be selected merely because it met '
-            'an arbitrary teaser-length threshold.</p>'
+            '<p>The second paragraph follows it.</p>'
+            '<p>The third paragraph completes the preview.</p>'
+            '<p>The fourth paragraph belongs only on the article page.</p>'
         )
         self.assertEqual(
             opening_excerpt(fragment),
-            '<p>A short but genuine opening paragraph.</p>',
+            '<p>A short but genuine opening paragraph.</p>'
+            '<p>The second paragraph follows it.</p>'
+            '<p>The third paragraph completes the preview.</p>',
         )
 
     def test_skips_a_display_formula_and_figure_before_the_opening_prose(self):
@@ -122,9 +125,12 @@ class OpeningExcerptTests(unittest.TestCase):
             '<p>The first explanatory sentence begins here.</p>',
         )
 
-    def test_keeps_a_brief_opening_instead_of_searching_later(self):
+    def test_keeps_a_brief_opening_and_continues_forward(self):
         fragment = '<p>Why bundles?</p><p>A later and substantially longer paragraph.</p>'
-        self.assertEqual(opening_excerpt(fragment), '<p>Why bundles?</p>')
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>Why bundles?</p><p>A later and substantially longer paragraph.</p>',
+        )
 
     def test_keeps_opening_prose_while_removing_its_display_formula(self):
         fragment = (
@@ -135,7 +141,8 @@ class OpeningExcerptTests(unittest.TestCase):
         self.assertEqual(
             opening_excerpt(fragment),
             '<p>The argument begins with the following identity. '
-            '<span class="math display">\\[x^2+y^2=1\\]</span></p>',
+            '<span class="math display">\\[x^2+y^2=1\\]</span></p>'
+            '<p>A later paragraph must not replace it.</p>',
         )
 
     def test_keeps_opening_prose_while_removing_its_footnote_marker(self):
@@ -145,7 +152,8 @@ class OpeningExcerptTests(unittest.TestCase):
         )
         self.assertEqual(
             opening_excerpt(fragment),
-            '<p>The opening remains here<a href="#fn1" class="footnote-ref"><sup>1</sup></a>.</p>',
+            '<p>The opening remains here<a href="#fn1" class="footnote-ref"><sup>1</sup></a>.</p>'
+            '<p>A later paragraph must not replace it.</p>',
         )
 
     def test_skips_series_navigation_before_the_opening_prose(self):
@@ -168,6 +176,52 @@ class OpeningExcerptTests(unittest.TestCase):
         self.assertEqual(
             opening_excerpt(fragment),
             '<p>Suppose an elliptic curve is given in Weierstrass form.</p>',
+        )
+
+    def test_preserves_short_proof_labels_after_the_preview_begins(self):
+        fragment = (
+            '<p>The theorem starts the story.</p>'
+            '<p><em>Proof.</em></p>'
+            '<p>The first step follows from compactness.</p>'
+            '<p>The second step completes the argument.</p>'
+            '<p>This paragraph is beyond the preview.</p>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>The theorem starts the story.</p>'
+            '<p><em>Proof.</em></p>'
+            '<p>The first step follows from compactness.</p>'
+            '<p>The second step completes the argument.</p>',
+        )
+
+    def test_preserves_list_structure_in_the_opening_passage(self):
+        fragment = (
+            '<p>There are three routes into the subject.</p>'
+            '<ul><li><p>The geometric route.</p></li>'
+            '<li><p>The algebraic route.</p></li>'
+            '<li><p>The analytic route.</p></li>'
+            '<li><p>The fourth route is beyond the preview.</p></li></ul>'
+            '<p>The discussion after the list belongs to the article.</p>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>There are three routes into the subject.</p>'
+            '<ul><li><p>The geometric route.</p></li>'
+            '<li><p>The algebraic route.</p></li></ul>',
+        )
+
+    def test_preserves_and_limits_a_description_list(self):
+        fragment = (
+            '<p>The problems begin here.</p><dl>'
+            '<dt>1.</dt><dd><p>The first problem.</p></dd>'
+            '<dt>2.</dt><dd><p>The second problem.</p></dd>'
+            '<dt>3.</dt><dd><p>The third problem.</p></dd></dl>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<p>The problems begin here.</p><dl>'
+            '<dt>1.</dt><dd><p>The first problem.</p></dd>'
+            '<dt>2.</dt><dd><p>The second problem.</p></dd></dl>',
         )
 
 
