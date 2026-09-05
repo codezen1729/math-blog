@@ -5,6 +5,20 @@ import { normalizeBlogRoute, personalWebpage, blogTitle, blogPageMetadata, phase
 import { articleFigureWidth, vectorFigureMinimum } from '../lib/figure-sizing.ts';
 
 const posts = JSON.parse(readFileSync(new URL('../lib/generated-posts.json', import.meta.url), 'utf8'));
+const htmlTokens = value => [...value.matchAll(/<!--[\s\S]*?-->|<[^>]+>|[^<]+/g)]
+  .map(match => match[0])
+  .filter(token => token.startsWith('<') || token.trim());
+
+function assertOpeningPrefix(post) {
+  const article = htmlTokens(post.html);
+  const preview = htmlTokens(post.excerptHtml);
+  let cursor = 0;
+  while (cursor < preview.length && preview[cursor] === article[cursor]) cursor++;
+  assert.ok(
+    cursor === preview.length || preview.slice(cursor).every(token => /^<\/[a-z][^>]*>$/i.test(token)),
+    `${post.slug} preview omits or reorders material from the article opening`,
+  );
+}
 
 test('the blog is the front page and old home links remain usable', () => {
   for (const hash of ['', '#', '#/', '#/home', '#home', '#/home/']) assert.equal(normalizeBlogRoute(hash), 'blog');
@@ -49,8 +63,11 @@ test('publication order and the Olympiad series label come from the current mani
   const olympiadPosts = posts.filter(post => post.phase === 7);
   assert.ok(olympiadPosts.length > 0);
   assert.ok(olympiadPosts.every(post => post.phaseLabel === 'Lemma Book (Olympiad Days)'));
+  const thermodynamicFormalism = posts.find(post => post.slug === 'thermodynamical-formalism-hausdorff-dimension');
+  assert.equal(thermodynamicFormalism.phase, 6);
+  assert.equal(thermodynamicFormalism.phaseLabel, 'Ergodic Theory');
 });
-test('every blog preview begins at the first passage and continues in order', () => {
+test('every blog preview is a gap-free prefix with at least three readable paragraphs', () => {
   const candidate = paragraph => paragraph
     .replace(/<span\b[^>]*class="[^"]*\bmath display\b[^"]*"[^>]*>[\s\S]*?<\/span>/g, ' ')
     .replace(/<a\b(?=[^>]*class="[^"]*\bfootnote-ref\b[^"]*")[^>]*>[\s\S]*?<\/a>/g, '')
@@ -73,23 +90,23 @@ test('every blog preview begins at the first passage and continues in order', ()
     assert.ok(genuine.length >= 3, post.slug);
     assert.ok(previewGenuine.length >= 3, post.slug);
     assert.equal(previewGenuine[0], genuine[0], post.slug);
-    let position = -1;
-    for (const paragraph of previewParagraphs) {
-      position = post.html.indexOf(paragraph, position + 1);
-      assert.notEqual(position, -1, post.slug);
-    }
+    assertOpeningPrefix(post);
   }
 });
-test('blog previews skip manuscript navigation and section-label furniture', () => {
+test('blog previews retain opening headings, labels, navigation, formulas and figures', () => {
   for (const slug of ['third-surgery', 'mcmullens-surgery', 'mcmullens-surgery-finite-symmetry']) {
-    assert.doesNotMatch(posts.find(post => post.slug === slug).excerptHtml, /Part I[\s\S]*Part II[\s\S]*Part III/);
+    assert.match(posts.find(post => post.slug === slug).excerptHtml, /Part I[\s\S]*Part II[\s\S]*Part III/);
   }
   for (const slug of ['elliptic-curves-algebraic', 'elliptic-curves-harmonic', 'abels-theorem']) {
-    assert.doesNotMatch(posts.find(post => post.slug === slug).excerptHtml, /^<p>[IVXLCDM]+\s*[.)]/);
+    assert.match(posts.find(post => post.slug === slug).excerptHtml, /^<p>(?:<[^>]+>)*[IVXLCDM]+\s*[.)]/);
   }
   for (const slug of ['liouville-and-morera', 'elliptic-curves-geometric', 'locally-trivial-bundles']) {
     assert.match(posts.find(post => post.slug === slug).excerptHtml, /<(?:ul|ol)(?:\s[^>]*)?>/);
   }
+  const connectedness = posts.find(post => post.slug === 'connectedness-and-compactness').excerptHtml;
+  assert.match(connectedness, /^<h3[^>]*>Tool 2 — Real-Part Formula for the Modulus<\/h3>/);
+  assert.match(connectedness, /\\\[\|z\|=\\sup_\{\\theta\}\\operatorname\{Re\}/);
+  assert.match(connectedness, /src="figures\/complex-analysis\/note1-fig-01\.svg"/);
 });
 test('the blog sidebar retains every supplied recommendation', () => {
   const app = readFileSync(new URL('../components/site-app.tsx', import.meta.url), 'utf8');
@@ -105,6 +122,8 @@ test('the blog sidebar retains every supplied recommendation', () => {
   ];
   assert.match(app, /<h2>Blog Recommendations<\/h2><ul className="journal-topics journal-blogroll">/);
   assert.doesNotMatch(app, /href="#\/recommendations"/);
+  assert.ok(app.indexOf('<h2>Topics</h2>') < app.indexOf('<h2>In this series</h2>'));
+  assert.ok(app.indexOf('<h2>In this series</h2>') < app.indexOf('<h2>Blog Recommendations</h2>'));
   for (const url of urls) assert.match(app, new RegExp(url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 });
 test('vector figures enlarge with consistent labels and drawing-specific canvas space', () => {

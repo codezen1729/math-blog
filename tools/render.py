@@ -228,21 +228,12 @@ def _truncate_opening_list(block: str, needed: int) -> tuple[str, int]:
 
 
 def opening_excerpt(fragment: str, paragraph_limit: int = 3) -> str:
-    """Keep the opening passage intact through at least three prose paragraphs."""
+    """Keep a gap-free opening prefix through at least three prose paragraphs."""
     selected = []
     paragraph_count = 0
-    started = False
     for block in _top_level_blocks(fragment):
         paragraphs = re.findall(r"<p(?:\s[^>]*)?>.*?</p>", block, flags=re.S)
         genuine = sum(_is_genuine_prose(paragraph) for paragraph in paragraphs)
-        if not started:
-            if not genuine:
-                continue
-            started = True
-        if re.match(r"\s*<(?:figure|table)\b", block, flags=re.I):
-            continue
-        if re.fullmatch(r'\s*<p(?:\s[^>]*)?>\s*<img\b[^>]*>\s*</p>\s*', block, flags=re.S | re.I):
-            continue
         if genuine and re.match(r"\s*<(?:ul|ol|dl)\b", block, flags=re.I):
             block, genuine = _truncate_opening_list(block, paragraph_limit - paragraph_count)
         selected.append(block)

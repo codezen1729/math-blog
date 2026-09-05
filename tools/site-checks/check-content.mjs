@@ -17,6 +17,19 @@ const posts = JSON.parse(readFileSync(new URL('lib/generated-posts.json', root),
 const expectedPublicPostCount = 84;
 const bySlug = new Map(posts.map(post => [post.slug, post]));
 const decode = value => value.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&#x([\da-f]+);/gi,(_,n)=>String.fromCodePoint(parseInt(n,16))).replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(+n));
+const htmlTokens = value => [...value.matchAll(/<!--[\s\S]*?-->|<[^>]+>|[^<]+/g)]
+  .map(match => match[0])
+  .filter(token => token.startsWith('<') || token.trim());
+const assertOpeningPrefix = post => {
+  const article = htmlTokens(post.html);
+  const preview = htmlTokens(post.excerptHtml);
+  let cursor = 0;
+  while (cursor < preview.length && preview[cursor] === article[cursor]) cursor++;
+  assert.ok(
+    cursor === preview.length || preview.slice(cursor).every(token => /^<\/[a-z][^>]*>$/i.test(token)),
+    `${post.slug} preview omits or reorders material from the article opening`,
+  );
+};
 const mathIssues=[];
 const requiredPassages = {
   'connectedness-and-compactness': ['Given a function'],
@@ -39,6 +52,8 @@ assert.equal(posts.filter(post=>post.phase===1).length,12);
 assert.ok(bySlug.has('polynomial-like-maps-and-the-straightening-theorem'));
 assert.ok(posts.filter(post=>post.phase===3).every(post=>post.phaseLabel==='K-theory'));
 assert.ok(posts.filter(post=>post.phase===4).every(post=>post.phaseLabel==='Complex Dynamics'));
+assert.equal(bySlug.get('thermodynamical-formalism-hausdorff-dimension').phase,6);
+assert.equal(bySlug.get('thermodynamical-formalism-hausdorff-dimension').phaseLabel,'Ergodic Theory');
 for(const post of posts) {
   assert.equal(typeof post.title, 'string', `${post.slug} has no source-derived title`);
   assert.ok(post.title.length > 0 && post.title === post.title.trim(), `${post.slug} has an invalid source-derived title`);
@@ -59,17 +74,23 @@ for(const post of posts) {
   assert.ok(post.wordCount > 75, `${post.slug} has no publishable text`);
   assert.equal(post.dek,'');
   assert.ok(typeof post.excerptHtml === 'string' && post.excerptHtml.length > 0, `${post.slug} has no opening preview`);
-  let previewCursor = 0;
-  for (const match of post.excerptHtml.matchAll(/<p(?:\s[^>]*)?>[\s\S]*?<\/p>/g)) {
-    const position = post.html.indexOf(match[0], previewCursor);
-    assert.ok(position >= previewCursor, `${post.slug} preview is not drawn from its opening in order`);
-    previewCursor = position + match[0].length;
-  }
+  assertOpeningPrefix(post);
   assert.ok(!/the cited result|preserved in the linked TeX source|A technique-led field note/.test(post.html));
   for(const passage of requiredPassages[post.slug] ?? []) assert.ok(decode(post.html).includes(passage), `Missing source passage in ${post.slug}: ${passage}`);
   if(post.slug==='connectedness-and-compactness') {
     assert.ok(post.html.includes('Given a function <span class="math inline">\\(f\\in L^1(\\mu)\\)</span>, we have,'), 'Connectedness and Compactness reverted its opening application');
     assert.ok(!decode(post.html).includes('(CMI Entrance)'), 'Connectedness and Compactness reverted an Overleaf deletion');
+    const opening = [
+      'Tool 2 — Real-Part Formula for the Modulus',
+      '\\[|z|=\\sup_{\\theta}\\operatorname{Re}\\bigl(e^{i\\theta}z\\bigr).\\]',
+      'src="figures/complex-analysis/note1-fig-01.svg"',
+      'Given a function <span class="math inline">\\(f\\in L^1(\\mu)\\)</span>, we have,',
+    ];
+    let cursor = -1;
+    for (const passage of opening) {
+      cursor = post.excerptHtml.indexOf(passage, cursor + 1);
+      assert.ok(cursor >= 0, `Connectedness preview is missing or reordering its opening: ${passage}`);
+    }
   }
   if(post.slug==='classification-vector-bundles') assert.ok(post.html.includes('\\tag{1}'));
   if(post.slug==='bott-periodicity-k-theory') for(const n of [2,3,4]) assert.ok(post.html.includes(`\\tag{${n}}`));

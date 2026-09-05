@@ -114,14 +114,18 @@ class OpeningExcerptTests(unittest.TestCase):
             '<p>The third paragraph completes the preview.</p>',
         )
 
-    def test_skips_a_display_formula_and_figure_before_the_opening_prose(self):
+    def test_preserves_a_display_formula_and_figure_before_the_opening_prose(self):
         fragment = (
+            '<h3>Tool 2 — Real-Part Formula for the Modulus</h3>'
             '<p><span class="math display">x^2</span></p>'
             '<p><img src="figure.svg"></p>'
             '<p>The first explanatory sentence begins here.</p>'
         )
         self.assertEqual(
             opening_excerpt(fragment),
+            '<h3>Tool 2 — Real-Part Formula for the Modulus</h3>'
+            '<p><span class="math display">x^2</span></p>'
+            '<p><img src="figure.svg"></p>'
             '<p>The first explanatory sentence begins here.</p>',
         )
 
@@ -156,7 +160,7 @@ class OpeningExcerptTests(unittest.TestCase):
             '<p>A later paragraph must not replace it.</p>',
         )
 
-    def test_skips_series_navigation_before_the_opening_prose(self):
+    def test_preserves_series_navigation_before_the_opening_prose(self):
         fragment = (
             '<p><a href="#one">McMullen’s Surgery: Part I</a> '
             '<span class="math inline">\\(\\,\\cdot\\,\\)</span> '
@@ -165,17 +169,43 @@ class OpeningExcerptTests(unittest.TestCase):
         )
         self.assertEqual(
             opening_excerpt(fragment),
+            '<p><a href="#one">McMullen’s Surgery: Part I</a> '
+            '<span class="math inline">\\(\\,\\cdot\\,\\)</span> '
+            '<a href="#two">Part II</a> · <a href="#three">Part III</a></p>'
             '<p>The construction begins with a rational map.</p>',
         )
 
-    def test_skips_roman_numeral_section_furniture(self):
+    def test_preserves_roman_numeral_section_labels(self):
         fragment = (
             '<p>II) Algebraic Perspective</p>'
             '<p>Suppose an elliptic curve is given in Weierstrass form.</p>'
         )
         self.assertEqual(
             opening_excerpt(fragment),
+            '<p>II) Algebraic Perspective</p>'
             '<p>Suppose an elliptic curve is given in Weierstrass form.</p>',
+        )
+
+    def test_preserves_intervening_figures_and_headings_without_gaps(self):
+        fragment = (
+            '<h3>The opening tool</h3>'
+            '<p>The first paragraph introduces it.</p>'
+            '<figure><img src="one.svg"></figure>'
+            '<h4>An application</h4>'
+            '<p>The second paragraph applies it.</p>'
+            '<table><tr><td>A diagrammatic step.</td></tr></table>'
+            '<p>The third paragraph completes the preview.</p>'
+            '<p>The fourth paragraph belongs only in the article.</p>'
+        )
+        self.assertEqual(
+            opening_excerpt(fragment),
+            '<h3>The opening tool</h3>'
+            '<p>The first paragraph introduces it.</p>'
+            '<figure><img src="one.svg"></figure>'
+            '<h4>An application</h4>'
+            '<p>The second paragraph applies it.</p>'
+            '<table><tr><td>A diagrammatic step.</td></tr></table>'
+            '<p>The third paragraph completes the preview.</p>',
         )
 
     def test_preserves_short_proof_labels_after_the_preview_begins(self):

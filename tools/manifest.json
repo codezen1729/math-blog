@@ -570,8 +570,8 @@
     "slug": "thermodynamical-formalism-hausdorff-dimension",
     "title": "Thermodynamical Formalism and Hausdorff Dimension",
     "collection": "thermodynamic-formalism",
-    "phase": 4,
-    "phaseLabel": "Complex Dynamics",
+    "phase": 6,
+    "phaseLabel": "Ergodic Theory",
     "initialSha256": "b327bf698bc9ee1188ab89fd720e33cd59ee3d821a6faf7a7de3ec84a235c0fc",
     "file": "28-thermodynamical-formalism-hausdorff-dimension.tex"
   },
