@@ -250,6 +250,55 @@ This has a finite cover. Let $\{U_j\}_{j=1}^n$ be the finite balls that cover
 $\gamma|_{[0,1]}$. If it is not already present, add the ball
 $B_{\varepsilon_{\gamma(0)}}(\gamma(0))$ to the finite collection.
 
+Here is a first attempt at arranging those balls. As $[0,1]$ is connected, every open set in the finite cover will have nonempty intersection with at least one open set other than itself in the finite cover. Let $B_{\varepsilon_{\gamma(i)}}(\gamma(i))$ be such that
+\[
+  B_{\varepsilon_{\gamma(i)}}(\gamma(i))
+  \cap B_{\varepsilon_{\gamma(0)}}(\gamma(0))\neq\varnothing.
+\]
+Let $i$ be the smallest value in $[0,1]$ for which the first ball centered at $\gamma(i)$ is in $\{U_j\}$ and
+\[
+B_{\varepsilon_{\gamma(i)}}(\gamma(i))
+\cap B_{\varepsilon_{\gamma(0)}}(\gamma(0))\neq\varnothing.
+\]
+Note that, as $\gamma|_{[0,i]}$ is connected,
+\[
+  \gamma|_{[0,i]}
+  \subset
+  B_{\varepsilon_{\gamma(0)}}(\gamma(0))
+  \cup B_{\varepsilon_{\gamma(i)}}(\gamma(i));
+\]
+otherwise, the minimality would be contradicted. Arrange
+$U_{i_m}=B_{\varepsilon_{\gamma(i_m)}}(\gamma(i_m))$ so that minimality is demanded consecutively; that is,
+\[
+  \gamma|_{[i_m,i_{m+1}]}
+  \subset
+  B_{\varepsilon_{\gamma(i_m)}}(\gamma(i_m))
+  \cup
+  B_{\varepsilon_{\gamma(i_{m+1})}}(\gamma(i_{m+1})),
+\]
+where $\{i_m\}$ partitions $[0,1]$. Again, if
+$B_{\varepsilon_{\gamma(1)}}(\gamma(1))$ does not belong to $\{U_j\}$, just add it. Now $\gamma_{\gamma(0)\to\gamma(i_1)\to\cdots\to\gamma(1)}$ is the required polygonal path. The following figure illustrates the idea in the proof.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.70\textwidth]{note3-fig-10.pdf}
+\end{figure}
+
+Thus there exists
+$B_{\varepsilon_{\gamma(j)}}(\gamma(j))$, with $j<i$, such that
+\[
+  B_{\varepsilon_{\gamma(j)}}(\gamma(j))
+  \cap B_{\varepsilon_{\gamma(0)}}(\gamma(0))\neq\varnothing.
+\]
+One can ``see'' the polygonal paths here. After some stage we will have
+\[
+  B_{\varepsilon_{\gamma(i_m)}}(\gamma(i_m))
+  \cap B_{\varepsilon_{\gamma(1)}}(\gamma(1))\neq\varnothing.
+\]
+We stop there, piecewise. One can observe here that, by construction, $\gamma_p$ and $\gamma$ are piecewise homotopic.
+
+\textbf{Correction to the preceding minimality argument.}
+The minimality argument as presented will not work. One must tweak it.
 Let
 \[
   i=\inf\left(

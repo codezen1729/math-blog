@@ -4,9 +4,77 @@
 \begin{document}
 \section*{Separation by a Polygonal Path/Arc and Holomorphic Lifting}
 % BLOG-CONTENT-BEGIN
+\textit{Following the framework of T. Tao.}
+
 \subsection*{Separation by a Polygonal Path/Arc}
 
 Let $U$ be a bounded domain in $\mathbb C$. Then $U$ is simply connected if and only if $\mathbb C\setminus U$ is connected.
+
+\paragraph{Polygonal-separation sketch.}
+Let $z_0\in\mathbb C\setminus U$, and say that $z_0$ is separated from $\infty$ by $U$. First note that $\mathbb C\setminus U$ cannot have two unbounded components. Let $z_0$ be in one of the bounded components, say $z_0\in V$. Choose $R$ such that $\overline{B_R(z_0)}$ contains $U$ and the bounded component $V$. Let $x\in\partial\overline{B_R(z_0)}$. The segment $\overline{xz_0}$ intersects $U$ nontrivially. Choose a point of this intersection and a small closed ball $K_x\subset U$ that the nearby segments $\overline{x'z_0}$ continue to meet. The corresponding neighbourhoods of $x$ cover $\partial\overline{B_R(z_0)}$, so a finite subcover gives a compact set
+\[
+  F:=K_{x_1}\cup\cdots\cup K_{x_m}\subset U
+\]
+that meets every segment $\overline{xz_0}$, for $x\in\partial\overline{B_R(z_0)}$, and has only finitely many components. In the domain $U$, join those components by polygonal paths, using the fact that $U$ is path-connected, and let this set be $S$. The set $S$ is again compact. Consider a finite cover of $S$ by balls in $U$, say $\{B_n\}_{n=1}^k$, such that $\bigcup_nB_n$ is connected. Use the decomposition theorem proved for $\partial(\bigcup_nB_n)$, and let $\gamma$ be the polygonal arc that contains the other arcs. Then \(z_0\in\operatorname{int}(\gamma),\)
+because $\overline{z_0x}$ cuts $\gamma$ too many times. Hence
+\[
+  W_\gamma(z_0)\ne0,
+\]
+so $U$ is not simply connected. The following figure illustrates the construction.
+
+
+\subsubsection*{Construction of the Separating Curve $\gamma$}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.60\textwidth]{note8-fig-01.pdf}
+
+\end{figure}
+
+This is the technique of separation by polygonal arcs. Refer to Tao's Notes 13, proof of the Jordan curve theorem, to see another instance. ``Store this image in your mind!''
+
+
+The converse is relatively simple. Let $\mathbb C\setminus U$ be connected, where $U$ is a bounded domain. Then $U$ is simply connected. Let us prove the contrapositive.
+
+
+If $U$ is not simply connected, then there exists a closed curve $\gamma$ in $U$ that is not null-homotopic there. Let $H$ be a straight-line homotopy from $\gamma$ to a point in $\mathbb C$. Since it is not a homotopy in $U$, one has $H^*\cap U^c\ne\varnothing$. In fact, $H^*\cap\partial U\ne\varnothing$: otherwise the connected set $H^*$ would have the separation
+\[
+  \bigl(U\cap H^*\bigr)
+  \cup
+  \bigl((\mathbb C\setminus\overline U)\cap H^*\bigr)
+  =H^*.
+\]
+Note that the images of $H$ and $\partial U$ are both compact.
+By the complex tube lemma, one may replace $\gamma$ by a polygonal curve, and then by one of the simple closed polygons in its decomposition that is not null-homotopic. If the interior of this simple polygon were contained in $U$, the polygon would be null-homotopic in $U$. Therefore
+\[
+  \operatorname{int}(\gamma)\cap U^c\ne\varnothing.
+\]
+Let $x\in\operatorname{int}(\gamma)\cap U^c$. The component of $U^c$ containing $x$ cannot also meet $\operatorname{ext}(\gamma)$, since a connected subset meeting both sides would meet $\gamma\subset U$. Thus $x$ belongs to a bounded component of $U^c$.
+
+\textbf{Remark.} By the complex tube lemma, $U$ is simply connected if all simple closed curves in $U$ are null-homotopic. So one can circumvent weird curves, such as space-filling curves, and use simple geometry.
+
+\textbf{Exercise.} Use this construction to prove the Jordan arc theorem.
+
+\paragraph{Sketch.} First establish that if $\gamma_0$ is a Jordan arc and $\delta>0$, then for $\varepsilon>0$ there is an arc \(\gamma_\varepsilon^*\subset N_\delta(\gamma_0)\)
+with
+\[
+  \gamma_\varepsilon(0)=\gamma_0(0),
+  \qquad
+  \gamma_\varepsilon(1)=\gamma_0(1),
+\]
+such that $\gamma_\varepsilon$ is homotopic, as a curve with fixed endpoints and up to reparametrization, to $\gamma_0$ in
+\[
+  N_\delta(\gamma_0):=
+  \{z\in\mathbb C:\operatorname{dist}(z,\gamma_0)<\delta\}.
+\]
+Then prove that
+\[
+  W_{\gamma_0}(z_0)=0
+  \qquad\text{for all }z_0\in(\gamma_0^*)^c.
+\]
+Take any bounded component of $(\gamma_0^*)^c$ and, using the separation-via-arc technique, contradict the fact that $W_{\gamma_0}(z_0)=0$.
+
+
 
 First note, very quickly, that a continuous branch of the logarithm on a domain \(U\subset\mathbb C\setminus\{0\}\) is a continuous function \(f:U\to\mathbb C\) such that
 \[
@@ -144,6 +212,8 @@ One way to construct a logarithm is by looking at appropriate domains where $1/z
 
 \subsection*{Definition: Covering Spaces and Covering Maps}
 
+Refer to Tao. But here is an image to remember!
+
 The map $f:M\to N$ is a covering map if, for every $x\in N$, there exists $U\subseteq N$ such that
 \[
   f^{-1}(U)=\bigsqcup_\alpha V_\alpha,
@@ -167,7 +237,7 @@ is a homeomorphism.
 
 \end{figure}
 
-This setup leads to the lifting lemma.
+Given this setup, we have the lifting lemma, whose proof again is in Tao. Let us merely state it. Refer to Munkres for a more visual proof.
 
 \subsection*{Tool 29 — Lifting Lemma}
 
@@ -186,6 +256,7 @@ where $U$ is a simply connected domain and $0\notin U$. The map
   e^z:\mathbb C\to\mathbb C\setminus\{0\}
 \]
 is a covering map. (Exercise.) Hence there exists a holomorphic function $f:U\to\mathbb C$ such that \(\exp(f)=z.\)
+Done!
 
 
 More generally, if $h$ is holomorphic and nonvanishing on the simply connected domain $U$, then there exists a holomorphic $g$ such that \(e^{g(z)}=h(z).\)
@@ -194,5 +265,48 @@ If we look at
   z^n:\mathbb C\setminus\{0\}\to\mathbb C\setminus\{0\},
 \]
 which is locally a diffeomorphism, then there exists $g$ such that \(g(z)^n=h(z).\)
+If $h$ has a zero of order $n$ at $0$, one writes
+\[
+  h(z)=z^nw(z)
+\]
+where $w$ is nonvanishing near $0$. Taking a local $n$th root $w(z)=g(z)^n$ gives \(h(z)=z^ng(z)^n=(zg(z))^n,\)
+a restatement of the local factorization theorem.
+
+\subsection*{Little Picard's Theorem}
+
+Here is a slick proof of Little Picard's theorem.
+
+
+Let $f(\mathbb C)$ avoid $0$ and $1$, WLOG. Then \(f=e^{2\pi i g}.\)
+The set $g(\mathbb C)$ avoids the integers.
+
+The function $\cos z:\mathbb C\setminus\{\pi j\}\to\mathbb C$ is a local diffeomorphism; hence
+\[
+  g=\cos(h).
+\]
+Since $\cos(iz)=\cosh(z)$, the set $h(\mathbb C)$ now avoids
+\[
+  \pm i\cosh^{-1}(j)+2\pi k,
+\]
+or, after solving the quadratic equation in $e^z$,
+\[
+  \pm i\log\bigl(m\pm\sqrt{m^2-1}\bigr)+2\pi k.
+\]
+There exists a uniform constant $c$ such that
+\[
+  D(w,c)\nsubseteq h(\mathbb C),
+\]
+where $c$ is larger than the diameter of the lattice above. By Bloch's theorem,
+\[
+  D\bigl(w_R,c'|h'(z_0)|R\bigr)\subset h\bigl(D(z_0,R)\bigr)
+  \subset h(\mathbb C)
+\]
+for some $w_R\in\mathbb C$. Since no disk of radius $c$ is contained in $h(\mathbb C)$, one has $c'|h'(z_0)|R<c$.
+Let $c''=c/c'$. Then
+\[
+  |h'(z_0)|<\frac{c''}{R}
+  \qquad(\forall R>0).
+\]
+Therefore $h$ is constant, so $g$ is constant and $f$ is constant.
 % BLOG-CONTENT-END
 \end{document}

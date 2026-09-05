@@ -5,6 +5,16 @@
 \begin{document}
 \section*{Standard Inequalities and Ingenious Cauchy–Schwarz Applications}
 % BLOG-CONTENT-BEGIN
+\subsection{A motivating inequality}
+Let $a,b,c>0$ satisfy
+$0<\sqrt a+\sqrt b+\sqrt c\leq3\sqrt2$, and establish
+\[
+\frac{a^2+2a-2}{a\sqrt b}+\frac{b^2+2b-2}{b\sqrt c}
++\frac{c^2+2c-2}{c\sqrt a}\leq3\sqrt2+\ln8.
+\]
+As written, the challenge is false: $a=1/4$, $b=1$, and $c=729/100$
+satisfy the hypothesis, while the left-hand side is approximately $12.652$.
+
 \setcounter{theorem}{70}\begin{lemma}[Arithmetic--geometric mean inequality]\label{lemma:lb1-74}
 For all positive reals $a_1,a_2,\ldots,a_n$,
 \[\frac{a_1+a_2+\cdots+a_n}{n}\geq\sqrt[n]{a_1a_2\cdots a_n},\]
@@ -160,6 +170,33 @@ In fact, P. K. Hung thought of a generalization and conjectured that
 \geq\frac1{a_1^2}+\frac4{a_1^2+a_2^2}+\cdots+
 \frac{n^2}{a_1^2+a_2^2+\cdots+a_n^2}.\]
 
+\begin{lemma}[Reverse Cauchy]
+The best way to apply Cauchy's inequality is what I call the strategy of reverse Cauchy.
+Every Olympiad student knows old and modern Cauchy; its modified form is
+\[
+\frac{x_1^2}{a_1}+\cdots+\frac{x_n^2}{a_n}
+\geq\frac{(x_1+\cdots+x_n)^2}{a_1+\cdots+a_n}.
+\]
+\end{lemma}
+\paragraph{Application.}
+For $a,b,c>0$, prove that
+\[
+\frac1{a+b}+\frac1{b+c}+\frac1{c+a}+\frac1{2\sqrt[3]{abc}}
+\geq\frac{(a+b+c+\sqrt[3]{abc})^2}{(a+b)(b+c)(c+a)}.
+\]
+Before employing this divine technique of reverse Cauchy, let us jot down some trivial identities that can be used as lemmas.
+\begin{lemma}[Four useful identities]\label{lemma:lb1-29}
+\begin{align*}
+(a+b)(b+c)(c+a)&=a^2(b+c)+b^2(c+a)+c^2(a+b)+2abc,\\
+(a+b)(b+c)(c+a)&=ab(a+b)+bc(b+c)+ca(c+a)+2abc,\\
+(a+b-c)(b+c-a)(c+a-b)
+&=a(b-a)(a-c)+b(c-b)(b-a)\\
+&\quad+c(a-c)(c-b)+abc,\\
+(a-b)(b-c)(c-a)&=a^2(c-b)+b^2(a-c)+c^2(b-a).
+\end{align*}
+\end{lemma}
+These are the most celebrated lemmas in the IMO.
+
 \subsection{Q.E.D.s using Cauchy--Schwarz}
 \paragraph{Iran (1998).}
 Prove that if $x,y,z\geq1$ satisfy $1/x+1/y+1/z=2$, then
@@ -189,9 +226,76 @@ Rather, as usual, let us do something unusual.
 \sqrt{\sum_{\mathrm{cyc}}\left(\frac{2y+2z-x}{3}\right)^2}.
 \end{aligned}
 \]
-The calculation uses the following identity:
+You know what? We have thus reached an unusual fact. Look below!
 \[\sum_{\mathrm{cyc}}\left(\frac{2x+2y-z}{3}\right)^2=\sum x^2.\]
-The identity is valid for all real $x,y,z$, and the result follows.
+Wow! A.T.: always true. Q.E.D.!
+
+\paragraph{A problem that took Titu Andreescu several weeks to resolve.}
+For positive reals $x,y,z,a,b,c$ such that $xy+yz+zx=3$, prove that
+\[\frac a{b+c}(y+z)+\frac b{c+a}(z+x)+\frac c{a+b}(x+y)\geq3.\]
+It is sufficient to establish
+\[\frac a{b+c}(y+z)+\frac b{c+a}(z+x)+\frac c{a+b}(x+y)
+\geq\sqrt{3(xy+yz+zx)}.\]
+We may assume that $x+y+z=1$. How?
+Our inequality takes the form
+\[\frac a{b+c}+\frac b{c+a}+\frac c{a+b}
+\geq\sqrt{3(xy+yz+zx)}+\frac a{b+c}x+\frac b{c+a}y+\frac c{a+b}z.\]
+By Cauchy,
+\[\frac a{b+c}x+\frac b{c+a}y+\frac c{a+b}z
+\leq\sqrt{\sum_{\mathrm{cyc}}\left(\frac a{b+c}\right)^2
+\sum_{\mathrm{cyc}}x^2}.\]
+We must now prove
+\[\sqrt{\sum\left(\frac a{b+c}\right)^2\sum x^2}
++\sqrt{3(xy+yz+zx)}
+\mathrel{\stackrel{?}{\leq}}\sum\frac a{b+c}.\]
+Since $\sqrt{12ABC}\leq(3B+4AC)/2$, we get
+\[
+\begin{aligned}
+\sqrt{12ABC}+AB+3C&\leq\frac{3B}{2}+2AC+AB+3C,\\
+(\sqrt{AB}+\sqrt{3C})^2&\leq\frac32B+2AC+AB+3C
+=\left(\frac32+A\right)(B+2C).
+\end{aligned}
+\]
+Put $A=\sum(a/(b+c))^2$, $B=\sum x^2$, and $C=\sum xy$. Then
+\[
+\sqrt{\sum\left(\frac a{b+c}\right)^2\sum x^2}+\sqrt{3(xy+yz+zx)}
+\leq\sqrt{\left(\frac32+\sum\left(\frac a{b+c}\right)^2\right)
+\left(\sum x^2+2\sum xy\right)}.
+\]
+Thus it remains to prove
+\[
+\frac32+\sum\left(\frac a{b+c}\right)^2
+\mathrel{\stackrel{?}{\leq}}\left(\sum\frac a{b+c}\right)^2.
+\]
+Expanding the right-hand side reduces this to
+\[\sum_{\mathrm{cyc}}\frac{ab}{(b+c)(c+a)}\mathrel{\stackrel{?}{\geq}}\frac34.\]
+In full,
+\[
+\frac{ab}{(b+c)(c+a)}+\frac{bc}{(c+a)(a+b)}+\frac{ca}{(a+b)(b+c)}
+\mathrel{\stackrel{?}{\geq}}\frac34
+\]
+is equivalent to
+\[
+ab(a+b)+bc(b+c)+ca(c+a)\geq6abc,
+\]
+which follows from AM--GM applied to the six terms. True! W$^5$; Q.E.D.
+
+``Did you notice that if $x+y+z=1$, then $(x+y+z)^2=1$?
+Thus $x^2+y^2+z^2+2(xy+yz+zx)=1$, so
+$x^2+y^2+z^2=-5$, but $\sum x^2>0$.
+Therefore we conclude that Titu lost his mind!'' Or\ldots
+
+A close inspection justifies the normalization above.
+We have $xy+yz+zx=3$. Let $x+y+z=k$, and put
+$X=x/k$, $Y=y/k$, and $Z=z/k$. Then $X+Y+Z=1$.
+Divide the homogeneous inequality by $k$ to obtain
+\[
+\frac a{b+c}(Y+Z)+\frac b{c+a}(Z+X)+\frac c{a+b}(X+Y)
+\geq\sqrt{3(XY+YZ+ZX)}.
+\]
+It does not matter whether you use capital or small letters: finally, we intend to eliminate them all.
+Nowhere in the proof do we use both $x+y+z=1$ and $xy+yz+zx=3$.
+Thus the move is perfectly justified!
 
 
 \paragraph{A square-root heuristic: China (1982).}
@@ -232,7 +336,7 @@ If $x\sqrt{y^2+z^2}\geq y\sqrt{x^2+z^2}$, substitute in I and the result follows
 But that inequality need not hold: if $y\sqrt{x^2+z^2}\geq x\sqrt{y^2+z^2}$, substitute in II.
 The conclusion follows.
 
-The following problem grew out of a collaboration with Vedant.
+Vedant and I created the following problem.
 Define $x_k=(a^k+b^k+c^k)/3$, where $a,b,c>0$.
 Given $abc\geq3\sqrt3$, prove that
 \[
@@ -240,15 +344,20 @@ x_1^6\left(\frac{x_1^2-x_1+1}{x_1^2+1}\right)
 +x_2^3\left(\frac{x_2^2-x_2+1}{x_2^2+1}\right)
 +x_3^2\left(\frac{x_3^2-x_3+1}{x_3^2+1}\right)>\frac32.
 \]
-It is a useful exercise in applying these inequalities.
+The problem is really nice from an application point of view. Take it as
+a challenge from my side!
 
 % Source page 5 - left
-Here is a more difficult inequality.
-\paragraph{A stronger inequality.}
+I recently made an inequality that is really awesome. Take this as another challenge!
+\paragraph{Mission impossible.}
 Define $x_k=a^k+b^k+c^k$ for positive $a,b,c$.
 Given $abc\geq e/\pi$, prove that
-$x_2^3+x_3^2+x_6\geq10^4/1999$.
-The inequality is strict because equality cannot be attained; the constants $10^4/1999$ and $e/\pi$ are numerical parameters rather than structural features of the proof.
+$x_2^3+x_3^2+x_6>10^4/1999$.
+\emph{Dangerous stuff.}
+Oops, a little misprint: the inequality is strict. Can you find why
+equality cannot be achieved? Anyway, it is very difficult. It is beautiful
+because my date of birth is 10-4-1999; also, $abc\geq e/\pi$ has nothing
+to do with $e$, $\pi$, or any of their high-tech properties. Just chill!
 
 Vedant proposed the following problem.
 Given $2a^2+4b^3+8c^4=1$ and $a,b,c>0$, prove
@@ -295,6 +404,96 @@ Using $A+B+C+D=1$,
 =3^4.
 \end{align*}
 Thus $abcd\geq3$.
+
+\subsection{Right or wrong: who cares!}
+For positive $a,b,c$, prove
+\[
+\sum_{\mathrm{cyc}}\frac{a^4+b^2}{c^3+a^2b}\geq3.
+\]
+First claim that the minimum of the left-hand side is $k$.
+Now $\max(k)$ is the minimum of the left-hand side, so let us compute $\max(k)$:
+\begin{align*}
+\sum_{\mathrm{cyc}}\frac{a^4+b^2}{c^3+a^2b}
+&\geq\sum_{\mathrm{cyc}}\frac{2a^2b}{c^3+a^2b}
+=\sum_{\mathrm{cyc}}\frac1{c^3/(2a^2b)+1/2}\\
+&\geq\frac{18/2}{\sum_{\mathrm{cyc}}c^3/(2a^2b)+3/2}\geq k.
+\end{align*}
+The final comparison with $k$ is not justified: the product of the three
+quantities $c^3/(a^2b)$ is $1$, so AM--GM gives
+$\sum c^3/(a^2b)\geq3$, in the opposite direction from what this estimate
+would need. Thus the displayed calculation does not prove the claim.
+Was that correct!
+
+\paragraph{An inequality from the constraint.}
+For real nonzero $a,b,c$ satisfying
+\[
+\sum_{\mathrm{cyc}}\frac{ab}{c^2}
+=3\sum_{\mathrm{cyc}}\frac1{a^2}=3,
+\]
+prove
+\[
+\sum_{\mathrm{cyc}}\frac{a^2}{b^2c^2}\geq\frac{11}{8}.
+\]
+As written, this is false: $a=b=c=\sqrt3$ satisfies the constraint, while
+the left-hand side is $1$. The calculation does prove the result on the
+non-equal branch of the constraint. First focus on the cleavage of the constraint!
+\begin{align*}
+\sum_{\mathrm{cyc}}\frac{ab}{c^2}=3
+&\Longrightarrow\sum_{\mathrm{cyc}}(ab)^3-3(abc)^2=0\\
+&\Longrightarrow\frac12\left(\sum_{\mathrm{cyc}}ab\right)
+\left(\sum_{\mathrm{cyc}}(ab-bc)^2\right)=0\\
+&\Longrightarrow\frac{a^3b^3c^3}2
+\left(\sum_{\mathrm{cyc}}\frac1a\right)
+\left(\sum_{\mathrm{cyc}}\left(\frac1a-\frac1b\right)^2\right)=0.
+\end{align*}
+If $a,b,c$ are not all equal, we therefore have $\sum1/a=0$. This also follows from
+\[
+\det\begin{pmatrix}
+bc&ca&ab\\
+ca&ab&bc\\
+ab&bc&ca
+\end{pmatrix}=0.
+\]
+We also have $\sum1/a^2=1$. Put $x=1/a$, $y=1/b$, $z=1/c$.
+Then
+\[
+x+y+z=0,\qquad x^2+y^2+z^2=1,qquad xy+yz+zx=-\frac12.
+\]
+Let us do some childish computations. We have
+\[
+\sum x^2y^2=(\sum xy)^2-2xyz\sum x=\frac14.
+\]
+Moreover,
+\[
+(\sum x^2y^2)^2
+=\sum x^4y^4+2x^2y^2z^2\sum x^2
+=\sum x^4y^4+2x^2y^2z^2.
+\]
+We further need $x^2y^2z^2\leq1/54$. To see this, two of $x,y,z$
+have the same sign; write their absolute values as $u,v$, so the absolute
+value of the third is $u+v$. If $s=u+v$ and $t=uv$, then
+\[
+2(s^2-t)=1,qquad t\leq\frac{s^2}{4},qquad
+\frac12\leq s^2\leq\frac23.
+\]
+Hence
+\[
+x^2y^2z^2=t^2s^2=s^2\left(s^2-\frac12\right)^2\leq\frac1{54}.
+\]
+It follows that
+\[
+\sum x^4y^4=\frac1{16}-2x^2y^2z^2
+\geq\frac{11}{16\cdot27}.
+\]
+Now $a^2b^2c^2\geq54$ and
+$\sum1/(a^4b^4)\geq11/(16\cdot27)$, so
+\[
+\sum_{\mathrm{cyc}}\frac{a^2b^2c^2}{a^4b^4}
+\geq\frac{11\cdot54}{16\cdot27}
+\Longrightarrow
+\sum_{\mathrm{cyc}}\frac{a^2}{b^2c^2}\geq\frac{11}8.
+\]
+That is what I am talking about! Q.E.D.!
 
 % BLOG-CONTENT-END
 \end{document}

@@ -27,11 +27,16 @@ you would end up overcounting. More precisely, the amount you overcount
 will depend on the charts you choose. Therefore, having a consistent
 sense of direction is crucial to being able to integrate on a manifold.
 % Source page 2
-Orientability has useful consequences for covering spaces. One especially important application is the Orientation Covering Theorem.
+We shall see some covering-space-theoretic implications of orientability.
+We have seen covering space theory in calculating fundamental groups,
+lifting holomorphic branches, studying covering spaces, classifying
+manifolds, and pushing certain invariant metrics. We shall now see yet
+another application: the Orientation Covering Theorem.
 
-A covering map $\pi\colon E\to M$ comes with three related objects: $\pi_1(M)$, the fundamental group;
+Given a covering map $\pi\colon E\to M$, there are fundamentally three
+objects associated to it: $\pi_1(M)$, the fundamental group;
 $\Aut_\pi(E)$, the group of deck transformations; and $E$, the covering space.
-Their interaction detects the orientability of $M$.
+Let us see what these objects have to say about the orientability of $M$.
 \setcounter{theorem}{13}\begin{theorem}
 \label{thm:m4-deck-orientation}
 Let $\pi\colon E\to M$ be a smooth normal covering map, where $E$ is a
@@ -168,7 +173,12 @@ be a diffeomorphism, making $M$ orientable.
 Therefore their cardinality is $2$, and surjectivity of
 $\widehat\pi|_W$ implies $W=\widehat M$, which is connected.
 \end{proof}
-The orientation cover has a direct geometric interpretation: its two sheets record the two local choices of orientation. For an orientable surface these choices form separate sheets, whereas for a M\"obius band they remain connected.
+In hindsight, $\widehat M$ may seem tailor-made to capture orientability
+by merely restating it in a different form on a made-up space $\widehat M$.
+But that is not the case. The right way to think about it intuitively is
+via an ambient manifold. Consider surfaces in $\mathbb R^3$, say a page.
+The space $\widehat M$ is basically what you get after slicing the surface
+along its extra dimension, which in $\mathbb R^3$ would be its thickness.
 \begin{figure}[H]
  \centering\includegraphics[width=0.96\textwidth]{m4-fig-02.pdf}
 \end{figure}

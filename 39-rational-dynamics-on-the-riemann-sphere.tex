@@ -25,7 +25,7 @@ Thus one must look for an invariant of $f$ that is preserved even after a suitab
 \end{figure}
 Here $\varphi$ changes coordinates, i.e. it biholomorphically changes the base space. One naturally expects the dynamics to be preserved. Investigation along these lines leads us to two natural invariants: fixed points and critical points.
 
-These invariants organize the study. Dynamics studies the behaviour of the iterates of $f$, especially on sets where small changes in the initial point lead to large changes in its iterated images. More precisely:
+We shall base our study entirely on these invariants. Dynamics is essentially the study of taming the iterates of $f$ on sets where minor changes in points lead to major changes in their iterated images. More precisely:
 \setcounter{definition}{0}\begin{definition}[Fatou set]
 Let $f\colon S\to S$ be a holomorphic function on a Riemann surface $S$. A point $z$ belongs to the Fatou set $F$ of $f$ if there is a neighbourhood $U$ of $z$ such that $\{f^{\circ n}|_U\}_n$ is normal.
 \end{definition}
@@ -33,7 +33,7 @@ Let $f\colon S\to S$ be a holomorphic function on a Riemann surface $S$. A point
 The set $J=S\setminus F$ is defined to be the Julia set.
 \end{definition}
 % Source page 3
-Motivations aside, when we say that we want to study the dynamics of $f$ on $S$, we essentially want to study the structure of the Fatou and Julia sets of $f$. We do this through fixed points and critical points.
+Motivations aside, when we say that we want to study the dynamics of $f$ on $S$, we essentially want to study the structure of the Fatou and Julia sets of $f$. We propose to do this by studying the invariants mentioned above.
 \setcounter{definition}{2}\begin{definition}[Classification of fixed points]
 A fixed point $f(\widehat p)=\widehat p$ is
 \begin{itemize}
@@ -43,12 +43,21 @@ A fixed point $f(\widehat p)=\widehat p$ is
 \end{itemize}
 Here $f'(\widehat p)$ means the derivative of the coordinate function of $f$.
 \end{definition}
-The Fatou and Julia sets are unchanged when $f$ is replaced by an iterate. The next two lemmas make this precise and explain why periodic points may be studied as fixed points of suitable iterates.
+There is a natural dilemma at this juncture. The dynamics of $f$ and $f^{\circ n}$ must be the same, for if $\{f^{\circ m}|_U\}_m$ is normal, so is $\{f^{\circ mn}|_U\}_m$. Should we merely focus our study on the fixed points and critical points of $f$, or should we pick a suitable iterate $f^{\circ10000}$ and study its critical and fixed points? The following lemmas will help clear this dilemma.
 \setcounter{theorem}{0}\begin{lemma}[Invariance lemma]\label{cd1:invariance}
 For a rational map $f$ of degree at least two, $z\in J(f)$ if and only if $f(z)\in J(f)$.
 \end{lemma}
 \begin{proof}
-It is enough to show $z\in F(f)\Longleftrightarrow f(z)\in F(f)$. If $f(z)\in F(f)$, choose a neighbourhood $V$ of $f(z)$ on which $\{f^{\circ n}\}_n$ is normal, and a neighbourhood $U$ of $z$ with $f(U)\subset V$. Then $\{f^{\circ(n+1)}|_U\}_n$ is normal, and adding the single map $\id|_U$ shows that $z\in F(f)$.
+It is enough to show $z\in F(f)\Longleftrightarrow f(z)\in F(f)$. We first record that postcomposition with $f$ preserves normality. If $\{f^{\circ n}|_U\}_n$ is normal, it is contained in a compact set $K\subset\Hol(U,S)$.
+% Source page 4
+Notice that $f\circ K$ is compact in $\Hol(U,S)$. For if $C\subseteq S$ is compact and $\{g_k\}_k\subset K$ converges uniformly on $C$, then, since $f$ is uniformly continuous on compact sets, an estimate $|g_{k_0}(x)-g(x)|<\varepsilon$ for every $k_0\ge N$ and $x\in C$ ensures, after increasing $N$ if necessary, that
+\[
+|f\circ g_{k_0'}(x)-f\circ g(x)|<\varepsilon
+\quad(k_0'\ge N',\ x\in C).
+\]
+Indeed, $f$ is uniformly continuous on the compact set $\overline{B_\varepsilon(g(C))}$. Thus $\{f^{\circ(n+1)}|_U\}_n$ is normal.
+
+If $f(z)\in F(f)$, there is a neighbourhood $V$ of $f(z)$ on which $\{f^{\circ n}|_V\}_n$ is normal. Since $f$ is open, there is a neighbourhood $U$ of $z$ with $f(U)\subseteq V$. Hence $\{f^{\circ(n+1)}|_U\}_n$ is normal, and adding the single map $\id|_U$ shows that $z\in F(f)$.
 
 Conversely, suppose $z\in F(f)$. After shrinking a neighbourhood $U$ of $z$, the map $f\colon U\to V=f(U)$ is a proper holomorphic map of finite degree. Normality descends through such a map: if $\{h_n\circ f\}_n$ is normal on $U$, then $\{h_n\}_n$ is normal on $V$. Applying this to $h_n=f^{\circ n}$ shows that $\{f^{\circ n}|_V\}_n$ is normal. Hence $f(z)\in F(f)$.
 \end{proof}
@@ -65,7 +74,7 @@ By the previous lemma, it suffices to show $F(f^{\circ n})=F(f)$. Certainly $z\i
 and this finite union is again compact.
 \end{proof}
 % Source page 5
-Passing to an iterate therefore loses no dynamical information. What does it mean to work with fixed points of $f^{\circ m}$?
+It therefore does not matter which iterate of $f$ one chooses to work with: the dynamics loses no information, so there is no compromise. What does it mean to work with fixed points of $f^{\circ m}$?
 \setcounter{definition}{3}\begin{definition}[Periodic orbits]
 Let $f\colon S\to S$ be holomorphic. An orbit
 $f\colon z_0\mapsto z_1\mapsto\cdots\mapsto z_m=z_0$,
@@ -75,11 +84,11 @@ with all $z_i$ distinct before returning to $z_0$, is called a periodic orbit of
 \]
 often called the multiplier of the orbit.
 \end{definition}
-Results stated for fixed points apply to periodic points after passing to the appropriate iterate. We now describe the classification topologically.
+In this post we shall not deal separately with periodic orbits of different periods. We shall prove theorems for fixed points and expect the reader to extend the argument to their favourite iterate of $f$. As far as we are concerned, our study, as proposed, will be complete by looking at period-$1$ orbits (fixed points) and critical points. Before proceeding further, we explain the classification topologically.
 % Source page 6
 \subsection{Attraction, repulsion, and indifference}
 \paragraph{Attraction: multiplier $|\lambda|<1$.}
-The following is the topological definition of attraction. Let us first state explicitly the intuitive idea of attraction to a point $\widehat p$. A point $\widehat p\in S$ is said to be attracting if there is a neighbourhood $U$ of $\widehat p$ such that $\{f^{\circ n}|_U\}_n$ converges locally uniformly on $U$ to the constant map $z\mapsto\widehat p$.
+This is usually called topological attraction. Let us first state explicitly the intuitive idea of attraction to a point $\widehat p$. A point $\widehat p\in S$ is said to be attracting if there is a neighbourhood $U$ of $\widehat p$ such that $\{f^{\circ n}|_U\}_n$ converges locally uniformly on $U$ to the constant map $z\mapsto\widehat p$.
 \begin{figure}[H]\centering
 \includegraphics[width=.40\textwidth]{cd1-fig-03.pdf}
 \FigureTag{CD1.3}{fig:cd1-03}
@@ -96,12 +105,12 @@ If $z\in\mathbb D_{r_0}$ is small enough that $|\lambda|+C|z|<1$, then $f$ becom
 % Source page 7
 One can choose $|\lambda|<c<1$ and $0<r\le r_0$ with $|\lambda|+Cr<c$. In particular, $|\lambda|+C|z|<c<1$ for all $z\in\mathbb D_r$. Hence $|f(z)|<c|z|$, $f(z)\in\mathbb D_r$, and $|f^{\circ n}(z)|<c^n|z|$, so $f^{\circ n}\to(z\mapsto0)$.
 
-Conversely, local uniform convergence to $\widehat p$ implies $(f^{\circ n})'(\widehat p)\to0$. Since $(f^{\circ n})'(\widehat p)=f'(\widehat p)^n$, we obtain $|f'(\widehat p)|<1$.
+Conversely, if $\widehat p$ is attracting, there is $\varepsilon>0$ and an $n\ge1$ such that $f^{\circ n}(\mathbb D_\varepsilon)$ is relatively compact in $\mathbb D_\varepsilon$. By Schwarz's lemma, $|(f^{\circ n})'(0)|<1$, so $|f'(0)|<1$.
 \end{proof}
 Notice that we need holomorphicity of $f$ to conclude that $|\lambda|<1$ is geometrically attracting.
 
 \paragraph{Repulsion: multiplier $|\lambda|>1$.}
-This is usually called topological repulsion. Let $f(\widehat p)=\widehat p$. The point $\widehat p$ is repelling if $f$ is locally invertible at $\widehat p$ and $\widehat p$ is attracting for the local inverse fixing $\widehat p$.
+This is usually called topological repulsion. Let $f(\widehat p)=\widehat p$. The point $\widehat p$ is repelling if there is a neighbourhood $U$ of $\widehat p$ such that, for every $p\in U\setminus\{\widehat p\}$, there is $N_p$ with $f^{\circ n}(p)\notin U$ for some $n\ge N_p$. Equivalently, $f$ is locally invertible at $\widehat p$ and $\widehat p$ is attracting for the local inverse fixing $\widehat p$. In other words, all orbits except that of $\widehat p$ eventually escape $U$.
 \begin{figure}[H]\centering
 \includegraphics[width=.40\textwidth]{cd1-fig-04.pdf}
 \FigureTag{CD1.4}{fig:cd1-04}
@@ -109,10 +118,18 @@ This is usually called topological repulsion. Let $f(\widehat p)=\widehat p$. Th
 \setcounter{theorem}{3}\begin{lemma}\label{cd1:repulsion}
 $|f'(\widehat p)|>1$ if and only if $\widehat p$ is repelling.
 \end{lemma}
-\begin{proof}
-If $|f'(\widehat p)|>1$, then $f$ has a local inverse fixing $\widehat p$ whose multiplier has modulus $|f'(\widehat p)|^{-1}<1$, so the attraction lemma makes $\widehat p$ attracting for that inverse. The converse follows by applying the attraction lemma to the same local inverse.
-\end{proof}
 % Source page 8
+\begin{proof}
+If $|\lambda|=|f'(\widehat p)|>1$, then $f$ has a local inverse fixing $\widehat p$ whose multiplier has modulus $|f'(\widehat p)|^{-1}<1$. Thus, for the corresponding open set in $S$, the orbits of its elements eventually escape.
+
+Conversely, if $\widehat p$ is topologically repelling, the previous lemma implies $|f'(\widehat p)|\not<1$, and hence $|f'(\widehat p)|\ge1$. Thus $f$ is locally univalent. There is a compact neighbourhood $N$ of $\widehat p$ such that all orbits of that neighbourhood escape $N$, and $f\colon N\to f(N)$ is a homeomorphism. Set
+\[
+N_k=\bigcap_{i=0}^{k}f^{-i}(N).
+\]
+This is the set of all points whose iterates up to $k$ do not escape $N$. By our choice of $N$, $\diam(N_k)\to0$ as $k\to\infty$, and $f(N_k)=N_{k-1}\cap f(N)$. For large $k$, $N_{k-1}\subset f(N)$, so $f(N_k)=N_{k-1}$. Since $f|_N$ is univalent, $f\colon N_k\to N_{k-1}$ is a biholomorphism.
+
+Let $U_k$ be the component of $N_k$ containing $\widehat p$. Then $f^{-1}\colon U_{k-1}\to U_k$ is a biholomorphism. Clearly $U_k,U_{k-1}$ are hyperbolic, so by Pick's theorem $f^{-1}$ is a contraction mapping. Thus $\widehat p$ is attracting for $f^{-1}$, giving $|\lambda^{-1}|<1$, and hence $|\lambda|>1$.
+\end{proof}
 % Source page 9
 \paragraph{Indifference: $|\lambda|=1$.}
 This does not have an easy-to-visualise topological picture. The indifferent case is treated in \BlogPost{parabolic-fixed-points-and-the-flower-theorem}{\emph{Parabolic Fixed Points and the Flower Theorem}}.
@@ -140,9 +157,9 @@ Thus $\{f^{\circ n}\}_n$ cannot converge locally uniformly, for then the sequenc
 \end{proof}
 Therefore attracting basins lie in the Fatou set, while repelling and parabolic points belong to the Julia set.
 
-Fixed and critical points provide the framework when $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ is rational with $\deg(f)\ge2$.
+In the next few posts we shall see our initial proposal---studying dynamics through fixed and critical points---in action. For now, let us briefly illustrate it when $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ is rational with $\deg(f)\ge2$.
 \subsection{Dynamics of rational maps on the Riemann sphere}
-We begin with several general features of Julia sets on the sphere.
+We shall see how the Julia set spreads across the sphere, its topological structure, and more.
 % Source page 11
 First things first: is $J$ nonempty?
 \setcounter{theorem}{5}\begin{proposition}[Nonemptiness]\label{cd1:nonempty}
@@ -157,7 +174,7 @@ If $J(f)=\varnothing$, there is a sequence $\{n_j\}_j$ such that $\{f^{\circ n_j
 Define $H\colon I\times\widehat{\mathbb C}\to\widehat{\mathbb C}$ by
 $H(t,z)=\gamma_{g(z)\to f^{\circ n_j}(z)}(t)$, where $\gamma$ is the unique geodesic path between those two points. Since $\gamma_{a\to b}$ is continuous in both $a$ and $b$, $H$ is continuous. Thus $f^{\circ n_j}$ and $g$ are homotopic. Homotopic self-maps of the sphere have the same topological degree, giving $\deg(f^{\circ n_j})=\deg(g)$. But $\deg(f^{\circ n_j})\to\infty$ as $j\to\infty$, a contradiction.
 \end{proof}
-We next distinguish periodic orbits from eventually periodic orbits.
+Before revealing the expansive nature of the Julia set, let us distinguish periodic orbits from eventually periodic orbits.
 \setcounter{definition}{5}\begin{definition}[Grand-orbit-finite points]
 For $z\in S$, define
 \[
@@ -167,7 +184,7 @@ A point whose grand orbit is finite is called \emph{exceptional}.
 % Source page 12
 The set of all such points is denoted by $\mathcal E(f)$ and called the grand-orbit-finite set. The set $\operatorname{GO}(z,f)$ is the grand orbit of $z$.
 \end{definition}
-Exceptional points are severely constrained:
+The reason for calling $\mathcal E(f)$ grand-orbit-finite is evident. We now state the following lemma.
 \setcounter{theorem}{6}\begin{lemma}\label{cd1:exceptional}
 $|\mathcal E(f)|\le2$. All exceptional points are superattracting.
 \end{lemma}
@@ -201,17 +218,42 @@ If $\operatorname{Int}(J)\ne\varnothing$, there is a point $z$ with a neighbourh
 $J\supseteq\overline{\widehat{\mathbb C}\setminus\mathcal E(f)}=\widehat{\mathbb C}$, giving the assertion.
 \end{proof}
 % Source page 14
-Within attracting basins, open sets shrink under iteration, whereas near the Julia set they expand to cover almost all of $\widehat{\mathbb C}$. Let us put these two concepts together.
+Recall that basins belong to the Fatou set: there open sets shrink, whereas for the Julia set, open sets expand to fill almost all of $\widehat{\mathbb C}$. Let us put these two concepts together.
 \setcounter{theorem}{9}\begin{proposition}[Basin boundary equals Julia set]\label{cd1:boundary}
 If $\mathcal A$ is an attracting basin, then $\partial\mathcal A=J$.
 \end{proposition}
 \begin{proof}
-The Julia set expands open sets around it. If $z\in J(f)$ and $N$ is a neighbourhood of $z$, some iterate $f^{\circ k}(N)$ meets $\mathcal A$. By complete invariance, $N$ itself meets $\mathcal A$. Since $J(f)\cap\mathcal A=\varnothing$, this gives $J(f)\subseteq\partial\mathcal A$.
+The Julia set expands open sets around it. If $z\in J(f)$ and $N$ is a neighbourhood of $z$, there is $k_0$ with $f^{\circ k_0}(N)\cap\mathcal A\ne\varnothing$. By invariance, $N\cap\mathcal A\ne\varnothing$, so $J(f)\subseteq\overline{\mathcal A}$. Since $J(f)\cap\mathcal A=\varnothing$, $J(f)\subseteq\partial\mathcal A$.
 
-On the other hand, $\mathcal A$ is a union of Fatou components. Indeed, if one point of a Fatou component belongs to $\mathcal A$, normality and the identity theorem show that every point of that component converges to the same attracting cycle. No point of the open set $F(f)$ can therefore lie on $\partial\mathcal A$. Hence $\partial\mathcal A\subseteq J(f)$, and $\partial\mathcal A=J(f)$.
+Now let $z\in\partial\mathcal A$. Every neighbourhood $N$ of $z$ meets both $\mathcal A$ and $\mathcal A^c$. For $z'\in N\cap\mathcal A$, $f^{\circ n}(z')$ converges to a point, whereas this is not so for $z''\in N\cap\mathcal A^c$. This contrast is made precise by observing that $\mathcal A$ is a union of Fatou components: if one point of a Fatou component belongs to $\mathcal A$, normality and the identity theorem show that every point of that component converges to the same attracting cycle. No point of the open set $F(f)$ can therefore lie on $\partial\mathcal A$. Hence $\partial\mathcal A\subseteq J(f)$, and $\partial\mathcal A=J(f)$.
 \end{proof}
 \begin{remark}
 This property essentially spells out the nature of the dynamics of $f$. An attracting basin has connected components, or islands, separated by a thin set $J$ (it has no interior). The connected components of the Fatou set are called the Fatou components of $f$.
+\end{remark}
+% Source page 15
+Let us analyse the topological structure of $J$ further, for the nature of a boundary also reveals what it bounds.
+\subsection{Dense subsets of the Julia set}
+\begin{itemize}
+\item For $z_0\in J(f)$,
+\[
+J(f)=\overline{\bigcup_{n\ge0}f^{-n}(z_0)}.
+\]
+Let $N$ be a neighbourhood of a point $z\in J(f)$. By Proposition~\ref{cd1:expansion}, some forward image of $N$ contains $z_0$, since $z_0\notin\mathcal E(f)$. Thus $f^{-n}(z_0)\cap N\ne\varnothing$ for some $n$, giving
+$\overline{\bigcup_n f^{-n}(z_0)}\supseteq J(f)$. The reverse inclusion follows from invariance.
+\item $J(f)$ has no isolated points. If $J(f)$ were finite, then every point of $J(f)$ would have a finite backwards orbit and hence belong to $\mathcal E(f)\subset F(f)$, which is impossible. Thus $J(f)$ is infinite and, being compact, has a limit point $z_0$. The set $\bigcup_{n\ge0}f^{-n}(z_0)$ is dense in $J(f)$. If $w\in J(f)$ were isolated, this density would give $f^{\circ n}(w)=z_0$ for some $n$. Choose distinct points $z_k\in J(f)$ with $z_k\to z_0$. Since $f^{\circ n}$ is open, every neighbourhood $U$ of $w$ has $f^{\circ n}(U)$ as a neighbourhood of $z_0$; hence, for all large $k$, there is $w_k\in U\cap J(f)$ with $f^{\circ n}(w_k)=z_k$. This contradicts the isolation of $w$.
+\end{itemize}
+% Source page 16
+\begin{remark}
+Since $\bigcup_n f^{-n}(z_0)$ is dense in $J(f)$, for a neighbourhood $N$ of $z_0$ the set $V=\bigcup_n f^{-n}(N)$ is dense and open. For each $j\ge1$, compactness of $J(f)$ gives a finite open cover $\{N_{ij}\}_{i=1}^{M_j}$ by sets of diameter less than $1/j$. Set $V_{ij}=\bigcup_n f^{-n}(N_{ij})$; these sets are dense and open. By the Baire category theorem,
+\[
+\left(\bigcap_{j\ge1}\bigcap_{i=1}^{M_j}V_{ij}\right)\cap J(f)
+\]
+is dense in $J(f)$. If $z$ belongs to this set, then $\{z,f(z),f^2(z),\ldots\}$ meets every $N_{ij}$. The Lebesgue number lemma therefore shows that this orbit is dense in $J(f)$.
+\end{remark}
+\begin{remark}[Self-similarity]
+Another striking feature of the Julia set is that it repeats shapes and patterns infinitely often. Mathematically, $(J,z)$ is locally conformally isomorphic to $(J,z')$ if there are neighbourhoods $N,N'$ of $z,z'$, respectively, and a biholomorphism $\varphi\colon N\to N'$ such that $\varphi(z)=z'$ and $\varphi(N\cap J)=N'\cap J$.
+% Source page 17
+By density of the preimages of any $z_0\in J(f)$, the set of $z$ such that $(J,z)\cong(J,z_0)$ is dense in $J(f)$, unless every backwards orbit $z_0\leftarrow z_1\leftarrow z_2\leftarrow\cdots$ contains a critical point $z_k$ of $f$. Otherwise $f$ is locally univalent and one can keep backtracking $z_0$.
 \end{remark}
 % BLOG-CONTENT-END
 \bibliographystyle{amsalpha}

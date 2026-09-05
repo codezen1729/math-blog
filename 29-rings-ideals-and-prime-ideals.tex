@@ -21,8 +21,9 @@ If $S\subseteq R$ satisfies (i)--(iv), then $S$ is a \emph{subring} of $R$.
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item $(\Z,+,\times)$, the ring of integers.
 \setcounter{enumi}{1}\item $(\kk,+,\times)$, a field.
-\setcounter{enumi}{2}\item $(\kk[x_1,\ldots,x_n],+,\times)$, the ring of polynomials over $\kk$.
-\setcounter{enumi}{3}\item $(\{0\},+,\times)$, the zero ring.
+\setcounter{enumi}{2}\item $(\End_{\Ab}(G),+,\circ)$, the ring of endomorphisms of the abelian group $(G,+)$, where $\circ$ denotes composition. This ring need not be commutative; when $G$ is cyclic, it is commutative and belongs to $\CRing$.
+\setcounter{enumi}{3}\item $(\kk[x_1,\ldots,x_n],+,\times)$, the ring of polynomials over $\kk$.
+\setcounter{enumi}{4}\item $(\{0\},+,\times)$, the zero ring.
 \end{enumerate}
 \end{example}
 % Source page 3
@@ -174,7 +175,7 @@ If $\{\aa_i\}_{i=1}^n$ are ideals and $\pp$ is a prime ideal such that $\pp\sups
 If $\aa_i\nsubseteq\pp$ for every $i$, choose $x_i\in\aa_i$ with $x_i\notin\pp$. But $\prod_{i=1}^n x_i\in\bigcap_i\aa_i\subseteq\pp$, a contradiction.
 \end{proof}
 \begin{remark}
-In particular, if $\pp=\bigcap_{i=1}^n\aa_i$, then $\pp=\aa_i$ for some $i$. Thus a prime ideal cannot be a nontrivial finite intersection of strictly larger ideals.
+In particular, if $\pp=\bigcap_{i=1}^n\aa_i$, then $\pp=\aa_i$ for some $i$. If the $\aa_i$ are pairwise coprime and $\pp=\prod_{i=1}^n\aa_i$, then $\prod_i\aa_i=\bigcap_i\aa_i$, and again $\pp=\aa_i$ for some $i$.
 \end{remark}
 \setcounter{theorem}{2}\begin{proposition}
 \[\rad((0))=\bigcap_{\pp\text{ prime}}\pp.\]

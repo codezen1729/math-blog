@@ -54,6 +54,16 @@ Another proof uses AM--GM.
 \end{aligned}
 \]
 Add all three to obtain $a/b+b/c+c/a\geq a+b+c$.
+The third solution follows from Muirhead's theorem.
+% Source page 46 - right
+\paragraph{Solution 3.}
+\[\frac ab+\frac bc+\frac ca=a^2c+b^2a+c^2b
+\mathrel{\stackrel{?}{\geq}}(abc)^{2/3}(a+b+c)
+=\sum_{\mathrm{cyc}}a^{5/3}b^{2/3}c^{2/3}.\]
+Since $(2,1,0)\succ(5/3,2/3,2/3)$, the notes conclude that the result follows. Q.E.D.!
+Muirhead, however, compares symmetric sums, while the displayed sums are cyclic;
+the second solution above supplies the valid proof.
+
 \paragraph{A two-line proof of the AM--GM inequality.}
 Let $x_i>0$, let $t_i\geq0$, and suppose $t_1+\cdots+t_n=1$.
 We have $x_i^{t_i}=e^{t_i\log x_i}$. Since $e^x$ is convex, we can deduce
@@ -63,7 +73,31 @@ We have $x_i^{t_i}=e^{t_i\log x_i}$. Since $e^x$ is convex, we can deduce
 Now put $t_1=t_2=\cdots=t_n=1/n$ to obtain, by Jensen's inequality,
 \[\frac{x_1+x_2+\cdots+x_n}{n}\geq\sqrt[n]{x_1x_2\cdots x_n}.\]
 This completes the proof.
-Convexity and concavity can make apparently difficult inequalities collapse quickly.
+\paragraph{Challenge.}
+Define $x_k=(a^k+b^k+c^k)/3$ for $a,b,c>0$. Prove the following inequality:
+\[\frac13\left(\frac{x_1^5}{x_2x_3}+\frac{x_2^2}{x_1x_3}+\frac{x_3}{x_1x_2}\right)>1.\]
+P.S. This problem has a two-line solution, so don't think that it is complicated!
+So far, so good. By the way, did you figure out how to resolve the challenge?
+Hold on: here comes that two-line solution!
+% Source page 49 - left
+\[
+\begin{aligned}
+x_3^2\geq x_2^3\geq x_1^6
+&\quad\Longrightarrow\quad
+\frac13(x_3^2+x_2^3+x_1^6)\left(\frac12+\frac13+\frac16\right)
+>\frac{x_3^2}{2}+\frac{x_2^3}{3}+\frac{x_1^6}{6}
+\geq x_1x_2x_3,\\
+\frac{x_3^2+x_2^3+x_1^6}{x_1x_2x_3}>3
+&\quad\Longrightarrow\quad
+\frac{x_1^5}{x_2x_3}+\frac{x_2^2}{x_1x_3}+\frac{x_3}{x_1x_2}>3.
+\end{aligned}
+\]
+W$^5$. Q.E.D.! You see, we are done in just two steps!
+The first comparison has the wrong direction. In fact, $(a,b,c)=(4,3,1)$
+gives a left-hand sum of approximately $2.753<3$, so the challenge as written needs correction.
+
+Now let us proceed on our eternal journey. Let me show you the magic of
+convexity--concavity arguments: problems get resolved in seconds!!
 
 For $a,b,c>0$ with $abc=1$, prove $\sqrt{a+3}+\sqrt{b+3}+\sqrt{c+3}\geq6$.
 Since $ab+bc+ca\geq3$ and $a+b+c\geq3$ by AM--GM,

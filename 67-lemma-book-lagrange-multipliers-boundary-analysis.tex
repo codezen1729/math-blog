@@ -55,6 +55,55 @@ Introduce the notation ``gradient of a function $f$,'' written $\nabla f$:
 % Source page 16 - left
 Instead of the first three equations in the AM--GM example, it suffices to write
 $\nabla f(x,y,z)=\lambda\nabla g(x,y,z)$.
+\paragraph{USAMO.}
+Let $a,b,c\geq0$ and $a^2+b^2+c^2+abc=4$. Prove that $0\leq ab+bc+ca-abc\leq2$.
+Put $f(a,b,c)=ab+bc+ca-abc$. We are to find its maximum and minimum under the given condition, called a constraint.
+The Lagrange equations are
+\[
+\nabla f=\lambda\nabla(a^2+b^2+c^2+abc),
+\quad (b+c-bc,a+c-ac,a+b-ab)=\lambda(2a+bc,2b+ac,2c+ab).
+\]
+Equivalently,
+\[
+\begin{cases}
+b+c-bc=\lambda(2a+bc),\\
+a+c-ac=\lambda(2b+ac),\\
+a+b-ab=\lambda(2c+ab),\\
+a^2+b^2+c^2+abc=4.
+\end{cases}
+\]
+Solving the interior equations, together with the boundary analysis, gives
+the candidates $(1,1,1)$, $(0,\sqrt2,\sqrt2)$, and their permutations.
+We have $f(1,1,1)=2$ and $f(0,\sqrt2,\sqrt2)=2$.
+We also notice that $(2,0,0)$ and its permutations lie on the boundary and
+give $f=0$. Thus $0\leq f(a,b,c)\leq2$.
+
+% Source page 16 - right
+\paragraph{IMO (1984).}
+With $x,y,z>0$ and $x+y+z=1$, prove that
+$0<xy+yz+zx-2xyz\leq7/27$.
+The use of Lagrange multipliers requires careful justification.
+Before equating gradients, it is essential to show that the gradients are continuous.
+Let $f(x,y,z)=xy+yz+zx-2xyz$ and $g(x,y,z)=x+y+z=1$.
+Both are polynomials and have continuous first-order partial derivatives.
+Then
+\[
+\nabla f=\lambda\nabla g
+\Longrightarrow(y+z-2yz,x+z-2xz,x+y-2xy)=(\lambda,\lambda,\lambda).
+\]
+From $y+z-2yz=x+z-2xz$ we get $y-x=2z(y-x)$, so $y=x$ or $z=1/2$.
+Similarly,
+\[
+x=y\ \text{or}\ z=\tfrac12,\qquad
+y=z\ \text{or}\ x=\tfrac12,\qquad
+z=x\ \text{or}\ y=\tfrac12,\qquad x+y+z=1.
+\]
+The interior solution is $(1/3,1/3,1/3)$. On the boundary of the closed
+simplex the additional candidates are permutations of $(1/2,1/2,0)$ and
+the vertices. Since $f(1/3,1/3,1/3)=7/27$, while the boundary maximum is
+$1/4$ and the boundary minimum is $0$, we obtain
+$0<xy+yz+zx-2xyz\leq7/27$ in the open simplex.
+
 % Source page 17 - left
 \setcounter{theorem}{39}\begin{lemma}[A warning about Lagrange multipliers]
 Lagrange multipliers identify stationary candidates, but boundary and sufficiency checks remain essential.
@@ -71,6 +120,9 @@ $\nabla f=\lambda\nabla g$.
 Then plug the solutions back into $f$ to obtain stationary candidates; boundary
 and sufficiency checks are still required before identifying extrema.
 \end{lemma}
+For example, the preceding IMO problem gave $(1/3,1/3,1/3)$ and the
+boundary candidate $(1/2,1/2,0)$. Substituting, we get $7/27$ and $1/4$;
+the vertices give the boundary value $0$.
 % Source page 17 - right
 Lemma~\ref{lemma:lb1-46} explains the steps. Apply them now:
 \[
@@ -130,12 +182,125 @@ Also $\angle AA'P=\angle BB'P$.
 Therefore $\triangle APA'\sim\triangle BPB'$, giving $\angle APA'=\angle BPB'$.
 
 
+\paragraph{Vedant's enigma.}
+Given three positive reals $x\geq y\geq z$ such that
+$x^2+y^2+z^2+2xyz=1$, prove that
+\[2xz+y^2\leq\frac34.\]
+I asked him for a hint, to which he responded by saying that
+we have $2xz=xz+xz$. I was like, ``Are you serious?!''
+He makes the following threatening move:
+\[2xz+y^2=xz+y^2+zx=x\cdot z+y\cdot y+z\cdot x.\]
+Since $x\geq y\geq z$, we have
+\[xz+yy+zx\leq\frac13(x+y+z)(x+y+z)=\frac{(x+y+z)^2}{3}.\]
+Indeed,
+\[
+(x+y+z)^2-3(2xz+y^2)
+=(x-y)^2+4(x-y)(y-z)+(y-z)^2\geq0.
+\]
+The constraint and positivity allow us to write
+$x=\cos A$, $y=\cos B$, and $z=\cos C$, where
+$A,B,C\in(0,\pi/2)$ and $A+B+C=\pi$.
+Indeed, the constraint gives
+$z=-xy+\sqrt{(1-x^2)(1-y^2)}=-\cos(A+B)=\cos(\pi-A-B)$.
+(Don't ask me why!!)
+Then
+\[
+\cos A+\cos B+\cos C\leq3\cos\left(\frac{A+B+C}{3}\right)
+=3\cos60^\circ,
+\qquad x+y+z\leq\frac32.
+\]
+Thus $(x+y+z)^2/3\leq\tfrac13\cdot\tfrac94=\tfrac34$, giving
+$xz+y^2+zx\leq3/4$, and therefore $2xz+y^2\leq3/4$. (Q.E.D.)--1.
+
+I gave him the following solution: ``Lagrange! Lagrange! Help!''
+Let's leave it to the expert now.
+Let $g(x,y,z)=x^2+y^2+z^2+2xyz=1$ be the constraint function, and maximize
+$f(x,y,z)=2xz+y^2$.
+The condition $\nabla f=\lambda\nabla g$ gives
+\[(2z,2y,2x)=\lambda(2x+2yz,2y+2zx,2z+2xy).\]
+Therefore $2z=\lambda(2x+2yz)$, $2y=\lambda(2y+2zx)$, and
+$2x=\lambda(2z+2xy)$, so
+\[
+\frac{x+yz}{z}=\frac{y+zx}{y}=\frac{z+xy}{x}=\frac1\lambda.
+\]
+It follows that $x/z+y=z/x+y$, hence $z=x$.
+Also $x/z+y=1+zx/y$, so $1+y=1+x^2/y$, giving $x=y$ and thus
+$x=y=z=1/2$.
+Consequently $(1/2,1/2,1/2)$ is the only interior stationary candidate.
+The first solution supplies the global bound, and equality there forces
+$x=y=z=1/2$. Hence
+\[
+f(x,y,z)\leq f(1/2,1/2,1/2)
+=2\cdot\frac12\cdot\frac12+\frac12\cdot\frac12=\frac34.
+\]
+Thus $f(x,y,z)\leq3/4$, giving $2xz+y^2\leq3/4$. (Q.E.D.)--2.
+
+
 \setcounter{theorem}{80}\begin{lemma}[Normalization]\label{lemma:lb1-83}
-For a homogeneous inequality, such as
+Given a homogeneous inequality, such as
 \[\sum_{\mathrm{cyc}}\frac{(a+b)^2+(b+c)^2}{(a+b)(a+b+c)}>\frac{2014}{1024},\]
-one may normalize $a+b+c$ to any convenient positive value.
+you can assume $a+b+c$ equals any positive number you feel like! Surprised?
 \end{lemma}
-This follows because scaling all variables multiplies both sides by the same power.
+Don't expect me to explain the reason for this, since we crossed these things a few pages ago.
+Scaling all variables multiplies both sides of a homogeneous inequality by the same power.
+\paragraph{Application.}
+``What do you think? Every time I'll write applications for you? Go find one for yourself!''
+$\longrightarrow$ ``Shu, shu\ldots!''
+Sorry! I am not that rude; I did this just for a change.
+Anyway, I have already applied this in this book. Go search!
+
+Now let me present a surprising inequality that can be resolved using normalization.
+If $x,y,z$ are real numbers, show that
+\[(x^2+y^2+z^2)^3\geq(x^3+y^3+z^3)^2.\]
+It is equivalent to prove
+\[
+\left|\sqrt[3]{x^3+y^3+z^3}\right|
+\leq\sqrt{x^2+y^2+z^2}.
+\]
+Observe that the inequality is homogeneous.
+Assume $x^2+y^2+z^2=1$, because if
+$x^2+y^2+z^2=k^2$ with $k\in\mathbb R_+$, then
+$(x/k)^2+(y/k)^2+(z/k)^2=1$, or $X^2+Y^2+Z^2=1$
+(where $x\mapsto X$).
+Now, to normalize the situation, divide by $k$:
+\[
+\frac{\left|\sqrt[3]{x^3+y^3+z^3}\right|}{k}
+\mathrel{\stackrel{?}{\leq}}
+\frac{\sqrt{x^2+y^2+z^2}}{k}.
+\]
+This is equivalent to
+\[
+\left|\sqrt[3]{\left(\frac xk\right)^3+
+\left(\frac yk\right)^3+
+\left(\frac zk\right)^3}\right|
+\leq
+\sqrt{\left(\frac xk\right)^2+
+\left(\frac yk\right)^2+
+\left(\frac zk\right)^2},
+\]
+that is, $|X^3+Y^3+Z^3|\leq1$.
+It is not important to have capitals in your solution, so let
+$x^2+y^2+z^2=1$.
+Let us prove $|x^3+y^3+z^3|\leq1$ using Lagrange multipliers.
+Set $G(x,y,z)=x^2+y^2+z^2=1$ and
+$F(x,y,z)=x^3+y^3+z^3$.
+Then $\nabla G=(2x,2y,2z)$ and
+$\nabla F=(3x^2,3y^2,3z^2)$.
+Thus $\nabla F=\lambda\nabla G$ gives
+\[
+\begin{aligned}
+3x^2=2\lambda x&\quad\Longrightarrow\quad x=0\text{ or }x=2\lambda/3,\\
+3y^2=2\lambda y&\quad\Longrightarrow\quad y=0\text{ or }y=2\lambda/3,\\
+3z^2=2\lambda z&\quad\Longrightarrow\quad z=0\text{ or }z=2\lambda/3.
+\end{aligned}
+\]
+At a stationary point, all nonzero coordinates are equal. The possible values
+of $F$ are therefore
+\[
+\pm1,\qquad \pm\frac1{\sqrt2},\qquad \pm\frac1{\sqrt3}.
+\]
+Since the unit sphere is compact, $-1\leq F(x,y,z)\leq1$.
+Thus $|x^3+y^3+z^3|\leq1$, and the original inequality follows. Q.E.D.!
 
 \paragraph{A four-term AM--GM construction.}
 Find the maximum value of $x(1-x^3)$ for $0\leq x\leq1$.
@@ -156,7 +321,9 @@ Therefore $f(1/\sqrt[3]4)=3/(4\sqrt[3]4)$.
 
 
 \subsection{Boundary-analysis techniques}
-Boundary analysis begins with two elementary principles.
+To master boundary-analysis techniques, you must gather some
+boundary-analysis lemmas (BALLs). I wrote two Ls because there are two
+basic lemmas.
 \setcounter{theorem}{85}\begin{lemma}[Boundary-analysis lemma I]\label{lemma:lb1-88}
 Given a nonconstant linear function on a compact convex polytope, its maximum
 and minimum are attained on the boundary.
@@ -164,7 +331,8 @@ and minimum are attained on the boundary.
 \setcounter{theorem}{86}\begin{lemma}[Boundary-analysis lemma II]\label{lemma:lb1-89}
 Given a convex function on a compact interval, its maximum is attained at an endpoint.
 \end{lemma}
-The following examples illustrate the method.
+Now let us look at some convexity--concavity arguments that will give you
+an idea of how things are done!
 \paragraph{Problem 1: Romanian team selection test.}
 For a given positive number $a$, find the maximum of
 \[\sum_{k=1}^n(a-a_1)(a-a_2)\cdots(a-a_{k-1})a_k(a-a_{k+1})\cdots(a-a_n),\]
@@ -176,7 +344,7 @@ Argue similarly for all $a_i$. Therefore the sum reaches its maximum for a certa
 % Source page 47 - right
 If all $a_k=0$, the sum is zero. If two or more $a_k=a$, the sum is zero.
 If one $a_k=a$ and the others are zero, the sum is $a^n$.
-Thus the maximum value is $a^n$. 
+Thus the maximum value is $a^n$.
 \paragraph{Problem 2: Titu Andreescu.}
 Let $0\leq a,b,c,d\leq1$. Prove that
 \[(1-a)(1-b)(1-c)(1-d)+a+b+c+d\geq1.\]
@@ -186,7 +354,7 @@ Argue similarly for all four variables, giving $(a,b,c,d)=0$ or $1$.
 At a Boolean vertex, the value is $1$ when all four variables are zero, and
 otherwise it is the number of variables equal to one.
 We observe that $1$ is the smallest of all the values obtained, so the minimum of the function is $1$.
-The conclusion follows. 
+The conclusion follows.
 These are some standard techniques, but there are one or two more problems with quite a different way of sorting things.
 \paragraph{Problem 3: W. L. Putnam Mathematical Competition.}
 Let $n$ be a natural number and $x_i\in[0,1]$ for $i=1,2,\ldots,n$.
@@ -207,7 +375,9 @@ If $n$ of them equal $p$ and $5-n$ equal $q$, then the left-hand side has the fo
 \[n^2+(5-n)^2+n(5-n)\left(\frac pq+\frac qp\right)
 =25+n(5-n)\left(\sqrt{\frac pq}-\sqrt{\frac qp}\right)^2.\]
 This completes the endpoint argument.
-Here are three problems on which to test the method.
+So now you have two bats and two balls. What are you waiting for?
+Go play with some problems and enjoy yourself.
+Okay, I'll give you problems to throw away\ldots\ here they come!
 % Source page 48 - right
 \paragraph{Problem 1.}
 The nonnegative numbers $a,b,c,A,B,C,k$ satisfy $a+A=b+B=c+C=k$.
@@ -235,6 +405,47 @@ $|\det A|^2\leq\prod_{i=1}^n\bigl(\sum_{j=1}^n|a_{ij}|^2\bigr)$.
 If no row is zero, equality holds if and only if the rows are pairwise
 orthogonal. A zero row also gives equality.
 \end{lemma}
+\paragraph{Application: Mathematical Reflections, issue 1 (2014).}
+In triangle $ABC$, a point $P$ is at distances $R_1=1$, $R_2=2$, $R_3=3$ from $A,B,C$.
+Find the maximum area of $ABC$.
+Place $P$ at the origin, with $A=(x_1,y_1)$, $B=(x_2,y_2)$, $C=(x_3,y_3)$.
+Then $x_i^2+y_i^2=R_i^2$ and
+\[
+[ABC]=\frac12\begin{vmatrix}1&x_1&y_1\\1&x_2&y_2\\1&x_3&y_3\end{vmatrix},\qquad
+\begin{vmatrix}1&x_1&y_1\\1&x_2&y_2\\1&x_3&y_3\end{vmatrix}^{\!2}
+\leq(R_1^2+1)(R_2^2+1)(R_3^2+1).
+\]
+The determinant estimate gives
+\[
+[ABC]\leq\frac12\sqrt{(R_1^2+1)(R_2^2+1)(R_3^2+1)}.
+\]
+This gives $[ABC]\leq5$, but equality would require the three rows to be
+orthogonal, which is impossible here. We therefore finish the maximization.
+After a rotation and, if needed, a reflection, put
+\[
+A=(1,0),\qquad B=2(\cos\beta,\sin\beta),\qquad
+C=3(\cos\gamma,\sin\gamma),\qquad 0\leq\beta\leq\pi.
+\]
+Twice the area is
+\[
+2[ABC]=2\sin\beta+6\sin(\gamma-\beta)-3\sin\gamma.
+\]
+For fixed $\beta$, maximize over $\gamma$. Writing $c=\cos\beta$, we get
+\[
+2[ABC]\leq2\sqrt{1-c^2}+3\sqrt{5-4c}=:F(c),qquad -1\leq c\leq1,
+\]
+and the choice of $\gamma$ giving equality is available. The unique critical
+point of $F$ in $(-1,0)$ is the negative root $c_0$ of
+\[
+4c^3-14c^2+9=0.
+\]
+The derivative is negative on $(0,1)$, and comparison with the endpoints
+shows that this critical point gives the maximum. Therefore
+\[
+\max[ABC]=\sqrt{1-c_0^2}+\frac32\sqrt{5-4c_0}
+\approx4.904822,
+\qquad c_0\approx-0.729379.
+\]
 
 % Source page 11 - left
 % BLOG-CONTENT-END

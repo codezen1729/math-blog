@@ -185,6 +185,63 @@ The equation $x^3+ax^2+bx+c=0$, with $a,b,c$ real, has real roots if
 \end{lemma}
 The criterion applies to the following problem.
 
+Let us use this to solve a totally unexpected problem!
+\paragraph{Application.}
+If $x,y,z>0$ and $xy+yz+zx=2(x+y+z)$, prove that
+$xyz\leq x+y+z+2$.
+Here $x,y,z$ are real. Put
+\[
+m=x+y+z,\qquad p=xyz.
+\]
+Create a polynomial with roots $x,y,z$:
+\[
+P(X)=X^3-mX^2+2mX-p.
+\]
+Since $P$ has only real roots, the preceding lemma gives
+\[
+\bigl(-2m^3+18m^2-27p\bigr)^2
+\leq4(m^2-6m)^3.
+\]
+Also $2m=xy+yz+zx\leq m^2/3$, so $m\geq6$. The displayed
+inequality now implies
+\[
+27p\leq-2m^3+18m^2+2\{m(m-6)\}^{3/2}.
+\]
+For $m\geq6$,
+\[
+2\{m(m-6)\}^{3/2}
+\leq(m-6)(2m^2-6m-9),
+\]
+because, after squaring when $m>6$, the difference between the square
+of the right-hand side and the square of the left-hand side is
+$27(m-6)^2(4m+3)\geq0$; the case $m=6$ is immediate. Therefore
+\[
+27p\leq-2m^3+18m^2+(m-6)(2m^2-6m-9)=27m+54.
+\]
+Hence $p\leq m+2$, and therefore $xyz\leq x+y+z+2$. Q.E.D.!
+You can also resolve the problem using Lagrange multipliers!
+
+The notebook first attempted the same idea with
+\[
+P(X)=X^3-mX^2+\frac m2X-c,qquad m=x+y+z,
+\]
+and continued: ``$P$ has all real solutions. Let $c>m+2$; this is our assumption!''
+The cubic criterion was then written as
+\[
+\left(2(-m)^3-9(-m)\frac m2+27(-c)\right)^2
+\leq4\left(m^2-\frac{3m}{2}\right)^3,
+\]
+followed by
+\[
+108c^2+c(16m^3-36m^2)+2m^3-m^4\leq0.
+\]
+The notebook says that this is an increasing function of $c$, so that $c=m+3$, described there as the least value of $c$, must satisfy the inequality. Substitution then gives
+\[
+15m^4+14m^3+648m+972\leq0,
+\]
+which contradicts $m=x+y+z>0$.
+This original attempt has two objective slips: the hypothesis gives the quadratic coefficient $xy+yz+zx=2m$, not $m/2$, and $c>m+2$ does not make $m+3$ its least real value. The corrected discriminant calculation above preserves the intended route.
+
 
 \paragraph{V. V. Acharya's enigmatic problem: see the unseen.}
 Let $P(x)=x^8-4x^7+7x^6+ax^5+bx^4+cx^3+dx^2+ex+f$.
@@ -192,7 +249,7 @@ The roots of this polynomial are positive reals. Determine the constants $(a,b,c
 Suppose the roots are $y_1,y_2,y_3,\ldots,y_8$. By Vi\`ete's relations,
 \[\sum y_i=4,\qquad\sum_{i<j}y_iy_j=7,
 \qquad\sum y_i^2=\left(\sum y_i\right)^2-2\sum_{i<j}y_iy_j=2.\]
-Note that $\mathrm{AM}=(\sum y_i)/8=1/2$, and $\mathrm{RMS}=\sqrt{(\sum y_i^2)/8}=1/2$. 
+Note that $\mathrm{AM}=(\sum y_i)/8=1/2$, and $\mathrm{RMS}=\sqrt{(\sum y_i^2)/8}=1/2$.
 Since AM $=$ RMS, we have $y_1=y_2=\cdots=y_8=1/2$.
 Thus $P(x)=(x-1/2)^8$, which determines all six constants.
 

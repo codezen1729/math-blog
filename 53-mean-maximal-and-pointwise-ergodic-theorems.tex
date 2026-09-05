@@ -5,18 +5,23 @@
 \begin{document}
 \section*{Mean, Maximal, and Pointwise Ergodic Theorems}
 % BLOG-CONTENT-BEGIN
-Poincar\'e recurrence tells us that $\{T^{\circ n}(x)\}_n$ is recurrent.
-If $T$ is ergodic, then for almost every $x\in X$ this orbit returns to every
-positive-measure subset of $X$. The next question is quantitative: how often
-does it return? More precisely, we ask
+In our attempt to get a hold on the nature of $\{T^{\circ n}(x)\}_n$ or
+$\{T^{\circ n}(E)\}_n$, we saw that $\{T^{\circ n}(x)\}_n$ is recurrent.
+Further, if $T$ is ergodic, then $\{T^{\circ n}(x)\}_n$ is recurrent on all
+positive-measure subsets of $X$ for almost every $x\in X$. The next natural
+question to ask is: how recurrent are they? Mathematically speaking, we ask
 what happens, as $N\to\infty$, to
 \[
   A_N^f:=\frac1N\sum_{n=0}^{N-1}U_T^n f
   \qquad\text{(the $T$-average of $f$).}
 \]
+Although we started off by asking about $U_T^n f$ as $n\to\infty$, we shall
+see that, as a consequence of the Koopman--Neumann lemma for positive bounded
+sequences, if $A_N^f\to A$ as $N\to\infty$, then $U_T^n f\to A$ as
+$n\to\infty$, $n\notin J$, where $J$ has ``density'' zero in $\mathbb Z$.
 In answering what happens to $\frac1{N+1}\sum_{n=0}^{N}U_T^n f$ as
 $N\to\infty$, ergodic theorems will, in some sense, establish a duality
-between space and time. The main result is the following.
+between space and time. We plan to prove the following.
 
 \setcounter{theorem}{8}\begin{theorem}[Birkhoff]
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system, with $T$ ergodic.
@@ -31,10 +36,18 @@ If $f\in L^1_\mu$, then
 The left-hand side is an average over time, and the right-hand side, being
 an integral, is an average over space. If $f=\chi_B$, then the ergodic
 theorem is telling you that the probability of $T^n(x)\in B$ is given by
-the size of $B$ (or the measure of $B$). The conclusion is independent of $x\in X$, and the imposition that
+the size of $B$ (or the measure of $B$). The independence of the theorem from
+$x\in X$ is the remarkable thing to observe, and the imposition that
 $T$ be ergodic is essential; otherwise, there may be $x\in X$ such that
-$T^n(x)\notin B$ for all $n\geq1$. Removing that invariant-set obstruction allows the measure of a set to govern the recurrence frequency. This is the time--space duality.
+$T^n(x)\notin B$ for all $n\geq1$. But as soon as you remove that
+set-theoretic hindrance, recurrence of orbits is governed by the sizes of
+sets. Now let me explain the duality.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{lecture3-fig-01.pdf}
+  \FigureTag{L3.1}{fig:lecture3-fig-01}
+\end{figure}
 For a positive-measure set $B$, ergodicity gives
 \[
  \bigcup_{n\geq0}T^{-n}(B)=X\qquad\text{almost everywhere}.
@@ -44,9 +57,9 @@ Thus certain spatial information can be translated into temporal information,
 and vice versa.
 
 % Source page 3
-We now give a complete proof of Birkhoff's ergodic theorem, often also called
-the pointwise ergodic theorem. The proof emphasizes its operator-theoretic
-nature.
+In this post we shall give a complete proof of Birkhoff's ergodic theorem
+(often also called the pointwise ergodic theorem). We must emphasise that
+ergodic theorems are unitary properties.
 
 \setcounter{theorem}{9}\begin{theorem}[von Neumann's mean ergodic theorem: $L^2_\mu$ version]
 \label{thm:l3-mean-l2}
@@ -62,7 +75,7 @@ Then, for every $f\in L^2_\mu$,
 \]
 \end{theorem}
 \begin{proof}
-First determine $I^\perp$. Set
+Let us first begin by finding $I^\perp$. Set
 $B=\{U_Tg-g:g\in L^2_\mu\}$, and claim that $B^\perp=I$.
 If $f\in I$, then $U_Tf=f$. Hence
 \[
@@ -82,9 +95,7 @@ Therefore
  =0=\|(U_T^*-\id)f\|.
 \]
 % Source page 4
-Thus $U_T^*f=f$. Since $U_T$ is an isometry,
-$\|U_Tf-f\|_2^2=\|U_Tf\|_2^2+\|f\|_2^2-2\operatorname{Re}\langle U_Tf,f\rangle=0$.
-Hence $U_Tf=f$, so $f\in I$.
+Thus $U_T^*f=f$. Since $U_T$ is an isometry, $\|U_Tf-f\|_2^2=\|U_Tf\|_2^2+\|f\|_2^2-2\operatorname{Re}\langle U_Tf,f\rangle=0$. Hence $U_Tf=f$, so $f\in I$.
 Consequently, $B^\perp=I$ and $L^2_\mu(X)=I\oplus\overline B$.
 Write $f=P_Tf+h$, with $h\in\overline B$. It now suffices to prove
 $\frac1N\sum_{n=0}^{N-1}U_T^nh\to0$ in $L^2_\mu$.
@@ -153,7 +164,7 @@ By the triangle inequality,
 Thus $A_N^f$ is Cauchy in $L^1_\mu$. Since $L^1_\mu$ is complete
 (the Riesz--Fischer theorem), $A_N^f\to f'$.
 
-The following identity shows that $f'$ is $T$-invariant:
+It is now an elementary exercise to show that $f'$ is $T$-invariant:
 \[
  U_TA_N^f=\frac{N+1}{N}A_{N+1}^f-\frac1Nf,
 \]
@@ -171,7 +182,7 @@ everywhere.
 \begin{remark}
 \label{rem:l3-frequency}
 If $T$ is ergodic, then, for $f=\chi_B$, we only know so far that the
-frequency with which an orbit visits $B$ is a fixed number, independent of $x$.
+frequency of orbit visits to $B$ is a fixed number, independent of $x$.
 \end{remark}
 \begin{remark}[Quantitative estimate]
 We have $A_N^{\chi_B}=\frac1N\sum_{n=0}^{N-1}\chi_B\circ T^n$.
@@ -215,7 +226,8 @@ Then
 \end{theorem}
 
 % Source page 7
-The following technical lemma yields the theorem.
+We shall first prove a technical lemma and derive the theorem from it in a
+snap.
 \setcounter{theorem}{12}\begin{lemma}
 \label{lem:l3-positive}
 Let $U:L^1_\mu\to L^1_\mu$ be a positive linear operator with
@@ -253,70 +265,119 @@ because $F_N(x)=0$ if $x\notin P$. Therefore
 Here the equality uses positivity, and the last inequality uses $\|U\|\leq1$.
 \end{proof}
 
+
 \begin{proof}[Proof of the maximal ergodic theorem]
-Apply Lemma~\ref{lem:l3-positive} to $U=U_T$ and $f=g-\alpha$.
-If
+Set $f=g-\alpha$ and $Uf:=f\circ T$. This is a positive isometry, so
+$\|U\|\leq1$. We have
+\[
+ E_\alpha=\bigcup_{N=1}^\infty P_N,
+\]
+where
 \[
  P_N:=\left\{x:\max_{1\leq n\leq N}
  \sum_{i=0}^{n-1}(g(T^ix)-\alpha)>0\right\},
 \]
-then
+and, by the lemma,
 \[
  0\leq\int_{P_N}(g-\alpha)\,d\mu,
  \qquad \alpha\mu(P_N)\leq\int_{P_N}g\,d\mu.
 \]
 The sets $P_N$ increase to $E_\alpha$. Letting $N\to\infty$ gives
-$\alpha\mu(E_\alpha)\leq\int_{E_\alpha}g\,d\mu\leq\|g\|_1$.
-If $T^{-1}(A)=A$, apply the same argument to
-$(g-\alpha)\chi_A$. Its positive maximal set is $E_\alpha\cap A$, which
-gives the second inequality.
+$\int_{E_\alpha}g\,d\mu\geq\alpha\mu(E_\alpha)$, and of course
+$\int_{E_\alpha}g\,d\mu\leq\|g\|_1$. To obtain the other inequality, apply
+the same argument to $(g-\alpha)\chi_A$ when $T^{-1}(A)=A$. Its positive
+maximal set is $E_\alpha\cap A$, which gives the result.
 \end{proof}
-
 
 \begin{remark}
 This theorem has essentially removed the dependence on $N$ in the
 statement made in the quantitative remark above.
 \end{remark}
-We now prove Birkhoff's ergodic theorem.
+Let us finally prove our desired theorem.
 
-\begin{proof}[Proof of Birkhoff's ergodic theorem]
-First consider a function of the form
-$h=u+(U_Tg-g)$, where $u\in I$ and $g\in L^2_\mu$. Its averages satisfy
+\setcounter{theorem}{13}\begin{theorem}[Birkhoff's ergodic theorem]
+\label{thm:l3-birkhoff}
+If $f\in L^1_\mu$, then
 \[
- A_N^h=u+\frac{U_T^Ng-g}{N}.
+ \lim_{n\to\infty}\frac1n\sum_{j=0}^{n-1}f(T^j(x))=f^*(x).
 \]
-For every $\varepsilon>0$, invariance of $\mu$ gives
+The function $f^*$ is $T$-invariant, and $\int f^*\,d\mu=\int f\,d\mu$.
+\end{theorem}
+% Source page 9
+\begin{proof}
+Of course, the measure-preserving system $(X,\mathcal B,\mu,T)$ is lurking
+in the background. Since the nature of the result is purely additive, we
+may assume without loss of generality that $f:X\to\mathbb R$. Define
 \[
- \sum_{N=1}^{\infty}
- \mu\bigl(\{|U_T^Ng|>\varepsilon N\}\bigr)
- =\sum_{N=1}^{\infty}\mu\bigl(\{|g|>\varepsilon N\}\bigr)<\infty.
+ f^*(x)=\limsup_{n\to\infty}\frac1n\sum_{i=0}^{n-1}f(T^i(x)),
+ \qquad
+ f_*(x)=\liminf_{n\to\infty}\frac1n\sum_{i=0}^{n-1}f(T^i(x)).
 \]
-The Borel--Cantelli lemma therefore implies $U_T^Ng/N\to0$ almost
-everywhere, and so $A_N^h\to u$ almost everywhere. By the $L^2$ mean
-ergodic theorem, functions of this form are dense in $L^2_\mu$, hence in
-$L^1_\mu$.
-
-For $q\in L^1_\mu$ and $\alpha>0$, the maximal theorem applied to $q$ and
-$-q$ gives
+\paragraph{Trick (which we noticed before).}
+The exact identity
 \[
- \mu\left(\left\{x:\sup_{N\geq1}|A_N^q(x)|>\alpha\right\}\right)
- \leq\frac{2\|q\|_1}{\alpha}.
+ \frac{n+1}{n}A_{n+1}^f(x)
+ =A_n^f(Tx)+\frac1nf(x)
 \]
-Given $f\in L^1_\mu$, approximate it in $L^1$ by the functions $h$ above.
-Since $A_N^h$ converges almost everywhere, the last inequality shows that
-the upper and lower limits of $A_N^f$ agree almost everywhere. Thus
-$A_N^f\to f^*$ almost everywhere.
-
-The $L^1$ mean ergodic theorem also gives $A_N^f\to f'$ in $L^1$, where
-$f'$ is $T$-invariant. A subsequence converges to $f'$ almost everywhere,
-so $f^*=f'$ almost everywhere. Consequently $f^*$ is $T$-invariant and
+contains the whole trick. Choose $\{n_k\}_k$ such that
+$A_{n_k+1}^f(x)\to f^*(x)$. Since $(n_k+1)/n_k\to1$, the identity gives
+$f^*(x)\leq f^*(Tx)$. If we instead choose $\{n_k\}_k$ such that
+$A_{n_k}^f(Tx)\to f^*(Tx)$, then
 \[
- \int_Xf^*\,d\mu=\lim_{N\to\infty}\int_XA_N^f\,d\mu
- =\int_Xf\,d\mu.
+ f^*(Tx)=\lim_{k\to\infty}A_{n_k}^f(Tx)
+ \leq\limsup_{n\to\infty}\frac{n+1}{n}A_{n+1}^f(x)=f^*(x).
+\]
+Consequently, and similarly for $f_*$,
+\begin{equation}
+ f^*=f^*\circ T,\qquad f_*=f_*\circ T.
+ \tag{$*$}\label{eq:l3-invariance}
+\end{equation}
+Let $\alpha>\beta$, with $\alpha,\beta\in\mathbb Q$, and set
+\[
+ E_\alpha^\beta=\{x\in X:f_*(x)<\beta\text{ and }f^*(x)>\alpha\}.
+\]
+% Source page 10
+By \eqref{eq:l3-invariance}, $T^{-1}(E_\alpha^\beta)=E_\alpha^\beta$ up to a
+null set. Also, $E_\alpha\supseteq E_\alpha^\beta$, where $E_\alpha$ is as in
+Theorem~\ref{thm:l3-maximal}. The invariant-set form of that theorem gives
+\[
+ \alpha\mu(E_\alpha^\beta)
+ \leq\int_{E_\alpha^\beta}f\,d\mu.
+\]
+Similarly, applying it to $-f$ with threshold $-\beta$ gives
+$\int_{E_\alpha^\beta}f\,d\mu\leq\beta\mu(E_\alpha^\beta)$.
+Combining these,
+\[
+ \alpha\mu(E_\alpha^\beta)
+ \leq\int_{E_\alpha^\beta}f\,d\mu
+ \leq\beta\mu(E_\alpha^\beta).
+\]
+Since $\alpha>\beta$, $\mu(E_\alpha^\beta)=0$ for all rational
+$\alpha>\beta$. By the density of $\mathbb Q$ in $\mathbb R$,
+\[
+ \{x:f_*(x)<f^*(x)\}
+ =\bigcup_{\substack{\alpha,\beta\in\mathbb Q\\\alpha>\beta}}E_\alpha^\beta.
+\]
+The union has measure zero, so $f_*=f^*$ almost everywhere. Thus
+\[
+ A_n^f(x)=\frac1n\sum_{i=0}^{n-1}f(T^i(x))\longrightarrow f^*=f_*
+ \qquad\text{almost everywhere.}
+\]
+By the $L^1_\mu$ version of von Neumann's ergodic theorem,
+$A_n^f\to f'\in L^1_\mu$ in $L^1_\mu$, with $f'$ invariant. A consequence of
+the Borel--Cantelli lemma gives a sequence $n_k\to\infty$ such that
+% Source page 11
+$A_{n_k}^f\to f'$ almost everywhere, so $f^*=f'=f_*$ almost everywhere and
+$f^*$ is $T$-invariant. Finally, $L^1$ convergence and invariance of $\mu$
+give
+\[
+ \int f^*\,d\mu=\lim_{n\to\infty}\int A_n^f\,d\mu=\int f\,d\mu.\qedhere
 \]
 \end{proof}
 
-\begin{remark}[Ergodic case]
+
+
+\begin{remark}[Final remark]
 If $T$ is ergodic, then $f^*$ must be constant, since it is $T$-invariant
 (the eigenfunctions of $U_T$ corresponding to $1$ are only the constants).
 Thus

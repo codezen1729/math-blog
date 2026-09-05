@@ -6,9 +6,9 @@
 % BLOG-CONTENT-BEGIN
 Let us look at Riemann surfaces through their topology. Historically speaking, these surfaces arose in response to the following question:
 
-\textbf{Are there complex analytic surfaces $Y$ on which polynomials like $(X^2 - z)$ become reducible?} 
+\textbf{Are there complex analytic surfaces $Y$ on which polynomials like $(X^2 - z)$ become reducible?}
 
-We know that the polynomial $X^2-z \in \mathcal{M}(\mathbb{C})[X]$ (the polynomial ring over the field of meromorphic functions on $\mathbb{C}$) is irreducible because $\sqrt{z}$ can't be defined globally on $\mathbb{C}$. So, we seek appropriate replacements for the complex plane for a given irreducible polynomial in $\mathcal{M}(\mathbb{C})[X]$. A complete resolution of the question is given below. 
+We know that the polynomial $X^2-z \in \mathcal{M}(\mathbb{C})[X]$ (the polynomial ring over the field of meromorphic functions on $\mathbb{C}$) is irreducible because $\sqrt{z}$ can't be defined globally on $\mathbb{C}$. So, we seek appropriate replacements for the complex plane for a given irreducible polynomial in $\mathcal{M}(\mathbb{C})[X]$. A complete resolution of the question is given below.
 
 \subsection*{Theorem 0.1} Let $X$, $Y$ be compact Riemann surfaces. The following are in bijective correspondence:
 \begin{itemize}
@@ -57,7 +57,7 @@ A systematic study of Riemann surfaces begins with the Uniformization Theorem.
     Given a Riemann surface $X$, $\pi_1(X) = 0$ implies that $X \cong \mathbb{C}$, $\mathbb{D}$, or $\mathbb{CP}^1$.
 
 
-With this theorem at our disposal we can streamline the study of our objects as follows: 
+With this theorem at our disposal we can streamline the study of our objects as follows:
 \begin{enumerate}
     \item Every Riemann surface is semilocally simply connected and therefore admits a universal cover $\widetilde{X} \rightarrow X$.
     \item Universal covers are regular, which implies, $X\cong \widetilde{X}/\Gamma$, where $\Gamma<\operatorname{Aut}(\widetilde X)$ is a group whose action on $\widetilde X$ is properly discontinuous and free.
@@ -70,11 +70,11 @@ With this theorem at our disposal we can streamline the study of our objects as 
 \end{enumerate}
 
 
-In addition to this, projective spaces $\mathbb{CP}^n$ become relevant because all compact Riemann surfaces can be embedded in them. So, if the classification above does not settle the question, then think of compact Riemann surfaces as embedded complex $1$-submanifolds of $\mathbb{CP}^n$. Let us now try to understand the topology of the objects of study: 
+In addition to this, projective spaces $\mathbb{CP}^n$ become relevant because all compact Riemann surfaces can be embedded in them. So, if the classification above does not settle the question, then think of compact Riemann surfaces as embedded complex $1$-submanifolds of $\mathbb{CP}^n$. Let us now try to understand the topology of the objects of study:
 
 
 \begin{enumerate}
-    \item Recall that $\mathbb{CP}^n$ is constructed inductively via the following pushout square: 
+    \item Recall that $\mathbb{CP}^n$ is constructed inductively via the following pushout square:
 \[\begin{tikzcd}[row sep=large,column sep=large,cells={nodes={font=\large}}]
 	{S^{2n+1}} & {\mathbb{CP}^n} \\
 	{D^{2n+2}} & {\mathbb{CP}^{n+1}}
@@ -98,10 +98,10 @@ Further, $\mathbb{CP}^n$ sits in the following fibre sequence:
 \end{equation*}
 which yields the following long exact sequence of homotopy groups:
 \begin{equation*}
-    \cdots \rightarrow \pi_n(S^1) \rightarrow \pi_n(S^{2n+1}) \rightarrow \pi_n(\mathbb{CP}^n) \rightarrow \pi_{n-1}(S^1) \rightarrow \ldots
+    \cdots \rightarrow \pi_k(S^1) \rightarrow \pi_k(S^{2n+1}) \rightarrow \pi_k(\mathbb{CP}^n) \rightarrow \pi_{k-1}(S^1) \rightarrow \ldots
 \end{equation*}
-Now, using the fact that $\pi_n(S^1) = 0$ for $n>1$, one can know about projective spaces just as much as one knows about spheres.
-\item It follows from the Cauchy--Riemann equations that Riemann surfaces are orientable. So, by the classification theorem for compact orientable surfaces we see that compact Riemann surfaces are topologically spheres with $g$ handles. More precisely, 
+Now, using the fact that $\pi_k(S^1) = 0$ for $k>1$, one can know about projective spaces just as much as one knows about spheres.
+\item It follows from the Cauchy--Riemann equations that Riemann surfaces are orientable. So, by the classification theorem for compact orientable surfaces we see that compact Riemann surfaces are topologically spheres with $g$ handles. More precisely,
 \begin{equation*}
     X \cong S^2 \# (T^2 \#\cdots \#T^2)
 \end{equation*}
@@ -115,9 +115,10 @@ Let us now extrapolate more information about these using the Uniformization The
 In conclusion, among compact Riemann surfaces, $\mathbb{CP}^1$ and $T^2$ are the only spherical and Euclidean surfaces; the rest are hyperbolic. In fact, by analyzing the discrete subgroups of $\operatorname{Aut}(\mathbb C)$ and applying the Maximum Modulus Principle, one obtains the following list of connected Riemann surfaces with universal cover $\mathbb{CP}^1$ or $\mathbb C$:
 \begin{itemize}
     \item Spherical Surfaces $\longleftrightarrow \mathbb{CP}^1$
-    \item Euclidean Surfaces $\longleftrightarrow$ $\mathbb{C}$, $\mathbb{C}^*$, $T^2$ 
+    \item Euclidean Surfaces $\longleftrightarrow$ $\mathbb{C}$, $\mathbb{C}^*$, $T^2$
+    \item Hyperbolic Surfaces $\longleftrightarrow$ all the remaining ones
 \end{itemize}
-Turns out that one can endow hyperbolic surfaces with a metric (called the Poincar\'e metric) which exhibits negative sectional curvature. As a result of this "inward bend," holomorphic maps between any two hyperbolic surfaces become distance-nonincreasing maps. So, two nearby points stay at most that far apart upon iteration by a holomorphic self map. Dennis Sullivan was awarded the Abel Prize for his phenomenal work in understanding "stable" aspects of dynamics on $\mathbb{CP}^1$. This shows that the Uniformization Theorem is extremely useful in streamlining the study of Riemann surfaces and that hyperbolic surfaces deserve special attention because they are so abundant.
+Turns out that one can endow hyperbolic surfaces with a metric (called the Poincar\'e metric) which exhibits negative sectional curvature. As a result of this "inward bend," holomorphic maps between any two hyperbolic surfaces become distance-nonincreasing maps. So, two nearby points stay at most that far apart upon iteration by a holomorphic self map. In other words, the dynamics on hyperbolic surfaces are strongly constrained by the Schwarz--Pick estimate. With a couple of propositions one can do away with $T^2$ leaving essentially three surfaces - $\mathbb{C}$, $\mathbb{C}^*$, $\mathbb{CP}^1$ to do dynamics on. Dennis Sullivan was awarded the Abel Prize for his phenomenal work in understanding "stable" aspects of dynamics on $\mathbb{CP}^1$. This shows that the Uniformization Theorem is extremely useful in streamlining the study of Riemann surfaces and that hyperbolic surfaces deserve special attention because they are so abundant.
 \end{enumerate}
 
 
@@ -146,9 +147,9 @@ Let $\pi:X \rightarrow Y$ be a $d$-fold ramified cover and let $y_0 \in Y-B$. Th
 $$\rho: \pi_1(Y-B, y_0) \rightarrow S_d$$
 with transitive image. Clearly, any equivalent $d$-fold ramified cover will yield a group homomorphism from the fundamental group of $Y-B$ with a different base point to $S_d$. Hence, equivalent ramified covers yield the prescribed group homomorphism with transitive image \textit{up to conjugacy}.
 
-Now suppose that $\rho:\pi_1(Y-B,y_0)\to S_d$ with the stated properties is given. Consider 
+Now suppose that $\rho:\pi_1(Y-B,y_0)\to S_d$ with the stated properties is given. Consider
 $$H:= \big\{[\gamma] \in \pi_1(Y-B, y_0)   |  \rho([\gamma])(1) = 1\big\}$$
-Then $H$, the stabilizer of $1$, is an index-$d$ subgroup of $\pi_1(Y-B,y_0)$. As $Y-B$ is semi-locally simply connected, there exists, 
+Then $H$, the stabilizer of $1$, is an index-$d$ subgroup of $\pi_1(Y-B,y_0)$. As $Y-B$ is semi-locally simply connected, there exists,
 $$\pi: X \rightarrow Y-B$$
 a $d$-fold cover with $\pi_*(\pi_1(X)) \cong H$. We are now left with the job of plugging in points appropriately to get a ramified cover.
 
@@ -184,7 +185,7 @@ is the required $d$
 
 Let us now record certain observations implicit in the proof above:
 \begin{enumerate}
-    \item \underline{Observation 1}: If $B = \{b_1, b_2,\ldots, b_k\}$ is a finite set of branch points with inverse images $\{c_1, \ldots, c_l\}$, then there exists a neighbourhood around $c_i$ and $\pi(c_i)$ such that $\pi$ looks like the map $(z\rightarrow z^{d_i})$. 
+    \item \underline{Observation 1}: If $B = \{b_1, b_2,\ldots, b_k\}$ is a finite set of branch points with inverse images $\{c_1, \ldots, c_l\}$, then there exists a neighbourhood around $c_i$ and $\pi(c_i)$ such that $\pi$ looks like the map $(z\rightarrow z^{d_i})$.
 \subsection*{Definition 0.4}
     In the same setting as the theorem before if the map $\pi$ around the point $c_i \in \pi^{-1}(B)$ is equivalent to the map $(z\rightarrow z^{d_i})$, then we shall say that $c_i$ has \textbf{ramification index} $d_i$.
 
@@ -218,7 +219,7 @@ Having described ramified covers, we now ask what topological restrictions gover
     $$\chi(M) = d(\chi(N) - {k}) + \sum_{i = 1}^{k}m_i$$
 
 
-Note that, 
+Note that,
 $$\sum_{i=1}^{l}(d_i-1) = \sum_{i=1}^{k}(d - m_i)$$
 where $\{d_i\}_i$ are the ramification indices. Therefore, Riemann-Hurwitz formula takes on the following more suggestive form:
 $$\chi(M) = d\chi(N) - \color{red}\sum_{i=1}^{l}(d_i-1)$$
@@ -229,10 +230,12 @@ The above says that $\pi:M\rightarrow N$ is obstructed by $\sum_{i=1}^{l}(d_i-1)
     In the same setting as in the theorem above, a point $p \in M$ is said to be \textbf{ramified} if its ramification index is $> 1$, else we say that it is \textbf{unramified}.
 
 
-The preceding theorem and observations imply the following proposition. It is also reminiscent of our general theme of topology informing analytic behaviour of surfaces:
+We shall end by stating a proposition which by now should be a trivial consequence of the theorems we saw and the observations we made. It is also reminiscent of our general theme of topology informing analytic behaviour of surfaces:
 
 \subsection*{Proposition}There cannot be a nonconstant holomorphic map from a lower-genus compact Riemann surface to a higher-genus one.
 
+\textit{Proof.}
+Exercise.
 
 % BLOG-CONTENT-END
 \end{document}

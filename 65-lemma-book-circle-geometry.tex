@@ -58,17 +58,18 @@ Cancelling $r^2$ and multiplying through,
 \]
 
 \setcounter{theorem}{31}\begin{lemma}[Similar triangles and concyclicity]\label{lemma:lb1-37}
-If triangles $ABC$ and $A'B'C$ are oppositely similar, with the displayed
+If triangles $ABC$ and $A'B'C$ are directly similar, with the displayed
 order giving the vertex correspondence, then $A,B,B',A'$ are concyclic.
 \end{lemma}
-A direct angle chase proves the result.
+The notebook records this as: ``If triangles $ABC$ and $AB'C'$ are similar, then $BB'CC'$ is concyclic.'' The shared-vertex formulation above makes the vertex correspondence used below explicit. This is an obvious geometric fact; a simple angle chase yields the result.
 
 \setcounter{theorem}{32}\begin{lemma}[Converse of the alternate-segment theorem]
 An Olympiad student knows the alternate-segment theorem, but its converse is a powerful tool: the ``CAST lemma''.
 \end{lemma}
-Many olympiad problems ask the solver to prove that a segment is tangent to a circle.
-Instead of drawing the circle, a simple angle chase establishing the converse of the alternate-segment theorem completes the proof.
-Here is an IMO problem solved by combining the two lemmas above.
+The IMO jury loves posing problems where one is expected to show that a segment is tangent to a circle.
+Instead of drawing the circle, if a simple angle chase establishes the converse of the alternate-segment theorem, ``that would be it!''
+Let me show a lovely IMO problem resolved by a clever application of the above two lemmas.
+In fact, I checked the competition papers: more than a dozen problems are of this type, and one appeared in IMO 2014!
 
 % Source page 11 - right
 \begin{figure}[H]\centering
@@ -159,12 +160,61 @@ Q.E.D.
 The midpoints of the sides, the feet of the altitudes, and the midpoints of the segments joining the orthocentre to the vertices all lie on a circle, called the nine-point circle.
 \end{lemma}
 
+\paragraph{Application: Proofathon geometry contest (2014).}
+In $\triangle ABC$, with orthocentre $H$, let $BH,CH$ intersect $AC,AB$ at $E,F$, respectively.
+The tangent to the circumcircle of $\triangle ABC$ at $A$ intersects $BC$ at $P$.
+Let $M$ be the midpoint of $AH$, and let $EF$ intersect $BC$ at $G$.
+Prove that $PM\parallel GH$. Draw the figure for yourself!
+
+By the nine-point-circle theorem, $DFME$ is cyclic, so $FX\cdot XE=DX\cdot MX$.
+Also $HEAF$ is cyclic, since $\angle AFC=\angle AEH=90^\circ$, so $FX\cdot XE=XH\cdot XA$.
+Therefore
+\[
+\frac{FX\cdot XE}{FX\cdot XE}=\frac{DX\cdot MX}{XH\cdot HA}
+\quad\Longrightarrow\quad\frac{DX}{XA}=\frac{XH}{MX}
+\quad\Longrightarrow\quad\frac{HD+HX}{AM+MX}=\frac{HX}{MX}.
+\]
+Thus $HD/AM=HX/MX$, and $HD/MH=HX/MX=DX/XA$, since $AM=MH$.
+We have $PA^2=PB\cdot PC$ because $PA$ is tangent to the circumcircle of $\triangle ABC$.
+Hence $PA/PB=PC/PA$, so $\triangle PAB\sim\triangle PCA$, and
+$\angle PBA=\angle PCA=\angle BFC+\angle FCB$.
+It follows that $\angle PBA=\angle BEC+\angle FEB=\angle GEC$, since $BFEC$ is cyclic.
+Now $\angle PAC=\angle GEC$, so $GE\parallel PA$, and
+\[
+\frac{GD}{PG}=\frac{DX}{XA}=\frac{HX}{MX}=\frac{HD}{MH},
+\qquad\frac{GD}{PG}=\frac{HD}{MH},
+\]
+giving $GH\parallel PM$.
+Q.B.D.: Quite Boringly Done!
+
+\emph{Source note.} In the surviving proof, $D$ and $X$ are used without being defined, and the displayed denominator alternates between $HA$ and $XA$; the argument is retained here as written rather than silently completed from an absent figure.
+
 \setcounter{theorem}{90}\begin{lemma}[Excentre]\label{lemma:lb1-93}
 The external bisectors of two angles and the internal bisector of the third concur at a point, called the excentre.
 \end{lemma}
 \paragraph{Application.}
 In a triangle $ABC$, the lines formed by reflecting $BC$ across $AB$ and $AC$ intersect at $D$.
 Prove that the circumcentre of $\triangle ABC$ lies on the circumcircle of $\triangle BCD$.
+
+\begin{figure}[H]\centering
+\includegraphics[width=.73\linewidth]{lb1-fig-28.pdf}
+\FigureTag{LB1.28}{fig:lb1-28}
+\end{figure}
+\emph{Solution.} Join $AD$, and let it intersect the circumcircle of $\triangle BCD$ at $O$.
+Now $BOCD$ is cyclic, so $\angle BOC=180^\circ-\angle BDC=180^\circ-x$.
+Observe that $AB,AC$ are external angle bisectors of $\angle B,\angle C$ of $\triangle BCD$.
+External bisectors of two angles and the internal bisector of the third are always concurrent.
+Hence $AD$ is an angle bisector. Call this I.
+From I, $\angle BDO=\angle CDO=x/2$, so $\angle OBC=\angle ODC=x/2$ and $\angle OCB=\angle ODB=x/2$.
+Thus $\triangle BOC$ is isosceles, and $BO=OC$.
+\paragraph{Crucial angle chase.}
+We have $\angle ABC=90^\circ-\angle DBC/2$ and $\angle ACB=90^\circ-\angle DCB/2$.
+Therefore
+\[\angle BAC=180^\circ-\left(180^\circ-\frac{\angle DBC+\angle DCB}{2}\right)
+=\frac{\angle DBC+\angle DCB}{2}=\frac{180^\circ-x}{2}=90^\circ-\frac x2.\]
+Call this II. From II, $\angle BOC=2\angle BAC$, and also $OB=OC$.
+Therefore $O$ is the circumcentre of $\triangle ABC$. Q.E.D.
+
 There is one more problem: take this one as an application of Ravi substitutions.
 The bisector of $\angle A$ intersects $BC$ and the circumcircle of $\triangle ABC$ at $D,E$.
 Show that $\triangle BDE$ and $\triangle CDE$ have the same circumradius.
@@ -196,6 +246,44 @@ Consequently
 =\frac{BD}{CD},\]
 because $\angle BDE=180^\circ-\angle CDE$.
 This establishes I, hence $R(\triangle BDE)=R(\triangle CDE)$.
+
+\paragraph{An application of the nine-point circle: INMO (2012).}
+Let $ABC$ be acute, and take $D,E,F$ on $BC,CA,AB$ so that $AD$ is a median,
+$BE$ is the internal angle bisector, and $CF$ is an altitude.
+Suppose $\angle FDE=\angle C$, $\angle DEF=\angle A$, and $\angle EFD=\angle B$.
+Prove that $ABC$ is equilateral.
+% Source page 7 - right
+\paragraph{Step 1.}
+\begin{figure}[H]\centering
+\includegraphics[width=.82\linewidth]{lb2-fig-05.pdf}
+\FigureTag{LB2.5}{fig:lb2-05}
+\end{figure}
+Since $\angle AFD=\angle B+\angle FDB$, we obtain
+$\angle AFE+\angle B=\angle B+\angle FDB$, so $\angle AFE=\angle FDB$.
+Similarly $\angle AFE=\angle FDB=\angle DEC$.
+Let $F'$ be the intersection of $AC$ with the line through $F$ parallel to
+$BC$. Then
+$\angle F'FD=\angle FDB=\angle DEC$, so $FF'ED$ is cyclic.
+\paragraph{Step 2.}
+\begin{figure}[H]\centering
+\includegraphics[width=.84\linewidth]{lb2-fig-06.pdf}
+\FigureTag{LB2.6}{fig:lb2-06}
+\end{figure}
+Let $E'$ be the intersection of $BC$ with the line through $E$ parallel to
+$AB$, and let $D'$ be the intersection of $AB$ with the line through $D$
+parallel to $AC$. Repeating the preceding angle chase for these two parallels
+puts $F,F',E,E',D,D'$ on one circle.
+Since $D$ is the midpoint of $BC$, $D'$ the midpoint of $AB$, and $F$ a perpendicular foot,
+this is the nine-point circle.
+The nine-point circle meets $AC$ at the perpendicular foot and the midpoint.
+Thus $E$ is one of those two. Since $BE$ bisects the angle, this forces $AB=BC$; hence $E'$ and $D$ coincide.
+Now $DE\parallel AB$, so $\angle DEC=\angle A$.
+Step 1 gives $\angle FDB=\angle DEC=\angle A$.
+Also $BD=CD$ and $\angle BFC=90^\circ$, so $FD=BD$ and $\angle DFB=\angle B$.
+\paragraph{Step 3.}
+In triangle $FDB$, $\angle B+\angle B+\angle A=180^\circ$.
+In triangle $ABC$, $\angle B+\angle A+\angle A=180^\circ$.
+Thus $2\angle B+\angle A=2\angle A+\angle B$ and $A=B=C=60^\circ$.
 
 % Source page 8 - left
 Here is another problem.

@@ -117,7 +117,7 @@ The keyhole is
 
 \textbf{Exercise.} Similarly construct a multiple keyhole.
 
-\textbf{Remark.} The name refers to the contour's narrow connecting passage and the reversal of orientation around the inner boundary.
+\textbf{Remark.} The reason it is called a keyhole, even though it might look like neither a keyhole nor even a hole to begin with, is that it rather looks like, or has a similar orientation switch as, a keyhole.
 
 \begin{figure}[H]
   \centering
@@ -258,6 +258,7 @@ In short, if $\bigcup_iD_i$ is connected, we have the setup needed to decompose 
 \[
   f\in H\Bigl(\bigcup_iD_i\Bigr).
 \]
+\emph{(Draw!)}
 
 \textit{Proof.}
 Let us do this via induction. For $n=2$, it is evident. Assume it holds for $n=k$. Consider $n=k+1$. Note that $\partial D_{k+1}$ will either belong to $\operatorname{int}(\gamma_{c_j})$ or to $\operatorname{ext}(\gamma_{c_j})$. The curve $\gamma_{c_j}$ will cut $\partial D_{k+1}$ at finitely many points; call them $d_1,d_2,\ldots,d_r$. Look at two consecutive points $d_i$ and $d_{i+1}$, where the $d_i$ are arranged in increasing argument, after normalizing $D_{k+1}$ to $S^1$ without loss of generality.
@@ -277,7 +278,7 @@ By a connectedness argument, note that if $\gamma_{c_j}$, $j>1$, cuts $\partial 
 Now one can modify the $\gamma_{c_j}$ similarly, for we have shown that all the others lie toward one arc.
 
 
-\subsection*{Painlev\'e's Theorem}
+\subsection*{Painlev\'e's Theorem (almost an exercise now!)}
 
 Let $U$ be open and connected, and let $S$ be compact. For every $\varepsilon>0$, suppose there exists
 \[
@@ -291,6 +292,108 @@ such that
 \]
 If $f\in H(U\setminus S)$ is bounded, then $f$ extends holomorphically across $S$.
 
+\textit{Proof.}
+Let $\gamma$ be a simple closed curve in $U$ such that \(S\subset\operatorname{int}(\gamma).\)
+Use the previous proposition to obtain such a $\gamma$ after covering $S$ by finitely many disks. Now $\operatorname{int}(\gamma)\subset U$ by construction. Let
+\[
+  \{B_{\varepsilon_n}(z_n)\}_{n=0}^{N}
+\]
+be the finite subcover of $S$. Group them into connected components and again use the previous exercise to obtain disjoint curves $\{\gamma_{c_j}\}_{j=1}^{m}$ such that
+\[
+  S\subset\bigcup_j\operatorname{int}(\gamma_{c_j}).
+\]
+We do not need the full strength of the previous proposition. Note that
+\[
+  \operatorname{int}(\gamma)\cap\bigcap_j\operatorname{ext}(\gamma_{c_j})
+  \subset U\setminus S.
+\]
+Let $z_0\in U\setminus S$. If
+\[
+  d=\inf_{z\in S}|z-z_0|
+\]
+and $\varepsilon<d$, then
+\[
+  z_0\in\operatorname{int}(\gamma)\cap\bigcap_j\operatorname{ext}(\gamma_{c_j})
+  =:\Omega.
+\]
+On $\Omega$ we have
+\[
+  f(z_0)=\frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz
+  -\sum_{j=1}^{m}\frac{1}{2\pi i}
+  \int_{\gamma_{c_j}}\frac{f(z)}{z-z_0}\,dz.
+\]
+We have thus found a candidate for our extension:
+\[
+\widetilde f(z_0):=
+\begin{cases}
+\displaystyle \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
+  &z_0\in\operatorname{int}(\gamma),\\[1.2ex]
+\displaystyle f(z_0)+\sum_{j=1}^{m}\frac{1}{2\pi i}
+  \int_{\gamma_{c_j}}\frac{f(z)}{z-z_0}\,dz,
+  &z_0\in U\cap\bigcap_j\operatorname{ext}(\gamma_{c_j}).
+\end{cases}
+\]
+
+Note that
+\[
+  \left|\frac{1}{2\pi i}\int_{\gamma_{c_j}}
+  \frac{f(z)}{z-z_0}\,dz\right|
+  \le \frac{\varepsilon}{d}M,
+\]
+and also
+\[
+  \sum_j\left|\frac{1}{2\pi i}\int_{\gamma_{c_j}}
+  \frac{f(z)}{z-z_0}\,dz\right|
+  <\frac{\varepsilon}{d}M.
+\]
+As $\varepsilon\to0$, we see that
+\[
+\widetilde f(z_0):=
+\begin{cases}
+\displaystyle \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
+  &z_0\in\operatorname{int}(\gamma),\\[1.2ex]
+\displaystyle f(z_0)+\sum_j\frac{1}{2\pi i}
+  \int_{\gamma_{c_j}}\frac{f(z)}{z-z_0}\,dz,
+  &z_0\in\Omega':=U\cap\bigcap_j\operatorname{ext}(\gamma_{c_j}).
+\end{cases}
+\]
+This function is not yet done, for the last line makes no sense. Note that, for every $\varepsilon$, we have the decomposition
+\[
+  f(z_0)=\frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz
+  -\sum_j\frac{1}{2\pi i}
+  \int_{\gamma_{c_j}}\frac{f(z)}{z-z_0}\,dz,
+\]
+where $\gamma^*\subset\bigcap_j\operatorname{ext}(\gamma_{c_j})$. Now take the limit:
+\[
+  f(z_0)=\lim_{\varepsilon\to0}(\mathrm{RHS})
+  =\frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
+\]
+which is true for all $z_0$ satisfying
+\[
+  \inf_{z\in S}|z_0-z|>0.
+\]
+Thus we have
+\[
+  \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz
+\]
+on $U\setminus\gamma^*$, and $f(z_0)$ on $\gamma^*$, as the required extension. This is holomorphic, since a limit of holomorphic functions is holomorphic. Note that the convergence is uniform because $f$ is bounded near $S$, and $S$ has measure $0$.
+
+\textbf{Remark.}
+We saw before that
+\[
+\displaystyle \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
+\]
+is holomorphic on $\mathbb C\setminus\gamma^*$. But that barrier of the curve itself is a bit hard to remove, because we simply cannot define
+\[
+f:=
+\begin{cases}
+\displaystyle \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
+  &\text{on }\mathbb C\setminus\gamma^*,\\[1.2ex]
+f,
+  &\text{on }\gamma^*.
+\end{cases}
+\]
+
 Painlev\'e's theorem is just one instance---a generalization of Riemann-removable singularities---in which one can extend. But, to even begin tackling such questions, we have to investigate the nature of problems one might encounter in extending such functions.
 
 \textbf{Remark.} What we essentially proved in the previous theorem is that if
@@ -299,9 +402,9 @@ Painlev\'e's theorem is just one instance---a generalization of Riemann-removabl
 \begin{cases}
 \displaystyle \frac{1}{2\pi i}\int_\gamma\frac{f(z)}{z-z_0}\,dz,
   &\text{on }\operatorname{int}(\gamma),\\[1.2ex]
-\displaystyle f(z_0)+\sum_n\frac{1}{2\pi i}
-  \int_{\gamma_{c_n}}\frac{f(z)}{z-z_0}\,dz,
-  &\text{on }U\cap\bigcap_n\operatorname{ext}(\gamma_{c_n}),
+\displaystyle f(z_0)+\sum_j\frac{1}{2\pi i}
+  \int_{\gamma_{c_j}}\frac{f(z)}{z-z_0}\,dz,
+  &\text{on }U\cap\bigcap_j\operatorname{ext}(\gamma_{c_j}),
 \end{cases}
 \]
 then $\widetilde f\to f$ uniformly as $\varepsilon\to0$ on $S^c\cap U$; and on $S\subset\operatorname{int}(\gamma)$ we have the holomorphic function
@@ -368,6 +471,16 @@ and let $f\in H(U)$. Consider the Laurent series of $f$:
 
 \item If $a_k\ne0$ for infinitely many $k<0$, then $f$ is said to have an essential singularity.
 \end{enumerate}
+
+Now look: if $f$ has infinitely many poles tending to infinity, then $f(1/z)$ has poles clustering around $0$, so $0$ is a non-isolated singularity of $f(1/z)$. This is distinct from the third isolated class above, the essential singularity, for which the principal part has infinitely many nonzero terms.
+
+Without loss of generality, let $0\in U\setminus S$ and let $\operatorname{int}(\gamma)$ contain all the finite poles of a meromorphic function on the Riemann sphere. If $\ell$ is a small positively oriented circle around $0$, then
+\[
+  \frac{1}{2\pi i}\int_\gamma f(z)\,dz
+  =\sum_{z_0\in\mathbb C}\operatorname{Res}(f;z_0)
+  =-\operatorname{Res}(f;\infty)
+  =\frac{1}{2\pi i}\int_\ell f(1/z)\frac{1}{z^2}\,dz.
+\]
 
 % BLOG-CONTENT-END
 \end{document}

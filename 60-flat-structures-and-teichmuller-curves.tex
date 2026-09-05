@@ -44,8 +44,36 @@ Let $\sigma\in\MCG(g)$. We have
  \centering\includegraphics[width=0.58\textwidth]{m3-fig-04.pdf}
 \end{figure}
 Thus $\sigma$ is distance-preserving and bijective, so the Teichm\"uller metric descends to $M_g$.
+
+On $T_g$ one has the Weil--Petersson metric $\omega_{\mathrm{WP}}$.
+\begin{enumerate}
+ \setcounter{enumi}{0}\item The symplectic form is
+ $\operatorname{Im}(\widetilde\omega_{\mathrm{WP}})
+ =\sum_{i=1}^{3g-3}d\ell_i\wedge d\theta_i$.
+ \begin{figure}[H]
+  \centering\includegraphics[width=.92\textwidth]{m3-fig-03.pdf}
+  \FigureTag{M3.3}{fig:m3-fig-03}
+ \end{figure}
+ \setcounter{enumi}{1}\item $\widetilde\omega_{\mathrm{WP}}$ is a Hermitian form on $T_g$.
+ We have $T_X^*(T_g)\approx Q^2(X)\approx\mathbb C^{3g-3}$. Set
+ \[
+  \langle q_1,q_2\rangle:=\int_X\frac{q_1\overline{q_2}}{\lambda^2},
+ \]
+ where $\lambda$ is the hyperbolic metric on $X$.
+\end{enumerate}
+The real part $\operatorname{Re}(\widetilde\omega_{\mathrm{WP}})$ is a
+Riemannian metric on $T_g$, and its imaginary part is a symplectic form
+on $T_g$. Together they give a K\"ahler structure on $T_g$.
+\setcounter{theorem}{6}\begin{theorem}
+$\operatorname{Isom}_{\mathrm{WP}}(T_{g,n})=\MCG(g,n)$.
+\end{theorem}
+In particular, the mapping-class group preserves
+$\operatorname{Re}(\widetilde\omega_{\mathrm{WP}})$, so the
+Weil--Petersson metric descends to $M_g$.
+
 \setcounter{definition}{4}\begin{definition}[Complex geodesic]
-If $f\colon\mathbb H\to M_g$ is an isometry, then its image $f(\mathbb H)$ is called a complex geodesic in $M_g$.
+If $f\colon\mathbb H\to T_g$ is an isometric embedding, then its image
+$f(\mathbb H)$ is called a complex geodesic in $T_g$.
 \end{definition}
 
 % Source page 4
@@ -91,6 +119,9 @@ But we notice that
  \widetilde z_p=\widetilde z_q+c
  \qquad\text{(translation charts).}
 \]
+\begin{figure}[H]
+ \centering\includegraphics[width=.94\linewidth]{m3-fig-06.pdf}
+\end{figure}
 
 Let $p\in\Sigma$ and look at the chart $(U_p,x_p)$:
 $\omega=\phi_{x_p}\,dx_p=x_p^ng(x_p)\,dx_p$.
@@ -129,14 +160,26 @@ Then $\omega=\widetilde w^n\,d\widetilde w$.
 The map
 \[
  \phi:=\frac1{n+1}(\widetilde w)^{n+1}
- \colon U_p\cap\widetilde w^{-1}(\text{sector})\longrightarrow\mathbb H
 \]
-satisfies $\omega=d\phi$. There are $2(n+1)$ sectors.
+satisfies $\omega=d\phi$. The inverse image of the real axis divides a
+punctured neighbourhood of $p$ into $2(n+1)$ sectors; $\phi$ maps alternating
+sectors to the upper and lower half-planes. On each sector it is a flat
+coordinate.
 \begin{figure}[H]
  \centering\includegraphics[width=0.94\textwidth]{m3-fig-11.pdf}
 \end{figure}
 \begin{figure}[H]
  \centering\includegraphics[width=0.64\textwidth]{m3-fig-12.pdf}
+\end{figure}
+
+On a triple overlap, write the three translation-coordinate changes as
+$\phi_1,\phi_2,\phi_3$. They satisfy $\phi_3=\phi_2\circ\phi_1$ and
+\[
+\phi_3'=(\phi_2'\circ\phi_1)\phi_1'=1.
+\]
+Thus the coordinate changes, and their compositions, are translations.
+\begin{figure}[H]
+ \centering\includegraphics[width=0.68\textwidth]{m3-fig-07.pdf}
 \end{figure}
 
 
@@ -163,8 +206,15 @@ $A\cdot(X,\omega):=(U_p,A\circ\widetilde z_p)$. Then
 Thus $\SL_2(\mathbb R)\curvearrowright\Omega M_g$ by stretching and
 rotating the translation structure.
 % Source page 8
-One can easily observe that $\SL_2(\mathbb R)$ preserves
-$\Omega M_g(p_1,\ldots,p_n)$.
+\begin{remark}
+$(M_g,\operatorname{Re}(\widetilde\omega_{\mathrm{WP}}))$ is generally
+inhomogeneous: its isometry group does not act transitively, and there is no
+canonical identification of the Weil--Petersson tangent spaces at distinct
+points. Thus $\Omega M_g$ is a bundle of nonzero holomorphic forms over $M_g$.
+The space $\Omega M_g$ admits an $\SL_2(\mathbb R)$ action and is therefore
+decomposed into $\SL_2(\mathbb R)$-orbits. One can easily observe that
+$\SL_2(\mathbb R)$ preserves $\Omega M_g(p_1,\ldots,p_n)$.
+\end{remark}
 If $A\in\operatorname{SO}_2(\mathbb R)$, that is, a rotation, then
 $A\cdot(X,\omega)$ is just $(X,e^{i\theta}\omega)$. We thus have
 \begin{figure}[H]
@@ -179,12 +229,16 @@ $\operatorname{Stab}(i)=\operatorname{SO}_2(\mathbb R)$ and
 $\operatorname{Orb}(i)=\mathbb H$.
 % Source page 9
 Denote the map induced by $\pi\circ F$ by $f\colon\mathbb H\to M_g$.
+After choosing a marking of $X$, this construction lifts to a map
+$\widetilde f\colon\mathbb H\to T_g$.
 \setcounter{theorem}{7}\begin{theorem}
-The map $f\colon\mathbb H\to M_g$ is a complex geodesic.
+The map $\widetilde f\colon\mathbb H\to T_g$ is a complex geodesic. Its
+projection $f\colon\mathbb H\to M_g$ is distance non-increasing and may
+identify points under the Veech group.
 \end{theorem}
 \begin{proof}
 Let $x,y\in\mathbb H$, with $x=i$ and $y=it$, where $t\geq1$.
-Then $f(i)=X$, since $\operatorname{SO}_2(\mathbb R)=\operatorname{Stab}(i)$
+Then $\widetilde f(i)=X$, since $\operatorname{SO}_2(\mathbb R)=\operatorname{Stab}(i)$
 fixes the complex structure on $X$.
 Let us first compute the coset of
 $\SL_2(\mathbb R)/\operatorname{SO}_2(\mathbb R)$ that sends $i\mapsto it$.
@@ -198,9 +252,12 @@ Thus
  A(t)=\begin{pmatrix}au&bu\\-b/u&a/u\end{pmatrix}\colon i\mapsto it,
  \qquad a^2+b^2=1,\quad(a,b)\in S^1.
 \]
-We have $f(it)=(U_p,A(t)\circ\widetilde z_p)$. Finally,
+We have $\widetilde f(it)=(U_p,A(t)\circ\widetilde z_p)$. The
+Teichm"uller extremal theorem shows that this affine map realizes the
+infimum in the Teichm"uller distance. Finally,
 \[
- d_{M_g}(f(i),f(it))=\log(\text{dilatation of }A(t))=\log t,
+ d_{T_g}(\widetilde f(i),\widetilde f(it))
+ =\log(\text{dilatation of }A(t))=\log t,
  \qquad d_{\mathbb H}(i,it)=\log t=\int_1^t\frac{dy}{y}.
 \]
 For general $x,y\in\mathbb H$, use a M\"obius map $\varphi\in\PSL_2(\mathbb R)$
@@ -208,8 +265,9 @@ sending $x\mapsto i$ and $y\mapsto it$ for some $t\geq1$.
 The map $A(t)$ is linear, and computing its dilatation is standard.
 \end{proof}
 
-\paragraph{Geodesic rays in $M_g$.}
-Every point has a real geodesic through it. For fixed $(X,\omega)$, set
+\paragraph{Projected Teichm"uller geodesic rays.}
+For fixed $(X,\omega)$, the projection to $M_g$ of a real geodesic in
+$T_g$ is
 \[
  \gamma\colon[0,\infty)\to M_g,\qquad
  \gamma(t):=\pi\left(\begin{pmatrix}e^{-t}&0\\0&e^t\end{pmatrix}\cdot(X,\omega)\right).
@@ -235,6 +293,22 @@ would define a Teichm\"uller curve in $M_g$ generated by $(X,\omega)$.
 $\SL(X,\omega)$ is a discrete subgroup of $\SL_2(\mathbb R)$, and the
 quotient is never compact.
 \end{proposition}
+\begin{proof}
+The set of holonomy vectors of saddle connections of $(X,\omega)$ is
+discrete and contains two linearly independent vectors. Every element of
+$\SL(X,\omega)$ preserves this set. An element sufficiently close to the
+identity must fix both of these vectors, and hence is the identity. Thus
+$\SL(X,\omega)$ is discrete.
+
+For the second claim, let $\ell(Y,\eta)$ denote the length of the shortest
+saddle connection on $(Y,\eta)$. This is a positive continuous function on
+the orbit, invariant under $\SL(X,\omega)$, and hence it descends to the
+quotient. If the quotient were compact, $\ell$ would have a positive minimum.
+Rotate a saddle connection until it is horizontal and apply
+$g_t=\left(\begin{smallmatrix}e^{-t}&0\\0&e^t\end{smallmatrix}\right)$.
+Its length tends to zero, which is a contradiction. Hence the quotient is not
+compact.
+\end{proof}
 \paragraph{Remarks.}
 \begin{enumerate}[start=3]
  \setcounter{enumi}{2}\item \textbf{Twisted action of the Veech group.}

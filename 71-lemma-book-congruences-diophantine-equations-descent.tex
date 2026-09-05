@@ -54,6 +54,33 @@ Fermat's last theorem gives $n=2$, since $n>1$.
 Thus $x^2+y^2=z^2$. If, for example, $x\leq2$, then
 $(z-y)(z+y)=x^2\leq4$, which has no solution with $y>0$; the same argument applies to $y$, while $z>x,y$.
 
+\emph{Experimentation, observation, and insight bottled together possess
+the capability to perform wonders.}
+Given
+\[
+\overline{abc}_{10}+\overline{acb}_{10}+\overline{bac}_{10}
++\overline{bca}_{10}+\overline{cab}_{10}+\overline{cba}_{10}=3194,
+\]
+find $\overline{abc}_{10}$.
+This is a problem from my fruitful problem-solving experience. I employed
+a unique, original technique. Let $\overline{abc}_{10}=100a+10b+c$.
+The notes write
+\[
+3194=122a+212b+221c=f(a,b,c).
+\]
+Guess: $f(7,6,8)=3894$. This exceeds $3194$ by $700$.
+Since $f(4,1,0)=700$, we obtain
+$f(7-4,6-1,8-0)=f(3,5,8)=3194$.
+Thus $\overline{abc}=358$.
+
+In fact, every digit occurs twice in each
+place among the six permutations, so the left-hand side is
+$222(a+b+c)$. Since $222\nmid3194$, the problem as written has no
+solution. Thus the coefficients $122,212,221$ used in the proposed
+calculation do not match the displayed sum of all six permutations; the
+numerical constant or the displayed list of permutations must contain a
+typographical error.
+
 \subsection{Ramanujan's ingenious idea}
 \setcounter{theorem}{53}\begin{lemma}[Adjusting a sum with ones]
 To arrange
@@ -66,6 +93,16 @@ For example, $2^2\cdot6^6=3^3\cdot3^3\cdot4^4$ becomes
 $1^1\cdot1^1\cdot2^2\cdot6^6=3^3\cdot3^3\cdot4^4$,
 and $1+1+2+6=3+3+4$.
 \end{lemma}
+\paragraph{Application: APMO (2014).}
+For a positive integer $m$, let $S(m)$ and $P(m)$ denote its digit sum and digit product.
+Show that, for each positive $n$, there are natural numbers $a_1,\ldots,a_n$ such that
+\[
+S(a_1)<S(a_2)<\cdots<S(a_n),\qquad S(a_i)=P(a_{i+1})\quad(1\leq i<n).
+\]
+After some analysis, I would stick to the sequence
+$(a_n)=(11,\allowbreak211,\allowbreak221111,\allowbreak22211111111,\allowbreak\ldots)$.
+Guessing the pattern is not difficult. This is somewhat close to a magical solution!
+
 \setcounter{theorem}{55}\begin{lemma}[Subtract the two sides]
 To show $A(x)=B(x)$, define $f(x)=A(x)-B(x)$ and try to prove $f(x)=0$ everywhere.
 \end{lemma}
@@ -101,9 +138,10 @@ The last two terms have sum $0,1,3$, or $4$, whereas $2014\equiv5\pmod7$.
 Therefore the equation has no real solutions.
 
 Here are two problems with particularly striking solutions.
+Now let me present a problem and its standout solution!
 Find $a,b,c>0$ such that $1/2014=1/a+1/b+1/c$.
-An unexpected construction is immediate from the identity
-$1=1/2+1/3+1/6$: dividing by $2014$ gives suitable values of $a$, $b$, and $c$.
+This was asked in class. One student boldly gave the unexpected solution:
+``We know $1=1/2+1/3+1/6$; now divide this by $2014$ to obtain $a,b,c$!''
 
 \setcounter{theorem}{66}\begin{lemma}[Transform one solution into another]
 In some Diophantine equations, it helps to observe that if $(a,b,c)$ is a solution, then $(f(a),f(b),f(c))$ is also a solution.
@@ -154,6 +192,28 @@ We end up with $(m,n)=(36,18)$ and $(36,12)$. Q.E.D.!
 \setcounter{theorem}{87}\begin{lemma}[Dirichlet's theorem]\label{lemma:lb1-90}
 An infinite arithmetic progression $a,a+b,a+2b,a+3b,\ldots$ contains infinitely many primes if $a,b$ are positive and $\gcd(a,b)=1$.
 \end{lemma}
+\paragraph{Application.}
+Let $a_0=4$ and define $a_n=a_{n-1}^2-a_{n-1}$ for each positive integer $n$.
+% Source page 50 - left
+Prove that there are infinitely many primes that are factors of no term in the sequence.
+Since $4^2\equiv4+2\pmod{10}$, we have $a_1\equiv2\pmod{10}$.
+Now $2^2\equiv2+2\pmod{10}$, so $a_k\equiv2\pmod{10}$ for all $k\geq1$.
+We have $a_1=12$. For $j\geq1$, write
+\[
+a_j=4t_j^2+6t_j+2,
+\qquad t_1=1,
+\qquad t_{j+1}=t_j(2t_j+3).
+\]
+A direct substitution verifies that this form is preserved by the recurrence. Moreover,
+\[
+\frac{a_{j+1}}{a_j}=a_j-1=4t_j^2+6t_j+1=(3t_j+1)^2-5t_j^2.
+\]
+The two integers $3t_j+1$ and $t_j$ are coprime. Hence, if a prime
+$q>3$ divides $a_j-1$, then $5$ is a quadratic residue modulo $q$.
+For every prime $q\equiv2$ or $3\pmod5$, quadratic reciprocity says that
+$5$ is a nonresidue modulo $q$. Such a prime divides neither $a_1=12$
+nor any later multiplier $a_j-1$, and therefore divides no term of the
+sequence. Dirichlet's theorem supplies infinitely many such primes.
 
 \subsection{Euler's formula and lifting indices}
 \setcounter{theorem}{92}\begin{lemma}[Euler's formula]\label{lemma:lb1-95}
@@ -262,6 +322,67 @@ Suppose now that $a>1$ and $m>1$. Apart from $(a,m)=(2,3)$, Zsigmondy's theorem 
 so it does not divide $(a+1)^n$. Finally, $2^3+1=3^2$ divides $3^n$ exactly when $n\geq2$.
 Hence the remaining solutions are $(a,m,n)=(2,3,n)$ with $n\geq2$.
 
+Solve the following using Zsigmondy.
+\paragraph{Round 1: Fight. Japanese MO (2011).}
+Find all positive integer quintuples $(a,n,p,q,r)$ such that
+\[a^n-1=(a^p-1)(a^q-1)(a^r-1).\]
+\paragraph{Round 2: Fight.}
+Prove Fermat's last theorem, asserting that $x^n+y^n=z^n$ has no solutions
+with $xyz\ne0$. Take $z$ to be prime!
+\paragraph{Final round: Fight. Balkan MO (2009).}
+Solve $5^x-3^y=z^2$ for $x,y,z\in\mathbb N$.
+
+\paragraph{You used calculus in that!}
+If $a^n+n$ is a multiple of $b^n+n$ for every positive integer $n$, prove
+that $a=b$, where $a,b\in\mathbb N$.
+Suppose there exists such an $n$ and seek $(a,b)$, with $a\geq b$.
+Let $f(a)=a^n+n$ and $f(b)=b^n+n$, with $f(a)=kf(b)$,
+$k\in\mathbb N$.
+The proposed calculation differentiates:
+\[
+\frac{df(a)}{da}=\frac{d[kf(b)]}{db}
+\Longrightarrow na^{n-1}=nkb^{n-1}
+\Longrightarrow k=(a/b)^{n-1}.
+\]
+It then combines this with
+$k=(a^n+n)/(b^n+n)=a^{n-1}/b^{n-1}$ to obtain
+\[
+n=\frac{a^{n-1}b^{n-1}(a-b)}{a^{n-1}-b^{n-1}},
+\]
+and announces a contradiction from Zsigmondy's theorem!
+The differentiation step is not valid: $a$ and $b$ are fixed integers, not
+variables linked by an identity of functions. Thus this calculation does not
+prove the claim.
+It purports to prove the stronger statement
+``$b^n+n\nmid a^n+n$ for $a>b$, with the exception
+$1^2+1\mid2^2+2$.'' Can you guess where that exception came from?
+
+\paragraph{What an amazing argument! WAAA!}
+For a natural number $n$, prove
+\[
+\left\lfloor\frac n1\right\rfloor+
+\left\lfloor\frac n2\right\rfloor+\cdots+
+\left\lfloor\frac nn\right\rfloor+\lfloor\sqrt n\rfloor
+\]
+is even. (INMO, 2014.)
+In $P=\{1,2,\ldots,n\}$, the number of multiples of $q$ is
+$\lfloor n/q\rfloor$.
+Counting multiples of $k$ not exceeding $n$ is equivalent to counting divisors
+of the numbers $1,\ldots,n$:
+``Multiples are obtained by multiplying by a constant, and divisors by dividing
+by a constant.'' WAAA!
+Thus
+\[
+\sum_{k=1}^n\left\lfloor\frac nk\right\rfloor+\lfloor\sqrt n\rfloor
+=\sum_{k=1}^n d(k)+\lfloor\sqrt n\rfloor.
+\]
+Now $d(k)\equiv1\pmod2$ exactly when $k$ is a perfect square, and $P$
+contains $\lfloor\sqrt n\rfloor$ squares. Therefore
+\[
+\sum_{k=1}^n\left\lfloor\frac nk\right\rfloor+\lfloor\sqrt n\rfloor
+\equiv2\lfloor\sqrt n\rfloor\equiv0\pmod2.
+\]
+\emph{Quite intelligently done.}
 
 % Source page 9 - left
 
@@ -269,11 +390,67 @@ Hence the remaining solutions are $(a,m,n)=(2,3,n)$ with $n\geq2$.
 \paragraph{Challenge: Kiran S. Kedlaya, Crux Mathematicorum.}
 For positive integers $x,y,z$, prove that $(xy+1)(yz+1)(zx+1)$ is a perfect square
 if and only if $xy+1$, $yz+1$, and $zx+1$ are each perfect squares.
+Soumik Ghosh communicated a solution that seems deceptively correct.
+Hats off to the ingenious use of infinite descent. Dangerous!
+
+Call $(x,y,z)$ good if $(xy+1)(yz+1)(zx+1)$ is a perfect square.
+The claim is that every three-element subset of $(x,y,z,t)$ is good, where
+\[
+t=x+y+z+2xyz-2\sqrt{(xy+1)(yz+1)(zx+1)}.
+\]
+This $t$ is a root of
+\[
+x^2+y^2+z^2+t^2-2(xy+yz+zx+xt+yt+zt)-4xyzt-4=0,
+\]
+which may be rewritten as
+\[
+(x+y-z-t)^2=4(xy+1)(zt+1),\quad
+(y+z-x-t)^2=4(yz+1)(xt+1),\quad
+(z+x-y-t)^2=4(zx+1)(yt+1).
+\]
+Wow! This is equivalent to a Ramanujan move.
+Multiply $4(xy+1)(zt+1)$, $4(yz+1)(xt+1)$, and $(xy+1)^2$, then divide by
+$(xy+1)(yz+1)(zx+1)$ to obtain that $(xy+1)(yt+1)(zt+1)$ is a perfect square.
+Similarly, $(yz+1)(yt+1)(zt+1)$ and $(xz+1)(xt+1)(zt+1)$ are perfect squares.
+Thus every three-element subset is good.
+Now, without loss of generality, let $z\geq x,y$. Then $z\geq t$, so replace $(z,y,x)$ by $(t,y,x)$.
+At every step the maximal element decreases, until eventually $t=0$.
+It follows, by arguing correspondingly, that $xy+1$, $yz+1$, and $zx+1$ are perfect squares.
+\emph{Quite dangerously done.}
+
+As written, this descent is incomplete: the displayed multiplication does not
+directly yield each asserted target product, and the argument has not shown that
+$t$ is a nonnegative integer strictly smaller than the element it replaces.
+
+Here is another problem.
+\paragraph{Challenge.}
+For $a_1,\ldots,a_n,x,y\in\mathbb N$, prove that the following system has solutions if and only if $x=y$:
+% Source page 10 - right
+\[
+a_1^x+\cdots+a_n^x=b^x,\qquad a_1^y+\cdots+a_n^y=b^y
+\]
+where $b$ is a natural number. As written, $n=1$ and $a_1=b$ is a counterexample unless a nontriviality condition is added.
 
 
-\subsection{An exponential Diophantine equation}
+\subsection{Calculus---oh, not again!}
 \paragraph{IMO (1997).}
 Solve $a^{b^2}=b^a$ in positive integers.
+Let $a\geq b$. The source takes $(a,b)=b$, so $a=bk$.
+Then $b^{b^2}k^{b^2}=b^{bk}$ and $k^{b^2}=b^{bk-b^2}$.
+Put $k=b^x$. This gives
+\[
+xb^2=b^{x+1}-b^2
+\Longrightarrow b^2(x+1)=b^{x+1}
+\Longrightarrow x+1=b^{x-1}.
+\]
+Set $y=x+1$. Then $y=b^{y-2}$, $k=b^{y-1}$, $a=b^y$, and
+$b=\sqrt[y-2]{y}$. The pairs $(b,y)$ are $(1,1),(3,3),(2,4)$.
+Since $2^{y-2}-y$ is increasing, the difference grows exponentially.
+Thus the only pairs $(a,b)$ are $(1,1),(27,3),(16,2)$.
+
+This proposed reduction has not established that $\gcd(a,b)=b$, that
+$k$ is a power $b^x$, or that it is enough to assume $a\geq b$.
+Here is a complete argument.
 The pair $(1,1)$ is a solution. Otherwise $a$ and $b$ have the same prime divisors.
 Comparing prime valuations shows that there are an integer $c>1$ and coprime positive integers $r,s$ such that
 $a=c^r$, $b=c^s$, and
@@ -304,8 +481,13 @@ Given $3\mid n+1$, prove that there are integers $x,y,z$ with $4xyz=n(xy+yz+zx)$
 Take $x=n$, $y=(n-2)/3+1$, and $z=n(n+1)/3$.
 This proves the claim. The case $4\mid n+1$ leads to a related problem.
 
-One related problem is recorded below.
-\paragraph{Problem.}
+Two related problems are recorded below.
+\paragraph{Problem 1.}
+Given $\alpha,\beta\in\mathbb Z^+$ and primes $p_1,\ldots,p_n,q$, show that, for every $\alpha$, there exists an $n$ such that
+$p_1^\alpha+p_2^\alpha+\cdots+p_n^\alpha=q^\beta$.
+Here $n$ and $\alpha$ are each both fixed and quantified, so the statement needs a corrected choice of quantifiers.
+% Source page 15 - right
+\paragraph{Problem 2.}
 Find infinitely many families of solutions in nine distinct integers
 $x_1,x_2,x_3,y_1,y_2,y_3,z_1,z_2,z_3$ of
 \[

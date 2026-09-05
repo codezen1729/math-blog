@@ -8,7 +8,7 @@
 % BLOG-CONTENT-BEGIN
 % Source page 1
 \section{Normalization and the Mandelbrot set}
-Start with $f(z)=az^2+bz+c$. Conjugating by a dilation gives
+Starting with $f(z)=az^2+bz+c$, conjugation by a dilation gives
 \[
 \lambda^{-1}f(\lambda z)=z^2+\alpha z+\beta,
 \qquad \lambda=\frac1a.
@@ -34,6 +34,62 @@ The \emph{Mandelbrot set} is
 \M:=\{c\in\C\mid (P_c^{\circ n}(0))_{n\ge0}\text{ is bounded}\}.
 \]
 \end{definition}
+
+% Source page 2
+\subsection{Critical points and connectedness}
+\setcounter{theorem}{0}\begin{theorem}[Connected and Cantor filled Julia sets]\label{thm:critical-connectedness}
+Let $P$ be any polynomial, and let $K_P$ be its filled Julia set. Then:
+\begin{enumerate}[label=(\roman*)]
+\setcounter{enumi}{0}\item $\Crit(P)\subset K_P$ if and only if $K_P$ is connected.
+\setcounter{enumi}{1}\item If $\Crit(P)\cap K_P=\varnothing$, then $K_P$ is a Cantor set.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Write $P(z)=a_dz^d+a_{d-1}z^{d-1}+\cdots+a_0$, and set
+\[
+A=\max_{0\le i\le d}\{|a_i|\},
+\qquad R=\max\left\{1,\frac{2+A}{|a_d|}\right\}.
+\]
+Then
+\[
+\begin{aligned}
+|P(z)|&\ge |a_d||z|^d-\bigl(|a_{d-1}||z|^{d-1}+\cdots+|a_0|\bigr)\\
+ &\ge |a_d||z|^d-A|z|^{d-1}\\
+ &\ge |z|^{d-1}(|a_d||z|-A)\ge2|z|
+ \qquad (|z|\gg R).
+\end{aligned}
+\]
+Thus there is an $R_0$ such that, if $z\in(\overline{D_R(0)})^c$, then $P^{\circ n}(z)\to\infty$. Consequently,
+\begin{equation}\label{eq:filled-intersection}
+K_P=\bigcap_{n=1}^{\infty}P^{-n}(\overline{D_R(0)}).
+\tag{$*$}
+\end{equation}
+Set $U_0=\Chat\setminus\overline{D_R(0)}$ and $U_n=P^{-1}(U_{n-1})$. We have $U_0\subset U_1\subset U_2\subset\cdots$ and, by \eqref{eq:filled-intersection}, $\bigcup_{n\ge0}U_n=\C\setminus K_P$.
+
+\textit{(i)} If $\Crit(P)\subset K_P$, then $P\colon U_n\to U_{n-1}$ is a branched cover ramified at $\{\infty\}$, with degree $d$. Hence $U_n$ is connected. Since $\chi(U_0)=1$, the Riemann--Hurwitz formula gives
+\[
+\chi(U_n)=d\chi(U_{n-1})-(d-1)=1
+\]
+by induction. Therefore $U_n$ is a hyperbolic Riemann surface with $U_n\cong\D$.
+
+% Source page 3
+If $\Crit(P)\not\subset K_P$, then $P\colon U_n\to U_{n-1}$ has other points where it is ramified. Thus $\chi(U_n)<1$, so $U_n$ is not simply connected. Its complement $U_n^c$ has more than two components, and $K_P$ is not connected.
+
+\textit{(ii)} If $\Crit(P)\cap K_P=\varnothing$, then \eqref{eq:filled-intersection} again gives an $m$ large enough that
+\[
+\Crit(P)\cap P^{-m}(D_R(0))=\varnothing.
+\]
+Put $V=P^{-m}(D_R)$ and $W=P^{-(m-1)}(D_R)$. Then $\overline V\subset W$ and $P\colon V\to W$ is a covering map. Let $(z,\xi)$ be a tangent vector at $z$. By Pick's theorem applied to $V\hookrightarrow W$,
+\[
+|(z,\xi)|_V\ge C|(z,\xi)|_W\qquad(C>1),
+\]
+and
+\[
+|(P(z),P'(z)\xi)|_W=|(z,\xi)|_V\ge C|(z,\xi)|_W.
+\]
+Let $M=\max\{\diam(\text{components of }V)\}$. The maximum diameter of a component of $P^{-n}(V)$ is $MC^{-n}$, which tends to zero as $n\to\infty$. Hence $K_P=\bigcap_{n=0}^{\infty}P^{-n}(V)$ is a Cantor set.
+\end{proof}
 
 \setcounter{theorem}{1}\begin{corollary}[Connected Julia sets]
 \[
@@ -67,7 +123,7 @@ Thus $|z_n|\to\infty$ and $c\notin\M$, proving the asserted bound.
 \]
 By induction, $|P_c^{\circ(m+k)}(0)|\ge2+4^k\delta\to\infty$, so again $c\notin\M$. If $c_m\to c$ with $c_m\in\M$, then $|P_c^{\circ n}(0)|\le2$ for every $n$; hence $\M$ is closed.
 
-The connectedness of $\M$ and the simple connectedness of $\Chat\setminus\M$ will follow from the uniformisation of $\Chat\setminus\M$ below.
+\emph{Aside.} If $\C\setminus\M$ has bounded components, then $|P_c^{\circ n}(0)|>2$ for some $n$, and the maximum modulus principle disallows this.
 
 \textit{(ii)} For $c\in\mathbb R$, the polynomial $P_c(x)-x$ has no real roots if $c>1/4$, one real root if $c=1/4$, and two real roots if $c<1/4$. If $c>1/4$, then $P_c^{\circ n}(0)\to\infty$; otherwise the orbit would accumulate at an $x\in\mathbb R$ with $P_c(x)=x$.
 
@@ -86,6 +142,13 @@ Therefore $|P_c(x)|\le a$, and induction shows that $|P_c^{\circ n}(0)|\le a$ fo
 \setcounter{theorem}{3}\begin{theorem}[Continuation of attracting cycles]\label{thm:attracting-continuation}
 Let $a\in\Int(\M)$, and suppose $P_a$ has an attracting cycle of length $m$. Let $W$ be the component of $\Int(\M)$ containing $a$. Then, for every $c\in W$, $P_c$ has an attracting cycle $\{z_1(c),\ldots,z_m(c)\}$ of length $m$, and $c\mapsto z_i(c)$ is holomorphic for every $1\le i\le m$.
 \end{theorem}
+
+\begin{proof}
+Consider $P_c^{\circ m}(z)-z$. By the implicit function theorem, we obtain an attracting periodic point of period $m$, say $z_1(c)$, in a small neighbourhood of $a$. The sequence $\{P_c^{\circ jm}(0)\}$ is bounded. Hence all subsequences of this sequence converge to an analytic continuation of $z_1(c)$ over $W$.
+
+% Source page 6
+Thus $|(P_c^{\circ m})'(z_1(c))|\le1$. By the maximum modulus principle, $z_1(c)$ is an attracting fixed point on all of $W$. The other functions are $\{P_c^{\circ i}(z_1(c))\}_{0\le i<m}$.
+\end{proof}
 
 \setcounter{theorem}{4}\begin{theorem}[Density of the interior]\label{thm:interior-dense}
 $\Int(\M)$ is dense in $\M$.
@@ -113,14 +176,28 @@ omits $0,1,-1$ and is normal on $U$. Choose a convergent subsequence. On the non
 \{c\mid P_c\text{ is }J\text{-stable}\}=\C\setminus\partial\M.
 \]
 \end{corollary}
+\begin{proof}
+By definition, if $c\in\Int(\M)$, the sequence $\{P_c^{\circ n}(0)\}_n$ is bounded and hence forms a normal family, so $c$ is $J$-stable. If $c\in\Ext(\M)$, then $P_c^{\circ n}(0)\to\infty$, again giving normality and $J$-stability. As in the preceding theorem, normality fails exactly on the boundary.
+\end{proof}
+
 % Source page 7
 \Needspace{13\baselineskip}
 \section{Components and invariant line fields}
+\subsection{Summary}
+\begin{enumerate}
+\setcounter{enumi}{0}\item $\M$ is compact and connected, $\Chat\setminus\M$ is simply connected, and $\M$ is contained in $\{c\mid |c|\le2\}$.
+\setcounter{enumi}{1}\item $\Int(\M)$ is dense in $\M$.
+\setcounter{enumi}{2}\item $\{c\mid P_c\text{ is }J\text{-stable}\}=\C\setminus\partial\M$.
+\setcounter{enumi}{3}\item Hyperbolic components of $\Int(\M)$ are characterized by the length of the attracting cycle they admit.
+\setcounter{enumi}{4}\item $\M=\{c\mid J(P_c)\text{ is connected}\}$.
+\end{enumerate}
+
 \subsection{Non-hyperbolic components}
 \setcounter{theorem}{6}\begin{theorem}[Invariant line fields]\label{thm:line-fields}
 If $c\in\Int(\M)$, then the component of $\Int(\M)$ containing $c$ is non-hyperbolic if and only if $J(P_c)$ has positive measure and carries an invariant line field.
 \end{theorem}
-
+\begin{proof}
+If $c$ belongs to a non-hyperbolic component, then $P_c$ has neither an attracting cycle nor an indifferent cycle, because indifferent points are persistently indifferent. A polynomial has no Herman ring, so by the Sullivan--Fatou classification, $J(P_c)$ is full.
 \begin{figure}[H]
 \centering
 \begin{minipage}[c]{.26\linewidth}
@@ -134,21 +211,58 @@ If $c\in\Int(\M)$, then the component of $\Int(\M)$ containing $c$ is non-hyperb
 \FigureTag{QF3}{fig:qf-03}
 \end{minipage}
 \end{figure}
+The critical points of $P_\lambda$ are in $K(P_\lambda)$, so the B\"ottcher coordinate extends conformally. Hence $\phi_\lambda(z)$ is a holomorphic motion of $\C\setminus K(P_c)$.
 
+% Source page 8
+By the $\lambda$-lemma, $\phi_\lambda$ extends quasiconformally to $\overline\phi_\lambda\colon\Chat\to\Chat$.
 \begin{figure}[H]
 \centering
 \includegraphics[width=12cm,height=5.1cm,keepaspectratio]{qf-fig-04.pdf}
 \FigureTag{QF4}{fig:qf-04}
 \end{figure}
+If $J(P_c)$ has measure zero, then $P_c$ and $P_\lambda$ are conjugate by a M\"obius map. For $c\ne\lambda$, this is not possible.
+
+Now suppose $J(P_c)$ has positive measure and supports an invariant line field $\mu$. Positive measure implies that $c\notin\Ext(\M)$, so $c\in\M$, as $P_c$ is not hyperbolic. Solve
+\[
+\frac{\partial_{\overline z}\phi_t}{\partial_z\phi_t}=t\mu
+\]
+to obtain a holomorphic family of quasiconformal maps $\phi_t\colon\C\to\C$, with $t\in\D$. Set $g_t=\phi_t\circ P_c\circ\phi_t^{-1}$, and normalize suitably to obtain $g_t(z)=z^2+c(t)$.
+
+We prove that $c(t)$ is injective. If $c(t_1)=c(t_2)$ and $\phi_{t_1},\phi_{t_2}$ are conformal on $\C\setminus J(P_c)$, then, by continuity, $\phi_{t_1}=\phi_{t_2}$ on $J(P_c)$. Hence $t_1\mu=t_2\mu$. By the open mapping theorem, $\{c(t)\mid t\in\D\}$ is an open set in $\M$ containing $c$.
+\end{proof}
 
 % Source page 9
+\subsection{MLC and a few corrections}
+\paragraph{MLC conjecture.} $\partial\M$ is locally connected.
+
+\textit{(i) Correction to Theorem~\ref{thm:attracting-continuation}.}
+Suppose that $z_1(c)$ were repelling for uncountably many $c$. Then there is a $j$ such that $P_c^{\circ jm}(0)=z_1(c)$ for uncountably many $c$. By the identity theorem, $z_1(c)$ is a polynomial in $c$, and $P_c^{\circ m}(z_1(c))=z_1(c)$ can have only finitely many solutions. Hence $z_1(c)$ is repelling only at countably many points.
+
+\textit{(ii) Indifferent points lie on $\partial\M$.}
+Here the parameters in question are $\{c\mid P_c\text{ has an indifferent point}\}$. Consider the variety $P_c^{\circ m}(z)-z=0$ in $\C^2$, of dimension one. It has finitely many singular points. Away from these finitely many points, we have a Riemann surface $V$, and $V\to\C$, $(z,c)\mapsto c$, is a $2^m$-sheeted branched cover.
+
+Consider an indifferent point in $\Int(\M)$, say $a$. Let $V_0$ be an irreducible component of $V$ containing $a$. The map
+\[
+V_0\longrightarrow\C,
+\qquad (z,c)\longmapsto(P_c^{\circ m})'(z)
+\]
+would be locally constant around $a$, hence constant on $V_0$ (but $V_0$ projects onto $\C$).
+
+% The surviving source ends this correction at this point; no completion is invented.
+
 % Source page 10
 \section{Quasicircles and uniformisation}
 \subsection{The principal hyperbolic component}
 \setcounter{theorem}{7}\begin{theorem}[Quasicircle Julia sets]
 If $c$ is in the principal hyperbolic component, then $J(P_c)$ is a quasicircle.
 \end{theorem}
+\begin{proof}
+This is true for a much more general class of functions: if $R$ is a hyperbolic rational map with two Fatou components, then $J(R)$ is a quasicircle.
 
+Let $D_1,D_2$ be the two Fatou components. Choose $\gamma_1$ so that $U_1$ has no critical points, and let $\gamma_2=R^{-1}(\gamma_1)$. One can choose $\gamma_1,\gamma_2$ to be analytic, since $D_1$ is a holomorphic image of the disk (the extension of the Koenigs coordinate is simply connected).
+The restriction $R|_{\gamma_2}\colon\gamma_2\to\gamma_1$ is a $d$-fold covering map, where $d=\deg(R)$.
+
+Pick a Riemann map $\widetilde R\colon U_1^c\to\Chat\setminus\overline{\D}_{\rho^d}$. This extends analytically (conformally, and quasisymmetrically) to $\psi_1\colon\partial U_1\to S^1_{\rho^d}$.
 \begin{figure}[H]
 \centering
 \begin{minipage}[c]{.45\linewidth}
@@ -162,17 +276,52 @@ If $c$ is in the principal hyperbolic component, then $J(P_c)$ is a quasicircle.
 \FigureTag{QF6}{fig:qf-06}
 \end{minipage}
 \end{figure}
+We have $\psi_1(R(z))=\psi_2(z)^d$. Fill $U_1\setminus U_2$ with a quasiconformal map, via the Ahlfors--Beurling extension:
+\[
+\psi\colon\overline{U_1\setminus U_2}\longrightarrow\overline{A}_{\rho,\rho^d}.
+\]
+Define
+\[
+g_1(z)=
+\begin{cases}
+R(z),&z\in U_2,\\
+\widetilde R^{-1}(\psi(z)),&z\in U_1\setminus U_2,\\
+\widetilde R^{-1}(\widetilde R(z)^d),&z\in D_1\setminus U_1.
+\end{cases}
+\]
+
+% Source page 11
+Using $g_1$, we can produce a $g_1$-invariant Beltrami form on $D_1$:
+\[
+\mu_1=
+\begin{cases}
+0,&U_1^c,\\
+\psi^*(0),&U_1\setminus U_2,\\
+(f^{\circ n})^*\mu,&\text{elsewhere }
+\left(\displaystyle\bigcup_{n=1}^{\infty}g_1^{-n}(U_1\setminus U_2)\right).
+\end{cases}
+\]
+Similarly, produce $\mu_2$ for $D_2$, and set
+\[
+\mu=\begin{cases}\mu_i&\text{on }D_i,\\0&\text{elsewhere},\end{cases}
+\qquad
+g=\begin{cases}g_i&\text{on }D_i,\\0&\text{elsewhere}.\end{cases}
+\]
+By the measurable Riemann mapping theorem, there is a straightening map $\varphi$ such that $R_0:=\varphi\circ g\circ\varphi^{-1}$ is analytic. The map $R_0$ has critical fixed points of degree $d-1$ each at $0$ and $\infty$, since $g_1,g_2$ have the same. Thus $R_0\equiv z^d$, so $J(R)=\varphi(S^1)$, which is a quasicircle.
+\end{proof}
 
 \subsection{Uniformisation of the complement of the Mandelbrot set}
+\setcounter{theorem}{8}\begin{theorem}[Uniformisation of $\C\setminus\M$]
 Recall that, if $c\in\M^c$, then $A_c(\infty)$ is the only Fatou component, and the Julia set is totally disconnected.
+\end{theorem}
 
 % Source page 12
+For the map $P_c$, we have $A_c(\infty)\subseteq\widetilde A_c(\infty)$, the basin of the superattracting point.
 \begin{figure}[H]
 \centering
 \includegraphics[width=8.5cm,height=4.5cm,keepaspectratio]{qf-fig-07.pdf}
 \FigureTag{QF7}{fig:qf-07}
 \end{figure}
-
 The B\"ottcher map satisfies
 \[
 \varphi_c(P_c(z))=\varphi_c(z)^2,
@@ -225,6 +374,11 @@ Consequently, $|\varphi_c(c)|\to1$ as $c\to\M$. We therefore have an analytic ma
 \Chat\setminus\M\longrightarrow\Chat\setminus\overline\D,
 \qquad c\longmapsto\varphi_c(c).
 \]
-This map is a conformal isomorphism from $\Chat\setminus\M$ onto $\Chat\setminus\overline\D$.
+If $\varphi_c(c)$ were not surjective, there would be a sequence $\{c_n\}_n$ with $c_n\to\M$ but $|\varphi_{c_n}(c_n)|\not\to1$. Let $z_0\in\C\setminus\D$. We know that
+\[
+\frac{1}{2\pi i}\int_\gamma
+\frac{\varphi_c'(c)}{\varphi_c(c)-z_0}\,dc
+\]
+is continuous in $z_0$. By the argument principle, it must be $-1$, because $\Chat\setminus\M$ is connected. Thus $c\mapsto\varphi_c(c)$ is a conformal isomorphism from $\Chat\setminus\M$ onto $\Chat\setminus\overline\D$.\hfill$\square$
 % BLOG-CONTENT-END
 \end{document}

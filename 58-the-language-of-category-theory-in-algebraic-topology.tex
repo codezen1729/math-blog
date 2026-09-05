@@ -197,6 +197,11 @@ Set $G(D):=\overline D$. The action of $G$ on morphisms is induced by naturality
 The cone construction above is one example. Objects in a cone
 category generalize the notion of a morphism. A morphism relates a particular
 object to another, but a cone object relates to a collection of objects that are already related to one another.
+% Source page 9
+\begin{figure}[H]
+ \centering\includegraphics[width=.82\textwidth]{m1-fig-06.pdf}
+ \FigureTag{M1.6}{fig:m1-fig-06}
+\end{figure}
 \subsubsection{Quotient Category}
 Let $\mathcal C$ be a category. For every $X,Y\in\Ob(\mathcal C)$, an
 equivalence relation $\sim$ is set up on $\Hom_{\mathcal C}(X,Y)$ such that
@@ -313,14 +318,23 @@ G\times G\times G \arrow[r,"\mu\times\id_G"] \arrow[d,"\id_G\times\mu"']
 G\times G\arrow[r,"\mu"']&G
 \end{tikzcd}
 \]
-The identity and inverse axioms are
 \[
-\begin{aligned}
- \mu\circ(e\times\id_G)&=\id_G,
- &\mu\circ(\id_G\times e)&=\id_G,\\
- \mu\circ(\nu,\id_G)&=e\circ!,
- &\mu\circ(\id_G,\nu)&=e\circ!.
-\end{aligned}
+\begin{tikzcd}[row sep=large,column sep=large,cells={nodes={font=\normalsize}}]
+G\cong *\times G \arrow[r,"e\times\id_G"] \arrow[dr,"\id_G"']
+  &G\times G\arrow[d,"\mu"]
+  &&G\cong G\times * \arrow[r,"\id_G\times e"] \arrow[dr,"\id_G"']
+  &G\times G\arrow[d,"\mu"]\\
+  &G&&&G
+\end{tikzcd}
+\]
+\[
+\begin{tikzcd}[row sep=large,column sep=large,cells={nodes={font=\normalsize}}]
+G \arrow[r,"{(\id_G,\nu)}"] \arrow[d,"!"']
+  &G\times G\arrow[d,"\mu"]
+  &&G \arrow[r,"{(\nu,\id_G)}"] \arrow[d,"!"']
+  &G\times G\arrow[d,"\mu"]\\
+*\arrow[r,"e"']&G&&*\arrow[r,"e"']&G
+\end{tikzcd}
 \]
 \setcounter{example}{4}\begin{example}
 In $\cat{Sets}$, a group object is a group; in $\cat{Top}$, it is a topological
@@ -443,6 +457,16 @@ one can prove that
  \end{aligned}
 \]
 Here $\pi_b$ denotes the collection of based continuous maps, up to based homotopy.
+The homotopy sets are
+\[
+ \begin{aligned}
+ \text{zeroth homotopy set}&:=\pi_b(S^0,Y),\\
+ \text{first homotopy set}&:=\pi_b(S^0,\Omega_{y_0}Y),\\
+ &\ \vdots\\
+ \text{$n$th homotopy set}&:=\pi_b(S^0,\Omega^n(Y))
+ \cong\pi_b(\Sigma^nS^0,Y)\cong\pi_b(S^n,Y).
+ \end{aligned}
+\]
 \subsubsection{Application 2}
 Let $\mathcal C$ be a category and $X\in\Ob(\mathcal C)$. Then
 $X$ is a group object if and only if $h_X\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$
@@ -461,7 +485,8 @@ By Yoneda's lemma, one can give a group structure to
 \]
 for every $A\in\Ob((k\text{-}\cat{Top}_*)/{\sim})$, since the functor
 $\pi_b(-,\Omega_{y_0}Y)$ lifts to $\cat{Grps}$.
-This way one can give the based homotopy classes
-$\pi_b(A,\Omega_{y_0}Y)$ a group structure.
+This way one can give higher homotopy sets a group structure. Homology and
+cohomology are likewise group-valued functors, but their group structures come
+from addition of chains and cochains rather than from this loop-space argument.
 % BLOG-CONTENT-END
 \end{document}

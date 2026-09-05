@@ -4,7 +4,7 @@
 \begin{document}
 \section*{Bott Periodicity and the Genesis of K-Theory}
 % BLOG-CONTENT-BEGIN
-As $K$ is represented by the space $BU\times \mathbb{Z}$, any theorem about the homotopy type of $BU\times \mathbb{Z}$ can be significant. Bott periodicity gives the key homotopy equivalence. 
+As $K$ is represented by the space $BU\times\mathbb Z$, any theorem about the homotopy type of $BU\times\mathbb Z$ could potentially be of extreme significance. Bott periodicity is, in that sense, the grandest of theorems one could prove.
 \begin{theorem}[Bott periodicity]
 $BU\times \mathbb{Z} \simeq \Omega^2(BU\times \mathbb{Z})$.
 \end{theorem}
@@ -19,7 +19,7 @@ For a proof, see \cite{milnor2016morse}. An immediate consequence of Bott's theo
     $$\widetilde{K}(X) \cong [(X, x_0), (BU\times \mathbb{Z}, (y_0, 0))]$$
     as it is the kernel of the map $[X, BU\times \mathbb{Z}] \rightarrow [x_0, BU\times \mathbb{Z}]$, which is precisely the set of homotopy classes of maps sending $x_0$ into $BU\times \{0\}$. Now, by Bott's Theorem,
     $$\widetilde{K}(X) \cong [X, \Omega^2(BU\times \mathbb{Z})]_{\text{based}} \cong [\Sigma^2X, BU\times \mathbb{Z}]_{\text{based}}$$
-    giving us, 
+    giving us,
     $$\widetilde{K}(X) \cong \widetilde{K}(\Sigma^2X)$$
 \end{proof}
 
@@ -67,7 +67,7 @@ which is also an isomorphism on the fibres. It is easy to see that $E$ satisfies
 
 \begin{remark}
 Interpreting the proposition in terms of the classifying space perspective yields the following: Given a classifying map $f$ of some bundle over $X$, such that $f\big|_A$ is nullhomotopic, then there exists an open neighbourhood $U$ of
-$A$ such that $f\big|_{U}$ is nullhomotopic. Equivalently, maps from compact subsets into $BU$ that are null-homotopic extend as null-homotopic maps over a neighbourhood. If you think about it, the above is not unexpected at all, for the spaces $BU(n)$ are locally contractible. 
+$A$ such that $f\big|_{U}$ is nullhomotopic. Equivalently, maps from compact subsets into $BU$ that are null-homotopic extend as null-homotopic maps over a neighbourhood. If you think about it, the above is not unexpected at all, for the spaces $BU(n)$ are locally contractible.
 \end{remark}
 
 \begin{proposition}
@@ -82,7 +82,7 @@ If $(X,A)$ is a compact Hausdorff pair, the inclusion $A\hookrightarrow X$ is a 
     Define $Q(f): X \rightarrow BU$ by,
 
         \begin{equation*}
-            Q(f) := 
+            Q(f) :=
             \begin{cases}
                 F(x,\alpha(x)),& \text{ if } x\in U\\
             f(x), & \text{ else}
@@ -94,17 +94,20 @@ If $(X,A)$ is a compact Hausdorff pair, the inclusion $A\hookrightarrow X$ is a 
         the homotopy between them. Now as $A$ is contractible, so is $A\times [0,1]$, implying that, $H\big|_{A\times [0,1]}$ is nullhomotopic. Let the homotopy be given by the map $N$. Now, again apply Urysohn's lemma for the space $X\times [0,1]$ to get,
         $$\beta: X\times [0,1] \rightarrow [0,1]$$
         $$\beta\big|_{A\times [0,1]} \equiv 1, \supp{\beta} \subset V\times [0,1]$$
-        Repeat the construction above by defining, 
+        Repeat the construction above by defining,
         $$G(H_t):= \begin{cases}
             N((x, t), \beta(x,t)), & \text{ if } x\in V\\
             H_t(x), & \text{ else}
         \end{cases}$$
-        To finish the proof, let's do away with one small yet essential detail: One can define a straight-line homotopy between $\alpha$ and $\beta_t$, hence the function $Q$ is independent of the open neighbourhoods on which $f$ and $g$ are null-homotopic. 
+        To finish the proof, let's do away with one small yet essential detail: One can define a straight-line homotopy between $\alpha$ and $\beta_t$, hence the function $Q$ is independent of the open neighbourhoods on which $f$ and $g$ are null-homotopic.
 \end{proof}
 
 Let $n \in \mathbb{N}\cup \{0\}$, define,
 $$\widetilde{K}^{-n}(X, A):= \widetilde{K}(\Sigma^n(X/A)).$$
 Using Bott periodicity, extend this definition to all integer degrees by $\widetilde K^{m+2}(X,A)\cong\widetilde K^m(X,A)$.
+In particular,
+$$\widetilde{K}^{2n}(X, A) := \widetilde{K}(X/A),$$
+$$\widetilde{K}^{2n+1}(X, A) := \widetilde{K}(\Sigma(X/A)).$$
 For the sequence of functors defined above, homotopy axiom follows from the representation of the functor $K$, and the excision axiom is just the trivial statement $(X\backslash U)/(A\backslash U) = X/A$. To investigate the sequence axiom, we need to define the requisite natural transformations; for this purpose, Proposition $4.2$ will come in handy. Given a pair $(X, A)$ we have the following sequence of spaces called the \textbf{Puppe sequence}:
 \[\begin{tikzcd}
 	&& {(((X\cup CA)\cup CX)\cup C(X\cup CA))/C(X\cup A))\sim \color{red}{\Sigma} X} \\
@@ -121,7 +124,7 @@ For the sequence of functors defined above, homotopy axiom follows from the repr
 \end{tikzcd}\]
 
 
-Note that as cones are contractible, we have the isomorphism: 
+Note that as cones are contractible, we have the isomorphism:
 $$\widetilde{K}(X\cup CA) \cong \widetilde{K}((X\cup CA)/CA) \cong \widetilde{K}(X/A)$$
 which gives rise to a cofibration-like sequence:
 $$\widetilde{K}(A) \xleftarrow{} \widetilde{K}(X) \xleftarrow{} \widetilde{K}(X/A) \xleftarrow{} \widetilde{K}(\Sigma A) \xleftarrow{} \widetilde{K}(\Sigma X) \xleftarrow{} \widetilde{K}(\Sigma X/\Sigma A) \xleftarrow{} \cdots$$
@@ -148,7 +151,7 @@ Therefore by Bott's Theorem, the above induces the following:
 	\arrow["\cong"', from=3-6, to=4-6]
 	\arrow[from=3-4, to=3-3]
 \end{tikzcd}\]
-which, written in a more recognisable form, is 
+which, written in a more recognisable form, is
 $$\cdots \rightarrow \widetilde{K}^n(X, A)\rightarrow \widetilde{K}^n(X) \rightarrow \widetilde{K}^n(A) \rightarrow \widetilde{K}^{n+1}(X, A)\rightarrow \cdots$$
 
 The periodicity theorem essentially allows us to  wrap the sequence on itself. Exactness at various places will be given by Proposition $4.1$ applied to relevant sections of the Puppe sequence, along with the observation that $(X\cup CY)/CY \sim X/Y$. So, $\{K^n\}_{n}$ satisfies the sequence axiom for pairs. Thus $\{\widetilde K^n\}_n$ satisfies the axioms of a generalised cohomology theory on compact Hausdorff pairs.
@@ -189,6 +192,15 @@ which gives the isomorphism,
         \mathbb{Z}^{\oplus(2^{n-1} -1)}, & \text{ if } 2|i\\
         \mathbb{Z}^{\oplus(2^{n-1})}, & \text{ else}
     \end{cases}$$
+\end{enumerate}
+
+\textbf{Questions for the Reader}:
+\begin{enumerate}
+    \item Is there a space whose K-group has torsion elements? If so, what feature of the space is responsible for it?
+    \item Is there a way to connect K-groups to homotopy groups?
+    \item Note that, as $\mathbb{D}^n$ is contractible, $\widetilde{K}^m(\mathbb{D}^n)=\{0\}$. Can we use this and the values of the K-groups of $S^n$ to compute K-groups of CW-complexes?
+    \item Is K-theory related to other cohomology theories in any natural way?
+    \item Can analogous theories be built over the real and quaternionic fields?
 \end{enumerate}
 
 % BLOG-CONTENT-END

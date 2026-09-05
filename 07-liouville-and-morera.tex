@@ -111,8 +111,7 @@ compact sets. Then $f\in H(\Omega)$.
 
 
 \textbf{Note.}
-This result follows from Morera's Theorem and
-is useful in its own right.
+This result is intended to be shown as an instance of Morera's Theorem, but it turns out to be a technique in itself. So we prove it to serve our purpose.
 
 \textit{Proof.}
 Let $D$ be a disc in $\Omega$, and let $\gamma$ be a polygonal path in $D$.
@@ -127,8 +126,7 @@ As $f_n\to f$ uniformly in $\overline D$,
 so $\int_\gamma f=0$. Also, $f$ is continuous, and hence $f\in H(D)$. This is
 true for all $D$ in $\Omega$, so $f\in H(\Omega)$.
 
-The next two applications illustrate Tool 17 before another application of Morera
-in action.
+Let us see two instances of Tool 17 before we show another instance of Morera in action.
 
 \subsubsection*{Application — Convergence of derivatives}
 Under the hypotheses of Tool 17, \(f_n'\to f'\)
@@ -339,7 +337,7 @@ Hence
 so $f\in H(\mathbb C)$. But $f$ is bounded, and therefore $f$ is constant.
 
 \textbf{Exercise.}
-Give an analytic version of this geometric argument.
+Make this geometric argument analytic. Do it!
 
 
 The following is not a standard technique, but it is a useful tool to have in
@@ -386,7 +384,13 @@ Now put
 \[
   M_\theta:=\sum_{k=1}^N|z_k|\cos^+(\alpha_k-\theta).
 \]
-Then
+For equally spaced points $\theta_i$ in $[-\pi,\pi]$,
+\[
+  2\pi\sup_\theta M_\theta
+  \geq
+  \sum_{i=1}^N M_{\theta_i}\left(\frac{N}{2\pi}\right)^{-1},
+\]
+and the expression on the right converges to $\int_{-\pi}^{\pi}M_\theta\,d\theta$ as the mesh tends to $0$. Consequently,
 \[
   \sup_\theta M_\theta
   \geq\frac1{2\pi}\int_{-\pi}^{\pi}M_\theta\,d\theta.

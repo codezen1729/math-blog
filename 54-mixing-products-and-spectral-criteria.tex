@@ -6,20 +6,22 @@
 \section*{Mixing, Products, and Spectral Criteria}
 % BLOG-CONTENT-BEGIN
 \subsection{Mixing}
-Ergodic theorems connect orbit averages with equidistribution. Mixing asks a
-different question: how do measurable sets become statistically independent
-under iteration? Three complementary perspectives will be useful:
+Ergodic theorems give you all the equidistribution theorems one would hope
+for, so let us now abandon the study of orbits. Recall that we studied
+ergodicity from three different perspectives in the previous post:
 \begin{itemize}
  \item Measure-theoretic: to obtain dynamical information.
  \item Operator-theoretic: to obtain equidistribution theorems.
  \item Fourier-analytic: for some examples.
 \end{itemize}
-Consider the ``set-orbits''
+Now let us focus on the study of ``set-orbits''
 $\{T^{\circ n}(E)\}_{n\in\mathbb Z}$. The measure-theoretic perspective
 gave us information about $\{T^{\circ n}(x)\}_{n\in\mathbb Z}$, namely
 recurrence theorems; the operator-theoretic perspective told us about
-$\{f\circ T^n\}_{n\in\mathbb Z}$. We now view the system
-$(X,\mathcal B,\mu,T)$ probabilistically. The starting observation is that
+$\{f\circ T^n\}_{n\in\mathbb Z}$. Now it is time to give up these
+perspectives and look at it for what it is: a probability space. Let us view
+the system $(X,\mathcal B,\mu,T)$ probabilistically. Before we jump into that,
+here is a small observation. We saw that
 \[
  \frac1N\sum_{n=0}^{N-1}f\circ T^n\longrightarrow\int f\,d\mu
  \quad\text{in $L^2_\mu$, as $N\to\infty$.}
@@ -43,8 +45,15 @@ of ergodicity:
  \item Conversely, if $T^{-1}(A)=A$, set $B=X\setminus A$. We obtain
  $\mu(A)\mu(X\setminus A)=0$, so $\mu(A)\in\{0,1\}$.
 \end{itemize}
-Thus ergodicity gives asymptotic independence only after averaging. Mixing
-strengthens this to $\mu(A\cap T^{-n}(B))\to\mu(A)\mu(B)$ without averaging.
+Thus, on average, $T$ pulls back an event and \emph{tries} to make it
+independent of $A$. If $T^{-n}(B)$ and $A$ were independent, then
+\[
+ \mu(A\cap T^{-n}(B))
+ =\mu(A)\mu(T^{-n}(B))=\mu(A)\mu(B),
+\]
+and convergence would be assured. In general, however, an ergodic map just
+tries to separate events and is not always successful. Keeping this in mind,
+let us look at maps that asymptotically make $T^{-n}(B)$ and $A$ independent.
 
 \setcounter{definition}{5}\begin{definition}[Mixing]
 A system $(X,\mathcal B,\mu,T)$ is \emph{mixing} if, for all
@@ -89,23 +98,25 @@ Said differently:
  this is mixing.
  \item $T^{-1}$ makes $A$ and $B$ asymptotically independent except on
  a zero-density set: this is weak mixing.
- \item $T^{-1}$ makes $A$ and $B$ independent on average:
+ \item $T^{-1}$ \emph{tries} to make $A$ and $B$ independent on average:
  this is ergodicity.
 \end{itemize}
 \end{remark}
 \begin{remark}
-Since $T^{-1}$ separates events in the senses described above, we say that
-$T$ mixes events. Hence we
-call such systems mixing or weakly mixing. Weak mixing has several equivalent formulations, one of which is central to ergodic proofs of Szemer\'edi's theorem.
+Since $T^{-1}$ tries to separate events in whatever manner we prescribe, we
+say that the inverse of $T^{-1}$, namely $T$, mixes events. Hence we call such
+systems mixing or weakly mixing. It turns out that weak mixing (a formulation
+due to von Neumann) is quite a natural thing, as it has so many equivalent
+formulations. A generalisation of this concept will be crucial for us in
+establishing Szemer\'edi's theorem.
 \end{remark}
-We now turn to equivalent formulations of weak mixing and the connections
+Now let us see other equivalent formulations of weak mixing, to find
 % Source page 4
-between its probabilistic, operator-theoretic, and measure-theoretic forms.
+connections between the probabilistic interpretation and the others.
 
 \setcounter{theorem}{14}\begin{theorem}[Mixing equivalences]
 \label{thm:l4-mixing-equivalences}
-Given a system $(X,\mathcal B,\mu,T)$ in which $T$ is invertible modulo null
-sets, the following are equivalent:
+Given a system $(X,\mathcal B,\mu,T)$ in which $T$ is invertible modulo null sets, the following are equivalent:
 \begin{enumerate}[label=(\arabic*)]
  \setcounter{enumi}{0}\item $T$ is weakly mixing.
  \setcounter{enumi}{1}\item $T\times T$ is ergodic with respect to $\mu\times\mu$.
@@ -113,12 +124,11 @@ sets, the following are equivalent:
  \setcounter{enumi}{3}\item If $(Y,\mathcal B',\nu,S)$ is ergodic, then
  $(X\times Y,\mathcal B\times\mathcal B',\mu\times\nu,T\times S)$
  is ergodic.
- \setcounter{enumi}{4}\item The only eigenfunctions of $U_T$ are the constant
- functions; equivalently, its point spectrum consists only of the eigenvalue
- $1$ on the constants.
+ \setcounter{enumi}{4}\item The only eigenfunctions of $U_T$ are the constant functions; equivalently, its point spectrum consists only of the eigenvalue $1$ on the constants.
 \end{enumerate}
 \end{theorem}
-The proof uses the following lemma of Koopman and von Neumann.
+This is a long proof, so hang tight. We will first prove an interesting
+technical lemma due to Koopman and von Neumann.
 
 \setcounter{theorem}{15}\begin{lemma}[Koopman--Neumann]
 \label{lem:l4-koopman-neumann}
@@ -203,7 +213,8 @@ Similarly,
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:l4-mixing-equivalences}]
-We shall use the Koopman--Neumann lemma repeatedly in the equivalent form
+We shall use the Koopman--Neumann lemma without mentioning it explicitly.
+Keep in mind henceforth that
 \[
  \begin{aligned}
  &\frac1N\sum_{n=0}^{N-1}
@@ -244,6 +255,38 @@ so $J$ has density zero. Therefore
  \end{aligned}
 \]
 by the definition and \eqref{eq:l4-pair-limits}.
+
+The $\sigma$-algebra $\mathcal B\times\mathcal B$ contains the algebra
+$\mathcal J'$ of finite unions of measurable rectangles. The calculation
+above and the triangle inequality give
+\[
+ \frac1N\sum_{n=0}^{N-1}
+ \left|\widetilde\mu(A_1\cap(T\times T)^{-n}A_2)
+ -\widetilde\mu(A_1)\widetilde\mu(A_2)\right|\longrightarrow0
+ \tag{$\dagger$}\label{eq:l4-product-mixing}
+\]
+for $A_1,A_2\in\mathcal J'$, where $\widetilde\mu=\mu\times\mu$.
+Fix $A_2\in\mathcal J'$ and let $\mathcal J_{A_2}$ be the class of
+$A_1\in\mathcal B\times\mathcal B$ for which
+\eqref{eq:l4-product-mixing} holds. If $A_i\nearrow A$ or $A_i\searrow A$,
+then, uniformly in $n$,
+\[
+ \begin{aligned}
+ &\left|\widetilde\mu(A\cap(T\times T)^{-n}A_2)
+ -\widetilde\mu(A)\widetilde\mu(A_2)\right|\\
+ &\quad\leq
+ \left|\widetilde\mu(A_i\cap(T\times T)^{-n}A_2)
+ -\widetilde\mu(A_i)\widetilde\mu(A_2)\right|
+ +2\widetilde\mu(A\mathbin\triangle A_i).
+ \end{aligned}
+\]
+Thus $\mathcal J_{A_2}$ is a monotone class containing $\mathcal J'$, and
+hence it is all of $\mathcal B\times\mathcal B$. Now fix arbitrary
+$A_1\in\mathcal B\times\mathcal B$ and repeat the same argument in the
+second variable. Since $T\times T$ preserves $\widetilde\mu$, the error is
+again bounded uniformly by twice the measure of the symmetric difference.
+Consequently \eqref{eq:l4-product-mixing} holds for every
+$A_1,A_2\in\mathcal B\times\mathcal B$, so $T\times T$ is weakly mixing.
 
 
 \paragraph{$(3)\Longrightarrow(1)$.}
@@ -287,8 +330,9 @@ Thus
  ((A_1\times A_2)\cap(T\times S)^{-n}(B_1\times B_2))
  \longrightarrow\mu(A_1)\mu(B_1)\nu(A_2)\nu(B_2),
 \]
-and $T\times S$ is ergodic. A monotone-class argument extends this result from
-the algebra of rectangles to the $\sigma$-algebra.
+and $T\times S$ is ergodic. Again, one has to extend this result from the
+algebra of rectangles to the $\sigma$-algebra; a monotone-class argument does
+so.
 
 \paragraph{$(4)\Longrightarrow(2)$.}
 Let $(Y,\mathcal B',\nu,S)$ be the ergodic system with $Y=\{y\}$,
@@ -337,17 +381,21 @@ unitary. Define $g(x_1,x_2)=f(x_1)\overline{f(x_2)}$. Then
  U_{T\times T}g(x,y)=g(Tx,Ty)=\lambda\overline\lambda\,g(x,y)=g(x,y).
 \]
 By ergodicity of $T\times T$, $g$ must be constant almost everywhere.
-Since $g(x,y)=f(x)\overline{f(y)}$ is constant and $f$ is nonzero, $f$ must
-itself be constant almost everywhere. Then $f\circ T=\lambda f$ gives
-$\lambda=1$. Hence the only eigenfunctions are the constants.
+Since $g(x,y)=f(x)\overline{f(y)}$ is constant and $f$ is nonzero, $f$ must itself be constant almost everywhere. Then $f\circ T=\lambda f$ gives $\lambda=1$. Hence the only eigenfunctions are the constants.
+
 
 \paragraph{$(5)\Longrightarrow(2)$.}
 Suppose $T\times T$ is not ergodic. There exists a nonconstant
-$f\in L^2_{\mu\times\mu}(X\times X)$ with
-$f(Tx,Ty)=f(x,y)$ almost everywhere. Replacing $f$ by one of
+$f\in L^2_{\mu\times\mu}(X\times X)$ with $f(Tx,Ty)=f(x,y)$ almost
+everywhere. We can assume without loss of generality that
+$f(x,y)=\overline{f(y,x)}$. If both
 $f(x,y)+\overline{f(y,x)}$ and
-$i(f(x,y)-\overline{f(y,x)})$, and then subtracting its integral, we may
-assume that
+$i(f(x,y)-\overline{f(y,x)})$ were constant, then $f(x,y)$ would also be
+constant. Thus we may either work with one of them or assume the symmetry
+$f(x,y)=\overline{f(y,x)}$.
+
+Now subtract $\int f\,d(\mu\times\mu)$ from $f$. Since $f$ was nonconstant,
+the result is still nonzero, and we may assume that
 \[
  f(x,y)=\overline{f(y,x)},\qquad \int_{X\times X}f\,d(\mu\times\mu)=0.
 \]
@@ -355,24 +403,45 @@ Define the Hilbert--Schmidt operator
 \[
  (F(g))(x):=\int_Xf(x,y)g(y)\,d\mu(y).
 \]
-The operator $F$ is nonzero, compact, and self-adjoint. It therefore has a
-nonzero eigenvalue $\lambda$, and the eigenspace
-$N_\lambda=\ker(F-\lambda I)$ is finite-dimensional. If $g\in N_\lambda$,
-invariance of $\mu$ and $f$ gives
+\begin{itemize}
+ \item $F$ is self-adjoint, by Fubini's theorem and the symmetry of $f$.
+ \item $F$ is nontrivial, because $f$ is.
+ \item $\|F\|_{\mathrm{HS}}=\|f\|_{L^2(\mu\times\mu)}<\infty$. Thus $F$ is
+ compact.
+ \item Since $F$ is a nontrivial compact self-adjoint operator, it has a
+ nonzero eigenvalue $\lambda$.
+ \item The eigenspace $N_\lambda=\ker(F-\lambda I)$ is finite-dimensional:
+ the identity on $N_\lambda$ is $\lambda^{-1}F|_{N_\lambda}$ and hence
+ compact, so $N_\lambda$ is locally compact.
+\end{itemize}
+Thus $F(g)=\lambda g$ for some $g$, with $\lambda\ne0$. Then
 \[
- \lambda g(Tx)=\int_Xf(Tx,Ty)g(Ty)\,d\mu(y)
- =\int_Xf(x,y)g(Ty)\,d\mu(y)=F(U_Tg)(x).
+ \begin{aligned}
+ \lambda g(Tx)
+ &=\int_X f(Tx,y)g(y)\,d\mu(y)\\
+ &=\int_X f(Tx,Ty)g(Ty)\,d\mu(y)\\
+ &=\int_X f(x,y)g(Ty)\,d\mu(y).
+ \end{aligned}
 \]
-Thus $N_\lambda$ is invariant under $U_T$. The restriction of $U_T$ to this
-finite-dimensional space is unitary, so it has an eigenvector $g$. This
-eigenvector cannot be constant: otherwise integrating $Fg=\lambda g$ would
-give $\lambda g=0$, because $\int f\,d(\mu\times\mu)=0$. Hence $U_T$ has a
-nonconstant eigenfunction, contradicting (5).
+The second equality uses the $\mu$-invariance and invertibility of $T$, and
+the last uses the $T\times T$-invariance of $f$. Hence
+$F(g\circ T)=\lambda(g\circ T)$, so $g\in N_\lambda$ implies
+$g\circ T\in N_\lambda$.
+
+Therefore $U_T:N_\lambda\to N_\lambda$. Since $N_\lambda$ is
+finite-dimensional and $U_T$ is an isometry, its restriction is unitary and
+has an eigenvector $g$. This eigenvector cannot be constant: otherwise
+integrating $Fg=\lambda g$ would give $\lambda g=0$, because
+$\int f\,d(\mu\times\mu)=0$. Thus $U_T$ has a nonconstant eigenfunction,
+contradicting (5).
+
+
 
 
 \end{proof}
 
-We finish with the Rokhlin problem.
+Let us stop this session by setting up the premise for the infamous Rokhlin
+problem.
 \setcounter{definition}{7}\begin{definition}[$k$-fold mixing]
 A system $(X,\mathcal B,\mu,T)$ is \emph{$k$-fold mixing} if
 \[

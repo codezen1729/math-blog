@@ -7,11 +7,61 @@
 % BLOG-CONTENT-BEGIN
 % Source page 12 - left
 \setcounter{theorem}{33}\begin{lemma}[A working-backwards strategy]\label{lemma:lb1-39}
-Working backwards is a useful way to discover a proof. For an ``if and only if'' statement, it may reveal the intermediate claim needed in each direction, but both implications must ultimately be proved.
+Another major lemma is the strategy of working backwards, in a slightly different version used here to resolve problems.
+First read the statement. If it asks to prove that ``$A$ holds if and only if $B$ is true,'' then, for this type of problem, begin by showing that if $A$ holds, $B$ follows. This discovers one direction; both implications must ultimately be proved.
 \end{lemma}
 
+Consider the following geometry problem from IMO 1994, problem 2.
+Let $ABC$ be an isosceles triangle with $AB=AC$.
+Let $M$ be the midpoint of $BC$, and let $O$ lie on line $AM$ with $OB\perp AB$.
+Let $Q$ be on segment $BC$, distinct from $B,C$.
+Let $E$ lie on line $AB$ and $F$ on line $AC$, with $E,Q,F$ distinct and collinear.
+Prove that $OQ\perp EF$ if and only if $QE=QF$.
+
+\paragraph{Trailer.}
+Let $E$ and $F$ lie on the same side of $Q$, as shown.
+\begin{figure}[H]\centering
+\includegraphics[width=.56\linewidth]{lb1-fig-05.pdf}
+\FigureTag{LB1.5}{fig:lb1-05}
+\end{figure}
+Write $\angle EQM=x+z$ and $\angle OQM=y+w$.
+Then $\angle EQO=(x+y)+(z+w)=\pi/2+k$.
+For $OQ\perp EQ$, $k=0$, so $z=w=0$.
+But this requires $Q=B$ or $Q=C$, contrary to the assumption.
+Thus $E,F$ cannot both lie on the same side of $Q$.
+
+\paragraph{Movie.}
+We first show that $OQ\perp EF$ implies $QE=QF$.
+\begin{figure}[H]\centering
+\includegraphics[width=.62\linewidth]{lb1-fig-06.pdf}
+\FigureTag{LB1.6}{fig:lb1-06}
+\end{figure}
+$OQBE$ is cyclic, so $\angle QOE=\angle QBA=x$, say.
+Then $\angle MBA=\angle BOM=x$. By symmetry of the figure, $\angle BOM=\angle MOC=x$.
+Also $\angle MBA=\angle MCA=x$, so $\angle MCO=\pi/2-\angle MOC=\pi/2-x$.
+Thus $\angle ACO=(\pi/2-x)+x=90^\circ$.
+Consequently $QOCF$ is cyclic, and $\angle QCF=\angle QOF=x=\angle QOE$.
+This establishes $QE=QF$.
+
+Conversely, put $A=(0,a)$, $B=(-b,0)$ and $C=(b,0)$. Then
+$M=(0,0)$, and $OB\perp AB$ gives $O=(0,-b^2/a)$.
+Write $Q=(q,0)$. If $QE=QF$, then $Q$ is the midpoint of $EF$.
+Since $E\in AB$ and $F\in AC$, this gives
+\[
+ E=(q-b,aq/b),\qquad F=(q+b,-aq/b).
+\]
+Hence
+\[
+ \overrightarrow{EF}=(2b,-2aq/b),\qquad
+ \overrightarrow{OQ}=(q,b^2/a),
+\]
+and $\overrightarrow{EF}\cdot\overrightarrow{OQ}=0$.
+Therefore $OQ\perp EF$.
+
 \setcounter{theorem}{34}\begin{lemma}[Caution with the strategy]
-Working backwards must be used with care: discovering a necessary intermediate statement does not by itself prove the original claim.
+Lemma~\ref{lemma:lb1-39} cannot be applied very easily. Since it is a new technique, it can lead to a major error if the final argument is not formed correctly.
+Here we exploited the fact that a statement $B$ in mathematical logic has only two truth values, true or false.
+There are statements with more than two truth values; anyway, for Olympiad business it is well and good. Discovering a necessary intermediate statement does not by itself prove the original claim.
 \end{lemma}
 
 % Source page 13 - left
@@ -24,6 +74,7 @@ If $A,X,A'$ and $B,Y,B'$ are collinear in the two-circle configuration, then $AB
 \includegraphics[width=.76\linewidth]{lb1-fig-07.pdf}
 \FigureTag{LB1.7}{fig:lb1-07}
 \end{figure}
+This simple theorem is often neglected by Olympiad students; as a result, they have difficulty solving the following problem.
 
 Two circles intersect at $X,Y$. Draw a chord $AB$ in the first circle.
 Extend $AX,BY$ to meet the second circle at $A',B'$.
@@ -33,6 +84,8 @@ Iterate this $2014$ times. Determine the number of trapeziums in the resulting c
 \includegraphics[width=.90\linewidth]{lb1-fig-08.pdf}
 \FigureTag{LB1.8}{fig:lb1-08}
 \end{figure}
+The surviving diagram ends at $A^{2012},B^{2012}$, whereas the statement says
+to iterate $2014$ times; the source does not resolve this discrepancy.
 
 
 % Source page 13 - right
@@ -79,20 +132,20 @@ Therefore $ABC$ is isosceles.
 \end{figure}
 \begin{remark}
 Another major approach to geometry problems assigns masses to points and is sometimes called ``mass-point geometry.''
-Problems solved using these elementary operations on masses can also be solved using Ceva's theorem or Menelaus's theorem.
+In my opinion, problems solved using these elementary operations on masses can be resolved using Ceva's theorem or Menelaus's theorem.
 \end{remark}
-The following lemma is an application of Menelaus's theorem.
+The following is a nice application of Menelaus's theorem and can itself be considered a lemma.
 \setcounter{theorem}{37}\begin{lemma}[Two concurrency conditions]
 Let $ABC$ be a triangle, and let $D,E,F$ lie on $BC,CA,AB$, respectively, with $AD,BE,CF$ concurrent.
 If $M,N,P$ lie on $EF,FD,DE$, then $AM,BN,CP$ concur if and only if $DM,EN,FP$ concur.
 \end{lemma}
-The following figure makes the incidence relations easier to see.
+I used GeoGebra to draw a nice, neat figure of this problem. Do not forget Lemma~\ref{lemma:lb1-39} for if-and-only-if problems.
 % Source page 14 - right
 \begin{figure}[H]\centering
 \includegraphics[width=.93\linewidth]{lb1-fig-11.pdf}
 \FigureTag{LB1.11}{fig:lb1-11}
 \end{figure}
-\emph{A clean figure is often the first step in solving a difficult geometry problem.}
+\emph{``The secret of resolving any difficult geometric problem is drawing a clean figure.''}
 
 \paragraph{Innovative solution.}
 Let $D,E,F$ lie on the sides $BC,CA,AB$ of triangle $ABC$, respectively,
@@ -130,6 +183,34 @@ We now prove that fact independently. The hypothesis gives $BC/BK=CL/KL$, while 
 The internal and exterior angle bisectors are perpendicular, so $AL\perp AB$.
 This is exactly what we wanted.
 % Source page 33 - right
+
+Employ the same strategy to resolve the following problem.
+In $\triangle ABC$, $AM$ is a median that divides $\angle BAC$ in the ratio
+$1:2$. Extend $AM$ through $M$ to $D$ so that $\angle DBA=90^\circ$.
+Prove that $AC=\tfrac12AD$.
+
+\subsection{Solving geometry problems using scissors rather than theorems}
+\paragraph{C.A.P.: Cut and Paste problem (IMO, 1996).}
+Let $P$ be a point inside $\triangle ABC$ such that
+\[\angle APB-\angle C=\angle APC-\angle B.\]
+Let $D,E$ be the incentres of $\triangle APB,\triangle APC$, respectively.
+Show that $AP,BE,CD$ concur.
+% Source page 45 - left
+\begin{figure}[H]\centering
+\includegraphics[width=.95\linewidth]{lb1-fig-23.pdf}
+\FigureTag{LB1.23}{fig:lb1-23}
+\end{figure}
+Multiply the sides of triangle I by $z$, those of II by $x$, and those of III by $y$.
+Anybody got some glue?! Okay, let's repaste.
+\begin{figure}[H]\centering
+\includegraphics[width=.72\linewidth]{lb1-fig-24.pdf}
+\FigureTag{LB1.24}{fig:lb1-24}
+\end{figure}
+The angle condition on $P$ gives $\alpha+\theta=\beta+\gamma$, so $cz=by$.
+Thus $c/b=y/z$, giving $AB/AC=BP/CP$, and hence $AB/BP=AC/CP$.
+This is the last step written in the source; the remaining argument proving the
+requested concurrence of $AP,BE,CD$ is not supplied there.
+% Source page 45 - right
 
 
 \subsection{Two geometric constructions}

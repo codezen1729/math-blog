@@ -5,7 +5,7 @@
 \begin{document}
 \section*{Prime Ends and Landing of External Rays}
 % BLOG-CONTENT-BEGIN
-The starting point is the Riemann mapping theorem.
+Recall the Riemann mapping theorem.
 \setcounter{theorem}{32}\begin{theorem}[Riemann mapping theorem]
 For a simply connected domain $U\subset\mathbb C$, there is a biholomorphism $\varphi\colon U\to\mathbb D$, unique after prescribing suitable initial values, namely $\varphi^{-1}(0)$ and $(\varphi^{-1})'(0)$.
 \end{theorem}
@@ -27,11 +27,13 @@ For almost every $\theta\in(0,2\pi]$, this gives a candidate for $\varphi^{-1}(e
 
 The idea is to divide $U$ by crosscuts $A\subset U$, with $A\cong(0,1)$, $\overline A\cong[0,1]$, and $|\overline A\cap\partial U|=2$.
 % Source page 3
-The image $\varphi(A)$ is a crosscut of $\mathbb D$. By the Jordan curve theorem it separates $\mathbb D$ into two components, and pulling these components back by $\varphi$ separates $U$ into two crosscut neighbourhoods $U^+$ and $U^-$.
+For example, a crosscut $A$ joins boundary points $x,y$. Since $U\cong\mathbb D$, for every sequence $x_i\in U$ tending to $\partial U$, the sequence $\varphi(x_i)$ accumulates on $\partial\mathbb D$. The image $\varphi(A)$ is a crosscut of $\mathbb D$. By the Jordan curve theorem it separates $\mathbb D$ into two components, and pulling these components back by $\varphi$ separates $U$ into two crosscut neighbourhoods $U^+$ and $U^-$.
 \begin{figure}[H]\centering
 \includegraphics[width=.51\textwidth]{cd8-fig-02.pdf}
 \FigureTag{CD8.2}{fig:cd8-02}
 \end{figure}
+The signs depend on the orientation of $A$.
+
 To prevent failure of boundary continuity of $\varphi$ or $\varphi^{-1}$, use nested crosscut neighbourhoods around boundary points: a fundamental chain $\mathcal N=\{N_j\}_j$ of crosscut neighbourhoods with $N_1\supset N_2\supset\cdots$. If $A_j$ are the corresponding crosscuts, require $\overline A_j\cap\overline A_i=\varnothing$ for $i\ne j$, and $\diam(\overline A_j)\to0$.
 \begin{figure}[H]\centering
 \includegraphics[width=.52\textwidth]{cd8-fig-03.pdf}
@@ -67,11 +69,11 @@ The following are equivalent:
 \begin{proof}
 Immediate from Carath\'eodory's theorem.
 \end{proof}
-The next result strengthens the landing criterion.
+We offer a slightly deeper insight than the landing criterion.
 \setcounter{theorem}{35}\begin{theorem}[Rational rays land]\label{cd8:rational-rays}
 Every rational external ray lands. A periodic ray lands at a repelling or parabolic periodic point, while a strictly preperiodic ray lands at a preperiodic point.
 \end{theorem}
-We need a preparatory lemma that is significant in its own right.
+Before proving this, we need a preparatory lemma that is significant in its own right.
 \setcounter{theorem}{36}\begin{lemma}[Snail lemma]
 Suppose $p\colon[0,\infty)\to V\setminus\{0\}$, $p(t)\to0$ as $t\to\infty$, and $f(0)=0$, with $f(z)=\lambda z+a_2z^2+\cdots$ on $V$. Then
 \begin{itemize}
@@ -93,32 +95,28 @@ First suppose that $t$ is periodic under multiplication by $d$. Choose $q\ge1$ w
 \[
 g=f^{\circ q},\qquad D=d^q.
 \]
-Then $g(R_t)=R_t$. Give $\mathbb C\setminus K$ its Poincar\'e metric using
-\[
-\mathbb C\setminus K\cong\mathbb C\setminus\overline{\mathbb D}.
-\]
-The map $\exp\colon\mathbb H^+\to\mathbb C\setminus\overline{\mathbb D}$ is a covering, and $z\mapsto z^D$ lifts to the automorphism $w\mapsto Dw$ of $\mathbb H^+$. Hence $g$ is a local isometry for the Poincar\'e metric.
+Then $g(R_t)=R_t$. We must return to hyperbolic geometry to go beyond the spherical landing criterion. Give $\mathbb C\setminus K$ its Poincar\'e metric using $\mathbb C\setminus K\cong\mathbb C\setminus\overline{\mathbb D}$. The map $\psi\colon\mathbb H^+\to\mathbb C\setminus\overline{\mathbb D}$, $\psi(w)=e^w$, is a covering, and $z\mapsto z^D$ lifts to the automorphism $w\mapsto Dw$ of $\mathbb H^+$. Hence $g$ is a local isometry for the Poincar\'e metric.
+% Source page 7
 \begin{figure}[H]\centering
 \includegraphics[width=.54\textwidth]{cd8-fig-04.pdf}
 \FigureTag{CD8.4}{fig:cd8-04}
 \end{figure}
-
 Recall the parametrisation $g(p(s))=p(s+\log D)$. Then
 \[
-R_t=p(\mathbb R)=\bigcup_{k\in\mathbb Z}I_k,
-\qquad
-I_k=p([k\log D,(k+1)\log D]),
+R_t=p(\mathbb R)=\bigcup_{k\in\mathbb Z}I_k
+=\bigcup_{k\in\mathbb Z}p([k\log D,(k+1)\log D]),
 \]
-with $g(I_k)=I_{k+1}$. All the segments $I_k$ have the same finite Poincar\'e length. As $k\to-\infty$, they approach the boundary $J$; the comparison between the Poincar\'e metric and the spherical distance to the boundary therefore gives
+with $g(I_k)=I_{k+1}$. All the segments $I_k$ have the same finite Poincar\'e length. Also $G(p(s))=e^s\to0$ as $s\to-\infty$. Thus any limit point $\widehat z$ of $p(s)$ has $\log|\phi(\widehat z)|=0$, so $\phi(\widehat z)\in\partial\mathbb D$ and $\widehat z\in\partial K=J$. Such a limit point exists because $\overline{\mathbb C\setminus K}$ is compact in $\widehat{\mathbb C}$. The limit-point configuration is illustrated below; once fixedness is established, the preparatory lemma applies.
+
+As $k\to-\infty$, the segments $I_k$ approach the boundary $J$; the comparison between the Poincar\'e metric and the spherical distance to the boundary therefore gives
 \[
 \operatorname{diam}_{\mathrm{sph}}(I_k)\longrightarrow0.
 \]
-
 Let
 \[
 L_t=\bigcap_{s\in\mathbb R}\overline{p(( -\infty,s])}
 \]
-be the cluster set of the ray at the Julia set. It is nonempty, compact, and connected. If $\widehat z\in L_t$, choose a sequence of segments $I_{k_j}$ approaching $\widehat z$. Since their spherical diameters tend to zero and $g(I_{k_j})=I_{k_j+1}$, both endpoints of these segments tend to $\widehat z$. Continuity gives $g(\widehat z)=\widehat z$. Thus
+be the cluster set of the ray at the Julia set. It is nonempty, compact, and connected. For a neighbourhood $N$ of $\widehat z\in L_t$, there is a smaller neighbourhood $N'\subset N$ containing an entire $I_k$, since the Poincar\'e length of every $I_k$ is $\log D$ while its spherical diameter tends to zero. Hence $N\cap g(N)\ne\varnothing$, as $g$ maps one endpoint of $I_k$ to the other. Equivalently, if a sequence of segments $I_{k_j}$ approaches $\widehat z$, both endpoints tend to $\widehat z$, and continuity gives $g(\widehat z)=\widehat z$. Thus
 \[
 L_t\subseteq\operatorname{Fix}(g).
 \]

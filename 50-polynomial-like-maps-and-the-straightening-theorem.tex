@@ -18,9 +18,35 @@ $S=\mathbb C$ or $\widehat{\mathbb C}$, $f$ is rational, and $\deg(f)\ge2$.
  \item Rate of expansion, if $f$ is hyperbolic.
  \item Holomorphic degree of $f$, if $f$ is a branched covering.
 \end{itemize}
-\emph{Cut-and-paste surgery} alters these parameters by gluing maps with
-different dynamical data along selected subdomains. The Straightening
-Theorem is a central example.
+\emph{Cut and paste surgery} is essentially a way to alter these parameters
+by gluing together two maps with different dynamical parameters after
+cutting off certain sets from their domains of definition. In this short
+post we shall illustrate a surgery of the aforementioned kind by
+proving what is called the \emph{Straightening Theorem}.
+So, what does the theorem say?
+
+% Source page 2
+Let $f\colon U\to V$, with $f\in\Hol(U)$. Locally around critical points,
+$f$ behaves like a polynomial. There is an easy way to see this. Let
+$\widehat z$ be a critical point of $f$. First conjugate it locally with
+holomorphic changes of coordinates $\psi,\varphi$ such that
+\[
+ \widetilde f(\widehat z)
+ =(\varphi\circ f\circ\psi^{-1})(\widehat z)=\widehat z.
+\]
+Then $\widehat z$ is a superattracting fixed point and thus admits a
+B\"ottcher coordinate change. One can extend this polynomial behaviour
+until $\widetilde f$ hits the nearest other critical point.
+
+Such local behaviours, clubbed together, can either explain $f$ totally
+on $U$ or may not, depending entirely on the domain covered by the
+collective union of B\"ottcher domains. Regardless, holomorphic maps,
+in particular rational maps $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$,
+may locally behave like polynomials. This led Douady and Hubbard on a
+venture, trying to find connections between ``polynomial-like'' maps
+and polynomials. For us, this venture shall culminate with the
+Straightening Theorem. But before we proceed, let us make certain things
+precise.
 
 \setcounter{definition}{26}\begin{definition}[Polynomial-like map]
 Let $U,V$ be bounded simply connected domains of $\mathbb C$ such that
@@ -34,19 +60,37 @@ proper branched holomorphic covering of degree $d$.
 \begin{remark}[1]
 With this definition we are trying to study $f$ locally around its
 critical points, where it was observed to have polynomial-like behaviour.
-Polynomials are polynomial-like, so this definition genuinely generalises
-them.
+Also note that polynomials indeed are polynomial-like. This hammers home
+the point that what we have defined is a generalisation.
 \end{remark}
-Here $K(f):=\bigcap_{n\ge0}f^{-n}(V)$ is the set of points that never escape under the polynomial-like map.
+\begin{remark}[2]
+One can loosen the rigidity of the boundaries $\partial U,\partial V$.
+If the domains given to us are $U',V'$ and $f\colon U'\to V'$, construct
+a polygonal region in $V'\setminus\overline{U'}$.
+By the Jordan Curve Theorem, if $\gamma$ is the polygon and
+$V=\operatorname{Int}(\gamma)$, we have
+$U'\subset\overline{U'}\subset V\subset\overline V\subset V'$.
+Let $U=f^{-1}(V)$; then $\partial U$ and $\partial V$ are piecewise
+analytic. One can replace the polygon by a nearby real-analytic Jordan curve separating $\overline{U'}$ from $\partial V'$. Since our goal is local behaviour, studying $f|_U$ is no compromise.
+\end{remark}
+
+Here
+\[
+K_f:=\bigcap_{n\ge0}f^{-n}(V)
+\]
+is the filled set of the polynomial-like map.
+
 \setcounter{theorem}{51}\begin{theorem}[Straightening Theorem]
 \label{thm:cd13-straightening}
-Every polynomial-like map $f\colon U\to V$ of degree $d$ is hybrid equivalent to a polynomial $P$ of degree $d$: there is a quasiconformal conjugacy whose Beltrami coefficient vanishes almost everywhere on $K(f)$ \cite{douadyhubbard1985polynomiallike}.
+Every polynomial-like map $f\colon U\to V$ of degree $d$ is
+hybrid equivalent to a polynomial $P$ of degree $d$: there is a quasiconformal conjugacy whose Beltrami coefficient vanishes almost everywhere on the filled set $K_f$ \cite{douadyhubbard1985polynomiallike}.
 \end{theorem}
 \paragraph{Note.}
 In other words, the ellipse field of a polynomial-like map can be
 straightened into a circle field, hence the name.
-The proof glues the polynomial-like map to an external polynomial model,
-then straightens the resulting invariant ellipse field.
+We shall prove this by cutting open polynomial-like maps and gluing on
+some extra stuff, which we shall then use to pull the ellipse field
+back to a circle field.
 % Source page 4 (continuation of the previous sentence).
 
 \begin{proof}
@@ -58,6 +102,10 @@ Let $\rho>1$, and let
 be a Riemann map fixing $\infty$. Since $\partial V$ is analytic, $R$
 extends analytically to its boundary $\partial V$.
 Call such an extension $\psi_1\colon\partial V\to S^1_{\rho^d}$.
+\begin{figure}[H]
+ \centering\includegraphics[width=.35\textwidth]{cd13-fig-01.pdf}
+ \FigureTag{CD13.1}{fig:cd13-01}
+\end{figure}
 Let $\widehat f=f|_{\partial U}$ and
 $\widetilde f=\psi_1\circ\widehat f\colon\partial U\to S^1_{\rho^d}$.
 The map $\widehat f$ is an analytic covering of degree $d$, while
@@ -66,10 +114,6 @@ same degree. Hence $\widetilde f$ lifts through $z\mapsto z^d$ to an
 analytic orientation-preserving diffeomorphism
 $\psi_2\colon\partial U\to S^1_\rho$, giving
 $\psi_1(f(z))=\psi_2(z)^d$ for every $z\in\partial U$.
-\begin{figure}[H]
- \centering\includegraphics[width=.35\textwidth]{cd13-fig-01.pdf}
- \FigureTag{CD13.1}{fig:cd13-01}
-\end{figure}
 Let
 \[
  A_0=V\setminus\overline U,\qquad
@@ -82,12 +126,14 @@ closures and satisfies
 \[
  \psi|_{\partial V}=\psi_1,\qquad \psi|_{\partial U}=\psi_2.
 \]
-Now it is time to perform the surgery.
+Now it is time to perform the awaited surgery, the highlight of this post.
 
 % Source page 5
-On the annulus $A_0$, use the quasiconformal map $\psi$ to glue
-$f$ to the external holomorphic model. The resulting map supplies the
-invariant ellipse field that will be straightened to a circle field.
+Tear off the domain of $f$ from its codomain, obtaining
+$A_0=V\setminus\overline U$. On this we have a quasiconformal map $\psi$.
+Let us use it to glue $f$ to a holomorphic map, which we shall later use
+as a hook to pull the flattened circle field back to its original shape,
+that is, to straighten an ellipse field to a circle field.
 Define $F\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$, the result of surgery on $f$, by
 \[
  F(z):=
@@ -97,11 +143,8 @@ Define $F\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$, the result of surgery
   R^{-1}\bigl(R(z)^d\bigr),&z\in\widehat{\mathbb C}\setminus\overline V.
  \end{cases}
 \]
-On the two boundary curves these formulas have the same continuous
-extensions. Note that $F$ is a quasiregular branched covering of degree
-$d$. If we find an $F$-invariant Beltrami form, the Mapping Theorem will
-conclude the proof.
-
+On the two boundary curves these formulas have the same continuous extensions. Note that $F$ is a quasiregular branched covering of degree $d$. If we find an $F$-invariant Beltrami form,
+the Mapping Theorem will conclude the proof.
 Let $\mu_0$ be the circle field and let $\mu_\psi=\psi^*\mu_0$. Put
 $E_0=A_0$ and, for $n\geq1$, put
 \[
@@ -112,7 +155,7 @@ Define the Beltrami form $\mu$ by
 \mu(z):=
 \begin{cases}
   (f^n)^*\mu_\psi,&z\in E_n,\quad n\geq0,\\
-  \mu_0,&z\in K(f)\cup(\widehat{\mathbb C}\setminus V).
+  \mu_0,&z\in K_f\cup(\widehat{\mathbb C}\setminus V).
 \end{cases}
 \]
 On the remaining preimages of the boundary curves, which have area zero, set $\mu=\mu_0$.
@@ -127,10 +170,17 @@ $\phi(\infty)=\infty$, such that
 is holomorphic on $\widehat{\mathbb C}$. It has degree $d$, and
 $P^{-1}(\infty)=\{\infty\}$, so $P$ is a polynomial of degree $d$.
 Since $F=f$ on $U$, the map $\phi$ conjugates $f$ to $P$ on a
-neighbourhood of $K(f)$. Moreover, $\mu=\mu_0$ on $K(f)$, so the
+neighbourhood of $K_f$. Moreover, $\mu=\mu_0$ on $K_f$, so the
 Beltrami coefficient of $\phi$ vanishes almost everywhere there.
 Thus $f$ and $P$ are hybrid equivalent.
 \end{proof}
+
+The theorem in fact says something more. The set $K_f$ is the right analogue of the filled Julia set for polynomials:
+it is the set of points in $U$ that never escape $U$.
+Note that $f$ and
+$P=(\phi\circ F\circ\phi^{-1})|_{\phi(U)}$ are conjugate, and the
+Beltrami coefficient of the conjugacy vanishes almost everywhere on $K_f$.
+Such a phenomenon is called \emph{hybrid equivalence}.
 % BLOG-CONTENT-END
 \bibliographystyle{amsalpha}
 \bibliography{tools/profiles/complex-dynamics-notes/references}

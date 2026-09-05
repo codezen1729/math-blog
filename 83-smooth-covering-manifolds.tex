@@ -194,7 +194,7 @@ Thus $p$ is a smooth covering map.
 
 \subsection{Covering Lie groups}
 
-The lifted-smooth-structure result extends naturally to Lie groups: the universal cover of a connected Lie group inherits a compatible Lie-group structure.
+Now let us impose further structures on our original setting and see where it leads us. We saw before that covering space theory helped reduce the classification problem by a lot. We then saw how the structure was still preserved once we shifted our course to the category of smooth manifolds. More precisely, we saw that a topological cover of a manifold also preserves the smooth structure. If we now lift this to the category of Lie groups and ask whether smooth covering maps preserve the group structure, the following proposition answers this in its full glory!
 
 \setcounter{theorem}{3}\begin{proposition}[Lifting the group structure]\label{prop:lie-group}
 Let $G$ be a connected Lie group, and let $\pi\colon\widetilde{G}\to G$ be a smooth covering map with $\widetilde{G}$ simply connected. Then one can endow $\widetilde{G}$ with a Lie group structure for which $\pi$ is a Lie group homomorphism. Furthermore, $\widetilde{G}$ is unique up to Lie group isomorphism.
@@ -233,7 +233,7 @@ such that $(\psi\circ\pi)\circ\widetilde m\circ\varphi^{-1}$ is smooth.
 This can be done for every $q$ and $\pi(p)$.
 
 % Source page 12
-Therefore, $\widetilde m$ is smooth.) Thus one has a smooth
+Therefore, $\widetilde m$ is smooth. Thus one has a smooth
 multiplication function.
 
 Similarly, by lifting $i\circ\pi$, where $i$ is the inverse map on $G$,
@@ -274,6 +274,15 @@ Therefore $(\widetilde G,\cdot)$ is a Lie group and
 $\pi\colon\widetilde G\to G$ is a Lie group homomorphism.
 \end{proof}
 
+\begin{remark}
+Notice that the demand that $\widetilde G$ be simply connected was crucial: it helped us literally lift the group structure on $G$. Such a lift might not be possible for some other smooth covers of $G$.
+
+There is a correction to this remark. Simple connectivity makes the lifting argument immediate, but, more generally,
+after choosing a point over the identity, a connected covering of a connected
+Lie group also carries a unique Lie group structure for which the covering
+map is a homomorphism.
+\end{remark}
+
 \Needspace{8.3cm}
 \subsection{Uniqueness across the categories}
 
@@ -295,6 +304,15 @@ $\widetilde p_2$ is continuous, with $p_1$ a local diffeomorphism. Hence
 $\widetilde p_2$ is smooth, and therefore a diffeomorphism.
 
 % Source page 14
+All three versions of $\widetilde p_2$ coincide. It is not difficult to
+see that the group structure with respect to which $\widetilde p_2$ is a
+Lie group homomorphism coincides with that of $G_2$. The reason that
+$\widetilde p_2$ as a diffeomorphism coincides with $\widetilde p_2$ as a
+homeomorphism is clear. The only issue is the last $\widetilde p_2$; let
+us resolve that.
+
+The continuous lift is a diffeomorphism. It remains to show that this same map is a group homomorphism.
+
 Notice that
 \begin{align*}
  p_1\bigl(\widetilde p_2(xy)\bigr)
@@ -319,6 +337,8 @@ prove $\widetilde p_2(x^{-1})=(\widetilde p_2(x))^{-1}$. Thus
 $\widetilde p_2$ is a group homomorphism, hence a group isomorphism,
 and therefore, of course, a covering map.
 
+Thus the topological, smooth, and group-theoretic constructions yield the same map $\widetilde p_2$.
+
 \section{Classification and complex structures}
 
 We didn't impose the Lie group structure simply to poke around and see.
@@ -332,7 +352,9 @@ classification problem boils down to classifying all discrete Lie
 subgroups of a given Lie group, which is itself a field of study.
 Therefore, Lie groups enter into this story quite naturally!
 
-The same reduction applies in the complex category, as summarised in the following diagram.
+One sees the full strength of this simplification the moment one gives
+this a complex structure. Firstly, one can translate this simplification
+word for word. So, given the following:
 
 \begin{figure}[H]
   \centering
@@ -361,6 +383,7 @@ topology course.
 
 Now it merely remains to classify the discrete subgroups of the Lie
 group $\operatorname{Aut}(\mathbb D)\cong\operatorname{PSL}_2(\mathbb R)$.
+Therefore, the story we have told so far is not a mere \emph{tell-tale heart}!
 
 % BLOG-CONTENT-END
 \end{document}

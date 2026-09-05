@@ -9,21 +9,21 @@ Surgery is needed because we want to change the parameters of dynamics while kee
 \setcounter{theorem}{47}\begin{lemma}[Key lemma for surgery]
 If a quasiregular map \(\widetilde f\) satisfies \(\widetilde f^*\mu=\mu\) for a Beltrami form \(\mu\), then \(\widetilde f\) is quasiconformally conjugate to a holomorphic function. That is, there is a \(K\)-quasiconformal map \(\varphi\) such that \(\varphi\circ\widetilde f\circ\varphi^{-1}\) is holomorphic.
 \end{lemma}
-There are two broad forms of surgery: \emph{soft surgery} and \emph{cut-and-paste surgery}. Soft surgery is used primarily to construct a parametrized family of deformed rational maps for an external purpose, rather than to model the original dynamics directly. Two instances are:
+There are essentially two forms of surgery: \emph{soft surgery} and \emph{cut-and-paste surgery}. The former is mostly used to obtain a parametrized family of deformed rational maps, to construct something very specific and unrelated to the dynamics of the original map. Soft surgery is more like a postmortem, performed purely for purposes demanded elsewhere. Two instances are:
 \begin{itemize}
 \item The multiplier map \(\Lambda:\Omega\to\mathbb D\) of a hyperbolic component of \(\mathcal M\) is a conformal isomorphism.
 % Source page 2
 \item A rational map \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) of degree at least two has no wandering domain.
 \end{itemize}
-In both cases, deforming the dynamics of a map \(g\) produces a family used to establish the stated result.
-Cut-and-paste surgery instead studies the dynamics of \(f\) through a deformed model.
+In both cases, the dynamics of some \(g\) was deformed to obtain a family of maps, used strategically to establish the statements.
+Cut-and-paste surgery, by contrast, is about the dynamics of \(f\), usually studying it by modelling it through deformations.
 Either way, we must reach a stage where the surgery lemma applies. The following fundamental principles guide us by showing when surgery can be conducted.
 
 \Needspace{15\baselineskip}
 \setcounter{theorem}{48}\begin{theorem}[Principle 1: domain-wise surgery]\label{thm:cd12-domain-principle}
 Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular, and let \(p\ge1\). Suppose:
 \begin{itemize}
-\item \(U=\bigcup_{i=1}^pU_i\), where the \(U_i\) are pairwise disjoint open subsets of \(\widehat{\mathbb C}\), \(f(U_j)\subseteq U_{j+1}\) for \(1\leq j<p\), and \(f(U_p)\subseteq U_1\).
+\item \(U=\bigcup_{i=1}^pU_i\), where the \(U_i\) are pairwise disjoint open subsets of \(\widehat{\mathbb C}\), \(f(U_j)\subseteq U_{j+1}\) for \(1\le j<p\), and \(f(U_p)\subseteq U_1\).
 \item \(\psi:U\to\widetilde U\) is quasiconformal.
 \item \(H:\widetilde U\to\widetilde U\) is quasiregular, \(H^p\) is holomorphic, \(f|_U=\psi^{-1}\circ H\circ\psi\), and
 \(\partial_{\bar z}f=0\) almost everywhere on \(\widehat{\mathbb C}\setminus f^{-N}(U)\) for some \(N\ge0\).
@@ -32,7 +32,7 @@ Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular, and let \(p
 Then \(f\) is quasiconformally conjugate to a rational map: it is \emph{quasirational}.
 \end{theorem}
 \begin{proof}
-Write \(\widetilde U_j=\psi(U_j)\); these sets, \(1\le j\le p\), are mutually disjoint. First define a Beltrami form \(\widetilde\mu\) on \(\widetilde U\) using \(H\): on \(\widetilde U_{p-k}\), for \(0\leq k\leq p-1\), set
+Write \(\widetilde U_j=\psi(U_j)\); these sets, \(1\le j\le p\), are mutually disjoint. First define a Beltrami form \(\widetilde\mu\) on \(\widetilde U\) using \(H\): on \(\widetilde U_{p-k}\), for \(0\le k\le p-1\), set
 \(\widetilde\mu=(H^{\circ k})^*\mu_0\). Since \(H^p\) is holomorphic, if \(H\) is \(K_H\)-quasiregular then
 \(K(\widetilde\mu)\le K_H^{p-1}\).
 Put \(\mu=\psi^*\widetilde\mu\) and spread it across the sphere. On \(f^{-n}(U)\), use \((f^{\circ n})^*\mu\), and on
@@ -49,6 +49,11 @@ U\subseteq f^{-1}(U)\subseteq f^{-2}(U)\subseteq\cdots
 \]
 The union is both forward and backward invariant, so \(\mu\) is \(f\)-invariant. The surgery lemma makes \(f\) quasirational.
 \end{proof}
+\begin{remark}
+If \(f\) in Principle 1 is a deformation of \(\widetilde f\), then \(U_j\) corresponds to a Fatou component of \(\widetilde f\). It has no choice: if
+\(J(\widetilde f)\cap\widetilde U_j\ne\varnothing\), then
+\(\widetilde f(\widetilde U_j),\widetilde f^2(\widetilde U_j),\ldots,\widetilde f^n(\widetilde U_j)\) expand to \(\widehat{\mathbb C}\) almost everywhere.
+\end{remark}
 
 % Source page 4
 Pictorially, the ellipse field is spread by the dynamics as follows.
@@ -65,6 +70,34 @@ Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular and \(X\subs
 Then \(f\) is quasirational.
 \end{theorem}
 % Source page 5
+\begin{proof}
+Denote the grand orbit of \(z\) by \(\operatorname{GO}(z)\). Then
+\[
+\widehat{\mathbb C}
+=\bigsqcup_{z\in\widehat{\mathbb C}/\sim}\operatorname{GO}(z),
+\qquad z\sim z'\ \Longleftrightarrow\ z'\in\operatorname{GO}(z).
+\]
+Define an invariant Beltrami form on each grand orbit. If
+\(\operatorname{GO}(z)\cap X=\varnothing\), put \(\mu=\mu_0\) there. This is measurable on the grand orbit; moreover,
+\(\operatorname{GO}(z)=\bigcup_{p,q\ge0}f^{-p}(f^q(z))\) is measurable.
+
+If \(\operatorname{GO}(z)\cap X\ne\varnothing\), choose
+\(x\in\operatorname{GO}(z)\cap X\). By hypothesis, there is \(m_x<\infty\) with \(f^{m_x}(x)=z_0\) and \(f^n(z_0)\notin X\) for every \(n\ge0\). Define the ellipse field on this grand orbit by
+\[
+\mu(w)=
+\begin{cases}
+\mu_0,&w=f^n(z_0),\ n\ge0,\\
+(f^p)^*(\mu_0),&f^p(w)=f^q(z_0),\ q\ge0,\ p\ge1.
+\end{cases}
+\]
+The same prescription can be written on the measurable sets determined by the finite entry and exit times from \(X\); these sets form a countable partition. Hence \(\mu\) is measurable on \(\widehat{\mathbb C}\).
+Its modulus is controlled by the following chain of pullbacks:
+\[
+\mu(w)=(f^{p_1})^*\circ f^*\circ(f^{p_2})^*\circ f^*
+\circ\cdots\circ(f^{p_{N'}})^*\circ f^*(\mu_0).
+\]
+The breaks are made at visits to \(X\) along a path from \(w\) to \(f^q(z_0)\). There are at most \(N\) visits, so the dilatation is bounded by \(K^N\), equivalently \(\|\mu\|_\infty<1\). By definition \(\mu\) is \(f\)-invariant; the surgery lemma makes \(f\) quasirational.
+\end{proof}
 
 % Source page 6
 \begin{remark}

@@ -87,11 +87,27 @@ The tensor-product functors above are right exact.
 \end{claim}
 \begin{proof}
 The functor $-\otimes N$ is left adjoint to $\Hom(N,-)$, and therefore preserves cokernels. The same argument applies to $N\otimes-$.
+
+More explicitly, if $E'\to E\to E''\to0$ is exact, then for every $P$ the exact sequence
+\[
+0\longrightarrow\Hom(E'',\Hom(N,P))
+\longrightarrow\Hom(E,\Hom(N,P))
+\longrightarrow\Hom(E',\Hom(N,P))
+\]
+identifies, by the tensor--Hom adjunction, with
+\[
+0\longrightarrow\Hom(E''\otimes N,P)
+\longrightarrow\Hom(E\otimes N,P)
+\longrightarrow\Hom(E'\otimes N,P).
+\]
+Thus $E'\otimes N\to E\otimes N\to E''\otimes N\to0$ is exact.
 \end{proof}
-\subsection{Free and flat modules}
+\subsection{Finitely generated modules}
 \setcounter{definition}{5}\begin{definition}
 The module $M$ is \emph{free} if $M=\bigoplus_i A$. If $M=\bigoplus_{i=1}^n A$, then $\dim(M)=n$.
 \end{definition}
+We also have $A\otimes_A A\cong A$ and
+$A/\aa\otimes_A A\cong A/\aa$.
 \setcounter{definition}{6}\begin{definition}
 $N$ is \emph{flat} if $-\otimes N$ is an exact functor. It is already right exact; equivalently, $N$ is flat if
 \[
@@ -115,7 +131,7 @@ Let $\{x_i\}_{i=1}^n$ generate $M$. Since $\varphi(x_i)\in\aa M$, write $\varphi
 Let $\widetilde B$ be the cofactor matrix of $B$. Then
 \[
 \widetilde B B\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}=0
-\ \Longrightarrow\ 
+\ \Longrightarrow\
 \det(B)I\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}=0.
 \]
 Thus $\det(\delta_{ij}\varphi-a_{ij})\in\End(M)$ is the zero endomorphism.

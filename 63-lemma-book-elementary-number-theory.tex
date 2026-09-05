@@ -5,6 +5,23 @@
 \begin{document}
 \section*{Elementary Number Theory}
 % BLOG-CONTENT-BEGIN
+\subsection{Cover inscriptions}
+The notebook cover records the following formulas:
+\[
+1+2+3+4+\cdots=-\frac1{12},\qquad
+1+\frac14+\frac19+\frac1{16}+\frac1{25}+\cdots=\frac{\pi^2}{6},
+\]
+\[
+1-1+1-1+1-1+\cdots=\frac12,\qquad
+a^{\varphi(m)}\equiv1\pmod m,
+\]
+\[
+\sqrt{1+2\sqrt{1+3\sqrt{1+4\sqrt{1+\cdots}}}}=3,
+\qquad x^2\geq0.
+\]
+The partially cropped lower edge also contains $e^{i\pi}=-1$ and
+$4\int_0^1\sqrt{1-x^2}\,dx=\pi$.
+
 \subsection{Elementary number theory}
 \setcounter{theorem}{0}\begin{lemma}[GCD of a sum and a product]
 If $\gcd(x,y)=1$, then $\gcd(x+y,xy)=1$.
@@ -76,6 +93,20 @@ Thus $p_i=2$, a contradiction.
 \setcounter{theorem}{6}\begin{lemma}[Wilson's theorem]
 If $p$ is prime, then $(p-1)!\equiv-1\pmod p$.
 \end{lemma}
+\paragraph{Application.}
+For $n\geq3$,
+\[
+n\mid\sum_{r=1}^{n-3}r(r!)
+\quad\Longleftrightarrow\quad n\text{ is prime}.
+\]
+Note that
+\[
+\sum_{r=1}^{n-3}r(r!)
+=\sum_{r=1}^{n-3}\bigl((r+1)!-r!\bigr)=(n-2)!-1.
+\]
+If $n=p$ is prime, Wilson's theorem gives $(p-2)!\equiv1\pmod p$.
+If $n$ is composite and $n>4$, then $n\mid(n-2)!$; the case $n=4$ is immediate.
+This proves the equivalence.
 
 
 % Source page 3 - right
@@ -184,13 +215,24 @@ Prove that the only integer solution of $x^2+y^2=x^2y^2$ is $x=y=0$.
 \paragraph{Proof 1.}
 $1=x^2y^2-x^2-y^2+1=(x^2-1)(y^2-1)$.
 Thus $x^2-1=\pm1$ and $y^2-1=\pm1$, implying $x=y=0$.
+\paragraph{Proof 2.}
+The pair $(0,0)$ is a solution. Suppose $x,y\ne0$ and, without loss of
+generality, let $1/x^2\geq1/y^2$. Dividing by $x^2y^2$ gives
+\[
+\frac1{x^2}+\frac1{y^2}=1\leq\frac2{x^2}.
+\]
+Thus $x^2\leq2$. Since $x$ is a nonzero integer, $x^2=1$, which would
+force $1/y^2=0$, a contradiction.
 \paragraph{Proof 3.}
-From $x^2+y^2=x^2y^2$, write $x=2x_1$ and $y=2y_1$. Then
+Modulo $2$, the equation first shows that $x$ and $y$ have the same parity;
+they cannot both be odd after reduction modulo $4$. Thus both are even.
+Write $x=2x_1$ and $y=2y_1$. Then
 \[
 4x_1^2+4y_1^2=16x_1^2y_1^2
-\Longrightarrow x_1^2+y_1^2=(2x_1y_1)^2
-\Longrightarrow x_1=2x_2,\quad y_1=2y_2.
+\Longrightarrow x_1^2+y_1^2=(2x_1y_1)^2.
 \]
+The same parity argument shows that $x_1,y_1$ are both even, so write
+$x_1=2x_2$ and $y_1=2y_2$.
 % Source page 5 - right
 Thus $x=2x_1=4x_2=\cdots=2^nx_n=\cdots$, so $(x_n)$ is strictly decreasing in magnitude.
 Fermat's infinite descent principle gives the conclusion.
@@ -234,7 +276,8 @@ for fifth powers, modulo $5$ or $11$. For instance, $x^5\equiv0,\pm1\pmod{11}$, 
 \setcounter{enumi}{0}\item Find positive-integer solutions of $x^3+y^3+z^3=2001$.
 \setcounter{enumi}{1}\item Find integer solutions of $(x+1)^5+(y-4)^5+1=(x-2)^5+(y+3)^5$.
 \end{enumerate}
-(1) Let $x\geq y\geq z$. Then $3x^3\geq2001$, so $11\geq x\geq9$.
+(1) Let $x\geq y\geq z$. Then $3x^3\geq2001$ and $x^3<2001$, so
+$12\geq x\geq9$.
 Also $x^3\equiv0,\pm1\pmod9$, but $2001\equiv3\pmod9$.
 This forces $x\equiv y\equiv z\equiv1\pmod9$.
 The only such number in the interval for $x$ is $10$, so $x=10$.

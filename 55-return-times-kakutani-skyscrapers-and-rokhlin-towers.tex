@@ -5,19 +5,23 @@
 \begin{document}
 \section*{Return Times, Kakutani Skyscrapers, and Rokhlin Towers}
 % BLOG-CONTENT-BEGIN
-The Rokhlin problem is a deep question about mixing systems. The constructions
-of Rokhlin towers and Kakutani skyscrapers give a geometric way to organize
-return times.
+In the last post we saw mixing systems. There is a deep question concerning
+mixing systems, which we addressed last time, called the Rokhlin problem. In
+this final (almost) post we shall see beautiful work of Rokhlin and Kakutani:
+Rokhlin towers and Kakutani skyscrapers.
 
 \subsection{Induced Transformations}
-Let $(X,\mathcal B,\mu,T)$ be a system in which $T$ is invertible. Poincar\'e's
-recurrence theorem says that the orbit of almost every point of a measurable
-set $A$ returns to $A$ infinitely often. This leads to a quantitative question:
+Let us work with the system $(X,\mathcal B,\mu,T)$, where $T$ is invertible.
+The very first result that we proved---a result that revealed the first
+emergence of a pattern---was Poincar\'e's recurrence theorem. It tells you
+that, given a set $A$, almost all points of $A$ under $T$ keep hitting $A$ ad
+infinitum. Now let us quantify the implication of that theorem by asking:
 \begin{quote}
 What is the expected return time to $A$? Assume $\mu(A)>0$.
 \end{quote}
-We address this question through the first return time to $A$. Each later
-return is the first return of a suitable iterate of the starting point.
+We shall address that question by looking at the first return time to $A$.
+This shall suffice, for the second return time is the first for the iterated
+image of the starting point, and so on.
 
 Define
 \[
@@ -25,14 +29,14 @@ Define
 \]
 
 % Source page 2
-$r_A$ naturally defines a transformation on $A$.
+This quantity $r_A$ gives us a natural way of defining a transformation on
+$A$.
 \setcounter{definition}{8}\begin{definition}[Induced transformation]
 Define $T_A\colon A\to A$ by $T_A(x):=T^{r_A(x)}(x)$. This is defined almost everywhere on $A$, and is called the transformation \emph{induced by $T$ on $A$}, or the \emph{induced transformation on $A$}.
 \end{definition}
 
 \begin{itemize}
-\item $r_A\colon A\to\mathbb N$ is defined almost everywhere and is measurable,
-because we have
+\item $r_A\colon A\to\mathbb N$ is defined almost everywhere and is measurable, because we have
 \[
 \begin{aligned}
  \text{``first return'':}\quad \{x\in A\mid r_A(x)=1\}&=A_1=A\cap T^{-1}(A),\\
@@ -42,9 +46,9 @@ because we have
 \end{aligned}
 \]
 As $A_n$ is measurable for every $n\geq1$, $r_A$ is measurable, for the sets $\{n\}$ generate the $\sigma$-algebra on $\mathbb N$.
+% Source writes X -> N although r_A may be infinite outside the returning set; retained.
 
-\item $T_A\colon A\to A$ is also measurable. Since $T$ is invertible, for
-$B\in\mathcal B$ with $B\subseteq A$, notice that
+\item $T_A\colon A\to A$ is also measurable. Since $T$ is invertible, for $B\in\mathcal B$ with $B\subseteq A$, notice that
 \[
  T_A^{-1}(B)=\bigcup_{n\geq1}\bigl(A_n\cap T^{-n}(B)\bigr)
  \quad\text{almost everywhere},
@@ -55,7 +59,9 @@ as $T^{-1}$ is defined almost everywhere.
 % Source page 3
 \begin{itemize}
 \item $\bigl(A,\mathcal B|_A,\mu_A=\frac1{\mu(A)}(\mu|_A),T_A\bigr)$ is a measure-preserving system.
-\item As one would expect, if $T$ is ergodic, then so is $T_A$. First, notice that $A=\bigsqcup_{n\geq1}A_n$. Thus, if $B\in\mathcal B|_A$, then $B=\bigsqcup_{n\geq1}(B\cap A_n)$, so
+\item As is to be naturally expected, if $T$ is ergodic, then so is $T_A$.
+Firstly, notice that $A=\bigsqcup_{n\geq1}A_n$. Thus, if
+$B\in\mathcal B|_A$, then $B=\bigsqcup_{n\geq1}(B\cap A_n)$, so
 \[
  \mu_A(B)=\frac1{\mu(A)}\sum_{n\geq1}\mu(B\cap A_n),
  \qquad
@@ -76,12 +82,13 @@ If $T_A$ is not ergodic, there exists $B$ with $T_A^{-1}(B)=B$ and $0<\mu(B)<\mu
 \[
  \bigcup_{n\geq1}\ \bigcup_{j=0}^{n-1}T^j(B\cap A_n)
 \]
-is $T$-invariant and has nonzero measure. The corresponding saturation of
-$A\setminus B$ also has nonzero measure, so the displayed invariant set does
-not have full measure. This contradicts ergodicity of $T$.
+is $T$-invariant and has nonzero measure. The corresponding saturation of $A\setminus B$ also has nonzero measure, so the displayed invariant set does not have full measure. This contradicts ergodicity of $T$.
 \end{itemize}
 
-The induced transformation leads naturally to Kakutani skyscrapers. This construction yields two useful results, including the expected-return-time formula.
+Having addressed the nature of the induced transformation, let us introduce
+Kakutani skyscrapers and see how a simple construction can help us get two
+marvellous results, one of them addressing the question raised at the
+beginning of the post.
 
 % Source page 4
 \subsection{Kakutani Skyscrapers}
@@ -92,14 +99,18 @@ The induced transformation leads naturally to Kakutani skyscrapers. This constru
 \end{figure}
 
 \paragraph{Description.}
-The ground floor represents $A$ as the disjoint union of the sets
-$\{A_k\}_{k\geq1}$. A point of $A_k$ returns to $A$ after $k$ iterates, so
-$A_k,T(A_k),\ldots,T^{k-1}(A_k)$ form a tower of height $k$. The map $T$
-moves a point up one floor at a time, while $T_A$ records its eventual return
-to the base.
+The ground floor represents $A$ as a disjoint union of sets
+$\{A_k\}_{k\geq1}$. By definition, points in $A_2$ travel to some set before
+returning to $A$. The first floor consists of the sets $A_2$ onwards lifted to
+a set beyond $A$; the second floor is obtained similarly, and the $n$th floor
+inductively. $T_A$ takes points in $A_3$, for instance, on a ride to all the
+floors above it and lands on $A$.
 
 \begin{remark}
-Poincar\'e recurrence implies that the ground floor has $\{A_k\}_{k\geq1}$ almost everywhere, and hence the tower above it. Ergodicity of $T$ implies that every point of $X$ belongs to some floor of the skyscraper, as $\mu(A)>0$.
+Poincar\'e recurrence is basically saying that the ground floor has
+$\{A_k\}_{k\geq1}$ almost everywhere, and hence the tower above it. Ergodicity
+of $T$ tells you that almost every point of $X$ belongs to some floor of the
+skyscraper, as $\mu(A)>0$.
 \end{remark}
 
 % Source page 5
@@ -115,7 +126,9 @@ In other words, the expected return time is
 \end{theorem}
 \Needspace{5\baselineskip}
 \begin{proof}
-Since $T$ is invertible, ergodicity of $T$ implies ergodicity of $T^{-1}$.  $\mu\bigl(\bigcup_{n\geq1}T^n(A)\bigr)=1$, so the skyscraper contains almost all of $X$. Thus, summing up tower-wise,
+Since $T$ is invertible, ergodicity of $T$ implies ergodicity of $T^{-1}$. As
+we know, $\mu\bigl(\bigcup_{n\geq1}T^n(A)\bigr)=1$, so the skyscraper contains
+almost all of $X$. Thus, summing up tower-wise,
 \[
 \begin{aligned}
  1=\mu(X)
@@ -125,7 +138,9 @@ Since $T$ is invertible, ergodicity of $T$ implies ergodicity of $T^{-1}$.  $\mu
 \]
 as $\sum_{k=1}^n k\chi_{A_k}\nearrow r_A$.
 \end{proof}
-Thus larger sets have shorter expected return times. In particular, if $\mu(A)>\frac12$, then the expected return time is less than $2$.
+Therefore, the bigger the set, the sooner the points will return. In
+particular, if $\mu(A)>\frac12$, then the expected return time is less than
+$2$.
 
 \setcounter{theorem}{17}\begin{theorem}[Rokhlin's Tower Decomposition]\label{thm:l5-rokhlin}
 In the setting of Theorem~\ref{thm:l5-kac}, suppose that $\mu(\{x\})=0$ for all $x\in X$, i.e. $\mu$ is nonatomic. Then for every $n\geq1$ and $\varepsilon>0$, there exists $B\in\mathcal B$ such that
@@ -137,9 +152,11 @@ In the setting of Theorem~\ref{thm:l5-kac}, suppose that $\mu(\{x\})=0$ for all 
 
 % Source page 6
 \begin{proof}
-A nonatomic measure has no ``atoms''. More precisely, given $E\in\mathcal B$,
+A nonatomic measure is a measure which has no ``atoms''. In mathematical
+terms, given $E\in\mathcal B$,
 there exists $F\in\mathcal B$, $F\subset E$, such that $0<\mu(F)<\mu(E)$. Then $\mu(F)$ or
-$\mu(E\setminus F)$ is less than $\mu(E)/2$. Iterating this construction gives
+$\mu(E\setminus F)$ is less than $\mu(E)/2$. Iterating this construction, one
+can construct
 measurable sets satisfying
 \[
  \mu(\widetilde F)<\frac{\mu(E)}{2^n}<\frac1{2^n}.
@@ -163,7 +180,8 @@ which implies $\mu\bigl(\bigsqcup_{k=0}^{n-1}T^k(B)\bigr)>1-\varepsilon$.
 
 % Source page 7
 \Needspace{11cm}
-The following array represents the tower levels numerically.
+Pictorially speaking, this is what happened. Let us represent towers by
+numbers.
 \begin{figure}[H]
  \centering
  \includegraphics[width=.66\textwidth]{lecture5-fig-02.pdf}
@@ -178,19 +196,24 @@ The following array represents the tower levels numerically.
  T^3(B) &4&4&4&4&\begin{gathered}[b]8\\4\end{gathered}&\begin{gathered}[b]8\\4\end{gathered}&\cdots
 \end{array}
 \]
-Since we are stopping at $\lfloor k/n\rfloor-1$, all towers between $A_4$ and $A_8$ do not reach floors beyond $4$. Similarly, towers between $A_8$ and $A_{12}$ do not reach beyond the eighth floor, and so on. Each tower has residual floors not covered by iterates of $B$, and there can be at most $4$ in our case.
+Since we are stopping at $\lfloor k/n\rfloor-1$, all towers between $A_4$ and
+$A_8$ will have no means of reaching floors beyond $4$. Similarly, towers
+between $A_8$ and $A_{12}$ will have no means of reaching beyond the eighth
+floor, and so on. Each tower will have some residual floors, unattended by
+iterates of $B$, and there can be at most $4$ in our case.
 
 This decomposition is usually called a \emph{Rokhlin tower of height $n$ with base $B$ and residual set of measure less than $\varepsilon$}.
 
-Two fundamental questions now emerge:
+This sort of brings us to the end of our discussion on measure-preserving
+systems. Let us stop by stating things to look forward to. In our brief five
+posts we have encountered two fundamental questions:
 
 % Source page 8
 \begin{enumerate}
  \setcounter{enumi}{0}\item The problem of decomposing the state space into ergodic components.
  \setcounter{enumi}{1}\item The problem of classifying measure-preserving systems.
 \end{enumerate}
-They lead respectively to ergodic decomposition and the classification of
-measure-preserving systems, and ultimately towards ergodic approaches to
-Szemer\'edi's theorem.
+Soon we shall be dealing with these two, and the next thing to look forward to
+will be the proof of Szemer\'edi's theorem!
 % BLOG-CONTENT-END
 \end{document}

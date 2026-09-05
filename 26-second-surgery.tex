@@ -5,62 +5,182 @@
 \section*{The Multiplier Map}
 % BLOG-CONTENT-BEGIN
 
-    
-    
-    The argument below is developed in greater detail in \cite{branner2014quasiconformal}, \cite{MR812271}, and \cite{MR762431}. We shall prove the following theorem. 
-    
+
+
+    The argument below is developed in greater detail in \cite{branner2014quasiconformal}, \cite{MR812271}, and \cite{MR762431}. We shall prove the following theorem.
+
     \subsection*{Theorem 5.1 (Multiplier Map for a Unicritical Polynomial)}
-    Let $\Omega$ be a \BlogPost{the-quadratic-family}{hyperbolic component} of $\mathcal{M}_d$ for $d\geq2$, and let $c^*$ be its centre. Then the multiplier map
-    $$\Lambda_d:\Omega\longrightarrow\mathbb{D}$$
+    Let $\Omega$ be a hyperbolic component of $\mathcal{M}_d$ for $d\geq2$, and let $c^*$ be its centre. Then the multiplier map
+    \[
+    \Lambda_d:\Omega\longrightarrow\mathbb{D}
+    \]
     is a proper holomorphic map of degree $d-1$, with $\Lambda_d^{-1}(0)=\{c^*\}$ and local degree $d-1$ at $c^*$. Equivalently,
-    $$\Lambda_d:\Omega\backslash\{c^*\}\longrightarrow\mathbb{D}^*$$
+    \[
+    \Lambda_d:\Omega\backslash\{c^*\}\longrightarrow\mathbb{D}^*
+    \]
     is an unbranched $(d-1)$-sheeted covering.
 
-    Here the unicritical family of degree $d$ is parametrized by polynomials of the form $Q_c(z)=z^d+c$.
-    
-    
-    
-    Let $\mathbb{D}^*$ be the punctured disk, and let $\Omega^*=\Lambda_d^{-1}(\mathbb{D}^*)=\Omega\backslash\{c^*\}$. Sullivan proved that $\Lambda_d:\Omega^*\rightarrow\mathbb{D}^*$ is a covering map. Gleason gave an argument that helped in calculating the degree of that map.
-    
-    
 
-    Now it remains to prove that the degree of the multiplier map $\Lambda_d:\Omega\rightarrow\mathbb{D}$ is $d-1$. If $\Omega$ has period $p$, then $Q_{c^*}^{\circ p}(0)=0$. The following lemma of Gleason completes the proof.
-    
-    \subsection*{Lemma 5.2}
-    Consider the polynomials $G_n(c)=Q_c^{\circ n}(0)$ for $n\geq1$. All roots of $G_n$ are simple.
-    
-    
+
+    Let $\mathbb{D}^*$ be the punctured disk, and let $\Omega^* = \Lambda_d^{-1}(\mathbb{D}^*)$. Sullivan proved that $\Lambda_d: \Omega^* \rightarrow \mathbb{D}^*$ is a covering map; the properness of the multiplier map makes this covering proper \cite{branner2014quasiconformal,MR812271,MR762431}. Gleason gave an argument that helped in calculating the degree of that map. The steps of the proof are as follows:
+    \begin{enumerate}
+        \item construct a local holomorphic inverse to $\Lambda_d: \Omega^* \rightarrow \mathbb{D}^*$ showing that the map is both a local diffeomorphism and proper to conclude that it is a covering map;
+        \item deduce that $\Lambda_d^{-1}(0)$ is a single point in $\Omega$;
+        \item determine the degree of the map $\Lambda_d$.
+    \end{enumerate}
+
+
+    Fix a point $c_0 \in \Omega^*$ with $\Lambda_d(c_0) = \lambda_0 \neq 0$. Choose an arbitrary simply connected neighbourhood $U_0$ of $\lambda_0$, compactly contained in $\mathbb{D}^*$. Here the unicritical family has degree $d$ and is parametrized by polynomials of the form $Q_c(z) = z^d +c$. For any $\lambda \in U_0$ we shall construct a monic centred polynomial $Q_{c(\lambda)}(z) = z^d + c(\lambda)$, which is quasiconformally conjugate to $Q_{c_0}$ and satisfies, $c(\lambda_0) = c_0$, $\Lambda_d(c(\lambda)) = \lambda,$ and $\lambda \rightarrow c(\lambda)$ is holomorphic. It would follow that $c(\lambda) \in \Omega^*$, and that we would have constructed a holomorphic local inverse of $\Lambda_d$ in the neighbourhood $U_0$ of $\lambda_0$. Therefore $\Lambda_d: \Omega^* \rightarrow \mathbb{D}^*$ will turn out to be a holomorphic covering map.
+
+    The Koenigs coordinate of the polynomial $Q_{c_0} = f_{\lambda_0}$ can be surgically transformed to a linear map with a different multiplier as in \BlogPost{the-mapping-theorem-and-invariant-complex-structures}{\emph{The Mapping Theorem and Invariant Complex Structures}}. One can then spread the altered Beltrami form to the whole basin of attraction of a given cycle. More precisely, choose a branch of the logarithm on $U_0$, set $v=\log\lambda$ and $v_0=\log\lambda_0$, and let $L_v$ be the real-linear map such that $L_v\circ (\zeta\rightarrow \zeta+v_0)\circ L_v^{-1}=\zeta\rightarrow\zeta+v$. Let $\{\alpha_0, \alpha_1,\ldots, \alpha_{p-1}\}$ be the attracting cycle, let $\mathcal{A}(\alpha) = \mathcal{A}_f(\alpha)$ denote the basin of attraction of the cycle. Then note that the Koenigs map extends to the whole basin of attraction $\mathcal{A}_{f^p}(\alpha_0)$ of $\alpha_0$ as a fixed point of $f^p_{\lambda_0}$. Let $\psi_0$ be the extended linearizing map of $f^p_{\lambda_0}$, then we would have $\psi_0(\mathcal{A}_{f^p}(\alpha_0)) = \mathbb{C}$.
+
+    \[
+    \begin{tikzcd}[column sep = large, row sep = large]
+        (\mathbb{C}, \mu_{\lambda})
+        \arrow[r, "z \rightarrow \lambda_0z"]
+        &
+        (\mathbb{C}, \mu_{\lambda})
+        \\
+        (\mathbb{H}_l, \widetilde\mu_{\lambda})
+        \arrow[r, "\zeta \rightarrow \zeta+v_0"']
+        \arrow[u, "\exp"']
+        \arrow[d, "L_v"]
+        &
+        (\mathbb{H}_l, \widetilde\mu_{\lambda})
+        \arrow[u, "\exp"']
+        \arrow[d, "L_v"]
+        \\
+        (\mathbb{H}_l, \mu_0)
+        \arrow[r, "\zeta \rightarrow \zeta+v"']
+        \arrow[d, "\exp"']
+        &
+        (\mathbb{H}_l, \mu_0)
+        \arrow[d, "\exp"]
+        \\
+        (\mathbb{C}, \mu_0)
+        \arrow[r, "z \rightarrow \lambda z"']
+        &
+        (\mathbb{C}, \mu_0)
+        \\
+    \end{tikzcd}
+    \]
+
+    $$\begin{tikzcd}[column sep = large, row sep = large]
+        (\mathcal{A}_{f^p}(\alpha_0), \hat{\mu}_{\lambda})
+        \arrow[r, "f^p_{\lambda_0}"]
+        \arrow[d, "\psi_0"']
+        &
+        (\mathcal{A}_{f^p}(\alpha_0), \hat{\mu}_{\lambda})
+        \arrow[d, "\psi_0"']
+        \\
+        (\mathbb{C}, \mu_{\lambda})
+        \arrow[r, "z \rightarrow \lambda_0 z"']
+        \arrow[d, "\psi_{\lambda}"]
+        &
+        (\mathbb{C}, \mu_{\lambda})
+        \arrow[d, "\psi_{\lambda}"]
+        \\
+        (\mathbb{C}, \mu_0)
+        \arrow[r, "z \rightarrow \lambda z"']
+        &
+        (\mathbb{C}, \mu_0)
+        \\
+        \end{tikzcd}$$
+
+    Note that we have the following set of maps $f_{\lambda_0}: \mathcal{A}_{f^p}(\alpha_i) \rightarrow \mathcal{A}_{f^p}(\alpha_{i+1})$. So, pull back $\hat{\mu}_{\lambda}$ via the map $f_{\lambda_0}$ and spread it across $\mathcal{A}(\alpha)$ and set $\hat{\mu}_{\lambda} = 0$ in the complement of $\mathcal{A}(\alpha)$. This gives us an altered Beltrami form on the whole sphere, and mapping theorem now gives us an integrating map $\hat{\phi}_{\lambda}$ such that the following commutes.
+
+    $$\begin{tikzcd}[column sep = large, row sep = large]
+        (\hat{\mathbb{C}}, \hat{\mu}_{\lambda})
+        \arrow[d, "\hat{\phi}_{\lambda}"]
+        \arrow[r, "f_{\lambda_0}"]
+        &
+        (\hat{\mathbb{C}}, \hat{\mu}_{\lambda})
+        \arrow[d, "\hat{\phi}_{\lambda}"]
+        \\
+        (\hat{\mathbb{C}}, \mu_0)
+        \arrow[r, "f_{\lambda}"']
+        &
+        (\hat{\mathbb{C}}, \mu_0)
+        \\
+        \end{tikzcd}$$
+
+
+    Further, the integrating map $\hat{\phi}_{\lambda}$ can be arranged\footnote{The point behind arranging for $\hat{\phi}_{\lambda}$ satisfying that limit is that having conjugated $f_{\lambda_0}$ such that $\mathcal{A}(\alpha)$ does not contain $\infty$, implies it lies around $\infty$, further $\hat{\mu}_{\lambda} = 0$, so one can arrange for $\hat{\phi}_{\lambda} \sim \text{Id}$ around $\infty$} so that $\frac{\hat{\phi}_{\lambda}}{z} \rightarrow 1$ as $z \rightarrow \infty$, so that if $\hat{\phi}_{\lambda}$ conjugates $f_{\lambda_0}$ and $f_{\lambda}$, then $f_{\lambda}$ is already a monic centred polynomial of degree $d$ with one critical point at $0$ and with a $p$-cycle of multiplier $\lambda$ (as the number of preimages of a given point shall remain fixed). These imply that $f_{\lambda}(z) = z^d + c(\lambda)$, and moreover as $\hat{\phi}_{\lambda}(f_{\lambda_0}(0)) = f_{\lambda}(\hat{\phi}_{\lambda}(0))$, we have $c(\lambda) = \hat{\phi}_{\lambda}(c_0)$, the critical value of $f_{\lambda}$. It is clear that if $\alpha_0$ is one of the points in the $p$-cycle for $Q_{c_0}$, then $\Lambda_d(c(\lambda)) = (Q^{\circ p}_{c(\lambda)})'(\hat{\phi}_{\lambda}(\alpha_0)) = \lambda$, as we wanted to show.
+
+    The next step in the proof is to establish holomorphic dependence on parameters. Note that the Beltrami coefficient $\mu_{\lambda}$ varies holomorphically with respect to $v=\log\lambda$, hence also with respect to $\lambda$. In fact,
+
+    \[
+    \mu_{\lambda}(z) = \frac{z(v-v_0)}{\bar{z}(v+\overline{v_0})}.
+    \]
+
+    Therefore, for $z \in \mathcal{A}_{Q^p_{c_0}}(\alpha_0)$,
+
+    $$\lambda \rightarrow \hat{\mu}_{\lambda}$$
+
+    is holomorphic. If $p>1$, this holomorphic dependence is spread to all of $z\in \mathcal{A}(\alpha)$ by successive pullbacks with $Q_{c_0}$, independent of $\lambda$, and since $\hat{\mu}_{\lambda} = 0$ outside $\mathcal{A}(\alpha)$ it is trivially holomorphically dependent on $\lambda$. Set for all $\lambda \in U_0$,
+
+    \[
+    k(\lambda) = \left|\frac{v-v_0}{v+\overline{v_0}}\right|.
+    \]
+
+    Then $\lambda \rightarrow k(\lambda)$ is a continuous real valued function on $\overline{U_0}$ that takes values in $[0,1)$. Moreover, we have
+    $$||\hat{\mu}_{\lambda}||_{\infty} = ||\mu_{\lambda}||_{\infty} = k(\lambda)$$
+
+    Set,
+    $$k = \sup_{\lambda \in U_0}{k(\lambda)}.$$
+
+    Since $\overline{U_0}$ is compact, the supremum is realized as the maximal value of $k(\lambda)$ for $\lambda \in \overline{U_0}$. Hence $k<1$ and $||\hat{\mu}_{\lambda}||_{\infty} \leq k$ for all $\lambda \in U_0$. Therefore $\lambda \rightarrow \hat{\phi}_{\lambda}$ is holomorphic in $\lambda$ for all $z\in \mathbb{C}$. As $\hat{\phi}_{\lambda}$ is a conjugacy between $Q_{c_0}$ and $f_{\lambda}$, it maps the critical value $c_0$ of $Q_{c_0}$, to the critical value $\hat{\phi}_{\lambda}(c_0)$ of $f_{\lambda}$. Said differently,
+
+    $$f_{\lambda} = Q_{c(\lambda)}$$
+
+    where $c(\lambda) = \hat{\phi}_{\lambda}(c_0)$. Thus, $c(\lambda)$ depends holomorphically on $\lambda$.
+
+    Since the proper covering $\Lambda_d:\Omega^*\rightarrow\mathbb{D}^*$ has finite fibres and $\Omega^*$ is connected, it is a connected finite-sheeted covering. Thus $\Omega^*$ is a punctured disk; filling its puncture gives the unique centre $c^*$ of $\Omega$. Now it remains to prove that the degree of the multiplier map $\Lambda_d: \Omega \rightarrow \mathbb{D}$ is $d-1$. If $\Omega$ has period $p$, then $Q^{\circ p}_{c^*}(0)=0$. The following lemma of Gleason completes the proof.
+
+    \subsection*{Lemma 5.2}: Consider the polynomials $G_n(c) = Q^n_c(0)$ for $n\geq 1$. All roots of $G_n$ are simple.
+
+
     \textit{Proof.}: We have,
-    
+
     $$G_1(c) = c$$
     $$G_n(c) = (G_{n-1}(c))^d + c$$
-    
+
     It follows that $G_n$ is monic with integer coefficients. The roots of $G_n$ are therefore algebraic integers over $\mathbb{Z}$. Assume that there exists an $n>1$ and a root $\tilde{c}$ of $G_n$ which is not simple. Then $\tilde{c}$ must be a root of both $G_n$ and its derivative. That is,
     $$G_n'(c) = d(G_{n-1}(c))^{d-1}G_{n-1}'(c)+1$$
-    
+
     It follows that,
     $$(G_{n-1}(\tilde{c}))^{d-1}G_{n-1}'(\tilde{c}) = \frac{-1}{d}$$
-    
+
     Since the set of algebraic integers $\mathbb{A}$ forms a ring, we have from the above equation that $\frac{-1}{d}$ is an algebraic integer. But since $\mathbb{Q}\cap\mathbb{A} = \mathbb{Z}$, $G_n$ has no multiple roots.
 
 
     Note that for any $c\in \Omega$ the points in the attracting $p$-cycle are solutions of
-    $$F(c,z) = Q_c^{\circ p}(z) - z = 0.$$
+    \[
+    F(c,z) = Q_c^{\circ p}(z) - z = 0.
+    \]
 
     The map $F$ satisfies the hypothesis of the Implicit Function Theorem at the point $(c^*,0)$, since
-    $$F_z(c^*,0)=(Q_{c^*}^{\circ p})'(0)-1=-1,
-    \qquad F_c(c^*,0)=G_p'(c^*)\neq0$$
+    \[
+    F_z(c^*,0)=(Q_{c^*}^{\circ p})'(0)-1=-1,
+    \qquad F_c(c^*,0)=G_p'(c^*)\neq0
+    \]
     by Gleason's lemma. So, in a neighbourhood of $c^*$ the points in the attracting $p$-cycle can therefore be expressed as functions of $c$. Let $\alpha_0(c)$ denote the periodic point in the Fatou component containing the critical point $0$, so $\alpha_0(c^*)=0$, and
-    $$\alpha_0'(c^*)=-\frac{F_c(c^*,0)}{F_z(c^*,0)}=G_p'(c^*)\neq0,$$
+    \[
+    \alpha_0'(c^*)=-\frac{F_c(c^*,0)}{F_z(c^*,0)}=G_p'(c^*)\neq0,
+    \]
     so $\alpha_0(c)$ has a simple zero at $c=c^*$. Set $\alpha_j(c)=Q_c^{\circ j}(\alpha_0(c))$ for $j=1,\ldots,p-1$. The multiplier map can be written as
-    $$\Lambda_d(c)=(Q_c^{\circ p})'(\alpha_0(c))
+    \[
+    \Lambda_d(c)=(Q_c^{\circ p})'(\alpha_0(c))
     =\prod_{j=0}^{p-1}Q_c'(\alpha_j(c))
-    =d^p\prod_{j=0}^{p-1}\alpha_j(c)^{d-1}.$$
+    =d^p\prod_{j=0}^{p-1}\alpha_j(c)^{d-1}.
+    \]
 
     Since $\alpha_0$ has a simple zero at $c^*$ and $\alpha_j(c^*)\neq0$ for $1\leq j<p$,
-    $$\operatorname{ord}_{c^*}\Lambda_d
+    \[
+    \operatorname{ord}_{c^*}\Lambda_d
     =(d-1)\sum_{j=0}^{p-1}\operatorname{ord}_{c^*}\alpha_j
-    =d-1.$$
+    =d-1.
+    \]
     Thus the local degree of $\Lambda_d$ at $c^*$ is $d-1$. Since $\Lambda_d:\Omega^*\rightarrow\mathbb{D}^*$ is a covering, it has $d-1$ sheets. With this we conclude the proof of Theorem $5.1$.
 % BLOG-CONTENT-END
 \bibliographystyle{amsalpha}

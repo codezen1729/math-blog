@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Dense Subsets of Julia Sets}
 % BLOG-CONTENT-BEGIN
+% Source page 15
 Let us analyse the topological structure of $J$ further, for the nature of a boundary also reveals what it bounds.
 \subsection{Backward orbits and self-similarity}
 \begin{itemize}
@@ -13,11 +14,9 @@ Let us analyse the topological structure of $J$ further, for the nature of a bou
 J=\overline{\bigcup_{n\ge0}f^{-n}(z_0)}.
 \]
 Let $N$ be a neighbourhood of a point $z\in J$. Expand $N$ until it hits a point $w\in\widehat{\mathbb C}$. We may take $w=z_0$, since $z_0\notin\mathcal E(f)$. Thus $f^{-n}(w)\cap N\ne\varnothing$, giving $\overline{\bigcup_n f^{-n}(w)}\supseteq J(f)$. The reverse inclusion follows from invariance.
-\item $J$ has no isolated points. If $J$ were finite, then $J\subseteq\mathcal E(f)$, which is impossible since exceptional points are superattracting.
+\item $J$ has no isolated points. If $J$ were finite, then $J\subseteq\mathcal E(f)$, which is impossible since exceptional points are superattracting. If it is infinite, take a limit point $z_0$. The set $\bigcup_{n\ge0}f^{-n}(z_0)$ is dense in $J$, hence $J$ has no isolated points. Indeed, if $w\in J$ were isolated, choose $z_0\in J$ outside the forward orbit $\{f^n(w)\}_n$. Density of the backward orbit of $z_0$ gives points of $f^{-n}(z_0)$ arbitrarily close to $w$, and none of them is $w$, a contradiction.
 \end{itemize}
-\setcounter{theorem}{18}\begin{proposition}[Topological Structure of Julia Set IV]
-$J(f)$ is either connected or has uncountably many components.
-\end{proposition}
+% Source page 16
 \begin{remark}
 Since $\bigcup_n f^{-n}(z_0)$ is dense in $J$, for a neighbourhood $N$ of $z_0$ the set $V=\bigcup_n f^{-n}(N)$ is dense and open. As the closed set $J\subseteq\widehat{\mathbb C}$ is compact, choose a finite open cover $\{N_{ij}\}_{i=1}^{M_j}$. Set $V_{ij}=\bigcup_n f^{-n}(N_{ij})$; these sets are dense and open. Then $\bigl(\bigcap_{i=1}^{M_j}V_{ij}\bigr)\cap J$ is a dense open subset of $J$. Choose the sets $N_{ij}$ with diameter less than $1/j$. If
 \[
@@ -27,17 +26,29 @@ again a dense set, then $\{f^{\circ n}(z)\}_n$ meets every possible $N_{ij}$. Fi
 \end{remark}
 \begin{remark}[Self-similarity]
 Another striking feature of the Julia set is that it repeats shapes and patterns infinitely often. Mathematically, $(J,z)$ is locally conformally isomorphic to $(J,z')$ if there are neighbourhoods $N,N'$ of $z,z'$, respectively, and a biholomorphism $\varphi\colon N\to N'$ such that $\varphi(z)=z'$ and $\varphi(N\cap J)=N'\cap J$.
+% Source page 17
 By density of the preimages of any $z_0\in J$, the set of $z$ such that $(J,z)\cong(J,z_0)$ is dense in $J$, unless every backwards orbit $z_0\leftarrow z_1\leftarrow z_2\leftarrow\cdots$ contains a critical point $z_k$ of $f$. Otherwise $f$ is locally univalent and one can keep backtracking $z_0$.
 \end{remark}
+\setcounter{theorem}{18}\begin{proposition}[Topological Structure of Julia Set IV]
+$J(f)$ is either connected or has uncountably many components.
+\end{proposition}
 
 \subsection{Periodic cycles}
-How many periodic points are there for a rational map $f=P/Q\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ with $\deg(f)=d\ge2$? It turns out that
+In this short post we ask how many periodic points there are for a rational map $f=P/Q\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ with $\deg(f)=d\ge2$. It turns out that
 \begin{enumerate}
 \setcounter{enumi}{0}\item the number of attracting periodic orbits is at most $2d-2$;
 \setcounter{enumi}{1}\item the number of indifferent periodic orbits whose multiplier is not a root of unity is at most $4d-4$;
 \setcounter{enumi}{2}\item there are infinitely many repelling periodic orbits.
 \end{enumerate}
-The first assertion is elementary: every immediate attracting basin has a critical point, and a degree-$d$ rational map has $2d-2$ critical points counted with multiplicity by the Riemann--Hurwitz formula. Now let us prove the second assertion.
+The first assertion is elementary: every immediate attracting basin has a critical point, and
+\begin{align*}
+\#\{\text{critical points of }P/Q\}
+&=\#\{\text{zeros of }(P/Q)'\}\\
+&=\#\left\{\text{zeros of }\frac{P'}Q-\frac{Q'P}{Q^2}\right\}
+=\#\{\text{zeros of }QP'-Q'P\}\\
+&\le\deg(QP'-Q'P)\le2d-2.
+\end{align*}
+Compare the leading coefficients in the worst case, $\deg P=\deg Q=d$. Now let us prove the second assertion.
 \setcounter{theorem}{19}\begin{proposition}\label{cd4:indifferent}
 The number of indifferent cycles whose multiplier is not a root of unity is at most $4d-4$.
 \end{proposition}
@@ -45,7 +56,7 @@ The number of indifferent cycles whose multiplier is not a root of unity is at m
 We separate the proof into two stages.
 \emph{Perturbation.} We will holomorphically deform $f(z)=P(z)/Q(z)$ into the polynomial $z^d$, the simplest rational map of degree $d$.
 % Source page 2
-We do this for two important reasons:
+We do this for two important reasons (revisit them):
 \begin{enumerate}
 \setcounter{enumi}{0}\item If $\{z_j\}_j$ is an indifferent cycle, deform the $z_j$ holomorphically, along with their multipliers $\lambda_j$. We plan to convert them into attracting cycles and use the bound on attracting cycles.
 \setcounter{enumi}{1}\item Deforming to $z^d$ helps ensure that this conversion happens for a ``large proportion'' of indifferent cycles.
@@ -58,12 +69,12 @@ This remains a degree-$d$ map unless, for some $t\in\widehat{\mathbb C}$, zeros 
 
 Let $\{f_0^{\circ k}(z_j)\}_{k=1}^n$ be an $n$-cycle of $f_0$ with $|\lambda_j(0)|=1$. Set $\widetilde f(t,z)=f_t^{\circ n}(z)-z$. Since $\widetilde f(0,z_j)=0$, the implicit function theorem gives neighbourhoods $U$ of $0$ and $V$ of $z_j$ and a holomorphic map $z_j(t)\colon U\to V$ with $\widetilde f(t,z_j(t))=0$.
 % Source page 3
-The multiplier $\lambda_j(t)=(f_t^{\circ n})'(z_j(t))$ is also locally holomorphic. If it were locally constant, the multiplier could not be perturbed from the unit circle to produce an attracting cycle.
+The multiplier $\lambda_j(t)=(f_t^{\circ n})'(z_j(t))$ is also locally holomorphic. If it were locally constant, the identity theorem would shatter all hope of turning these indifferent points into attracting ones.
 \setcounter{theorem}{20}\begin{lemma}\label{cd4:nonconstant}
 The map $t\mapsto\lambda_j(t)$ is not locally constant.
 \end{lemma}
 \begin{proof}
-Suppose it is locally constant. Choose a ray $\{re^{i\theta}:0\le r\le+\infty\}$ avoiding every parameter where $\deg(f_t)<d$. Extend $\lambda_j(t)$ to a neighbourhood of this ray so that $f_t$ has an indifferent periodic point $z_j(t)$ with multiplier $\lambda_j(t)$.
+Suppose it is, and let us see how far this paralysis extends. Choose a ray $\{re^{i\theta}:0\le r\le+\infty\}$ avoiding every parameter where $\deg(f_t)<d$. Extend $\lambda_j(t)$ to a neighbourhood of this ray so that $f_t$ has an indifferent periodic point $z_j(t)$ with multiplier $\lambda_j(t)$.
 
 If $z_j(t)\to z_j(\widehat t)$ along the ray as $t\to\widehat t$, continuity gives
 $\widetilde f(t,z_j(t))\to\widetilde f(\widehat t,z_j(\widehat t))=0$.
@@ -71,7 +82,7 @@ The implicit function theorem makes $z_j$, and hence $\lambda_j$, analytic near 
 % Source page 4
 and roots of unity, none of whose multipliers lie on $S^1$.
 \end{proof}
-Therefore the functions $\lambda_j(t)$ vary nontrivially with $t$.
+There is therefore hope: the functions $\lambda_j(t)$ are not paralysed; they are indeed ``dynamic''.
 
 \emph{Converting cycles.} Near $t=0$, write
 \[

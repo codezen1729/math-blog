@@ -6,7 +6,9 @@
 \section*{Recurrence and Three Views of Ergodicity}
 % BLOG-CONTENT-BEGIN
 \subsection{Recurrence Theorems}
-The condition $\mu(X)<\infty$ may initially seem unmotivated; recurrence explains why it matters.
+Of all the impositions on a measure-preserving system, the one that is perhaps
+ill-motivated is the demand that $\mu(X)<\infty$. We shall address that in
+this section.
 
 \setcounter{theorem}{3}\begin{theorem}[Poincar\'e recurrence]
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system and let
@@ -15,7 +17,7 @@ $\mu(F)=\mu(E)$ and, for every $x\in F$, $T^n(x)\in E$ for infinitely many
 $n\geq1$.
 \end{theorem}
 \begin{proof}
-First consider the points of $E$ that never return:
+Let us first look at the points of $E$ that never return:
 \[
   B:=\{x\in E:T^nx\notin E\text{ for every }n\geq1\}.
 \]
@@ -73,11 +75,19 @@ system. Thus $\mu$ being a probability measure ensures that no information is
 lost under the transformation $T$ of $X$.
 \end{remark}
 
-
+\begin{remark}
+Define $T\colon\mathbb R^2\to\mathbb R^2$ by $T(x,y):=(x+1,y)$. Then $T$ is
+$m$-invariant, where $m$ is Lebesgue measure on $\mathbb R^2$. But notice that
+the sets $T^n(\mathbb D)$ escape to infinity. In such cases we have nothing in
+$\mathbb R^2$ to compare $\mathbb D$ with: $\mathbb D$ runs off to infinity.
+Here $m(\mathbb R^2)=\infty$, so this is not a probability
+measure-preserving system in our sense. The example shows exactly where the
+finiteness of the measure enters the recurrence theorem.
+\end{remark}
 
 \begin{remark}
-A finite measure does not require the set $X$ itself to be bounded, as the
-following example shows.
+Finite measure need not mean that the set $X$ is bounded, as shall be
+illustrated now.
 \end{remark}
 
 \setcounter{theorem}{4}\begin{lemma}[Another litmus test for measure-preserving systems]
@@ -99,8 +109,7 @@ so $T$ is $\mu$-invariant. Conversely, as $\mu(X)<\infty$,
 $L^1(\mu)\supset L^2(\mu)\supset\cdots\supset L^\infty(\mu)$, and we have
 $\int f\,d\mu=\int f\circ T\,d\mu$ for all simple functions $f$.
 Now let $f\in L^\infty(\mu)$. There exist simple functions $f_n$ such that
-$f_n\to f$ pointwise and $|f_n|\leq\|f\|_\infty$. The dominated convergence
-theorem gives
+$f_n\to f$ pointwise and $|f_n|\leq\|f\|_\infty$. The dominated convergence theorem gives
 \[
   \int f\,d\mu=\int f\circ T\,d\mu
   \qquad\text{for every }f\in L^\infty(\mu).
@@ -116,14 +125,20 @@ The map $T\colon\mathbb R\to\mathbb R$ given by
 \[
   T(x)=\frac12\left(x-\frac1x\right),\qquad T(0)=0,
 \]
-is $\mu$-invariant. Indeed, it is easy to check that
+is $\mu$-invariant. Indeed, the change-of-variables formula over the two inverse branches gives
+\[
+  \int_{-\infty}^{\infty}f(T(x))\frac{dx}{\pi(1+x^2)}
+  =\int_{-\infty}^{\infty}f(y)
+  \sum_{x\in T^{-1}(y)}\frac{1}{\pi(1+x^2)|T'(x)|}\,dy
+  =\int_{-\infty}^{\infty}f(y)\frac{dy}{\pi(1+y^2)}.
+\]
+It is now easy to check that
 \[
   \phi\colon(\mathbb R,\mathcal B_{\mathbb R},\mu,T)
   \longrightarrow(\mathbb R/\mathbb Z,\mathcal B_{S^1},m_{S^1},T_2),
   \qquad \phi(x)=\frac1\pi\arctan(x)+\frac12,
 \]
-is an isomorphism outside null sets: $\phi_*\mu=m_{S^1}$ and
-$\phi\circ T=T_2\circ\phi$ almost everywhere. Hence $T$ is $\mu$-invariant.
+is an isomorphism outside null sets: $\phi_*\mu=m_{S^1}$ and $\phi\circ T=T_2\circ\phi$ almost everywhere.
 But $\mathbb R$ is by no means bounded. Thus a measure-preserving system
 ensures that transformations do not blow points off to infinity, and that is
 why it can accommodate unbounded sets in its realm as well.
@@ -132,12 +147,12 @@ why it can accommodate unbounded sets in its realm as well.
 \subsection{Ergodicity}
 As far as the behaviour of orbits goes, we know that if $E$ is measurable in
 $X$, then, for almost every $x\in E$, $\{T^{\circ n}(x)\}_n$ returns to $E$
-infinitely often. We now ask a stronger question. Say $x\in X$ and
+infinitely often. Let us extend this madness further. Say $x\in X$ and
 $E\subset X$ is measurable: can we have some sort of recurrence for the orbit
 of $x$, $\{T^{\circ n}(x)\}_n$, if $x\notin E$?
 
 There are some set-theoretic obstructions to such a recurrence, because if
-$T^{-1}(E)=E$, the orbit of $x$ cannot intersect $E$. So let us replace
+$T^{-1}(E)=E$, the orbit of $x$ shall not intersect $E$. So let us replace
 $X$ by $E$ and $E$ by some measurable $F\subseteq E$. Notice immediately that
 we are looking for some sort of irreducibility criterion here.
 
@@ -147,7 +162,8 @@ Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. We say $T$ is
 $\mu(B)=0$ or $\mu(B)=1$.
 \end{definition}
 
-Ergodicity admits three complementary perspectives.
+We shall now try to understand ergodicity from three essentially distinct
+perspectives, each revealing an interconnection.
 
 \Needspace{14\baselineskip}
 \subsubsection{Measure-Theoretic Ergodicity}
@@ -198,7 +214,7 @@ $x\in T^{-n}(B)\setminus B$ to get
   \subseteq\bigcup_{i=0}^{n-1}\bigl(T^{-i}(B)\mathbin\triangle T^{-i-1}(B)\bigr),
 \]
 so $\mu(B\mathbin\triangle T^{-n}(B))=0$.
-Set $C_N=\bigcup_{n=N}^{\infty}T^{-n}(B)$. Then
+Set $C_N=\bigcup_{n=N}^{\infty}T^{-n}(B)$. Then, of course,
 \[
   C_0\supseteq C_1\supseteq C_2\supseteq C_3\supseteq C_4\supseteq\cdots,
   \qquad \mu(C_N\mathbin\triangle B)=0.
@@ -232,7 +248,8 @@ Since the $T^{-n}(A)$ cover $X$ almost everywhere, we have
   \leq\sum_{n=1}^{\infty}\mu(B\cap T^{-n}(A)).
 \]
 Hence there exists $n\geq1$ such that $\mu(B\cap T^{-n}(A))>0$.
-This criterion also appears in the study of mixing.
+We shall see the relevance of such statements when we introduce the notion
+of mixing systems.
 
 \emph{$(4)\Rightarrow(1)$.} If $T^{-1}(A)=A$, then
 \[
@@ -244,7 +261,7 @@ ergodic.
 \end{proof}
 
 \subsubsection{Operator-Theoretic Ergodicity}
-Associate to $T$ the operator
+Let us begin by associating an operator $U_T$ to $T$ as follows:
 \[
   U_T\colon L^2(\mu)\longrightarrow L^2(\mu),\qquad U_T(f):=f\circ T.
 \]
@@ -261,16 +278,16 @@ $\langle f_1,U_T^*U_Tf_2\rangle=\langle f_1,f_2\rangle$, so
   \langle f_1,(U_T^*U_T-\id)f_2\rangle=0
   \qquad\text{for all }f_1,f_2\in L^2(\mu).
 \]
-Taking the operator norm
+A standard argument
 % Source page 9
-gives
+would tell you that
 \[
   \sup_{\substack{\|f_1\|\leq1\\\|f_2\|\leq1}}
   \left|\langle f_1,(U_T^*U_T-\id)f_2\rangle\right|
   =\|U_T^*U_T-\id\|=0.
 \]
-Thus $U_T$ is an isometry, called the \emph{Koopman operator}. If $T$ is
-invertible modulo null sets, then $U_T$ is unitary.
+Thus $U_T$ is an isometry, which goes by the name \emph{Koopman operator}. If
+$T$ is invertible modulo null sets, then $U_T$ is unitary.
 
 \setcounter{theorem}{6}\begin{proposition}\label{prop:ergodicity-operator}
 $T$ is ergodic if and only if the eigenvectors of $U_T$ associated to $1$ are
@@ -280,6 +297,8 @@ constants in $L^2_\mu(X)$.
 If $B$ is such that $\mu(T^{-1}(B)\mathbin\triangle B)=0$, then
 $\chi_B=\chi_B\circ T$ almost everywhere. Thus $U_T\chi_B=\chi_B$, so $\chi_B$
 is a constant. Hence $\mu(B)=0$ or $\mu(B)=1$, and $T$ is ergodic.
+If $U_Tf=f$ implies that $f$ is constant almost everywhere, then $T$ is ergodic.
+
 Conversely, let $f\colon X\to\mathbb R$ be measurable. Let $k\in\mathbb Z$
 and $n\geq1$, and define
 \[
@@ -302,14 +321,15 @@ Letting $n\to\infty$ shows that $f$ is a constant almost everywhere.
 \end{proof}
 
 \begin{remark}
-Thus ergodicity also has an operator-theoretic formulation. This formulation connects ergodicity with spectral properties of the Koopman operator.
+Thus ergodicity can be rephrased in operator theory too. Properties possessing
+such translations are called \emph{unitary properties}.
 \end{remark}
 
 % Source page 10
 \subsubsection{Fourier-Analytic Ergodicity}
 Here we impose a compact abelian group structure on $X$. Then it has a unique
 translation-invariant measure $m_X$, called the \emph{Haar measure} of $X$.
-Assume the standard character expansion: for
+We will not prove the existence of $m_X$ here. We shall further assume that,
 given $f\in L^2_{m_X}(X)$, we have the following character-theoretic expansion:
 \[
   f(x)=\sum_{\chi\in\widehat X}c_\chi\chi(x),
@@ -343,6 +363,29 @@ nonzero $c_\chi$ forces the orbit $\{\chi\circ T^n:n\geq0\}$ to be finite.
 Since the dual map is injective, this makes $\chi$ periodic. The hypothesis
 then implies $\chi\equiv1$. Hence $f$ is a constant, so $T$ is ergodic.
 \end{proof}
+
+\begin{remark}
+Having seen ergodicity, it is natural to ask whether we can reduce a
+measure-preserving system into ``ergodic components''. Given any $E\subset X$
+with positive measure, one has the natural $T^{-1}$-invariant saturation
+\[
+  \bigcup_{n\geq0}T^{-n}(E)
+\]
+and $X$ being ergodic assures us that it covers $X$ almost everywhere. But if
+$X$ were not ergodic, there is no apparent reason why an ergodic subsystem
+should already be visible. If we hope to use some form of Zorn's lemma, the
+existence of an ergodic subsystem is required. Thus this problem of
+decomposing measure-preserving systems into ergodic components is natural. We
+shall deal with it later.
+\end{remark}
+
+\begin{remark}
+Using Proposition~\ref{prop:ergodicity-fourier}---I mean the ideas in it---one
+can prove that the circle-doubling map and every irrational rotation map are
+ergodic. Finally, as the Bernoulli system is isomorphic to the circle-doubling
+system, the Bernoulli shift map is ergodic too. Thus almost all the examples
+we saw are ergodic transformations.
+\end{remark}
 
 
 % BLOG-CONTENT-END

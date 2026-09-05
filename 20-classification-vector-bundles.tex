@@ -4,7 +4,7 @@
 \begin{document}
 \section*{Classification of Vector Bundles}
 % BLOG-CONTENT-BEGIN
-Of abundant importance to any theory is a robust classification theorem. With that interest in mind let us prove the following theorem pointing in that direction for vector bundles.
+Of abundant importance to any theory is a robust classification theorem. With that interest in mind, let us prove the following theorem pointing in that direction for vector bundles.
 \begin{theorem}[Homotopy theorem]
     Given a vector bundle $\eta=(E,B,V,p)$ and homotopic maps $f_0,f_1:A\to B$, where $A$ is paracompact Hausdorff, we have:
     $$f_0^*\eta \cong f_1^*\eta$$
@@ -63,11 +63,13 @@ Let $\tau_c$ be the category of compact Hausdorff spaces up to homotopy. Note th
 \begin{remark}
 A more general result is true: Given a group $G$, let $\mathcal{P}_G(X)$ denote the set of all principal $G$-bundles, where $X$ is compact Hausdorff, then there exists a $G$-bundle $EG\rightarrow BG$, with a contractible total space, such that the following is a bijective correspondence:
 $$[X, BG] \longleftrightarrow \mathcal{P}_G(X)$$
-$EG$ is called the \textbf{universal bundle} and $BG$ the \textbf{classifying space} for the structure group $G$. This generalizes the theorem above for $G= GL_n{(\mathbb{K})}$, because of the correspondence between $GL_n{(\mathbb{K})}$-bundles and vector bundles of dimension $n$ established before, and the fact that $BGL_n{(\mathbb{K})} \simeq \text{Gr}(n, \mathbb{K}^{\infty})$.
+$EG$ is called the \textbf{universal bundle} and $BG$ the \textbf{classifying space} for the structure group $G$. This generalizes the theorem above for $G= GL_n{(\mathbb{K})}$, because of the correspondence between $GL_n{(\mathbb{K})}$-bundles and vector bundles of dimension $n$ established before, and the fact that $BGL_n{(\mathbb{K})} \simeq \text{Gr}(n, \mathbb{K}^{\infty})$, with $V(n, \mathbb{K}^{\infty}) \simeq \{*\}$ as the total space of the corresponding universal $O_{\mathbb K}(n)$-bundle.
 \end{remark}
 
 \subsection*{Scope of the classification theorem}
-Note that the homotopy theorem ensures that the pullback of bundles via maps in $[X, \text{Gr}(n, \mathbb{K}^{\infty})]$ is well-defined. The hypothesis on $X$ can be weakened to allow paracompact Hausdorff spaces and numerable bundles. Under these hypotheses, the following is a bijective correspondence:
+Note that the homotopy theorem ensures that the pullback of bundles via maps in $[X, \text{Gr}(n, \mathbb{K}^{\infty})]$ is well-defined. The reason we require $X$ to be compact Hausdorff is largely because such spaces are compactly generated. In particular, with the compact-open topology on mapping spaces, they satisfy:
+$$\text{Hom}(X\times Y, Z) \cong \text{Hom}(X, \text{Hom}(Y, Z)).$$
+As a result, the hypothesis on $X$ can be weakened to allow paracompact Hausdorff spaces and numerable bundles. Under these hypotheses, the following is a bijective correspondence:
 $$[X, \text{Gr}(n, \mathbb{K}^{\infty})] \longrightarrow \text{Vect}_{\mathbb{K}}^n(X)$$
 $$[f] \rightarrow [f^*\gamma_n]$$
 
@@ -79,16 +81,27 @@ $$[f] \rightarrow [f^*\gamma_n]$$
         $$j_{\text{odd}}(x_1, x_2, \ldots) := (x_1, 0, x_2, 0, \ldots)$$
         Then $j_{\text{ev}} \sim j_{\text{odd}} \sim \text{id}_{\mathbb{K}^{\infty}}$
     \end{lemma}
-    
+
     \begin{proof}
         We prove it for $j_{\text{ev}}$, and for $j_{\text{odd}}$ the proof is analogous. Define,
         $$H: \mathbb{K}^{\infty} \times [0,1] \rightarrow \mathbb{K}^{\infty}$$
         $$H(x,t):= tj_{\text{ev}}(x) + (1-t)x$$
         Clearly, $H$ is the required homotopy. For every $t\in[0,1]$, the equality $H(x,t)=0$ implies $x=(0,0,\ldots)$. So, the homotopy is via linear embeddings.
     \end{proof}
-    
-    
+
+
     Let $f$, $g$ $: X\rightarrow \text{Gr}(n, \mathbb{K}^{\infty})$ be maps, and suppose $\alpha: f^*\gamma_n \xrightarrow{\cong} g^*\gamma_n$ is an isomorphism. By replacing $f$ and $g$ with $j_{\text{ev}}\circ f$ and $j_{\text{odd}}\circ g$, we may assume their images lie in orthogonal summands of $\mathbb K^\infty$. The bundle isomorphism $\alpha:f^*\gamma_n\to g^*\gamma_n$ restricts to an isomorphism $\alpha_x:f(x)\to g(x)$ on every fibre. Now define,
+    \begin{center}
+    \underline{FACT}: $\text{Gr}(n, \mathbb{K}^{\infty}) \cong V(n, \mathbb{K}^{\infty})/O_{\mathbb K}(n)$, and it can also be identified with the space of rank-$n$ orthogonal projections on $\mathbb K^\infty$.
+    \end{center}
+So, $f$ and $g$ can be viewed as families of rank-$n$ orthogonal projections varying continuously over $X$. The fibre isomorphisms may be pictured in the following diagram:
+\[
+\begin{tikzcd}[row sep=large,column sep=large]
+ f^*\gamma_n \arrow[r,"\alpha"] \arrow[d] & g^*\gamma_n \arrow[d] \\
+ X \arrow[r,equal] & X.
+\end{tikzcd}
+\]
+Now define,
 $$\widetilde{H}: X\times [0,1] \rightarrow Gr(n, \mathbb{K}^{\infty})$$
 $$\widetilde{H}(x, t):=\big\{(1-t)v+t\alpha_x(v)\mid v\in f(x)\big\}.$$
 Clearly, $\widetilde{H}$ is continuous, $\widetilde{H}(x, 0) \equiv f(x)$, and $\widetilde{H}(x, 1) \equiv g(x)$.
@@ -96,13 +109,18 @@ Clearly, $\widetilde{H}$ is continuous, $\widetilde{H}(x, 0) \equiv f(x)$, and $
 Now let's establish surjectivity. Let $E\xrightarrow{p} X$ be a vector bundle of rank $n$. $E$ can be embedded in $X\times \mathbb{K}^N \subset X\times \mathbb{K}^{\infty}$. Let that embedding be $j$. Define,
 $$f:X \rightarrow Gr(n, \mathbb{K}^{\infty})$$
 $$f(x) := j(E_x) \in Gr(n, \mathbb{K}^{\infty})$$
-where $j(E_x) \subseteq x\times \mathbb{K}^N \subseteq x\times \mathbb{K}^{\infty} \cong \mathbb{K}^{\infty}$. Using the local trivialization on $E\rightarrow X$, one can easily prove that $f$ is continuous on each trivialising neighbourhood, and hence continuous. To establish $f^*\gamma_n \cong E$ we need to look at the associated bundle differently. Set,
-$$\gamma_n=G_n:= \{(V, w)  |  V \in Gr(n, \mathbb{K}^{\infty}), w\in V\}.$$
-Clearly, $f^*G_n \cong E$ via the map:
+    where $j(E_x) \subseteq x\times \mathbb{K}^N \subseteq x\times \mathbb{K}^{\infty} \cong \mathbb{K}^{\infty}$. Using the local trivialization on $E\rightarrow X$, one can easily prove that $f$ is continuous on each trivialising neighbourhood, and hence continuous. To establish $f^*\gamma_n \cong E$ we need to look at the associated bundle differently. Set,
+    $$\gamma_n=G_n:= \{(V, w)  |  V \in Gr(n, \mathbb{K}^{\infty}), w\in V\}.$$
+The map
+$$V(n,\mathbb K^\infty)\times_{O_{\mathbb K}(n)}\mathbb K^n\longrightarrow G_n$$
+$$\big[(v_1,\ldots,v_n),(\lambda_1,\ldots,\lambda_n)\big]\longmapsto
+\bigg(\langle v_1,\ldots,v_n\rangle,\sum_i\lambda_i v_i\bigg)$$
+is an isomorphism on fibres and identifies the associated bundle with the tautological bundle.
+    Clearly, $f^*G_n \cong E$ via the map:
 $$(x,w)\in f^*G_n \rightarrow j_x^{-1}(w)\in E_x$$
-with inverse, 
+with inverse,
 $$v\in E \rightarrow \big(p(v), j(v)\big) \in f^*G_n$$
-which is continuous component-wise. $G_n$ is often referred to as the \textbf{tautological bundle}. 
+which is continuous component-wise. $G_n$ is often referred to as the \textbf{tautological bundle}.
 \end{proof}
 
 \begin{remark}
@@ -114,7 +132,7 @@ In other words, $E$ is weakly homotopy equivalent to $B$. The above is in fact t
 \end{remark}
 
 \begin{center}
-    
+
 $\text{Vect}_{\mathbb{K}}^n(B)$ encodes homotopy-theoretic information about $B$ in linear terms.
 
 \end{center}

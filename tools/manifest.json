@@ -1,7 +1,7 @@
 [
   {
     "slug": "basis-fixing-reduction",
-    "title": "A Complex Vector Space",
+    "title": "The Complex Plane",
     "collection": "complex-analysis",
     "phase": 1,
     "phaseLabel": "Standard Tools in Complex Analysis",
@@ -91,7 +91,7 @@
   },
   {
     "slug": "rouche-and-bloch",
-    "title": "Rouché's Theorem",
+    "title": "Rouché's Theorem and Bloch's Theorem",
     "collection": "complex-analysis",
     "phase": 1,
     "phaseLabel": "Standard Tools in Complex Analysis",
@@ -433,7 +433,7 @@
   },
   {
     "slug": "shishikuras-surgery-principles",
-    "title": "Shishikura’s Surgery Principles",
+    "title": "Shishikura's Surgery Principles",
     "collection": "complex-dynamics-notes",
     "phase": 4,
     "phaseLabel": "Complex Dynamics",
@@ -622,7 +622,7 @@
   },
   {
     "slug": "lemma-book-inequality-toolkit",
-    "title": "An Inequality Toolkit: Jensen, Muirhead, and Root Heuristics",
+    "title": "An Inequality Toolkit: Jensen, Muirhead, and Schur",
     "collection": "lemma-book",
     "phase": 7,
     "phaseLabel": "Lemma Book (Olympiad Days)",

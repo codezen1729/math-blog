@@ -16,16 +16,17 @@ Let us make the question concrete. If $[x,x+h]$ contains $k+1$ primes and $p_n$ 
 It therefore suffices to study
 \[H_m:=\liminf_{n\to\infty}(p_{n+m}-p_n).\]
 When $H_m<\infty$, infinitely many intervals of bounded length contain at least $m+1$ primes.
-Studying the quantities $\{H_m\}_m$ is difficult because of the additive nature of the problem.
+Studying the quantities $\{H_m\}_m$, before one even knows that their terms are finite, is extremely hard because of the additive nature of the problem.
 Primes appear naturally only as factors, so they are suited for
 multiplicative studies. Regardless, there are deep conjectures about this.
-The best known of these is the
+Of them all, the famous, perhaps even mythical, one is the
 % Source page 2
 Twin Prime Conjecture.
 \setcounter{theorem}{17}\begin{conjecture}[Twin Prime Conjecture]
 $H_1=2$, or equivalently, there are infinitely many twin primes.
 \end{conjecture}
-Modern sieve-theoretic tools give highly nontrivial finite bounds for $H_m$.
+Sieve-theoretic tools have yielded highly nontrivial finite bounds for $H_m$,
+establishing that they are indeed numbers!
 The first breakthrough came from Goldston, Pintz, and Y{\i}ld{\i}r{\i}m,
 who developed a sieve technique to find at least two primes in an interval
 $[a,b]$.
@@ -34,6 +35,8 @@ They proved
 \[
  \liminf_{n\to\infty}\frac{p_{n+1}-p_n}{\log p_n}=0.
 \]
+In fact, they proved the stronger version
+$p_{n+1}-p_n\le(\log p_n)^{1/2+\varepsilon}$ infinitely often.
 \paragraph{2013: Yitang Zhang.}
 $\liminf_{n\to\infty}(p_{n+1}-p_n)=H_1\le70{,}000{,}000$.
 \paragraph{2013: Polymath.}
@@ -42,22 +45,26 @@ from all over to optimise Zhang's technique.
 It turns out that Zhang, and subsequently the Polymath group, used
 Deligne's theorem, which proves the Riemann hypothesis for finite fields.
 % Source page 3
-In 2013, James Maynard found an independent route using elementary sieve methods.
+A postdoc named James Maynard found a shortcut and surprised everyone.
+He used elementary sieve methods.
 \paragraph{2013: J. Maynard, independently.}
 $H_1\le600$. Subsequently, Maynard and Tao's group joined forces.
 \paragraph{2014: Maynard and Polymath.}
 $H_1\le246$.
 They were also able to prove the following bound for $H_m$.
 \paragraph{2015: Maynard and Tao's group.}
-$H_m\ll m^3e^{4m}$, showing that $H_m<\infty$ for every $m$.
-We now focus on the 2005 work of Goldston, Pintz, and Y{\i}ld{\i}r{\i}m: first motivate $\liminf_{n\to\infty}(p_{n+1}-p_n)/\log p_n=0$, then examine the technique behind its proof.
+$H_m\ll m^3e^{4m}$, showing that $H_m<\infty$ for every $m$ and hence that
+$\{H_m\}_m$ is indeed a sequence of integers.
+Here we focus on the 2005 work of Goldston, Pintz, and Y{\i}ld{\i}r{\i}m.
+Let us heuristically motivate $\liminf_{n\to\infty}(p_{n+1}-p_n)/\log p_n=0$
+and then see the technique that went into its proof.
 Since the problem is additive and the multiplicative structure of primes does not appear directly, we model $\mathbb P$ by a sequence just as
 sparse as $\mathbb P$. Collect the numbers $\{1,2,3,\ldots,n\}$.
 In this set there are $n/\log n$ primes.
 % Source page 4
 The probability of $n$ being prime is therefore $1/\log n$.
 \begin{remark}[Caution]
-This heuristic model must be interpreted cautiously.
+These arguments must be taken with a pinch of salt.
 Firstly, the probability of $n$ being prime in $\{1,2,\ldots,n+1\}$ is
 $1/\log(n+1)$, and in $\{1,2,\ldots,n+k\}$ it is $1/\log(n+k)$,
 yet we choose $1/\log n$.
@@ -137,8 +144,9 @@ $\sim\log x/\log\log x$, which is far less than $(\log x)^2$.
 In fact, it is dominated even by the average gap.
 
 % Source page 7
-Goldston, Pintz, and Y{\i}ld{\i}r{\i}m aimed for the much stronger bound $\boxed{H_1\le16}$.
-Their strategy begins with an admissible tuple.
+Regardless, one must be ambitious. Goldston, Pintz, and Y{\i}ld{\i}r{\i}m
+were! They wanted to prove the much stronger bound $\boxed{H_1\le16}$.
+Their idea is rather benign. It begins with an admissible tuple.
 Let $\mathcal H=\{h_1,h_2,\ldots,h_k\}$, where $h_1<h_2<\cdots<h_k$.
 It is called an \emph{admissible $k$-tuple} if it misses at least one congruence class modulo every prime.
 Given an admissible $k$-tuple, ask whether two primes can occur in $\{n+h_1,n+h_2,\ldots,n+h_k\}$, because avoiding a residue class modulo every prime removes the obvious congruence obstruction.
@@ -189,13 +197,16 @@ $\{\lambda_d\}_d$ to maximise
  {\displaystyle\sum_{x\le n\le2x}a(n)},
  \qquad\text{preferably making it greater than }1/k.
 \]
-The two quadratic forms need not commute and hence cannot be simultaneously
-diagonalised. Also, the coefficients are too complicated for Lagrange
-multipliers. They narrowed the choice down to
+The two quadratic forms are represented by symmetric matrices. In principle
+their quotient can be treated as a generalized eigenvalue problem (after
+accounting for any degeneracy), but their coefficients are too complicated for
+that description to be useful here. Somehow, Goldston, Pintz, and Y{\i}ld{\i}r{\i}m
+narrowed the choice down to
 \[
  \lambda_d=\mu(d)P\left(\frac{\log(R/d)}{\log R}\right)
 \]
-for some polynomial $P$, a choice motivated by Selberg's sieve. With that
+for a polynomial $P$ normalized by $P(1)=1$, so that this ansatz retains
+$\lambda_1=1$. Perhaps the motivation lies in Selberg's sieve. With that
 choice they obtained
 \[
  \sum_{x\le n\le2x}a(n)\sim
@@ -222,25 +233,31 @@ an asymptotic of the shape
  \frac{x}{(\log x)(\log R)^{k-1}}\mathfrak S(\mathcal H)
  \int_0^1\frac{y^{k-2}}{(k-2)!}\bigl(P^{(k-1)}(1-y)\bigr)^2\,dy.
 \]
-The resulting ratio is less than $1/k$. Assuming the stronger
+But unfortunately, the resulting ratio is less than $1/k$. Disappointing!
+Assuming the stronger
 Elliott--Halberstam conjecture, Goldston, Pintz, and Y{\i}ld{\i}r{\i}m obtained
 the following conditional result.
 \setcounter{theorem}{21}\begin{theorem}[Assuming the Elliott--Halberstam conjecture]
 $H_1\le16$.
 \end{theorem}
 Unconditionally, their method yields the averaged conclusion in
-Theorem~\ref{thm:m5-gpy}. The Elliott--Halberstam conjecture predicts that
+Theorem~\ref{thm:m5-gpy}. It goes to show how immaculate primes are!
+The Elliott--Halberstam conjecture predicts that
 the exponent $1/2$ in the level of distribution can be improved to
 $1-\varepsilon$ for every $\varepsilon>0$.
 
 % Source page 11
-This attempt to prove $H_1\le16$ led to subsequent improvements and the following bounds.
+This failed attempt to get $H_1\le16$ led to decades of fascinating
+progress, leading up to the following state-of-the-art theorems.
 \setcounter{theorem}{22}\begin{theorem}[Polymath]
 $H_1\le246$.
 \end{theorem}
 \setcounter{theorem}{23}\begin{theorem}[Assuming the Elliott--Halberstam conjecture]
 $H_1\le6$.
 \end{theorem}
-The \emph{parity obstruction} explains why this family of sieve methods alone cannot improve the conditional bound below $6$.
+It was argued that one cannot beat $6$ using sieve-theoretic tools because
+of the \emph{parity obstruction}. Thus, in the language of these notes, the
+theory was ``at the moment, stagnant.'' Tao remarks that progress is one or
+two clever ideas away!
 % BLOG-CONTENT-END
 \end{document}

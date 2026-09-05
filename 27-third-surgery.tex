@@ -43,6 +43,8 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
 
     \subsection*{Proposition 6.5}{(Rickman's Lemma)}: Let $\phi:\hat{\mathbb{C}}\rightarrow\hat{\mathbb{C}}$ be a homeomorphism and $R\subset\hat{\mathbb{C}}$ an open region. If $\phi\big|_R$ is $K$-qc and $\phi\big|_{\hat{\mathbb{C}}\backslash R} = \text{Id}\big|_{\hat{\mathbb{C}}\backslash R}$, then $\phi$ is quasiconformal \cite{mcmullen1988automorphisms}.
 
+    \textit{Proof.}: Clearly $\phi(R)=R$. Conjugate $\phi$ by $\psi_1,\psi_2\in\operatorname{PSL}_2(\mathbb C)$ so that $\widetilde\phi=\psi_1\circ\phi\circ\psi_2^{-1}$ has two fixed points $z,w\in R$, and set $X=\hat{\mathbb C}\setminus\{z,w\}\cong\mathbb C$. The restrictions of $\widetilde\phi$ to the image of $R$ and to its complement in $X$ are quasiconformal and agree continuously because $\widetilde\phi$ is a homeomorphism. Rickman's quasiconformal pasting lemma therefore makes $\widetilde\phi$, and hence $\phi$, quasiconformal on the sphere. This is an application of the cited pasting lemma, rather than an independent proof of that lemma.
+
 
 
     This surgery, unlike the preceding two, cuts and pastes along ideal boundaries rather than topological boundaries \cite{mcmullen1988automorphisms,branner2014quasiconformal}. So, we begin by formulating an appropriate analogue of Rickman's lemma to help us formulate a mechanism with which we can glue certain deformed objects.
@@ -50,12 +52,15 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
     \subsection*{Definition 6.6}{(Ideal Boundary of a Disc)}: By a disk $U \subset \hat{\mathbb{C}}$ we mean a simply connected domain whose complement contains at least two points. For a disk $U$, the ideal boundary $I(U)$ is the set of all prime ends of $U$.
 
     \begin{figure}[H]\centering
-    \includegraphics[width=12cm]{ms-fig-01.pdf}
+    \includegraphics[width=.95\linewidth]{ms-fig-01.pdf}
     \FigureTag{MS1}{fig:ms-01}
     \end{figure}
 
+    \subsection*{Prime-end chain lemma}
+    Let $\mathcal N=\langle N_j\rangle_j$ and $\mathcal M=\langle M_j\rangle_j$ be fundamental chains. Then $\mathcal N\sim\mathcal M$, or the two chains are eventually disjoint: there are $j_0,k_0$ such that $N_j\cap M_k=\varnothing$ whenever $j\geq j_0$ and $k\geq k_0$. This is the precise meaning of the notebook shorthand ``$\mathcal N\wedge\mathcal M$ eventually.''
+
     \begin{figure}[H]\centering
-    \includegraphics[width=11.5cm]{ms-fig-02.pdf}
+    \includegraphics[width=.95\linewidth]{ms-fig-02.pdf}
     \FigureTag{MS2}{fig:ms-02}
     \end{figure}
 
@@ -69,14 +74,14 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
 
 
     \textit{Proof.}: $(1)$ $\phi$ is continuous on $\overline{U}$ implies $\phi$ is uniformly continuous as $\overline{U}$ is compact. Let $\{C_n\}_n$ be a sequence of crosscuts. As $\phi$ is a homeomorphism and $\text{diam}(C_n) \rightarrow 0$, uniform continuity ensures that if $\{C_n\}_n$ defines a prime end, then so does $\{\phi(C_n)\}_n$. Let $U_1 \supset U_2 \supset \cdots \supset U_n \supset \cdots$ be the prime end corresponding to $\{C_n\}$. Then an easy consequence of Jordan Curve Theorem would tell us that $C_l \subset U_k$ for all $l>k$.\\
-    Set $Q_k$ to be the quadrilateral bounded by $C_k\cup C_{k+1}$ in $U$ for large $k$. Fix $n$. Suppose there exists an increasing sequence $\{k_i\}_i$ such that $Q_{k_i}$ and $\phi(Q_{k_i})$ belong to different components of $U\backslash C_n$. After passing to a subsequence, choose $x_{k_i}\in Q_{k_i}$ with $x_{k_i}\rightarrow x\in\mathcal{E}\subset\partial U$, where $\mathcal{E}$ is the impression of the prime end.\\
-    As $\phi$ is uniformly continuous, $\phi(x_{k_i}) \rightarrow \phi(x) = x$ ($\phi$ is identity on $\partial U$), but this forces $\phi(x_{k_i})$ and $x_{k_i}$ to eventually land in the same component of $U\backslash C_n$. Contradiction.\\
-    Thus, for every fixed $n$, $\phi(U_k)\subset U_n$ for all sufficiently large $k$. Applying the same argument to $\{\phi(U_k)\}_k$ and $\phi^{-1}$ shows that the two chains define the same prime end.
+    Set $Q_k$ to be the quadrilateral bounded by $C_k\cup C_{k+1}$ in $U$ for large $k$. Fix $n$. Suppose there exists an increasing sequence $\{k_i\}_i$ such that $Q_{k_i}$ and $\phi(Q_{k_i})$ belong to different components of $U\backslash C_n$. After passing to a subsequence, choose $x_{k_i}\in Q_{k_i}$ with $x_{k_i}\rightarrow x\in\mathcal E\subset\partial U$, where $\mathcal E$ is the impression of the prime end.\\
+    As $\phi$ is uniformly continuous, $\phi(x_{k_i})\rightarrow\phi(x)=x$ ($\phi$ is identity on $\partial U$), but this forces $\phi(x_{k_i})$ and $x_{k_i}$ to eventually land in the same component of $U\backslash C_n$, a contradiction. Thus, for every fixed $n$, $\phi(U_k)\subset U_n$ for all sufficiently large $k$. Applying the same argument to $\{\phi(U_k)\}_k$ and $\phi^{-1}$ shows that the two chains define the same prime end.
 
-    (2) Observe that if $\phi$ is identity on the ideal boundary of $U$ then $\sup_{z\in U}d_U(\phi(z),z) < \infty$, where $d_U$ is the Poincar\'e distance on the hyperbolic surface $U\cong\mathbb{D}$; this is the bounded-displacement property of a quasiconformal self-map of the disk with identity boundary values \cite{mcmullen1988automorphisms}. Suppose $\sup_{z\in U}d_U(\phi(z),z) < K$. Given any $\{x_k\}_k$ such that $x_k\rightarrow x \in \partial U$, note that $\phi(x_k) \in B_K(x_k)$, the ball of radius $K$ around $x_k$. Since $\overline{U}$ is compact in $\hat{\mathbb{C}}$ and $U$ is hyperbolic, we know that $B_K(x_k) \rightarrow x \in \partial U$. In particular, $\phi(x_k) \rightarrow x$ $\implies$ $\phi$ extends to $\partial U$ continuously and $\phi\big|_{\partial U} \equiv \text{Id}\big|_{\partial U}$. A direct application of Rickman's lemma now completes the proof.
+    (2) Observe that if $\phi$ is identity on the ideal boundary of $U$, then
+    $\sup_{z\in U}d_U(\phi(z),z)<\infty$, where $d_U$ is the Poincar\'e distance on the hyperbolic surface $U\cong\mathbb D$; this is the standard bounded-displacement property of a quasiconformal self-map of the disk with identity boundary values \cite{mcmullen1988automorphisms}. Suppose this supremum is less than $K$. Given any $\{x_k\}_k$ such that $x_k\rightarrow x\in\partial U$, we have $\phi(x_k)\in B_K(x_k)$. Since $\overline U$ is compact in $\hat{\mathbb C}$ and $U$ is hyperbolic, the fixed-radius Poincar\'e balls $B_K(x_k)$ converge to $x$ in the spherical topology. In particular, $\phi(x_k)\rightarrow x$, so $\phi$ extends continuously to $\partial U$ and $\phi\big|_{\partial U}=\operatorname{Id}$. A direct application of Rickman's lemma now completes the proof.
 
     \begin{figure}[H]\centering
-    \includegraphics[width=12cm]{ms-fig-13.pdf}
+    \includegraphics[width=.95\linewidth]{ms-fig-13.pdf}
     \FigureTag{MS13}{fig:ms-13}
     \end{figure}
 
@@ -94,17 +99,22 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
     \textit{Proof.}: Let's now construct a stable conjugacy taking $\phi$ to $\text{Id}$, given that $\phi = \text{Id}$ on $K$. Here, $K$ is compact connected. Let $\hat{\mathbb{C}}\backslash K = \sqcup_{\alpha}U_{\alpha}$, then $U_{\alpha}$'s are simply connected. Indeed, let $\gamma$ be a loop in $U_{\alpha}$, then as $\gamma \cap K = \varnothing$, one can construct a polygonal region $\tilde{\gamma}$ such that $K$ and $\gamma$ belong to different components of $\hat{\mathbb{C}}\backslash \tilde{\gamma}$. Now the claim is a simple consequence of the Jordan Curve Theorem: if $\gamma \subset \text{Int}(\tilde{\gamma})$, then $\text{Int}(\tilde{\gamma})\subseteq U_{\alpha}$. By the previous propositions, on each disk in the complement of $K$ there is an isotopy connecting $\phi$ to the identity through quasiconformal maps which are identity on $K$. The dilatation of the intervening maps is bounded by $K(\phi)^3$ (independent of the disk). By Proposition $6.5$ the time $t$ maps in each disk piece together to form a quasiconformal map of the whole Riemann sphere. Thus, $[\phi] = [\text{Id}]$ in $\text{Mod}(K,f)$.
 
 
-    \subsection*{Definition 6.10}{(Ideal Boundary of $K$)}: We define $I(K)$, the ideal boundary of a given infinite continuum $K$, to be the union of the ideal boundaries of the disks in the complement of $K$. (Note: In what's to follow $K$ shall be a forward invariant component of $J(f)$ unless otherwise stated).
+    \subsection*{Definition 6.10}{(Ideal Boundary of $K$)}: We define $I(K)$, the ideal boundary of a given infinite continuum $K$, to be the union of the ideal boundaries of the disks in the complement of $K$. Thus
+    \[
+    I(K):=\bigcup_{\substack{V\subseteq\hat{\mathbb C}\setminus K\\
+                    V\text{ a component}}}I(V).
+    \]
+    (Note: In what's to follow $K$ shall be a forward invariant component of $J(f)$ unless otherwise stated).
 
 
 
     \begin{figure}[H]\centering
-    \includegraphics[width=10cm]{ms-fig-03.pdf}
+    \includegraphics[width=.95\linewidth]{ms-fig-03.pdf}
     \FigureTag{MS3}{fig:ms-03}
     \end{figure}
 
     \begin{figure}[H]\centering
-    \includegraphics[width=12cm]{ms-fig-04.pdf}
+    \includegraphics[width=.95\linewidth]{ms-fig-04.pdf}
     \FigureTag{MS4}{fig:ms-04}
     \end{figure}
 
@@ -112,7 +122,7 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
 
 
     \begin{figure}[H]\centering
-    \includegraphics[width=10cm]{ms-fig-05.pdf}
+    \includegraphics[width=.95\linewidth]{ms-fig-05.pdf}
     \FigureTag{MS5}{fig:ms-05}
     \end{figure}
     All surgery principles introduced so far are means to deform a rational map to another rational map, so for one to perform successive surgeries one must constantly convert one's results back to something rational. The Gluing Lemma introduced below as a substitute for Rickman's Lemma will allow us to bypass that, thereby standing as a surgery principle in its own right for quasirational maps.
@@ -134,6 +144,23 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
         \\
         \end{tikzcd}$$
 
+    \begin{figure}[H]\centering
+    \includegraphics[width=.95\linewidth]{ms-fig-06.pdf}
+    \FigureTag{MS6}{fig:ms-06}
+    \end{figure}
+
+    The notes revisit the same two compatibility arrangements in the following diagrams. If $U=V$, take $\phi_V=\phi_U$; in the non-recurrent case, no forward image of $I(V)$ returns to $I(U)$.
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=.95\linewidth]{ms-fig-17.pdf}
+    \FigureTag{MS17}{fig:ms-17}
+    \end{figure}
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=.95\linewidth]{ms-fig-18.pdf}
+    \FigureTag{MS18}{fig:ms-18}
+    \end{figure}
+
 
 
     We are now ready to state and prove the Gluing Lemma.
@@ -154,15 +181,54 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
     is quasirational.
 
 
-    \textit{Proof.}: Consider locally the branch of $f^{-1}\circ g$ that agrees with the identity outside $U$. It is the identity outside $U$ and quasiconformal inside $U$. It also induces the identity map on the ideal boundary since $\hat{f} = \hat{\phi}_V^{-1}\circ B\circ\hat{\phi}_U = \hat{g}:I(U)\rightarrow I(V)$. Using Proposition $6.5$ we note that $f^{-1}\circ g$ is locally quasiconformal. By composing with $f$ we obtain that $g$ is locally quasiconformal except on neighbourhoods of the branch points. Hence, $g$ is quasiregular. The dilatation of $g$ is bounded by the maximum of $K(f)$ and $K(\phi_U)\cdot K(\phi_V)$.\\
+    \textit{Proof.}: Consider locally a branch of $f^{-1}\circ g$ that agrees with the identity outside $U$, away from the finitely many branch values. In the notation of the source this is
+    \[
+    f^{-1}\circ g=
+    \begin{cases}
+    \operatorname{Id},&z\notin U,\\
+    \psi\quad\text{(quasiconformal)},&z\in U.
+    \end{cases}
+    \]
+    It also induces the identity map on the ideal boundary since $\hat{f} = \hat{\phi}_V^{-1}\circ B\circ\hat{\phi}_U = \hat{g}:I(U)\rightarrow I(V)$. Proposition $6.7$ gives the continuous identity extension across the physical boundary, and Proposition $6.5$ supplies the quasiconformal pasting. Composing with $f$ shows that $g$ is quasiregular away from the branch points; the isolated branch points are removable for quasiregular maps. Hence $g$ is quasiregular. Its dilatation is bounded by the maximum of $K(f)$ and $K(\phi_U)K(\phi_V)$.\\
 
     \begin{figure}[H]\centering
-    \includegraphics[width=6cm]{ms-fig-07.pdf}
+    \includegraphics[width=.95\linewidth]{ms-fig-07.pdf}
     \FigureTag{MS7}{fig:ms-07}
     \end{figure}
 
     \begin{figure}[H]\centering
-    \includegraphics[width=10cm]{ms-fig-11.pdf}
+    \includegraphics[width=.95\linewidth]{ms-fig-08.pdf}
+    \FigureTag{MS8}{fig:ms-08}
+    \end{figure}
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=.95\linewidth]{ms-fig-09.pdf}
+    \FigureTag{MS9}{fig:ms-09}
+    \end{figure}
+
+    The notebook also proposes a Sobolev cutoff proof of this pasting step. Let
+    $u=\operatorname{Re}(\psi-\operatorname{Id})$ (and similarly take the imaginary part), so that one would need $u\in H^1$ on the indicated ball.
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=.95\linewidth]{ms-fig-10.pdf}
+    \FigureTag{MS10}{fig:ms-10}
+    \end{figure}
+
+    Its proposed inference is that $\eta_nu\to u$ and that $\eta_nu=0$ on a neighbourhood of $K$ for sufficiently large $n$, hence $u\in H^1$. Convergence without an $H^1$ estimate does not imply that conclusion, so this notebook route has a gap; the rigorous input in the preceding paragraph is Rickman's pasting lemma. The final source sketch of the same missing estimate assumes a sequence $x_k\to x$ with
+    \[
+    d_U\bigl(\psi(x_k),x_k\bigr)\longrightarrow\infty
+    \]
+    and compares the chains $\langle N_k\rangle_k$ and $\langle\psi(N_k)\rangle_k$.
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=.95\linewidth]{ms-fig-12.pdf}
+    \FigureTag{MS12}{fig:ms-12}
+    \end{figure}
+
+    The identity ideal-boundary values force these chains to be equivalent, as in the MS13 diagram above; making this into the required uniform hyperbolic-distance estimate needs the standard bounded-displacement theorem used in Proposition $6.7$.
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=.95\linewidth]{ms-fig-11.pdf}
     \FigureTag{MS11}{fig:ms-11}
     \end{figure}
     If $I(U)$ is a fixed component of $\hat{f}$, then $g(U) = U$ and $g^{\circ n}\big|_U = \phi^{-1}\circ B^{\circ n}\circ \phi$. Hence, we have $K(g^{\circ n}) \leq K(\phi)^2$ on $U$. If $z \notin U$, it may have several iterates in $\hat{\mathbb{C}}\backslash U$ before falling into $U$. Hence, $K(g^{\circ n}) \leq K(f^{\circ n})\cdot K(\phi)^2\leq K\cdot K(\phi)^2$, where $f$ is quasirational so that $K(f^{\circ n}) \leq K$ for all $n$ and some $K \geq 1$ (by Sullivan's Straightening Theorem). Hence, $g$ is quasirational.\\
@@ -181,7 +247,12 @@ Let $f$ be a rational map of degree at least $2$ on $\hat{\mathbb{C}}$, and $\te
     \textit{Proof.}: Note that $g^{\circ p}$ is quasiconformally conjugate to a Blaschke product of degree $d = \prod_{j=0}^{p-1}{\text{deg}(B_j)}$ on any of the $U_j$'s. Since the cycle contains only finitely many $U_j$, this bound is uniform on their union, while the original bound for $f$ applies off the cycle. Therefore, $K(g^{\circ n})$ is uniformly bounded forcing $g$ to be quasirational by Straightening Theorem.
 
     \begin{figure}[H]\centering
-    \includegraphics[width=11.5cm]{ms-fig-14.pdf}
+    \includegraphics[width=.95\linewidth]{ms-fig-19.pdf}
+    \FigureTag{MS19}{fig:ms-19}
+    \end{figure}
+
+    \begin{figure}[H]\centering
+    \includegraphics[width=.95\linewidth]{ms-fig-14.pdf}
     \FigureTag{MS14}{fig:ms-14}
     \end{figure}
 

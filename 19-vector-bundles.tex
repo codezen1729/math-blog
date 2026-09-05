@@ -4,7 +4,7 @@
 \begin{document}
 \section*{Vector Bundles}
 % BLOG-CONTENT-BEGIN
-A common theme in mathematics is to linearise the study of an object by associating a vector space or linear operator to it. Representation theory, differential geometry, Riemannian geometry, and rational homotopy theory all use this strategy. 
+A common feature in mathematics is linearizing studies of different objects: be it representation theory, which looks at groups as objects sitting in $GL(V)$ for some vector space $V$; differential geometry, which turns to linear operators $Df$ defined on mixed tensor spaces to say something qualitative about morphisms between manifolds; Riemannian geometry, which studies multilinear operators $\nabla_XY$ to generalize Euclidean concepts like lengths, angles, and curvature; or rational homotopy theory, which turns a blind eye to the torsion elements in higher homotopy groups by looking at $\_\otimes\mathbb Q$ and aims to classify spaces up to this error.
 Following this trend, let us try to linearize homotopy theory. \cite{atiyah2018k}
 
 \begin{definition}[Vector bundle]
@@ -25,9 +25,9 @@ If $\text{dim}(V) = n$, then we say $(E, B, V, p)$ is a vector bundle of dimensi
         \item A vector-bundle homomorphism is linear on each fibre; it is a continuously parametrised family of linear maps.
         \item Given locally trivializing maps $\{\varphi_{\alpha}\}_{\alpha}$ as follows:
         $$\begin{tikzcd}
-        U_{\alpha}\cross F \arrow[rd, "\pi"'] \arrow[rr, "\varphi_{\alpha}"] 
+        U_{\alpha}\cross F \arrow[rd, "\pi"'] \arrow[rr, "\varphi_{\alpha}"]
         &&p^{-1}(U_{\alpha}) \arrow[ld, "p"] \\
-        & U_{\alpha} 
+        & U_{\alpha}
     \end{tikzcd}$$
     Let $\{v_{\beta}\}_{\beta}$ be a basis of $V$ and let $s_{\beta}^{\alpha}:U_{\alpha}\to p^{-1}(U_{\alpha})$ be $s_{\beta}^{\alpha}(x):= \varphi_{\alpha}(x, v_{\beta})$. The collection of sections $\{s_{\beta}^{\alpha}\}_{\beta}$ is called a \textbf{local frame on $U_{\alpha}$}.
     \item Given a local frame, one can define a local trivialization by tracing back the argument above.
@@ -61,19 +61,19 @@ We can now construct new vector bundles from old ones.\\
 
 \underline{\textbf{Constructing New Vector Bundles}}:
 
-We shall begin by illustrating the pullback construction with two important examples and thereafter present the same procedure in its general, functorial form. 
+We shall begin by illustrating the pullback construction with two important examples and thereafter present the same procedure in its general, functorial form.
 
 \begin{enumerate}[(I)]
-    \item \textbf{Direct Sum}: Let $\eta = (E, B, V, p)$ and $\widetilde{\eta} = \big(\widetilde{E}, B, \widetilde{V}, \widetilde{p}\big)$ be two vector bundles, then $\big(E\times\widetilde{E}, B\times B, V\times\widetilde{V}, p\times \widetilde{p}\big)$ is a vector bundle. Define, 
+    \item \textbf{Direct Sum}: Let $\eta = (E, B, V, p)$ and $\widetilde{\eta} = \big(\widetilde{E}, B, \widetilde{V}, \widetilde{p}\big)$ be two vector bundles, then $\big(E\times\widetilde{E}, B\times B, V\times\widetilde{V}, p\times \widetilde{p}\big)$ is a vector bundle. Define,
 $$\Delta: B \rightarrow B\times B$$
 $$\Delta(b):= (b,b)$$
 Consider the pullback square:
 $$\begin{tikzcd}
     (E\cross\widetilde{E})\cross_{B\cross B}B \arrow[hookrightarrow]{r} \arrow[d, "\widehat{p}"'] &E\cross \widetilde{E} \arrow[d, "p\cross \widetilde{p}"]\\ B \arrow[r, "\Delta"'] & B\cross B
 \end{tikzcd}$$
-and define, 
+and define,
 $$(E, B, V, p)\oplus (\widetilde{E}, B, \widetilde{V}, \widetilde{p}):= \big((E\times\widetilde{E})\times_{B\times B}B, B, V\oplus\widetilde{V}, \widehat{p}\big)$$
-Note, 
+Note,
 $$\widetilde{\widehat{\varphi}}_{\alpha\beta}(x) = \begin{pmatrix}
     \widetilde{\varphi}^{\,\eta}_{\alpha\beta}(x) & 0\\ 0 &\widetilde{\varphi}^{\,\widetilde\eta}_{\alpha\beta}(x)
 \end{pmatrix}$$
@@ -140,9 +140,9 @@ These relations are consequences of the fact that the same relations hold for ma
 	\arrow[from=4-4, to=1-4]
 	\arrow[from=4-1, to=4-4]
 \end{tikzcd}\]
-\item \textbf{Generalization}: Let $\{\eta_i\}_{i\in I}$ be vector bundles with fibres $\{V_i\}_{i\in I}$ over $B$, and let $\text{Vect}_{\mathbb{K}}$ be the category of $\mathbb{K}$-vector spaces. Let $F$ be a functor, 
+\item \textbf{Generalization}: Let $\{\eta_i\}_{i\in I}$ be vector bundles with fibres $\{V_i\}_{i\in I}$ over $B$, and let $\text{Vect}_{\mathbb{K}}$ be the category of $\mathbb{K}$-vector spaces. Let $F$ be a functor,
 $$F: \bigg[\prod\limits_{i\in I}\text{Vect}\bigg]\rightarrow \text{Vect}$$
-Define, 
+Define,
 $$\rho: \bigg[\prod\limits_{i\in I}\text{Aut}(V_i)\bigg]\rightarrow \text{Aut}\bigg(F\big((V_i)_{i\in I}\big)\bigg)$$
 $$\rho\big((T_i)_{i\in I})\big):= F\big((T_i)_{i\in I})\big)$$
 The above is a group homomorphism as $F$ is a functor. Let $B' = \{(b)_i\in \prod_iB  |  b\in B\}$ and $B'\xhookrightarrow{i} \prod_iB$ be the inclusion, define,
@@ -154,6 +154,8 @@ Following the prescription above one can construct bundles corresponding to the 
     \item $(V, W) \rightarrow V\oplus W$
     \item $(V, W) \rightarrow V\otimes W$
     \item $V \rightarrow V^* = \text{Hom}(V, \mathbb{K})$, contravariantly
+    \item For subspaces of a fixed inner-product space, $V \rightarrow V^{\perp}$
+    \item $(V,W)\rightarrow V/W$, for $W\subseteq V$
     \item $V \rightarrow \Lambda^k(V)$
     \item $V \rightarrow \text{Sym}^k(V)$
 \end{enumerate}
@@ -194,15 +196,15 @@ $$\widetilde{\varphi}_{\alpha\beta}: U_{\alpha}\cap U_{\beta} \rightarrow H \sub
 The phenomenon described above is called \textbf{reduction of the structure group $G$}. We shall now see an instance of such a reduction. To proceed we will need the following topological fact:
 
 \begin{center}
-    
+
 FACT: A paracompact Hausdorff space is normal and also admits a partition of unity.
 
 \end{center}
 
 
-Let $(E, B, V, p)$ be a $\mathbb K$-bundle of dimension $n$, $B$ a paracompact Hausdorff space, and $V$ an inner product space, with $\{U_{\alpha}\}_{\alpha}$ as the local trivializing cover. Define, 
+Let $(E, B, V, p)$ be a $\mathbb K$-bundle of dimension $n$, $B$ a paracompact Hausdorff space, and $V$ an inner product space, with $\{U_{\alpha}\}_{\alpha}$ as the local trivializing cover. Define,
 $$x\in U_{\alpha} \xlongrightarrow{f_{\alpha}} \big(\langle\cdot, \cdot\rangle: p^{-1}(x)\times p^{-1}(x) \rightarrow \mathbb{R}\big)$$
-as follows, 
+as follows,
 $$f_{\alpha}(x)(e, e'):= \big\langle\pi(\varphi_{\alpha}^{-1}(e)), \pi(\varphi_{\alpha}^{-1}(e'))\big\rangle$$
 Clearly, $f_{\alpha}$ is continuous on $U_{\alpha}$. Now let $\{\psi_{\alpha}\}_{\alpha}$ be the partition of unity subordinate to $U_{\alpha}$. Define,
 $$\overline{f}_{\alpha}(x):= \begin{cases}
@@ -211,7 +213,7 @@ $$\overline{f}_{\alpha}(x):= \begin{cases}
 \end{cases}$$
 $\overline{f}_{\alpha}$ is defined continuously on $B$. Now set,
 $$f(x):= \sum_{\alpha}{\overline{f}_{\alpha}(x)}$$
-Note that, 
+Note that,
 $$f(x)(e, e) \geq \overline{f}_{\alpha}(x)(e, e) >0$$
 for $e\ne0$, where $\psi_{\alpha}$ is such that $\psi_{\alpha}(x) >0$. Thus the bundle can now be equipped with the additional structure of an inner product; such bundles are called \textbf{Euclidean bundles}. This additional structure is reflected in the structure group. Let $\{v_{\alpha}\}_{\alpha}$ be an orthonormal basis of $V$. Recall the local orthonormal frame $\{s_{\alpha}^{\beta}\}_{\alpha}$ on $U_{\beta}$. Let $\{s_{\alpha}^{\gamma}\}_{\alpha}$ be the same for $U_{\gamma}$. Then,
 $$\widetilde{\varphi}_{\beta\gamma}: \text{span}_{\mathbb{K}}\big(\{s_{\alpha}^{\gamma}\}_{\alpha})\rightarrow \text{span}_{\mathbb{K}}\big(\{s_{\alpha}^{\beta}\}_{\alpha})$$
@@ -243,13 +245,21 @@ Let $\big(E\xrightarrow{p} B\big)$ be a principal $G$-bundle, let $X$ be a left 
 \begin{enumerate}[(i)]
     \item $\overline{p}$ is well-defined as $\overline{p}[eg, x] = p(eg) = p(e) = \overline{p}[e,gx]$.
     \item Let $\overline{p}^{-1}(b):= \{[e,x] \mid e\in p^{-1}(b)\}$. After choosing $e_0\in p^{-1}(b)$, every equivalence class has a unique representative of the form $[e_0,x]$. Thus the map $X\to\overline{p}^{-1}(b)$ given by $x\mapsto[e_0,x]$ is a homeomorphism.
+    The homeomorphism and its inverse are captured by the quotient diagram
+    \[
+    \begin{tikzcd}[column sep=huge,row sep=large]
+        {p^{-1}(b)\times X} \arrow[r,"q"] \arrow[dr,"{(e_0g,x)\mapsto gx}"']
+        & {\overline p^{-1}(b)} \arrow[d,dashed,"{[e_0,x]\mapsto x}"] \\
+        & X.
+    \end{tikzcd}
+    \]
 \item Let $\{U_{\alpha}\}_{\alpha}$ be a locally trivializing cover for $(E\xrightarrow{p} B)$, then define,
 $$\psi_{\alpha}: (U_{\alpha}\times G)\times_G X \rightarrow U_{\alpha}\times X$$
 $$\psi_{\alpha}([(u_{\alpha}, g), x]):= (u_{\alpha}, gx)$$
 By an argument similar to that in (ii), $\psi_{\alpha}$ is a homeomorphism. Now let,
 $$\overline{\psi}_{\alpha}: (\overline{p})^{-1}(U_{\alpha}) \rightarrow (U_{\alpha}\times G)\times_G X$$
 $$\overline{\psi}_{\alpha}([e, x]):= [\varphi_{\alpha}^{-1}(e), x]$$
-We shall now prove that $\widehat{\psi}_{\alpha}:= \psi_{\alpha}\circ \overline{\psi}_{\alpha}$ is a homeomorphism. Consider, 
+We shall now prove that $\widehat{\psi}_{\alpha}:= \psi_{\alpha}\circ \overline{\psi}_{\alpha}$ is a homeomorphism. Consider,
 \[\begin{tikzcd}
 	{(e, x)} &&& {(\varphi_{\alpha}^{-1}(e), x)} \\
 	& {p^{-1}(U_{\alpha})\times X} & {U_{\alpha}\times G\times X} \\
@@ -265,7 +275,7 @@ We shall now prove that $\widehat{\psi}_{\alpha}:= \psi_{\alpha}\circ \overline{
 	\arrow[from=4-1, to=4-4]
 	\arrow[bend left = 50, from=1-4, to=4-4]
 \end{tikzcd}\]
-By the universal property of quotients, $\overline{\psi}_{\alpha}$ is continuous, $\psi_{\alpha}$ is open as $(e, x) \rightarrow (\varphi_{\alpha}^{-1}(e), x)$ is open, for the same reason $\overline{\psi}_{\alpha}$ is surjective. Injectivity of $\widehat{\psi}_{\alpha}$ is evident. The maps $\{\widehat{\psi}_{\alpha}\}_{\alpha}$ trivialize $E\times_G X$ over $\{U_{\alpha}\}_{\alpha}$. It is fruitful to see what the transition functions would look like: 
+By the universal property of quotients, $\overline{\psi}_{\alpha}$ is continuous, $\psi_{\alpha}$ is open as $(e, x) \rightarrow (\varphi_{\alpha}^{-1}(e), x)$ is open, for the same reason $\overline{\psi}_{\alpha}$ is surjective. Injectivity of $\widehat{\psi}_{\alpha}$ is evident. The maps $\{\widehat{\psi}_{\alpha}\}_{\alpha}$ trivialize $E\times_G X$ over $\{U_{\alpha}\}_{\alpha}$. It is fruitful to see what the transition functions would look like:
 
 
 \[\begin{tikzcd}
@@ -283,7 +293,7 @@ By the universal property of quotients, $\overline{\psi}_{\alpha}$ is continuous
 \end{tikzcd}\]
 
 
-Explicitly, 
+Explicitly,
 $$\widehat{\psi}_{\alpha\beta}(b, x) = \big(b, \widetilde\varphi_{\alpha\beta}(b)x\big)$$
 \end{enumerate}
 
@@ -297,15 +307,15 @@ The bundle $(E\times_G X)$ is called the \textbf{bundle associated to $E$}. Note
 \begin{proof}
     We shall first define the map between the two sets, then prove that that map is bijective.
 
-    \underline{Map}:  $ 
+    \underline{Map}:  $
 \Phi: \mathcal{P}_{GL_n(\mathbb{K})}(B) \rightarrow \text{Vect}_{\mathbb{K}}^n(B)
-    $\\ 
+    $\\
      $\Phi(E):= E\times_{GL_n{\mathbb{K}}}\mathbb{K}^n$
 
 
 \underline{Surjectivity}: Let $p: X \rightarrow B$ be a vector bundle with fibres $\{X_b |  b\in B\}$. Set $E_b = \text{Iso}(\mathbb{K}^n, X_b)$ and\\ $E= \coprod\limits_{b \in B}E_b$. Let $q:E\rightarrow B$ be given by the universal property of colimit for the functions $E_b \rightarrow \{b\}\in B$. Let $\{(U_{\alpha}, \varphi_{\alpha})\}_{\alpha}$ trivialize $X\rightarrow B$, then, $$\overline{\varphi}_{\alpha}: q^{-1}(U_{\alpha}) = \coprod\limits_{b\in U_{\alpha}}E_b \rightarrow U_{\alpha}\times \text{Iso}(\mathbb{K}^n, \mathbb{K}^n)$$
 given by, $$e_b \in E_b \rightarrow \bigg(b, \varphi_{\alpha}^{-1}\big|_{p^{-1}(b)}\circ e_b\bigg)$$
-with transition functions, 
+with transition functions,
 $$(b, \gamma) \rightarrow \bigg(b, \varphi_{\beta}\big|_{p^{-1}(b)}\circ \varphi_{\alpha}^{-1}\big|_{p^{-1}(b)}\circ \gamma\bigg)$$
 which are homeomorphisms because $\varphi_{\beta}\big|_{p^{-1}(b)}\circ \varphi_{\alpha}^{-1}\big|_{p^{-1}(b)}$ are so too; "trivialize" $E$. That is, there exists a unique topology on $E$ that would make $q^{-1}(U)$ open in $E$ and $\{\overline{\varphi}_{\alpha}\}_{\alpha}$ homeomorphisms on $\{q^{-1}(U_{\alpha})\}_{\alpha}$. The fibre-wise right $GL_n(\mathbb{K})$ action becomes continuous, turning $\overline{\varphi}_{\alpha}$ equivariant. Combining these observations, $E\rightarrow B$ is a principal $GL_n(\mathbb{K})$-bundle, called the \textbf{frame bundle} of $X\rightarrow B$. Further,
 $$E\times_{GL_n(\mathbb{K})} \mathbb{K}^n \cong X   \text{(as vector bundles)}$$

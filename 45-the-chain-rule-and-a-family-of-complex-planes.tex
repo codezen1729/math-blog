@@ -5,9 +5,9 @@
 \begin{document}
 \section*{The Chain Rule and a Family of Complex Planes}
 % BLOG-CONTENT-BEGIN
-Given a smooth manifold \(M\), a coordinate chart \((U,x_1,\ldots,x_n)\) assigns coordinates to points of \(U\). At each \(p\in U\), the corresponding coordinate tangent vectors \(\left.\partial/\partial x_i\right|_p\) form a basis of the tangent space \(T_pM\).
+Given a smooth manifold \(M\), local coordinates \((U,x_1,\ldots,x_n)\) tell us the whereabouts of points in \(U\). Directions, however, cannot be represented in terms of the \(x_i\). That luxury is available only in Euclidean spaces such as \(\mathbb R^n\), where \(x_i\) is projection onto the \(i\)-th coordinate. There, moving in the \(i\)-th coordinate means moving in the direction \(x_i\). To say something similar on a manifold, we introduce \emph{tangent spaces}.
 
-If a path allows us to associate a direction coherently at every point, for instance a smooth curve \(\gamma:[0,1]\to U\), then \(\gamma'(t)\) is a point of \(T_{\gamma(t)}M\cong\mathbb R^n\).
+If a path allows us to associate a direction coherently at every point, for instance a smooth curve \(\gamma:[0,1]\to M\), then \(\gamma'(t)\) is a point of \(T_{\gamma(t)}M\cong\mathbb R^n\).
 \begin{figure}[H]\centering
 \includegraphics[width=.48\textwidth]{cd9-fig-01.pdf}
 \FigureTag{CD9.1}{fig:cd9-01}
@@ -21,13 +21,19 @@ By identifying \(\gamma'(t)\) with a vector in \(\mathbb R^n\), one can associat
 % Source page 2
 As in \(\mathbb R^n\), moving in the \(i\)-th coordinate on \(M\), or moving along \(x_i\), means moving only along \(x_i\): the rate of change along \(x_j\), for \(j\ne i\), is zero. Thus
 \(\{\left.\partial/\partial x_i\right|_p\}_{i=1}^n\) is an appropriate basis for \(T_pM\).
+One possible formulation uses coordinate differentials: one says that one is going in the direction \(x_i\) if
+\[
+dx_j(\gamma'(t))=0\quad(j\ne i).
+\]
+Here \(\chi_j(p)=\left.\partial/\partial x_j\right|_p\) is the global coordinate field on \(U\), and \(\gamma'(t)\) is the vector field along \(\gamma([0,1])\). The vanishing condition concerns the coordinate components; it is not, in general, the vanishing of a Lie derivative \(L_{\chi_j}(\widetilde\gamma)\).
+
 If the coordinates change from \((U,x_1,\ldots,x_n)\) to \((U,y_1,\ldots,y_n)\), then \(T_pM\), \(p\in U\), has two bases. Write
 \[
 \frac{\partial}{\partial x_i}=\sum_{j=1}^n a_j\frac{\partial}{\partial y_j}.
 \]
 The simplest way to find this change of basis is to evaluate both sides on \(y_k\). This gives \(a_k=\partial y_k/\partial x_i\); the matrix is
 \(\bigl(\partial y_k/\partial x_i\bigr)_{1\le i,k\le n}\).
-This matrix is the change-of-basis matrix between the two coordinate frames.
+Changing coordinates is therefore no trouble: this matrix acts like a dictionary!
 
 % Source page 3
 The same can be done for complex manifolds. On a real or complex manifold, the directions along \(\gamma(t)\) are
@@ -37,13 +43,13 @@ The same can be done for complex manifolds. On a real or complex manifold, the d
 \]
 where \(TM\) is the tangent bundle.
 
-Covectors provide a dual way to measure tangent directions. Suppose the curve moves in the direction
+There is a dual notion to navigation on a manifold: \emph{obstruction}. Suppose the curve moves in the direction
 \[
 \gamma_1'(t)\left.\frac{\partial}{\partial x_1}\right|_{\gamma(t)}
 +\gamma_2'(t)\left.\frac{\partial}{\partial x_2}\right|_{\gamma(t)}.
 \]
-The covector \(dx_2\) extracts the scalar \(\gamma_2'(t)\).
-Curves \(\gamma:\mathbb R\to M\) describe motion, whereas smooth functions \(f:M\to\mathbb R\) yield covectors through their differentials.
+To know what obstructs \(\gamma\) from moving purely in the \(x_1\)-direction, we must retrieve the extra luggage
+\(\gamma_2'(t)\left.\partial/\partial x_2\right|_{\gamma(t)}\), which is \emph{misdirecting} its flow. The covector \(dx_2\) retrieves the scalar \(\gamma_2'(t)\), the coefficient of this extra component. To study flow, or navigation, we looked naturally at functions \(\gamma:\mathbb R\to M\). To study its dual, obstruction, focus instead on \(f:M\to\mathbb R\), \(f\in C^\infty(M)\).
 
 Define the differential of \(f\) at \(p\) by \(df_p(v)=v_p(f)\), where \(v\in T_pM\). Thus \(df_p\) is a covector: it is a linear functional on \(T_pM\), given by evaluation. The family \(\{dx_i\}_{i=1}^n\) is a smooth coframe on \(U\), so
 \[
@@ -61,15 +67,15 @@ df_{\gamma(t)}\bigl(\gamma'(t)\bigr)
 +\gamma_2'(t)\left.\frac{\partial x_2}{\partial x_2}\right|_{\gamma(t)}
 =\gamma_2'(t).
 \]
-The \(x_2\)-component of the flow \(\gamma(t)\) is therefore given by
+The obstruction to the flow \(\gamma(t)\) along \(x_2\) is therefore given by
 \((dx_2)_{\gamma(t)}(\gamma'(t))\), and \(df_p\in T_p^*M\), the dual tangent space.
-Tangent vectors and covectors are organized globally by the bundles \(TM\) and \(T^*M\).
+Flows and obstructions can be discussed using the two bundles \(TM\) and \(T^*M\) hovering over the manifold.
 
 Let us now combine flow and obstruction. For a smooth curve \(\gamma:J\to M\) and \(f:M\to\mathbb R\), \(f\in C^\infty(M)\), one has
 \[
 (f\circ\gamma)'(t)=df_{\gamma(t)}\bigl(\gamma'(t)\bigr).
 \]
-Thus the derivative of \(f\circ\gamma\) is obtained by applying the covector \(df\) to the tangent vector \(\gamma'\). The same chain rule also controls Wirtinger derivatives.
+In plain English, the obstruction to \(\gamma(t)\) along \(f\) is the same as the flow of \(f\circ\gamma\). In modest terms, the chain rule chains together flows and obstructions in a very intricate manner! Let us see what more it can offer.
 
 % Source page 5
 For \(f:\mathbb C\to\mathbb C\), viewed as a map \(\mathbb R^2\to\mathbb R^2\), we know
@@ -137,14 +143,27 @@ The coefficient \(\mu_f(z)\) captures the shape of the ellipse pulled back from 
 \[
 K_f=\frac{1+|\mu_f|}{1-|\mu_f|}.
 \]
-Now let \(\mu:\mathbb C\to\mathbb C\) be measurable with \(\|\mu\|_\infty<1\). The measurable Riemann mapping theorem gives a quasiconformal homeomorphism \(\varphi:\mathbb C\to\mathbb C\) satisfying
+\begin{figure}[H]\centering
+\includegraphics[width=.64\textwidth]{cd9-fig-04.pdf}
+\FigureTag{CD9.4}{fig:cd9-04}
+\end{figure}
+Now let \(\mu:\mathbb C\to\mathbb C\) be measurable with \(\|\mu\|_\infty<1\). A very deep theorem tells us that there exists a quasiconformal homeomorphism \(\varphi:\mathbb C\to\mathbb C\) such that
 \[
+(d\varphi_z)^{-1}(S^1)=\text{the ellipse given by }\mu(z)
+\quad\text{almost everywhere},\qquad
 \mu_\varphi=\frac{\partial_{\overline z}\varphi}{\partial_z\varphi}=\mu
 \quad\text{almost everywhere}.
 \]
-Thus the ellipses generated by \(\mu\) are precisely the pullbacks under \(d\varphi\) of circles in the target tangent planes.
+Thus, given \(\mu\in L^\infty(\mathbb R^2)\) with \(\|\mu\|_\infty<1\), one can find a \(\varphi\) for which the ellipses generated by \(\mu\) on \(T_z\mathbb C\) are precisely those pulled back from circles in \(T_{\varphi(z)}\mathbb C\). Denote this additional structure by \((\mathbb C,\mu_\varphi)\).
+
 This generates a family of complex planes. Our familiar complex plane is
 \((\mathbb C,\mu_z)\), where \(\mu_z=0\) gives circles everywhere. Define
+\[
+[\mu_h,\mu_f](z):=\log\bigl(K_{h\circ f^{-1}}(f(z))\bigr),
+\qquad
+d_{h,f}:=\sup_z[\mu_h,\mu_f](z).
+\]
+This is the distortion of the selected comparison map. The Teichm\"uller distance between the marked complex planes is
 \[
 d_T\bigl((\mathbb C,\mu_h),(\mathbb C,\mu_f)\bigr)
 :=\frac12\inf_{\psi\simeq h\circ f^{-1}}\log K(\psi),
@@ -152,7 +171,7 @@ d_T\bigl((\mathbb C,\mu_h),(\mathbb C,\mu_f)\bigr)
 where the infimum is taken over quasiconformal maps in the prescribed marking class.
 
 % Source page 8
-This \(d_T\) is called the \emph{Teichm\"uller distance} between the marked complex planes. The chain rule therefore also tells us when a family of complex planes is close to our complex plane.
-Thus the chain rule controls both the composition of Beltrami coefficients and the resulting distance between complex structures.
+This \(d_T\) is called the \emph{Teichm\"uller distance} between the complex planes. The chain rule therefore also tells us when a family of complex planes is close to our complex plane.
+In these two ways, the chain rule quite literally chains together concepts and structures!
 % BLOG-CONTENT-END
 \end{document}

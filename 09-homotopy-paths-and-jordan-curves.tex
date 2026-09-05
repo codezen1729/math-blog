@@ -162,14 +162,90 @@ and define
   \gamma_t:=\left.\overline{\gamma}\right|_{[t,\,1/3+t]}(s),
   \qquad 0\le t\le\frac23.
 \]
+After suitable normalization, one obtains what is needed.
+
 \textbf{Remark.}
 Because unrestricted sliding gives a weak notion of deformation, we impose conditions such as \(H(s,0)=H(s,1)\qquad(\forall s),\) which give the notion of a homotopy through closed curves, or the stronger condition that \(H(s,0)\) and \(H(s,1)\) are constants.
+
+\subsection*{Tool 22 — Morera Technique}
+We have seen two instances of this, one in the Schwarz Reflection Principle and the other in a variant of it. So, we shall briefly expound on it.
+
+Suppose you are given a ``free'' homotopy \(H(t,s)\), a collection of curves \(\gamma_t(s):=H(t,s)\) for a given \(t\). Let
+\[
+  H:[0,1]\times[0,1]\to\Omega,
+\]
+where \(\Omega\) is a domain. Then, by compactness of \([0,1]\times[0,1]\), we know \(H\) is uniformly continuous. Here we impose no particular conditions on \(H(t,0)\) and \(H(t,1)\). Let \(f\in C(\Omega)\). Then notice
+\[
+  \int_{\gamma_t(s)}f\sim\int_{\gamma_{t'}(s)}f
+  \qquad\text{if }|t-t'|<\varepsilon.
+\]
+For every \(\varepsilon\), there exists \(\delta\) such that
+\[
+  |t-t'|<\delta
+  \quad\Longrightarrow\quad
+  |\gamma_t(s)-\gamma_{t'}(s)|<\varepsilon.
+\]
+Now note that
+\[
+  \int_{\gamma_t(s)}f
+  :=\lim_{P}
+  \sum_P f(\gamma_t(s_j^*))
+  |\gamma_t(s_j)-\gamma_t(s_{j-1})|,
+\]
+where \(P\) is a partition of \([0,1]\). The restriction \(\left.f\right|_{H([0,1]\times[0,1])}\) is also uniformly continuous, and so are \(\gamma_t(s)\) and \(\gamma_{t'}(s)\).
+
+Given \(\varepsilon\),
+\begin{align*}
+  \left|\sum_{j=1}^n f(\gamma_t(s_j^*))
+  |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right|
+  &\le
+  \left|\sum_{j=1}^n
+    \bigl(f(\gamma_t(s_j^*))-f(\gamma_{t'}(s_j^*))\bigr)
+    |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right| \tag{1}\\
+  &\quad+
+  \left|\sum_{j=1}^n f(\gamma_{t'}(s_j^*))
+    |\gamma_{t'}(s_j)-\gamma_{t'}(s_{j-1})|\right| \tag{2}\\
+  &\quad+
+  \left|\sum_{j=1}^n f(\gamma_{t'}(s_j^*))
+    |\gamma_{t'}(s_{j-1})-\gamma_t(s_{j-1})|\right|. \tag{3}
+\end{align*}
+Note that \((1)<\varepsilon/3\), \((2)<\varepsilon/3\), and \((3)<\varepsilon/3\) if the mesh size of the partition and \(|t-t'|\) are small enough. Hence,
+\[
+  \left|\sum_{j=1}^n f(\gamma_t(s_j^*))
+  |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right|
+  <\left|\int_{\gamma_{t'}}f\right|+\varepsilon.
+\]
+Therefore,
+\[
+  \left|\int_{\gamma_t}f-
+  \sum_{j=1}^n f(\gamma_t(s_j^*))
+  |\gamma_t(s_j)-\gamma_t(s_{j-1})|\right|<\varepsilon,
+\]
+and
+\[
+  \left|\int_{\gamma_t}f\right|
+  <\left|\int_{\gamma_{t'}}f\right|+\varepsilon
+  \qquad(\forall\varepsilon).
+\]
+Thus,
+\[
+  \left|\int_{\gamma_t}f\right|
+  =\left|\int_{\gamma_{t'}}f\right|.
+\]
+In particular, if one is \(0\), the other too is bound to be \(0\).
+
+The technique is this: if \(f\in H(\Omega)\) and \(f\in C(\partial\Omega)\), then one can, as in the Reflection Principle, ``push down'' triangles past \(\partial\Omega\) and conclude that \(f\) can be extended.
+
+\textbf{Exercise.}
+Fill in the gaps, and remove the modulus.
 
 \subsection*{Tool 23 — Two-Ears Theorem}
 Two-Ears Theorem (or the existence of a triangulation of any polygon).
 
 
 \subsection*{Alexander Numbering Rule}
+Refer to the statement in Tool 23. Draw the proof!
+
 We first note that simple smooth curves locally look like rotated graphs. Let \(\gamma\) be a simple smooth curve, with
 \[
   \gamma'(t_0)=re^{i\theta},
@@ -206,6 +282,8 @@ Thus, locally, for \(\varepsilon\) small enough,
   =\left\{\gamma(t_0)+e^{i\theta}(s+if(s))
   \mid s\in(-c_\varepsilon,d_\varepsilon)\right\}.
 \]
+
+An important consequence, when the contour has only finitely many transverse self-intersections, is that it can be written as a finite concatenation of simple smooth curves: away from the intersection points it is locally like a rotated graph, as ``non-loopy'' as an interval. Corollary: every polygon is a sum of simple polygons.
 
 Let \(\gamma\) be the closed contour and \(\sigma\) the contour that has smooth transverse intersections with \(\gamma\) at the points
 \[
@@ -297,9 +375,10 @@ where \(\gamma'(t_0)=re^{i\theta}\). This is true for all close translates of th
   z_0+e^{i\theta}\bigl(s+i(f(s)+u)\bigr),
   \qquad u<\varepsilon.
 \]
+Draw!
 
 \textbf{Remark.}
-The previous remark says that, when an anticlockwise closed contour is traversed, its interior lies to the left and its exterior to the right. The corresponding statement for clockwise orientation is obtained by reversing left and right.
+The previous remark essentially says that, if you traverse along the closed contour that is oriented anticlockwise, then the interior is to its left and the exterior is to the right. A symmetric statement can be made for clockwise orientation. Draw!
 
 \subsection*{Tool 24 — Jordan Curve Theorem}
 The Jordan Curve Theorem states that the complement of a simple closed curve has exactly two components. It also implies that if \(\operatorname{int}(\gamma)\subset U,\)
@@ -322,13 +401,13 @@ But \(z_0\) is in the interior, so \(W_\gamma(z_0)\ne0\), a contradiction. There
 Hence \(\gamma\) is contractible in \(U\), and \(U\) is simply connected.
 
 \textbf{Remark.}
-The test function \(1/(z-z_0)\) detects holes: if a hole contains \(z_0\), its integral around a surrounding curve has nonzero residue. Thus, if every holomorphic function on \(U\) is conservative, then \(U\) has no holes.
+These singularity spikes ensure that there are no holes in the domain, for if there is one, they shall explode with a residue. So, if all holomorphic functions are conservative, in the sense that they have no residue, then ``there are no holes in \(U\).''
 
 \paragraph{Observation.}
 As in every star-shaped region, \(f\) has a primitive and is conservative; therefore, star-shaped regions are simply connected.
 
 \textbf{Exercise.}
-Using the remark following Alexander's Numbering Rule and the properties of \(W_\gamma(z)\), prove the Jordan Curve Theorem for simple closed polygonal paths.
+Using the ideas expounded in the remark following Alexander's Numbering Rule and the facts about \(W_\gamma(z)\), prove the Jordan Curve Theorem for polygonal paths, closed and simple. ``All the hard work has been done for this; one must merely connect the dots.''
 
 \textbf{Remark.}
 We do not need to invoke the Two-Ears Theorem to induct on the number of edges. If \(\gamma_P\) is a concave polygon oriented anticlockwise, let \(v\) be a vertex that has angle greater than \(\pi\) to the left of \(\gamma_P\), as in, towards the interior. Let the adjacent edges be \(e\) and \(f\), and extend
@@ -346,7 +425,7 @@ them until they meet some other point on the polygon \(\gamma_P\). This will spl
 
 \end{figure}
 
-It is nevertheless useful to examine a proof of the Two-Ears Theorem; the argument requires no additional black box.
+Regardless, it is worthy that we explore the proof of the Two-Ears Theorem. But, for our silly purposes, there is no need for any black boxes.
 
 \textbf{Remark.}
 One nice consequence of the above remark is the following. Now that we know how to define angles of a polygonal path, simple and closed, how do we do it? Pick a vertex, without loss of generality assume it is a base vertex, and let the edges meeting at \(v\) be \(e\) and \(f\). Let \(z_0\in e\), with \(z_0=\gamma(i)\), and \(z_1\in f\), with \(z_1=\gamma(j)\), where \(j>i\). Then separate \(v\) and \(\gamma|_{[i,j]}\). Let \(B_\varepsilon(v)\) be such that \(B_\varepsilon(v)\cap\gamma|_{[i,j]}=\varnothing.\)
@@ -391,6 +470,24 @@ Using the meaning of angle which we just mentioned, one can conclude that the an
   \qquad
   z_0,z_1\in\operatorname{int}(\gamma_P).
 \]
+
+\paragraph{Digression.}
+We claimed in the proof of Alexander's Numbering Rule that, by exploiting the \(C^1\)-ness of the curve, we can locally find a segment whose angle, with respect to slope, is the argument of the derivative of the point on the curve. Let us briefly justify it for the sake of completeness. Let \(\gamma(t_0)\) be in the interior of \([a,b]\), where \(\gamma:[a,b]\to\mathbb C\) is a smooth curve. Let \(\gamma'(t_0)=re^{i\theta}.\)
+We know \(\gamma\) is locally a rotated graph, so, after using the graph coordinate as parameter, the real mean-value theorem gives a point \(t'\in(a,b)\) such that
+\[
+  \arg\bigl(\gamma'(t')\bigr)
+  =\arg\left(\frac{\gamma(b)-\gamma(a)}{b-a}\right).
+\]
+Essentially, these arguments are the same. So, locally, if we establish the fact that
+\[
+  \arg(\gamma'(t_0))
+\]
+is continuous in \(t_0\), then we are done. This is easy to see because, locally around the nonzero number \(\gamma'(t_0)/|\gamma'(t_0)|\), a branch of the logarithm is defined. Now, in that neighbourhood, \(\frac{\gamma'(t)}{|\gamma'(t)|}\)
+is continuous, so
+\[
+  \log_0\left(\frac{\gamma'(t)}{|\gamma'(t)|}\right)
+\]
+is continuous. Therefore, \(\arg(\gamma'(t))\) is continuous near \(t_0\), which is precisely what we need.
 
 \begin{figure}[htbp]
   \centering

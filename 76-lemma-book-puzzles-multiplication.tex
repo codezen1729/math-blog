@@ -97,6 +97,21 @@ FP&=\sqrt{A^2(\cos(kt)+k\sin(kt))^2+A^2(k\cos(kt)-\sin(kt))^2}
 \]
 We have $OF^2+OP^2=FP^2$, so $\angle FOP=\pi/2=90^\circ$. Q.E.D.!
 
+You are not supposed to do these bullshits: just put $t=0$ in $P(t)$ and $F(t)$.
+This gives $P(0)=A\hat\imath$ and $F(0)=-Ak\hat\jmath$.
+$P$ is along $X$, and $F$ is along $-Y$, so $\angle FOP=\pi/2$. Q.E.D.!
+Taken alone, this only checks the angle at $t=0$. For every $t$, however, the
+same conclusion follows immediately from
+\[
+\vec P(t)\cdot\vec F(t)
+=-A^2k\cos(kt)\sin(kt)+A^2k\sin(kt)\cos(kt)=0.
+\]
+
+You know what? You are not even supposed to play those dirty tricks.
+For this circular motion, $\vec a\cdot\vec v=0$, $\vec F=m\vec a$, and
+$\vec P=m\vec v$. Thus $\vec F\cdot\vec P=m^2\vec a\cdot\vec v=0$,
+giving $\vec F\perp\vec P$. Another Q.E.D.! Enough!
+
 % Source page 42 - left
 
 \paragraph{British Mathematical Olympiad (2014).}
@@ -111,6 +126,7 @@ Now
 +2\left(\frac1{lb}+\frac1{bh}+\frac1{hl}\right).\]
 Thus $1/4-1/2=-1/4=1/l^2+1/b^2+1/h^2<0$, a contradiction.
 
+\begin{quote}Common sense is like a deodorant: those who need it the most lack it!\end{quote}
 \paragraph{1. Proportional angles.}\leavevmode\par
 \begin{figure}[H]\centering
 \includegraphics[width=.78\linewidth]{lb1-fig-30.pdf}
@@ -118,15 +134,27 @@ Thus $1/4-1/2=-1/4=1/l^2+1/b^2+1/h^2<0$, a contradiction.
 \end{figure}
 Is $\triangle ABC\sim\triangle PQR$?
 You might be wondering: if the sides are proportional, the triangles are similar, but what if the angles are proportional?
-The proportionality condition is already enough.
+To tell you the reality, it's all a big dumbass!
 Since $\alpha+\beta+\gamma=180^\circ$ and $\alpha k+\beta k+\gamma k=180^\circ$, we have $k=1$.
 Thus the angles of $\triangle PQR$ are also $\alpha,\beta,\gamma$, so $\triangle ABC\sim\triangle PQR$.
 Q.E.D.!
 \paragraph{2. Solve the puzzle.}
 $1=5$, $2=25$, $3=325$, $4=4325$. Then $5={}?$
+\paragraph{3. Two digits.}
+Construct the smallest possible integer using just two digits.
+You know what? You can create a number as small as possible! But how?!
+
 % Source page 54 - left
 \paragraph{Answers.}
 2. If $1=5$, then $5=1$. Q.E.D.!
+
+The proposed answer is
+\[
+-\bigl[(9!!!!\cdots!)^{(9!!!!\cdots!)}\bigr].
+\]
+This is how it should be done!
+As written, however, ``the smallest possible integer'' has no answer: allowing
+unbounded factorials and exponents produces arbitrarily large negative integers.
 \subsection{Mission impossible}
 \paragraph{Compass-only midpoint.}
 Construct the midpoint of a line segment without using a ruler, but only a compass!
@@ -138,8 +166,8 @@ I will not tell you exactly what I did. Go figure it out for yourself!
 \paragraph{Equilateral triangle.}
 Inscribe an equilateral triangle inside an arbitrary triangle $ABC$. Challenge!
 \subsection{Marvellous methods of multiplication: triple M}
-\paragraph{The Egyptian method.}
-Suppose we want to multiply $11\times17$. The method proceeds as follows:
+\paragraph{The way Egyptian nerds did it!}
+Suppose you want to multiply $11\times17$. They do the following:
 \begin{center}
 \begin{tabular}{lrrrrl}
 Half sequence & $\boxed{11}$ & $\boxed5$ & $2$ & $\boxed1$ & $\lfloor n/2\rfloor$ in general\\
@@ -148,7 +176,7 @@ Double it & $17$ & $34$ & $68$ & $136$ & $2n$ in general
 \end{center}
 Identify the odd entries in the half sequence, and add the corresponding numbers from the double sequence.
 We have $11\mapsto17$, $5\mapsto34$, and $1\mapsto136$, so the sum is $17+34+136=187=11\times17$.
-Why does it work?
+Why does that bullshit work? Let's find out.
 Suppose we are interested in the product $N\times M$.
 \begin{center}
 \begin{tabular}{lrrrrrrr}
@@ -162,7 +190,21 @@ The product $N\times M$ equals $2^{\alpha_1}M+\cdots+2^{\alpha_n}M$.
 Each term $2^{\alpha_1}M,\ldots,2^{\alpha_n}M$ occurs in the double sequence.
 Adding precisely those terms gives the product $N\times M$.
 % Source page 55 - left
-The $n$th entry of the half sequence is $\lfloor N/2^n\rfloor$. Its parity is exactly the $n$th binary digit of $N$.
+Now notice the half sequence: its $n$th entry is of the form
+$\lfloor N/2^n\rfloor$. If $2^n$ is a part of the decomposition of $N$, then
+\[
+\begin{aligned}
+\left\lfloor\frac N{2^n}\right\rfloor
+&=\left\lfloor
+\frac{2^{a_1}+2^{a_2}+\cdots+2^{a_j}+2^n
+      +2^{b_1}+\cdots+2^{b_k}}{2^n}\right\rfloor\\
+&=2^{a_1-n}+\cdots+2^{a_j-n}+1,
+\end{aligned}
+\]
+where $a_i>n$ for all $i$, and $b_i<n$ for all $i$.
+The powers $2^{a_i-n}$ are even, while the terms with exponents $b_i<n$
+disappear upon taking the floor. Hence the displayed integer is odd.
+Its parity is exactly the $n$th binary digit of $N$.
 Thus $2^{\alpha_i}$ appears in the binary expansion of $N$ if and only if $\lfloor N/2^{\alpha_i}\rfloor$ is odd.
 The corresponding double-sequence entry is $2^{\alpha_i}M$.
 Adding all such terms gives $2^{\alpha_1}M+\cdots+2^{\alpha_n}M=N\times M$.
@@ -196,12 +238,33 @@ Place one of $+,-,\times,\div$ in each blank of $8\ \underline{\hspace{.5cm}}\ 8
 The answer, due to Shovan, is $(8\div8)+8=6$.
 Reading the equation upside down turns the final $6$ into a $9$, and the equality becomes correct.
 
+\paragraph{A trivial trick!}
+Solve in real numbers:
+\[
+x=\sqrt{x+2\sqrt{x+2\sqrt{x+2\sqrt{x+2\sqrt{3x}}}}}.
+\]
+Put $T_x(t)=\sqrt{x+2t}$. The innermost radical is $T_x(x)$, and the
+right-hand side is $T_x^{\circ5}(x)$. The map $T_x$ is increasing.
+If $0<x<3$, then $T_x(x)=\sqrt{3x}>x$, so
+$T_x^{\circ5}(x)>x$. If $x>3$, then $T_x(x)<x$, so
+$T_x^{\circ5}(x)<x$. Hence a nonnegative solution must be $x=0$ or $x=3$,
+and direct substitution shows that both work. Q.E.D.!
+
 \paragraph{A complex-power puzzle.}
-Is $(-1)^\pi$ positive or negative?
+I remember asking this question; why do not you fiddle with it too?
+Is $(-1)^\pi$ positive or negative? I hear you saying ``WTF!!!''
 % Source page 18 - right
-The answer depends on the chosen branch of the logarithm. With the principal logarithm,
+The answer was quite unexpected!
+The value depends on the chosen branch of the logarithm. With the principal logarithm,
 \[(-1)^\pi=\exp\bigl(\pi\operatorname{Log}(-1)\bigr)=e^{i\pi^2}
 =\cos(\pi^2)+i\sin(\pi^2),\]
 which is not real.
+
+There is another proof. Represent $\pi=a/b$, where $a,b$ are not necessarily finite:
+$\pi=(31415925\ldots)/10^\infty$. Since we cannot determine the last digit of $\pi$, we are done! Q.E.D.!
+This formal calculation is not a proof, since $10^\infty$ is not a number and
+exponentiation by a non-integer must first be defined by choosing a logarithm
+branch; it is precisely that choice which the principal-logarithm calculation
+above makes.
 % BLOG-CONTENT-END
 \end{document}
