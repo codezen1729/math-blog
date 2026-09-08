@@ -143,7 +143,7 @@ test('vector figures enlarge with consistent labels and drawing-specific canvas 
     assert.ok(width >= vectorFigureMinimum(src), src);
     if (!vectorFigureMinimum(src)) {
       const effectiveLabelSize = info.labelSizePx * width / info.displayWidth;
-      assert.ok(effectiveLabelSize >= 20 && effectiveLabelSize <= 21, `${src}: ${effectiveLabelSize}`);
+      assert.ok(effectiveLabelSize >= 20 && effectiveLabelSize <= 24, `${src}: ${effectiveLabelSize}`);
     }
   }
   for (const src of ['figures/complex-analysis/note6-fig-01.svg', 'figures/complex-analysis/note7-fig-03.svg', 'figures/quadratic-family/qf-fig-02.svg']) {

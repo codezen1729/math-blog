@@ -11,6 +11,7 @@ The author requested a further check and publication, followed by a specific che
 - Restored the original archived figure captions as fallback accessibility descriptions where the current post has no caption. Current captions and authored alternative text take precedence. The visible figure titles remain removed. The Abel polygon and elliptic-curve descriptions were checked against the supplied original `main.tex` files.
 - Corrected section, heading, footnote, and skip-link destinations so the site's shared asset base cannot redirect an article-local link to the front page. Added a static-page regression check for this behaviour.
 - Updated old thermodynamical-formalism topic bookmarks to the Ergodic Theory series, matching the author's earlier move. Clarified how the conservation approval gate affects subsequent Overleaf edits.
+- Synchronized a stale deployment copy of the figure-size test with the reviewed local test. Packaging now rejects mismatched local/publication test copies; figure preparation also precedes deployment's presentation checks.
 
 These final manuscript corrections do not change a mathematical expression, theorem, hypothesis, quantifier, or proof step. They are included in the passage ledger. The authorial-voice screen and full conservation report remain separate audit records, not mathematical certifications.
 

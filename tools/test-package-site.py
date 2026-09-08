@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -50,6 +51,23 @@ class SitePackageTests(unittest.TestCase):
                 self.skipTest("symbolic links unavailable")
             with self.assertRaisesRegex(ValueError, "Symbolic links"):
                 packaged_files(root, self.config())
+
+    def test_publication_checks_cannot_replace_different_local_tests(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "tools/site-checks").mkdir(parents=True)
+            (root / "website/scripts").mkdir(parents=True)
+            config = {"schema": 1, "source": "website", "archive": "site-source.zip", **self.config()}
+            (root / "tools/site-package.json").write_text(json.dumps(config))
+            local = root / "website/scripts/example.test.mjs"
+            publication = root / "tools/site-checks/example.test.mjs"
+            local.write_text("current test\n")
+            publication.write_text("stale test\n")
+            with self.assertRaisesRegex(ValueError, "Local and publication checks differ"):
+                MODULE.package(root)
+            publication.write_text(local.read_text())
+            self.assertTrue(MODULE.package(root))
+            self.assertTrue(MODULE.package(root, check=True))
 
 
 if __name__ == "__main__":

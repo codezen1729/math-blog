@@ -310,6 +310,8 @@ jobs:
       - name: Check formulas, figures and simulations
         working-directory: website
         run: |
+          node scripts/tighten-figures.mjs
+          node scripts/tighten-figures.mjs --check
           node scripts/check-content.mjs --public
           node --experimental-strip-types --test scripts/dynamics.test.mjs scripts/correspondence.test.mjs scripts/laboratory.test.mjs scripts/blog-routes.test.mjs
           if [ -f scripts/references.test.mjs ]; then node --test scripts/references.test.mjs; fi

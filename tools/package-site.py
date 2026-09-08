@@ -68,6 +68,10 @@ def package(root: Path = ROOT, *, check: bool = False) -> bool:
     archive = (root / config["archive"]).resolve()
     if not source.is_dir() or not source.is_relative_to(root.resolve()):
         raise ValueError("The configured website source is unavailable or unsafe")
+    for publication_check in (root / "tools/site-checks").glob("*.mjs"):
+        local_check = source / "scripts" / publication_check.name
+        if not local_check.is_file() or local_check.read_bytes() != publication_check.read_bytes():
+            raise ValueError(f"Local and publication checks differ: {publication_check.name}")
     expected = archive_bytes(source, config)
     if check:
         if not archive.is_file() or archive.read_bytes() != expected:
