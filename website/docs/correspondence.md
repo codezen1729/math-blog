@@ -61,7 +61,9 @@ A module worker computes one shared grid for three colour layers. Parameter, res
 
 `scripts/correspondence.test.mjs` checks algebra, reciprocal convention, critical points, inverse roots, the conservative boundary band, infinity semantics, iteration exhaustion, symmetry, six lifted tile sectors, interface construction, input limits, accessible formula rendering and workbench inclusion. Existing quadratic-explorer and blog tests remain unchanged. No manuscript or generated blog-post wording is modified by this feature.
 
-## Additive algebraic modes beyond the round model
+## Archived algebraic experiments — not exposed on the website
+
+At the author's request, the public Laboratory now mounts only the original round-model explorer above, with −3/5 ≤ c ≤ 3/5. The post-pinching and ramified mode selector, explanatory banner, and algebraic explorer import have been removed from the public entry point. The experimental numerical source and its tests are retained for reference; the following section describes that inactive experiment, not the published interface.
 
 The original implementation above remains Mode A and is deliberately unchanged. Its exterior inverse, tile-entry test, and the terms *tiling set*, *non-escaping set*, and *limit set* are not reused by the new kernels outside the verified round model. The additional calculations use the ambient algebraic correspondence and answer finite numerical questions only.
 

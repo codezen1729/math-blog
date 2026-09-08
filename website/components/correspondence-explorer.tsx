@@ -1,7 +1,7 @@
 'use client';
 
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Two-dimensional plots provide application-style keyboard interaction. */
-import { lazy, Suspense, useEffect, useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { KeyboardEvent } from 'react';
 import katex from 'katex';
 import { Minus, Plus, RotateCcw } from 'lucide-react';
@@ -165,21 +165,6 @@ export function VerifiedRoundCorrespondenceExplorer() {
   </section>;
 }
 
-const AlgebraicCorrespondenceExplorer = lazy(() => import('@/components/algebraic-correspondence-explorer'));
-
 export function CorrespondenceExplorer() {
-  const [mode, setMode] = useState<'verified-round' | 'post-pinching' | 'ramified'>('verified-round');
-  return <section className="correspondence-suite" aria-labelledby="correspondence-suite-title">
-    <header className="correspondence-suite-heading">
-      <div><span className="kicker">Three mathematical regimes</span><h2 id="correspondence-suite-title">A Family of Correspondences</h2></div>
-      <div className="correspondence-mode-selector" role="group" aria-label="Correspondence model">
-        <Button variant="outline" aria-pressed={mode === 'verified-round'} onClick={() => setMode('verified-round')}>Verified round model</Button>
-        <Button variant="outline" aria-pressed={mode === 'post-pinching'} onClick={() => setMode('post-pinching')}>Post-pinching branches</Button>
-        <Button variant="outline" aria-pressed={mode === 'ramified'} onClick={() => setMode('ramified')}>Ramified exploration</Button>
-      </div>
-    </header>
-    {mode === 'verified-round'
-      ? <><div className="algebraic-regime"><strong>Verified round model</strong><span>The established univalent model for −3/5 ≤ c ≤ 3/5.</span></div><VerifiedRoundCorrespondenceExplorer /></>
-      : <Suspense fallback={<p className="article-loading">Opening the all-branch experiment…</p>}><AlgebraicCorrespondenceExplorer mode={mode} /></Suspense>}
-  </section>;
+  return <VerifiedRoundCorrespondenceExplorer />;
 }

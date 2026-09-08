@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import katex from 'katex';
-import { correspondenceR as R, correspondenceDerivative, reflectedR, correspondenceCriticalPoints, createTileBoundary, locateFundamentalTile, exteriorInverse, classifyMating, classifyCorrespondence, renderCorrespondenceGrid, CORRESPONDENCE_VIEW, TILING, NON_ESCAPING, UNRESOLVED } from '../lib/correspondence.ts';
+import { correspondenceR as R, correspondenceDerivative, reflectedR, correspondenceCriticalPoints, createTileBoundary, locateFundamentalTile, exteriorInverse, classifyMating, classifyCorrespondence, renderCorrespondenceGrid, CORRESPONDENCE_VIEW, MIN_C, MAX_C, TILING, NON_ESCAPING, UNRESOLVED } from '../lib/correspondence.ts';
 import { correspondenceColour, describeCorrespondencePoint, CORRESPONDENCE_FORMULA, CORRESPONDENCE_RELATION } from '../lib/correspondence-display.ts';
 
 const cs = [-.6, -.5, -.25, 0, .25, .5, .6];
@@ -162,12 +162,12 @@ test('the exact pinching endpoints retain their boundary contacts', () => {
   }
 });
 
-test('the Laboratory visibly separates verified, post-pinching and ramified regimes', () => {
+test('the public Laboratory exposes only the original round-model correspondence', () => {
   const suite=readFileSync(new URL('../components/correspondence-explorer.tsx',import.meta.url),'utf8');
-  const algebraic=readFileSync(new URL('../components/algebraic-correspondence-explorer.tsx',import.meta.url),'utf8');
-  for(const label of ['Verified round model','Post-pinching branches','Ramified exploration','Pinched limit']) assert.match(suite,new RegExp(label));
-  for(const panel of ['Circle image and winding cells','Five correspondence images','Finite orbit tree','Finite-depth branch survival']) assert.match(algebraic,new RegExp(panel));
-  assert.match(algebraic,/No mating|RAMIFIED_MODE_CAUTION/);
-  assert.match(algebraic,/Node cap 5,000/);
-  assert.match(algebraic,/deduplication tolerance/);
+  assert.match(suite,/export function CorrespondenceExplorer\(\)\s*\{\s*return <VerifiedRoundCorrespondenceExplorer \/>;/);
+  assert.doesNotMatch(suite,/Post-pinching branches|Ramified exploration|Three mathematical regimes|AlgebraicCorrespondenceExplorer|correspondence-mode-selector/);
+  assert.match(suite,/Pinched limit/);
+  assert.match(suite,/min=\{MIN_C\} max=\{MAX_C\}/);
+  assert.equal(MIN_C,-0.6);
+  assert.equal(MAX_C,0.6);
 });
