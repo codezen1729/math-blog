@@ -77,6 +77,7 @@ PLACEHOLDER_PATTERNS = (
     ("review", "normalization-gap", re.compile(r"\bafter\s+suitable\s+normalization\b", re.I)),
     ("review", "editorial-revisit", re.compile(r"\b(?:revisit|unclear)\b", re.I)),
     ("review", "remaining-argument", re.compile(r"\bremaining\s+argument\b", re.I)),
+    ("review", "domain-qualification", re.compile(r"\bif\s+defined\b", re.I)),
     ("review", "cut-off", re.compile(r"\b(?:text|argument|proof)\s+(?:is\s+)?cut\s+off\b", re.I)),
 )
 
@@ -418,6 +419,31 @@ def placeholder_findings(records: dict[str, dict], slug_by_file: dict[str, str])
     return findings
 
 
+def literal_formula_placeholders(records: dict[str, dict], slug_by_file: dict[str, str]) -> list[dict]:
+    """Catch algebraic stand-ins, not ordinary discussion of lifting a map.
+
+    This narrow publication blocker is separate from the broad review warnings:
+    an intentional exercise or an explicitly acknowledged gap is not a literal
+    formula placeholder merely because it mentions an unfinished proof.
+    """
+    findings = []
+    pattern = re.compile(r"\banything\b|\(\s*lift\s*\)", re.I)
+    for identifier, record in sorted(records.items()):
+        cursor = 0
+        for atom in math_atoms(record["source"]):
+            start = record["source"].find(atom.source, cursor)
+            cursor = start + len(atom.source)
+            for match in pattern.finditer(mask_comments(atom.source)):
+                findings.append({
+                    "post": slug_by_file.get(record["currentFile"], record["currentFile"]),
+                    "file": record["currentFile"], "passageId": identifier,
+                    "line": record.get("originalStartLine", 1) + record["source"][:start + match.start()].count("\n"),
+                    "scope": "visible", "severity": "blocking", "category": "literal-formula-placeholder",
+                    "phrase": match.group(0), "excerpt": _excerpt(atom.source),
+                })
+    return findings
+
+
 def _split_link(value: str, expected: int) -> list[str]:
     parts = value.split("\0")
     return (parts + [""] * expected)[:expected]
@@ -516,6 +542,9 @@ def build_link_graph(manifest: list[dict], records: dict[str, dict]) -> dict:
 
 def _theorem_title(source: str) -> str | None:
     clean = mask_comments(source)
+    heading = re.search(r"\\(?:sub)*section\*?\s*\{((?:Theorem|Lemma|Proposition|Corollary|Claim|Conjecture)\b[^{}]*)\}", clean, re.I)
+    if heading:
+        return re.sub(r"\s+", " ", heading.group(1)).strip()
     match = re.search(
         r"\\begin\{(?:theorem|thm|lemma|lem|proposition|prop|corollary|cor|claim|cl|conjecture|thmx)\}"
         r"\s*\[([^\]]+)\]",
@@ -550,10 +579,34 @@ def _proof_disposition(statement: dict, following: list[dict]) -> tuple[str, str
     if POSTPONED.search(clean):
         return "postponed", "explicit postponement wording", refs
     if PROOF_HEADING.search(clean) or any(record.get("kind") in PROOF_KINDS for record in following[:2]):
-        return "proved", "adjacent explicit proof block or heading", refs
+        return "proof-present", "explicit proof text is present; correctness has not been certified", refs
     if refs and CITATION_CUE.search(clean):
         return "cited", "explicit reference with a citation cue", refs
     return "unclassified", "no conservative automatic classification", refs
+
+
+STATEMENT_START = re.compile(
+    r"\\begin\{(?P<environment>theorem|thm|lemma|lem|proposition|prop|corollary|cor|claim|cl|conjecture|thmx)\*?\}|"
+    r"\\(?:sub)*section\*?\s*\{(?P<heading>Theorem|Lemma|Proposition|Corollary|Claim|Conjecture)\b[^{}]*\}",
+    re.I,
+)
+
+
+def _audit_statement_slices(record: dict) -> list[dict]:
+    """Inventory legacy headings and multiple statements without editing source passages."""
+    source = record["source"]
+    starts = list(STATEMENT_START.finditer(mask_comments(source)))
+    if not starts:
+        return [record]
+    output = []
+    if starts[0].start():
+        output.append({**record, "source": source[:starts[0].start()], "kind": "prose", "auditOffset": 0})
+    for index, match in enumerate(starts):
+        end = starts[index + 1].start() if index + 1 < len(starts) else len(source)
+        excerpt = source[match.start():end]
+        output.append({**record, "source": excerpt, "kind": (match.group("environment") or match.group("heading")).lower(),
+                       "auditOffset": match.start(), "labels": [args[0] for args in command_arguments(excerpt, "label")]})
+    return output
 
 
 def build_proof_maps(
@@ -568,9 +621,9 @@ def build_proof_maps(
     for record in records.values():
         slug = slug_by_file.get(record["currentFile"])
         if slug in reasons:
-            records_by_slug[slug].append(record)
+            records_by_slug[slug].extend(_audit_statement_slices(record))
     for values in records_by_slug.values():
-        values.sort(key=lambda record: (record.get("currentOrdinal", 0), record["id"]))
+        values.sort(key=lambda record: (record.get("currentOrdinal", 0), record["id"], record.get("auditOffset", 0)))
     findings_by_slug: dict[str, list[dict]] = defaultdict(list)
     for finding in findings:
         findings_by_slug[finding["post"]].append(finding)
@@ -594,8 +647,9 @@ def build_proof_maps(
                 if len(following) == 2:
                     break
             status, evidence, refs = _proof_disposition(record, following)
-            if status == "proved":
-                proof_passage_ids.update(candidate["id"] for candidate in following if candidate.get("kind") == "proof" or PROOF_HEADING.search(mask_comments(candidate["source"])))
+            proof_candidates = [record] + following
+            if status == "proof-present":
+                proof_passage_ids.update(candidate["id"] for candidate in proof_candidates if candidate.get("kind") == "proof" or PROOF_HEADING.search(mask_comments(candidate["source"])))
             conclusion = _excerpt(mask_comments(record["source"]))
             theorem_id = "theorem-" + sha256(record["id"] + conclusion)[:16]
             theorems.append({
@@ -606,6 +660,10 @@ def build_proof_maps(
                 "line": record.get("originalStartLine"),
                 "labels": record.get("labels", []),
                 "statementExcerpt": conclusion,
+                "sourceSlice": record["source"],
+                "sourceSliceSha256": sha256(record["source"]),
+                "offsetWithinPassage": record.get("auditOffset", 0),
+                "proofEvidencePassages": list(dict.fromkeys(candidate["id"] for candidate in proof_candidates if candidate.get("kind") == "proof" or PROOF_HEADING.search(mask_comments(candidate["source"])))),
                 "hypotheses": [],
                 "intermediateClaims": refs,
                 "conclusion": {"text": conclusion, "source": "theorem statement"},
@@ -636,14 +694,16 @@ def build_proof_maps(
             "summary": dict(sorted(Counter(theorem["proofDisposition"] for theorem in theorems).items())),
         })
     result = {
-        "schema": 1,
+        "schema": 2,
         "auditOnly": True,
         "warning": (
             "Automatic classifications reflect only explicit nearby TeX evidence. "
             "Unclassified does not mean missing; genuinely-missing requires explicit gap wording. "
-            "Hypotheses and intermediate claims require author decomposition."
+            "Proof-present means a proof was located, not verified. Legacy theorem headings and multiple statements "
+            "within a passage are inventoried separately. Hypotheses and intermediate claims still require manual mathematical review."
         ),
-        "classifications": ["proved", "cited", "postponed", "genuinely-missing", "unclassified"],
+        "classifications": ["proof-present", "cited", "postponed", "genuinely-missing", "unclassified"],
+        "manualReviewComplete": False,
         "posts": posts,
     }
     result["sha256"] = sha256(stable_json(result))
@@ -711,7 +771,7 @@ def build_review_model(
             "after": after["source"],
             "diff": unified_diff(before["source"] if before else "", after["source"], identifier) if changed else "",
         })
-    findings = placeholder_findings(current, slug_by_file)
+    findings = placeholder_findings(current, slug_by_file) + literal_formula_placeholders(current, slug_by_file)
     per_post = []
     reviews_by_post: dict[str, list[dict]] = defaultdict(list)
     for review in passage_reviews:
@@ -905,6 +965,8 @@ def render_report(model: dict, link_graph: dict, proof_maps: dict, voice_drift: 
     ])
     for status in proof_maps["classifications"]:
         lines.append(f"- `{status}`: {disposition[status]}")
+    lines.extend(["", "These are source-evidence classifications, not completed hypothesis-to-conclusion proof maps. "
+                  "`proof-present` does not certify a proof. Manual decomposition remains outstanding and must not be reported as complete.", ""])
     lines.extend(["", "Full audit structures are in `internal-link-graph.json`, `proof-integrity-maps.json`, and `voice-drift.json`.", ""])
     return "\n".join(lines)
 
@@ -934,9 +996,20 @@ def _serialized(report: str, graph: dict, proofs: dict, voice: dict) -> dict[Pat
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="verify committed artifacts without writing")
+    parser.add_argument("--public", action="store_true", help="also reject literal formula placeholders and visible TODO/TBD/FIXME markers")
     args = parser.parse_args()
     report, graph, proofs, voice = generate()
     artifacts = _serialized(report, graph, proofs, voice)
+    if args.public:
+        records, _ = current_records()
+        slug_by_file = {item["file"]: item["slug"] for item in load_manifest()}
+        blockers = literal_formula_placeholders(records, slug_by_file) + [
+            item for item in placeholder_findings(records, slug_by_file)
+            if item["category"] == "editorial-marker" and item["scope"] == "visible"
+        ]
+        if blockers:
+            print("Unresolved literal placeholders block publication: " + ", ".join(item["passageId"] for item in blockers), file=sys.stderr)
+            return 1
     if args.check:
         stale = [str(path.relative_to(ROOT)) for path, content in artifacts.items() if not path.exists() or path.read_text() != content]
         if stale:

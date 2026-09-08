@@ -52,7 +52,7 @@ type Post = {
 };
 
 type FullPost = Post & { html: string; mathMacros?: Record<string, string> };
-type SearchRecord = { slug: string; title: string; series: string; headings: string[]; theoremNames: string[]; text: string };
+type SearchRecord = { slug: string; title: string; series: string; headings: string[]; theoremNames: string[]; figureDescriptions?: string[]; text: string };
 
 type TocItem = { id: string; text: string; level: number };
 
@@ -208,13 +208,16 @@ function SearchPanel({ open, setOpen }: { open: boolean; setOpen: (value: boolea
         + (headings.includes(term) || theoremNames.includes(term) ? 5 : 0)
         + (seriesName.includes(term) ? 3 : 0)
         + (body.includes(term) ? 1 : 0), 0);
+      const figure = record.figureDescriptions?.find(description => terms.every(term => description.toLowerCase().includes(term)));
+      const snippetText = figure || record.text;
+      const snippetLower = snippetText.toLowerCase();
       const first = Math.max(0, Math.min(...terms.map(term => {
-        const found = body.indexOf(term);
-        return found < 0 ? body.length : found;
+        const found = snippetLower.indexOf(term);
+        return found < 0 ? snippetLower.length : found;
       })) - 75);
-      const start = first > 0 ? record.text.indexOf(' ', first) + 1 : 0;
-      const raw = record.text.slice(start, start + 210).trim();
-      const snippet = `${start > 0 ? '…' : ''}${raw}${start + 210 < record.text.length ? '…' : ''}`;
+      const start = first > 0 ? snippetText.indexOf(' ', first) + 1 : 0;
+      const raw = snippetText.slice(start, start + 210).trim();
+      const snippet = `${figure ? 'Figure: ' : ''}${start > 0 ? '…' : ''}${raw}${start + 210 < snippetText.length ? '…' : ''}`;
       return {post, snippet, score};
     }).filter((item): item is {post: Post; snippet: string; score: number} => Boolean(item))
       .sort((a, b) => b.score - a.score || a.post.order - b.post.order)
@@ -237,7 +240,7 @@ function SearchPanel({ open, setOpen }: { open: boolean; setOpen: (value: boolea
           <DialogDescription>Find an essay by idea, theorem, or branch of mathematics.</DialogDescription>
         </DialogHeader>
         <div className="search-field-wrap"><Search aria-hidden="true" /><Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try “Riemann”, “entropy”, or “bundles”…" aria-label="Search essays" /></div>
-        <p className="sr-only" aria-live="polite">{query && index ? `${results.length} search results` : ''}</p>
+        <p className="sr-only" aria-live="polite">{query && index ? `${results.length} search ${results.length === 1 ? 'result' : 'results'}` : ''}</p>
         <div ref={resultsRef} className="search-results" aria-label="Search results" onKeyDown={moveFocus}>
           {results.map(({post, snippet}) => (
             <a key={post.slug} href={routeHref(`post/${post.slug}`)} onClick={() => setOpen(false)}>
@@ -259,13 +262,26 @@ function excerptFor(post: Post) {
   return renderMathFragments(post.excerptHtml || '', post.mathMacros);
 }
 
+function SidebarDisclosure({ title, className = '', children }: { title: string; className?: string; children: ReactNode }) {
+  const [open, setOpen] = useState(true);
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 850px)');
+    const sync = () => setOpen(!media.matches);
+    sync(); media.addEventListener('change', sync);
+    return () => media.removeEventListener('change', sync);
+  }, []);
+  return <details className={`journal-disclosure ${className}`} open={open} onToggle={event => setOpen(event.currentTarget.open)}>
+    <summary><h2>{title}</h2></summary>{children}
+  </details>;
+}
+
 function BlogSidebar({ active }: { active?: typeof series[number] }) {
   const entries = active ? essays.filter(post => post.phase === active.phase) : [];
   return <aside className="journal-sidebar">
     <section><h2>Search</h2><Button className="journal-search-button" variant="outline" onClick={() => window.dispatchEvent(new Event('open-site-search'))}><span>Search the blog</span><Search aria-hidden="true" /></Button></section>
     <section><h2>Topics</h2><ul className="journal-topics"><li><a href={routeHref('blog')} aria-current={!active ? 'page' : undefined}>All posts <span>{essays.length}</span></a></li>{series.map(item => <li key={item.slug}><a href={routeHref(`series/${item.slug}`)} aria-current={active?.slug === item.slug ? 'page' : undefined}>{item.title}<span>{essays.filter(post => post.phase === item.phase).length}</span></a></li>)}</ul></section>
-    {active && <section className="journal-series"><h2>In this series</h2><ol className="journal-contents">{entries.map(post => <li key={post.slug}><a href={routeHref(`post/${post.slug}`)}>{post.title}</a></li>)}</ol></section>}
-    <section><h2>Blog Recommendations</h2><ul className="journal-topics journal-blogroll">{recommendations.map(recommendation => <li key={recommendation.url}><a href={recommendation.url} target="_blank" rel="noopener noreferrer">{recommendation.title}</a></li>)}</ul></section>
+    {active && <SidebarDisclosure className="journal-series" title="In this series"><ol className="journal-contents">{entries.map(post => <li key={post.slug}><a href={routeHref(`post/${post.slug}`)}>{post.title}</a></li>)}</ol></SidebarDisclosure>}
+    <SidebarDisclosure title="Blog Recommendations"><ul className="journal-topics journal-blogroll">{recommendations.map(recommendation => <li key={recommendation.url}><a href={recommendation.url} target="_blank" rel="noopener noreferrer">{recommendation.title}</a></li>)}</ul></SidebarDisclosure>
   </aside>;
 }
 

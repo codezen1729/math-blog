@@ -14,7 +14,7 @@ The changed-token ratio is `(deleted + inserted) / (baseline tokens + current to
 - Passages with mathematical payload changes: **18**
 - Added `BlogPost`/`BlogPostAt` links: **70**
 - Pending changed-passage approvals: **0**
-- Unresolved/placeholder findings: **28**
+- Unresolved/placeholder findings: **29**
 - Internal links: **98**; broken targets: **0**; broken exact labels: **0**
 
 ## Per-post summary
@@ -67,7 +67,7 @@ The changed-token ratio is `(deleted + inserted) / (baseline tokens + current to
 | `quasiconformal-mappings` | 12 | 4 | 0 | 0.0029 | 1 | 2 | 0 | 0 |
 | `the-mapping-theorem-and-invariant-complex-structures` | 19 | 2 | 0 | 0.0023 | 0 | 1 | 0 | 0 |
 | `boundary-behaviour-of-quasiconformal-maps` | 8 | 4 | 0 | 0.0031 | 0 | 1 | 0 | 0 |
-| `the-quadratic-family` | 24 | 5 | 0 | 0.0031 | 0 | 2 | 0 | 0 |
+| `the-quadratic-family` | 24 | 5 | 0 | 0.0031 | 0 | 2 | 0 | 1 |
 | `conformal-welding` | 6 | 1 | 0 | 0.0069 | 0 | 1 | 0 | 0 |
 | `shishikuras-surgery-principles` | 5 | 1 | 0 | 0.0027 | 0 | 1 | 0 | 0 |
 | `polynomial-like-maps-and-the-straightening-theorem` | 10 | 2 | 0 | 0.0017 | 0 | 1 | 0 | 1 |
@@ -423,6 +423,7 @@ No moved passages detected.
 - **review** `rational-dynamics-on-the-riemann-sphere` `rational-dynamics-on-the-riemann-sphere:p0005` line 84 (visible, deferred-proof): `We shall prove` — deal separately with periodic orbits of different periods. We shall prove theorems for fixed points and expect the reader to extend the argument to their favourite iterate of $f$. As far as we are concerned, our study,…
 - **review** `second-surgery` `second-surgery:p0001` line 1 (visible, deferred-proof): `We shall prove` — r2014quasiconformal}, \cite{MR812271}, and \cite{MR762431}. We shall prove the following theorem.
 - **review** `smooth-covering-manifolds` `smooth-covering-manifolds:p0005` line 112 (visible, deferred-proof): `we shall prove` — s, which is used throughout submanifold theory. Here is how we shall prove that $E$ is second countable.
+- **review** `the-quadratic-family` `the-quadratic-family:p0021` line 354 (visible, domain-qualification): `if defined` — Hence, if defined,
 
 ## Passage-level before/after review
 
@@ -14796,12 +14797,15 @@ Protected-payload changes:
 
 ## Proof-integrity screening summary
 
-Sensitive posts screened: **32**. Explicit theorem-like passages: **116**.
+Sensitive posts screened: **32**. Explicit theorem-like passages: **225**.
 
-- `proved`: 16
+- `proof-present`: 38
 - `cited`: 9
 - `postponed`: 0
 - `genuinely-missing`: 5
-- `unclassified`: 86
+- `unclassified`: 173
+
+These are source-evidence classifications, not completed hypothesis-to-conclusion proof maps. `proof-present` does not certify a proof. Manual decomposition remains outstanding and must not be reported as complete.
+
 
 Full audit structures are in `internal-link-graph.json`, `proof-integrity-maps.json`, and `voice-drift.json`.

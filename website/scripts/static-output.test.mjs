@@ -7,6 +7,7 @@ const root = new URL('../dist-pages/', import.meta.url).pathname;
 const posts = JSON.parse(readFileSync(new URL('../lib/generated-posts.json', import.meta.url), 'utf8'));
 const indexPosts = JSON.parse(readFileSync(new URL('../lib/generated-post-index.json', import.meta.url), 'utf8'));
 const search = JSON.parse(readFileSync(new URL('../public/search-index.json', import.meta.url), 'utf8'));
+const figureDescriptions = JSON.parse(readFileSync(new URL('../lib/figure-descriptions.json', import.meta.url), 'utf8'));
 const series = ['k-theory','dynamics','surfaces-and-curves','standard-tools','commutative-algebra','ergodic-theory','lemma-book','miscellaneous'];
 const page = relative => readFileSync(join(root, relative, 'index.html'), 'utf8');
 const decode = value => value.replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&#x([0-9a-f]+);/gi,(_,n)=>String.fromCodePoint(Number.parseInt(n,16))).replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number.parseInt(n,10)));
@@ -43,6 +44,10 @@ test('previews, search, feed and sitemap derive from the same article records', 
     const record = search.find(item => item.slug === post.slug);
     assert.ok(record?.text.length > plain(post.excerptHtml).length, post.slug);
     assert.ok(record.text.startsWith(plain(post.html).slice(0, 40)), post.slug);
+    const expectedDescriptions = [...new Set([...post.html.matchAll(/<img\b[^>]*src="([^"]+)"/gi)]
+      .map(match => figureDescriptions[decode(match[1])]).filter(Boolean))];
+    assert.deepEqual(record.figureDescriptions, expectedDescriptions, `${post.slug}: figure descriptions missing from search`);
+    for (const description of expectedDescriptions) assert.ok(record.text.includes(description), `${post.slug}: description is not searchable`);
   }
   const feed = readFileSync(join(root, 'rss.xml'), 'utf8');
   const sitemap = readFileSync(join(root, 'sitemap.xml'), 'utf8');
@@ -69,6 +74,16 @@ test('static articles have accessible structure and contextual image description
       assert.ok(image[1].trim().length > 12, post.slug);
       assert.doesNotMatch(image[1], /^(?:image|figure)(?:\s+\d+)?$/i, post.slug);
     }
+  }
+});
+
+test('sidebar disclosures keep Topics, this series, and recommendations in the requested order', () => {
+  for (const slug of series) {
+    const html = page(`series/${slug}`);
+    assert.ok(html.indexOf('<h2>Topics</h2>') < html.indexOf('<h2>In this series</h2>'), slug);
+    assert.ok(html.indexOf('<h2>In this series</h2>') < html.indexOf('<h2>Blog Recommendations</h2>'), slug);
+    assert.match(html, /<details class="journal-disclosure journal-series" open><summary><h2>In this series<\/h2><\/summary>/);
+    assert.match(html, /<details class="journal-disclosure" open><summary><h2>Blog Recommendations<\/h2><\/summary>/);
   }
 });
 
@@ -111,4 +126,13 @@ test('legacy hashes are redirected by every static shell', () => {
     assert.match(html, /page\+='\/page\/'\+number/);
     assert.match(html, /tracks\[track\.toLowerCase\(\)\.trim\(\)\]/);
   }
+});
+
+test('CSS generation uses explicit application sources in both local and packaged builds', () => {
+  const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
+  assert.match(css, /@import 'tailwindcss' source\(none\);/);
+  for (const path of ['./', '../components', '../pages', '../lib/*.ts', '../index.html', '../scripts/generate-static-pages.mjs']) {
+    assert.ok(css.includes(`@source '${path}';`), path);
+  }
+  assert.doesNotMatch(css, /@source ['"]\.\.\/['"]/);
 });

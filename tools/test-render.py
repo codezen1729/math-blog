@@ -13,6 +13,7 @@ from render import (
     normalize_heading_hierarchy,
     prepare_preview_marker,
     split_rendered_preview,
+    search_record,
 )
 from latex_to_web import clean_tex
 
@@ -73,6 +74,23 @@ class PostTitleTests(unittest.TestCase):
 
 
 class WebTypesettingTests(unittest.TestCase):
+    def test_search_includes_only_this_articles_figures_without_changing_its_opening(self):
+        fragment = '<h2>Tool 2</h2><p>The original opening.</p><img src="figures/a&amp;b.svg"><img src="figures/a&amp;b.svg">'
+        post = {"slug": "example", "title": "Example", "phaseLabel": "Tools", "html": fragment}
+        record = search_record(post, {
+            "figures/a&b.svg": "A polygon with opposite edges identified.",
+            "figures/other.svg": "An unrelated diagram.",
+        })
+        self.assertEqual(record["text"], "Tool 2 The original opening. A polygon with opposite edges identified.")
+        self.assertEqual(record["figureDescriptions"], ["A polygon with opposite edges identified."])
+        self.assertEqual(record["headings"], ["Tool 2"])
+        self.assertEqual(post["html"], fragment)
+
+    def test_search_without_figures_keeps_complete_article(self):
+        post = {"slug": "example", "title": "Example", "phaseLabel": "Tools", "html": "<p>First.</p><p>Last.</p>"}
+        self.assertEqual(search_record(post, {})["text"], "First. Last.")
+        self.assertEqual(search_record(post, {})["figureDescriptions"], [])
+
     def test_original_mathematical_caption_survives_as_a_description(self):
         posts = [{"html": '<figure><img src="figures/polygon.svg"><figcaption>'
                   '<span class="math inline">\\(P\\)</span> represents the surface.'

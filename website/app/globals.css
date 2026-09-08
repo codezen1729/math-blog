@@ -1,6 +1,15 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
+
+/* The same explicit inputs are scanned locally and in the unpacked release.
+   Do not scan review notes, build output, or files selected by .gitignore. */
+@source './';
+@source '../components';
+@source '../pages';
+@source '../lib/*.ts';
+@source '../index.html';
+@source '../scripts/generate-static-pages.mjs';
 
 @font-face { font-family: 'Montserrat'; font-weight: 700; font-style: normal; font-display: swap; src: url('../public/fonts/montserrat-700.ttf') format('truetype'); }
 @font-face { font-family: 'Montserrat'; font-weight: 800; font-style: normal; font-display: swap; src: url('../public/fonts/montserrat-800.ttf') format('truetype'); }
@@ -773,6 +782,11 @@ img { display: block; max-width: 100%; }
 .journal-read-more { display: inline-block; margin-top: 2px; font: 14px/1.6 Georgia,serif; }
 .journal-sidebar { color: #5e6870; font: 12px/1.55 'Open Sans',Arial,sans-serif; grid-column: 2; grid-row: 1; }
 .journal-sidebar section { margin-bottom: 30px; }
+.journal-disclosure { margin-bottom: 30px; }
+.journal-disclosure summary { cursor: pointer; color: #444; padding: 10px 0; border-bottom: 1px solid #dedede; }
+.journal-disclosure summary h2 { display: inline; border: 0; padding: 0; margin: 0; }
+.journal-disclosure[open] summary { margin-bottom: 13px; }
+.journal-disclosure summary:focus-visible { outline: 2px solid #235677; outline-offset: 3px; }
 .journal-sidebar h2 { margin: 0 0 13px; padding-bottom: 9px; border-bottom: 1px solid #dedede; color: #444; font: 700 13px/1.4 'Open Sans',Arial,sans-serif; }
 .journal-search-button { width: 100%; min-height: 35px; justify-content: space-between; border-color: #cfcfcf; border-radius: 2px; color: #888; font-size: 11px; background: white; box-shadow: none; }
 .journal-search-button svg { width: 14px; height: 14px; }
@@ -821,7 +835,9 @@ img { display: block; max-width: 100%; }
 }
 @media (max-width: 850px) {
   .journal-columns { grid-template-columns: minmax(0,1fr); gap: 36px; }
-  .journal-sidebar { display: grid; grid-column: 1; grid-row: 1; grid-template-columns: 1fr 1fr; gap: 25px; padding-bottom: 25px; border-bottom: 1px solid #ddd; }
+  .journal-sidebar { display: grid; grid-column: 1; grid-row: 1; grid-template-columns: 1fr; gap: 12px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
+  .journal-sidebar section, .journal-sidebar .journal-disclosure { margin-bottom: 0; }
+  .journal-sidebar .journal-disclosure summary { min-height: 44px; }
   .journal-feed { grid-column: 1; grid-row: 2; }
   .journal-sidebar section:first-child { grid-column: 1 / -1; max-width: 320px; }
   .article-layout { display: flex; flex-direction: column; }

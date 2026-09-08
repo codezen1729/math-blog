@@ -288,7 +288,7 @@ jobs:
         run: |
           python3 tools/test-editorial-conservation.py
           python3 tools/test_editorial_review.py
-          python3 tools/editorial_review.py --check
+          python3 tools/editorial_review.py --check --public
           python3 tools/editorial_conservation.py --public --report-json /tmp/editorial-conservation.json
           if [ -f tools/test-references.py ]; then python3 tools/test-references.py; fi
           if [ -f tools/test-render.py ]; then python3 tools/test-render.py; fi

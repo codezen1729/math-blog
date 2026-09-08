@@ -149,13 +149,26 @@ class ReviewModelTests(unittest.TestCase):
         self.assertIn("+New $y$.", markdown)
 
     def test_placeholder_scan_is_conservative(self) -> None:
-        ordinary = record("a:p0001", "a.tex", 1, "Lift anything if defined.")
+        ordinary = record("a:p0001", "a.tex", 1, "Lift anything using this covering map.")
         marked = record("a:p0002", "a.tex", 2, "% TODO: verify.\nFill in the gaps.")
         findings = review.placeholder_findings(
             {ordinary["id"]: ordinary, marked["id"]: marked}, {"a.tex": "a"},
         )
         self.assertEqual({finding["scope"] for finding in findings}, {"comment", "visible"})
         self.assertFalse(any(finding["passageId"] == ordinary["id"] for finding in findings))
+
+    def test_domain_qualification_is_a_review_warning_not_a_formula_blocker(self) -> None:
+        value = record("a:p0001", "a.tex", 1, "Hence, if defined, $f(x)=y$.")
+        findings = review.placeholder_findings({value["id"]: value}, {"a.tex": "a"})
+        self.assertEqual([(x["category"], x["severity"]) for x in findings], [("domain-qualification", "review")])
+        self.assertEqual(review.literal_formula_placeholders({value["id"]: value}, {"a.tex": "a"}), [])
+
+    def test_literal_formula_placeholders_cannot_hide_among_legitimate_lifting_prose(self) -> None:
+        source = "Lift anything here.\n% $h=(anything)$ is an old source comment.\n" + r"\[h=(anything)\circ (lift).\]"
+        value = record("a:p0001", "a.tex", 1, source)
+        findings = review.literal_formula_placeholders({value["id"]: value}, {"a.tex": "a"})
+        self.assertEqual([x["phrase"] for x in findings], ["anything", "(lift)"])
+        self.assertTrue(all(x["line"] == 12 and x["severity"] == "blocking" for x in findings))
 
 
 class ProofMapTests(unittest.TestCase):
@@ -176,8 +189,23 @@ class ProofMapTests(unittest.TestCase):
             manifest, {value["id"]: value for value in fixtures}, [],
         )
         statuses = [item["proofDisposition"] for item in proof_maps["posts"][0]["theorems"]]
-        self.assertEqual(statuses, ["proved", "postponed", "cited", "genuinely-missing", "unclassified"])
+        self.assertEqual(statuses, ["proof-present", "postponed", "cited", "genuinely-missing", "unclassified"])
         self.assertTrue(all(item["needsManualDecomposition"] for item in proof_maps["posts"][0]["theorems"]))
+
+    def test_legacy_headings_and_multiple_theorems_are_not_lost(self) -> None:
+        manifest = [{"slug": "first-surgery", "title": "Sullivan", "file": "a.tex"}]
+        values = [record("a:p0001", "a.tex", 1, r"\subsection*{Theorem 4.1 (No Wandering)} Statement.", "heading"),
+                  record("a:p0002", "a.tex", 2, r"\textit{Proof.} A proof text.", "prose"),
+                  record("a:p0003", "a.tex", 3, r"\begin{lemma}\label{a}A.\end{lemma}\begin{lemma}\label{b}B.\end{lemma}", "lemma")]
+        result = review.build_proof_maps(manifest, {value["id"]: value for value in values}, [])
+        theorems = result["posts"][0]["theorems"]
+        self.assertEqual(len(theorems), 3)
+        self.assertEqual(theorems[0]["title"], "Theorem 4.1 (No Wandering)")
+        self.assertEqual(theorems[0]["proofDisposition"], "proof-present")
+        self.assertEqual(theorems[1]["labels"], ["a"])
+        self.assertEqual(theorems[2]["labels"], ["b"])
+        self.assertNotEqual(theorems[1]["sourceSliceSha256"], theorems[2]["sourceSliceSha256"])
+        self.assertFalse(result["manualReviewComplete"])
 
 
 class CorpusIntegrationTests(unittest.TestCase):

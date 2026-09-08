@@ -128,10 +128,12 @@ test('the blog sidebar retains every supplied recommendation', () => {
     'https://ldtopology.wordpress.com/', 'https://mathscholar.org/',
     'https://matthewkahle.wordpress.com/page/2/',
   ];
-  assert.match(app, /<h2>Blog Recommendations<\/h2><ul className="journal-topics journal-blogroll">/);
+  assert.match(app, /<SidebarDisclosure title="Blog Recommendations"><ul className="journal-topics journal-blogroll">/);
   assert.doesNotMatch(app, /href="#\/recommendations"/);
-  assert.ok(app.indexOf('<h2>Topics</h2>') < app.indexOf('<h2>In this series</h2>'));
-  assert.ok(app.indexOf('<h2>In this series</h2>') < app.indexOf('<h2>Blog Recommendations</h2>'));
+  assert.ok(app.indexOf('<h2>Topics</h2>') < app.indexOf('title="In this series"'));
+  assert.ok(app.indexOf('title="In this series"') < app.indexOf('title="Blog Recommendations"'));
+  assert.match(app, /window\.matchMedia\('\(max-width: 850px\)'\)/);
+  assert.match(app, /<summary><h2>\{title\}<\/h2><\/summary>/);
   for (const url of urls) assert.match(app, new RegExp(url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 });
 test('vector figures enlarge with consistent labels and drawing-specific canvas space', () => {

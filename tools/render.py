@@ -314,6 +314,27 @@ def plain_text(fragment: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def search_record(post: dict, figure_descriptions: dict[str, str]) -> dict:
+    """Index the complete article and its existing accessibility descriptions.
+
+    Descriptions are appended only to search text, never to the article or its
+    opening preview. Preserve their first occurrence and ignore unrelated assets.
+    """
+    descriptions = list(dict.fromkeys(
+        figure_descriptions[src]
+        for raw in re.findall(r'<img\b[^>]*src="([^"]+)"', post["html"], flags=re.I)
+        if (src := html.unescape(raw)) in figure_descriptions
+        and figure_descriptions[src].strip()
+    ))
+    return {
+        "slug": post["slug"], "title": post["title"], "series": post["phaseLabel"],
+        "headings": [plain_text(value) for value in re.findall(r"<h[2-4]\b[^>]*>(.*?)</h[2-4]>", post["html"], flags=re.S | re.I)],
+        "theoremNames": [plain_text(value) for value in re.findall(r'<(?:div|p)\b[^>]*class="[^"]*(?:theorem|lemma|proposition|corollary|definition|claim|example)[^"]*"[^>]*>(.*?)</(?:div|p)>', post["html"], flags=re.S | re.I)],
+        "figureDescriptions": descriptions,
+        "text": " ".join([plain_text(post["html"]), *descriptions]).strip(),
+    }
+
+
 def archived_figure_descriptions(posts: list[dict]) -> dict[str, str]:
     """Retain the author's original captions when visible titles were removed."""
     descriptions = {}
@@ -455,7 +476,6 @@ def render(project: Path, site: Path):
     for stale in post_dir.glob("*.json"):
         stale.unlink()
     index_posts = []
-    search_posts = []
     for post in posts:
         (post_dir / f"{post['slug']}.json").write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n")
         # The archive page needs only these fields.  Source/audit metadata and
@@ -465,15 +485,7 @@ def render(project: Path, site: Path):
             "track", "minutes", "prerequisites", "background",
         }
         index_posts.append({key: post[key] for key in index_fields if key in post})
-        headings = [plain_text(value) for value in re.findall(r"<h[2-4]\b[^>]*>(.*?)</h[2-4]>", post["html"], flags=re.S | re.I)]
-        theorem_names = [plain_text(value) for value in re.findall(r"<(?:div|p)\b[^>]*class=\"[^\"]*(?:theorem|lemma|proposition|corollary|definition|claim|example)[^\"]*\"[^>]*>(.*?)</(?:div|p)>", post["html"], flags=re.S | re.I)]
-        search_posts.append({
-            "slug": post["slug"], "title": post["title"], "series": post["phaseLabel"],
-            "headings": headings, "theoremNames": theorem_names,
-            "text": plain_text(post["html"]),
-        })
     (site / "lib/generated-post-index.json").write_text(json.dumps(index_posts, ensure_ascii=False, indent=2) + "\n")
-    (site / "public/search-index.json").write_text(json.dumps(search_posts, ensure_ascii=False, separators=(",", ":")) + "\n")
     original_descriptions = archived_figure_descriptions(baseline_posts)
     figure_descriptions: dict[str, str] = {}
     for post in posts:
@@ -496,6 +508,8 @@ def render(project: Path, site: Path):
                     description = f"Mathematical diagram accompanying {current_heading} in {post['title']}."
                 figure_descriptions.setdefault(src, description)
     (site / "lib/figure-descriptions.json").write_text(json.dumps(figure_descriptions, ensure_ascii=False, indent=2) + "\n")
+    search_posts = [search_record(post, figure_descriptions) for post in posts]
+    (site / "public/search-index.json").write_text(json.dumps(search_posts, ensure_ascii=False, separators=(",", ":")) + "\n")
     metadata = json.loads((site / "lib/figure-metadata.json").read_text())
     for post in posts:
         for name in re.findall(r'src="([^"]+\.svg)"', post["html"]):
