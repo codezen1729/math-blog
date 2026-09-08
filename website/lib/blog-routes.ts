@@ -16,7 +16,7 @@ const legacyTrackPhases: Record<string, number> = {
   structures: 3,
   'k-theory': 3,
   'complex dynamics': 4,
-  'thermodynamic formalism': 4,
+  'thermodynamic formalism': 6,
   'commutative algebra': 5,
   'ergodic theory': 6,
   'the lemma book': 7,

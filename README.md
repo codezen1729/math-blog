@@ -13,6 +13,13 @@
 
 Recompile does not publish. GitHub sync requires an active Premium entitlement. Keep this Overleaf project owner-only if you want only yourself to publish; collaborators can use its GitHub sync button too.
 
+The conservation-first review below adds one publication safeguard: after further
+text changes, the change ledger and release approval must be refreshed before
+GitHub can publish them. Pushing from Overleaf alone does not approve a changed
+manuscript. Ask for a review-and-publish pass to record that approval; a blocked
+check keeps the last successful website online. Pull the latest GitHub changes
+into Overleaf before starting your next edit.
+
 The PDF is a writing preview; the website keeps its own typography and layout. Original manuscript files and the withdrawn Research Statement are not included.
 
 ## Shared typesetting and links

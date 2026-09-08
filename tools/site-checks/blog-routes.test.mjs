@@ -33,13 +33,15 @@ test('retired hashes become clean paths without losing pagination, tracks or exa
   assert.equal(legacyCleanDestination('#/path/k-theory?page=2'), 'series/k-theory/page/2/');
   assert.equal(legacyCleanDestination('#/archive/?page=3'), 'blog/page/3/');
   assert.equal(legacyCleanDestination('#/blog?track=Complex%20dynamics'), 'series/dynamics/');
+  assert.equal(legacyCleanDestination('#/blog?track=Thermodynamic%20formalism'), 'series/ergodic-theory/');
   assert.equal(legacyCleanDestination('#/post/example?ref=tex-anchor&view=full'), 'post/example/?view=full#tex-anchor');
 });
 test('legacy topic names still resolve to their present series', () => {
   assert.ok(posts.some(post => post.track === 'Riemann surfaces'));
   assert.ok(posts.some(post => post.track === 'Thermodynamic formalism'));
   for (const track of ['Riemann surfaces', 'Elliptic curves', 'Abelian functions']) assert.equal(phaseForLegacyTrack(track), 2);
-  for (const track of ['Complex dynamics', 'Thermodynamic formalism']) assert.equal(phaseForLegacyTrack(track), 4);
+  assert.equal(phaseForLegacyTrack('Complex dynamics'), 4);
+  assert.equal(phaseForLegacyTrack('Thermodynamic formalism'), 6);
   assert.equal(phaseForLegacyTrack('The Lemma Book'), 7);
   assert.equal(phaseForLegacyTrack('unknown'), undefined);
 });
