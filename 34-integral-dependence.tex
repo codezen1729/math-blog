@@ -5,11 +5,14 @@
 \begin{document}
 \section*{Integral Dependence}
 % BLOG-CONTENT-BEGIN
-In the preceding posts, we introduced rings and modules and various operations on them: sums, products, intersections, quotients, radicals, and localizations. We then introduced certain functors on $\AMod$ and outlined their features. Two essential theorems to keep in mind are Cayley--Hamilton for finitely generated modules and Nakayama's lemma.
+% BLOG-PASSAGE: integral-dependence:p0001
+In the preceding posts, we introduced \BlogPost{rings-ideals-and-prime-ideals}{rings} and \BlogPost{modules-tensor-products-and-the-determinant-trick}{modules} and various operations on them: sums, products, intersections, quotients, radicals, and \BlogPost{localization-rings-modules-and-prime-ideals}{localizations}. We then introduced certain functors on $\AMod$ and outlined their features. Two essential theorems to keep in mind are Cayley--Hamilton for finitely generated modules and Nakayama's lemma.
 
+% BLOG-PASSAGE: integral-dependence:p0002
 If $\varphi\in\End_{\AMod}(M)$ and $\varphi(M)\subseteq\aa M$ for an ideal $\aa<A$, then there exist $a_i\in\aa$ such that $\varphi^n+a_1\varphi^{n-1}+\cdots+a_n=0$. For $\varphi=\id$, there exists $x\in A$ with $x\equiv1\pmod\aa$ and $xM=0$. Further, if $\varphi=\id$, $\varphi(M)=\aa M$, and $\aa$ is contained in the Jacobson radical, then $x$ is a unit; thus $x^{-1}(xM)=M=0$.
 
-We also introduced primary ideals and saw how ideals in Noetherian rings can be factorized, or decomposed, into primary ideals. In this post we aim to introduce a little geometry.
+% BLOG-PASSAGE: integral-dependence:p0003
+We also introduced \BlogPost{primary-decomposition-and-uniqueness}{primary ideals} and saw how ideals in \BlogPost{noetherian-and-artinian-rings}{Noetherian rings} can be factorized, or decomposed, into primary ideals. In this post we aim to introduce a little geometry.
 \subsection{Generalising integrality from the integers}
 Consider $\Z\hookrightarrow\Q$, and let $r/s\in\Q$. Then
 \[
@@ -17,6 +20,7 @@ r/s\in\Z\ \Longleftrightarrow\ \exists\text{ a monic }f\in\Z[x]\text{ such that 
 \]
 Indeed, if $r/s\in\Z$, then $s=\pm1$, and $f(x):=x-sr$ works. Conversely, if $(r/s)^n+a_1(r/s)^{n-1}+\cdots+a_n=0$, then $r^n+a_1r^{n-1}s+\cdots+a_ns^n=0$.
 % Source page 2
+% BLOG-PASSAGE: integral-dependence:p0004
 Thus $s\mid r^n$, a contradiction, since we may choose $\gcd(r,s)=1$. Hence $y\in\Q$ is integral if and only if some monic $f\in\Z[x]$ satisfies $f(y)=0$. We generalize this concept to arbitrary rings.
 \setcounter{definition}{13}\begin{definition}
 Let $A$ be a subring of $B$. An element $y\in B$ is \emph{integral over $A$} if there exists a monic $f\in A[x]$ such that $f(y)=0$ in $B$. If every $y\in B$ is integral over $A$, we say $B$ is \emph{integral over $A$}. We say $A$ is \emph{integrally closed in $B$} if every element of $B$ integral over $A$ already lies in $A$. If $A$ is a domain, we say $A$ is \emph{integrally closed} if it is integrally closed in its field of fractions $K$.
@@ -54,6 +58,7 @@ For (iv), if $x\in B$ is integral over $\overline A$, apply (iii) to $A\subseteq
 \end{proof}
 These observations culminate in the fact that the integral closure of $A$ in $B$ is integrally closed in $B$, as expected!
 
+% BLOG-PASSAGE: integral-dependence:p0005
 Now we see how integrality behaves under a few operations on rings.
 \setcounter{theorem}{22}\begin{proposition}
 Let $A\subseteq B$ be rings, with $B$ integral over $A$.

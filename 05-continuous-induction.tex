@@ -4,6 +4,7 @@
 \begin{document}
 \section*{Continuous Induction}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: continuous-induction:p0001
 \subsection*{Tool 7 — Continuous Induction}
 Recall strong induction. If a property $P$ is true for $n=1$, and if one can prove that
 \[
@@ -12,6 +13,7 @@ P\text{ holds for every }k\leq n
 \]
 then $P$ holds for $\mathbb N$. There is a way to extend this to an interval $[0,1]$. Naturally, we expect $P$ to hold at $0$. There are several difficulties in devising an ``induction'' hypothesis for an interval.
 
+% BLOG-PASSAGE: continuous-induction:p0002
 
 \paragraph{Problem 1.}
 If you demand the induction hypothesis to be
@@ -21,6 +23,7 @@ P\text{ holds for every }t'\leq t
 \]
 then the induction stops at $0$.
 
+% BLOG-PASSAGE: continuous-induction:p0003
 \paragraph{Problem 2.}
 If you demand that, whenever $P$ holds for $t\in[0,1]$, it holds for all \(t'\in(t,t+\delta)\)
 for some $\delta$ depending on $t$, then the induction starts. But once $P$ holds on $[0,\delta)$, what if some $t\in[0,\delta)$ has $\delta_t$ such that
@@ -29,6 +32,7 @@ for some $\delta$ depending on $t$, then the induction starts. But once $P$ hold
 \]
 The induction would stop there.
 
+% BLOG-PASSAGE: continuous-induction:p0004
 
 \paragraph{Problem 3.}
 Let us demand both:
@@ -44,12 +48,15 @@ P\text{ holds for every }t'\in(t,t+\delta_t).
 \]
 Then too we have a problem. The induction progresses in this case, but it may not cover $[0,1]$. Start with $0$. The property holds for $0$, hence on $[0,\delta_0)$. It holds for every $t<\delta_0$, hence it holds for $\delta_0$. It then holds in a $\delta_0$-neighborhood of $\delta_0$, and then near the next endpoint, and so on. But the resulting sequence may converge to a point less than $1$. In fact, it may converge to a point arbitrarily close to $0$, in which case we have hardly covered $[0,1]$.
 
+% BLOG-PASSAGE: continuous-induction:p0005
 \paragraph{Problem 4.}
 Let us say that the limit point is $\delta_1$. Since the assertion is true for every $\delta<\delta_1$, it holds for $\delta_1$. Start the induction again. We may end up with another limit point $\delta_2$. What if $\delta_2$ is also very close to $0$? In fact, what if the limit point of the sequence $\{\delta_n\}_n$ is very close to $0$?
 
+% BLOG-PASSAGE: continuous-induction:p0006
 \paragraph{Problem 5.}
-What if you demand the induction machine never to stop? If you hit a limit point, just keep going ahead. You would keep getting limit points of limit points of limit points, and so on. The crux of the problem is that you simply cannot say, ``just keep going on.'' There is no mathematical way to say that here. Or is there?
+What if you demand that the induction machine never stop? If you hit a limit point, just keep going ahead. You would keep getting limit points of limit points of limit points, and so on. The crux of the problem is that you simply cannot say, ``just keep going on.'' There is no mathematical way to say that here. Or is there?
 
+% BLOG-PASSAGE: continuous-induction:p0007
 
 What do we do? We observe that $[0,1]$ is connected, so first demand that the set of points for which $P$ holds be closed in $[0,1]$. Then proceed as suggested: $P$ holds for $0$, and if $P$ holds for $t\in[0,1]$, then there is a $\delta_t$ such that every point of
 \[
@@ -57,6 +64,7 @@ What do we do? We observe that $[0,1]$ is connected, so first demand that the se
 \]
 also satisfies $P$. Thus the set for which $P$ holds is both open and closed, so $P$ holds on $[0,1]$. This is called the \emph{continuity method}, or continuous induction.
 
+% BLOG-PASSAGE: continuous-induction:p0008
 Let us state it differently. Let \(A:=\{t: \text{for every }t'\leq t,\ P\text{ holds for }t'\}.\)
 Assume:
 \begin{itemize}
@@ -66,8 +74,10 @@ Assume:
 \end{itemize}
 A set being closed is a mathematical way of saying that all limit points of limit points of limit points, and so on, remain in the set: now one can say ``keep going on.'' Then $P$ holds on $[0,1]$.
 
+% BLOG-PASSAGE: continuous-induction:p0009
 This method is used to prove that $[0,1]$ is compact, which leads to the Heine--Borel theorem. Let us see two other instances of this method.
 
+% BLOG-PASSAGE: continuous-induction:p0010
 \subsection*{Arc-length formula}
 If \(\gamma\colon[a,b]\to\mathbb C\)
 is $C^1$ and rectifiable, then
@@ -75,6 +85,7 @@ is $C^1$ and rectifiable, then
 |\gamma|=\int_a^b|\gamma'(t)|\,dt.
 \]
 
+% BLOG-PASSAGE: continuous-induction:p0011
 \textit{Proof.}
 First note that
 \[
@@ -84,6 +95,7 @@ First note that
 Let \(a=t_0<t_1<\cdots<t_n=b\)
 be a partition. Then
 
+% BLOG-PASSAGE: continuous-induction:p0012
 
 \[
 \sum_{j=1}^{n}|\gamma(t_j)-\gamma(t_{j-1})|
@@ -99,6 +111,7 @@ Taking the supremum over partitions gives
 |\gamma|\leq\int_a^b|\gamma'(t)|\,dt.
 \]
 
+% BLOG-PASSAGE: continuous-induction:p0013
 It remains to prove
 \[
 |\gamma|\geq\int_a^b|\gamma'(t)|\,dt.
@@ -150,6 +163,7 @@ we get
 =\int_a^{t_0}(|\gamma'(s)|-\varepsilon)\,ds.
 \]
 
+% BLOG-PASSAGE: continuous-induction:p0014
 
 Thus $t_0\in\Omega_\varepsilon$, and $\Omega_\varepsilon$ is closed. We have one last thing to prove: there is a $\delta_t>0$ such that, for every
 \[
@@ -157,6 +171,7 @@ t'\in[t,t+\delta_t),
 \]
 the inequality holds, whenever $t\in\Omega_\varepsilon$.
 
+% BLOG-PASSAGE: continuous-induction:p0015
 Since we know
 \[
 |\gamma|_t\geq\int_a^t(|\gamma'(s)|-\varepsilon)\,ds,
@@ -201,17 +216,19 @@ so
 \[
 |\gamma|\geq\int_a^b|\gamma'(t)|\,dt.
 \]
-Therefore
+Therefore,
 \[
 |\gamma|=\int_a^b|\gamma'(t)|\,dt.
 \]
 
+% BLOG-PASSAGE: continuous-induction:p0016
 Let $f\colon U\to\mathbb C$ be continuous. Let $F\colon U\to\mathbb C$ be holomorphic and satisfy $F'=f$. If $\gamma\colon[a,b]\to U$ is rectifiable, then
 \[
 \int_\gamma f(z)\,dz
 =F(\gamma(b))-F(\gamma(a)).
 \]
 
+% BLOG-PASSAGE: continuous-induction:p0017
 
 \paragraph{Proof (exercise; sketch).}
 Establish
@@ -224,6 +241,7 @@ Establish
 \]
 for every $t\in[a,b]$ and every $\varepsilon>0$.
 
+% BLOG-PASSAGE: continuous-induction:p0018
 Notice that the common thread connecting
 \[
 F(\gamma(t))-F(\gamma(a))

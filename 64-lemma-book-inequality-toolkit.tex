@@ -5,6 +5,7 @@
 \begin{document}
 \section*{An Inequality Toolkit: Jensen, Muirhead, and Schur}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0001
 Prove that $\dfrac a{1+bc}+\dfrac b{1+ca}+\dfrac c{1+ab}\leq2$ if
 $0\leq a,b,c\leq1$.
 For fixed $b,c$, the expression
@@ -16,15 +17,17 @@ $a=0$ or $a=1$. Repeating this argument in $b$ and $c$, its maximum on
 $[0,1]^3$ occurs at a vertex. Checking the eight vertices gives the
 upper bound $2$.
 
-Here is the original route in the notebook. Without loss of generality, let $a\geq b\geq c$.
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0002
+Here is the original route. Without loss of generality, let $a\geq b\geq c$.
 Since $(1-a)(1-b)\geq0$, we have $1+ab\geq a+b$, so $1+2ab\geq a+b$.
-Now $a+b+c\leq1+1+2ab=2(1+ab)$, and hence the notebook continues with
+Now $a+b+c\leq1+1+2ab=2(1+ab)$, and hence the argument continues with
 \[
 \frac a{1+bc}+\frac b{1+ca}+\frac c{1+ab}
 \leq\frac a{1+ab}+\frac b{1+ab}+\frac c{1+ab}\leq2.
 \]
 The first displayed inequality has the denominator comparison in the wrong direction; for example, $a=1$, $b=\tfrac12$, $c=0$ makes its left side $3/2$ and its middle expression $1$. The convexity argument above corrects this step without removing the original attempt.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0003
 \setcounter{theorem}{14}\begin{lemma}[Cauchy's inequality application]
 If $x,y,z>1$, then
 $\dfrac{x^4}{(y-1)^2}+\dfrac{y^4}{(z-1)^2}+\dfrac{z^4}{(x-1)^2}\geq48$.
@@ -40,6 +43,7 @@ $\dfrac{(x+y+z)^2}{x+y+z-3}\geq12$.
 Writing $a=x+y+z$, this becomes
 $a^2\geq12a-36$, or $(a-6)^2\geq0$.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0004
 % Source page 7 - left
 \setcounter{theorem}{21}\begin{lemma}[Catalan's identity]
 $1-\frac12+\frac13-\frac14+\cdots+\frac1{2n-1}-\frac1{2n}
@@ -67,12 +71,14 @@ Add the inequalities
 $\frac1{2n}\geq\frac1{2n}$, $\frac1{2n-1}>\frac1{4n}$, $\ldots$,
 $\frac1{n+1}>\frac1{2n^2}$ to finish.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0005
 \setcounter{theorem}{22}\begin{lemma}[Homogenization]
 Homogenization rewrites an inequality so that all terms have the same degree.
 \end{lemma}
 \paragraph{Application.}
 Let $a,b,c>0$ and $abc=1$. Prove that $a+b+c\leq a^2+b^2+c^2$.
 % Source page 7 - right
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0006
 There are expressions of three different degrees, $3$, $2$, and $1$.
 To homogenize the inequality, multiply by $\sqrt[3]{abc}$:
 \[
@@ -84,6 +90,7 @@ a^{4/3}b^{1/3}c^{1/3}+a^{1/3}b^{4/3}c^{1/3}+a^{1/3}b^{1/3}c^{4/3}
 Since $(4/3,1/3,1/3)\prec(2,0,0)$, Muirhead's theorem gives
 $\sum_{\mathrm{cyc}}a^{4/3}b^{1/3}c^{1/3}\leq\sum_{\mathrm{cyc}}a^2$.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0007
 \setcounter{theorem}{23}\begin{lemma}[Second-derivative test]
 The best test for convexity or concavity is the second-derivative test:
 if $f''(x)\geq0$, then $f$ is convex, while $f''(x)\leq0$ implies that $f$ is concave.
@@ -91,7 +98,8 @@ if $f''(x)\geq0$, then $f$ is convex, while $f''(x)\leq0$ implies that $f$ is co
 This technique, combined with Jensen's inequality or a maxima--minima
 argument, yields many beautiful and elegant solutions.
 
-\setcounter{theorem}{24}\begin{lemma}[Jensen's inequality]
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0008
+\setcounter{theorem}{24}\begin{lemma}[Jensen's inequality]\label{lemma:jensen-inequality}
 Let $f:I\to\mathbb R$ be convex. For any $x_1,\ldots,x_n\in I$ and nonnegative reals $\omega_1,\ldots,\omega_n$, not all zero,
 \[
 \omega_1f(x_1)+\cdots+\omega_nf(x_n)
@@ -106,6 +114,7 @@ If $a,b,c>0$ and $abc=1$, prove that
 \frac1{a^3(b+c)}+\frac1{b^3(c+a)}+\frac1{c^3(a+b)}\geq\frac32.
 \]
 % Source page 8 - left
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0009
 Substitute $x=1/a$, $y=1/b$, $z=1/c$. For $f(x)=1/x$, we have $f''(x)=2/x^3>0$, so $f$ is convex.
 Now Jensen's inequality gives
 \begin{align*}
@@ -117,7 +126,8 @@ Now Jensen's inequality gives
 =\frac{3\sqrt[3]{1/(abc)}}2=\frac32.
 \end{align*}
 
-\setcounter{theorem}{25}\begin{lemma}[Muirhead and majorization]
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0010
+\setcounter{theorem}{25}\begin{lemma}[Muirhead and majorization]\label{lemma:muirhead-majorization}
 Muirhead's theorem and majorization techniques are analogous.
 If $(a_1,\ldots,a_n)\succ(b_1,\ldots,b_n)$, then for positive $x_1,\ldots,x_n$,
 \[
@@ -130,6 +140,7 @@ Then $\sum_{i=1}^n f(x_i)\geq\sum_{i=1}^n f(y_i)$ (Karamata's inequality).
 \emph{For a concave function, reverse the inequality.}
 Here are two applications of these ideas.
 % Source page 8 - right
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0011
 Prove that, for positive reals $a,b,c$,
 $(a^2b+b^2c+c^2a)(ab^2+bc^2+ca^2)\geq9a^2b^2c^2$.
 Expanding the product gives
@@ -146,6 +157,7 @@ Thus Muirhead gives
 \]
 The conclusion follows.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0012
 \setcounter{theorem}{26}\begin{lemma}[Chebyshev's theorem]
 Let $a_1\leq a_2\leq\cdots\leq a_n$ and $b_1\leq b_2\leq\cdots\leq b_n$ be nondecreasing real sequences. Then
 \[
@@ -169,6 +181,7 @@ We know $x+y+z\geq3$ and, by Nesbitt's inequality,
 $\dfrac{x}{y+z}+\dfrac{y}{z+x}+\dfrac{z}{x+y}\geq\dfrac32$.
 The conclusion follows.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0013
 \setcounter{theorem}{52}\begin{lemma}[Sum-of-squares strategy]\label{lemma:lb1-58}
 If none of the standard techniques proves an inequality, try expressing it as a sum of squares greater than or equal to zero.
 \end{lemma}
@@ -176,12 +189,14 @@ If none of the standard techniques proves an inequality, try expressing it as a 
 For real $a,b,c$, prove $(a^2+b^2+c^2)^2\geq3(a^3b+b^3c+c^3a)$.
 The expression has the following sum-of-squares decomposition.
 % Source page 24 - right
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0014
 \[
 (a^2+b^2+c^2)^2-3(a^3b+b^3c+c^3a)
 =\frac12\sum_{\mathrm{cyc}}(a^2-2ab+bc-c^2+ca)^2\geq0.
 \]
 This completes the proof.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0015
 \setcounter{theorem}{59}\begin{lemma}[Schur's inequality]
 Define the normalized symmetric sum
 \[
@@ -207,11 +222,12 @@ solution is two lines:
 \[
 T(2+2\cdot1,0,0)+T(2,1,1)\geq2T(3,0,0),
 \]
-which is obtained by setting $\alpha=2$, $\beta=1$ in the notes.
+which is obtained by setting $\alpha=2$, $\beta=1$ in the proposed argument.
 As written, however, the cyclic inequality is false: for $(a,b,c)=(1,4,3)$,
 its two sides are $434$ and $446$. The displayed $T$-inequality also has
 different total degrees on its two sides and does not encode that claim.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0016
 The corresponding valid symmetric form of Schur is the following.
 Schur's first form with $\alpha=2$ and $\beta=1$ gives
 \[
@@ -222,6 +238,7 @@ or, equivalently,
 a^4+b^4+c^4+abc(a+b+c)\geq\sum_{\mathrm{sym}}a^3b.
 \]
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0017
 Prove $3(x^2y+y^2z+z^2x)(xy^2+yz^2+zx^2)\geq xyz(x+y+z)^3$.
 First try all the nonsense tricks and conclude that the problem is
 impenetrable. Then gather courage to expand that big bull, obtaining
@@ -238,6 +255,7 @@ Here $[p,q,r]$ denotes the corresponding symmetric sum.
 I follows from Schur's second form with $\alpha=1$, $\beta=2$.
 Add I, II, and III to finish.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0018
 % Source page 27 - left
 There are true villains on the IMO jury who pose problems like this one.
 Prove
@@ -251,6 +269,7 @@ Write $[4,0,0]+3[2,2,0]\geq4[3,1,0]$.
 Bring everything to the left and rearrange to obtain
 $(x-y)^4+(y-z)^4+(z-x)^4\geq0$.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0019
 \setcounter{theorem}{60}\begin{lemma}[Square-root heuristic: Stanley Rabinowitz]
 If $\sum_{\mathrm{cyc}}f(x)$ has three terms, then
 $\sum_{\mathrm{cyc}}\sqrt{f(x)}\leq\sqrt{3\sum_{\mathrm{cyc}}f(x)}$.
@@ -271,10 +290,12 @@ If $\sum f(x)$ has $n$ terms, then
 This is analogous to the power-mean inequality.
 \end{lemma}
 % Source page 27 - right
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0020
 \paragraph{Application.}
 Prove $\sqrt x+\sqrt y+\sqrt z\leq\sqrt{3(x+y+z)}$.
 Apply the square-root heuristic with $f(a)=a$.
 
+% BLOG-PASSAGE: lemma-book-inequality-toolkit:p0021
 \paragraph{A one-line identity, due to P. K. Hung.}
 For positive $a,b,c$ with $a+b+c=1$, prove
 $1/a+1/b+1/c\geq25/(1+48abc)$.

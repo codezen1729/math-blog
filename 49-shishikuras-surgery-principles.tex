@@ -5,7 +5,8 @@
 \begin{document}
 \section*{Shishikura's Surgery Principles}
 % BLOG-CONTENT-BEGIN
-Surgery is needed because we want to change the parameters of dynamics while keeping its topological core intact. Suppose a surgery deforms \(f\), by quasiconformal conjugacy, to \(\widetilde f\), and \(\widetilde f\) turns out to be quasiregular. The effort then goes into finding a \(\widetilde f\)-invariant Beltrami form, because of the following key lemma.
+% BLOG-PASSAGE: shishikuras-surgery-principles:p0001
+Surgery is needed because we want to change the parameters of dynamics while keeping its topological core intact. Suppose a surgery deforms \(f\), by quasiconformal conjugacy, to \(\widetilde f\), and \(\widetilde f\) turns out to be quasiregular. The effort then goes into finding a \BlogPostAt{the-mapping-theorem-and-invariant-complex-structures}{thm:measurable-riemann-mapping}{\(\widetilde f\)-invariant Beltrami form}, because of the following key lemma.
 \setcounter{theorem}{47}\begin{lemma}[Key lemma for surgery]
 If a quasiregular map \(\widetilde f\) satisfies \(\widetilde f^*\mu=\mu\) for a Beltrami form \(\mu\), then \(\widetilde f\) is quasiconformally conjugate to a holomorphic function. That is, there is a \(K\)-quasiconformal map \(\varphi\) such that \(\varphi\circ\widetilde f\circ\varphi^{-1}\) is holomorphic.
 \end{lemma}
@@ -19,6 +20,7 @@ In both cases, the dynamics of some \(g\) was deformed to obtain a family of map
 Cut-and-paste surgery, by contrast, is about the dynamics of \(f\), usually studying it by modelling it through deformations.
 Either way, we must reach a stage where the surgery lemma applies. The following fundamental principles guide us by showing when surgery can be conducted.
 
+% BLOG-PASSAGE: shishikuras-surgery-principles:p0002
 \Needspace{15\baselineskip}
 \setcounter{theorem}{48}\begin{theorem}[Principle 1: domain-wise surgery]\label{thm:cd12-domain-principle}
 Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular, and let \(p\ge1\). Suppose:
@@ -55,6 +57,7 @@ If \(f\) in Principle 1 is a deformation of \(\widetilde f\), then \(U_j\) corre
 \(\widetilde f(\widetilde U_j),\widetilde f^2(\widetilde U_j),\ldots,\widetilde f^n(\widetilde U_j)\) expand to \(\widehat{\mathbb C}\) almost everywhere.
 \end{remark}
 
+% BLOG-PASSAGE: shishikuras-surgery-principles:p0003
 % Source page 4
 Pictorially, the ellipse field is spread by the dynamics as follows.
 \begin{figure}[H]\centering
@@ -70,6 +73,7 @@ Let \(f:\widehat{\mathbb C}\to\widehat{\mathbb C}\) be quasiregular and \(X\subs
 Then \(f\) is quasirational.
 \end{theorem}
 % Source page 5
+% BLOG-PASSAGE: shishikuras-surgery-principles:p0004
 \begin{proof}
 Denote the grand orbit of \(z\) by \(\operatorname{GO}(z)\). Then
 \[
@@ -99,6 +103,7 @@ Its modulus is controlled by the following chain of pullbacks:
 The breaks are made at visits to \(X\) along a path from \(w\) to \(f^q(z_0)\). There are at most \(N\) visits, so the dilatation is bounded by \(K^N\), equivalently \(\|\mu\|_\infty<1\). By definition \(\mu\) is \(f\)-invariant; the surgery lemma makes \(f\) quasirational.
 \end{proof}
 
+% BLOG-PASSAGE: shishikuras-surgery-principles:p0005
 % Source page 6
 \begin{remark}
 Sullivan generalized the first two principles. The resulting way to straighten the ellipse field of a quasiregular map is the following.

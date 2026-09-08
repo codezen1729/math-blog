@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Triangle Inequalities and Trigonometric Substitutions}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0001
 \setcounter{theorem}{41}\begin{lemma}[Triangle inequality]
 If $ABC$ is a triangle, then $a+b>c$, where $c=\max(a,b,c)$.
 \end{lemma}
@@ -23,6 +24,7 @@ light sent from $A$ to $B$ after reflection must meet the line at the required $
 It should satisfy the law of reflection.
 Thus choose $M$ so that $\angle AMX=\angle BMY$.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0002
 % Source page 19 - left
 The second application is the following lemma.
 \setcounter{theorem}{42}\begin{lemma}[Triangle-side substitution]
@@ -51,10 +53,11 @@ This reduces to $8xyz\leq(x+y)(y+z)(z+x)$.
 \begin{remark}
 The cosine formula also proves the inequality. Put $b^2+c^2-a^2=2bc\cos A$.
 Then $\sum_{\mathrm{cyc}}2abc\cos A\leq3abc$ becomes
-$\sum_{\mathrm{cyc}}\cos A\leq3/2$, which follows from Jensen's inequality.
+$\sum_{\mathrm{cyc}}\cos A\leq3/2$, which follows from \BlogPostAt{lemma-book-inequality-toolkit}{lemma:jensen-inequality}{Jensen's inequality}.
 This gives a geometric proof.
 \end{remark}
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0003
 The same geometric idea suggests a useful trigonometric substitution.
 \setcounter{theorem}{51}\begin{lemma}[Trigonometric substitution]
 If $x^2+y^2=1$, then $x=\sin\theta$ and $y=\cos\theta$ for a suitable $\theta$.
@@ -66,12 +69,13 @@ Then
 \[
 \frac{x^3}{2y^2}+\frac{y^3}{2x^2}=1.
 \]
-Consequently
+Consequently,
 \[
 1-xy=\left(\frac{y^3}{2x^2}-\frac{x^3}{2y^2}\right)^2,
 \]
 so $1-xy$ is the square of a rational number.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0004
 These formulas are most useful when understood rather than memorized.
 \subsection{Ravi substitution}
 $x=s-a$, $y=s-b$, and $z=s-c$, so that
@@ -89,6 +93,7 @@ $\displaystyle r_c=\frac{\sqrt{xyz(x+y+z)}}z$ &
 \end{tabular}
 \end{center}
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0005
 \setcounter{theorem}{65}\begin{lemma}[Useful substitutions]
 The following substitutions are useful:
 \begin{enumerate}
@@ -124,6 +129,7 @@ The discriminant of this cubic is
 The left-hand side is nonnegative, so $s=6$. Hence
 $xy+yz+zx=12=s^2/3$, which forces $x=y=z=2$.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0006
 On the component covered by the substitution, put
 $x=a+1/a$, $y=b+1/b$, $z=c+1/c$, with $abc=1$. Then
 \[
@@ -132,6 +138,7 @@ xy+yz+zx=(a+1/a)(b+1/b)+(b+1/b)(c+1/c)+(c+1/c)(a+1/a)
 \]
 Thus $a/b+b/a+b/c+c/b+a/c+c/a=6$, so $a=b=c=1$ and $x=y=z=2$.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0007
 \paragraph{Two ingenious trigonometric substitutions.}
 \[a^2+b^2+c^2\geq4\Delta\sqrt3
 \qquad\text{(IMO 1961; Weitzenb\"ock's inequality).}\]
@@ -156,6 +163,7 @@ $A,B,C\in(0,\pi/2)$. We have
 <\cos A\cos B+\sin A\sin B=\cos(A-B)\leq1.\]
 Q.E.D.!
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0008
 The following inequality can be proved without Schur's inequality.
 For positive reals $a,b,c$, prove that
 \[(a+b-c)(b+c-a)(a+c-b)\leq abc.\]
@@ -172,10 +180,12 @@ If $a,b,c$ are positive reals satisfying $a+b+c=1$, prove that
 We cannot do much with the nonhomogeneous expression inside the radical.
 Homogenize the expression:
 % Source page 49 - right
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0009
 \[\sqrt{a+bc}=\sqrt{a(a+b+c)+bc}=\sqrt{(a+b)(a+c)}\leq\frac{2a+b+c}{2}.\]
 Add the three similar inequalities to obtain
 $\sum\sqrt{a+bc}\leq4(a+b+c)/2=2$. Q.E.D.!
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0010
 \paragraph{It was obvious!}
 Let $a,b,c$ be sides of a triangle similar to $ABC$. The proposed problem is
 \[
@@ -193,6 +203,7 @@ $3t^2>4t^3$, which fails when $t\geq3/4$. Thus the statement needs a scale
 normalization before this argument can apply.
 The actual problem was to find the range of the area, given that $ABC$ is equilateral. Try it!
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0011
 \setcounter{theorem}{94}\begin{lemma}[Erd\H{o}s--Mordell inequality]\label{lemma:lb1-97}
 Let $P$ be an arbitrary point in or on $\triangle ABC$.
 If $p_a,p_b,p_c$ are its distances from the sides, then
@@ -213,6 +224,7 @@ Without loss of generality, take $PA\geq2PC'$.
 Then $1/2\geq PC'/PA=\sin\angle PAB$, giving $\angle PAB\leq30^\circ$ or $\angle PAB\geq150^\circ$.
 If $\angle PAB\geq150^\circ$, then $\angle PBC<30^\circ$. Q.E.D.!
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0012
 % Source page 58 - left
 \subsection{A trigonometric toolkit}
 We begin with a collection of standard trigonometric identities.
@@ -258,6 +270,7 @@ $a^2+b^2+c^2+2abc=1$ is equivalent to $x^2+y^2+z^2+xyz=4$.
 \end{enumerate}
 \end{lemma}
 % Source page 58 - right
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0013
 Let $x,y,z>1$ be real numbers such that $1/x+1/y+1/z=2$.
 Prove that $\sqrt{x-1}+\sqrt{y-1}+\sqrt{z-1}\leq\sqrt{x+y+z}$.
 Let $x=a+1$, $y=b+1$, and $z=c+1$.
@@ -275,9 +288,10 @@ The substitution gives a two-line solution.
 =\sum_{\mathrm{cyc}}\sqrt{\frac{ab}{c(a+b+c)+ab}}
 =\sum_{\mathrm{cyc}}\sqrt{\frac{ab}{(c+a)(c+b)}}.\]
 We know that $a+b,b+c,c+a$ are the sides of a triangle.
-Therefore the last sum is $\sin(\alpha/2)+\sin(\beta/2)+\sin(\gamma/2)\leq3/2$.
+Therefore, the last sum is $\sin(\alpha/2)+\sin(\beta/2)+\sin(\gamma/2)\leq3/2$.
 Q.E.D.!
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0014
 % Source page 59 - left (upside-down content in the scan)
 \paragraph{Solving a trigonometric system.}
 Find all triples $(x,y,z)$ of real numbers satisfying
@@ -294,15 +308,17 @@ $\cot(\gamma/2)=\tan((\alpha+\beta)/2)$.
 Hence $(\alpha+\beta)/2=\pi/2-\gamma/2$, and $\alpha+\beta+\gamma=\pi$.
 Thus $\alpha,\beta,\gamma$ are the angles of a triangle, and the opposite sides are in the ratio $3:4:5$.
 We have a right triangle with $\gamma=\pi/2$, $\sin\alpha=3/5$, and $\sin\beta=4/5$.
-Therefore $x=\tan(\alpha/2)=1/3$, $y=\tan(\beta/2)=1/2$, and $z=\tan(\gamma/2)=1$.
+Therefore, $x=\tan(\alpha/2)=1/3$, $y=\tan(\beta/2)=1/2$, and $z=\tan(\gamma/2)=1$.
 Changing all three signs preserves both equations, so
 $(x,y,z)=(1/3,1/2,1)$ or $(-1/3,-1/2,-1)$. Q.E.D.!
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0015
 \subsection{Two applications}
 \paragraph{Problem 1.}
 Triangle $ABC$ is isosceles with $AB=AC$ and $\angle BAC=20^\circ$.
 Point $P$ is on $AC$ such that $AP=BC$. Find $\angle PBA$.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0016
 The sine rule for $\triangle ABP$ and $\triangle BPC$ yields
 (angles in the calculations below are measured in degrees):
 \[
@@ -333,13 +349,15 @@ Hence
 and therefore $\sin x=\sin20\cos x-\sin x\cos20=\sin(20-x)$.
 Now we obtain $\sin x=\sin(20-x)\Rightarrow x=20-x\Rightarrow x=10^\circ$;
 the second sine branch is incompatible with $0<x<20^\circ$.
-Therefore $\angle PBA=10^\circ$. Q.E.D.!
+Therefore, $\angle PBA=10^\circ$. Q.E.D.!
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0017
 \paragraph{Problem 2.}
 Let the incircle of $\triangle ABC$ touch $BC,AB,CA$ at $D,E,F$, respectively.
 If the extension of $DI$ meets $EF$ at $K$, where $I$ is the incentre of $\triangle ABC$,
 prove that $A,K,M$ are collinear, where $M$ is the midpoint of $BC$.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0018
 It suffices to show that the extension of $AK$ meets $BC$ at $M$, where $BM=MC$.
 \begin{figure}[htbp]
 \centering\includegraphics[width=.70\linewidth]{lb1-fig-40.pdf}
@@ -369,9 +387,11 @@ Now we get $AB\sin\alpha=AC\sin\beta$, and hence
 $\frac12 AB\sin\alpha\cdot AM=\frac12 AC\sin\beta\cdot AM$.
 This implies $[ABM]=[ACM]\Rightarrow BM=MC$.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0019
 \paragraph{Ingenious trigonometric substitution.}
 Let $x,y,z>0$ satisfy $xy+yz+zx=3xyz$. Prove $(2y+2z+x)^2>12xyz$.
 % Source page 4 - right
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0020
 From the condition,
 $1/(3x)+1/(3y)+1/(3z)=1$, hence $1/(3x)+(y+z)/(3yz)=1$.
 Put $1/(3x)=\cos^2\theta$ and $(y+z)/(3yz)=\sin^2\theta$.
@@ -385,6 +405,7 @@ Using $\sin\theta+\cos\theta>1$, we obtain
 Since $\sqrt{yz}\leq(y+z)/2$ and $\sqrt{x(y+z)}\leq(x+y+z)/2$,
 we get $y+z+x/2>\sqrt{3xyz}$, proving the result.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0021
 That inequality using trigonometric substitution was all pure dumbass; sorry I did not realize it.
 Pranjal pointed out that one should substitute
 $12xyz=4xy+4yz+4zx$ and prove it directly. It was that obvious!
@@ -392,10 +413,12 @@ Let me rephrase it.
 Let $x,y,z$ be positive integers satisfying $xy+yz+zx=3xyz$.
 Prove $27xyz>8(x+y+z)$ in two different ways.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0022
 \paragraph{APMO (1996).}
 For the side lengths $a,b,c$ of a triangle, prove
 $\sqrt{a+b-c}+\sqrt{b+c-a}+\sqrt{c+a-b}\leq\sqrt a+\sqrt b+\sqrt c$.
 
+% BLOG-PASSAGE: lemma-book-triangle-inequalities-trigonometric-substitutions:p0023
 % Source page 17 - left
 Write the left-hand side as
 $\sum_{\mathrm{cyc}}(\sqrt{c+a-b}+\sqrt{a+b-c})/2$.

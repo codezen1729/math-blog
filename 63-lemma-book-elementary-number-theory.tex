@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Elementary Number Theory}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0001
 \setcounter{theorem}{0}\begin{lemma}[GCD of a sum and a product]
 If $\gcd(x,y)=1$, then $\gcd(x+y,xy)=1$.
 \end{lemma}
@@ -23,6 +24,7 @@ We have
 \end{align*}
 Thus the required GCD is $1$.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0002
 \setcounter{theorem}{1}\begin{lemma}[Canonical representation]
 Every integer greater than $1$ can be decomposed uniquely into a product of primes, up to the order of the factors; such a representation is called a canonical representation. This is the Fundamental Theorem of Arithmetic.
 \end{lemma}
@@ -36,6 +38,7 @@ Split seven as a sum of two nonnegative integers to obtain
 (369,656),(164,1025),(41,1476),(0,2009)\}.
 \]
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0003
 
 \setcounter{theorem}{2}\begin{lemma}[Consecutive composite integers]
 $n!+2,n!+3,n!+4,\ldots,n!+n$ are $n-1$ consecutive composite integers.
@@ -44,8 +47,10 @@ $n!+2,n!+3,n!+4,\ldots,n!+n$ are $n-1$ consecutive composite integers.
 The smallest prime factor of a nonprime $n$ is at most $\sqrt n$.
 \end{lemma}
 % Source page 3 - left
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0004
 The fourth lemma can save some time when factorizing a number.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0005
 \setcounter{theorem}{4}\begin{lemma}[Primes modulo six]
 All primes $p>3$ have the form $6n\pm1$.
 \end{lemma}
@@ -55,6 +60,7 @@ $6$ divides $p_1^2+\cdots+p_n^2$. Prove that $6\mid n$.
 For every $i$, $p_i^2\equiv1\pmod6$. Hence
 $\sum_{i=1}^n p_i^2\equiv n\pmod6$, and the divisibility assumption gives $n\equiv0\pmod6$.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0006
 \setcounter{theorem}{5}\begin{lemma}[Fermat's congruence]
 Let $a$ be a positive integer and $p$ a prime. Then $a^p\equiv a\pmod p$.
 If $\gcd(a,p)=1$, then $a^{p-1}\equiv1\pmod p$.
@@ -62,7 +68,7 @@ If $\gcd(a,p)=1$, then $a^{p-1}\equiv1\pmod p$.
 \paragraph{Application: Sierpi\'nski's theorem.}
 $n\nmid 2^{n-1}+1$ for every $n>1$.
 Let $n=\prod_{i=1}^s p_i^{k_i}$, where $p_1<p_2<\cdots<p_s$ are prime factors.
-Write $p_i-1=2^{\gamma_i}m_i$, with $m_i$ odd. (For even $n$ the result is true.)
+Write $p_i-1=2^{\gamma_i}m_i$, with $m_i$ odd. (For even $n$, the result is true.)
 Choose $i$ so that $\gamma_i$ is minimal. Then every prime divisor of $n$ is
 congruent to $1$ modulo $2^{\gamma_i}$, and hence
 $n\equiv1\pmod{2^{\gamma_i}}$. Write $n-1=2^{\gamma_i}t$.
@@ -72,6 +78,7 @@ We then have $2^{2^{\gamma_i}t}\equiv-1\pmod{p_i}$, and thus
 \]
 Thus $p_i=2$, a contradiction.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0007
 \setcounter{theorem}{6}\begin{lemma}[Wilson's theorem]
 If $p$ is prime, then $(p-1)!\equiv-1\pmod p$.
 \end{lemma}
@@ -90,6 +97,7 @@ If $n=p$ is prime, Wilson's theorem gives $(p-2)!\equiv1\pmod p$.
 If $n$ is composite and $n>4$, then $n\mid(n-2)!$; the case $n=4$ is immediate.
 This proves the equivalence.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0008
 
 % Source page 3 - right
 \setcounter{theorem}{7}\begin{lemma}[Euler's totient]
@@ -102,11 +110,13 @@ If $(a,m)=1$, then $a^{\varphi(m)}\equiv1\pmod m$.
 \end{lemma}
 Euler's theorem has many applications.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0009
 \setcounter{theorem}{8}\begin{lemma}[Prime-power exponent]
 If $p^\alpha\mathbin\Vert n!$, then
 $\alpha=\lfloor n/p\rfloor+\lfloor n/p^2\rfloor+\lfloor n/p^3\rfloor+\cdots$.
 \end{lemma}
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0010
 \setcounter{theorem}{9}\begin{lemma}[Sophie Germain's identity]
 $a^4+4b^4=(a^2+2b^2+2ab)(a^2+2b^2-2ab)$.
 \end{lemma}
@@ -118,6 +128,7 @@ n^4+4^n=n^4+4\cdot4^{2k}=n^4+4(2^k)^4
 =(n^2+2^{2k+1}+2^{k+1}n)(n^2+2^{2k+1}-2^{k+1}n).
 \]
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0011
 \setcounter{theorem}{10}\begin{lemma}[A polynomial factorization]
 \begin{align*}
 x^5+x^4+1
@@ -134,12 +145,14 @@ n(n-1)^4+1=(n-1)^5+(n-1)^4+1
 \]
 Since $n^3-3n^2+2n=n(n-1)(n-2)>1$ and $n^2-n=n(n-1)>1$, the result follows.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0012
 \setcounter{theorem}{11}\begin{lemma}[Reciprocal equation]
 $1/x+1/y=1/n$ in positive integers is equivalent to
 $(n-x)(n-y)=n^2$. The number of ordered positive-integer solutions $(x,y)$
 equals $d(n^2)$.
 \end{lemma}
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0013
 % Source page 4 - left
 \setcounter{theorem}{12}\begin{lemma}[A cubic identity]
 $(a+b+c)^3=a^3+b^3+c^3+3(a+b)(b+c)(c+a)$.
@@ -150,6 +163,7 @@ Indeed, divisibility of $a^3+b^3+c^3$ by $6$ is equivalent to divisibility of
 $(a+b+c)^3-3(a+b)(b+c)(c+a)$, hence to that of $3(a+b)(b+c)(c+a)$.
 By the box principle, two of $a,b,c$ have the same parity, so the latter product is divisible by $6$.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0014
 \subsection{A beautiful application of modular arithmetic}
 Prove that $641\mid2^{32}+1$.
 Since $640\equiv-1\pmod{641}$,
@@ -160,12 +174,13 @@ Since $640\equiv-1\pmod{641}$,
 \]
 But $625\equiv-16\pmod{641}$, so
 $625\cdot2^{28}\equiv-16\cdot2^{28}=-2^{32}\equiv1\pmod{641}$.
-Consequently $2^{32}+1\equiv0\pmod{641}$.
+Consequently, $2^{32}+1\equiv0\pmod{641}$.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0015
 \subsection{Number theory using inequalities}
 Let $n$ be a positive integer. Find all $n$ such that $3^{2n}+3n^2+7$ is a perfect square.
 Put $3^{2n}+3n^2+7=b^2$. Then $b^2>3^{2n}$, so $b>3^n$ and $b\geq3^n+1$.
-Therefore
+Therefore,
 \[
 3^{2n}+3n^2+7\geq3^{2n}+2\cdot3^n+1
 \Longrightarrow3n^2+6\geq2\cdot3^n
@@ -175,6 +190,7 @@ Indeed, $3n^2+6<2\cdot3^n$ for $n=3$, and the inequality propagates from
 $n$ to $n+1$ after multiplying the right-hand side by $3$.
 But $n=2$ satisfies the conditions and is the only solution.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0016
 \setcounter{theorem}{15}\begin{lemma}[Squarefree factor]
 If $n^2=ab$, where $a<b$ and $a$ is not divisible by a perfect square greater than $1$, then $a\mid b$.
 \end{lemma}
@@ -185,6 +201,7 @@ The sum of the squares of five successive positive integers is not a square.
 \]
 If this is a square, $5\mid n^2+2$, so $n^2\equiv-2\pmod5$, a contradiction.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0017
 \setcounter{theorem}{16}\begin{lemma}[Inspect when the hypothesis holds]
 In a problem where one is given a condition and asked to prove a result from it, first examine when the condition is satisfied, rather than trying to prove the result in a general case.
 \end{lemma}
@@ -193,6 +210,7 @@ If $p$ and $p^2+2$ are primes, then $p^3+2$ is also prime.
 The prime $p$ must be odd. If $p>3$, then $p^2\equiv1\pmod3$, so $p^2+2$ is not prime.
 Thus $p=3$.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0018
 Prove that the only integer solution of $x^2+y^2=x^2y^2$ is $x=y=0$.
 \paragraph{Proof 1.}
 $1=x^2y^2-x^2-y^2+1=(x^2-1)(y^2-1)$.
@@ -216,9 +234,11 @@ Write $x=2x_1$ and $y=2y_1$. Then
 The same parity argument shows that $x_1,y_1$ are both even, so write
 $x_1=2x_2$ and $y_1=2y_2$.
 % Source page 5 - right
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0019
 Thus $x=2x_1=4x_2=\cdots=2^nx_n=\cdots$, so $(x_n)$ is strictly decreasing in magnitude.
 Fermat's infinite descent principle gives the conclusion.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0020
 \setcounter{theorem}{17}\begin{lemma}[Pell's equation]
 For $x^2-Dy^2=1$, if $(x_1,y_1)$ is a solution, then
 \[
@@ -242,11 +262,13 @@ Requiring $n(n+1)/2=x^2$ gives
 $n^2+n=2x^2$, or $(2n+1)^2-2(2x)^2=1$.
 This is Pell's equation, with the recorded fundamental solution $(n,x)=(1,1)$.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0021
 \setcounter{theorem}{18}\begin{lemma}[Fermat's infinite descent principle]
 There is no strictly decreasing sequence of positive integers.
 This idea seems elementary but has many beautiful consequences.
 \end{lemma}
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0022
 % Source page 6 - left
 \setcounter{theorem}{19}\begin{lemma}[Choose a modulus suited to the power]
 Using an appropriate modulus for perfect powers often yields elegant solutions:
@@ -267,7 +289,8 @@ Then $y^3+z^3=1001$. Arguing similarly gives $10\geq y\geq8$;
 only $y=10$ satisfies the congruence, and this puts $z=1$.
 Thus the solutions are the permutations of $(10,10,1)$.
 
-(2) There are two other options, a parity test and a binomial expansion; both yield solutions,
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0023
+(2) There are two other options: a parity test and a binomial expansion; both yield solutions,
 but the best approach is modulo $5$.
 \begin{align*}
 (x+1)^5+(y-4)^5+1&\equiv x+1+y-4+1=x+y-2\pmod5,\\
@@ -276,6 +299,7 @@ but the best approach is modulo $5$.
 Hence $3\equiv0\pmod5$, a contradiction.
 These are two examples where an appropriate modular-arithmetic argument yields an elegant solution.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0024
 % Source page 6 - right
 \setcounter{theorem}{20}\begin{lemma}[Factorization]
 Some problems are solved by elementary factorization.
@@ -288,7 +312,7 @@ Some problems are solved by elementary factorization.
 where $x,y\in\mathbb Q$. (IMOTC, 2014.)
 \end{enumerate}
 (1) From $c(a^2+b^2)=a(b^2+c^2)$ we get $ac(a-c)=b^2(a-c)$, hence $b^2=ac$.
-Therefore
+Therefore,
 \[
 a^2+b^2+c^2=a^2+ac+c^2=(a+c)^2-ac=(a+c)^2-b^2=(a+b+c)(a-b+c).
 \]
@@ -296,6 +320,7 @@ Since $b^2=ac$, AM--GM gives $a+c\geq2b$, with equality only if $a=c$.
 Thus $a+b+c>1$ and $a-b+c>b\geq1$. Both factors are integers greater than
 $1$, so $a^2+b^2+c^2$ is composite.
 
+% BLOG-PASSAGE: lemma-book-elementary-number-theory:p0025
 (2) If $xy=0$, the hypothesis forces $x=y=0$, and $1-xy=1$ is a square.
 Assume now that $xy\ne0$. We have
 \[

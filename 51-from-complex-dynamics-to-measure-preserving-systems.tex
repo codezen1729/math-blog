@@ -5,16 +5,18 @@
 \begin{document}
 \section*{Measure-Preserving Systems}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0001
 \subsection{Introduction to Measure-Preserving Systems}
 Let $X$ be a set and $T\colon X\to X$ a map. We shall refer to $X$ as the
 \emph{state space} and $T$ as the \emph{transformation} (or deformation).
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0002
 % Source page 7
 If, in addition, you impose some structure on $X$, then we end up with the
 following.
 \begin{description}[style=nextline,leftmargin=1.5em,labelindent=0pt]
   \item[Group structure.]
-  If $\Gamma\triangleleft G$, or $\Gamma<G$, then there is a transitive
+  If $\Gamma\triangleleft G$ or $\Gamma<G$, then there is a transitive
   $G$-action on $G/\Gamma$, a homogeneous space of $G$. If $X\cong G/\Gamma$,
   then one has the transformation $T_g\colon X\to X$, $T_g(x):=g\cdot x$.
   One can study the dynamics of $T_g$: a classical dynamical system.
@@ -27,9 +29,10 @@ following.
   the setting of ergodic theory.
 \end{description}
 Of the three basic structures one can impose on a set, we shall impose the
-structure of a probability space. Let me end by introducing the setup of
-ergodic theory.
+structure of a probability space. Let me introduce the setup of ergodic
+theory.
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0003
 % Source page 8
 \setcounter{definition}{2}\begin{definition}[Measure-preserving system]
 Let $(X,\mathcal B,\mu)$ and $(Y,\mathcal C,\nu)$ be probability spaces. A
@@ -44,6 +47,7 @@ $T\colon X\to X$ is measurable and
 $\mu(T^{-1}(B))=\mu(B)$ for every $B\in\mathcal B$.
 \end{definition}
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0004
 \begin{remark}
 \leavevmode\par
 \begin{itemize}
@@ -75,6 +79,7 @@ $\mu(T^{-1}(B))=\mu(B)$ for every $B\in\mathcal B$.
 \end{itemize}
 \end{remark}
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0005
 Having seen this, let us see what it means to preserve the structure of a
 measure-preserving system on $X$.
 \setcounter{definition}{3}\begin{definition}[Measurable isomorphism]
@@ -92,10 +97,12 @@ almost everywhere, such that the following diagram commutes.
   \FigureTag{L1.6}{fig:lecture1-fig-06}
 \end{figure}
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0006
 % Source page 10
-At this point one must ask: how does one check for the measure-preserving
+At this point, one must ask: how does one check for the measure-preserving
 property? Is there a litmus test?
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0007
 \setcounter{theorem}{0}\begin{lemma}[Litmus test]
 Given $(X,\mathcal B,\mu,T)$, with $T\colon X\to X$ measurable, $\mu$ will be
 $T$-invariant if $T$ preserves the measures of a semi-algebra that generates
@@ -120,6 +127,7 @@ theorem, $\mathcal J'$ contains $\sigma(\mathcal J)=\mathcal B$. Hence
 $\mathcal J'=\mathcal B$, so $\mu$ is $T$-invariant.
 \end{proof}
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0008
 A good time to stop, breathe, and look at examples.
 \setcounter{example}{0}\begin{example}[Measure-preserving systems]
 \leavevmode\par
@@ -140,6 +148,7 @@ A good time to stop, breathe, and look at examples.
 \end{enumerate}
 \end{example}
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0009
 % Source page 11
 \setcounter{example}{1}\begin{example}[Measurable isomorphism]
 Define $\phi\colon\{0,1\}^{\mathbb N}\to\mathbb R/\mathbb Z$ by
@@ -180,13 +189,15 @@ Also, $\phi\circ\sigma=T_2\circ\phi$. Hence the Bernoulli system is
 measurably isomorphic to the circle-doubling system.
 \end{example}
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0010
 \subsection{Questions and applications}
 We have a means to measure, hence a way to compare, and we wish to compare
 $E$ with its inverse images $(T^{\circ n})^{-1}(E)$. As $T$ is measure-preserving, we are
-justified in asking how $\{(T^{\circ n})^{-1}(E)\}_n$ behaves, because $T$ preserves
-measure, so $E$ and $T^{-1}(E)$ belong to the same structural space; hence
+justified in asking how $\{(T^{\circ n})^{-1}(E)\}_n$ behaves. Because $T$ preserves
+measure, $E$ and $T^{-1}(E)$ belong to the same structural space; hence
 comparison is natural.
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0011
 % Source page 12
 \Needspace{9\baselineskip}
 With that in mind, we ask the following questions:
@@ -201,6 +212,7 @@ questions, and answer them to the extent we can, culminating in Furstenberg's
 multiple recurrence theorem (FMRT), the ergodic-theoretic input to
 Szemer\'edi's theorem.
 
+% BLOG-PASSAGE: from-complex-dynamics-to-measure-preserving-systems:p0012
 \setcounter{theorem}{1}\begin{theorem}[Furstenberg's multiple recurrence theorem (FMRT)]
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. Let
 $E\in\mathcal B$ satisfy $\mu(E)>0$, and let $k\geq1$. Then there exists

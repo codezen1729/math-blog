@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Congruences, Diophantine Equations, and Infinite Descent}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0001
 \setcounter{theorem}{45}\begin{lemma}[Two obvious congruences]
 $x\equiv x\pmod n$ and $x\equiv0\pmod x$ have surprisingly ingenious applications.
 \end{lemma}
@@ -13,6 +14,7 @@ Since $n+10\equiv0\pmod{n+10}$, we have $n\equiv-10\pmod{n+10}$.
 Thus $n^3+100\equiv-900\equiv0\pmod{n+10}$, so $n+10\mid900$.
 The maximum value is $n=890$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0002
 \setcounter{theorem}{46}\begin{lemma}[Lagrange's identity]
 $(a^2+b^2)(c^2+d^2)=(ac\pm bd)^2+(ad\mp bc)^2$.
 \end{lemma}
@@ -25,6 +27,7 @@ m^6+n^6=(m^2)^3+(n^2)^3
 This suggests using Lagrange's identity. Set $a=m$, $b=n$, $c=m^2-n^2$, and $d=mn$.
 Then $m^6+n^6=(m^3-2mn^2)^2+(n^3-2nm^2)^2$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0003
 \setcounter{theorem}{47}\begin{lemma}[A prime in one denominator]
 If $\sum_i a_i/b_i=N/D$ is in lowest terms and exactly one denominator $b_k$ has maximal positive $p$-adic valuation, with $p\nmid a_k$, then $p\mid D$ and $p\nmid N$.
 \end{lemma}
@@ -33,6 +36,7 @@ Let $2^r$ be the largest power of $2$ not exceeding $n$, and let $L=\operatornam
 In $\sum_{k=1}^n L/k$, the term $L/2^r$ is odd and every other term is even.
 Thus the numerator is odd before cancellation while $L$ is even, so the reduced denominator is even.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0004
 % Source page 23 - left
 \setcounter{theorem}{48}\begin{lemma}[Products of perfect powers]
 If $a_i$ is a perfect $n$th power for every $1\leq i\leq k$, then $\prod_{i=1}^k a_i$ is a perfect $n$th power.
@@ -45,6 +49,7 @@ n^3+n^2+n+2n^2+2n+2=a^3
 \]
 a contradiction.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0005
 \setcounter{theorem}{50}\begin{lemma}[Fermat's last theorem]
 $x^n+y^n=z^n$ has no solution for $n>2$.
 \end{lemma}
@@ -54,6 +59,7 @@ Fermat's last theorem gives $n=2$, since $n>1$.
 Thus $x^2+y^2=z^2$. If, for example, $x\leq2$, then
 $(z-y)(z+y)=x^2\leq4$, which has no solution with $y>0$; the same argument applies to $y$, while $z>x,y$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0006
 \emph{Experimentation, observation, and insight bottled together possess
 the capability to perform wonders.}
 Given
@@ -64,7 +70,7 @@ Given
 find $\overline{abc}_{10}$.
 This is a problem from my fruitful problem-solving experience. I employed
 a unique, original technique. Let $\overline{abc}_{10}=100a+10b+c$.
-The notes write
+First write
 \[
 3194=122a+212b+221c=f(a,b,c).
 \]
@@ -73,6 +79,7 @@ Since $f(4,1,0)=700$, we obtain
 $f(7-4,6-1,8-0)=f(3,5,8)=3194$.
 Thus $\overline{abc}=358$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0007
 In fact, every digit occurs twice in each
 place among the six permutations, so the left-hand side is
 $222(a+b+c)$. Since $222\nmid3194$, the problem as written has no
@@ -81,6 +88,7 @@ calculation do not match the displayed sum of all six permutations; the
 numerical constant or the displayed list of permutations must contain a
 typographical error.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0008
 \subsection{Ramanujan's ingenious idea}
 \setcounter{theorem}{53}\begin{lemma}[Adjusting a sum with ones]
 To arrange
@@ -103,11 +111,13 @@ After some analysis, I would stick to the sequence
 $(a_n)=(11,\allowbreak211,\allowbreak221111,\allowbreak22211111111,\allowbreak\ldots)$.
 Guessing the pattern is not difficult. This is somewhat close to a magical solution!
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0009
 \setcounter{theorem}{55}\begin{lemma}[Subtract the two sides]
 To show $A(x)=B(x)$, define $f(x)=A(x)-B(x)$ and try to prove $f(x)=0$ everywhere.
 \end{lemma}
 \paragraph{Application: Hermite's identity.}
 % Source page 25 - right
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0010
 Prove that
 $\lfloor nx\rfloor=\lfloor x\rfloor+\lfloor x+1/n\rfloor+\cdots+\lfloor x+(n-1)/n\rfloor$.
 Define $f(x)=\sum_{k=0}^{n-1}\lfloor x+k/n\rfloor-\lfloor nx\rfloor$.
@@ -119,6 +129,7 @@ f(x+1/n)=\lfloor x+1/n\rfloor+\cdots+\lfloor x+(n-1)/n\rfloor
 Since $\lfloor x+k\rfloor=\lfloor x\rfloor+k$ for integer $k$, we get $f(x+1/n)=f(x)$.
 Thus $f$ has period $1/n$. For $0\leq x\leq1/n$, $f(x)=0$; therefore it vanishes everywhere, proving the identity.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0011
 \setcounter{theorem}{63}\begin{lemma}[Floor and fractional part]
 $\lfloor x\rfloor=x-\{x\}$, where $\{x\}\in[0,1)$.
 Thus $0\leq\{x\}<1$ and $x-1<\lfloor x\rfloor\leq x$.
@@ -135,14 +146,16 @@ Write $x/8=q+u$, where $q\in\mathbb Z$ and $0\leq u<1$. Then
 =7q+\lfloor4u\rfloor+\lfloor2u\rfloor.
 \]
 The last two terms have sum $0,1,3$, or $4$, whereas $2014\equiv5\pmod7$.
-Therefore the equation has no real solutions.
+Therefore, the equation has no real solutions.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0012
 Here are two problems with particularly striking solutions.
 Now let me present a problem and its standout solution!
 Find $a,b,c>0$ such that $1/2014=1/a+1/b+1/c$.
 This was asked in class. One student boldly gave the unexpected solution:
 ``We know $1=1/2+1/3+1/6$; now divide this by $2014$ to obtain $a,b,c$!''
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0013
 \setcounter{theorem}{66}\begin{lemma}[Transform one solution into another]
 In some Diophantine equations, it helps to observe that if $(a,b,c)$ is a solution, then $(f(a),f(b),f(c))$ is also a solution.
 \end{lemma}
@@ -161,17 +174,20 @@ Put $c=kb-a$. The quadratic equation gives $ac=b^2-k$.
 If $c<0$, then $a-kb>0$ and $k-b^2=a(a-kb)\geq a$, contradicting $k<a/b+1\leq a+1$.
 Thus $c\geq0$, and the above bound gives $c<b$.
 If $c>0$, then $(b,c)$ is a smaller positive solution, contradicting the choice of $b$.
-Therefore $c=0$, and $k=b^2$ is an integer square.
+Therefore, $c=0$, and $k=b^2$ is an integer square.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0014
 Here is a useful parametric construction.
 Prove that $x^2=y^3+z^5$ has infinitely many positive integer solutions.
 The following family gives the required solutions.
 % Source page 30 - right
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0015
 \[
 x_n=n^{10}(n+1)^8,\qquad y_n=n^7(n+1)^5,\qquad z_n=n^4(n+1)^3,
 \qquad n\in\mathbb Z_+.
 \]
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0016
 \subsection{Diophantine equations and normalization}
 \setcounter{theorem}{79}\begin{lemma}[A greatest-common-divisor strategy]\label{lemma:lb1-82}
 When solving some Diophantine equations in two variables, case-by-case analysis using $\gcd(x,y)=d$ turns out to be useful.
@@ -186,15 +202,17 @@ Then
 \quad\Longrightarrow\quad (x-y)^2(dy^2-x)=4x^2y.\]
 Reducing modulo $y$ gives $y\mid x^3$. Since $\gcd(x,y)=1$, we have $y=1$.
 Hence $(x-1)^2(d-x)=4x^2$. Since $x\neq1$ and $\gcd(x,x-1)=1$, it follows that $(x-1)^2\mid4$.
-Therefore $x=2$ or $3$, giving $d=18$ or $12$, respectively.
+Therefore, $x=2$ or $3$, giving $d=18$ or $12$, respectively.
 We end up with $(m,n)=(36,18)$ and $(36,12)$. Q.E.D.!
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0017
 \setcounter{theorem}{87}\begin{lemma}[Dirichlet's theorem]\label{lemma:lb1-90}
 An infinite arithmetic progression $a,a+b,a+2b,a+3b,\ldots$ contains infinitely many primes if $a,b$ are positive and $\gcd(a,b)=1$.
 \end{lemma}
 \paragraph{Application.}
 Let $a_0=4$ and define $a_n=a_{n-1}^2-a_{n-1}$ for each positive integer $n$.
 % Source page 50 - left
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0018
 Prove that there are infinitely many primes that are factors of no term in the sequence.
 Since $4^2\equiv4+2\pmod{10}$, we have $a_1\equiv2\pmod{10}$.
 Now $2^2\equiv2+2\pmod{10}$, so $a_k\equiv2\pmod{10}$ for all $k\geq1$.
@@ -215,6 +233,7 @@ $5$ is a nonresidue modulo $q$. Such a prime divides neither $a_1=12$
 nor any later multiplier $a_j-1$, and therefore divides no term of the
 sequence. Dirichlet's theorem supplies infinitely many such primes.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0019
 \subsection{Euler's formula and lifting indices}
 \setcounter{theorem}{92}\begin{lemma}[Euler's formula]\label{lemma:lb1-95}
 $a^{\phi(m)}\equiv1\pmod m$ if $\gcd(a,m)=1$.
@@ -235,7 +254,7 @@ Now
 \[1978^4\equiv(-22)^4=4^2\cdot121^2\equiv(4\cdot(-4))^2
 =(-16)^2=256\equiv6\not\equiv1\pmod{125}.\]
 Also $1978^{20}\equiv26\not\equiv1\pmod{125}$.
-Therefore the order is $100$, and the least possible value of $n-3$ is $100$, giving $\min n=103$.
+Therefore, the order is $100$, and the least possible value of $n-3$ is $100$, giving $\min n=103$.
 Thus $\min(m+n)=\min m+\min n=103+3=106$.
 Q.E.D.!
 \Needspace{15\baselineskip}
@@ -256,6 +275,7 @@ Here are some lemmas:
 \end{lemma}
 The lemma has many applications, provided its hypotheses are checked.
 % Source page 57 - right
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0020
 \paragraph{Application: Ireland (1996).}
 Let $p$ be a prime and $a,n$ positive integers.
 Prove that if $2^p+3^p=a^n$, then $n=1$.
@@ -265,9 +285,10 @@ Now, if $p$ is odd, then $5\mid a$ and
 $v_5(2^p+3^p)=v_5(2+3)+v_5(p)$, since $p$ is odd and $5\mid3+2$.
 If $p=5$, we get $2^5+3^5=275=5^2\cdot11$, so again $n=1$.
 Hence we may suppose that $p\neq5$.
-Therefore $v_5(2^p+3^p)=1$.
+Therefore, $v_5(2^p+3^p)=1$.
 Since $v_5(a^n)=n v_5(a)=1$, we obtain $n=1$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0021
 \subsection{Fractional congruences}
 \setcounter{theorem}{99}\begin{lemma}[Fractional congruences]\label{lemma:lb2-103}
 If $a\equiv b\pmod n$ and $(b,n)=1$, then $a/b$ modulo $n$ means $ab^{-1}$ modulo $n$, and $a/b\equiv1\pmod n$.
@@ -299,13 +320,14 @@ $1/11+1/12+1/13+1/14\equiv0\pmod{25}$.
 Also
 $1/16+1/17+1/18+1/19\equiv11+3+7+4\equiv0\pmod{25}$.
 Thus $\sum_{5\nmid k,\,k\leq19}1/k=25X_2/Y_2$, where $(Y_2,5)=1$.
-Consequently
+Consequently,
 \[
 \frac AB=\frac{5X_1}{Y_1}+\frac15\frac{25X_2}{Y_2}+\frac1{12}
 =\frac{60X_1Y_2+60X_2Y_1+Y_1Y_2}{12Y_1Y_2},
 \]
 so $5\nmid AB$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0022
 The needed result is Zsigmondy's theorem.
 \subsection{Zsigmondy's theorem}
 \setcounter{theorem}{100}\begin{lemma}[Zsigmondy's theorem]\label{lemma:lb2-104}
@@ -322,6 +344,7 @@ Suppose now that $a>1$ and $m>1$. Apart from $(a,m)=(2,3)$, Zsigmondy's theorem 
 so it does not divide $(a+1)^n$. Finally, $2^3+1=3^2$ divides $3^n$ exactly when $n\geq2$.
 Hence the remaining solutions are $(a,m,n)=(2,3,n)$ with $n\geq2$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0023
 Solve the following using Zsigmondy.
 \paragraph{Round 1: Fight. Japanese MO (2011).}
 Find all positive integer quintuples $(a,n,p,q,r)$ such that
@@ -332,6 +355,7 @@ with $xyz\ne0$. Take $z$ to be prime!
 \paragraph{Final round: Fight. Balkan MO (2009).}
 Solve $5^x-3^y=z^2$ for $x,y,z\in\mathbb N$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0024
 \paragraph{You used calculus in that!}
 If $a^n+n$ is a multiple of $b^n+n$ for every positive integer $n$, prove
 that $a=b$, where $a,b\in\mathbb N$.
@@ -357,6 +381,7 @@ It purports to prove the stronger statement
 ``$b^n+n\nmid a^n+n$ for $a>b$, with the exception
 $1^2+1\mid2^2+2$.'' Can you guess where that exception came from?
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0025
 \paragraph{What an amazing argument! WAAA!}
 For a natural number $n$, prove
 \[
@@ -377,13 +402,14 @@ Thus
 =\sum_{k=1}^n d(k)+\lfloor\sqrt n\rfloor.
 \]
 Now $d(k)\equiv1\pmod2$ exactly when $k$ is a perfect square, and $P$
-contains $\lfloor\sqrt n\rfloor$ squares. Therefore
+contains $\lfloor\sqrt n\rfloor$ squares. Therefore,
 \[
 \sum_{k=1}^n\left\lfloor\frac nk\right\rfloor+\lfloor\sqrt n\rfloor
 \equiv2\lfloor\sqrt n\rfloor\equiv0\pmod2.
 \]
 \emph{Quite intelligently done.}
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0026
 % Source page 9 - left
 
 
@@ -393,6 +419,7 @@ if and only if $xy+1$, $yz+1$, and $zx+1$ are each perfect squares.
 Soumik Ghosh communicated a solution that seems deceptively correct.
 Hats off to the ingenious use of infinite descent. Dangerous!
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0027
 Call $(x,y,z)$ good if $(xy+1)(yz+1)(zx+1)$ is a perfect square.
 The claim is that every three-element subset of $(x,y,z,t)$ is good, where
 \[
@@ -418,24 +445,28 @@ At every step the maximal element decreases, until eventually $t=0$.
 It follows, by arguing correspondingly, that $xy+1$, $yz+1$, and $zx+1$ are perfect squares.
 \emph{Quite dangerously done.}
 
-As written, this descent is incomplete: the displayed multiplication does not
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0028
+This descent is incomplete: the displayed multiplication does not
 directly yield each asserted target product, and the argument has not shown that
 $t$ is a nonnegative integer strictly smaller than the element it replaces.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0029
 Here is another problem.
 \paragraph{Challenge.}
 For $a_1,\ldots,a_n,x,y\in\mathbb N$, prove that the following system has solutions if and only if $x=y$:
 % Source page 10 - right
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0030
 \[
 a_1^x+\cdots+a_n^x=b^x,\qquad a_1^y+\cdots+a_n^y=b^y
 \]
 where $b$ is a natural number. As written, $n=1$ and $a_1=b$ is a counterexample unless a nontriviality condition is added.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0031
 
 \subsection{Calculus---oh, not again!}
 \paragraph{IMO (1997).}
 Solve $a^{b^2}=b^a$ in positive integers.
-Let $a\geq b$. The source takes $(a,b)=b$, so $a=bk$.
+Let $a\geq b$. The argument takes $(a,b)=b$, so $a=bk$.
 Then $b^{b^2}k^{b^2}=b^{bk}$ and $k^{b^2}=b^{bk-b^2}$.
 Put $k=b^x$. This gives
 \[
@@ -448,6 +479,7 @@ $b=\sqrt[y-2]{y}$. The pairs $(b,y)$ are $(1,1),(3,3),(2,4)$.
 Since $2^{y-2}-y$ is increasing, the difference grows exponentially.
 Thus the only pairs $(a,b)$ are $(1,1),(27,3),(16,2)$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0032
 This proposed reduction has not established that $\gcd(a,b)=b$, that
 $k$ is a power $b^x$, or that it is enough to assume $a\geq b$.
 Here is a complete argument.
@@ -464,6 +496,7 @@ Thus $r=c^{r-2}$ with $r>2$. For $r\geq5$, we have $c^{r-2}\geq2^{r-2}>r$, while
 $r=3$ gives $c=3$ and $r=4$ gives $c=2$.
 Thus the only pairs $(a,b)$ are $(1,1),(27,3),(16,2)$.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0033
 \subsection{Number-theoretic inequalities}
 Here is a legendary problem due to Paul Erd\H{o}s.
 Each positive integer $a_1,\ldots,a_n$ is less than $1951$, and the least common multiple of any two exceeds $1951$.
@@ -474,6 +507,7 @@ $\sum_i\lfloor1951/a_i\rfloor\leq1951$.
 Since $x-1<\lfloor x\rfloor$, we obtain
 $\sum_i(1951/a_i-1)<1951$, proving the claim.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0034
 % Source page 15 - left
 Here is another problem of Erd\H{o}s.
 \paragraph{Magical solution: Erd\H{o}s--Straus problem.}
@@ -481,12 +515,14 @@ Given $3\mid n+1$, prove that there are integers $x,y,z$ with $4xyz=n(xy+yz+zx)$
 Take $x=n$, $y=(n-2)/3+1$, and $z=n(n+1)/3$.
 This proves the claim. The case $4\mid n+1$ leads to a related problem.
 
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0035
 Two related problems are recorded below.
 \paragraph{Problem 1.}
 Given $\alpha,\beta\in\mathbb Z^+$ and primes $p_1,\ldots,p_n,q$, show that, for every $\alpha$, there exists an $n$ such that
 $p_1^\alpha+p_2^\alpha+\cdots+p_n^\alpha=q^\beta$.
-Here $n$ and $\alpha$ are each both fixed and quantified, so the statement needs a corrected choice of quantifiers.
+Here $n$ and $\alpha$ are both fixed and quantified, so the statement needs a corrected choice of quantifiers.
 % Source page 15 - right
+% BLOG-PASSAGE: lemma-book-congruences-diophantine-equations-descent:p0036
 \paragraph{Problem 2.}
 Find infinitely many families of solutions in nine distinct integers
 $x_1,x_2,x_3,y_1,y_2,y_3,z_1,z_2,z_3$ of

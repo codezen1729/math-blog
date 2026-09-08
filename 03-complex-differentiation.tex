@@ -4,6 +4,7 @@
 \begin{document}
 \section*{Complex Differentiation}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: complex-differentiation:p0001
 \subsection*{Tool 5 — Epsilon-Room Method}
 This is called the ``creating an $\varepsilon$ of room'' method, a very standard technique one encounters in a graduate measure theory course. Often it is not easy to prove a sharp equality or inequality. Thus, to prove something of the form $A=B$ or $A\leq B$, one tries to prove
 \[
@@ -12,6 +13,7 @@ This is called the ``creating an $\varepsilon$ of room'' method, a very standard
 A\leq B+\varepsilon\quad(\forall\varepsilon>0).
 \]
 
+% BLOG-PASSAGE: complex-differentiation:p0002
 
 From this need for an $\varepsilon$ of room, we have the following recurring, famous statement in mathematics: ``Let $\varepsilon>0$.'' This idea is a special form of routine analysis:
 \[
@@ -20,9 +22,11 @@ a<b_k\ (\forall k)\Longrightarrow a\leq\inf_k b_k,
 a_k<b\ (\forall k)\Longrightarrow\sup_k a_k\leq b.
 \]
 
+% BLOG-PASSAGE: complex-differentiation:p0003
 \subsubsection*{Application — Complex differentiation}
 Before applying Tool 5, let us look at complex differentiation.
 
+% BLOG-PASSAGE: complex-differentiation:p0004
 There are two notions of differentiability in play. One occurs when $f$ is seen as a map
 \[
 f\colon\mathbb R^2\longrightarrow\mathbb R^2.
@@ -46,9 +50,11 @@ We say that $f$ is complex differentiable if
 \]
 exists for every $z\in\mathbb C$. This is an algebraic notion of differentiation, since it exploits the field structure of $\mathbb C$.
 
+% BLOG-PASSAGE: complex-differentiation:p0005
 As metric spaces, $\mathbb C$ and $\mathbb R^2$ are homeomorphic; as vector spaces, they are isomorphic. But do these two definitions match? They ought to because $\mathbb C\cong\mathbb R^2$, and functions on $\mathbb R^2$ can be seen as functions on $\mathbb C$ and vice versa. As it turns out, a differentiable function on $\mathbb R^2$ need not be complex differentiable. Why do they not match, and how do we reconcile them? Let \(f\colon\mathbb R^2\longrightarrow\mathbb R^2\)
 be differentiable, with $f'(x)=A$. Then $A$ can be realized as an $\mathbb R$-linear map from $\mathbb C$ to $\mathbb C$. But the derivative $f'(z)$ of a complex differentiable function $f\colon\mathbb C\to\mathbb C$ is a $\mathbb C$-linear map between copies of $\mathbb C$. Note that $\mathbb C$ is a field and hence a vector space over itself. Thus we demand much more from a complex differentiable function. What is it that we demand?
 
+% BLOG-PASSAGE: complex-differentiation:p0006
 Write
 \[
 A=f'(x)=\left(\frac{\partial f}{\partial x},
@@ -80,7 +86,7 @@ On the other hand, the matrix expression, viewed in $\mathbb C$, is
 +i\left(\frac{\partial f_1}{\partial x}h_2+
 \frac{\partial f_2}{\partial x}h_1\right).
 \end{align*}
-Therefore
+Therefore,
 \[
 \boxed{
 \frac{\partial f_1}{\partial x}=\frac{\partial f_2}{\partial y},
@@ -89,6 +95,7 @@ Therefore
 \]
 These are precisely the Cauchy--Riemann equations. We demand that an $\mathbb R^2$-differentiable function satisfy the Cauchy--Riemann equations. Now that the condition is precise, we proceed from $\mathbb R^2$-differentiability, or Fr\'echet differentiability, to complex differentiability.
 
+% BLOG-PASSAGE: complex-differentiation:p0007
 Let $f\colon\mathbb R^2\to\mathbb R^2$ be Fr\'echet differentiable and satisfy the Cauchy--Riemann equations. Then
 \[
 \lim_{(h_1,h_2)\to0}
@@ -107,7 +114,7 @@ Note that $A\binom10$, viewed in $\mathbb C$, is
 \frac{\partial f}{\partial x}(z_0),
 \qquad z_0=x_0+iy_0.
 \]
-Therefore
+Therefore,
 \[
 \lim_{z\to z_0}
 \frac{\left|f(z)-f(z_0)-(z-z_0)\dfrac{\partial f}{\partial x}(z_0)\right|}
@@ -126,17 +133,21 @@ Thus
 \]
 exists. Hence $f$ is complex differentiable. One can trace back, too.
 
+% BLOG-PASSAGE: complex-differentiation:p0008
 
 \textbf{Remark.}
 As in the construction of $\mathbb C$, its algebraic structure imposes rigidity. Exploiting that structure to define differentiability makes holomorphic functions far more regular than Fr\'echet differentiable functions, or even real differentiable functions.
 
+% BLOG-PASSAGE: complex-differentiation:p0009
 \subsection*{Summary}
 A function $f$ is holomorphic if and only if, seen as a map from $\mathbb R^2$ to $\mathbb R^2$, it is Fr\'echet differentiable and satisfies the Cauchy--Riemann equations; equivalently, its derivative, viewed as an $\mathbb R$-linear map from $\mathbb C$ to $\mathbb C$, turns out to be $\mathbb C$-linear.
 
+% BLOG-PASSAGE: complex-differentiation:p0010
 \subsection*{General result: Looman--Menchoff theorem}
 If $f$ is continuous on $\Omega$ and obeys the Cauchy--Riemann equations, then \(f\in H(\Omega).\)
 This is just for fun.
 
+% BLOG-PASSAGE: complex-differentiation:p0011
 \textbf{Remark.}
 The derivative already shows that holomorphic functions are far more regular than merely Fr\'echet differentiable functions. If $f=u+iv$, then
 \[
@@ -149,6 +160,7 @@ v_x&v_y
 Note that the matrix is a positive scalar multiple of an orthogonal matrix, since \(u_xu_y+v_xv_y=0\)
 by the Cauchy--Riemann equations. Let us see what this orthogonality leaves us with.
 
+% BLOG-PASSAGE: complex-differentiation:p0012
 
 Let $\gamma_1(t)$ and $\gamma_2(t)$ be two curves in $\mathbb R^2$, and let them intersect at $t_0$. Suppose \(f'(\gamma_1(t_0))=f'(\gamma_2(t_0))\neq0.\)
 Then
@@ -157,12 +169,14 @@ Then
 =|\gamma_1'(t_0)|\,|\gamma_2'(t_0)|\cos\theta.
 \]
 
+% BLOG-PASSAGE: complex-differentiation:p0013
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.64\linewidth]{note1-fig-04.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: complex-differentiation:p0014
 Moreover,
 \begin{align*}
 \langle(f\circ\gamma_1)'(t_0),(f\circ\gamma_2)'(t_0)\rangle
@@ -191,8 +205,10 @@ Assuming $\theta$ and $\psi$ are both acute, we have
 \boxed{\theta=\psi.}
 \]
 
+% BLOG-PASSAGE: complex-differentiation:p0015
 Thus $f\in H(\Omega)$ does not deform curves haphazardly: it does so in such a manner that the angle of intersection does not change. If $f\in H(\Omega)$ and $f'\neq0$ on $\Omega$, then $f$ is called a conformal map. Mind you, these maps are very rare. One result is especially useful here:
 
+% BLOG-PASSAGE: complex-differentiation:p0016
 The orientation-preserving conformal automorphisms of $\widehat{\mathbb C}$ are the M\"obius transformations.
 More generally, for $n\geq3$, every sufficiently smooth conformal diffeomorphism between domains in $\mathbb R^n$ is the restriction of a M\"obius transformation. In particular, the conformal automorphisms of $\mathbb R^n\cup\{\infty\}$ are the M\"obius transformations.
 % BLOG-CONTENT-END

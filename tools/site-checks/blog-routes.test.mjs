@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
-import { normalizeBlogRoute, personalWebpage, blogTitle, blogPageMetadata, phaseForLegacyTrack } from '../lib/blog-routes.ts';
+import { legacyCleanDestination, normalizeBlogRoute, personalWebpage, blogTitle, blogPageMetadata, phaseForLegacyTrack } from '../lib/blog-routes.ts';
 import { articleFigureWidth, vectorFigureMinimum } from '../lib/figure-sizing.ts';
 
 const posts = JSON.parse(readFileSync(new URL('../lib/generated-posts.json', import.meta.url), 'utf8'));
@@ -28,6 +28,12 @@ test('old archive and reading-path links preserve their topic and page', () => {
   assert.equal(normalizeBlogRoute('#/archive/standard-tools'), 'blog/standard-tools');
   assert.equal(normalizeBlogRoute('#/archive/?page=3'), 'blog/?page=3');
   assert.equal(normalizeBlogRoute('#/path'), 'blog');
+});
+test('retired hashes become clean paths without losing pagination, tracks or exact references', () => {
+  assert.equal(legacyCleanDestination('#/path/k-theory?page=2'), 'series/k-theory/page/2/');
+  assert.equal(legacyCleanDestination('#/archive/?page=3'), 'blog/page/3/');
+  assert.equal(legacyCleanDestination('#/blog?track=Complex%20dynamics'), 'series/dynamics/');
+  assert.equal(legacyCleanDestination('#/post/example?ref=tex-anchor&view=full'), 'post/example/?view=full#tex-anchor');
 });
 test('legacy topic names still resolve to their present series', () => {
   assert.ok(posts.some(post => post.track === 'Riemann surfaces'));
@@ -104,7 +110,7 @@ test('blog previews retain opening headings, labels, navigation, formulas and fi
     assert.match(posts.find(post => post.slug === slug).excerptHtml, /<(?:ul|ol)(?:\s[^>]*)?>/);
   }
   const connectedness = posts.find(post => post.slug === 'connectedness-and-compactness').excerptHtml;
-  assert.match(connectedness, /^<h3[^>]*>Tool 2 — Real-Part Formula for the Modulus<\/h3>/);
+  assert.match(connectedness, /^(?:<span[^>]*class="reference-target"[^>]*><\/span>\s*)*<h2[^>]*>Tool 2 — Real-Part Formula for the Modulus<\/h2>/);
   assert.match(connectedness, /\\\[\|z\|=\\sup_\{\\theta\}\\operatorname\{Re\}/);
   assert.match(connectedness, /src="figures\/complex-analysis\/note1-fig-01\.svg"/);
 });
@@ -146,9 +152,10 @@ test('the distributed application excludes personal pages and photographs', () =
   assert.equal(existsSync(new URL('../components/personal-pages.tsx', import.meta.url)), false);
   assert.equal(existsSync(new URL('../public/profile/', import.meta.url)), false);
   const app = readFileSync(new URL('../components/site-app.tsx', import.meta.url), 'utf8');
+  const lab = readFileSync(new URL('../components/lab-page.tsx', import.meta.url), 'utf8');
   assert.doesNotMatch(app, /PersonalHome|VitaPage|PersonalResearchPage|PersonalContact|PersonalPageBanner/);
-  assert.match(app, /<MandelbrotJuliaExplorer/);
-  assert.match(app, /<MandelbrotMotion/);
+  assert.match(lab, /<MandelbrotJuliaExplorer/);
+  assert.match(lab, /<MandelbrotMotion/);
   assert.match(app, /title: 'Lemma Book \(Olympiad Days\)'/);
   assert.match(app, /articleFigureWidth/);
   assert.match(app, /maxWidth: figureScale <= 1 \? '100%' : 'none'/);
@@ -156,4 +163,11 @@ test('the distributed application excludes personal pages and photographs', () =
   assert.doesNotMatch(app, /excerpt-equation-ellipsis|mathematicalLength/);
   const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
   assert.doesNotMatch(css, /profile\//);
+});
+
+test('lazy article routes recover from loading failures and reveal exact anchors after loading', () => {
+  const app = readFileSync(new URL('../components/site-app.tsx', import.meta.url), 'utf8');
+  assert.match(app, /\.catch\(\(\) => \{ if \(current\) setLoadError\(true\)/);
+  assert.match(app, /if \(!post\) return;[\s\S]*locationArticleReference\(\)/);
+  assert.match(app, /revealArticleReference\(reference\)/);
 });

@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "source": "website",
+  "archive": "site-source.zip",
+  "excludeDirectories": [
+    ".next",
+    ".vinext",
+    ".wrangler",
+    "dist",
+    "dist-pages",
+    "node_modules",
+    "out",
+    "work"
+  ],
+  "excludeNames": [
+    ".DS_Store",
+    "tsconfig.tsbuildinfo"
+  ]
+}

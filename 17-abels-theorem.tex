@@ -4,10 +4,13 @@
 \begin{document}
 \section*{Abel's Theorem}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: abels-theorem:p0001
 \textbf{I)} \underline{\textbf{Prologue}}
 
-Meromorphic functions are important tools in the theory of Riemann surfaces, as the following propositions illustrate:
+% BLOG-PASSAGE: abels-theorem:p0002
+Meromorphic functions are important tools in the theory of \BlogPost{topology-of-surfaces}{Riemann surfaces}, as the following propositions illustrate:
 
+% BLOG-PASSAGE: abels-theorem:p0003
 \subsection*{Proposition 0.1} The following are in bijective correspondence:
 \begin{itemize}
     \item $(n+1)$-linearly independent meromorphic functions on a compact Riemann surface $C$.
@@ -15,181 +18,240 @@ Meromorphic functions are important tools in the theory of Riemann surfaces, as 
 \end{itemize}
 Here non-degenerate means that $\phi(C)$ is not contained in any hyperplane of $\mathbb{CP}^n$.
 
+% BLOG-PASSAGE: abels-theorem:p0004
 
 \subsection*{Proposition 0.2} The image of any non-degenerate holomorphic mapping $\phi:C\rightarrow \mathbb{CP}^2$ of a compact Riemann surface is an algebraic curve.
 
-These propositions show that the set $\mathcal{M}(C)$ of meromorphic functions on $C$ acts as a bridge from Riemann surface theory to algebraic geometry: where Proposition $1$ sets up the scaffolding for projective embeddings, and Proposition $2$ paves the way for algebraicity. Therefore, studying the existence of such functions is of relevance to us. In this regard, Abel's Theorem (stated below) provides a systematic method of investigation.
+% BLOG-PASSAGE: abels-theorem:p0005
+These propositions show that the set $\mathcal{M}(C)$ of meromorphic functions on $C$ acts as a bridge from Riemann surface theory to algebraic geometry: Proposition $1$ sets up the scaffolding for projective embeddings, and Proposition $2$ paves the way for algebraicity. Therefore, studying the existence of such functions is of relevance to us. In this regard, Abel's Theorem (stated below) provides a systematic method of investigation.
 
-\subsection*{Theorem 0.3} Given a compact Riemann surface $C$ of genus $g$, there exists a $g$-dimensional complex torus $J(C)$, and a map,
+% BLOG-PASSAGE: abels-theorem:p0006
+\subsection*{Theorem 0.3} Given a compact Riemann surface $C$ of genus $g$, there exists a $g$-dimensional complex torus $J(C)$ and a map
 $$u:\text{Div}(C)^0 \rightarrow J(C)$$
 
+% BLOG-PASSAGE: abels-theorem:p0007
 such that $u(D) = 0$ if and only if $\exists$ $f\in \mathcal{M}(C)$ with $D = (f)$ (where $\text{Div}(C)^0$ is the collection of degree $0$ divisors of $C$). Further,
 \begin{itemize}
     \item $J(C)$ is called the \textbf{Jacobian variety} of $C$.
     \item $u$ is called the \textbf{Abel-Jacobi map}.
 \end{itemize}
 
-We first recall two results used to construct the Jacobian variety. Let $C$ be a compact Riemann surface of genus $g$, $\Omega^1(C)$ the vector space of holomorphic $1$-forms on $C$ with basis $\omega_1, \ldots, \omega_g$, and $\mathcal{M}^1(C)$ the space of meromorphic differentials on $C$.
+% BLOG-PASSAGE: abels-theorem:p0008
+With the \BlogPost{elliptic-curves-geometric}{geometric}, \BlogPost{elliptic-curves-algebraic}{algebraic}, and \BlogPost{elliptic-curves-harmonic}{harmonic} perspectives in mind, we first recall two results used to construct the Jacobian variety. Let $C$ be a compact Riemann surface of genus $g$, $\Omega^1(C)$ the vector space of holomorphic $1$-forms on $C$ with basis $\omega_1, \ldots, \omega_g$, and $\mathcal{M}^1(C)$ the space of meromorphic differentials on $C$.
 
+% BLOG-PASSAGE: abels-theorem:p0009
 \textbf{II)} \underline{\textbf{Landmark Theorems}}
 
+% BLOG-PASSAGE: abels-theorem:p0010
 Recall that:
 
+% BLOG-PASSAGE: abels-theorem:p0011
 \begin{enumerate}[(i)]
     \item $C_{\bullet}^S(C) \hookrightarrow C_{\bullet}(C)$ is a quasi-isomorphism, where $C_{\bullet}(C)$ is the complex of singular simplices, and $C_{\bullet}^S(C)$ its subcomplex consisting of smooth singular simplices.
     \item $H_1(C, \mathbb{Z}) \cong \mathbb{Z}^{2g} \cong \langle \gamma_1, \ldots, \gamma_{2g}\rangle$, $\gamma_i$ smooth.
 \end{enumerate}
 
-By (i) and (ii), given any closed curve $\gamma$, we can replace it with, $$\widetilde{\gamma} = \sum_{i=1}^{2g}{n_i\gamma_i} + \partial \Omega \in C^S_1(C)$$ (where $\Omega \in C^S_2(C)$). Let $\lambda$ be a closed $1$-form on $C$. Then
+% BLOG-PASSAGE: abels-theorem:p0012
+By (i) and (ii), given any closed curve $\gamma$, we can replace it with $$\widetilde{\gamma} = \sum_{i=1}^{2g}{n_i\gamma_i} + \partial \Omega \in C^S_1(C)$$ (where $\Omega \in C^S_2(C)$). Let $\lambda$ be a closed $1$-form on $C$. Then
 $$[\gamma] \in H_1(C, \mathbb{Z}) \xlongrightarrow{\pi_{\lambda}} \int_{\widetilde{\gamma}} \lambda \in \mathbb{C}$$
 
+% BLOG-PASSAGE: abels-theorem:p0013
 is well-defined. Indeed, if $\gamma\sim\gamma'$, then $\widetilde{\gamma} - \widetilde{\gamma'} = \partial \Omega$, and by Stokes' Theorem,
 $$\int_{\widetilde{\gamma}}\lambda - \int_{\widetilde{\gamma'}}\lambda = \int_{\widetilde{\gamma} - \widetilde{\gamma'}}\lambda = \int_{\partial \Omega}\lambda = \iint_{\Omega}d\lambda = 0$$
 
-here if $\Omega: \Delta^2 \rightarrow C$, then, $$\iint_{\Omega}d\lambda := \iint_{\Delta^2}\Omega^*(d\lambda)$$
+% BLOG-PASSAGE: abels-theorem:p0014
+Here, if $\Omega: \Delta^2 \rightarrow C$, then $$\iint_{\Omega}d\lambda := \iint_{\Delta^2}\Omega^*(d\lambda)$$
 
-Clearly, $\pi_{\lambda}$ is a group homomorphism. Also, if $\lambda \in H^1_{\text{dR}}(C, \mathbb{C})$, $\lambda \not\equiv 0$, $\pi_{\lambda}$ is non-trivial. For if it were trivial,
+% BLOG-PASSAGE: abels-theorem:p0015
+Clearly, $\pi_{\lambda}$ is a group homomorphism. Also, if $\lambda \in H^1_{\text{dR}}(C, \mathbb{C})$, $\lambda \not\equiv 0$, then $\pi_{\lambda}$ is non-trivial. For if it were trivial,
 $$\int_{\gamma_i}\lambda = 0  (1\leq i\leq 2g)$$
 
-Fix $p_0\in C$ and set,
+% BLOG-PASSAGE: abels-theorem:p0016
+Fix $p_0\in C$ and set
 $$f(p):= \int_{\gamma}\lambda$$
 
-$\gamma(0) = p_0$, $\gamma(1) = p$, $\gamma$ a continuous path. To see that $f(p)$ is well-defined, let $\gamma'$ be another path with $\gamma'(0) = p_0$, $\gamma'(1) = p$, implies $\gamma - \gamma'$ is a $1$ cycle,
+% BLOG-PASSAGE: abels-theorem:p0017
+$\gamma(0) = p_0$, $\gamma(1) = p$, with $\gamma$ a continuous path. To see that $f(p)$ is well-defined, let $\gamma'$ be another path with $\gamma'(0) = p_0$ and $\gamma'(1) = p$. Then $\gamma - \gamma'$ is a $1$-cycle:
 $$\gamma - \gamma' = \sum_{i=1}^{2g}{n_i\gamma_i} + \partial \Omega$$
 
-Stokes' theorem and the vanishing periods show that the definition is independent of the path. Now by Fundamental Theorem of Calculus, $df = \lambda$, which forces $\lambda \equiv 0$ (in $H^1_{\text{dR}}(C,
-\mathbb{C}))$. We therefore have an injective homomorphism,
+% BLOG-PASSAGE: abels-theorem:p0018
+Stokes' theorem and the vanishing periods show that the definition is independent of the path. Now, by the Fundamental Theorem of Calculus, $df = \lambda$, which forces $\lambda \equiv 0$ (in $H^1_{\text{dR}}(C,
+\mathbb{C}))$. We therefore have an injective homomorphism
 $$\pi: H^1_{\text{dR}}(C, \mathbb{C}) \rightarrow \text{Hom}(H_1(C, \mathbb{Z}), \mathbb{C})$$
 
-Let $\overline{\Omega^1(C)} := \{\overline{\omega} |  \omega\in \Omega^1(C)\}$, and consider the map,
+% BLOG-PASSAGE: abels-theorem:p0019
+Let $\overline{\Omega^1(C)} := \{\overline{\omega} |  \omega\in \Omega^1(C)\}$, and consider the map
 $$\Omega^1(C)\bigoplus \overline{\Omega^1(C)} \rightarrow H^1_{\text{dR}}(C, \mathbb{C})$$
 $$(\omega \oplus \overline{\phi}) \rightarrow \omega + \overline{\phi}$$
 
-If $\omega + \overline{\phi} = df$, $f\in C^{\infty}(C)$, then, we shall show that $\omega = \phi = 0$. Suppose $\phi \not\equiv 0$, this implies locally $\phi = g(z)dz$, with $g(z) \not\equiv 0$. Note,
+% BLOG-PASSAGE: abels-theorem:p0020
+If $\omega + \overline{\phi} = df$, $f\in C^{\infty}(C)$, then we shall show that $\omega = \phi = 0$. Suppose $\phi \not\equiv 0$. This implies locally $\phi = g(z)dz$, with $g(z) \not\equiv 0$. Note that
 
+% BLOG-PASSAGE: abels-theorem:p0021
 $$\frac{i}{2}\phi\wedge \overline{\phi} = \frac{i}{2}|g(z)|^2dz\wedge d\overline{z} = |g(z)|^2dx\wedge dy$$
 $$\implies   \frac{i}{2}\iint_C\phi\wedge\overline{\phi} = \iint_C|g(z)|^2dx\wedge dy >0$$
 
+% BLOG-PASSAGE: abels-theorem:p0022
 Also,
 $$\phi\wedge \overline{\phi} = \phi\wedge \omega + \phi\wedge \overline{\phi} = \phi\wedge(\omega+\overline{\phi}) = \phi\wedge df$$
 $$d(f\phi) = df\wedge \phi + f\,d\phi = df\wedge \phi + 0$$
 
-This implies,
+% BLOG-PASSAGE: abels-theorem:p0023
+This implies
 $$\iint_Cd(f\phi) = \iint_C\phi\wedge \overline{\phi} = 0$$
 
-Contradiction. Combining these observations, we have,
+% BLOG-PASSAGE: abels-theorem:p0024
+Contradiction. Combining these observations, we have
 $$\Omega^1(C)\bigoplus \overline{\Omega^1(C)} \hookrightarrow H^1_{\text{dR}}(C, \mathbb{C}) \hookrightarrow \text{Hom}(H_1(C, \mathbb{Z}), \mathbb{C})$$
 
-Both $\text{Hom}(H_1(C, \mathbb{Z}), \mathbb{C})$ and $\Omega^1(C)\bigoplus \overline{\Omega^1(C)}$ are vector spaces of dimension $2g$, and, by Universal Coefficient Theorem, $\text{Hom}(H_1(C, \mathbb{Z}), \mathbb{C})\cong H^1(C, \mathbb{C})$. Therefore we obtain,
+% BLOG-PASSAGE: abels-theorem:p0025
+Both $\text{Hom}(H_1(C, \mathbb{Z}), \mathbb{C})$ and $\Omega^1(C)\bigoplus \overline{\Omega^1(C)}$ are vector spaces of dimension $2g$, and, by the Universal Coefficient Theorem, $\text{Hom}(H_1(C, \mathbb{Z}), \mathbb{C})\cong H^1(C, \mathbb{C})$. Therefore, we obtain
 
+% BLOG-PASSAGE: abels-theorem:p0026
 \begin{itemize}
     \item Hodge Theorem: $\Omega^1(C)\bigoplus \overline{\Omega^1(C)} \cong H^1_{\text{dR}}(C, \mathbb{C})$
     \item De Rham Theorem: $H^1_{\text{dR}}(C, \mathbb{C}) \cong H^1(C, \mathbb{C})$
 \end{itemize}
 
+% BLOG-PASSAGE: abels-theorem:p0027
 
 \textbf{III)} \underline{\textbf{Jacobian Variety}}
 
-\subsection*{Definition 0.1} Let $\gamma_1, \ldots, \gamma_{2g}$ be a basis for $H_1(C, \mathbb{Z})$, then,
+% BLOG-PASSAGE: abels-theorem:p0028
+\subsection*{Definition 0.1} Let $\gamma_1, \ldots, \gamma_{2g}$ be a basis for $H_1(C, \mathbb{Z})$. Then
 $$a_{ij}:= \int_{\gamma_i}\omega_j$$
 
+% BLOG-PASSAGE: abels-theorem:p0029
 The matrix $(a_{ij})_{1\leq i\leq2g,\,1\leq j\leq g}$ is called the \textbf{period matrix} of $C$.
 
+% BLOG-PASSAGE: abels-theorem:p0030
 \subsection*{Proposition 0.4}
     Rows of the period matrix are $\mathbb{R}$-linearly independent.
 
-\textit{Proof.} Suppose $\exists$ $c_i \in \mathbb{R}$ such that,
+% BLOG-PASSAGE: abels-theorem:p0031
+\textit{Proof.} Suppose $\exists$ $c_i \in \mathbb{R}$ such that
 $$c_1\int_{\gamma_1}\omega_i + \cdots c_{2g}\int_{\gamma_{2g}}\omega_i = 0$$
 $$\implies c_1\int_{\gamma_1}\overline{\omega_i} + \cdots c_{2g}\int_{\gamma_{2g}}\overline{\omega_i} = 0$$
 
-Consider the matrix,
+% BLOG-PASSAGE: abels-theorem:p0032
+Consider the matrix
 $$m_{ij} := \begin{cases}
 a_{ij}, & 1\leq i \leq g\\
 \overline{a_{ij}}, & g+1\leq i\leq 2g
 \end{cases}$$
 
-Clearly, rows of $m_{ij}$ are not $\mathbb{R}$-linearly independent. Therefore, we get real numbers $\mu_1, \ldots, \mu_g$ and $\nu_1, \ldots, \nu_g$, such that,
+% BLOG-PASSAGE: abels-theorem:p0033
+Clearly, rows of $m_{ij}$ are not $\mathbb{R}$-linearly independent. Therefore, we get real numbers $\mu_1, \ldots, \mu_g$ and $\nu_1, \ldots, \nu_g$ such that
 $$\int_{\gamma_j} \Bigg(\sum_{i=1}^{g}{\mu_i\omega_i} + \sum_{i=1}^{g}{\nu_i\overline{\omega_i}}
   \Bigg) = 0   (1\leq j\leq 2g)$$
 
-  Set, $$\omega = \sum_{i=1}^{g}{\mu_i\omega_i}, \text{ and } \phi = \sum_{i=1}^{g}{\nu_i\omega_i}$$
+% BLOG-PASSAGE: abels-theorem:p0034
+  Set $$\omega = \sum_{i=1}^{g}{\mu_i\omega_i}, \text{ and } \phi = \sum_{i=1}^{g}{\nu_i\omega_i}$$
 
-  By De Rham Theorem, $[\omega + \overline{\phi}] = 0$, and by the injectivity in the Hodge decomposition $\omega = \phi = 0$. Contradiction.
+% BLOG-PASSAGE: abels-theorem:p0035
+  By the De Rham Theorem, $[\omega + \overline{\phi}] = 0$, and by the injectivity in the Hodge decomposition, $\omega = \phi = 0$. Contradiction.
 
-Therefore, $\{a_{ij}\}$ forms a lattice. Set $\Lambda$ to be the lattice generated by $\{a_{ij}\}$, then $\Lambda$ acts on $\mathbb{C}^g$ by translations; this action is free and properly discontinuous. Define,
+% BLOG-PASSAGE: abels-theorem:p0036
+Therefore, $\{a_{ij}\}$ forms a lattice. Set $\Lambda$ to be the lattice generated by $\{a_{ij}\}$. Then $\Lambda$ acts on $\mathbb{C}^g$ by translations; this action is free and properly discontinuous. Define the $g$-dimensional complex torus
 $$J(C):= \mathbb{C}^g/\Lambda$$
 
-a $g$-dimensional complex torus. Now, Abel's theorem gives a criterion for when meromorphic functions with prescribed poles and zeroes can exist relies on the Abel-Jacobi map, which we now describe. Fix $q\in C$,
+% BLOG-PASSAGE: abels-theorem:p0037
+Now, Abel's theorem gives a criterion for when meromorphic functions with prescribed poles and zeroes can exist. This criterion relies on the Abel-Jacobi map, which we now describe. Fix $q\in C$ and define
 $$u: \text{Div}(C)^0 \rightarrow J(C)$$
 $$u\bigg(\sum_{i}{n_ip_i}\bigg) := \Bigg(\sum_{i}{n_i\int_{q}^{p_i}\omega_j}\Bigg)_{1\leq j\leq g}$$
 
+% BLOG-PASSAGE: abels-theorem:p0038
 This is well-defined because for different choices of paths from $q$ to $p_i$, the differences between the associated Abel-Jacobi maps lie in $\Lambda$.
 
+% BLOG-PASSAGE: abels-theorem:p0039
 \textbf{IV)} \underline{\textbf{Proof of Abel's Theorem}}
 
+% BLOG-PASSAGE: abels-theorem:p0040
 Note that to prove Abel's Theorem we have to show that the following sequence is exact:
 $$\mathcal{M}(C)^* \xrightarrow{(\cdot)} \text{Div}(C)^0 \xrightarrow{u} J(C)$$
 
+% BLOG-PASSAGE: abels-theorem:p0041
 where $(\cdot)$ is the function that sends $f$ to $(f)$, and $\mathcal{M}(C)^*$ is the set of all non-zero meromorphic functions on $C$. We shall prove the above in two parts: (i) $\text{Im}\big((\cdot)\big) \subseteq \text{Ker}(u)$, and (ii) $\text{Ker}(u) \subseteq \text{Im}\big((\cdot)\big)$.
 
-\underline{Proof of (i)}: Let $f \in \mathcal{M}(C)^*$. $f$ can be seen as a ramified cover of $\mathbb{CP}^1$. For $t\in \mathbb{CP}^1$, let $\{p_i(t)\}_{1\leq i\leq n} = f^{-1}(t)$ with ramification indices $\{n_i\}_{1\leq i\leq n}$. Then set, $$D_t:= \sum_{i=1}^{n}{n_ip_i(t)} \in \text{Div}(C)$$
+% BLOG-PASSAGE: abels-theorem:p0042
+\underline{Proof of (i).} Let $f \in \mathcal{M}(C)^*$. $f$ can be seen as a ramified cover of $\mathbb{CP}^1$. For $t\in \mathbb{CP}^1$, let $\{p_i(t)\}_{1\leq i\leq n} = f^{-1}(t)$ with ramification indices $\{n_i\}_{1\leq i\leq n}$. Then set $$D_t:= \sum_{i=1}^{n}{n_ip_i(t)} \in \text{Div}(C)$$
 
-We shall begin by showing that $u(D_t)$ is holomorphic in $t$. Let $t_0\in \mathbb{CP}^1\backslash \{\infty\}$ be a point that is not a branch point of $f$, then one can find disks $\mathbb{D}_{p_j(t_0)}$ around $p_j(t_0)$ and a disk $\mathbb{D}_{t_0}$ around $t_0$ such that,
+% BLOG-PASSAGE: abels-theorem:p0043
+We shall begin by showing that $u(D_t)$ is holomorphic in $t$. Let $t_0\in \mathbb{CP}^1\backslash \{\infty\}$ be a point that is not a branch point of $f$. Then one can find disks $\mathbb{D}_{p_j(t_0)}$ around $p_j(t_0)$ and a disk $\mathbb{D}_{t_0}$ around $t_0$ such that
 $$f:\mathbb{D}_{p_j(t_0)}\rightarrow \mathbb{D}_{t_0}$$
 
+% BLOG-PASSAGE: abels-theorem:p0044
 is a biholomorphism. Viewing $\mathbb{CP}^1$ as $\mathbb{C} \cup \{\infty\}$, let $f$ be the local coordinate for $\mathbb{D}_{p_j(t_0)}$, and suppose that with respect to those coordinates on $\mathbb{D}_{p_j(t_0)}$,
 $$\omega_i \equiv h_{ij}(z)dz$$
 
-Then for $t \in \mathbb{D}_{p_j(t_0)}$, $1\leq j\leq n$,
+% BLOG-PASSAGE: abels-theorem:p0045
+Then, for $t \in \mathbb{D}_{p_j(t_0)}$, $1\leq j\leq n$,
 $$\int_{q}^{p_j(t)}\omega_i = \int_{q}^{p_j(t_0)}\omega_i + \int_{p_j(t_0)}^{p_j(t)}\omega_i = \int_{q}^{p_j(t_0)}\omega_i + \int_{t_0}^{t}h_{ij}(z)dz$$
 
-Now by Fundamental Theorem of Calculus,
+% BLOG-PASSAGE: abels-theorem:p0046
+Now, by the Fundamental Theorem of Calculus,
 $$\frac{d}{dt}\int_{t_0}^{t}h_{ij}(z)dz = h_{ij}(t) = (2\pi i)\cdot\text{Res}_t\bigg(\frac{h_{ij}(z)dz}{z-t}\bigg)$$
 
+% BLOG-PASSAGE: abels-theorem:p0047
 By definition,
 $$(2\pi i)\cdot\text{Res}_t\bigg(\frac{h_{ij}(z)dz}{z-t}\bigg) = (2\pi i)\cdot\text{Res}_{p_j(t)}\bigg(\frac{w_i}{f-t}\bigg)$$
 
-Residue Theorem further yields,
+% BLOG-PASSAGE: abels-theorem:p0048
+The Residue Theorem further yields
 
+% BLOG-PASSAGE: abels-theorem:p0049
 $$\frac{d}{dt}\sum_{j=1}^{n}{\int_{q}^{p_j(t)}\omega_i} = (2\pi i)\cdot \sum_{j=1}^{n}{\text{Res}_{p_j(t)}\bigg(\frac{w_i}{f-t}\bigg)} = 0$$
 
-Let $B$ denote the set of branch points of $f$ along with $\{\infty\}$, then on $\mathbb{CP}^1\backslash B$, $u(D_t)$ is holomorphic. And as $\mathbb{CP}^1\backslash B$ is connected, $u(D_t)$ is constant. Now, by Riemann Removable Singularity Theorem,
+% BLOG-PASSAGE: abels-theorem:p0050
+Let $B$ denote the set of branch points of $f$ along with $\{\infty\}$. Then, on $\mathbb{CP}^1\backslash B$, $u(D_t)$ is holomorphic. As $\mathbb{CP}^1\backslash B$ is connected, $u(D_t)$ is constant. Now, by the Riemann Removable Singularity Theorem,
 $$u(D_t) = c_0   (t \in \mathbb{CP}^1)$$
 
+% BLOG-PASSAGE: abels-theorem:p0051
 Therefore,
 $$u((f)) = u(D_0) - u(D_{\infty}) = 0$$
 
-thereby proving (i).
+% BLOG-PASSAGE: abels-theorem:p0052
+This proves (i).
 \qed
 
-\underline{Proof of (ii)}: To prove the reverse inclusion, we first construct a suitable meromorphic differential and then integrate it to obtain a meromorphic function. We use the following theorem.
+% BLOG-PASSAGE: abels-theorem:p0053
+\underline{Proof of (ii).} To prove the reverse inclusion, we first construct a suitable meromorphic differential and then integrate it to obtain a meromorphic function. We use the following theorem.
 
+% BLOG-PASSAGE: abels-theorem:p0054
 \subsection*{Theorem 0.5} Given distinct points $p, q \in C$, there exists a meromorphic differential $\phi$ with simple poles precisely at $p$ and $q$, with opposite nonzero residues.
 
+% BLOG-PASSAGE: abels-theorem:p0055
 
 \textit{Proof.}
-    By applying Riemann-Roch Theorem to the divisor $D = -(p+q)$, we have,
+    By applying the Riemann--Roch Theorem to the divisor $D = -(p+q)$, we have
     $$l(D) - i(D) = \text{deg}(D) + 1 - g = -(g+1)$$
 
-    Now, as there can be no vanishing holomorphic function on a compact Riemann surface, $l(D) = 0$, forcing $i(D) = g+1$, which exceeds the dimension of the space of holomorphic $1$-forms on $C$. This yields a meromorphic form $\phi$ with a simple pole either on $p$ or $q$. WLOG, assume $\phi$ has a simple pole at $p$, then $\text{Res}_p(\phi) \neq 0$, and Residue Theorem forces $\text{Res}_q(\phi) \neq 0$. Therefore, $\phi$ is our desired differential.
+% BLOG-PASSAGE: abels-theorem:p0056
+    Now, as there can be no vanishing holomorphic function on a compact Riemann surface, $l(D) = 0$, forcing $i(D) = g+1$, which exceeds the dimension of the space of holomorphic $1$-forms on $C$. This yields a meromorphic form $\phi$ with a simple pole either at $p$ or $q$. WLOG, assume $\phi$ has a simple pole at $p$. Then $\text{Res}_p(\phi) \neq 0$, and the Residue Theorem forces $\text{Res}_q(\phi) \neq 0$. Therefore, $\phi$ is our desired differential.
 
-\textbf{Remark.} Let $D = (p_1 +\cdots + p_n) - (q_1 +\cdots + q_n) \in \text{Div}(C)^0$. Then, one can construct meromorphic differentials with simple poles at $\{p_i, q_i\}_{1\leq i\leq n}$ by summing up differentials with simple poles at $p_i$ and $q_i$ obtained in the theorem above. Further, by multiplying $\phi$ in the preceding theorem by a suitable constant one can ensure that, $$\text{Res}_{p_i}(\phi) = \frac{1}{2\pi i}, \text{ and } \text{Res}_{q_i}(\phi) = \frac{-1}{2\pi i}$$
+% BLOG-PASSAGE: abels-theorem:p0057
+\textbf{Remark.} Let $D = (p_1 +\cdots + p_n) - (q_1 +\cdots + q_n) \in \text{Div}(C)^0$. Then one can construct meromorphic differentials with simple poles at $\{p_i, q_i\}_{1\leq i\leq n}$ by summing up differentials with simple poles at $p_i$ and $q_i$ obtained in the theorem above. Further, by multiplying $\phi$ in the preceding theorem by a suitable constant, one can ensure that $$\text{Res}_{p_i}(\phi) = \frac{1}{2\pi i}, \text{ and } \text{Res}_{q_i}(\phi) = \frac{-1}{2\pi i}$$
 In summary, one can arrange for a differential $\phi$ corresponding to $D = \sum_jn_jp_j \in \text{Div}(C)^0$ satisfying:
 \begin{itemize}
     \item $\phi$ only has simple poles, and they are at points $\{p_j\}_j$.
     \item $\text{Res}_{p_j}(\phi) = \frac{n_j}{2\pi i}$
 \end{itemize}
 
+% BLOG-PASSAGE: abels-theorem:p0058
 
-\textbf{Construction.} Fix $q\in C$, and consider the differential $\phi$ given above for a divisor $D \in \text{Div}(C)^0$ and define, when the integral is path-independent,
+\textbf{Construction.} Fix $q\in C$ and consider the differential $\phi$ given above for a divisor $D \in \text{Div}(C)^0$. When the integral is path-independent, define
 $$f(p) := \text{exp}\bigg(2\pi i\int_{q}^{p}\phi\bigg)$$
 
-Again, Fundamental Theorem of Calculus would ensure that $f$ is holomorphic and non-vanishing everywhere except at the points $\{p_i\}_i$. Suppose $(\mathbb{D}_{p_j}, z)$ is a local coordinate chart centered at a point $p_j$. Then,
+% BLOG-PASSAGE: abels-theorem:p0059
+Again, the Fundamental Theorem of Calculus would ensure that $f$ is holomorphic and non-vanishing everywhere except at the points $\{p_i\}_i$. Suppose $(\mathbb{D}_{p_j}, z)$ is a local coordinate chart centered at a point $p_j$. Then
 
+% BLOG-PASSAGE: abels-theorem:p0060
 $$\phi \equiv \bigg(\frac{n_i}{2\pi i}\bigg)\frac{dz}{z} + h(z)dz$$
 
-where $h(z)$ is holomorphic. Fix a point $p_0 \neq p_i$ in $\mathbb{D}_{p_j}$, and suppose $z(p_0) = z_0$, then,
+% BLOG-PASSAGE: abels-theorem:p0061
+where $h(z)$ is holomorphic. Fix a point $p_0 \neq p_i$ in $\mathbb{D}_{p_j}$, and suppose $z(p_0) = z_0$. Then
 
+% BLOG-PASSAGE: abels-theorem:p0062
 
 \begin{equation*}
     \begin{aligned}
@@ -201,92 +263,119 @@ where $h(z)$ is holomorphic. Fix a point $p_0 \neq p_i$ in $\mathbb{D}_{p_j}$, a
     \end{aligned}
 \end{equation*}
 
-where,
+% BLOG-PASSAGE: abels-theorem:p0063
+where
 $$c = \text{exp}\bigg(2\pi i\bigg(\int_{q}^{p_0}\phi - \frac{n_i}{2\pi i}\text{ln}z_0 \bigg)\bigg)$$
 
-is a non-zero constant and,
+% BLOG-PASSAGE: abels-theorem:p0064
+is a non-zero constant, and
 $$H(z) = \text{exp}\bigg(2\pi i \int_{z_0}^{z}h(z)dz\bigg)$$
 
-is a non-vanishing holomorphic function. Hence,
+% BLOG-PASSAGE: abels-theorem:p0065
+is a non-vanishing holomorphic function. Hence
 $$(f) = \sum_{i}n_ip_i = D$$
 
-We could have concluded right now had there been no issue with the way $f$ is defined. But unfortunately, $f$ is not always well-defined. Suppose there are two paths $\gamma$ and $\gamma'$ connecting $q$ and $p$, then,
+% BLOG-PASSAGE: abels-theorem:p0066
+We could have concluded right now had there been no issue with the way $f$ is defined. But unfortunately, $f$ is not always well-defined. Suppose there are two paths $\gamma$ and $\gamma'$ connecting $q$ and $p$. Then
 $$\text{exp}\bigg(2\pi i\int_{\gamma}\phi\bigg) = \text{exp}\bigg(2\pi i\int_{\gamma'}\phi\bigg)$$
 
-if and only if,
+% BLOG-PASSAGE: abels-theorem:p0067
+if and only if
 $$\bigg(\int_{\gamma}\phi - \int_{\gamma'}\phi\bigg) \in \mathbb{Z}$$
 
-So, apart from the two conditions that a differential in the Remark above can be made to satisfy, if it were to also satisfy,
+% BLOG-PASSAGE: abels-theorem:p0068
+So, apart from the two conditions that a differential in the Remark above can be made to satisfy, if it were to also satisfy
 $$\bigg(\int_{\gamma_j}\phi\bigg) \in \mathbb{Z}   (1\leq j \leq 2g)$$
 
-where $\gamma_j$ are the smooth $1$-cycles spanning $H_1(C, \mathbb{Z})$, then, the construction above resolves (ii) entirely. Therefore, we pause to analyse the newly introduced hypothesis.
+% BLOG-PASSAGE: abels-theorem:p0069
+where $\gamma_j$ are the smooth $1$-cycles spanning $H_1(C, \mathbb{Z})$, then the construction above resolves (ii) entirely. Therefore, we pause to analyse the newly introduced hypothesis.
 
+% BLOG-PASSAGE: abels-theorem:p0070
 \textbf{V)} \underline{\textbf{Riemann's Bilinear Relations}}
 
-If a differential $\phi$ satisfies the two conditions spelled out in the Remark above, then so does $\phi + \omega$, for any $\omega \in \Omega^1(C)$. So, our strategy would be to look for a suitable $\omega \in \Omega^1(C)$ such that $\phi + \omega$ satisfies the additional hypothesis. This naturally leads us to study the functionals defined below,
+% BLOG-PASSAGE: abels-theorem:p0071
+If a differential $\phi$ satisfies the two conditions spelled out in the Remark above, then so does $\phi + \omega$, for any $\omega \in \Omega^1(C)$. So, our strategy would be to look for a suitable $\omega \in \Omega^1(C)$ such that $\phi + \omega$ satisfies the additional hypothesis. This naturally leads us to study the functionals defined below:
 $$\pi_i: \Omega^1(C) \rightarrow \mathbb{C}$$
 $$\pi_i(\omega):= \int_{\gamma_i}\omega$$
 
+% BLOG-PASSAGE: abels-theorem:p0072
 where $\gamma_i$ is a distinguished homology basis for $C$ described in Figure 1.
 \begin{figure}[htp]
             \centering
         \includegraphics[width=0.96\linewidth]{Polygon.png}
         \end{figure}
 
-The integrals associated to $\omega$ above are called its \textbf{periods}. It turns out that these functionals satisfy certain bilinear relations, recorded in the theorem below,
+% BLOG-PASSAGE: abels-theorem:p0073
+The integrals associated to $\omega$ above are called its \textbf{periods}. It turns out that these functionals satisfy certain bilinear relations, recorded in the theorem below:
 
+% BLOG-PASSAGE: abels-theorem:p0074
 \subsection*{Theorem 0.6}
-    For any $\omega, \phi \in \Omega^1(C)$, we have,
+    For any $\omega, \phi \in \Omega^1(C)$, we have
     $$\sum_{i=1}^{g}\big(\pi_i(\omega)\pi_{g+i}(\phi) - \pi_{g+i}(\omega)\pi_i(\phi)\big) = 0$$
     $$\sqrt{-1} \sum_{i=1}^{g}\big(\pi_i(\omega)\overline{\pi_{g+i}(\omega)} - \pi_{g+i}(\omega)\overline{\pi_i(\omega)}\big) > 0\qquad(\omega\ne0)$$
 
+% BLOG-PASSAGE: abels-theorem:p0075
 \textit{Proof.}
 
-    Set,
+% BLOG-PASSAGE: abels-theorem:p0076
+    Set
     $$\Omega := C - \bigcup_{i = 1}^{2g} \gamma_i$$
 
-Fix a point $b\in \Omega$, and define,
+% BLOG-PASSAGE: abels-theorem:p0077
+Fix a point $b\in \Omega$, and define
 $$A(p):= \int_{b}^{p}\omega$$
 
-where $p \in \Omega$. As $\Omega$ is simply connected, any two paths between $b$ and $p$ will be homotopic, thereby making $A$ into a well-defined single-valued function which by Fundamental Theorem of Calculus is holomorphic. The letter $\Omega$ shall also be used to represent the 2-cycle which in this case is the characteristic map $(\Omega: P \rightarrow C)$ of the CW-complex structure on $C$. Further, on $P$ we have,
+% BLOG-PASSAGE: abels-theorem:p0078
+where $p \in \Omega$. As $\Omega$ is simply connected, any two paths between $b$ and $p$ will be homotopic, thereby making $A$ into a well-defined single-valued function which, by the Fundamental Theorem of Calculus, is holomorphic. The letter $\Omega$ shall also be used to represent the 2-cycle which in this case is the characteristic map $(\Omega: P \rightarrow C)$ of the CW-complex structure on $C$. Further, on $P$ we have
 $$d(A\phi) = dA\wedge \phi + Ad\phi = \omega\wedge\phi + 0 = 0$$
 
-which goes to show that $A\phi$ is a closed $1$ form. By Stokes' Theorem on the $2$-cycle $\Omega$, we have,
+% BLOG-PASSAGE: abels-theorem:p0079
+which goes to show that $A\phi$ is a closed $1$-form. By Stokes' Theorem on the $2$-cycle $\Omega$, we have
 $$\int_{\partial\Omega}A\phi = 0$$
 Also,
 $$\int_{\partial\Omega}A\phi = \sum_{i=1}^{g}\bigg(\int_{\gamma_i}A\phi + \int_{\gamma_{g+i}}A\phi + \int_{\gamma_i^{-1}}A\phi + \int_{\gamma_{g+i}^{-1}}A\phi\bigg)$$
-upon clubbing $\gamma_i$ and $\gamma_i^{-1}$, we get,
+Upon clubbing $\gamma_i$ and $\gamma_i^{-1}$, we get
 $$\int_{\gamma_i}A\phi + \int_{\gamma_i^{-1}}A\phi = \int_{\gamma_i}(A(p) - A(p'))\phi$$
 
-where $p$ and $p'$ represent the same point on $\gamma_i$ and $\gamma_i^{-1}$, and the minus sign is due to the change in orientation of $\gamma_i$. We know,
+% BLOG-PASSAGE: abels-theorem:p0080
+where $p$ and $p'$ represent the same point on $\gamma_i$ and $\gamma_i^{-1}$, and the minus sign is due to the change in orientation of $\gamma_i$. We know
 
+% BLOG-PASSAGE: abels-theorem:p0081
 $$A(p) - A(p') = \int_{p}^{p'}\omega = \int_{p'}^{q}\omega - \int_{\gamma_{g+i}}\omega + \int_{q}^{p}\omega = -\pi_{g+i}(\omega)$$
 
-Putting it together we have,
+% BLOG-PASSAGE: abels-theorem:p0082
+Putting it together, we have
 $$\int_{\gamma_i}A\phi + \int_{\gamma_i^{-1}}A\phi = -\pi_{g+i}(\omega)\pi_{i}(\phi)$$
 
-and similarly,
+% BLOG-PASSAGE: abels-theorem:p0083
+Similarly,
 $$\int_{\gamma_{g+i}}A\phi + \int_{\gamma_{g+i}^{-1}}A\phi = \pi_{i}(\omega)\pi_{g+i}(\phi)$$
 
-In conjunction, they yield the first identity. Now note,
+% BLOG-PASSAGE: abels-theorem:p0084
+In conjunction, they yield the first identity. Now note that
 $$d(\sqrt{-1}A\overline{\omega}) = \sqrt{-1}(dA\wedge \overline{\omega} + A\,d\overline{\omega}) = \sqrt{-1}\omega\wedge\overline{\omega}$$
 
-which yields,
+% BLOG-PASSAGE: abels-theorem:p0085
+which yields
 $$\sqrt{-1}\int_{\partial\Omega}A\overline{\omega} = \sqrt{-1}\iint_{\Omega}\omega\wedge\overline{\omega} > 0$$
 
-and proceed similarly as before to compute,
+% BLOG-PASSAGE: abels-theorem:p0086
+Proceed similarly as before to compute
 $$\sqrt{-1}\int_{\partial\Omega}A\overline{\omega}$$
 
+% BLOG-PASSAGE: abels-theorem:p0087
 to arrive at the second identity.
 
-\textbf{Remark.} Let $\Pi = (A_{g\times g}, B_{g\times g})$ be the period matrix of $C$. Let the coordinates of $w=(w_1,\ldots,w_{2g})$ be the periods of $\omega$, and let those of $v=(v_1,\ldots,v_{2g})$ be the periods of $\phi$, and let,
+% BLOG-PASSAGE: abels-theorem:p0088
+\textbf{Remark.} Let $\Pi = (A_{g\times g}, B_{g\times g})$ be the period matrix of $C$. Let the coordinates of $w=(w_1,\ldots,w_{2g})$ be the periods of $\omega$, and let those of $v=(v_1,\ldots,v_{2g})$ be the periods of $\phi$, and let
 $$Q = \begin{pmatrix} 0&\text{Id}_{g\times g}\\-\text{Id}_{g\times g}&0
 \end{pmatrix}$$
 
-Note that, the identities in the theorem above can be rewritten as
+% BLOG-PASSAGE: abels-theorem:p0089
+Note that the identities in the theorem above can be rewritten as
 $$wQv^T = 0$$
 $$\sqrt{-1}wQ\overline{w}^T > 0$$
-If $\omega = \sum_{1\leq i\leq g}\mu_i\omega_i$, and $\phi = \sum_{1\leq i\leq g}\nu_i\omega_i$, then the above can be rewritten as,
+If $\omega = \sum_{1\leq i\leq g}\mu_i\omega_i$, and $\phi = \sum_{1\leq i\leq g}\nu_i\omega_i$, then the above can be rewritten as
 \[
 \begin{aligned}
 & (\mu_1,\ldots,\mu_g)\big(\Pi Q\Pi^T\big)
@@ -307,43 +396,56 @@ If $\omega = \sum_{1\leq i\leq g}\mu_i\omega_i$, and $\phi = \sum_{1\leq i\leq g
 \end{aligned}
 \]
 
+% BLOG-PASSAGE: abels-theorem:p0090
 Therefore, Riemann's Bilinear Relations are equivalent to the following matrix identities:
 \begin{enumerate}[(a)]
     \item $A^TB = B^TA$
     \item $\sqrt{-1}(A^T\overline{B} - B^T\overline{A}) \text{ is a positive definite Hermitian matrix}$.
 \end{enumerate}
 
-One immediately sees that (b) implies $A$ is non-singular. Transforming the basis of $\Omega^1(C)$ by $(A^{-1})^T$ would yield the following simple form for the period matrix,
+% BLOG-PASSAGE: abels-theorem:p0091
+One immediately sees that (b) implies $A$ is non-singular. Transforming the basis of $\Omega^1(C)$ by $(A^{-1})^T$ would yield the following simple form for the period matrix:
 $$\Pi = (\text{Id}_{g\times g}, Z_{g\times g})$$
 
+% BLOG-PASSAGE: abels-theorem:p0092
 which is often referred to as the \textbf{normalized period matrix} of $C$.
 
-\underline{Completion of the Proof of (ii)}: Let $\phi$ be the differential corresponding to $(p_1+\cdots+p_n) - (q_1+\cdots+q_n) = D \in \text{Div}(C)^0$. Let $\gamma_i$ be the distinguished homology basis as before and let none of them pass through the poles of $\phi$. Let $\omega_1, \ldots, \omega_g$ be a basis of $\Omega^1(C)$ such that the corresponding period matrix is normalized. Let,
+% BLOG-PASSAGE: abels-theorem:p0093
+\underline{Completion of the Proof of (ii).} Let $\phi$ be the differential corresponding to $(p_1+\cdots+p_n) - (q_1+\cdots+q_n) = D \in \text{Div}(C)^0$. Let $\gamma_i$ be the distinguished homology basis as before and let none of them pass through the poles of $\phi$. Let $\omega_1, \ldots, \omega_g$ be a basis of $\Omega^1(C)$ such that the corresponding period matrix is normalized. Let
 
+% BLOG-PASSAGE: abels-theorem:p0094
 $$\phi' = \phi - \sum_{j=1}^{g}\bigg(\int_{\gamma_j}\phi\bigg)\omega_j$$
 
-Poles and residues of $\phi'$ and $\phi$ are the same, and,
+% BLOG-PASSAGE: abels-theorem:p0095
+Poles and residues of $\phi'$ and $\phi$ are the same, and
 $$\int_{\gamma_i}\phi' = \int_{\gamma_i}\phi - \sum_{j=1}^{g}\pi_j(\phi)\pi_i(\omega_j) = \int_{\gamma_i}\phi - \int_{\gamma_i}\phi = 0$$
 
-Use the same $\Omega$ and $A$ as in the proof of Riemann's Bilinear Relations. Now by Residue Theorem, we get,
+% BLOG-PASSAGE: abels-theorem:p0096
+Use the same $\Omega$ and $A$ as in the proof of Riemann's Bilinear Relations. Now, by the Residue Theorem, we get
 $$2\pi \sqrt{-1}\sum_{j=1}^{n}\big(\text{Res}_{p_j}(A\phi') + \text{Res}_{q_j}(A\phi')\big) =  \int_{\partial\Omega}A\phi'$$
 
-LHS of the above can be rewritten as,
+% BLOG-PASSAGE: abels-theorem:p0097
+The left-hand side of the above can be rewritten as
 $$\sum_{j=1}^{n}(A(p_j) - A(q_j)) = \sum_{j=1}^{n}\int_{q_j}^{p_j}\omega$$
 
-and the RHS can be rewritten as in the proof of Theorem 0.6 as,
+% BLOG-PASSAGE: abels-theorem:p0098
+and the right-hand side can be rewritten as in the proof of Theorem 0.6 as
 $$\int_{\partial\Omega}A\phi' = \sum_{i=1}^{g}(\pi_i(\omega)\pi_{g+i}(\phi') - \pi_{g+i}(\omega)\pi_i(\phi'))$$
 
-By the fact that $\pi_j(\phi') = 0$ for $1\leq j\leq g$, we get,
+% BLOG-PASSAGE: abels-theorem:p0099
+By the fact that $\pi_j(\phi') = 0$ for $1\leq j\leq g$, we get
 $$\int_{\partial\Omega}A\phi' = \sum_{i=1}^{g}\pi_i(\omega)\pi_{g+i}(\phi')$$
 
-Clubbing the previous three equations for $\omega = \omega_i$,
+% BLOG-PASSAGE: abels-theorem:p0100
+Clubbing the previous three equations for $\omega = \omega_i$ gives
 $$\sum_{j=1}^{n}\int_{q_j}^{p_j}\omega_i = \sum_{j=1}^{g}\pi_j(\omega_i)\pi_{g+j}(\phi')$$
 
-which yields,
+% BLOG-PASSAGE: abels-theorem:p0101
+which yields
 $$\sum_{j=1}^{n}\int_{q_j}^{p_j}\omega_i = \pi_{g+i}(\phi')   (\dagger)$$
 
-Now, let us suppose that $u(D) = 0$, then for $1\leq i\leq g$,
+% BLOG-PASSAGE: abels-theorem:p0102
+Now, let us suppose that $u(D) = 0$. Then, for $1\leq i\leq g$,
 \begin{center}
 \begin{equation*}
         \begin{aligned}
@@ -354,28 +456,37 @@ Now, let us suppose that $u(D) = 0$, then for $1\leq i\leq g$,
 \end{equation*}
 \end{center}
 
-Since $\Pi=(\text{Id},Z)$ is the period matrix of $C$, it satisfies $Z = Z^T$, which means,
+% BLOG-PASSAGE: abels-theorem:p0103
+Since $\Pi=(\text{Id},Z)$ is the period matrix of $C$, it satisfies $Z = Z^T$, which means
 $$\int_{\gamma_{g+j}}\omega_i = \int_{\gamma_{g+i}}\omega_j$$
 
-and thus,
+% BLOG-PASSAGE: abels-theorem:p0104
+and thus
 $$\sum_{j=1}^{n}\int_{q_j}^{p_j}\omega_i = m_i + \sum_{j=1}^{g} m_{g+j}\int_{\gamma_{g+i}}\omega_j$$
 
-By $(\dagger)$ we get,
+% BLOG-PASSAGE: abels-theorem:p0105
+By $(\dagger)$ we get
 $$\pi_{g+i}(\phi') = m_i + \sum_{j=1}^{g} m_{g+j}\int_{\gamma_{g+i}}\omega_j   (\dagger\dagger)$$
 
-Now let,
+% BLOG-PASSAGE: abels-theorem:p0106
+Now let
 $$\widetilde{\phi}:= \phi' - \sum_{j=1}^{g} m_{g+j}\omega_j$$
 
-and note that as $\pi_j(\omega_i) = \delta_{ij}$ for $i,j = 1, \ldots, g$, we have,
+% BLOG-PASSAGE: abels-theorem:p0107
+and note that, as $\pi_j(\omega_i) = \delta_{ij}$ for $i,j = 1, \ldots, g$, we have
 
+% BLOG-PASSAGE: abels-theorem:p0108
 $$\int_{\gamma_i}\widetilde{\phi} = \int_{\gamma_i}\phi' - \sum_{j=1}^{g} m_{g+j}\int_{\gamma_i}\omega_j = -m_{g+i} \in \mathbb{Z}$$
 
+% BLOG-PASSAGE: abels-theorem:p0109
 and by $(\dagger\dagger)$,
 $$\int_{\gamma_{g+i}}\widetilde{\phi} = \pi_{g+i}(\phi') - \sum_{j=1}^{g} m_{g+j}\int_{\gamma_{g+i}}\omega_j = m_i \in \mathbb{Z}$$
 
+% BLOG-PASSAGE: abels-theorem:p0110
 In conclusion, $\widetilde{\phi}$ is the differential that would make our construction work and settle the proof of (ii) once and for all.
 \qed
 
+% BLOG-PASSAGE: abels-theorem:p0111
 \textbf{Remark.} The relevance of Abel's Theorem to the existence of meromorphic functions is that the Abel-Jacobi map is surjective (which is often referred to as Jacobi's Inversion Theorem).
 % BLOG-CONTENT-END
 \end{document}

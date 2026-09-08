@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Rings, Ideals, and Prime Ideals}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: rings-ideals-and-prime-ideals:p0001
 Let's begin with two fundamental objects: rings and modules.
 \subsection{Rings and ideals}
 \setcounter{definition}{0}\begin{definition}
@@ -27,6 +28,7 @@ If $S\subseteq R$ satisfies (i)--(iv), then $S$ is a \emph{subring} of $R$.
 \end{enumerate}
 \end{example}
 % Source page 3
+% BLOG-PASSAGE: rings-ideals-and-prime-ideals:p0002
 \setcounter{definition}{1}\begin{definition}
 For rings $A$ and $B$, a \emph{ring homomorphism} $f:A\to B$ is a map satisfying
 \[
@@ -127,7 +129,7 @@ If $\aa=(0)$, then $(0:\bb)=:\Ann(\bb)$ is called the \emph{annihilator} of $\bb
 \setcounter{enumi}{0}\item Let $\Sigma$ be the set of all ideals in $A$, excluding $A$. This is a poset under inclusion. Since $0\in\Sigma$, $\Sigma\ne\varnothing$. If $\{\aa_i\}_{i\in I}$ is a chain of ideals, then $\bigcup_{i\in I}\aa_i\in\Sigma$ (as $1\notin\bigcup_i\aa_i$); furthermore, this union is an upper bound
 % Source page 7
 for the chain. By Zorn's lemma, $\Sigma$ has a maximal element.
-Therefore every proper ideal $\aa$ is contained in a maximal ideal, as illustrated below: the same argument can be made in $A/\aa$.
+Therefore, every proper ideal $\aa$ is contained in a maximal ideal, as illustrated below: the same argument can be made in $A/\aa$.
 \begin{figure}[H]\centering
 \includegraphics[width=.84\textwidth]{ca1-fig-02.pdf}
 \end{figure}
@@ -164,6 +166,7 @@ y=\sum_{i=1}^n x_1\cdots x_{i-1}x_{i+1}\cdots x_n.
 Then $y\in\aa$, but $y\notin\bigcup_i\pp_i$, a contradiction.
 \end{proof}
 % Source page 9
+% BLOG-PASSAGE: rings-ideals-and-prime-ideals:p0003
 Consequently, an ideal cannot be covered by finitely many prime ideals unless it is contained in one of them, as depicted here.
 \begin{figure}[H]\centering
 \includegraphics[width=.48\textwidth]{ca1-fig-04.pdf}
@@ -185,7 +188,7 @@ If $f\in\rad((0))$, then $f^n=0\in\pp$, so $f\in\pp$ and hence $f\in\bigcap_{\pp
 If $f\notin\rad((0))$, let $\Sigma$ be the poset of all ideals $\aa$ such that $f^n\notin\aa$ for every $n$. As $0\in\Sigma$, this poset is nonempty. If $\{\aa_i\}_{i\in I}$ is a chain, then $\bigcup_i\aa_i\in\Sigma$ and bounds the chain. By Zorn's lemma, $\Sigma$ has a maximal element $\mm$.
 \emph{Claim:} $\mm$ is prime.
 % Source page 10
-Let $x,y\notin\mm$. Then $\mm+(x),\mm+(y)\notin\Sigma$ by maximality. Therefore, $f^a\in\mm+(x)$ and $f^b\in\mm+(y)$, so $f^{a+b}\in\mm+(xy)$ and thus $xy\notin\mm$. Therefore $f\notin\mm$, implying $f\notin\bigcap_{\pp\text{ prime}}\pp$.
+Let $x,y\notin\mm$. Then $\mm+(x),\mm+(y)\notin\Sigma$ by maximality. Therefore, $f^a\in\mm+(x)$ and $f^b\in\mm+(y)$, so $f^{a+b}\in\mm+(xy)$ and thus $xy\notin\mm$. Therefore, $f\notin\mm$, implying $f\notin\bigcap_{\pp\text{ prime}}\pp$.
 \end{proof}
 The following picture summarizes these relationships.
 \begin{figure}[H]\centering

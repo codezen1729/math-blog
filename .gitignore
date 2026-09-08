@@ -1,5 +1,38 @@
 # Local builds and Overleaf auxiliary files, not the published source.
-website/
+# Track the editable website application as well as its deterministic release
+# archive. Large generated article data, figures, fonts, dependencies and build
+# outputs remain ignored.
+website/*
+!website/.github/
+!website/.github/**
+!website/.openai/
+!website/.openai/**
+!website/app/
+!website/app/**
+!website/components/
+!website/components/**
+!website/docs/
+!website/docs/**
+!website/lib/
+website/lib/*
+!website/lib/*.ts
+!website/pages/
+!website/pages/**
+!website/scripts/
+!website/scripts/**
+!website/.gitignore
+!website/.oxfmtrc.json
+!website/.oxlintrc.json
+!website/components.json
+!website/index.html
+!website/package.json
+!website/pnpm-lock.yaml
+!website/pnpm-workspace.yaml
+!website/README.md
+!website/tsconfig.json
+!website/vite.config.ts
+!website/vite.pages.config.ts
+!website/next.config.ts
 node_modules/
 __pycache__/
 *.aux

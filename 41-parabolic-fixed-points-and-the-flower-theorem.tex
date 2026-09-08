@@ -5,13 +5,15 @@
 \begin{document}
 \section*{Parabolic Fixed Points and the Flower Theorem}
 % BLOG-CONTENT-BEGIN
-Consider a fixed point $f(\widehat p)=\widehat p$ whose multiplier satisfies $\lambda^q=1$ and for which $f^{\circ q}$ is not locally the identity. Such points are called parabolic fixed points. It is immediately clear that the expected dynamics should be different. For instance, consider the orbits of $\pm1$ and $\pm i$ under $f(z)=z+z^3$.
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0001
+Consider a \BlogPost{attracting-and-repelling-fixed-points}{fixed point} $f(\widehat p)=\widehat p$ whose multiplier satisfies $\lambda^q=1$ and for which $f^{\circ q}$ is not locally the identity. Such points are called parabolic fixed points. It is immediately clear that the expected dynamics should be different. For instance, consider the orbits of $\pm1$ and $\pm i$ under $f(z)=z+z^3$.
 \begin{figure}[H]\centering
 \includegraphics[width=.55\textwidth]{cd3-fig-01.pdf}
 \FigureTag{CD3.1}{fig:cd3-01}
 \end{figure}
 The map $f$ throws $1,-1$ violently away, while pulling $i,-i$ violently towards $\widehat p=0$. Notice that it pushes and pulls from two directions. The following theorem tells us that such patterns reappear. For now, no neighbourhood of $\widehat p=0$ can be expected to be a ``basin'', since $\widehat p$ is a sink only in certain directions.
 % Source page 2
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0002
 \setcounter{definition}{10}\begin{definition}
 Let $f(z)=z+az^{n+1}+O(z^{n+2})$. A vector $v\in\mathbb C$ is attracting if $nav^n=-1$, and repelling if $nav^n=+1$.
 \end{definition}
@@ -32,6 +34,7 @@ The next theorem explains why these vectors have their names, and shows that all
 If an orbit $\{z_k\}_k$ of $z_0$ tends to $0$ and $z_k\ne0$ for every $k$, then $z_k\sim v_j/k^{1/n}$ as $k\to\infty$ for some attracting vector $v_j$. The analogous assertion holds for orbits converging to $0$ under $f^{-1}$.
 \end{theorem}
 % Source page 3
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0003
 \begin{proof}
 We employ the same technique mentioned earlier. First let us state explicitly what we expect. Choose a repelling vector $v_0$ and set $v_j=e^{\pi ij/n}v_0$: $v_j$ is attracting if $2\nmid j$, and repelling if $2\mid j$.
 \begin{figure}[H]\centering
@@ -84,13 +87,14 @@ Since $F_j(w)-w=1+o(1)$, putting $w_k=\varphi(z_k)$ gives $w_{k+1}-w_k\to1$, and
 % Source page 6
 Thus $w_k/k\to1$, so $w_k\sim k$. Since $1/w_k=-naz_k^n$, we get $naz_k^n\sim-1/k$. As $nav_j^n=-1$, this gives $z_k^n\sim v_j^n/k$.
 
-Write $z_k=r_ke^{i\alpha_k}$ and $v_j=re^{i\alpha}$. Then $z_k^n=r_k^ne^{ni\alpha_k}$ and $v_j^n/k=(r^n/k)e^{ni\alpha}$. The modulus of their ratio tends to one, so $r_k\sim r/k^{1/n}$. Also $e^{n(\alpha_k-\alpha)i}\to1$. But eventually $z_k\in P_j(R)\subset\Delta_j$, and $|\alpha_k-\alpha|<\pi/n$, forcing $\alpha_k-\alpha\to0$. Therefore $z_k\sim v_j/k^{1/n}$.
+Write $z_k=r_ke^{i\alpha_k}$ and $v_j=re^{i\alpha}$. Then $z_k^n=r_k^ne^{ni\alpha_k}$ and $v_j^n/k=(r^n/k)e^{ni\alpha}$. The modulus of their ratio tends to one, so $r_k\sim r/k^{1/n}$. Also $e^{n(\alpha_k-\alpha)i}\to1$. But eventually $z_k\in P_j(R)\subset\Delta_j$, and $|\alpha_k-\alpha|<\pi/n$, forcing $\alpha_k-\alpha\to0$. Therefore, $z_k\sim v_j/k^{1/n}$.
 \end{proof}
 Having seen this, let us identify the basin of attraction for $\widehat p$.
 \setcounter{definition}{11}\begin{definition}
 The set $\mathcal A_j(\widehat p)$ consists of all $p_0$ whose orbit $p_0\mapsto p_1\mapsto p_2\mapsto\cdots$ under $f$ tends to $\widehat p$ along $v_j$. Since $P_j(R)\subset\mathcal A_j(\widehat p)$, there is a unique connected component $\mathcal A_j^0$ with $f(\mathcal A_j^0)\subseteq\mathcal A_j^0$. This is called the immediate basin.
 \end{definition}
 % Source page 7
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0004
 We now know vaguely that there are domains in $\Delta_j$ around $\widehat p$ where $f$ pushes or pulls. We do not yet know whether those domains surround $\widehat p$; nothing so far prevents gaps. The domain $P_j(R)\subset\Delta_j$ satisfies $f(P_j(R))\subseteq P_j(R)$, and an orbit tending to $\widehat p$ along $v_j$ eventually enters it. Let us generalise this phenomenon.
 \setcounter{definition}{12}\begin{definition}[Attracting and repelling petals]
 Let $N$ be a neighbourhood of $\widehat p$ on which $f$ is univalent. A set $P\subset N$ is an attracting petal for $f$ at $\widehat p$, associated with an attracting vector $v_j$, if
@@ -102,6 +106,7 @@ Repelling petals are defined similarly by considering $f^{-1}$ on $f(N)$.
 \end{definition}
 Clearly $P$ contains exactly one $v_j$; these sets therefore look like petals around the ``base branch'' $v_j$. The next theorem says that the attracting and repelling petals surround $\widehat p$: they fit together into a round flower.
 % Source page 8
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0005
 \setcounter{theorem}{17}\begin{theorem}[Flower theorem]\label{cd3:flower}
 There are petals $\{P_j\}_{j=0}^{2n-1}$, each attracting or repelling, such that $\{\widehat p\}\cup P_0\cup\cdots\cup P_{2n-1}$ is an open neighbourhood of $\widehat p$. The sets $P_j$ and $P_j\cap P_{j\pm1}$ are simply connected regions, except when $n=1$.
 \end{theorem}
@@ -143,13 +148,14 @@ V_R^-=\{u+iv:v<-2R-|u|\}.
 \]
 According to the parity of $j$, the map $\varphi$ carries $P_j\cap P_{j+1}$ onto $V_R^+$ or $V_R^-$. Hence $P_j$ and $P_j\cap P_{j\pm1}$ are simply connected, with the stated exception when $n=1$.
 
-Finally, $W_R\cup(-W_R)$ contains $\{w:|w|>2R\}$. Since $\varphi(z)=c/z^n$, the union of the inverse images of these two sets contains a punctured disc about $\widehat p$. Therefore $\{\widehat p\}\cup\bigcup_{j=0}^{2n-1}P_j$ contains a ball around $\widehat p$. This is the flower theorem, due to Leau and Fatou.
+Finally, $W_R\cup(-W_R)$ contains $\{w:|w|>2R\}$. Since $\varphi(z)=c/z^n$, the union of the inverse images of these two sets contains a punctured disc about $\widehat p$. Therefore, $\{\widehat p\}\cup\bigcup_{j=0}^{2n-1}P_j$ contains a ball around $\widehat p$. This is the flower theorem, due to Leau and Fatou.
 \begin{figure}[H]\centering
 \includegraphics[width=.60\textwidth]{cd3-fig-06.pdf}
 \FigureTag{CD3.6}{fig:cd3-06}
 \end{figure}
 \end{proof}
 % Source page 10
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0006
 We now ask the question suggested by the case $0<|\lambda|<1$: can we understand the dynamics separately on each of the $2n$ petals? The next theorem addresses this completely.
 \setcounter{theorem}{18}\begin{theorem}[Parabolic linearisation]\label{cd3:linearisation}
 For any petal $P$, there is a conformal embedding $\alpha\colon P\to\mathbb C$, unique up to translation, making the following diagram commute. In the literature, $\alpha$ is called a \emph{Fatou coordinate}.
@@ -164,6 +170,7 @@ $|F_j(w)-w-1|=O(1/\sqrt[n]{|w|})$.
 For $\widehat w\in\mathbb H_R$, the maps $\beta_k(w)=F_j^{\circ k}(w)-F_j^{\circ k}(\widehat w)$ converge locally uniformly to a biholomorphic map.
 \end{observation}
 % Source page 11
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0007
 By Cauchy's estimate, $|F'(w)-1|<C/S^{1+1/n}$ when $|w|\ge2S\ge2R$. Given $w',w''\in\mathbb H_{2S}$,
 \[
 \frac1{w''-w'}\int_{\gamma_{w'\to w''}}(F'(w)-1)\,dw
@@ -175,31 +182,34 @@ so the modulus of the right-hand side is at most $C/S^{1+1/n}$. Since $\Re F^{\c
 \le\frac{C'}{k^{1+1/n}}\qquad(k\ge R).
 \tag{1}\label{cd3:ratio-bound}
 \]
-Consequently
+Consequently,
 \[
 1-\frac{C'}{k^{1+1/n}}
 \le\left|\frac{\beta_k(w)}{\beta_{k-1}(w)}\right|
 \le1+\frac{C'}{k^{1+1/n}}.
 \]
-The series $\sum_k C'/k^{1+1/n}$ converges, so the product $\prod_k(1+C'/k^{1+1/n})$ converges, say to $P$. Therefore
+The series $\sum_k C'/k^{1+1/n}$ converges, so the product $\prod_k(1+C'/k^{1+1/n})$ converges, say to $P$. Therefore,
 \[
 \prod_{i=1}^{k}\left|\frac{\beta_i(w)}{\beta_{i-1}(w)}\right|\le P,
 \qquad |\beta_k(w)|\le|\beta_0(w)|P=|w-\widehat w|P.
 \tag{2}\label{cd3:product-bound}
 \]
 % Source page 12
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0008
 Multiplying \eqref{cd3:ratio-bound} and \eqref{cd3:product-bound}, with $k-1$ in the latter, gives
 \[
 |\beta_k(w)-\beta_{k-1}(w)|\le\frac{PC'|w-\widehat w|}{k^{1+1/n}}.
 \]
 Thus $\beta_0(w)+\sum_{k=1}^{\infty}(\beta_k(w)-\beta_{k-1}(w))$ is absolutely convergent, because the corresponding series of bounds does. We obtain $\beta_k(w)\to\beta(w)$ and $\beta_k(w)/\beta_0(w)\to\beta(w)/\beta_0(w)$, so $\beta$ is holomorphic.
 
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0009
 To see univalence, choose $k_0$ such that $1-C'/k_0^{1+1/n}>0$. Then $|\beta_k(w)/\beta_{k-1}(w)|>0$, so $F_j^{\circ k}$ is eventually univalent: the positive lower bound is independent of $w,\widehat w$ for every $k\ge k_0$. Hence $\beta$ is univalent.
 \begin{observation}[2]
 $\beta(F_j(w))=\beta(w)+1$.
 \end{observation}
 Fix $k$. We have $\beta_k(w)\sim F_j^{\circ k}(w)$ and $|F_j(w)-w-1|=O(1/\sqrt[n]{|w|})$.
 % Source page 13
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0010
 Thus $F_j^{\circ k}(w)\sim w+k\sim w$, and
 \begin{align*}
 \beta(F_j(w))
@@ -215,8 +225,10 @@ $\bigcup_{n\in\mathbb Z}(U+n)=\mathbb C$.
 \end{observation}
 Since $\beta(w)\sim w$, for sufficiently large $S$ we have $|\beta(w)-w|<|w|/3$ for all $w\in\mathbb H_R$ with $|w|>S$. Given $\overline w_0\in\mathbb C/\mathbb Z$, choose a representative $w_0$ with $|w_0|>2S$ and $\overline{B_{|w_0|/2}(w_0)}\subseteq\mathbb H_R$. For every $w$ in this disc, $S<|w|<3|w_0|/2$, and therefore $|\beta(w)-w|<|w_0|/2$.
 % Source page 14
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0011
 On its boundary, $|\beta(w)-w|<|w-w_0|$. Thus $w-w_0$ and $(\beta(w)-w)+(w-w_0)$ have the same number of roots. It follows that $w_0\in\beta(B_{|w_0|/2}(w_0))$, proving $\bigcup_{n\in\mathbb Z}(U+n)=\mathbb C$.
 
+% BLOG-PASSAGE: parabolic-fixed-points-and-the-flower-theorem:p0012
 
 Having observed these three crucial facts, let us prove existence and uniqueness of the Fatou coordinate.
 \begin{proof}[Proof of Theorem~\ref{cd3:linearisation}]
@@ -237,7 +249,7 @@ This ensures that the following diagram also commutes.
 Its image misses at most one point. If $U'+\mathbb Z=\mathbb C\setminus\{0\}$, without loss of generality, then $1\in U'+\mathbb Z$, so some integer $n$ belongs to $U'$. Hence $0\in U'-n\subseteq U'+\mathbb Z$, a contradiction. Thus $\widehat g(\mathbb C)=\mathbb C$ and $\widehat g\in\operatorname{Aut}(\mathbb C)$. By the identity theorem, $\widehat g(w+1)=\widehat g(w)+1$.
 Every automorphism of $\mathbb C$ is affine, and this identity forces $\widehat g(w)=w+b$.
 % Source page 16
-Therefore $\alpha'=\alpha+b$, so $\alpha$ is unique up to translation.
+Therefore, $\alpha'=\alpha+b$, so $\alpha$ is unique up to translation.
 \end{proof}
 \begin{remark}
 Critical points again play a crucial role; we will not elaborate on this. If $\alpha$ is the Fatou coordinate for the petal wrapping $v_j$, it extends to $\mathcal A_j(\widehat p)$, and $\alpha^{-1}$ extends to some $\mathbb H_R$ with $R$ optimal. This is analogous to the Koenigs-coordinate situation. For every $\mathcal A_j(\widehat p)$ there is a maximal petal $P_{\max}\subseteq\mathcal A_j(\widehat p)$ to which $\alpha$ extends biholomorphically, and $f$ has a critical point on $\partial P_{\max}$ that prevents further univalent extension.

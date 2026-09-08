@@ -6,12 +6,15 @@
 \begin{document}
 \section*{Smooth Covering Manifolds}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: smooth-covering-manifolds:p0001
 % Source page 1
 \section{Coverings and smooth structures}
 A fundamental application of covering spaces is the classification of topological manifolds. Taking our cue from invariance of domain, which states that, given a Euclidean space $X$, there is a unique $n$ such that $X\cong\mathbb R^n$, we ask: is there a list of all possible $n$-manifolds, up to homeomorphism?
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0002
 Covering-space theory aids us in answering this question because manifolds are semilocally simply connected and locally path connected. Thus, for every subgroup $H<\pi_1(M,m)$, covering-space classification provides a map $p:E\to M$ such that $p_*(\pi_1(E,e))=H$. Set $H=\{1\}$. The way $E$ is constructed for this $H$ forces $E$ to be simply connected. Moreover, $p:E\to M$ is a normal covering, so $M\cong E/G$, where $G<\Aut(E)$ is a subgroup acting properly discontinuously.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0003
 Therefore, covering-space theory has helped us reduce the classification problem for arbitrary topological manifolds to that of classifying simply connected manifolds. We now ask whether this construction is compatible with smooth structures. Two questions guide the discussion:
 \begin{enumerate}[label=Q\arabic*.]
  \setcounter{enumi}{0}\item When is a topological covering map between smooth manifolds a smooth covering map?
@@ -19,6 +22,7 @@ Therefore, covering-space theory has helped us reduce the classification problem
  \setcounter{enumi}{1}\item When is a smooth map between manifolds a covering map?
 \end{enumerate}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0004
 \subsection{The lifted smooth structure}
 \setcounter{definition}{0}\begin{definition}[Smooth covering]
 A topological covering map $p:E\to M$ is said to be a \emph{smooth covering map} if, for every $x\in M$, there is an evenly covered neighbourhood $U_x$ of $x$ with
@@ -29,6 +33,7 @@ A topological covering map $p:E\to M$ is said to be a \emph{smooth covering map}
 \]
 \end{definition}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0005
 \setcounter{theorem}{0}\begin{proposition}[Answer to Q1]\label{prop:lift-smooth}
 Let $M$ be a smooth $n$-manifold, $E$ a connected topological space, and $p:E\to M$ a topological covering map. Then $E$ admits a unique smooth structure which makes it a smooth $n$-manifold and makes $p$ a smooth covering map.
 \end{proposition}
@@ -74,7 +79,7 @@ Consequently,
 
 % Source page 4
 \paragraph{Smoothness of the covering map.}
-Another immediate fact is that, with this smooth structure, $p$ is a smooth map. Let $y\in E$ and $x=p(y)$, let $(\varphi,U)$ be the evenly covered chart of $M$, and let $(\widetilde\varphi,V)$ be the corresponding chart of $E$, as constructed before. Then $p(V)\subseteq U$; in fact, $p(V)=U$. We have
+Another immediate fact is that, with this smooth structure, $p$ is a smooth map. Let $y\in E$ and $x=p(y)$. Let $(\varphi,U)$ be the evenly covered chart of $M$, and let $(\widetilde\varphi,V)$ be the corresponding chart of $E$, as constructed before. Then $p(V)\subseteq U$; in fact, $p(V)=U$. We have
 \[
  \varphi\circ p\circ\widetilde\varphi^{-1}
  =\varphi\circ p\circ(\varphi\circ p)^{-1}=\id,
@@ -109,7 +114,7 @@ Now fix a point $m\in M$, and let $e$ be a point of the fibre over $m$, viewed a
  \centering
  \includegraphics[width=0.62\linewidth]{sc-fig-04.pdf}
 \end{figure}
-It follows that $\id_E=\widetilde p'\circ\widetilde p$ and $\id_{E'}=\widetilde p\circ\widetilde p'$. Therefore $\widetilde p$ is a diffeomorphism. Further, $\widetilde p=\id_E$, since $p'=p$ as topological maps. Thus the smooth structures of $E$ and $E'$ are compatible.
+It follows that $\id_E=\widetilde p'\circ\widetilde p$ and $\id_{E'}=\widetilde p\circ\widetilde p'$. Therefore, $\widetilde p$ is a diffeomorphism. Further, $\widetilde p=\id_E$, since $p'=p$ as topological maps. Thus the smooth structures of $E$ and $E'$ are compatible.
 
 % Source page 6
 \paragraph{Second countability.}
@@ -125,12 +130,14 @@ If $E$ is connected, it is path connected, so $\Phi$ is surjective. Now, if we p
 Thus, by taking the union of the countable bases of $\{p^{-1}(U_i)\}_{i=1}^{\infty}$, one obtains a countable basis of $E$. The following lemma will finish our proof.
 \end{proof}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0006
 % Source page 7
 \subsection{Countability of the fundamental group}
 \setcounter{theorem}{1}\begin{lemma}[Countability of the fundamental group]\label{lem:countable-fundamental}
 Let $M$ be a topological manifold. Then $\pi_1(M,P)$ is countable for every $P\in M$.
 \end{lemma}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0007
 \begin{proof}
 Let $\{B_i\}_{i=1}^{\infty}$ be a countable basis of coordinate balls. Since $M$ is second countable, each $B_i\cap B_j$ has only countably many components. Pick a point $x_i\in\widehat{B_j\cap B_k}$, where $\widehat{B_j\cap B_k}$ varies over all components of all intersections $B_j\cap B_k$, and let $X=\{x_i\}$. Notice that $P\in M$ belongs to a component of some $B_j\cap B_k$, so we may assume that $P\in X$.
 
@@ -164,12 +171,15 @@ Thus every $f$ can be factored using paths $h_{x_{i-1}x_i}$ from $x_{i-1}$ to $x
 Every $[f]\in\pi_1(M,P)$ is therefore a finite product of elements from the countable set $\{[h_{x_{i-1}x_i}]\}_{n,i}$. Consequently, $\pi_1(M,P)$ is countable.
 \end{proof}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0008
 \subsection{Proper local diffeomorphisms}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0009
 \setcounter{theorem}{2}\begin{proposition}[Answer to Q2]\label{prop:proper-cover}
 Let $M$ be a connected smooth manifold and let $p\colon E\to M$ be a proper local diffeomorphism. Then $p$ is a covering map.
 \end{proposition}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0010
 \begin{proof}
 The image $p(E)$ is open because $p$ is a local diffeomorphism. It is also closed because $p$ is proper and $M$ is locally compact and Hausdorff. Since $M$ is connected, $p$ is surjective.
 
@@ -192,14 +202,18 @@ p^{-1}(U)=\bigsqcup_{i=1}^{n}V_i,
 Thus $p$ is a smooth covering map.
 \end{proof}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0011
 \subsection{Covering Lie groups}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0012
 Now let us impose further structures on our original setting and see where it leads us. We saw before that covering space theory helped reduce the classification problem by a lot. We then saw how the structure was still preserved once we shifted our course to the category of smooth manifolds. More precisely, we saw that a topological cover of a manifold also preserves the smooth structure. If we now lift this to the category of Lie groups and ask whether smooth covering maps preserve the group structure, the following proposition answers this in its full glory!
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0013
 \setcounter{theorem}{3}\begin{proposition}[Lifting the group structure]\label{prop:lie-group}
 Let $G$ be a connected Lie group, and let $\pi\colon\widetilde{G}\to G$ be a smooth covering map with $\widetilde{G}$ simply connected. Then one can endow $\widetilde{G}$ with a Lie group structure for which $\pi$ is a Lie group homomorphism. Furthermore, $\widetilde{G}$ is unique up to Lie group isomorphism.
 \end{proposition}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0014
 % Source page 11
 \begin{proof}
 Consider $\widetilde G$, the universal cover of $G$. Then
@@ -230,7 +244,7 @@ $\psi\circ(\pi\circ\widetilde m)\circ\varphi^{-1}$ is smooth. One can
 arrange $U_{\pi(p)}$ so that $\pi\colon V_p\to U_{\pi(p)}$ is a local
 diffeomorphism. Then $(W,\varphi)$ and $(V_p,\psi\circ\pi)$ are charts
 such that $(\psi\circ\pi)\circ\widetilde m\circ\varphi^{-1}$ is smooth.
-This can be done for every $q$ and $\pi(p)$.
+This can be done for every $q$ and $\pi(p)$.)
 
 % Source page 12
 Therefore, $\widetilde m$ is smooth. Thus one has a smooth
@@ -270,10 +284,11 @@ $(\widetilde e,\widetilde e,\widetilde e)$. Since the two lifts agree at the bas
 
 % Source page 13
 One can similarly show that $x\cdot x^{-1}=x^{-1}\cdot x=\widetilde e$.
-Therefore $(\widetilde G,\cdot)$ is a Lie group and
+Therefore, $(\widetilde G,\cdot)$ is a Lie group and
 $\pi\colon\widetilde G\to G$ is a Lie group homomorphism.
 \end{proof}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0015
 \begin{remark}
 Notice that the demand that $\widetilde G$ be simply connected was crucial: it helped us literally lift the group structure on $G$. Such a lift might not be possible for some other smooth covers of $G$.
 
@@ -283,26 +298,31 @@ Lie group also carries a unique Lie group structure for which the covering
 map is a homomorphism.
 \end{remark}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0016
 \Needspace{8.3cm}
 \subsection{Uniqueness across the categories}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0017
 Now let's briefly talk about the uniqueness of $\widetilde G$, to see how
 the structures are lifted from one category to another. If $G_1$ and
 $G_2$ are two simply connected Lie groups with smooth coverings
 $p_1\colon G_1\to G$ and $p_2\colon G_2\to G$ that are also Lie group
 homomorphisms, then we have the following.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0018
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.72\linewidth]{sc-fig-08.pdf}
 \end{figure}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0019
 There are continuous lifts $\widetilde p_1$ and $\widetilde p_2$ of
 $p_1$ and $p_2$ such that the diagram commutes. Thus $\widetilde p_2$ is
 a homeomorphism. Next, $p_1\circ\widetilde p_2$ is smooth and
 $\widetilde p_2$ is continuous, with $p_1$ a local diffeomorphism. Hence
 $\widetilde p_2$ is smooth, and therefore a diffeomorphism.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0020
 % Source page 14
 All three versions of $\widetilde p_2$ coincide. It is not difficult to
 see that the group structure with respect to which $\widetilde p_2$ is a
@@ -311,8 +331,10 @@ $\widetilde p_2$ as a diffeomorphism coincides with $\widetilde p_2$ as a
 homeomorphism is clear. The only issue is the last $\widetilde p_2$; let
 us resolve that.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0021
 The continuous lift is a diffeomorphism. It remains to show that this same map is a group homomorphism.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0022
 Notice that
 \begin{align*}
  p_1\bigl(\widetilde p_2(xy)\bigr)
@@ -331,16 +353,20 @@ say $(e_2,e_2)$, where $e_2$ is the identity of $G_2$, then uniqueness
 of lifts would tell us that
 $\widetilde p_2(xy)=\widetilde p_2(x)\widetilde p_2(y)$.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0023
 Choose the unique lift $\widetilde p_2$ of $p_2$ through $p_1$ such that
 $\widetilde p_2(e_2)=e_1$, where $e_1$ is the identity of $G_1$. For that $\widetilde p_2$, one can similarly
 prove $\widetilde p_2(x^{-1})=(\widetilde p_2(x))^{-1}$. Thus
 $\widetilde p_2$ is a group homomorphism, hence a group isomorphism,
 and therefore, of course, a covering map.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0024
 Thus the topological, smooth, and group-theoretic constructions yield the same map $\widetilde p_2$.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0025
 \section{Classification and complex structures}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0026
 We didn't impose the Lie group structure simply to poke around and see.
 It turns out that the initial simplification of classifying topological
 manifolds, when translated to the category of smooth manifolds, would
@@ -352,38 +378,45 @@ classification problem boils down to classifying all discrete Lie
 subgroups of a given Lie group, which is itself a field of study.
 Therefore, Lie groups enter into this story quite naturally!
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0027
 One sees the full strength of this simplification the moment one gives
 this a complex structure. Firstly, one can translate this simplification
-word for word. So, given the following:
+word for word. So, we are given the following:
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0028
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.98\linewidth]{sc-fig-09.pdf}
 \end{figure}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0029
 % Source page 16
 When we make the identification $E/G\cong M$, where $E$ is a universal
 cover of $M$, one can forget $M$: given a smooth structure on $M$, there
 is a unique smooth structure on $E$, and hence a unique smooth structure
 on $E/G$.
 
-Now consider complex $1$-manifolds, that is, Riemann surfaces. Simply
+% BLOG-PASSAGE: smooth-covering-manifolds:p0030
+Now consider complex $1$-manifolds, that is, \BlogPost{topology-of-surfaces}{Riemann surfaces}. Simply
 connected Riemann surfaces are classified.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0031
 \setcounter{theorem}{4}\begin{theorem}[Uniformisation theorem]\label{thm:uniformisation}
 Given a simply connected Riemann surface $S$, we have
 $S\cong\mathbb C$, $\mathbb P_1$, or $\mathbb D$.
 \end{theorem}
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0032
 If $G<\operatorname{Aut}(\mathbb P_1)$ acts freely and properly discontinuously on
 $\mathbb P_1$, then $G=\{1\}$. In the case of $\mathbb C$,
 $G=\{1\}$, $G\cong\mathbb Z$, or $G\cong\mathbb Z\times\mathbb Z$. These are easy
 consequences of elementary theorems taught in a complex analysis or
 topology course.
 
+% BLOG-PASSAGE: smooth-covering-manifolds:p0033
 Now it merely remains to classify the discrete subgroups of the Lie
 group $\operatorname{Aut}(\mathbb D)\cong\operatorname{PSL}_2(\mathbb R)$.
-Therefore, the story we have told so far is not a mere \emph{tell-tale heart}!
+Therefore, the story we have told so far is not a mere \emph{tell-tale heart}! The orientation consequences of these smooth coverings continue in \BlogPost{orientation-and-covering-maps}{Orientation and Covering Maps}.
 
 % BLOG-CONTENT-END
 \end{document}

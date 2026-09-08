@@ -4,8 +4,10 @@
 \begin{document}
 \section*{Harmonic Functions and Rectifiable Curves}
 % BLOG-CONTENT-BEGIN
-Let us apply the epsilon-room method to harmonic functions.
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0001
+Let us apply the \BlogPost{complex-differentiation}{epsilon-room method} to harmonic functions.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0002
 Let $u\colon U\to\mathbb R$ be harmonic, that is,
 \[
 \Delta u:=\frac{\partial^2u}{\partial x^2}
@@ -17,6 +19,7 @@ and let $K\subset U$ be compact. Then
 \]
 This is the maximum principle for harmonic functions.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0003
 \textit{Proof.}
 Since $\partial K\subseteq K$, as $K$ is compact,
 \[
@@ -41,6 +44,7 @@ Since $u$ is harmonic, both must be equalities. We intend to contradict this, so
 \boxed{u_\varepsilon(x+iy):=u(x+iy)+\varepsilon(x^2+y^2).}
 \]
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0004
 
 Suppose
 \[
@@ -69,12 +73,13 @@ Thus $u_\varepsilon$ again has an interior maximum, and
 \frac{\partial^2u_\varepsilon}{\partial y^2}\leq0.
 \]
 Adding these inequalities gives \(4\varepsilon\leq0,\)
-a contradiction. Therefore
+a contradiction. Therefore,
 \[
 \boxed{
 \sup_{z\in K}u(z)=\sup_{z\in\partial K}u(z).}
 \]
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0005
 \textbf{Note.}
 If $f\colon U\to\mathbb C$ is holomorphic, then \(\operatorname{Re}(e^{i\theta}f)\)
 is harmonic, and
@@ -88,20 +93,24 @@ Hence
 \sup_{z\in K}\sup_\theta\operatorname{Re}(e^{i\theta}f)
 =\sup_{z\in\partial K}\sup_\theta\operatorname{Re}(e^{i\theta}f).
 \]
-By Tool 2, this yields
+By \BlogPostAt{connectedness-and-compactness}{tool:real-part-modulus}{Tool 2}, this yields
 \[
 \sup_{z\in K}|f(z)|=\sup_{z\in\partial K}|f(z)|.
 \]
 As was stated, a fact about real-valued functions is lifted to a complex-valued function via Tool 2.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0006
 \textbf{Exercise.}
 The only infima of $|f|$ attained in the interior for a holomorphic function occur at zeros of the function.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0007
 
 The following is a generalized form of the $\varepsilon$-technique.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0008
 The image of a rectifiable curve has measure $0$.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0009
 \textit{Proof.}
 Let $+$ denote the usual concatenation of curves. Then
 \[
@@ -143,6 +152,7 @@ Then
 \]
 and
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0010
 
 \[
 \left|\gamma\big|_{[t_2,t_3]}\right|>\varepsilon/2.
@@ -155,8 +165,9 @@ would imply
 \[
 \left|\gamma\big|_{[0,1]}\right|=\infty.
 \]
-This contradicts rectifiability. Therefore $g(t)$ is continuous.
+This contradicts rectifiability. Therefore, $g(t)$ is continuous.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0011
 Fix $\gamma(0)$. By definition, \(\gamma(1)\in\overline{B_{|\gamma|}(\gamma(0))}.\)
 By the intermediate value property, there is a $t\in[0,1]$ such that
 \[
@@ -193,6 +204,7 @@ where the points $t_{n,j}$ are obtained by the intermediate value property so th
 =\frac{|\gamma|}{2^n}.
 \]
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0012
 By monotonicity,
 \[
 m\left(\gamma\big|_{[0,1]}\right)
@@ -206,23 +218,29 @@ Thus
 0\leq m\left(\gamma\big|_{[0,1]}\right)
 \leq\inf_n\frac{\pi|\gamma|^2}{2^n}=0.}
 \]
-Therefore images of rectifiable curves have measure $0$.
+Therefore, images of rectifiable curves have measure $0$.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0013
 \textbf{Remark.}
 Space-filling curves are not rectifiable. In fact, any curve with Hausdorff dimension greater than $1$ is unrectifiable.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0014
 Note that this double induction gives a rather strong result. The picture below shows that Riemann-integrable functions have graphs of measure $0$.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0015
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.72\linewidth]{note2-fig-01.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0016
 In particular, graphs of continuous or almost-continuous functions also have measure $0$. If we invoke Littlewood's principle, namely Lusin's theorem, then the graph of any measurable function whose support is a set of finite measure has measure $0$, since such functions are ``almost'' continuous. Sadly, none of these capture the notion of rectifiability, since there is no implicit function theorem for continuous functions.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0017
 We are not done with Tool 5, or for that matter with any of the tools; these shall keep coming back. So watch out.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0018
 
 \subsection*{Tool 6 — Fundamental Theorem of Calculus}
 Let $f$ be Riemann integrable, and let $F$ satisfy $F'=f$. Then
@@ -230,9 +248,11 @@ Let $f$ be Riemann integrable, and let $F$ satisfy $F'=f$. Then
 \int_a^b f(x)\,dx=F(b)-F(a).
 \]
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0019
 
 Let $u\colon U\to\mathbb R$ be harmonic on a simply connected region $U$. Then there is a harmonic function $v\colon U\to\mathbb R$, unique up to constants and called the harmonic conjugate, such that $u+iv$ is holomorphic in $U$.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0020
 \textit{Proof.}
 First consider a rectangle contained in $U$, translated so that its lower-left corner is $0$.
 Assume first that $v$ is the harmonic conjugate of $u$. Then
@@ -243,6 +263,7 @@ v(x+iy)-v(0)
 +\int_0^y\frac{\partial v}{\partial y}(x+it)\,dt.
 \end{align*}
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0021
 
 By the Cauchy--Riemann equations,
 \[
@@ -252,6 +273,7 @@ v(x+iy)=v(0)
 \]
 Denote the two integrals by $H(x,y)$. The function $u$ determines $H(x,y)$, so another conjugate of $u$ can differ only by a constant.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0022
 Now let us establish existence. Since $u$ determines $H(x,y)$, define
 \[
 v(x+iy):=H(x,y)
@@ -291,8 +313,9 @@ Also,
 \end{align*}
 where $x'\in(x,x+h)$ by the mean value theorem, since $u\in C^2$.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0023
 
-As $h\to0$, we have $x'\to x$. Therefore
+As $h\to0$, we have $x'\to x$. Therefore,
 \[
 \frac{\partial v}{\partial x}(x+iy)
 =-\frac{\partial u}{\partial y}(x)
@@ -321,11 +344,14 @@ Thus
 =-\frac{\partial u}{\partial y}(z).
 \]
 
-Therefore $(u,v)$ is Fr\'echet differentiable and satisfies the Cauchy--Riemann equations, so $u+iv$ is holomorphic.
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0024
+Therefore, $(u,v)$ is Fr\'echet differentiable and satisfies the Cauchy--Riemann equations, so $u+iv$ is holomorphic.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0025
 \textbf{Remark.}
 This proof goes through on a disk $D$. The primitive argument below gives the global conclusion on any simply connected domain.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0026
 If $u$ is harmonic, then \(u_x-iu_y\)
 is holomorphic, since
 \[
@@ -341,7 +367,7 @@ Now, if $u\colon U\to\mathbb R$ and $U$ is simply connected, then $g(z):=u_x-iu_
 &=u_x-iu_y\\
 &=\operatorname{Re}(f)_x-i\operatorname{Re}(f)_y.
 \end{align*}
-Therefore
+Therefore,
 \[
 \operatorname{Re}(f)_x=u_x,
 \qquad
@@ -350,9 +376,11 @@ Therefore
 so \(u=\operatorname{Re}(f)+c.\) After adjusting the constant term of $f$, we may take $c=0$.
 Thus $\operatorname{Im}(f)$ is the required conjugate.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0027
 \textbf{Remark.}
 Let $f\colon\mathbb C\to\mathbb R$ be harmonic and holomorphic, viewing it also as a complex-valued function. Then $0$ is a harmonic conjugate of $\operatorname{Re}(f)$. By the fundamental theorem of calculus, one concludes that $\operatorname{Re}(f)$ is constant, and hence $f$ is constant. Thus holomorphic functions demand more than one dimension to be harmonic, but, as it turns out, they do not merely demand it: they ensure that they get multidimensional freedom; they ensure harmony. In fact, they turn out to be smooth.
 
+% BLOG-PASSAGE: harmonic-functions-and-rectifiable-curves:p0028
 
 \textbf{Remark.}
 Suppose $u$ and $v$ are harmonic and defined on all of $\mathbb C$. Let \(u\leq v+M.\)

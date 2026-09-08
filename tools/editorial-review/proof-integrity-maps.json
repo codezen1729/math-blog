@@ -1,0 +1,3944 @@
+{
+  "schema": 1,
+  "auditOnly": true,
+  "warning": "Automatic classifications reflect only explicit nearby TeX evidence. Unclassified does not mean missing; genuinely-missing requires explicit gap wording. Hypotheses and intermediate claims require author decomposition.",
+  "classifications": [
+    "proved",
+    "cited",
+    "postponed",
+    "genuinely-missing",
+    "unclassified"
+  ],
+  "posts": [
+    {
+      "slug": "attracting-and-repelling-fixed-points",
+      "title": "Attracting and Repelling Fixed Points",
+      "file": "40-attracting-and-repelling-fixed-points.tex",
+      "selectionReason": "fixed-point and basin material",
+      "theorems": [
+        {
+          "id": "theorem-1d59c184eb03cbda",
+          "environment": "theorem",
+          "title": "Koenigs linearisation",
+          "passageId": "attracting-and-repelling-fixed-points:p0004",
+          "line": 25,
+          "labels": [
+            "cd2:bottcher",
+            "cd2:koenigs"
+          ],
+          "statementExcerpt": "\\Needspace{18\\baselineskip} \\setcounter{theorem}{10}\\begin{theorem}[Koenigs linearisation]\\label{cd2:koenigs} If the multiplier satisfies $|\\lambda|\\notin\\{0,1\\}$, there is a map $\\phi$, unique up to multiplication by a…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\Needspace{18\\baselineskip} \\setcounter{theorem}{10}\\begin{theorem}[Koenigs linearisation]\\label{cd2:koenigs} If the multiplier satisfies $|\\lambda|\\notin\\{0,1\\}$, there is a map $\\phi$, unique up to multiplication by a…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-10435d2f9b4ab523",
+          "environment": "theorem",
+          "title": null,
+          "passageId": "attracting-and-repelling-fixed-points:p0009",
+          "line": 180,
+          "labels": [
+            "cd2:maximal-bottcher"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{13}\\begin{theorem}\\label{cd2:maximal-bottcher} There is a maximal $0<r\\le1$ such that the B\\\"ottcher coordinate $\\phi$ has a biholomorphic inverse on $\\mathbb D_r$. If $r=1$, then $\\mathbb D\\cong\\ma…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "BlogPost",
+              "target": "parabolic-fixed-points-and-the-flower-theorem",
+              "linkedText": "the next post",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{13}\\begin{theorem}\\label{cd2:maximal-bottcher} There is a maximal $0<r\\le1$ such that the B\\\"ottcher coordinate $\\phi$ has a biholomorphic inverse on $\\mathbb D_r$. If $r=1$, then $\\mathbb D\\cong\\ma…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-68f675efedd17848",
+          "environment": "theorem",
+          "title": null,
+          "passageId": "attracting-and-repelling-fixed-points:p0010",
+          "line": 211,
+          "labels": [
+            "cd2:finite-attractors"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{14}\\begin{theorem}\\label{cd2:finite-attractors} There are finitely many attracting periodic orbits. \\end{theorem} \\begin{proof} For fixed points this follows because all immediate basins contain cri…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{14}\\begin{theorem}\\label{cd2:finite-attractors} There are finitely many attracting periodic orbits. \\end{theorem} \\begin{proof} For fixed points this follows because all immediate basins contain cri…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-e57b4753a8019145",
+          "environment": "theorem",
+          "title": null,
+          "passageId": "attracting-and-repelling-fixed-points:p0011",
+          "line": 229,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{15}\\begin{theorem} Every proper holomorphic self-map $f\\colon S\\to S$ has a critical value in every immediate basin of an attracting orbit. \\end{theorem}",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{15}\\begin{theorem} Every proper holomorphic self-map $f\\colon S\\to S$ has a critical value in every immediate basin of an attracting orbit. \\end{theorem}",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [
+        {
+          "passageId": "attracting-and-repelling-fixed-points:p0004",
+          "line": 25,
+          "excerpt": "\\Needspace{18\\baselineskip} \\setcounter{theorem}{10}\\begin{theorem}[Koenigs linearisation]\\label{cd2:koenigs} If the multiplier satisfies $|\\lambda|\\notin\\{0,1\\}$, there is a map $\\phi$, unique up to multiplication by a…"
+        },
+        {
+          "passageId": "attracting-and-repelling-fixed-points:p0008",
+          "line": 152,
+          "excerpt": "\\begin{proof} Suppose $\\phi^{-1}$ extends biholomorphically to an entire function. We would then have the following commutative diagram, implying that $f|_{\\psi(\\mathbb C)}$ is injective. \\begin{figure}[H]\\centering \\in…"
+        },
+        {
+          "passageId": "attracting-and-repelling-fixed-points:p0009",
+          "line": 180,
+          "excerpt": "\\setcounter{theorem}{13}\\begin{theorem}\\label{cd2:maximal-bottcher} There is a maximal $0<r\\le1$ such that the B\\\"ottcher coordinate $\\phi$ has a biholomorphic inverse on $\\mathbb D_r$. If $r=1$, then $\\mathbb D\\cong\\ma…"
+        },
+        {
+          "passageId": "attracting-and-repelling-fixed-points:p0010",
+          "line": 211,
+          "excerpt": "\\setcounter{theorem}{14}\\begin{theorem}\\label{cd2:finite-attractors} There are finitely many attracting periodic orbits. \\end{theorem} \\begin{proof} For fixed points this follows because all immediate basins contain cri…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {
+        "proved": 3,
+        "unclassified": 1
+      }
+    },
+    {
+      "slug": "parabolic-fixed-points-and-the-flower-theorem",
+      "title": "Parabolic Fixed Points and the Flower Theorem",
+      "file": "41-parabolic-fixed-points-and-the-flower-theorem.tex",
+      "selectionReason": "fixed-point and basin material",
+      "theorems": [
+        {
+          "id": "theorem-755f85ce118f765e",
+          "environment": "theorem",
+          "title": "Flower theorem",
+          "passageId": "parabolic-fixed-points-and-the-flower-theorem:p0005",
+          "line": 102,
+          "labels": [
+            "cd3:flower"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{17}\\begin{theorem}[Flower theorem]\\label{cd3:flower} There are petals $\\{P_j\\}_{j=0}^{2n-1}$, each attracting or repelling, such that $\\{\\widehat p\\}\\cup P_0\\cup\\cdots\\cup P_{2n-1}$ is an open neigh…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{17}\\begin{theorem}[Flower theorem]\\label{cd3:flower} There are petals $\\{P_j\\}_{j=0}^{2n-1}$, each attracting or repelling, such that $\\{\\widehat p\\}\\cup P_0\\cup\\cdots\\cup P_{2n-1}$ is an open neigh…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-c8c3c6847edc7097",
+          "environment": "theorem",
+          "title": "Parabolic linearisation",
+          "passageId": "parabolic-fixed-points-and-the-flower-theorem:p0006",
+          "line": 151,
+          "labels": [
+            "cd3:linearisation"
+          ],
+          "statementExcerpt": "We now ask the question suggested by the case $0<|\\lambda|<1$: can we understand the dynamics separately on each of the $2n$ petals? The next theorem addresses this completely. \\setcounter{theorem}{18}\\begin{theorem}[Pa…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "eqref",
+              "target": "cd3:ratio-bound",
+              "classification": "cited"
+            },
+            {
+              "type": "eqref",
+              "target": "cd3:product-bound",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "We now ask the question suggested by the case $0<|\\lambda|<1$: can we understand the dynamics separately on each of the $2n$ petals? The next theorem addresses this completely. \\setcounter{theorem}{18}\\begin{theorem}[Pa…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "cited",
+              "evidence": "explicit reference with a citation cue"
+            }
+          ],
+          "proofDisposition": "cited",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [
+        {
+          "passageId": "parabolic-fixed-points-and-the-flower-theorem:p0003",
+          "line": 30,
+          "excerpt": "\\begin{proof} We employ the same technique mentioned earlier. First let us state explicitly what we expect. Choose a repelling vector $v_0$ and set $v_j=e^{\\pi ij/n}v_0$: $v_j$ is attracting if $2\\nmid j$, and repelling…"
+        },
+        {
+          "passageId": "parabolic-fixed-points-and-the-flower-theorem:p0005",
+          "line": 102,
+          "excerpt": "\\setcounter{theorem}{17}\\begin{theorem}[Flower theorem]\\label{cd3:flower} There are petals $\\{P_j\\}_{j=0}^{2n-1}$, each attracting or repelling, such that $\\{\\widehat p\\}\\cup P_0\\cup\\cdots\\cup P_{2n-1}$ is an open neigh…"
+        },
+        {
+          "passageId": "parabolic-fixed-points-and-the-flower-theorem:p0012",
+          "line": 224,
+          "excerpt": "Having observed these three crucial facts, let us prove existence and uniqueness of the Fatou coordinate. \\begin{proof}[Proof of Theorem~\\ref{cd3:linearisation}] \\emph{Existence.} For any petal $P$ and $z\\in P$, some it…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {
+        "cited": 1,
+        "proved": 1
+      }
+    },
+    {
+      "slug": "critical-points-and-julia-set-connectivity",
+      "title": "Critical Points and Julia-Set Connectivity",
+      "file": "43-critical-points-and-julia-set-connectivity.tex",
+      "selectionReason": "critical points/connectivity",
+      "theorems": [
+        {
+          "id": "theorem-7fe1decc5180ec91",
+          "environment": "theorem",
+          "title": null,
+          "passageId": "critical-points-and-julia-set-connectivity:p0001",
+          "line": 1,
+          "labels": [
+            "cd5:components"
+          ],
+          "statementExcerpt": "In this post we see how the critical points of polynomials on $\\widehat{\\mathbb C}$ determine the shape and structure of the \\BlogPost{dense-subsets-of-julia-sets}{Julia set}. The following is a well-known fact. \\setcou…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "BlogPost",
+              "target": "dense-subsets-of-julia-sets",
+              "linkedText": "Julia set",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "In this post we see how the critical points of polynomials on $\\widehat{\\mathbb C}$ determine the shape and structure of the \\BlogPost{dense-subsets-of-julia-sets}{Julia set}. The following is a well-known fact. \\setcou…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-a994310c2e3fdf65",
+          "environment": "theorem",
+          "title": "Cantor filled Julia set",
+          "passageId": "critical-points-and-julia-set-connectivity:p0004",
+          "line": 37,
+          "labels": [
+            "cd5:cantor",
+            "cd5:connectedness"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{23}\\begin{theorem}\\label{cd5:connectedness} The sets $K$ and $\\partial K$ are connected if and only if every critical point has a bounded orbit. \\end{theorem} \\begin{proof} The polynomial has an att…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{23}\\begin{theorem}\\label{cd5:connectedness} The sets $K$ and $\\partial K$ are connected if and only if every critical point has a bounded orbit. \\end{theorem} \\begin{proof} The polynomial has an att…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [
+        {
+          "passageId": "critical-points-and-julia-set-connectivity:p0001",
+          "line": 1,
+          "excerpt": "In this post we see how the critical points of polynomials on $\\widehat{\\mathbb C}$ determine the shape and structure of the \\BlogPost{dense-subsets-of-julia-sets}{Julia set}. The following is a well-known fact. \\setcou…"
+        },
+        {
+          "passageId": "critical-points-and-julia-set-connectivity:p0004",
+          "line": 37,
+          "excerpt": "\\setcounter{theorem}{23}\\begin{theorem}\\label{cd5:connectedness} The sets $K$ and $\\partial K$ are connected if and only if every critical point has a bounded orbit. \\end{theorem} \\begin{proof} The polynomial has an att…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {
+        "proved": 2
+      }
+    },
+    {
+      "slug": "classification-fatou-components",
+      "title": "Classification of Non-Wandering Fatou Components",
+      "file": "23-classification-fatou-components.tex",
+      "selectionReason": "Sullivan/no-wandering material",
+      "theorems": [],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {}
+    },
+    {
+      "slug": "quasiconformal-mappings",
+      "title": "Quasiconformal Mappings",
+      "file": "46-quasiconformal-mappings.tex",
+      "selectionReason": "quasiconformal mappings",
+      "theorems": [
+        {
+          "id": "theorem-3b92272f8dda6096",
+          "environment": "lemma",
+          "title": "Weyl's lemma",
+          "passageId": "quasiconformal-mappings:p0011",
+          "line": 220,
+          "labels": [],
+          "statementExcerpt": "To ensure that our meter measures conformality and is not an artificial monster, we must recover conformality by reversing what we adjusted. The following powerful lemma ensures this. \\setcounter{theorem}{39}\\begin{lemm…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "To ensure that our meter measures conformality and is not an artificial monster, we must recover conformality by reversing what we adjusted. The following powerful lemma ensures this. \\setcounter{theorem}{39}\\begin{lemm…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [
+        {
+          "passageId": "quasiconformal-mappings:p0005",
+          "line": 53,
+          "excerpt": "The \\(C^1\\) assumption was rather unmotivated. There are other ways to ensure that pullback can be done almost everywhere. \\setcounter{definition}{20}\\begin{definition}[First analytic definition of quasiconformal maps]…"
+        },
+        {
+          "passageId": "quasiconformal-mappings:p0011",
+          "line": 220,
+          "excerpt": "To ensure that our meter measures conformality and is not an artificial monster, we must recover conformality by reversing what we adjusted. The following powerful lemma ensures this. \\setcounter{theorem}{39}\\begin{lemm…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {
+        "proved": 1
+      }
+    },
+    {
+      "slug": "the-quadratic-family",
+      "title": "The Quadratic Family",
+      "file": "81-the-quadratic-family.tex",
+      "selectionReason": "quadratic family",
+      "theorems": [
+        {
+          "id": "theorem-56abe0ddd995ca51",
+          "environment": "theorem",
+          "title": "Connected and Cantor filled Julia sets",
+          "passageId": "the-quadratic-family:p0004",
+          "line": 33,
+          "labels": [
+            "thm:critical-connectedness"
+          ],
+          "statementExcerpt": "\\subsection{Critical points and connectedness} The following is the \\BlogPostAt{critical-points-and-julia-set-connectivity}{cd5:connectedness}{critical-point connectivity criterion} in the present notation. \\setcounter{…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "eqref",
+              "target": "eq:filled-intersection",
+              "classification": "cited"
+            },
+            {
+              "type": "eqref",
+              "target": "eq:filled-intersection",
+              "classification": "cited"
+            },
+            {
+              "type": "BlogPostAt",
+              "target": "critical-points-and-julia-set-connectivity",
+              "targetLabel": "cd5:connectedness",
+              "linkedText": "critical-point connectivity criterion",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\subsection{Critical points and connectedness} The following is the \\BlogPostAt{critical-points-and-julia-set-connectivity}{cd5:connectedness}{critical-point connectivity criterion} in the present notation. \\setcounter{…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-7a6f6b9a54e1b2b8",
+          "environment": "corollary",
+          "title": "Connected Julia sets",
+          "passageId": "the-quadratic-family:p0006",
+          "line": 92,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{1}\\begin{corollary}[Connected Julia sets] \\[ \\M=\\{c\\mid K(P_c)\\text{ is connected}\\} =\\{c\\mid J(P_c)\\text{ is connected}\\}. \\] \\end{corollary}",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{1}\\begin{corollary}[Connected Julia sets] \\[ \\M=\\{c\\mid K(P_c)\\text{ is connected}\\} =\\{c\\mid J(P_c)\\text{ is connected}\\}. \\] \\end{corollary}",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-5abea61193295ba7",
+          "environment": "theorem",
+          "title": "Basic properties of the Mandelbrot set",
+          "passageId": "the-quadratic-family:p0007",
+          "line": 100,
+          "labels": [
+            "thm:basic-properties"
+          ],
+          "statementExcerpt": "\\subsection{Escape bounds and the real slice} \\setcounter{theorem}{2}\\begin{theorem}[Basic properties of the Mandelbrot set]\\label{thm:basic-properties} \\begin{enumerate}[label=(\\roman*)] \\setcounter{enumi}{0}\\item $\\M\\…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Escape bounds and the real slice} \\setcounter{theorem}{2}\\begin{theorem}[Basic properties of the Mandelbrot set]\\label{thm:basic-properties} \\begin{enumerate}[label=(\\roman*)] \\setcounter{enumi}{0}\\item $\\M\\…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-307c2271d78a8182",
+          "environment": "theorem",
+          "title": "Continuation of attracting cycles",
+          "passageId": "the-quadratic-family:p0009",
+          "line": 141,
+          "labels": [
+            "thm:attracting-continuation"
+          ],
+          "statementExcerpt": "\\Needspace{10\\baselineskip} \\subsection{Attracting cycles and stability} \\setcounter{theorem}{3}\\begin{theorem}[Continuation of attracting cycles]\\label{thm:attracting-continuation} Let $a\\in\\Int(\\M)$, and suppose $P_a$…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\Needspace{10\\baselineskip} \\subsection{Attracting cycles and stability} \\setcounter{theorem}{3}\\begin{theorem}[Continuation of attracting cycles]\\label{thm:attracting-continuation} Let $a\\in\\Int(\\M)$, and suppose $P_a$…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-0407559bc4aa4f79",
+          "environment": "theorem",
+          "title": "Density of the interior",
+          "passageId": "the-quadratic-family:p0011",
+          "line": 156,
+          "labels": [
+            "thm:interior-dense"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{4}\\begin{theorem}[Density of the interior]\\label{thm:interior-dense} $\\Int(\\M)$ is dense in $\\M$. \\end{theorem} \\begin{proof} Let $U$ be a disk that meets $\\partial\\M$, with $0\\notin U$. \\begin{figu…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{4}\\begin{theorem}[Density of the interior]\\label{thm:interior-dense} $\\Int(\\M)$ is dense in $\\M$. \\end{theorem} \\begin{proof} Let $U$ be a disk that meets $\\partial\\M$, with $0\\notin U$. \\begin{figu…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-3d847edd987dd88c",
+          "environment": "corollary",
+          "title": "$J$-stability",
+          "passageId": "the-quadratic-family:p0012",
+          "line": 178,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{5}\\begin{corollary}[$J$-stability] \\[ \\{c\\mid P_c\\text{ is }J\\text{-stable}\\}=\\C\\setminus\\partial\\M. \\] \\end{corollary} \\begin{proof} By definition, if $c\\in\\Int(\\M)$, the sequence $\\{P_c^{\\circ n}(…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{5}\\begin{corollary}[$J$-stability] \\[ \\{c\\mid P_c\\text{ is }J\\text{-stable}\\}=\\C\\setminus\\partial\\M. \\] \\end{corollary} \\begin{proof} By definition, if $c\\in\\Int(\\M)$, the sequence $\\{P_c^{\\circ n}(…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-a8464630d02926a9",
+          "environment": "theorem",
+          "title": "Invariant line fields",
+          "passageId": "the-quadratic-family:p0014",
+          "line": 201,
+          "labels": [
+            "thm:line-fields"
+          ],
+          "statementExcerpt": "\\subsection{Non-hyperbolic components} \\setcounter{theorem}{6}\\begin{theorem}[Invariant line fields]\\label{thm:line-fields} If $c\\in\\Int(\\M)$, then the component of $\\Int(\\M)$ containing $c$ is non-hyperbolic if and onl…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "ref",
+              "target": "thm:attracting-continuation",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\subsection{Non-hyperbolic components} \\setcounter{theorem}{6}\\begin{theorem}[Invariant line fields]\\label{thm:line-fields} If $c\\in\\Int(\\M)$, then the component of $\\Int(\\M)$ containing $c$ is non-hyperbolic if and onl…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-9da9d2c9ed9d305b",
+          "environment": "theorem",
+          "title": "Quasicircle Julia sets",
+          "passageId": "the-quadratic-family:p0019",
+          "line": 262,
+          "labels": [],
+          "statementExcerpt": "\\section{Quasicircles and uniformisation} \\subsection{The principal hyperbolic component} \\setcounter{theorem}{7}\\begin{theorem}[Quasicircle Julia sets] If $c$ is in the principal hyperbolic component, then $J(P_c)$ is…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "BlogPostAt",
+              "target": "the-mapping-theorem-and-invariant-complex-structures",
+              "targetLabel": "thm:measurable-riemann-mapping",
+              "linkedText": "measurable Riemann mapping theorem",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\section{Quasicircles and uniformisation} \\subsection{The principal hyperbolic component} \\setcounter{theorem}{7}\\begin{theorem}[Quasicircle Julia sets] If $c$ is in the principal hyperbolic component, then $J(P_c)$ is…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-7f4e6e77c02219e4",
+          "environment": "theorem",
+          "title": "Uniformisation of $\\C\\setminus\\M$",
+          "passageId": "the-quadratic-family:p0020",
+          "line": 325,
+          "labels": [],
+          "statementExcerpt": "\\subsection{Uniformisation of the complement of the Mandelbrot set} \\setcounter{theorem}{8}\\begin{theorem}[Uniformisation of $\\C\\setminus\\M$] Recall that, if $c\\in\\M^c$, then $A_c(\\infty)$ is the only Fatou component, a…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Uniformisation of the complement of the Mandelbrot set} \\setcounter{theorem}{8}\\begin{theorem}[Uniformisation of $\\C\\setminus\\M$] Recall that, if $c\\in\\M^c$, then $A_c(\\infty)$ is the only Fatou component, a…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [
+        {
+          "passageId": "the-quadratic-family:p0011",
+          "line": 156,
+          "excerpt": "\\setcounter{theorem}{4}\\begin{theorem}[Density of the interior]\\label{thm:interior-dense} $\\Int(\\M)$ is dense in $\\M$. \\end{theorem} \\begin{proof} Let $U$ be a disk that meets $\\partial\\M$, with $0\\notin U$. \\begin{figu…"
+        },
+        {
+          "passageId": "the-quadratic-family:p0012",
+          "line": 178,
+          "excerpt": "\\setcounter{theorem}{5}\\begin{corollary}[$J$-stability] \\[ \\{c\\mid P_c\\text{ is }J\\text{-stable}\\}=\\C\\setminus\\partial\\M. \\] \\end{corollary} \\begin{proof} By definition, if $c\\in\\Int(\\M)$, the sequence $\\{P_c^{\\circ n}(…"
+        },
+        {
+          "passageId": "the-quadratic-family:p0014",
+          "line": 201,
+          "excerpt": "\\subsection{Non-hyperbolic components} \\setcounter{theorem}{6}\\begin{theorem}[Invariant line fields]\\label{thm:line-fields} If $c\\in\\Int(\\M)$, then the component of $\\Int(\\M)$ containing $c$ is non-hyperbolic if and onl…"
+        },
+        {
+          "passageId": "the-quadratic-family:p0019",
+          "line": 262,
+          "excerpt": "\\section{Quasicircles and uniformisation} \\subsection{The principal hyperbolic component} \\setcounter{theorem}{7}\\begin{theorem}[Quasicircle Julia sets] If $c$ is in the principal hyperbolic component, then $J(P_c)$ is…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {
+        "proved": 7,
+        "unclassified": 2
+      }
+    },
+    {
+      "slug": "shishikuras-surgery-principles",
+      "title": "Shishikura's Surgery Principles",
+      "file": "49-shishikuras-surgery-principles.tex",
+      "selectionReason": "surgery principles",
+      "theorems": [
+        {
+          "id": "theorem-940e8c645f5bebc8",
+          "environment": "lemma",
+          "title": "Key lemma for surgery",
+          "passageId": "shishikuras-surgery-principles:p0001",
+          "line": 1,
+          "labels": [],
+          "statementExcerpt": "Surgery is needed because we want to change the parameters of dynamics while keeping its topological core intact. Suppose a surgery deforms \\(f\\), by quasiconformal conjugacy, to \\(\\widetilde f\\), and \\(\\widetilde f\\) t…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "BlogPostAt",
+              "target": "the-mapping-theorem-and-invariant-complex-structures",
+              "targetLabel": "thm:measurable-riemann-mapping",
+              "linkedText": "\\(\\widetilde f\\)-invariant Beltrami form",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "Surgery is needed because we want to change the parameters of dynamics while keeping its topological core intact. Suppose a surgery deforms \\(f\\), by quasiconformal conjugacy, to \\(\\widetilde f\\), and \\(\\widetilde f\\) t…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "cited",
+              "evidence": "explicit reference with a citation cue"
+            }
+          ],
+          "proofDisposition": "cited",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-835d273c04ec641f",
+          "environment": "theorem",
+          "title": "Principle 1: domain-wise surgery",
+          "passageId": "shishikuras-surgery-principles:p0002",
+          "line": 16,
+          "labels": [
+            "thm:cd12-domain-principle"
+          ],
+          "statementExcerpt": "\\Needspace{15\\baselineskip} \\setcounter{theorem}{48}\\begin{theorem}[Principle 1: domain-wise surgery]\\label{thm:cd12-domain-principle} Let \\(f:\\widehat{\\mathbb C}\\to\\widehat{\\mathbb C}\\) be quasiregular, and let \\(p\\ge1…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\Needspace{15\\baselineskip} \\setcounter{theorem}{48}\\begin{theorem}[Principle 1: domain-wise surgery]\\label{thm:cd12-domain-principle} Let \\(f:\\widehat{\\mathbb C}\\to\\widehat{\\mathbb C}\\) be quasiregular, and let \\(p\\ge1…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [
+        {
+          "passageId": "shishikuras-surgery-principles:p0002",
+          "line": 16,
+          "excerpt": "\\Needspace{15\\baselineskip} \\setcounter{theorem}{48}\\begin{theorem}[Principle 1: domain-wise surgery]\\label{thm:cd12-domain-principle} Let \\(f:\\widehat{\\mathbb C}\\to\\widehat{\\mathbb C}\\) be quasiregular, and let \\(p\\ge1…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {
+        "cited": 1,
+        "proved": 1
+      }
+    },
+    {
+      "slug": "surgical-tools",
+      "title": "Scalpel, Forceps, and other Surgical Tools",
+      "file": "24-surgical-tools.tex",
+      "selectionReason": "general surgery tools",
+      "theorems": [],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {}
+    },
+    {
+      "slug": "first-surgery",
+      "title": "Sullivan's No Wandering Theorem",
+      "file": "25-first-surgery.tex",
+      "selectionReason": "surgery construction",
+      "theorems": [],
+      "orphanProofPassages": [
+        {
+          "passageId": "first-surgery:p0019",
+          "line": 80,
+          "excerpt": "\\textit{Proof.} Set,"
+        },
+        {
+          "passageId": "first-surgery:p0027",
+          "line": 119,
+          "excerpt": "\\textit{Proof.} $\\phi_t\\circ f = f\\circ \\phi_t$ $\\implies$ $\\phi_t\\circ f^{\\circ n} = f^{\\circ n}\\circ \\phi_t$ $\\implies$ $\\phi_t(\\{z\\in \\hat{\\mathbb{C}}|$ $f^{\\circ n}(z) = z, \\text{for some} n\\}) = \\{z\\in \\hat{\\mathbb…"
+        },
+        {
+          "passageId": "first-surgery:p0029",
+          "line": 128,
+          "excerpt": "\\textit{Proof.} $\\hat{\\phi}_t: \\mathbb{D} \\rightarrow \\mathbb{D}$ is quasiconformal $\\implies$ $\\hat{\\phi}_t$ extends quasisymmetrically to $\\partial \\mathbb{D}$. $\\phi_t$ (by Lemma $4.2$) fixes $\\partial \\mathbb{D}$ $\\…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {}
+    },
+    {
+      "slug": "second-surgery",
+      "title": "The Multiplier Map",
+      "file": "26-second-surgery.tex",
+      "selectionReason": "surgery construction",
+      "theorems": [],
+      "orphanProofPassages": [
+        {
+          "passageId": "second-surgery:p0024",
+          "line": 156,
+          "excerpt": "\\textit{Proof.} We have,"
+        }
+      ],
+      "unresolvedFindings": [
+        {
+          "post": "second-surgery",
+          "file": "26-second-surgery.tex",
+          "passageId": "second-surgery:p0001",
+          "line": 1,
+          "scope": "visible",
+          "severity": "review",
+          "category": "deferred-proof",
+          "phrase": "We shall prove",
+          "excerpt": "r2014quasiconformal}, \\cite{MR812271}, and \\cite{MR762431}. We shall prove the following theorem."
+        }
+      ],
+      "summary": {}
+    },
+    {
+      "slug": "third-surgery",
+      "title": "McMullen's Surgery I: Ideal Boundaries and the Gluing Lemma",
+      "file": "27-third-surgery.tex",
+      "selectionReason": "surgery construction",
+      "theorems": [],
+      "orphanProofPassages": [
+        {
+          "passageId": "third-surgery:p0012",
+          "line": 51,
+          "excerpt": "\\textit{Proof.} Clearly $\\phi(R)=R$. Conjugate $\\phi$ by $\\psi_1,\\psi_2\\in\\operatorname{PSL}_2(\\mathbb C)$ so that $\\widetilde\\phi=\\psi_1\\circ\\phi\\circ\\psi_2^{-1}$ has two fixed points $z,w\\in R$, and set $X=\\hat{\\mathb…"
+        },
+        {
+          "passageId": "third-surgery:p0020",
+          "line": 88,
+          "excerpt": "\\textit{Proof.} $(1)$ $\\phi$ is continuous on $\\overline{U}$ implies $\\phi$ is uniformly continuous as $\\overline{U}$ is compact. Let $\\{C_n\\}_n$ be a sequence of crosscuts. As $\\phi$ is a homeomorphism and $\\text{diam}…"
+        },
+        {
+          "passageId": "third-surgery:p0024",
+          "line": 109,
+          "excerpt": "\\textit{Proof.} Let $\\alpha = \\psi^{-1}\\circ \\phi: U \\rightarrow U$. Then $\\alpha$ is $K^2$-qc and is identity on $I(U)$ by the previous proposition. We construct $\\alpha_t$ connecting $\\alpha$ to the identity map throu…"
+        },
+        {
+          "passageId": "third-surgery:p0026",
+          "line": 117,
+          "excerpt": "\\textit{Proof.} Let's now construct a stable conjugacy taking $\\phi$ to $\\text{Id}$, given that $\\phi = \\text{Id}$ on $K$. Here, $K$ is compact connected. Let $\\hat{\\mathbb{C}}\\backslash K = \\sqcup_{\\alpha}U_{\\alpha}$.…"
+        },
+        {
+          "passageId": "third-surgery:p0043",
+          "line": 218,
+          "excerpt": "\\textit{Proof.} Consider locally a branch of $f^{-1}\\circ g$ that agrees with the identity outside $U$, away from the finitely many branch values. In this notation, \\[ f^{-1}\\circ g= \\begin{cases} \\operatorname{Id},&z\\n…"
+        },
+        {
+          "passageId": "third-surgery:p0055",
+          "line": 293,
+          "excerpt": "\\textit{Proof.} Note that $g^{\\circ p}$ is quasiconformally conjugate to a Blaschke product of degree $d = \\prod_{j=0}^{p-1}{\\text{deg}(B_j)}$ on any of the $U_j$'s. Since the cycle contains only finitely many $U_j$, th…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {}
+    },
+    {
+      "slug": "mcmullens-surgery",
+      "title": "McMullen's Surgery II: Rigid Models and a Julia Component",
+      "file": "80-mcmullens-surgery.tex",
+      "selectionReason": "McMullen surgery",
+      "theorems": [],
+      "orphanProofPassages": [
+        {
+          "passageId": "mcmullens-surgery:p0018",
+          "line": 103,
+          "excerpt": "Proof of Proposition $6.16$. There are only finitely many components $V_1, V_2,\\ldots, V_k$ of $\\hat{\\mathbb{C}}\\backslash C$ which intersect $f^{-1}(C)$ or contain a critical point. Set $\\mathcal{V} = \\{V_j\\}_{1\\leq j\\…"
+        },
+        {
+          "passageId": "mcmullens-surgery:p0019",
+          "line": 110,
+          "excerpt": "\\begin{figure}[H]\\centering \\includegraphics[width=.95\\linewidth]{ms-fig-22.pdf} \\FigureTag{MS22}{fig:ms-22} \\end{figure} Proof of (3). If $U$ is not in $\\mathcal{V}$, then $f\\big|_U$ is a conformal isomorphism and $\\ha…"
+        },
+        {
+          "passageId": "mcmullens-surgery:p0029",
+          "line": 163,
+          "excerpt": "\\textit{Proof.} In the proof of the above lemma we shall use the following theorem. A complete treatment of the theorem and expanding maps can be found in \\cite{shub1985expanding}, \\cite{hubbard1982iteration} and \\cite{…"
+        },
+        {
+          "passageId": "mcmullens-surgery:p0033",
+          "line": 188,
+          "excerpt": "\\textit{Proof.} To prove this lemma we shall need the following theorem, due to Zoretti, which can be found in \\cite{whyburn1948analytic}. \\subsection*{Theorem 6.21 (Zoretti's Theorem)} Let $C$ be a component of a compa…"
+        },
+        {
+          "passageId": "mcmullens-surgery:p0041",
+          "line": 230,
+          "excerpt": "\\textit{Proof.} If $V$ is a Siegel disk, then $U=V$ and a Riemann mapping $R_U$, which maps the indifferent fixed point to $0$, conjugates $f$ to the rigid rotation on $\\mathbb{D}$. Hence $\\hat{f}$ on $\\mathbb{S}^1$ is…"
+        },
+        {
+          "passageId": "mcmullens-surgery:p0044",
+          "line": 244,
+          "excerpt": "\\textit{Proof.} Let $W \\subset V$ be a Jordan domain, for which $f(W)$ is a proper subset of $W$ and $\\overline{W}$ does not intersect $\\partial U$. In the (super)attraction case $W$ may be chosen as a disk surrounding…"
+        },
+        {
+          "passageId": "mcmullens-surgery:p0048",
+          "line": 266,
+          "excerpt": "\\textit{Proof.} Let $R_U:U\\rightarrow \\mathbb{D}$ be a Riemann map, normalized so that the parabolic fixed prime end corresponds to $z=1$. Then the coordinate form of $f$, together with $V$, carries over to $\\mathbb{D}$…"
+        },
+        {
+          "passageId": "mcmullens-surgery:p0057",
+          "line": 318,
+          "excerpt": "Proof of Main Theorem. Suppose $I(U)$ is periodic of period $p\\geq 1$. Following Proposition $6.17$, let $\\hat{\\phi}:I(U)\\rightarrow \\mathbb{S}^1$ be a quasisymmetric map so that $\\hat{\\phi}\\circ \\hat{f}^p\\circ \\hat{\\ph…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {}
+    },
+    {
+      "slug": "mcmullens-surgery-finite-symmetry",
+      "title": "McMullen's Surgery III: Commuting Deformations and Finite Symmetry",
+      "file": "84-mcmullens-surgery-finite-symmetry.tex",
+      "selectionReason": "McMullen surgery",
+      "theorems": [],
+      "orphanProofPassages": [
+        {
+          "passageId": "mcmullens-surgery-finite-symmetry:p0004",
+          "line": 14,
+          "excerpt": "\\textit{Proof.} The stable conjugacy transports invariant line fields between $C$ and $J(g)$, so $J(g)$ carries no invariant line field. Let $\\phi$ be an element of $\\text{Mod}(J(g), g)$. We claim the ideal boundary val…"
+        }
+      ],
+      "unresolvedFindings": [],
+      "summary": {}
+    },
+    {
+      "slug": "lemma-book-elementary-number-theory",
+      "title": "Elementary Number Theory",
+      "file": "63-lemma-book-elementary-number-theory.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-529012574e2c82ed",
+          "environment": "lemma",
+          "title": "GCD of a sum and a product",
+          "passageId": "lemma-book-elementary-number-theory:p0001",
+          "line": 1,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{0}\\begin{lemma}[GCD of a sum and a product] If $\\gcd(x,y)=1$, then $\\gcd(x+y,xy)=1$. \\end{lemma} \\paragraph{Application: AMTI, inter-final round (2014).} If $\\gcd(a+b,a-b)=1$, find \\[ \\gcd\\bigl(2a+(…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{0}\\begin{lemma}[GCD of a sum and a product] If $\\gcd(x,y)=1$, then $\\gcd(x+y,xy)=1$. \\end{lemma} \\paragraph{Application: AMTI, inter-final round (2014).} If $\\gcd(a+b,a-b)=1$, find \\[ \\gcd\\bigl(2a+(…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-8f9cb99dce0f22fc",
+          "environment": "lemma",
+          "title": "Canonical representation",
+          "passageId": "lemma-book-elementary-number-theory:p0002",
+          "line": 20,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{1}\\begin{lemma}[Canonical representation] Every integer greater than $1$ can be decomposed uniquely into a product of primes, up to the order of the factors; such a representation is called a canoni…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{1}\\begin{lemma}[Canonical representation] Every integer greater than $1$ can be decomposed uniquely into a product of primes, up to the order of the factors; such a representation is called a canoni…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-794bfd38c1d56829",
+          "environment": "lemma",
+          "title": "Consecutive composite integers",
+          "passageId": "lemma-book-elementary-number-theory:p0003",
+          "line": 34,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{2}\\begin{lemma}[Consecutive composite integers] $n!+2,n!+3,n!+4,\\ldots,n!+n$ are $n-1$ consecutive composite integers. \\end{lemma} \\setcounter{theorem}{3}\\begin{lemma}[A small prime factor] The smal…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{2}\\begin{lemma}[Consecutive composite integers] $n!+2,n!+3,n!+4,\\ldots,n!+n$ are $n-1$ consecutive composite integers. \\end{lemma} \\setcounter{theorem}{3}\\begin{lemma}[A small prime factor] The smal…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-0a8b82b9debec288",
+          "environment": "lemma",
+          "title": "Primes modulo six",
+          "passageId": "lemma-book-elementary-number-theory:p0005",
+          "line": 46,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{4}\\begin{lemma}[Primes modulo six] All primes $p>3$ have the form $6n\\pm1$. \\end{lemma} \\paragraph{Application: RMO (1998).} Let $p_1,p_2,\\ldots,p_n$ be $n$ primes, all greater than $5$, such that $…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{4}\\begin{lemma}[Primes modulo six] All primes $p>3$ have the form $6n\\pm1$. \\end{lemma} \\paragraph{Application: RMO (1998).} Let $p_1,p_2,\\ldots,p_n$ be $n$ primes, all greater than $5$, such that $…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-4c5e36a9f8013b01",
+          "environment": "lemma",
+          "title": "Fermat's congruence",
+          "passageId": "lemma-book-elementary-number-theory:p0006",
+          "line": 56,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{5}\\begin{lemma}[Fermat's congruence] Let $a$ be a positive integer and $p$ a prime. Then $a^p\\equiv a\\pmod p$. If $\\gcd(a,p)=1$, then $a^{p-1}\\equiv1\\pmod p$. \\end{lemma} \\paragraph{Application: Sie…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{5}\\begin{lemma}[Fermat's congruence] Let $a$ be a positive integer and $p$ a prime. Then $a^p\\equiv a\\pmod p$. If $\\gcd(a,p)=1$, then $a^{p-1}\\equiv1\\pmod p$. \\end{lemma} \\paragraph{Application: Sie…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-b208a53a1eeb7bb9",
+          "environment": "lemma",
+          "title": "Wilson's theorem",
+          "passageId": "lemma-book-elementary-number-theory:p0007",
+          "line": 74,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{6}\\begin{lemma}[Wilson's theorem] If $p$ is prime, then $(p-1)!\\equiv-1\\pmod p$. \\end{lemma} \\paragraph{Application.} For $n\\geq3$, \\[ n\\mid\\sum_{r=1}^{n-3}r(r!) \\quad\\Longleftrightarrow\\quad n\\text…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{6}\\begin{lemma}[Wilson's theorem] If $p$ is prime, then $(p-1)!\\equiv-1\\pmod p$. \\end{lemma} \\paragraph{Application.} For $n\\geq3$, \\[ n\\mid\\sum_{r=1}^{n-3}r(r!) \\quad\\Longleftrightarrow\\quad n\\text…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-4433bc7c277266c4",
+          "environment": "lemma",
+          "title": "Euler's totient",
+          "passageId": "lemma-book-elementary-number-theory:p0008",
+          "line": 93,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{7}\\begin{lemma}[Euler's totient] Euler's $\\varphi$-function counts the numbers less than $m$ and relatively prime to it. If $m=\\prod_{i=1}^n p_i^{k_i}$, then \\[ \\varphi(m)=m\\left(1-\\frac1{p_1}\\right…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{7}\\begin{lemma}[Euler's totient] Euler's $\\varphi$-function counts the numbers less than $m$ and relatively prime to it. If $m=\\prod_{i=1}^n p_i^{k_i}$, then \\[ \\varphi(m)=m\\left(1-\\frac1{p_1}\\right…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-6a3cc76e84a40044",
+          "environment": "lemma",
+          "title": "Prime-power exponent",
+          "passageId": "lemma-book-elementary-number-theory:p0009",
+          "line": 106,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{8}\\begin{lemma}[Prime-power exponent] If $p^\\alpha\\mathbin\\Vert n!$, then $\\alpha=\\lfloor n/p\\rfloor+\\lfloor n/p^2\\rfloor+\\lfloor n/p^3\\rfloor+\\cdots$. \\end{lemma}",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{8}\\begin{lemma}[Prime-power exponent] If $p^\\alpha\\mathbin\\Vert n!$, then $\\alpha=\\lfloor n/p\\rfloor+\\lfloor n/p^2\\rfloor+\\lfloor n/p^3\\rfloor+\\cdots$. \\end{lemma}",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-f9d38fc75d3721d8",
+          "environment": "lemma",
+          "title": "Sophie Germain's identity",
+          "passageId": "lemma-book-elementary-number-theory:p0010",
+          "line": 112,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{9}\\begin{lemma}[Sophie Germain's identity] $a^4+4b^4=(a^2+2b^2+2ab)(a^2+2b^2-2ab)$. \\end{lemma} \\paragraph{Application.} Show that $n^4+4^n$ is composite for every integer $n>1$. If $n$ is even, thi…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{9}\\begin{lemma}[Sophie Germain's identity] $a^4+4b^4=(a^2+2b^2+2ab)(a^2+2b^2-2ab)$. \\end{lemma} \\paragraph{Application.} Show that $n^4+4^n$ is composite for every integer $n>1$. If $n$ is even, thi…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-00d0de99dd90a3a4",
+          "environment": "lemma",
+          "title": "A polynomial factorization",
+          "passageId": "lemma-book-elementary-number-theory:p0011",
+          "line": 124,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{10}\\begin{lemma}[A polynomial factorization] \\begin{align*} x^5+x^4+1 &=\\bigl((x+1)^3-3(x+1)^2+2(x+1)+1\\bigr) \\bigl((x+1)^2-(x+1)+1\\bigr)\\\\ &=(x^2+x+1)(x^3-x+1). \\end{align*} \\end{lemma} \\paragraph{…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{10}\\begin{lemma}[A polynomial factorization] \\begin{align*} x^5+x^4+1 &=\\bigl((x+1)^3-3(x+1)^2+2(x+1)+1\\bigr) \\bigl((x+1)^2-(x+1)+1\\bigr)\\\\ &=(x^2+x+1)(x^3-x+1). \\end{align*} \\end{lemma} \\paragraph{…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-65d121783bf2441a",
+          "environment": "lemma",
+          "title": "Reciprocal equation",
+          "passageId": "lemma-book-elementary-number-theory:p0012",
+          "line": 141,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{11}\\begin{lemma}[Reciprocal equation] $1/x+1/y=1/n$ in positive integers is equivalent to $(n-x)(n-y)=n^2$. The number of ordered positive-integer solutions $(x,y)$ equals $d(n^2)$. \\end{lemma}",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{11}\\begin{lemma}[Reciprocal equation] $1/x+1/y=1/n$ in positive integers is equivalent to $(n-x)(n-y)=n^2$. The number of ordered positive-integer solutions $(x,y)$ equals $d(n^2)$. \\end{lemma}",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-bf8fbc898fb43bea",
+          "environment": "lemma",
+          "title": "A cubic identity",
+          "passageId": "lemma-book-elementary-number-theory:p0013",
+          "line": 148,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{12}\\begin{lemma}[A cubic identity] $(a+b+c)^3=a^3+b^3+c^3+3(a+b)(b+c)(c+a)$. \\end{lemma} \\paragraph{Application.} If $6\\mid a+b+c$, then $6\\mid a^3+b^3+c^3$. Indeed, divisibility of $a^3+b^3+c^3$ by…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{12}\\begin{lemma}[A cubic identity] $(a+b+c)^3=a^3+b^3+c^3+3(a+b)(b+c)(c+a)$. \\end{lemma} \\paragraph{Application.} If $6\\mid a+b+c$, then $6\\mid a^3+b^3+c^3$. Indeed, divisibility of $a^3+b^3+c^3$ by…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-e43e3406fd4e3f87",
+          "environment": "lemma",
+          "title": "Squarefree factor",
+          "passageId": "lemma-book-elementary-number-theory:p0016",
+          "line": 186,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{15}\\begin{lemma}[Squarefree factor] If $n^2=ab$, where $a<b$ and $a$ is not divisible by a perfect square greater than $1$, then $a\\mid b$. \\end{lemma} \\paragraph{Application.} The sum of the square…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{15}\\begin{lemma}[Squarefree factor] If $n^2=ab$, where $a<b$ and $a$ is not divisible by a perfect square greater than $1$, then $a\\mid b$. \\end{lemma} \\paragraph{Application.} The sum of the square…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-7619edddd90fa71b",
+          "environment": "lemma",
+          "title": "Inspect when the hypothesis holds",
+          "passageId": "lemma-book-elementary-number-theory:p0017",
+          "line": 197,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{16}\\begin{lemma}[Inspect when the hypothesis holds] In a problem where one is given a condition and asked to prove a result from it, first examine when the condition is satisfied, rather than trying…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{16}\\begin{lemma}[Inspect when the hypothesis holds] In a problem where one is given a condition and asked to prove a result from it, first examine when the condition is satisfied, rather than trying…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-f44654515e93534c",
+          "environment": "lemma",
+          "title": "Pell's equation",
+          "passageId": "lemma-book-elementary-number-theory:p0020",
+          "line": 234,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{17}\\begin{lemma}[Pell's equation] For $x^2-Dy^2=1$, if $(x_1,y_1)$ is a solution, then \\[ x_{n+1}=x_1x_n+Dy_1y_n,\\qquad y_{n+1}=y_1x_n+x_1y_n. \\] Equivalently, \\[ x_n=\\frac12\\bigl[(x_1+y_1\\sqrt D)^n…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{17}\\begin{lemma}[Pell's equation] For $x^2-Dy^2=1$, if $(x_1,y_1)$ is a solution, then \\[ x_{n+1}=x_1x_n+Dy_1y_n,\\qquad y_{n+1}=y_1x_n+x_1y_n. \\] Equivalently, \\[ x_n=\\frac12\\bigl[(x_1+y_1\\sqrt D)^n…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-fd375d731dcff13c",
+          "environment": "lemma",
+          "title": "Fermat's infinite descent principle",
+          "passageId": "lemma-book-elementary-number-theory:p0021",
+          "line": 258,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{18}\\begin{lemma}[Fermat's infinite descent principle] There is no strictly decreasing sequence of positive integers. This idea seems elementary but has many beautiful consequences. \\end{lemma}",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{18}\\begin{lemma}[Fermat's infinite descent principle] There is no strictly decreasing sequence of positive integers. This idea seems elementary but has many beautiful consequences. \\end{lemma}",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-af8ff005c05e081e",
+          "environment": "lemma",
+          "title": "Choose a modulus suited to the power",
+          "passageId": "lemma-book-elementary-number-theory:p0022",
+          "line": 264,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{19}\\begin{lemma}[Choose a modulus suited to the power] Using an appropriate modulus for perfect powers often yields elegant solutions: for cubes, modulo $7$ or $9$; for fourth powers, modulo $5$ or…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{19}\\begin{lemma}[Choose a modulus suited to the power] Using an appropriate modulus for perfect powers often yields elegant solutions: for cubes, modulo $7$ or $9$; for fourth powers, modulo $5$ or…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-05b6282213ff35a5",
+          "environment": "lemma",
+          "title": "Factorization",
+          "passageId": "lemma-book-elementary-number-theory:p0024",
+          "line": 295,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{20}\\begin{lemma}[Factorization] Some problems are solved by elementary factorization. \\end{lemma} \\paragraph{Applications.} \\begin{enumerate} \\setcounter{enumi}{0}\\item If $\\dfrac{a^2+b^2}{b^2+c^2}=…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{20}\\begin{lemma}[Factorization] Some problems are solved by elementary factorization. \\end{lemma} \\paragraph{Applications.} \\begin{enumerate} \\setcounter{enumi}{0}\\item If $\\dfrac{a^2+b^2}{b^2+c^2}=…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "unclassified": 18
+      }
+    },
+    {
+      "slug": "lemma-book-induction-contradiction-pigeonholes",
+      "title": "Proof Strategies: Induction, Contradiction, and Pigeonholes",
+      "file": "69-lemma-book-induction-contradiction-pigeonholes.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-eee6bc407e977aac",
+          "environment": "lemma",
+          "title": "Two proof methods",
+          "passageId": "lemma-book-induction-contradiction-pigeonholes:p0001",
+          "line": 1,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{43}\\begin{lemma}[Two proof methods] Two useful methods of proof are mathematical induction and proof by contradiction. Let me show two beautiful problems applying these strategies. \\end{lemma}",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{43}\\begin{lemma}[Two proof methods] Two useful methods of proof are mathematical induction and proof by contradiction. Let me show two beautiful problems applying these strategies. \\end{lemma}",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-c8a892098187932b",
+          "environment": "lemma",
+          "title": "Inductive determinant",
+          "passageId": "lemma-book-induction-contradiction-pigeonholes:p0004",
+          "line": 53,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{58}\\begin{lemma}[Inductive determinant] Given an inequality $S(n)\\gtreqless k$, where $S(n)$ is a sum satisfying $S(n+1)=f(S(n))$, one useful technique is the ``inductive determinant.'' \\end{lemma}…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{58}\\begin{lemma}[Inductive determinant] Given an inequality $S(n)\\gtreqless k$, where $S(n)$ is a sum satisfying $S(n+1)=f(S(n))$, one useful technique is the ``inductive determinant.'' \\end{lemma}…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-d7058c8a6e52aec0",
+          "environment": "lemma",
+          "title": "Parity of a permutation's displacement",
+          "passageId": "lemma-book-induction-contradiction-pigeonholes:p0005",
+          "line": 68,
+          "labels": [
+            "lemma:lb1-73"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{69}\\begin{lemma}[Parity of a permutation's displacement]\\label{lemma:lb1-73} If $a_1,a_2,\\ldots,a_n$ is a permutation of $1,2,\\ldots,n$, then $|a_1-1|+|a_2-2|+\\cdots+|a_n-n|$ is even. \\end{lemma} He…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{69}\\begin{lemma}[Parity of a permutation's displacement]\\label{lemma:lb1-73} If $a_1,a_2,\\ldots,a_n$ is a permutation of $1,2,\\ldots,n$, then $|a_1-1|+|a_2-2|+\\cdots+|a_n-n|$ is even. \\end{lemma} He…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-6bc9c881e13bb366",
+          "environment": "lemma",
+          "title": "Pigeonhole principle; Dirichlet's principle",
+          "passageId": "lemma-book-induction-contradiction-pigeonholes:p0006",
+          "line": 89,
+          "labels": [
+            "lemma:lb1-80"
+          ],
+          "statementExcerpt": "You might shout ``North Pole'' and then probably skip the question. Behold! Let me give you an unpleasant shock: there are infinitely many positions on Earth from which he could have started! So, boo---find them all! \\s…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "You might shout ``North Pole'' and then probably skip the question. Behold! Let me give you an unpleasant shock: there are infinitely many positions on Earth from which he could have started! So, boo---find them all! \\s…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-d9205320e76c3991",
+          "environment": "lemma",
+          "title": "Angle sum of a triangle",
+          "passageId": "lemma-book-induction-contradiction-pigeonholes:p0009",
+          "line": 117,
+          "labels": [
+            "lemma:lb1-81"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{78}\\begin{lemma}[Angle sum of a triangle]\\label{lemma:lb1-81} The sum of all three angles in a triangle is $180^\\circ$. That is, if $ABC$ is a triangle, then $\\angle A+\\angle B+\\angle C=180^\\circ$.…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{78}\\begin{lemma}[Angle sum of a triangle]\\label{lemma:lb1-81} The sum of all three angles in a triangle is $180^\\circ$. That is, if $ABC$ is a triangle, then $\\angle A+\\angle B+\\angle C=180^\\circ$.…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "unclassified": 5
+      }
+    },
+    {
+      "slug": "lemma-book-polynomial-roots-identities-systems",
+      "title": "Polynomial Roots, Identities, and Algebraic Systems",
+      "file": "70-lemma-book-polynomial-roots-identities-systems.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-e5835b56d3b01c35",
+          "environment": "lemma",
+          "title": "Detecting nonreal roots",
+          "passageId": "lemma-book-polynomial-roots-identities-systems:p0001",
+          "line": 1,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{13}\\begin{lemma}[Detecting nonreal roots] If one is asked to prove that a real polynomial has nonreal roots, one useful strategy is to show that the sum of the squares of its roots is negative. \\end…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{13}\\begin{lemma}[Detecting nonreal roots] If one is asked to prove that a real polynomial has nonreal roots, one useful strategy is to show that the sum of the squares of its roots is negative. \\end…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-5c7b6bd176d4645d",
+          "environment": "lemma",
+          "title": "Polynomial agreement",
+          "passageId": "lemma-book-polynomial-roots-identities-systems:p0002",
+          "line": 23,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{49}\\begin{lemma}[Polynomial agreement] If $f$ and $g$ are polynomials and $f(x)=g(x)$ for $x\\in\\{1,2,\\ldots,k\\}$, then $f(x)-g(x)=(x-1)(x-2)\\cdots(x-k)h(x)$. Moreover, if $f$ has degree $k$ and $g$…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{49}\\begin{lemma}[Polynomial agreement] If $f$ and $g$ are polynomials and $f(x)=g(x)$ for $x\\in\\{1,2,\\ldots,k\\}$, then $f(x)-g(x)=(x-1)(x-2)\\cdots(x-k)h(x)$. Moreover, if $f$ has degree $k$ and $g$…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-2cc6bc431c80e78e",
+          "environment": "lemma",
+          "title": "Choose useful notation",
+          "passageId": "lemma-book-polynomial-roots-identities-systems:p0003",
+          "line": 35,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{56}\\begin{lemma}[Choose useful notation] Good notation and a useful change of variables can simplify a complex problem. \\end{lemma} If $x^4+1/x^4$ and $x^5+1/x^5$ are rational for real $x$, prove th…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{56}\\begin{lemma}[Choose useful notation] Good notation and a useful change of variables can simplify a complex problem. \\end{lemma} If $x^4+1/x^4$ and $x^5+1/x^5$ are rational for real $x$, prove th…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-416366dbe5c36544",
+          "environment": "lemma",
+          "title": "Lagrange interpolation",
+          "passageId": "lemma-book-polynomial-roots-identities-systems:p0005",
+          "line": 53,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{57}\\begin{lemma}[Lagrange interpolation] Let $x_0,x_1,\\ldots,x_n$ be distinct real numbers and $y_0,y_1,\\ldots,y_n$ arbitrary real numbers. There exists a unique polynomial $P$ of degree at most $n$…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{57}\\begin{lemma}[Lagrange interpolation] Let $x_0,x_1,\\ldots,x_n$ be distinct real numbers and $y_0,y_1,\\ldots,y_n$ arbitrary real numbers. There exists a unique polynomial $P$ of degree at most $n$…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-f99b98e83e18b2e8",
+          "environment": "lemma",
+          "title": "Vi\\`ete's relations",
+          "passageId": "lemma-book-polynomial-roots-identities-systems:p0007",
+          "line": 84,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{64}\\begin{lemma}[Vi\\`ete's relations] If $x^n+p_1x^{n-1}+p_2x^{n-2}+\\cdots+p_n=0$ has roots $\\alpha_1,\\ldots,\\alpha_n$, then \\[ \\sum_{i=1}^n\\alpha_i=-p_1,\\qquad \\sum_{1\\leq i<j\\leq n}\\alpha_i\\alpha_…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{64}\\begin{lemma}[Vi\\`ete's relations] If $x^n+p_1x^{n-1}+p_2x^{n-2}+\\cdots+p_n=0$ has roots $\\alpha_1,\\ldots,\\alpha_n$, then \\[ \\sum_{i=1}^n\\alpha_i=-p_1,\\qquad \\sum_{1\\leq i<j\\leq n}\\alpha_i\\alpha_…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-c539a0f48ee0c60e",
+          "environment": "lemma",
+          "title": "Number of polynomial roots",
+          "passageId": "lemma-book-polynomial-roots-identities-systems:p0009",
+          "line": 103,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{67}\\begin{lemma}[Number of polynomial roots] A nonzero polynomial of degree $n$ has at most $n$ distinct roots, and exactly $n$ complex roots when counted with multiplicity. \\end{lemma} \\paragraph{A…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{67}\\begin{lemma}[Number of polynomial roots] A nonzero polynomial of degree $n$ has at most $n$ distinct roots, and exactly $n$ complex roots when counted with multiplicity. \\end{lemma} \\paragraph{A…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-0d330156f9a965b0",
+          "environment": "lemma",
+          "title": "Identity principle",
+          "passageId": "lemma-book-polynomial-roots-identities-systems:p0010",
+          "line": 117,
+          "labels": [
+            "lemma:lb1-72"
+          ],
+          "statementExcerpt": "\\subsection{Identity principle and inequalities} \\setcounter{theorem}{68}\\begin{lemma}[Identity principle]\\label{lemma:lb1-72} If $\\max\\{\\deg(P),\\deg(Q)\\}<n$ and $P(x)=Q(x)$ for $n$ distinct values, then $P\\equiv Q$. \\e…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Identity principle and inequalities} \\setcounter{theorem}{68}\\begin{lemma}[Identity principle]\\label{lemma:lb1-72} If $\\max\\{\\deg(P),\\deg(Q)\\}<n$ and $P(x)=Q(x)$ for $n$ distinct values, then $P\\equiv Q$. \\e…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-d8b52471b0486c68",
+          "environment": "lemma",
+          "title": "Real roots of a cubic",
+          "passageId": "lemma-book-polynomial-roots-identities-systems:p0014",
+          "line": 184,
+          "labels": [
+            "lemma:lb1-79"
+          ],
+          "statementExcerpt": "\\Needspace{14\\baselineskip} \\subsection{A novel way of solving} \\setcounter{theorem}{76}\\begin{lemma}[Real roots of a cubic]\\label{lemma:lb1-79} The following analytic criterion characterizes when a cubic with real coef…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\Needspace{14\\baselineskip} \\subsection{A novel way of solving} \\setcounter{theorem}{76}\\begin{lemma}[Real roots of a cubic]\\label{lemma:lb1-79} The following analytic criterion characterizes when a cubic with real coef…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "unclassified": 8
+      }
+    },
+    {
+      "slug": "lemma-book-congruences-diophantine-equations-descent",
+      "title": "Congruences, Diophantine Equations, and Infinite Descent",
+      "file": "71-lemma-book-congruences-diophantine-equations-descent.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-290cbe9d49ad0a4f",
+          "environment": "lemma",
+          "title": "Two obvious congruences",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0001",
+          "line": 1,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{45}\\begin{lemma}[Two obvious congruences] $x\\equiv x\\pmod n$ and $x\\equiv0\\pmod x$ have surprisingly ingenious applications. \\end{lemma} Find the largest positive integer $n$ such that $n+10\\mid n^3…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{45}\\begin{lemma}[Two obvious congruences] $x\\equiv x\\pmod n$ and $x\\equiv0\\pmod x$ have surprisingly ingenious applications. \\end{lemma} Find the largest positive integer $n$ such that $n+10\\mid n^3…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-a0c3abea17f7419d",
+          "environment": "lemma",
+          "title": "Lagrange's identity",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0002",
+          "line": 10,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{46}\\begin{lemma}[Lagrange's identity] $(a^2+b^2)(c^2+d^2)=(ac\\pm bd)^2+(ad\\mp bc)^2$. \\end{lemma} Represent $m^6+n^6$ as a sum of two squares other than $(m^3)^2+(n^3)^2$. \\[ m^6+n^6=(m^2)^3+(n^2)^3…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{46}\\begin{lemma}[Lagrange's identity] $(a^2+b^2)(c^2+d^2)=(ac\\pm bd)^2+(ad\\mp bc)^2$. \\end{lemma} Represent $m^6+n^6$ as a sum of two squares other than $(m^3)^2+(n^3)^2$. \\[ m^6+n^6=(m^2)^3+(n^2)^3…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-6d437ec48198c9bd",
+          "environment": "lemma",
+          "title": "A prime in one denominator",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0003",
+          "line": 23,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{47}\\begin{lemma}[A prime in one denominator] If $\\sum_i a_i/b_i=N/D$ is in lowest terms and exactly one denominator $b_k$ has maximal positive $p$-adic valuation, with $p\\nmid a_k$, then $p\\mid D$ a…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{47}\\begin{lemma}[A prime in one denominator] If $\\sum_i a_i/b_i=N/D$ is in lowest terms and exactly one denominator $b_k$ has maximal positive $p$-adic valuation, with $p\\nmid a_k$, then $p\\mid D$ a…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-5864bc31fe02deca",
+          "environment": "lemma",
+          "title": "Products of perfect powers",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0004",
+          "line": 32,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{48}\\begin{lemma}[Products of perfect powers] If $a_i$ is a perfect $n$th power for every $1\\leq i\\leq k$, then $\\prod_{i=1}^k a_i$ is a perfect $n$th power. \\end{lemma} For $n\\geq0$, prove that $n+2…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{48}\\begin{lemma}[Products of perfect powers] If $a_i$ is a perfect $n$th power for every $1\\leq i\\leq k$, then $\\prod_{i=1}^k a_i$ is a perfect $n$th power. \\end{lemma} For $n\\geq0$, prove that $n+2…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-35a9851152403220",
+          "environment": "lemma",
+          "title": "Fermat's last theorem",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0005",
+          "line": 45,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{50}\\begin{lemma}[Fermat's last theorem] $x^n+y^n=z^n$ has no solution for $n>2$. \\end{lemma} Fermat's last theorem shortens the following argument. If $x,y,z$ are positive natural numbers and $n>1$,…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{50}\\begin{lemma}[Fermat's last theorem] $x^n+y^n=z^n$ has no solution for $n>2$. \\end{lemma} Fermat's last theorem shortens the following argument. If $x,y,z$ are positive natural numbers and $n>1$,…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-e36662373cd65f19",
+          "environment": "lemma",
+          "title": "Adjusting a sum with ones",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0008",
+          "line": 84,
+          "labels": [],
+          "statementExcerpt": "\\subsection{Ramanujan's ingenious idea} \\setcounter{theorem}{53}\\begin{lemma}[Adjusting a sum with ones] To arrange \\[ A+B+C+D+\\cdots=P+Q+R+S+\\cdots,\\qquad A^AB^BC^CD^D\\cdots=P^PQ^QR^RS^S\\cdots, \\] first find quantities…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Ramanujan's ingenious idea} \\setcounter{theorem}{53}\\begin{lemma}[Adjusting a sum with ones] To arrange \\[ A+B+C+D+\\cdots=P+Q+R+S+\\cdots,\\qquad A^AB^BC^CD^D\\cdots=P^PQ^QR^RS^S\\cdots, \\] first find quantities…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-758249ab6219b282",
+          "environment": "lemma",
+          "title": "Subtract the two sides",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0009",
+          "line": 107,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{55}\\begin{lemma}[Subtract the two sides] To show $A(x)=B(x)$, define $f(x)=A(x)-B(x)$ and try to prove $f(x)=0$ everywhere. \\end{lemma} \\paragraph{Application: Hermite's identity.}",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{55}\\begin{lemma}[Subtract the two sides] To show $A(x)=B(x)$, define $f(x)=A(x)-B(x)$ and try to prove $f(x)=0$ everywhere. \\end{lemma} \\paragraph{Application: Hermite's identity.}",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-f1b9a927fd7aea3e",
+          "environment": "lemma",
+          "title": "Floor and fractional part",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0011",
+          "line": 125,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{63}\\begin{lemma}[Floor and fractional part] $\\lfloor x\\rfloor=x-\\{x\\}$, where $\\{x\\}\\in[0,1)$. Thus $0\\leq\\{x\\}<1$ and $x-1<\\lfloor x\\rfloor\\leq x$. \\end{lemma} This useful lemma can turn a floor-fu…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{63}\\begin{lemma}[Floor and fractional part] $\\lfloor x\\rfloor=x-\\{x\\}$, where $\\{x\\}\\in[0,1)$. Thus $0\\leq\\{x\\}<1$ and $x-1<\\lfloor x\\rfloor\\leq x$. \\end{lemma} This useful lemma can turn a floor-fu…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-8aba76b82a6114eb",
+          "environment": "lemma",
+          "title": "Transform one solution into another",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0013",
+          "line": 151,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{66}\\begin{lemma}[Transform one solution into another] In some Diophantine equations, it helps to observe that if $(a,b,c)$ is a solution, then $(f(a),f(b),f(c))$ is also a solution. \\end{lemma} \\par…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{66}\\begin{lemma}[Transform one solution into another] In some Diophantine equations, it helps to observe that if $(a,b,c)$ is a solution, then $(f(a),f(b),f(c))$ is also a solution. \\end{lemma} \\par…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-eb3a69ab2163c7c8",
+          "environment": "lemma",
+          "title": "A greatest-common-divisor strategy",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0016",
+          "line": 183,
+          "labels": [
+            "lemma:lb1-82"
+          ],
+          "statementExcerpt": "\\subsection{Diophantine equations and normalization} \\setcounter{theorem}{79}\\begin{lemma}[A greatest-common-divisor strategy]\\label{lemma:lb1-82} When solving some Diophantine equations in two variables, case-by-case a…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Diophantine equations and normalization} \\setcounter{theorem}{79}\\begin{lemma}[A greatest-common-divisor strategy]\\label{lemma:lb1-82} When solving some Diophantine equations in two variables, case-by-case a…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-c2354de27cf81082",
+          "environment": "lemma",
+          "title": "Dirichlet's theorem",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0017",
+          "line": 201,
+          "labels": [
+            "lemma:lb1-90"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{87}\\begin{lemma}[Dirichlet's theorem]\\label{lemma:lb1-90} An infinite arithmetic progression $a,a+b,a+2b,a+3b,\\ldots$ contains infinitely many primes if $a,b$ are positive and $\\gcd(a,b)=1$. \\end{le…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{87}\\begin{lemma}[Dirichlet's theorem]\\label{lemma:lb1-90} An infinite arithmetic progression $a,a+b,a+2b,a+3b,\\ldots$ contains infinitely many primes if $a,b$ are positive and $\\gcd(a,b)=1$. \\end{le…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-77396fb3fa9a0b0b",
+          "environment": "lemma",
+          "title": "Euler's formula",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0019",
+          "line": 229,
+          "labels": [
+            "lemma:lb1-95",
+            "lemma:lb1-96"
+          ],
+          "statementExcerpt": "\\subsection{Euler's formula and lifting indices} \\setcounter{theorem}{92}\\begin{lemma}[Euler's formula]\\label{lemma:lb1-95} $a^{\\phi(m)}\\equiv1\\pmod m$ if $\\gcd(a,m)=1$. \\end{lemma} \\paragraph{Application: 20th IMO.} Le…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Euler's formula and lifting indices} \\setcounter{theorem}{92}\\begin{lemma}[Euler's formula]\\label{lemma:lb1-95} $a^{\\phi(m)}\\equiv1\\pmod m$ if $\\gcd(a,m)=1$. \\end{lemma} \\paragraph{Application: 20th IMO.} Le…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-1e45a5990ba97fae",
+          "environment": "lemma",
+          "title": "Fractional congruences",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0021",
+          "line": 284,
+          "labels": [
+            "lemma:lb2-103"
+          ],
+          "statementExcerpt": "\\subsection{Fractional congruences} \\setcounter{theorem}{99}\\begin{lemma}[Fractional congruences]\\label{lemma:lb2-103} If $a\\equiv b\\pmod n$ and $(b,n)=1$, then $a/b$ modulo $n$ means $ab^{-1}$ modulo $n$, and $a/b\\equi…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Fractional congruences} \\setcounter{theorem}{99}\\begin{lemma}[Fractional congruences]\\label{lemma:lb2-103} If $a\\equiv b\\pmod n$ and $(b,n)=1$, then $a/b$ modulo $n$ means $ab^{-1}$ modulo $n$, and $a/b\\equi…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-520b1c4fc4a202aa",
+          "environment": "lemma",
+          "title": "Zsigmondy's theorem",
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0022",
+          "line": 323,
+          "labels": [
+            "lemma:lb2-104"
+          ],
+          "statementExcerpt": "The needed result is Zsigmondy's theorem. \\subsection{Zsigmondy's theorem} \\setcounter{theorem}{100}\\begin{lemma}[Zsigmondy's theorem]\\label{lemma:lb2-104} If $a>b$ are positive integers with $\\gcd(a,b)=1$ and $n>1$, th…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "The needed result is Zsigmondy's theorem. \\subsection{Zsigmondy's theorem} \\setcounter{theorem}{100}\\begin{lemma}[Zsigmondy's theorem]\\label{lemma:lb2-104} If $a>b$ are positive integers with $\\gcd(a,b)=1$ and $n>1$, th…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "unclassified": 14
+      }
+    },
+    {
+      "slug": "lemma-book-standard-inequalities-cauchy-schwarz",
+      "title": "Standard Inequalities and Ingenious Cauchy–Schwarz Applications",
+      "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-de2e093c0d21c0e7",
+          "environment": "lemma",
+          "title": "Arithmetic--geometric mean inequality",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0002",
+          "line": 12,
+          "labels": [
+            "lemma:lb1-74",
+            "lemma:lb1-75"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{70}\\begin{lemma}[Arithmetic--geometric mean inequality]\\label{lemma:lb1-74} For all positive reals $a_1,a_2,\\ldots,a_n$, \\[\\frac{a_1+a_2+\\cdots+a_n}{n}\\geq\\sqrt[n]{a_1a_2\\cdots a_n},\\] with equality…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "BlogPostAt",
+              "target": "lemma-book-inequality-toolkit",
+              "targetLabel": "lemma:muirhead-majorization",
+              "linkedText": "Muirhead",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{70}\\begin{lemma}[Arithmetic--geometric mean inequality]\\label{lemma:lb1-74} For all positive reals $a_1,a_2,\\ldots,a_n$, \\[\\frac{a_1+a_2+\\cdots+a_n}{n}\\geq\\sqrt[n]{a_1a_2\\cdots a_n},\\] with equality…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "cited",
+              "evidence": "explicit reference with a citation cue"
+            }
+          ],
+          "proofDisposition": "cited",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-8266323c663e12ba",
+          "environment": "lemma",
+          "title": "Standard inequalities",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0004",
+          "line": 71,
+          "labels": [
+            "lemma:lb1-76"
+          ],
+          "statementExcerpt": "\\subsection{Standard inequalities} The following inequalities are useful enough to record as standard lemmas. \\setcounter{theorem}{72}\\begin{lemma}[Standard inequalities]\\label{lemma:lb1-76} For positive reals $x,y,z$,…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Standard inequalities} The following inequalities are useful enough to record as standard lemmas. \\setcounter{theorem}{72}\\begin{lemma}[Standard inequalities]\\label{lemma:lb1-76} For positive reals $x,y,z$,…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "genuinely-missing",
+              "evidence": "explicit gap wording"
+            }
+          ],
+          "proofDisposition": "genuinely-missing",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-bc77626a30fbb589",
+          "environment": "lemma",
+          "title": "Power-mean inequality",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0005",
+          "line": 118,
+          "labels": [
+            "lemma:lb1-77",
+            "lemma:lb1-78"
+          ],
+          "statementExcerpt": "The power-mean inequality organizes several familiar comparisons between means. \\setcounter{theorem}{73}\\begin{lemma}[Power-mean inequality]\\label{lemma:lb1-77} For positive $a_1,\\ldots,a_n$ and $r\\geq s>0$, \\[\\left(\\fr…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "The power-mean inequality organizes several familiar comparisons between means. \\setcounter{theorem}{73}\\begin{lemma}[Power-mean inequality]\\label{lemma:lb1-77} For positive $a_1,\\ldots,a_n$ and $r\\geq s>0$, \\[\\left(\\fr…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-7a2f5d33f032e599",
+          "environment": "corollary",
+          "title": "To the reciprocal-sum lemma",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0006",
+          "line": 156,
+          "labels": [],
+          "statementExcerpt": "Also, \\[\\frac8{bc+ac}\\geq\\frac8{a^2+b^2+c^2},\\qquad \\frac4{b^2+c^2}\\geq\\frac1{b^2+c^2+a^2}.\\] Now add the results, together with $1/d^2\\geq0$, to finish the proof. \\setcounter{theorem}{75}\\begin{corollary}[To the recipr…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "Also, \\[\\frac8{bc+ac}\\geq\\frac8{a^2+b^2+c^2},\\qquad \\frac4{b^2+c^2}\\geq\\frac1{b^2+c^2+a^2}.\\] Now add the results, together with $1/d^2\\geq0$, to finish the proof. \\setcounter{theorem}{75}\\begin{corollary}[To the recipr…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-8b5421b5fe3e5f2a",
+          "environment": "lemma",
+          "title": "Reverse Cauchy",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0007",
+          "line": 172,
+          "labels": [
+            "lemma:lb1-29"
+          ],
+          "statementExcerpt": "\\begin{lemma}[Reverse Cauchy] The best way to apply Cauchy's inequality is what I call the strategy of reverse Cauchy. Every Olympiad student knows old and modern Cauchy; its modified form is \\[ \\frac{x_1^2}{a_1}+\\cdots…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\begin{lemma}[Reverse Cauchy] The best way to apply Cauchy's inequality is what I call the strategy of reverse Cauchy. Every Olympiad student knows old and modern Cauchy; its modified form is \\[ \\frac{x_1^2}{a_1}+\\cdots…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [
+        {
+          "post": "lemma-book-standard-inequalities-cauchy-schwarz",
+          "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0004",
+          "line": 96,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "(1+a)^8+(1+b)^8\\mathrel{\\stackrel{?}{\\geq}}128ab(a+b)^2"
+        },
+        {
+          "post": "lemma-book-standard-inequalities-cauchy-schwarz",
+          "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0004",
+          "line": 99,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\mathrel{\\stackrel{?}{\\geq}}\\frac{ab(a+b)^2}{2}."
+        },
+        {
+          "post": "lemma-book-standard-inequalities-cauchy-schwarz",
+          "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0004",
+          "line": 104,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\geq a^4+b^4\\mathrel{\\stackrel{?}{\\geq}}\\frac{ab(a+b)^2}{2}"
+        },
+        {
+          "post": "lemma-book-standard-inequalities-cauchy-schwarz",
+          "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0004",
+          "line": 106,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\frac{a^4+b^4}{2}\\mathrel{\\stackrel{?}{\\geq}}ab\\left(\\frac{a+b}{2}\\right)^2."
+        },
+        {
+          "post": "lemma-book-standard-inequalities-cauchy-schwarz",
+          "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0010",
+          "line": 252,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\mathrel{\\stackrel{?}{\\leq}}\\sum\\frac a{b+c}.\\]"
+        },
+        {
+          "post": "lemma-book-standard-inequalities-cauchy-schwarz",
+          "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0010",
+          "line": 270,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\mathrel{\\stackrel{?}{\\leq}}\\left(\\sum\\frac a{b+c}\\right)^2."
+        },
+        {
+          "post": "lemma-book-standard-inequalities-cauchy-schwarz",
+          "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0010",
+          "line": 273,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\[\\sum_{\\mathrm{cyc}}\\frac{ab}{(b+c)(c+a)}\\mathrel{\\stackrel{?}{\\geq}}\\frac34.\\]"
+        },
+        {
+          "post": "lemma-book-standard-inequalities-cauchy-schwarz",
+          "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0010",
+          "line": 277,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\mathrel{\\stackrel{?}{\\geq}}\\frac34"
+        },
+        {
+          "post": "lemma-book-standard-inequalities-cauchy-schwarz",
+          "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+          "passageId": "lemma-book-standard-inequalities-cauchy-schwarz:p0013",
+          "line": 322,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\mathrel{\\stackrel{?}{\\geq}}\\frac{n\\sqrt n}{\\sqrt{n-1}}.\\]"
+        }
+      ],
+      "summary": {
+        "cited": 1,
+        "genuinely-missing": 1,
+        "unclassified": 3
+      }
+    },
+    {
+      "slug": "lemma-book-inequality-toolkit",
+      "title": "An Inequality Toolkit: Jensen, Muirhead, and Schur",
+      "file": "64-lemma-book-inequality-toolkit.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-e040fef943681d41",
+          "environment": "lemma",
+          "title": "Cauchy's inequality application",
+          "passageId": "lemma-book-inequality-toolkit:p0003",
+          "line": 23,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{14}\\begin{lemma}[Cauchy's inequality application] If $x,y,z>1$, then $\\dfrac{x^4}{(y-1)^2}+\\dfrac{y^4}{(z-1)^2}+\\dfrac{z^4}{(x-1)^2}\\geq48$. \\end{lemma} Cauchy's inequality reduces the desired asser…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{14}\\begin{lemma}[Cauchy's inequality application] If $x,y,z>1$, then $\\dfrac{x^4}{(y-1)^2}+\\dfrac{y^4}{(z-1)^2}+\\dfrac{z^4}{(x-1)^2}\\geq48$. \\end{lemma} Cauchy's inequality reduces the desired asser…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-ae15f3a50bd60eee",
+          "environment": "lemma",
+          "title": "Catalan's identity",
+          "passageId": "lemma-book-inequality-toolkit:p0004",
+          "line": 39,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{21}\\begin{lemma}[Catalan's identity] $1-\\frac12+\\frac13-\\frac14+\\cdots+\\frac1{2n-1}-\\frac1{2n} =\\sum_{k=1}^n\\frac1{n+k}$. \\end{lemma} \\paragraph{Application.} For every integer $n\\geq2$, prove that…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{21}\\begin{lemma}[Catalan's identity] $1-\\frac12+\\frac13-\\frac14+\\cdots+\\frac1{2n-1}-\\frac1{2n} =\\sum_{k=1}^n\\frac1{n+k}$. \\end{lemma} \\paragraph{Application.} For every integer $n\\geq2$, prove that…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-aea5969397842283",
+          "environment": "lemma",
+          "title": "Homogenization",
+          "passageId": "lemma-book-inequality-toolkit:p0005",
+          "line": 67,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{22}\\begin{lemma}[Homogenization] Homogenization rewrites an inequality so that all terms have the same degree. \\end{lemma} \\paragraph{Application.} Let $a,b,c>0$ and $abc=1$. Prove that $a+b+c\\leq a…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{22}\\begin{lemma}[Homogenization] Homogenization rewrites an inequality so that all terms have the same degree. \\end{lemma} \\paragraph{Application.} Let $a,b,c>0$ and $abc=1$. Prove that $a+b+c\\leq a…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-c92f5f2f97c6bcfe",
+          "environment": "lemma",
+          "title": "Second-derivative test",
+          "passageId": "lemma-book-inequality-toolkit:p0007",
+          "line": 86,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{23}\\begin{lemma}[Second-derivative test] The best test for convexity or concavity is the second-derivative test: if $f''(x)\\geq0$, then $f$ is convex, while $f''(x)\\leq0$ implies that $f$ is concave…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{23}\\begin{lemma}[Second-derivative test] The best test for convexity or concavity is the second-derivative test: if $f''(x)\\geq0$, then $f$ is convex, while $f''(x)\\leq0$ implies that $f$ is concave…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-5e352f9dec12d6ed",
+          "environment": "lemma",
+          "title": "Jensen's inequality",
+          "passageId": "lemma-book-inequality-toolkit:p0008",
+          "line": 94,
+          "labels": [
+            "lemma:jensen-inequality"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{24}\\begin{lemma}[Jensen's inequality]\\label{lemma:jensen-inequality} Let $f:I\\to\\mathbb R$ be convex. For any $x_1,\\ldots,x_n\\in I$ and nonnegative reals $\\omega_1,\\ldots,\\omega_n$, not all zero, \\[…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{24}\\begin{lemma}[Jensen's inequality]\\label{lemma:jensen-inequality} Let $f:I\\to\\mathbb R$ be convex. For any $x_1,\\ldots,x_n\\in I$ and nonnegative reals $\\omega_1,\\ldots,\\omega_n$, not all zero, \\[…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-995843ce312fe4c3",
+          "environment": "lemma",
+          "title": "Muirhead and majorization",
+          "passageId": "lemma-book-inequality-toolkit:p0010",
+          "line": 122,
+          "labels": [
+            "lemma:muirhead-majorization"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{25}\\begin{lemma}[Muirhead and majorization]\\label{lemma:muirhead-majorization} Muirhead's theorem and majorization techniques are analogous. If $(a_1,\\ldots,a_n)\\succ(b_1,\\ldots,b_n)$, then for posi…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{25}\\begin{lemma}[Muirhead and majorization]\\label{lemma:muirhead-majorization} Muirhead's theorem and majorization techniques are analogous. If $(a_1,\\ldots,a_n)\\succ(b_1,\\ldots,b_n)$, then for posi…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-60b14994cfa51dce",
+          "environment": "lemma",
+          "title": "Chebyshev's theorem",
+          "passageId": "lemma-book-inequality-toolkit:p0012",
+          "line": 153,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{26}\\begin{lemma}[Chebyshev's theorem] Let $a_1\\leq a_2\\leq\\cdots\\leq a_n$ and $b_1\\leq b_2\\leq\\cdots\\leq b_n$ be nondecreasing real sequences. Then \\[ \\frac1n\\sum_{i=1}^n a_ib_i \\geq\\left(\\frac1n\\su…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{26}\\begin{lemma}[Chebyshev's theorem] Let $a_1\\leq a_2\\leq\\cdots\\leq a_n$ and $b_1\\leq b_2\\leq\\cdots\\leq b_n$ be nondecreasing real sequences. Then \\[ \\frac1n\\sum_{i=1}^n a_ib_i \\geq\\left(\\frac1n\\su…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-8713a4091e1fdab6",
+          "environment": "lemma",
+          "title": "Sum-of-squares strategy",
+          "passageId": "lemma-book-inequality-toolkit:p0013",
+          "line": 177,
+          "labels": [
+            "lemma:lb1-58"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{52}\\begin{lemma}[Sum-of-squares strategy]\\label{lemma:lb1-58} If none of the standard techniques proves an inequality, try expressing it as a sum of squares greater than or equal to zero. \\end{lemma…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{52}\\begin{lemma}[Sum-of-squares strategy]\\label{lemma:lb1-58} If none of the standard techniques proves an inequality, try expressing it as a sum of squares greater than or equal to zero. \\end{lemma…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-09b3aed23db3a94d",
+          "environment": "lemma",
+          "title": "Schur's inequality",
+          "passageId": "lemma-book-inequality-toolkit:p0015",
+          "line": 192,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{59}\\begin{lemma}[Schur's inequality] Define the normalized symmetric sum \\[ T(a_1,\\ldots,a_n)=\\frac1{n!}\\sum_{\\sigma\\in S_n} x_1^{a_{\\sigma(1)}}\\cdots x_n^{a_{\\sigma(n)}}. \\] Here the variables $x_1…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{59}\\begin{lemma}[Schur's inequality] Define the normalized symmetric sum \\[ T(a_1,\\ldots,a_n)=\\frac1{n!}\\sum_{\\sigma\\in S_n} x_1^{a_{\\sigma(1)}}\\cdots x_n^{a_{\\sigma(n)}}. \\] Here the variables $x_1…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-8edffd24941cb222",
+          "environment": "lemma",
+          "title": "Square-root heuristic: Stanley Rabinowitz",
+          "passageId": "lemma-book-inequality-toolkit:p0019",
+          "line": 265,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{60}\\begin{lemma}[Square-root heuristic: Stanley Rabinowitz] If $\\sum_{\\mathrm{cyc}}f(x)$ has three terms, then $\\sum_{\\mathrm{cyc}}\\sqrt{f(x)}\\leq\\sqrt{3\\sum_{\\mathrm{cyc}}f(x)}$. \\end{lemma} Use th…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{60}\\begin{lemma}[Square-root heuristic: Stanley Rabinowitz] If $\\sum_{\\mathrm{cyc}}f(x)$ has three terms, then $\\sum_{\\mathrm{cyc}}\\sqrt{f(x)}\\leq\\sqrt{3\\sum_{\\mathrm{cyc}}f(x)}$. \\end{lemma} Use th…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "unclassified": 10
+      }
+    },
+    {
+      "slug": "lemma-book-rearrangement-convexity-power-means",
+      "title": "Rearrangement, Convexity, and Power Means",
+      "file": "73-lemma-book-rearrangement-convexity-power-means.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-c02e02fb8051b537",
+          "environment": "lemma",
+          "title": "Popoviciu's theorem",
+          "passageId": "lemma-book-rearrangement-convexity-power-means:p0001",
+          "line": 1,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{54}\\begin{lemma}[Popoviciu's theorem] Let $f:\\mathbb R\\to\\mathbb R$ be convex on an interval $I$, and let $x_1,x_2,x_3\\in I$. Then \\begin{align*} f(x_1)+f(x_2)+f(x_3)+3f\\left(\\frac{x_1+x_2+x_3}{3}\\r…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{54}\\begin{lemma}[Popoviciu's theorem] Let $f:\\mathbb R\\to\\mathbb R$ be convex on an interval $I$, and let $x_1,x_2,x_3\\in I$. Then \\begin{align*} f(x_1)+f(x_2)+f(x_3)+3f\\left(\\frac{x_1+x_2+x_3}{3}\\r…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-8b602e6664013ffb",
+          "environment": "lemma",
+          "title": "Rearrangement inequality",
+          "passageId": "lemma-book-rearrangement-convexity-power-means:p0002",
+          "line": 23,
+          "labels": [
+            "lemma:lb1-87"
+          ],
+          "statementExcerpt": "\\subsection{Rearrangement and convexity} \\setcounter{theorem}{84}\\begin{lemma}[Rearrangement inequality]\\label{lemma:lb1-87} Consider two collections of real numbers in increasing order, $a_1\\leq a_2\\leq\\cdots\\leq a_n$…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Rearrangement and convexity} \\setcounter{theorem}{84}\\begin{lemma}[Rearrangement inequality]\\label{lemma:lb1-87} Consider two collections of real numbers in increasing order, $a_1\\leq a_2\\leq\\cdots\\leq a_n$…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "genuinely-missing",
+              "evidence": "explicit gap wording"
+            }
+          ],
+          "proofDisposition": "genuinely-missing",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [
+        {
+          "post": "lemma-book-rearrangement-convexity-power-means",
+          "file": "73-lemma-book-rearrangement-convexity-power-means.tex",
+          "passageId": "lemma-book-rearrangement-convexity-power-means:p0003",
+          "line": 56,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\mathrel{\\stackrel{?}{\\geq}}(abc)^{2/3}(a+b+c)"
+        }
+      ],
+      "summary": {
+        "genuinely-missing": 1,
+        "unclassified": 1
+      }
+    },
+    {
+      "slug": "lemma-book-lagrange-multipliers-boundary-analysis",
+      "title": "Lagrange Multipliers and Boundary Analysis",
+      "file": "67-lemma-book-lagrange-multipliers-boundary-analysis.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-3c3e1b1b30b5b102",
+          "environment": "lemma",
+          "title": "Lagrange multipliers",
+          "passageId": "lemma-book-lagrange-multipliers-boundary-analysis:p0001",
+          "line": 1,
+          "labels": [
+            "lemma:lb1-44"
+          ],
+          "statementExcerpt": "\\subsection{Lagrange multipliers} \\setcounter{theorem}{38}\\begin{lemma}[Lagrange multipliers]\\label{lemma:lb1-44} Lagrange multipliers are a powerful technique for solving constrained extremum problems. The method uses…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Lagrange multipliers} \\setcounter{theorem}{38}\\begin{lemma}[Lagrange multipliers]\\label{lemma:lb1-44} Lagrange multipliers are a powerful technique for solving constrained extremum problems. The method uses…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-f43b52e8fd6f9aee",
+          "environment": "lemma",
+          "title": "A warning about Lagrange multipliers",
+          "passageId": "lemma-book-lagrange-multipliers-boundary-analysis:p0005",
+          "line": 104,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{39}\\begin{lemma}[A warning about Lagrange multipliers] Lagrange multipliers identify stationary candidates, but boundary and sufficiency checks remain essential. \\end{lemma} There is a strong reason…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{39}\\begin{lemma}[A warning about Lagrange multipliers] Lagrange multipliers identify stationary candidates, but boundary and sufficiency checks remain essential. \\end{lemma} There is a strong reason…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-22c8014a8cd35dcb",
+          "environment": "lemma",
+          "title": "The multiplier procedure",
+          "passageId": "lemma-book-lagrange-multipliers-boundary-analysis:p0006",
+          "line": 114,
+          "labels": [
+            "lemma:lb1-46"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{40}\\begin{lemma}[The multiplier procedure]\\label{lemma:lb1-46} In a problem where Lagrange multipliers are applied, search for a constraint on the variables. Under this constraint, determine the ext…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "ref",
+              "target": "lemma:lb1-46",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{40}\\begin{lemma}[The multiplier procedure]\\label{lemma:lb1-46} In a problem where Lagrange multipliers are applied, search for a constraint on the variables. Under this constraint, determine the ext…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "cited",
+              "evidence": "explicit reference with a citation cue"
+            }
+          ],
+          "proofDisposition": "cited",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-bebb8963447efabc",
+          "environment": "lemma",
+          "title": "Normalization",
+          "passageId": "lemma-book-lagrange-multipliers-boundary-analysis:p0012",
+          "line": 242,
+          "labels": [
+            "lemma:lb1-83"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{80}\\begin{lemma}[Normalization]\\label{lemma:lb1-83} Given a homogeneous inequality, such as \\[\\sum_{\\mathrm{cyc}}\\frac{(a+b)^2+(b+c)^2}{(a+b)(a+b+c)}>\\frac{2014}{1024},\\] you can assume $a+b+c$ equa…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{80}\\begin{lemma}[Normalization]\\label{lemma:lb1-83} Given a homogeneous inequality, such as \\[\\sum_{\\mathrm{cyc}}\\frac{(a+b)^2+(b+c)^2}{(a+b)(a+b+c)}>\\frac{2014}{1024},\\] you can assume $a+b+c$ equa…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "genuinely-missing",
+              "evidence": "explicit gap wording"
+            }
+          ],
+          "proofDisposition": "genuinely-missing",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-6b8d3bfa7ea1286a",
+          "environment": "lemma",
+          "title": "Boundary-analysis lemma I",
+          "passageId": "lemma-book-lagrange-multipliers-boundary-analysis:p0016",
+          "line": 329,
+          "labels": [
+            "lemma:lb1-88",
+            "lemma:lb1-89"
+          ],
+          "statementExcerpt": "\\subsection{Boundary-analysis techniques} To master boundary-analysis techniques, you must gather some boundary-analysis lemmas (BALLs). I wrote two Ls because there are two basic lemmas. \\setcounter{theorem}{85}\\begin{…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "ref",
+              "target": "lemma:lb1-88",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\subsection{Boundary-analysis techniques} To master boundary-analysis techniques, you must gather some boundary-analysis lemmas (BALLs). I wrote two Ls because there are two basic lemmas. \\setcounter{theorem}{85}\\begin{…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "cited",
+              "evidence": "explicit reference with a citation cue"
+            }
+          ],
+          "proofDisposition": "cited",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-73c81932edd07410",
+          "environment": "lemma",
+          "title": "Hadamard's inequality",
+          "passageId": "lemma-book-lagrange-multipliers-boundary-analysis:p0020",
+          "line": 412,
+          "labels": [],
+          "statementExcerpt": "Coordinate methods can also help with extremal questions about the area of a triangle. \\setcounter{theorem}{101}\\begin{lemma}[Hadamard's inequality] If $A=(a_{ij})$ is an $n\\times n$ matrix, then $|\\det A|^2\\leq\\prod_{i…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "Coordinate methods can also help with extremal questions about the area of a triangle. \\setcounter{theorem}{101}\\begin{lemma}[Hadamard's inequality] If $A=(a_{ij})$ is an $n\\times n$ matrix, then $|\\det A|^2\\leq\\prod_{i…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [
+        {
+          "post": "lemma-book-lagrange-multipliers-boundary-analysis",
+          "file": "67-lemma-book-lagrange-multipliers-boundary-analysis.tex",
+          "passageId": "lemma-book-lagrange-multipliers-boundary-analysis:p0013",
+          "line": 273,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\mathrel{\\stackrel{?}{\\leq}}"
+        }
+      ],
+      "summary": {
+        "cited": 2,
+        "genuinely-missing": 1,
+        "unclassified": 3
+      }
+    },
+    {
+      "slug": "lemma-book-circle-geometry",
+      "title": "Circle Geometry: Inversion, Radical Axes, and Special Circles",
+      "file": "65-lemma-book-circle-geometry.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-414e6fbf2c54cf6d",
+          "environment": "lemma",
+          "title": "Inversion",
+          "passageId": "lemma-book-circle-geometry:p0002",
+          "line": 4,
+          "labels": [
+            "lemma:circle-inversion"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{29}\\begin{lemma}[Inversion]\\label{lemma:circle-inversion} Inversion is a powerful technique for geometry problems. With the right centre and radius, it can turn a complicated configuration into an e…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{29}\\begin{lemma}[Inversion]\\label{lemma:circle-inversion} Inversion is a powerful technique for geometry problems. With the right centre and radius, it can turn a complicated configuration into an e…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-de0c3ca90b7bcb91",
+          "environment": "lemma",
+          "title": "Distance formula for inversion",
+          "passageId": "lemma-book-circle-geometry:p0004",
+          "line": 34,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{30}\\begin{lemma}[Distance formula for inversion] If segment $AB$ inverts to $A_1B_1$ under $I(O,r)$, then $A_1B_1=\\dfrac{AB\\,r^2}{OA\\cdot OB}$. \\end{lemma} This is helpful: it gives a two-line proof…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{30}\\begin{lemma}[Distance formula for inversion] If segment $AB$ inverts to $A_1B_1$ under $I(O,r)$, then $A_1B_1=\\dfrac{AB\\,r^2}{OA\\cdot OB}$. \\end{lemma} This is helpful: it gives a two-line proof…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-a6624a17a0b63b64",
+          "environment": "lemma",
+          "title": "Similar triangles and concyclicity",
+          "passageId": "lemma-book-circle-geometry:p0006",
+          "line": 58,
+          "labels": [
+            "lemma:lb1-37"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{31}\\begin{lemma}[Similar triangles and concyclicity]\\label{lemma:lb1-37} If triangles $ABC$ and $A'B'C$ are directly similar, with the displayed order giving the vertex correspondence, then $A,B,B',…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{31}\\begin{lemma}[Similar triangles and concyclicity]\\label{lemma:lb1-37} If triangles $ABC$ and $A'B'C$ are directly similar, with the displayed order giving the vertex correspondence, then $A,B,B',…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-b047f96dcc11966d",
+          "environment": "lemma",
+          "title": "Converse of the alternate-segment theorem",
+          "passageId": "lemma-book-circle-geometry:p0007",
+          "line": 65,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{32}\\begin{lemma}[Converse of the alternate-segment theorem] An Olympiad student knows the alternate-segment theorem, but its converse is a powerful tool: the ``CAST lemma''. \\end{lemma} The IMO jury…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "ref",
+              "target": "lemma:lb1-37",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{32}\\begin{lemma}[Converse of the alternate-segment theorem] An Olympiad student knows the alternate-segment theorem, but its converse is a powerful tool: the ``CAST lemma''. \\end{lemma} The IMO jury…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "cited",
+              "evidence": "explicit reference with a citation cue"
+            }
+          ],
+          "proofDisposition": "cited",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-fdac765483a8a314",
+          "environment": "lemma",
+          "title": "Power of a point",
+          "passageId": "lemma-book-circle-geometry:p0010",
+          "line": 95,
+          "labels": [
+            "lemma:lb1-84",
+            "lemma:lb1-85",
+            "lemma:lb1-86"
+          ],
+          "statementExcerpt": "\\subsection{Radical-axis theorem} Let us begin by defining what is meant by the power of a point. The idea was discovered by the ancient Greeks; Euclid recorded it in his \\textit{Elements}. The name ``power of a point''…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Radical-axis theorem} Let us begin by defining what is meant by the power of a point. The idea was discovered by the ancient Greeks; Euclid recorded it in his \\textit{Elements}. The name ``power of a point''…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-c475a8b4f2b8f3e9",
+          "environment": "lemma",
+          "title": "Simson's line",
+          "passageId": "lemma-book-circle-geometry:p0014",
+          "line": 147,
+          "labels": [
+            "lemma:lb1-91"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{88}\\begin{lemma}[Simson's line]\\label{lemma:lb1-91} The feet of the perpendiculars drawn from any point on the circumcircle of a triangle to its sides are collinear. The converse is also true. \\end{…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{88}\\begin{lemma}[Simson's line]\\label{lemma:lb1-91} The feet of the perpendiculars drawn from any point on the circumcircle of a triangle to its sides are collinear. The converse is also true. \\end{…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-f5b635caab3010bb",
+          "environment": "lemma",
+          "title": "Excentre",
+          "passageId": "lemma-book-circle-geometry:p0019",
+          "line": 203,
+          "labels": [
+            "lemma:lb1-93"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{90}\\begin{lemma}[Excentre]\\label{lemma:lb1-93} The external bisectors of two angles and the internal bisector of the third concur at a point, called the excentre. \\end{lemma} \\paragraph{Application.…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{90}\\begin{lemma}[Excentre]\\label{lemma:lb1-93} The external bisectors of two angles and the internal bisector of the third concur at a point, called the excentre. \\end{lemma} \\paragraph{Application.…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-35eef49a0e93d08a",
+          "environment": "lemma",
+          "title": "The arc midpoint and the incentre",
+          "passageId": "lemma-book-circle-geometry:p0026",
+          "line": 322,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{106}\\begin{lemma}[The arc midpoint and the incentre] In the configuration of Figure~\\ref{fig:lb2-14}, $MI=MB=MC$. \\end{lemma} \\begin{figure}[H] \\centering\\includegraphics[width=.58\\linewidth]{lb2-fi…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "ref",
+              "target": "fig:lb2-14",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{106}\\begin{lemma}[The arc midpoint and the incentre] In the configuration of Figure~\\ref{fig:lb2-14}, $MI=MB=MC$. \\end{lemma} \\begin{figure}[H] \\centering\\includegraphics[width=.58\\linewidth]{lb2-fi…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "cited": 1,
+        "unclassified": 7
+      }
+    },
+    {
+      "slug": "lemma-book-working-backwards-area-ratios",
+      "title": "Working Backwards, Area Ratios, and Geometric Constructions",
+      "file": "66-lemma-book-working-backwards-area-ratios.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-ff725755cf6d2623",
+          "environment": "lemma",
+          "title": "A working-backwards strategy",
+          "passageId": "lemma-book-working-backwards-area-ratios:p0001",
+          "line": 1,
+          "labels": [
+            "lemma:lb1-39"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{33}\\begin{lemma}[A working-backwards strategy]\\label{lemma:lb1-39} Another major lemma is the strategy of working backwards, in a slightly different version used here to resolve problems. First read…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{33}\\begin{lemma}[A working-backwards strategy]\\label{lemma:lb1-39} Another major lemma is the strategy of working backwards, in a slightly different version used here to resolve problems. First read…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-4731668a8fc3ca29",
+          "environment": "lemma",
+          "title": "Caution with the strategy",
+          "passageId": "lemma-book-working-backwards-area-ratios:p0006",
+          "line": 59,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{34}\\begin{lemma}[Caution with the strategy] Lemma~\\ref{lemma:lb1-39} cannot be applied very easily. Since it is a new technique, it can lead to a major error if the final argument is not formed corr…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "ref",
+              "target": "lemma:lb1-39",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{34}\\begin{lemma}[Caution with the strategy] Lemma~\\ref{lemma:lb1-39} cannot be applied very easily. Since it is a new technique, it can lead to a major error if the final argument is not formed corr…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "cited",
+              "evidence": "explicit reference with a citation cue"
+            }
+          ],
+          "proofDisposition": "cited",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-7c23958420c52bb3",
+          "environment": "lemma",
+          "title": "Pascal's theorem",
+          "passageId": "lemma-book-working-backwards-area-ratios:p0007",
+          "line": 66,
+          "labels": [],
+          "statementExcerpt": "Many combinatorial geometry problems are based on very elementary geometry. It is therefore worth glancing at some lesser-known theorems. \\setcounter{theorem}{35}\\begin{lemma}[Pascal's theorem] If $A,X,A'$ and $B,Y,B'$…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "Many combinatorial geometry problems are based on very elementary geometry. It is therefore worth glancing at some lesser-known theorems. \\setcounter{theorem}{35}\\begin{lemma}[Pascal's theorem] If $A,X,A'$ and $B,Y,B'$…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-d50bf1c75eefac54",
+          "environment": "lemma",
+          "title": "Express side ratios as area ratios",
+          "passageId": "lemma-book-working-backwards-area-ratios:p0009",
+          "line": 91,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{36}\\begin{lemma}[Express side ratios as area ratios] In a geometry problem, expressing side ratios as area ratios is often effective. \\end{lemma} \\paragraph{Application: British Mathematical Olympia…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "ref",
+              "target": "lemma:lb1-39",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{36}\\begin{lemma}[Express side ratios as area ratios] In a geometry problem, expressing side ratios as area ratios is often effective. \\end{lemma} \\paragraph{Application: British Mathematical Olympia…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "cited",
+              "evidence": "explicit reference with a citation cue"
+            }
+          ],
+          "proofDisposition": "cited",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [
+        {
+          "post": "lemma-book-working-backwards-area-ratios",
+          "file": "66-lemma-book-working-backwards-area-ratios.tex",
+          "passageId": "lemma-book-working-backwards-area-ratios:p0018",
+          "line": 221,
+          "scope": "visible",
+          "severity": "review",
+          "category": "remaining-argument",
+          "phrase": "remaining argument",
+          "excerpt": "The argument stops at this step; the remaining argument proving the"
+        }
+      ],
+      "summary": {
+        "cited": 2,
+        "unclassified": 2
+      }
+    },
+    {
+      "slug": "lemma-book-triangle-inequalities-trigonometric-substitutions",
+      "title": "Triangle Inequalities and Trigonometric Substitutions",
+      "file": "68-lemma-book-triangle-inequalities-trigonometric-substitutions.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-193e51bc9e109ed9",
+          "environment": "lemma",
+          "title": "Triangle inequality",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0001",
+          "line": 1,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{41}\\begin{lemma}[Triangle inequality] If $ABC$ is a triangle, then $a+b>c$, where $c=\\max(a,b,c)$. \\end{lemma} This elegant inequality has two nontrivial applications. \\paragraph{Classical applicati…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{41}\\begin{lemma}[Triangle inequality] If $ABC$ is a triangle, then $a+b>c$, where $c=\\max(a,b,c)$. \\end{lemma} This elegant inequality has two nontrivial applications. \\paragraph{Classical applicati…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-f816307cf2b5b213",
+          "environment": "lemma",
+          "title": "Triangle-side substitution",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0002",
+          "line": 20,
+          "labels": [],
+          "statementExcerpt": "The second application is the following lemma. \\setcounter{theorem}{42}\\begin{lemma}[Triangle-side substitution] If $a,b,c$ are the sides of a triangle, then there exist positive $x,y,z$ such that $a=x+y$, $b=y+z$, and…",
+          "hypotheses": [],
+          "intermediateClaims": [
+            {
+              "type": "BlogPostAt",
+              "target": "lemma-book-inequality-toolkit",
+              "targetLabel": "lemma:jensen-inequality",
+              "linkedText": "Jensen's inequality",
+              "classification": "cited"
+            }
+          ],
+          "conclusion": {
+            "text": "The second application is the following lemma. \\setcounter{theorem}{42}\\begin{lemma}[Triangle-side substitution] If $a,b,c$ are the sides of a triangle, then there exist positive $x,y,z$ such that $a=x+y$, $b=y+z$, and…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "cited",
+              "evidence": "explicit reference with a citation cue"
+            }
+          ],
+          "proofDisposition": "cited",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-b20985f3fb570827",
+          "environment": "lemma",
+          "title": "Trigonometric substitution",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0003",
+          "line": 53,
+          "labels": [],
+          "statementExcerpt": "The same geometric idea suggests a useful trigonometric substitution. \\setcounter{theorem}{51}\\begin{lemma}[Trigonometric substitution] If $x^2+y^2=1$, then $x=\\sin\\theta$ and $y=\\cos\\theta$ for a suitable $\\theta$. \\en…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "The same geometric idea suggests a useful trigonometric substitution. \\setcounter{theorem}{51}\\begin{lemma}[Trigonometric substitution] If $x^2+y^2=1$, then $x=\\sin\\theta$ and $y=\\cos\\theta$ for a suitable $\\theta$. \\en…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-3e40c7fcc1e0a153",
+          "environment": "lemma",
+          "title": "Useful substitutions",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0005",
+          "line": 89,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{65}\\begin{lemma}[Useful substitutions] The following substitutions are useful: \\begin{enumerate} \\setcounter{enumi}{0}\\item If $xyz=x+y+z+2$, use $x=(a+b)/c$, $y=(b+c)/a$, $z=(c+a)/b$. Apply $(a+b)(…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{65}\\begin{lemma}[Useful substitutions] The following substitutions are useful: \\begin{enumerate} \\setcounter{enumi}{0}\\item If $xyz=x+y+z+2$, use $x=(a+b)/c$, $y=(b+c)/a$, $z=(c+a)/b$. Apply $(a+b)(…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "genuinely-missing",
+              "evidence": "explicit gap wording"
+            }
+          ],
+          "proofDisposition": "genuinely-missing",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-40d7987c53f06775",
+          "environment": "lemma",
+          "title": "Erd\\H{o}s--Mordell inequality",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0011",
+          "line": 199,
+          "labels": [
+            "lemma:lb1-97"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{94}\\begin{lemma}[Erd\\H{o}s--Mordell inequality]\\label{lemma:lb1-97} Let $P$ be an arbitrary point in or on $\\triangle ABC$. If $p_a,p_b,p_c$ are its distances from the sides, then \\[PA+PB+PC\\geq2(p_…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{94}\\begin{lemma}[Erd\\H{o}s--Mordell inequality]\\label{lemma:lb1-97} Let $P$ be an arbitrary point in or on $\\triangle ABC$. If $p_a,p_b,p_c$ are its distances from the sides, then \\[PA+PB+PC\\geq2(p_…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-ecb402dad3b932cd",
+          "environment": "lemma",
+          "title": "Trigonometric identities",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0012",
+          "line": 220,
+          "labels": [
+            "lemma:lb1-98",
+            "lemma:lb1-99"
+          ],
+          "statementExcerpt": "\\subsection{A trigonometric toolkit} We begin with a collection of standard trigonometric identities. \\setcounter{theorem}{95}\\begin{lemma}[Trigonometric identities]\\label{lemma:lb1-98} \\begin{enumerate} \\setcounter{enu…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{A trigonometric toolkit} We begin with a collection of standard trigonometric identities. \\setcounter{theorem}{95}\\begin{lemma}[Trigonometric identities]\\label{lemma:lb1-98} \\begin{enumerate} \\setcounter{enu…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [
+        {
+          "post": "lemma-book-triangle-inequalities-trigonometric-substitutions",
+          "file": "68-lemma-book-triangle-inequalities-trigonometric-substitutions.tex",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0007",
+          "line": 139,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\[\\frac ab+\\frac ba+\\frac{c^2}{ab}\\mathrel{\\stackrel{?}{\\geq}}2\\sqrt3\\sin C.\\]"
+        },
+        {
+          "post": "lemma-book-triangle-inequalities-trigonometric-substitutions",
+          "file": "68-lemma-book-triangle-inequalities-trigonometric-substitutions.tex",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0007",
+          "line": 142,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\frac{2a}{b}+\\frac{2b}{a}\\mathrel{\\stackrel{?}{\\geq}}2(\\sqrt3\\sin C+\\cos C)"
+        },
+        {
+          "post": "lemma-book-triangle-inequalities-trigonometric-substitutions",
+          "file": "68-lemma-book-triangle-inequalities-trigonometric-substitutions.tex",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0007",
+          "line": 144,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\frac{a^2+b^2}{2ab}\\mathrel{\\stackrel{?}{\\geq}}"
+        },
+        {
+          "post": "lemma-book-triangle-inequalities-trigonometric-substitutions",
+          "file": "68-lemma-book-triangle-inequalities-trigonometric-substitutions.tex",
+          "passageId": "lemma-book-triangle-inequalities-trigonometric-substitutions:p0008",
+          "line": 166,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "\\[xyz\\mathrel{\\stackrel{?}{\\leq}}\\frac{x+y}{2}\\frac{y+z}{2}\\frac{z+x}{2},"
+        }
+      ],
+      "summary": {
+        "cited": 1,
+        "genuinely-missing": 1,
+        "unclassified": 4
+      }
+    },
+    {
+      "slug": "lemma-book-isogonal-conjugates-pole-polar",
+      "title": "Isogonal Conjugates and Pole–Polar Geometry",
+      "file": "75-lemma-book-isogonal-conjugates-pole-polar.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-941036ca753ee994",
+          "environment": "lemma",
+          "title": "Isogonal conjugates",
+          "passageId": "lemma-book-isogonal-conjugates-pole-polar:p0002",
+          "line": 4,
+          "labels": [
+            "lemma:lb2-101"
+          ],
+          "statementExcerpt": "We begin with the geometry of isogonal conjugates. \\setcounter{theorem}{97}\\begin{lemma}[Isogonal conjugates]\\label{lemma:lb2-101} Given a point $P$ inside triangle $ABC$, reflect $AP,BP,CP$ in the angle bisectors of $A…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "We begin with the geometry of isogonal conjugates. \\setcounter{theorem}{97}\\begin{lemma}[Isogonal conjugates]\\label{lemma:lb2-101} Given a point $P$ inside triangle $ABC$, reflect $AP,BP,CP$ in the angle bisectors of $A…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-535282839af90c21",
+          "environment": "lemma",
+          "title": "Concurrent perpendiculars",
+          "passageId": "lemma-book-isogonal-conjugates-pole-polar:p0004",
+          "line": 52,
+          "labels": [
+            "lemma:lb2-102"
+          ],
+          "statementExcerpt": "\\setcounter{theorem}{98}\\begin{lemma}[Concurrent perpendiculars]\\label{lemma:lb2-102} Let $A,B,C$ form a triangle and $P,Q,R$ be three points in the plane. The lines through $P,Q,R$ perpendicular to $BC,CA,AB$, respecti…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{98}\\begin{lemma}[Concurrent perpendiculars]\\label{lemma:lb2-102} Let $A,B,C$ form a triangle and $P,Q,R$ be three points in the plane. The lines through $P,Q,R$ perpendicular to $BC,CA,AB$, respecti…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-4e42934db231c238",
+          "environment": "lemma",
+          "title": "Trigonometric Ceva",
+          "passageId": "lemma-book-isogonal-conjugates-pole-polar:p0006",
+          "line": 78,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{102}\\begin{lemma}[Trigonometric Ceva] In triangle $ABC$, the lines $AD,BE,CF$ are concurrent if and only if $\\sin\\angle BAD\\sin\\angle ACF\\sin\\angle CBE =\\sin\\angle DAC\\sin\\angle BCF\\sin\\angle ABE$.…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{102}\\begin{lemma}[Trigonometric Ceva] In triangle $ABC$, the lines $AD,BE,CF$ are concurrent if and only if $\\sin\\angle BAD\\sin\\angle ACF\\sin\\angle CBE =\\sin\\angle DAC\\sin\\angle BCF\\sin\\angle ABE$.…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "unclassified": 3
+      }
+    },
+    {
+      "slug": "lemma-book-transformations",
+      "title": "Transformations: Rotating, Reflecting, and Cutting Figures",
+      "file": "74-lemma-book-transformations.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-8338517babcf2c6c",
+          "environment": "lemma",
+          "title": "Transformation techniques",
+          "passageId": "lemma-book-transformations:p0001",
+          "line": 1,
+          "labels": [
+            "lemma:lb1-94"
+          ],
+          "statementExcerpt": "\\subsection{Transformations} \\setcounter{theorem}{91}\\begin{lemma}[Transformation techniques]\\label{lemma:lb1-94} We can rotate, reflect, and invert figures. Transformation techniques are powerful tools, as the followin…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\subsection{Transformations} \\setcounter{theorem}{91}\\begin{lemma}[Transformation techniques]\\label{lemma:lb1-94} We can rotate, reflect, and invert figures. Transformation techniques are powerful tools, as the followin…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "unclassified": 1
+      }
+    },
+    {
+      "slug": "lemma-book-puzzles-multiplication",
+      "title": "Puzzles, Surprises, and Marvellous Methods of Multiplication",
+      "file": "76-lemma-book-puzzles-multiplication.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [
+        {
+          "id": "theorem-5735c849e1c3fc78",
+          "environment": "lemma",
+          "title": "Check the hypotheses",
+          "passageId": "lemma-book-puzzles-multiplication:p0001",
+          "line": 1,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{44}\\begin{lemma}[Check the hypotheses] An elegant calculation is useful only after its assumptions have been checked. \\end{lemma} The following example shows how an apparently perfect calculation ca…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{44}\\begin{lemma}[Check the hypotheses] An elegant calculation is useful only after its assumptions have been checked. \\end{lemma} The following example shows how an apparently perfect calculation ca…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "unclassified": 1
+      }
+    },
+    {
+      "slug": "lemma-book-ramanujan-problems",
+      "title": "Problems Proposed by S. Ramanujan",
+      "file": "77-lemma-book-ramanujan-problems.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {}
+    },
+    {
+      "slug": "lemma-book-problems-for-anant-mudgal",
+      "title": "Problems for Anant Mudgal",
+      "file": "78-lemma-book-problems-for-anant-mudgal.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {}
+    },
+    {
+      "slug": "lemma-book-thrilling-thirty-surviving-problems",
+      "title": "Thrilling Thirty: The Surviving Problems",
+      "file": "79-lemma-book-thrilling-thirty-surviving-problems.tex",
+      "selectionReason": "Olympiad argument screening",
+      "theorems": [],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {}
+    },
+    {
+      "slug": "the-language-of-category-theory-in-algebraic-topology",
+      "title": "The Language of Category Theory (in Algebraic Topology)",
+      "file": "58-the-language-of-category-theory-in-algebraic-topology.tex",
+      "selectionReason": "category-theory passages",
+      "theorems": [
+        {
+          "id": "theorem-87d7c4363e754701",
+          "environment": "claim",
+          "title": null,
+          "passageId": "the-language-of-category-theory-in-algebraic-topology:p0006",
+          "line": 97,
+          "labels": [],
+          "statementExcerpt": "Many features of a category can be studied through representable functors. This is akin to studying $\\mathcal C$ through its action on itself via $\\Hom_{\\mathcal C}(-,-)$. \\subsubsection{Final and Initial Objects} Let $…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "Many features of a category can be studied through representable functors. This is akin to studying $\\mathcal C$ through its action on itself via $\\Hom_{\\mathcal C}(-,-)$. \\subsubsection{Final and Initial Objects} Let $…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-0757f537ddda49d2",
+          "environment": "lemma",
+          "title": "Yoneda's lemma",
+          "passageId": "the-language-of-category-theory-in-algebraic-topology:p0019",
+          "line": 423,
+          "labels": [
+            "lem:m1-yoneda"
+          ],
+          "statementExcerpt": "We now arrive at the central lemma of category theory. \\setcounter{theorem}{0}\\begin{lemma}[Yoneda's lemma]\\label{lem:m1-yoneda} Let $F\\in\\PSh(\\mathcal C)$. For any $X\\in\\Ob(\\mathcal C)$, there is an isomorphism of sets…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "We now arrive at the central lemma of category theory. \\setcounter{theorem}{0}\\begin{lemma}[Yoneda's lemma]\\label{lem:m1-yoneda} Let $F\\in\\PSh(\\mathcal C)$. For any $X\\in\\Ob(\\mathcal C)$, there is an isomorphism of sets…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "proved",
+              "evidence": "adjacent explicit proof block or heading"
+            }
+          ],
+          "proofDisposition": "proved",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [],
+      "unresolvedFindings": [],
+      "summary": {
+        "proved": 1,
+        "unclassified": 1
+      }
+    },
+    {
+      "slug": "erdos-distance-problem",
+      "title": "Erdős Distance Problem",
+      "file": "59-erdos-distance-problem.tex",
+      "selectionReason": "Erdos distance problem",
+      "theorems": [
+        {
+          "id": "theorem-4f36bf1768496951",
+          "environment": "theorem",
+          "title": "Two Squares Theorem",
+          "passageId": "erdos-distance-problem:p0007",
+          "line": 80,
+          "labels": [],
+          "statementExcerpt": "We have \\[ \\Delta(P)=\\{\\sqrt A:A=x^2+y^2,\\ 0\\le x,y\\le m-1,\\ A>0\\} \\quad\\Longrightarrow\\quad 1\\le A<2N. \\] Notice that $|\\Delta(P)|$ is at most the number of positive integers below $2N$ that are sums of two squares. Th…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "We have \\[ \\Delta(P)=\\{\\sqrt A:A=x^2+y^2,\\ 0\\le x,y\\le m-1,\\ A>0\\} \\quad\\Longrightarrow\\quad 1\\le A<2N. \\] Notice that $|\\Delta(P)|$ is at most the number of positive integers below $2N$ that are sums of two squares. Th…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-838edc7e927dbc42",
+          "environment": "conjecture",
+          "title": "Erd\\H{o}s Distance Conjecture",
+          "passageId": "erdos-distance-problem:p0012",
+          "line": 185,
+          "labels": [],
+          "statementExcerpt": "\\setcounter{theorem}{2}\\begin{conjecture}[Erd\\H{o}s Distance Conjecture] For every $c<1$, $g(n)=\\Omega(n^c)$. This means that \\[ \\text{there exist $C>0$ and $N_0$ such that }g(n)\\geq Cn^c \\text{ for every }n\\geq N_0. \\]…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "\\setcounter{theorem}{2}\\begin{conjecture}[Erd\\H{o}s Distance Conjecture] For every $c<1$, $g(n)=\\Omega(n^c)$. This means that \\[ \\text{there exist $C>0$ and $N_0$ such that }g(n)\\geq Cn^c \\text{ for every }n\\geq N_0. \\]…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "unclassified",
+              "evidence": "no conservative automatic classification"
+            }
+          ],
+          "proofDisposition": "unclassified",
+          "needsManualDecomposition": true
+        },
+        {
+          "id": "theorem-ef4dad1aa42c1e6e",
+          "environment": "conjecture",
+          "title": "Lower bound",
+          "passageId": "erdos-distance-problem:p0014",
+          "line": 211,
+          "labels": [],
+          "statementExcerpt": "The best lower bound one expects for $g(n)$ is $cn/\\sqrt{\\log n}$ for some $c$ and large $n$. People do not try to prove $g(n)=\\Omega(n^c)$, for the arguments are not yet structural. What they instead do is get better a…",
+          "hypotheses": [],
+          "intermediateClaims": [],
+          "conclusion": {
+            "text": "The best lower bound one expects for $g(n)$ is $cn/\\sqrt{\\log n}$ for some $c$ and large $n$. People do not try to prove $g(n)=\\Omega(n^c)$, for the arguments are not yet structural. What they instead do is get better a…",
+            "source": "theorem statement"
+          },
+          "arrows": [
+            {
+              "from": "stated hypotheses (manual decomposition needed)",
+              "to": "stated conclusion",
+              "classification": "genuinely-missing",
+              "evidence": "explicit gap wording"
+            }
+          ],
+          "proofDisposition": "genuinely-missing",
+          "needsManualDecomposition": true
+        }
+      ],
+      "orphanProofPassages": [
+        {
+          "passageId": "erdos-distance-problem:p0014",
+          "line": 211,
+          "excerpt": "The best lower bound one expects for $g(n)$ is $cn/\\sqrt{\\log n}$ for some $c$ and large $n$. People do not try to prove $g(n)=\\Omega(n^c)$, for the arguments are not yet structural. What they instead do is get better a…"
+        }
+      ],
+      "unresolvedFindings": [
+        {
+          "post": "erdos-distance-problem",
+          "file": "59-erdos-distance-problem.tex",
+          "passageId": "erdos-distance-problem:p0014",
+          "line": 308,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "does not establish",
+          "excerpt": "written argument does not establish the first estimate below:"
+        },
+        {
+          "post": "erdos-distance-problem",
+          "file": "59-erdos-distance-problem.tex",
+          "passageId": "erdos-distance-problem:p0014",
+          "line": 310,
+          "scope": "visible",
+          "severity": "blocking",
+          "category": "missing-step",
+          "phrase": "\\stackrel{?}",
+          "excerpt": "|\\Delta(P)|\\mathrel{\\stackrel{?}{\\ge}}\\max_j n_j,\\qquad"
+        }
+      ],
+      "summary": {
+        "genuinely-missing": 1,
+        "unclassified": 2
+      }
+    }
+  ],
+  "sha256": "c37676dce8bfd73408d1aa9e42ae0e25fc6720701a51f7ddd4db1d3910161d09"
+}

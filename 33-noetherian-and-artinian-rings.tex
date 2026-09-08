@@ -5,7 +5,9 @@
 \begin{document}
 \section*{Noetherian and Artinian Rings}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: noetherian-and-artinian-rings:p0001
 \subsection{Noetherian modules}
+We now develop the chain conditions that arose in \BlogPost{primary-decomposition-and-uniqueness}{primary decomposition}.
 \setcounter{definition}{10}\begin{definition}
 A module $M$ is \emph{Noetherian} (respectively, \emph{Artinian}) if every ascending (respectively, descending) chain of submodules is eventually constant. A ring $A$, viewed as a module over itself, is Noetherian (Artinian) if every ascending (descending) chain of ideals is eventually constant.
 \end{definition}
@@ -51,7 +53,7 @@ x-\sum_{i=1}^n r_i\widetilde x_i\in L\cap M'.
 \]
 Thus $x-\sum_{i=1}^n r_i\widetilde x_i=\sum_{j=1}^m s_jy_j$, so
 \[x=\sum_{i=1}^n r_i\widetilde x_i+\sum_{j=1}^m s_jy_j\qquad(x\in L).\]
-Therefore $\{\widetilde x_i\}_{i=1}^n\cup\{y_j\}_{j=1}^m$ generates $L$, and $M$ is Noetherian.
+Therefore, $\{\widetilde x_i\}_{i=1}^n\cup\{y_j\}_{j=1}^m$ generates $L$, and $M$ is Noetherian.
 \end{proof}
 \setcounter{theorem}{14}\begin{corollary}
 \begin{enumerate}[label=(\roman*)]
@@ -90,7 +92,7 @@ Every irreducible ideal in a Noetherian ring is primary.
 \begin{proof}
 Let $\aa<A$ be irreducible. Then $\aa$ is primary if and only if $(0)$ is primary in the Noetherian ring $A/\aa$. Let $xy=0$, $y\ne0$. Consider $\Ann(x)\subseteq\Ann(x^2)\subseteq\cdots$. There exists $n$ such that $\Ann(x^n)=\Ann(x^{n+1})=\cdots$.
 
-\emph{Claim:} $(x^n)\cap(y)=(0)$. If $a\in(y)$, then $ax=0$; and if $a\in(x^n)$, then $a=bx^n$, so $bx^{n+1}=0$. Hence $b\in\Ann(x^{n+1})=\Ann(x^n)$, giving $a=0$.
+\emph{Claim:} $(x^n)\cap(y)=(0)$. If $a\in(y)$, then $ax=0$, and if $a\in(x^n)$, then $a=bx^n$, so $bx^{n+1}=0$. Hence $b\in\Ann(x^{n+1})=\Ann(x^n)$, giving $a=0$.
 
 Since $\aa$ is irreducible, so is $(0)$ in $A/\aa$. As $y\ne0$, we get $x^n=0$. Thus $(0)$ is primary in $A/\aa$.
 \end{proof}
@@ -100,7 +102,7 @@ Every ideal in a Noetherian ring admits primary decomposition.
 \begin{proof}
 Set $\Sigma=\{\aa<A\mid\aa\text{ is not a finite intersection of irreducible ideals}\}$. If $\Sigma\ne\varnothing$, then, as every chain in $A$ stabilizes, $\Sigma$ satisfies the hypotheses of Zorn's
 % Source page 5
-lemma, which yields a maximal element $\aa$. This ideal is reducible, so $\aa=\bb\cap\mathfrak c$ with $\aa\subset\bb$ and $\aa\subset\mathfrak c$. By maximality, $\bb,\mathfrak c\notin\Sigma$; they are finite intersections of irreducible ideals, and hence so is $\aa$. This is absurd. Therefore $\Sigma=\varnothing$.
+lemma, which yields a maximal element $\aa$. This ideal is reducible, so $\aa=\bb\cap\mathfrak c$ with $\aa\subset\bb$ and $\aa\subset\mathfrak c$. By maximality, $\bb,\mathfrak c\notin\Sigma$; they are finite intersections of irreducible ideals, and hence so is $\aa$. This is absurd. Therefore, $\Sigma=\varnothing$.
 \end{proof}
 \subsection{Artinian rings}
 In the following chain of propositions we sketch why Artinian rings are a special kind of Noetherian ring, thereby justifying our focus on Noetherian modules.
@@ -129,6 +131,7 @@ Indeed, $A$ is Noetherian if and only if $\mm_1$ and $A/\mm_1$ are Noetherian. T
 Proceeding inductively to $\mm_1\mm_2\cdots\mm_n=0$ yields the fact that $A$ is Noetherian.
 \end{proof}
 % Source page 7
+% BLOG-PASSAGE: noetherian-and-artinian-rings:p0002
 \begin{remark}
 The converse is also true.
 \end{remark}

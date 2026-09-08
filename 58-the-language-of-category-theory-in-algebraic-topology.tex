@@ -5,6 +5,7 @@
 \begin{document}
 \section*{The Language of Category Theory (in Algebraic Topology)}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0001
 % Source page 1
 \subsection{Philosophy in Action}
 \begin{figure}[H]
@@ -21,6 +22,7 @@ $\Mor(\mathcal C)$.
  \FigureTag{M1.2}{fig:m1-fig-02}
 \end{figure}
 
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0002
 % Source page 2
 \setcounter{example}{0}\begin{example}
 $\cat{Sets}$, $\cat{Grps}$, $\cat{Rings}$, $\cat{Top}$,
@@ -63,12 +65,14 @@ We say that $\{\nu_A\}_{A\in\Ob(\mathcal C)}$ is a \emph{natural isomorphism}
 if $\nu_A$ is an isomorphism for every $A\in\Ob(\mathcal C)$.
 \end{definition}
 
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0003
 % Source page 3
 \paragraph{Principle.}
 Every statement in category theory has a dual statement obtained by replacing
 $f\circ g$ with $g\circ f$ and domain with codomain, essentially flipping the
 arrows of the morphisms.
 
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0004
 Before turning to examples, there is a small set-theoretic point. Certain collections, such as the collection of all
 groups or of all singletons, cannot be sets. This motivates the language of classes,
 whose elements are sets satisfying specified properties. For our purposes, we restrict attention to
@@ -89,6 +93,7 @@ via natural isomorphisms.
 For $X,C\in\Ob(\mathcal C)$, define
 $h_X\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$ by
 % Source page 4 (the defining formula overlaps the previous page boundary).
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0005
 \[
  h_X(C)=\Hom(C,X),\qquad
  h_X(f\colon C\to C')\colon\Hom(C',X)\to\Hom(C,X),\quad g\mapsto g\circ f.
@@ -96,6 +101,7 @@ $h_X\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$ by
 We say that a functor $F\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$ is
 \emph{representable} if there exists $C\in\Ob(\mathcal C)$ such that $F\cong h_C$.
 
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0006
 Many features of a category can be studied through representable functors.
 This is akin to studying $\mathcal C$ through its action on itself via
 $\Hom_{\mathcal C}(-,-)$.
@@ -111,9 +117,10 @@ $h_I\cong F$.
 \end{claim}
 For every $C\in\mathcal C$, the sets $h_I(C)$ and $F(C)$ are isomorphic,
 as they both have a single element. An \emph{initial object} is the dual notion
-of a final object. Therefore final objects represent the constant singleton functor;
+of a final object. Therefore, final objects represent the constant singleton functor;
 categories with no final object yield standard examples in which this functor is non-representable.
 % Source page 5 (opening line continues the preceding page).
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0007
 \subsubsection{Limits and Colimits}
 Let $\chi\colon J\to\mathcal C$ be a functor, where $J$ is often called the
 \emph{index category}. Let $C_A\colon J\to\mathcal C$ be given by
@@ -141,6 +148,7 @@ Define the category $\Cone(\chi)$, with
 where the $f_i$ are such that, if $\alpha\colon i\to j$, then the following
 diagram commutes.
 % Source page 6
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0008
 \begin{figure}[H]
  \centering\includegraphics[width=.55\textwidth]{m1-fig-04.pdf}
  \FigureTag{M1.4}{fig:m1-fig-04}
@@ -165,6 +173,7 @@ $h_{\lim(\chi)}\cong F_\chi$, namely,
 Given $f\colon D\to\lim(\chi)$, we obtain
 $\bigl(D,\{\chi_i\circ f\}_{i\in\Ob(J)}\bigr)$
 % Source page 7
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0009
 in $\Ob(\Cone(\chi))$, where $\chi_i\colon\lim(\chi)\to\chi(i)$.
 By definition, $f$ must be unique, so we have the natural map
 $f\mapsto\{\chi_i\circ f\}_{i\in\Ob(J)}$.
@@ -182,6 +191,7 @@ This can be rephrased in terms of a representable functor. Define
  C\longmapsto\Hom_{\mathcal D}(F(C),D),
 \]
 % Source page 8
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0010
 and send $f\colon C\to C'$ to the map
 \[
  \bigl(g\colon F(C')\to D\bigr)\longmapsto
@@ -198,6 +208,7 @@ The cone construction above is one example. Objects in a cone
 category generalize the notion of a morphism. A morphism relates a particular
 object to another, but a cone object relates to a collection of objects that are already related to one another.
 % Source page 9
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0011
 \begin{figure}[H]
  \centering\includegraphics[width=.82\textwidth]{m1-fig-06.pdf}
  \FigureTag{M1.6}{fig:m1-fig-06}
@@ -215,6 +226,7 @@ equivalence relation $\sim$ is set up on $\Hom_{\mathcal C}(X,Y)$ such that
 Also, $X\sim Y$ if there exist $f\colon X\to Y$ and $g\colon Y\to X$ such that
 $f\circ g\sim\id_Y$ and $g\circ f\sim\id_X$.
 % Source page 10
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0012
 Then $\mathcal C/{\sim}$ is the \emph{quotient category}.
 \setcounter{example}{2}\begin{example}
 $\Fun(\mathcal C,\mathcal D)/{\sim}$, for natural isomorphism;
@@ -243,6 +255,7 @@ $B\downarrow\mathcal C=\cat{Top}_*$ (based spaces).
 Finally, $A\downarrow\mathcal C\downarrow B:=A\downarrow(\mathcal C\downarrow B)$
 demands that the following diagram commute.
 % Source page 11
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0013
 \begin{figure}[H]
  \centering\includegraphics[width=.52\textwidth]{m1-fig-08.pdf}
  \FigureTag{M1.8}{fig:m1-fig-08}
@@ -266,6 +279,7 @@ each element of $\Nat(\chi_A,\chi_B)$ is a morphism in $\Fun(J,\mathcal C)$.
 \subsubsection{Objects as Morphisms}
 Let $X\in\Ob(\mathcal C)$. The points of $X$ can be thought
 % Source page 12
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0014
 of as $\Hom_{\mathcal C}(*,X)$, where $*$ is a final object in $\mathcal C$.
 ``Generalized points'' can be thought of as $\Hom_{\mathcal C}(A,X)$.
 We are simply generalizing these notions from $\mathcal C=\cat{Sets}$,
@@ -286,6 +300,7 @@ If $G$ is nontrivial, $\mathcal BG$ has no final object.
 \subsubsection{Forgetful Functors}
 Let $\mathcal C$ be a category of certain sets with a particular
 % Source page 13
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0015
 structure imposed. The forgetful functor is
 \[
  U\colon\mathcal C\to\cat{Sets},\qquad
@@ -304,6 +319,7 @@ We say $\mathcal C$ is \emph{Cartesian closed} if it contains exponentials
 and products, as defined below.
 \subsubsection{Group Objects in Categories}
 % Source page 14
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0016
 Let $\mathcal C$ be a category closed under finite products, and let
 $G\in\mathcal C$ be an object. The structure of a group on $G$ is the data
 of morphisms
@@ -354,6 +370,7 @@ $\bigl(\prod_{i\in I}X_i,\{x_i\}_{i\in I}\bigr)$ and the coproduct is
 $\bigvee_{i\in I}(X_i,x_i)$.
 \subsubsection{Joins ($\mathcal C=\cat{Top}$)}
 % Source page 16
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0017
 Given $X,Y\in\mathcal C$, the join of $X$ and $Y$, denoted $X*Y$, is the
 colimit of the following diagram.
 \begin{figure}[H]
@@ -380,7 +397,7 @@ The special cases are
  &&\text{(denoted $\Sigma X$)}.
  \end{aligned}
 \]
-Also $\Sigma S^n\cong S^{n+1}$. Therefore a purely category-theoretic way
+Also $\Sigma S^n\cong S^{n+1}$. Therefore, a purely category-theoretic way
 of constructing an $n$-sphere would be to take
 $S^n=\underbrace{S^0*\cdots*S^0}_{n+1\text{ times}}$.
 \subsubsection{Pushouts and Pullbacks}
@@ -391,6 +408,7 @@ $\Cone(f):=(X\amalg CA)/{\sim}$, where $(a,1)\sim f(a)$.
  \FigureTag{M1.14}{fig:m1-fig-14}
 \end{figure}
 % Source page 17
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0018
 The dual notion is a pullback.
 \begin{remark}
 The limit and colimit of a diagram are essentially two ways of putting
@@ -409,6 +427,7 @@ In $\cat{Grps}$, putting together the same diagram would give
 the amalgamated product.
 In a category $\mathcal C$, limits and colimits play the roles of $\prod$ and $\coprod$ while preserving the relations in the diagram.
 
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0019
 We now arrive at the central lemma of category theory.
 \setcounter{theorem}{0}\begin{lemma}[Yoneda's lemma]\label{lem:m1-yoneda}
 Let $F\in\PSh(\mathcal C)$. For any $X\in\Ob(\mathcal C)$, there is an
@@ -419,9 +438,10 @@ isomorphism of sets
 that is natural in both $X$ and $F$.
 \end{lemma}
 % Source page 18: blank.
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0020
 % Source page 19
 \begin{proof}[Sketch of proof]
-Suppose $\theta\in\Hom_{\PSh(\mathcal C)}(h_X,F)$, i.e.
+Suppose $\theta\in\Hom_{\PSh(\mathcal C)}(h_X,F)$, i.e.,
 $\{\theta_A\colon h_X(A)\to F(A)\}_{A\in\Ob(\mathcal C)}$.
 Define
 \[
@@ -448,6 +468,7 @@ compactly generated spaces. Using this, in
 $k\text{-}\cat{Top}_*/{\sim}\cong(*\downarrow k\text{-}\cat{Top})/{\sim}$,
 one can prove that
 % Source page 20
+% BLOG-PASSAGE: the-language-of-category-theory-in-algebraic-topology:p0021
 \[
  \begin{aligned}
  \Hom_{(k\text{-}\cat{Top}_*)/{\sim}}(X,\Omega_{y_0}Y)
@@ -470,14 +491,14 @@ The homotopy sets are
 \subsubsection{Application 2}
 Let $\mathcal C$ be a category and $X\in\Ob(\mathcal C)$. Then
 $X$ is a group object if and only if $h_X\colon\mathcal C^{\mathrm{op}}\to\cat{Sets}$
-lifts to groups, i.e. there exists $\widetilde h_X$ making the following
+lifts to groups, i.e., there exists $\widetilde h_X$ making the following
 diagram commute; $U$ is the forgetful functor.
 \begin{figure}[H]
  \centering\includegraphics[width=.62\textwidth]{m1-fig-15.pdf}
  \FigureTag{M1.15}{fig:m1-fig-15}
 \end{figure}
 Now $\Omega_{y_0}Y$ can be made into a group object in
-$(k\text{-}\cat{Top}_*)/{\sim}$, i.e. an $H$-space.
+$(k\text{-}\cat{Top}_*)/{\sim}$, i.e., an $H$-space.
 By Yoneda's lemma, one can give a group structure to
 \[
  \Hom_{(k\text{-}\cat{Top}_*)/{\sim}}(A,\Omega_{y_0}Y)

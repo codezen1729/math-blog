@@ -5,13 +5,15 @@
 \begin{document}
 \section*{Invariant Measures and the Geometry of Ergodicity}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0001
 From now on we shall impose the structures of both a topological space and a
 measure space on our state space $X$.
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0002
 Let $(X,d)$ be a compact metric space and $T\colon X\to X$ a continuous map.
-This is the setup of a \emph{topological dynamical system}. It turns out that,
+This is the setup of a \emph{topological dynamical system}. It turns out that
 the moment you have this, there are some measures you can impose on $X$
-naturally, which is precisely why we studied measure-preserving systems first.
+naturally, which is precisely why we studied \BlogPost{from-complex-dynamics-to-measure-preserving-systems}{measure-preserving systems} first.
 We want our measures to capture the ``size'' of sets, so we require our
 measures to be positive. Riesz's representation theorem tells you that all
 positive linear functionals in $C(X)^*$ are in one-to-one correspondence with
@@ -24,10 +26,12 @@ Thus, the set of all possible Borel probability measures that one can impose
 on $X$ can be naturally obtained from the structure imposed on $X$, namely
 the structure of a compact metric space.
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0003
 Denote by $\mathcal M(X)$ the space of Borel probability measures on $X$. Our
 attempts at building a geometric perspective on ergodicity begin by endowing
 $\mathcal M(X)$, again, with a natural topology: its weak-$*$ topology.
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0004
 Give $C(X)^*$ the weak-$*$ topology. Notice first that the set
 \[
  \mathcal M(X):=\left\{\mu\in C(X)^*\ \middle|\
@@ -45,19 +49,22 @@ Clearly, the norm of the operator $\mu$ is $\mu(X)$, for
 \]
 (now set $f=1$). Thus $\mathcal M(X)$ is compact in the weak-$*$ topology: by the Banach--Alaoglu theorem, the unit ball in $C(X)^*$, under the usual operator norm, is weak-$*$ compact, and $\mathcal M(X)$ is closed in the unit ball. Further, if $\mu_1,\mu_2\in\mathcal M(X)$ and $s\in[0,1]$, then $s\mu_1+(1-s)\mu_2\in\mathcal M(X)$, so $\mathcal M(X)$ is a convex compact subspace of $C(X)^*$.
 % Source omits the range of s in the convex-combination assertion; retained.
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0005
 
 \begin{remark}
 $\mathcal M(X)$ is also metrizable, but that aspect of it is not relevant
 % Source page 3
-to us as of now.
+to us.
 \end{remark}
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0006
 Given a topological dynamical system $(X,d,T)$, we have a way to associate
 probability measures on $X$ using the topological structure imposed on $X$.
 Of these, let us now look at those measures $\mu\in\mathcal M(X)$ such that
 $\mu$ is $T$-invariant. Then we shall have a measure-preserving system to
 which we can export our knowledge developed so far.
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0007
 The map $T$ induces a continuous map $T_*\colon\mathcal M(X)\to\mathcal M(X)$, defined by
 \[
  T_*(\mu)(A):=\mu(T^{-1}(A)).
@@ -70,8 +77,10 @@ It is continuous because $\int_Xf\,d(T_*\mu)=\int_Xf\circ T\,d\mu$. If $\mu_n\xr
 \]
 Hence $T_*\mu_n\to T_*\mu$.
 
-If $\mathcal M^T(X):=\{\mu\in\mathcal M(X)\mid\mu\text{ is $T$-invariant}\}$, the continuity of $T_*$ implies that $\mathcal M^T(X)$ is closed, hence compact, in $\mathcal M(X)$. Also, $\mathcal M^T(X)$ is convex. Therefore $\mathcal M^T(X)$ is also a convex compact subspace of $C(X)^*$.
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0008
+If $\mathcal M^T(X):=\{\mu\in\mathcal M(X)\mid\mu\text{ is $T$-invariant}\}$, the continuity of $T_*$ implies that $\mathcal M^T(X)$ is closed, hence compact, in $\mathcal M(X)$. Also, $\mathcal M^T(X)$ is convex. Therefore, $\mathcal M^T(X)$ is also a convex compact subspace of $C(X)^*$.
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0009
 % Source page 4
 \setcounter{theorem}{18}\begin{theorem}[Krylov--Bogolyubov]\label{thm:l6-kb}
 We can do ergodic theory on $(X,d,T)$: every topological dynamical system
@@ -101,6 +110,7 @@ Now let $\nu_n\in\mathcal M(X)$ and set $\mu_n:=\frac1n\sum_{j=0}^{n-1}T_*^j(\nu
 Thus $\int f\circ T\,d\mu=\int f\,d\mu$ for every $f\in C(X)$, implying that $\mu\in\mathcal M^T(X)$. Hence $\mathcal M^T(X)\neq\varnothing$.
 \end{proof}
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0010
 \begin{remark}
 Replace $(X,d,T)$ with $(\mathcal M(X),\widetilde d,T_*)$, where
 $\widetilde d$ is a metric that generates its weak-$*$ topology. By the
@@ -125,6 +135,7 @@ $T_*$-invariant $\sigma$-algebra; the equality of integrals alone does not in
 general force $f'=\chi_{\{\nu_0\}}$.
 \end{remark}
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0011
 
 
 Therefore, we have this dual notion in play here: consider the fact that
@@ -135,12 +146,14 @@ $\mathcal M(X)$ in some sense also contains $X$.
  \begin{gathered}\text{Invariant measures}\\\text{on }X\end{gathered}}
 \]
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0012
 Now recall that $\mathcal M^T(X)$ is convex, so one can talk about its extreme
 points: points in $\mathcal M^T(X)$ which cannot be further broken down into
 linear, convex combinations of other elements in $\mathcal M^T(X)$. Denote
 the set of extreme points by $\mathcal E^T(X)$. For measures in
 $\mathcal E^T(X)$, we have the following lemma.
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0013
 \setcounter{theorem}{19}\begin{lemma}
 If $\mu_1,\mu_2\in\mathcal E^T(X)$ are distinct ergodic measures, then they
 are mutually singular. That is, there exist measurable sets $A,B$ such that
@@ -155,9 +168,10 @@ For every $f\in C(X)$, by the pointwise ergodic theorem,
  \qquad\text{and}\qquad
  A_n^f(x)\longrightarrow\int f\,d\mu_2\quad(\star).
 \]
-Now choose $f\in C(X)$ such that $\int f\,d\mu_1\neq\int f\,d\mu_2$. If $A=\{x\mid(*)\text{ holds}\}$ and $B=\{x\mid(\star)\text{ holds}\}$, then $\mu_1(A)=\mu_2(B)=1$ and $A\cap B=\varnothing$. Consequently the partition $A\sqcup(X\setminus A)=X$ satisfies $\mu_1(X\setminus A)=\mu_2(A)=0$.
+Now choose $f\in C(X)$ such that $\int f\,d\mu_1\neq\int f\,d\mu_2$. If $A=\{x\mid(*)\text{ holds}\}$ and $B=\{x\mid(\star)\text{ holds}\}$, then $\mu_1(A)=\mu_2(B)=1$ and $A\cap B=\varnothing$. Consequently, the partition $A\sqcup(X\setminus A)=X$ satisfies $\mu_1(X\setminus A)=\mu_2(A)=0$.
 \end{proof}
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0014
 \begin{remark}
 One can generalize this to $n$ ergodic measures by induction. All you need is
 a function $f\in C(X)$ such that $\{\int f\,d\mu_i\}_{i=1}^n$ is a sequence
@@ -177,6 +191,7 @@ would have a finite decomposition into ergodic components.
  \FigureTag{L6.1}{fig:lecture6-fig-01}
 \end{figure}
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0015
 % Source page 7
 The following theorem identifies the measures that feature in such a
 geometric decomposition.
@@ -230,6 +245,7 @@ This implies $\mu(B\mathbin\triangle T^{-1}B)=0$, so $\mu(B)\in\{0,1\}$. If $\mu
 a contradiction. Hence $\mu(B)=0$. Similarly, $\mu(\{x\mid f(x)>1\})=0$, so $f(x)=1$ almost everywhere. Thus $\nu_1=\mu$, implying $\mu\in\mathcal E^T(X)$: it is an extreme point.
 \end{proof}
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0016
 The argument made in the remark above can be extended to a countable
 collection of elements in $\mathcal E^T(X)$. In such cases, using the ergodic
 theorem, one can get an explicit decomposition of the state space. But a more
@@ -238,9 +254,11 @@ continuum? How is one supposed to get down to the minimal dynamical nuts and
 bolts of a given measure-preserving topological dynamical system? In that
 case, Choquet's representation theorem
 % Source page 9
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0017
 comes in handy to yield ergodic components of the state space as infinitesimal
 components of an integral representation!
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0018
 \setcounter{theorem}{21}\begin{theorem}[Ergodic Decomposition]
 Given a topological dynamical system $(X,T)$ and any $\mu\in\mathcal M^T(X)$, there exists a unique probability measure $\lambda$ on the Borel sets of $\mathcal M^T(X)$ such that
 \[
@@ -252,6 +270,7 @@ Given a topological dynamical system $(X,T)$ and any $\mu\in\mathcal M^T(X)$, th
 These correspond, respectively, to the finite expressions $\sum_{i=1}^n c_i=1$ and $\mu=\sum_{i=1}^n c_i\nu_i$.
 \end{theorem}
 
+% BLOG-PASSAGE: invariant-measures-and-the-geometry-of-ergodicity:p0019
 \begin{remark}
 Notice also that the uniqueness of $\lambda$ tells you that the decomposition
 is unique!

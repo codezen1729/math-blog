@@ -5,13 +5,14 @@
 \begin{document}
 \section*{Localization: Rings, Modules, and Prime Ideals}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: localization-rings-modules-and-prime-ideals:p0001
 \subsection{Motivations for localization}
 Recall the construction of $\Q$ from $\Z$:
 \[
 \Q:=\{(x,y)\in\Z\times(\Z\setminus\{0\})\}/{\sim},\qquad
 (x_1,y_1)\sim(x_2,y_2)\ \Longleftrightarrow\ x_1y_2-y_1x_2=0.
 \]
-We want to generalize this to arbitrary commutative rings. If $X$ is a variety and $x\in X$, then a neighbourhood $U$ of $x$ corresponds to a localization of the coordinate ring $A(X)$. Thus localization is the algebraic analogue of examining a neighbourhood of a point.
+We want to generalize this to arbitrary \BlogPost{rings-ideals-and-prime-ideals}{commutative rings}. If $X$ is a variety and $x\in X$, then a neighbourhood $U$ of $x$ corresponds to a localization of the coordinate ring $A(X)$. Thus localization is the algebraic analogue of examining a neighbourhood of a point.
 \setcounter{definition}{7}\begin{definition}
 Let $S\subseteq A$ be a multiplicatively closed set in a commutative ring. Consider the equivalence relation on $A\times S$ given by
 \[
@@ -32,7 +33,7 @@ Set $S^{-1}A:=(A\times S)/{\sim}$, the \emph{localization of $A$ by $S$}.
 \[
 \{g:A\to B\mid g\in\Hom_{\CRing}(A,B),\ g(s)\text{ is a unit for all }s\in S\}.
 \]
-For every $g$, there is a unique $h$ as drawn below; pointwise, $h(a/s):=g(a)g(s)^{-1}$.
+For every $g$, there is a unique $h$ as drawn below. Pointwise, $h(a/s):=g(a)g(s)^{-1}$.
 \begin{figure}[H]\centering
 \includegraphics[width=.55\textwidth]{ca2-fig-01.pdf}
 \end{figure}
@@ -48,9 +49,10 @@ These properties determine the initial object in (iii) uniquely up to isomorphis
 \setcounter{example}{4}\begin{example}
 If $\pp<A$ is prime, then $S=A\setminus\pp$ is multiplicatively closed. We write $S^{-1}A$ as $A_{\pp}$. The set $\mm:=\{a/s\mid a\in\pp,\ s\in S\}$ is an ideal. If $\aa\nsubseteq\mm$, there exists $b/t\in\aa$ with $b/t\notin\mm$. Hence $b\notin\pp$, so $b$ is a unit. Thus $A_{\pp}$ is a local ring.
 \end{example}
-Localization extends to $A$-modules in the same way. For an $A$-module $M$, let
+Localization extends to \BlogPost{modules-tensor-products-and-the-determinant-trick}{$A$-modules} in the same way. For an $A$-module $M$, let
 \[S^{-1}M:=\{(m,s)\mid m\in M,\ s\in S\}/{\sim}.\]
 % Source page 3
+% BLOG-PASSAGE: localization-rings-modules-and-prime-ideals:p0002
 For $f:M\to N$, one has $S^{-1}f:S^{-1}M\to S^{-1}N$, $m/s\mapsto f(m)/s$.
 \setcounter{theorem}{5}\begin{proposition}
 \begin{enumerate}[label=(\roman*)]

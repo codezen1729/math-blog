@@ -5,10 +5,11 @@
 \begin{document}
 \section*{Mixing, Products, and Spectral Criteria}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0001
 \subsection{Mixing}
-Ergodic theorems give you all the equidistribution theorems one would hope
+\BlogPost{mean-maximal-and-pointwise-ergodic-theorems}{Ergodic theorems} give you all the equidistribution theorems one would hope
 for, so let us now abandon the study of orbits. Recall that we studied
-ergodicity from three different perspectives in the previous post:
+ergodicity from three different perspectives in \BlogPost{recurrence-and-three-views-of-ergodicity}{an earlier post}:
 \begin{itemize}
  \item Measure-theoretic: to obtain dynamical information.
  \item Operator-theoretic: to obtain equidistribution theorems.
@@ -28,6 +29,7 @@ here is a small observation. We saw that
 \]
 One can restate this slightly to obtain a probabilistic interpretation
 % Source page 2
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0002
 of ergodicity:
 \[
  T\text{ is ergodic}
@@ -55,6 +57,7 @@ and convergence would be assured. In general, however, an ergodic map just
 tries to separate events and is not always successful. Keeping this in mind,
 let us look at maps that asymptotically make $T^{-n}(B)$ and $A$ independent.
 
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0003
 \setcounter{definition}{5}\begin{definition}[Mixing]
 A system $(X,\mathcal B,\mu,T)$ is \emph{mixing} if, for all
 $A,B\in\mathcal B$,
@@ -73,6 +76,7 @@ $A,B\in\mathcal B$,
 \]
 \end{definition}
 
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0004
 % Source page 3
 \begin{remark}
 For a sequence $\{a_n\}_n$ (for example, $a_n$ may be
@@ -112,8 +116,10 @@ establishing Szemer\'edi's theorem.
 \end{remark}
 Now let us see other equivalent formulations of weak mixing, to find
 % Source page 4
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0005
 connections between the probabilistic interpretation and the others.
 
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0006
 \setcounter{theorem}{14}\begin{theorem}[Mixing equivalences]
 \label{thm:l4-mixing-equivalences}
 Given a system $(X,\mathcal B,\mu,T)$ in which $T$ is invertible modulo null sets, the following are equivalent:
@@ -130,6 +136,7 @@ Given a system $(X,\mathcal B,\mu,T)$ in which $T$ is invertible modulo null set
 This is a long proof, so hang tight. We will first prove an interesting
 technical lemma due to Koopman and von Neumann.
 
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0007
 \setcounter{theorem}{15}\begin{lemma}[Koopman--Neumann]
 \label{lem:l4-koopman-neumann}
 Let $\{a_n\}$ be a sequence of bounded nonnegative real numbers.
@@ -146,6 +153,7 @@ The following are equivalent:
 \end{enumerate}
 \end{lemma}
 
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0008
 % Source page 5
 \begin{proof}
 Set $J_k:=\{j\in\mathbb N:a_j>1/k\}$. This gives the natural inclusions
@@ -183,7 +191,7 @@ Let $n\in[\ell_k,\ell_{k+1})$. Then
  \end{aligned}
 \]
 because $J_i\subseteq J_{i+1}$ for all $i\geq1$.
-Therefore $\frac1n|J\cap[0,n)|\leq\frac1n|J_k\cap[0,n)|\leq1/k$,
+Therefore, $\frac1n|J\cap[0,n)|\leq\frac1n|J_k\cap[0,n)|\leq1/k$,
 by our choice of $\{\ell_k\}_{k\geq1}$. Thus $J$ has density zero.
 
 Now suppose $a_n\to0$ with $n\notin J$. Since $\{a_n\}_n$ is bounded,
@@ -212,6 +220,7 @@ Similarly,
 \]
 \end{proof}
 
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0009
 \begin{proof}[Proof of Theorem~\ref{thm:l4-mixing-equivalences}]
 We shall use the Koopman--Neumann lemma without mentioning it explicitly.
 Keep in mind henceforth that
@@ -243,7 +252,7 @@ Set $J=J_1\cup J_2$. Clearly,
  \frac1n|J\cap[0,n)|
  \leq\frac1n|J_1\cap[0,n)|+\frac1n|J_2\cap[0,n)|\longrightarrow0,
 \]
-so $J$ has density zero. Therefore
+so $J$ has density zero. Therefore,
 \[
  \begin{aligned}
  &\lim_{\substack{n\to\infty\\n\notin J}}
@@ -285,7 +294,7 @@ hence it is all of $\mathcal B\times\mathcal B$. Now fix arbitrary
 $A_1\in\mathcal B\times\mathcal B$ and repeat the same argument in the
 second variable. Since $T\times T$ preserves $\widetilde\mu$, the error is
 again bounded uniformly by twice the measure of the symmetric difference.
-Consequently \eqref{eq:l4-product-mixing} holds for every
+Consequently, \eqref{eq:l4-product-mixing} holds for every
 $A_1,A_2\in\mathcal B\times\mathcal B$, so $T\times T$ is weakly mixing.
 
 
@@ -299,7 +308,7 @@ If $T\times T$ is weakly mixing, then
  &-(\mu\times\mu)(A\times X)(\mu\times\mu)(B\times X)\bigr|=0.
  \end{aligned}
 \]
-Therefore
+Therefore,
 \[
  \lim_{n\to\infty}\frac1n\sum_{i=0}^{n-1}
  |\mu(A\cap T^{-i}B)-\mu(A)\mu(B)|=0,
@@ -428,7 +437,7 @@ the last uses the $T\times T$-invariance of $f$. Hence
 $F(g\circ T)=\lambda(g\circ T)$, so $g\in N_\lambda$ implies
 $g\circ T\in N_\lambda$.
 
-Therefore $U_T:N_\lambda\to N_\lambda$. Since $N_\lambda$ is
+Therefore, $U_T:N_\lambda\to N_\lambda$. Since $N_\lambda$ is
 finite-dimensional and $U_T$ is an isometry, its restriction is unitary and
 has an eigenvector $g$. This eigenvector cannot be constant: otherwise
 integrating $Fg=\lambda g$ would give $\lambda g=0$, because
@@ -440,8 +449,9 @@ contradicting (5).
 
 \end{proof}
 
-Let us stop this session by setting up the premise for the infamous Rokhlin
-problem.
+% BLOG-PASSAGE: mixing-products-and-spectral-criteria:p0010
+Let us end this post by setting up the premise for the infamous Rokhlin
+problem, which continues in \BlogPost{return-times-kakutani-skyscrapers-and-rokhlin-towers}{Return Times, Kakutani Skyscrapers, and Rokhlin Towers}.
 \setcounter{definition}{7}\begin{definition}[$k$-fold mixing]
 A system $(X,\mathcal B,\mu,T)$ is \emph{$k$-fold mixing} if
 \[

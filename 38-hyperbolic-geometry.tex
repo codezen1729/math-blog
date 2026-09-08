@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Hyperbolic Geometry}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: hyperbolic-geometry:p0001
 We quickly review some preliminaries essential for complex dynamics by answering four questions \cite{beardon2011hyperbolic}:
 \begin{enumerate}
 \setcounter{enumi}{0}\item What are hyperbolic surfaces?
@@ -19,6 +20,7 @@ Let us address these one by one. Riemann's brilliant insight is that geometry on
 \end{figure}
 Constructing smooth sections of $T^*M\otimes T^*M$ is also easy, since $TM\cong M\times\mathbb R^n$.
 % Source page 2
+% BLOG-PASSAGE: hyperbolic-geometry:p0002
 Hyperbolic spaces are not like that. Moreover, we ask for more than just some metric: that can always be obtained by locally pushing the Euclidean metric to $M$ and patching with a partition of unity, however abstract this may be. Here we seek a metric invariant under conformal automorphisms. First, some context.
 \setcounter{theorem}{25}\begin{theorem}[Uniformisation]
 Every simply connected Riemann surface is conformally isomorphic to one of
@@ -29,6 +31,7 @@ Thus a hyperbolic surface is a Riemann surface whose universal cover is $\mathbb
 Up to multiplication by a constant, there is a unique Riemannian metric on $\mathbb H$ invariant under every element of $\operatorname{Aut}(\mathbb H)$.
 \end{theorem}
 % Source page 3
+% BLOG-PASSAGE: hyperbolic-geometry:p0003
 In other words, every $g\in\operatorname{Aut}(\mathbb H)$ is an isometry. This construction is a special case of a general correspondence.
 \begin{figure}[H]\centering
 \includegraphics[width=.74\textwidth]{cd7-fig-02.pdf}
@@ -52,6 +55,7 @@ du\otimes du+dv\otimes dv
 \end{align*}
 Conformality gives $u_xu_y+v_xv_y=0$ and $u_x^2+v_x^2=u_y^2+v_y^2$, motivating the following definition.
 % Source page 4
+% BLOG-PASSAGE: hyperbolic-geometry:p0004
 \setcounter{definition}{17}\begin{definition}[Conformal metric]
 A metric $ds^2=g_{11}dx^2+2g_{12}dx\,dy+g_{22}dy^2$, where $ds^2$ denotes $ds\otimes ds$, is conformal if $g_{11}=g_{22}$ and $g_{12}=0$.
 \end{definition}
@@ -85,12 +89,14 @@ We obtain $\gamma(f(z))=|f'(z)|^{-1}\gamma(z)$. It is a simple computational exe
 Using the Cayley transform $(z-i)/(z+i)$ transfers this to the invariant metric
 $ds=2|dz|/(1-|z|^2)$ on $\mathbb D$. Let us use it to construct a metric on $\mathbb D/\Gamma$, with $\Gamma<\operatorname{PSL}_2(\mathbb R)$ discrete.
 
+% BLOG-PASSAGE: hyperbolic-geometry:p0005
 Let $S$ be hyperbolic, with universal cover $P\colon\mathbb D\to S$. For $y\in S$, let $U_y$ be evenly covered. Choose $V_a\subset\mathbb D$ so that $P|_{V_a}\colon V_a\to U_y$ is biholomorphic, and set
 \[
 \gamma_a(P|_{V_a}(z))=\frac{\rho(z)}{|P'(z)|},
 \]
 where $\rho(z)|dz|$ is the Poincar\'e metric on $\mathbb D$. Let $\{\psi_y\}_y$ be a partition of unity subordinate to $\{U_y\}_{y\in S}$.
 % Source page 6
+% BLOG-PASSAGE: hyperbolic-geometry:p0006
 Patch by setting
 \[
 g=ds^2=\sum_y\psi_y\bigl(\gamma_a(P|_{V_a}(z))\bigr)^2(dx^2+dy^2).
@@ -100,19 +106,22 @@ It remains to check that the pushforward is well-defined. Given $x,a\in P^{-1}(y
 |\phi'(x)|=\frac{1-|a|^2}{1-|x|^2}=\frac{\rho(x)}{\rho(a)},\qquad
 \frac{\rho(a)}{|P'(a)|}=\frac{\rho(x)}{|P'(x)|}.
 \]
-Therefore $\gamma_a(P|_{V_a}(z))=\gamma_x(P|_{V_x}(z))$, as required. Thus the Poincar\'e metric of $\mathbb D$ descends to a well-defined metric on $S$.
+Therefore, $\gamma_a(P|_{V_a}(z))=\gamma_x(P|_{V_x}(z))$, as required. Thus the Poincar\'e metric of $\mathbb D$ descends to a well-defined metric on $S$.
 
+% BLOG-PASSAGE: hyperbolic-geometry:p0007
 This metric defines distances. For a smooth or piecewise smooth path $p\colon[0,1]\to S$,
 \[
 \operatorname{length}(p)=\int_pds=\int_0^1|p'(t)|\,dt,
 \qquad |p'(t)|=\sqrt{ds\otimes ds(p'(t),p'(t))}.
 \]
 
+% BLOG-PASSAGE: hyperbolic-geometry:p0008
 \setcounter{definition}{18}\begin{definition}[Poincar\'e distance]
 For $z_0,z_1\in S$, let $\mathcal Z$ be the smooth or piecewise smooth paths joining them. Define $\dist_S(z_0,z_1)=\inf_{p\in\mathcal Z}\operatorname{length}(p)$.
 \end{definition}
 We now prove an important fact about hyperbolic surfaces with the Poincar\'e distance.
 % Source page 7
+% BLOG-PASSAGE: hyperbolic-geometry:p0009
 \setcounter{theorem}{27}\begin{lemma}[Completeness]\label{cd7:complete}
 The space $(S,\dist_S)$ is complete. Given any $z_0,z_1\in S$, there is a path $p$ with $\operatorname{length}(p)=\dist_S(z_0,z_1)$; in other words, there is at least one geodesic.
 \end{lemma}
@@ -153,6 +162,7 @@ An explicit geodesic construction is sketched below. Let $B$ be a ball of local 
 \end{figure}
 Consider paths $p_j'$ with lengths $\dist(z_0,z_1)+\varepsilon_j'$, where $\varepsilon_j'\le\varepsilon$ and $\varepsilon_j'\to0$. If they cross $\partial B$ at $x_j$, choose an accumulation point $x$. Join $z_0$ to $x$ by a geodesic, then repeat.
 % Source page 9
+% BLOG-PASSAGE: hyperbolic-geometry:p0010
 We care about hyperbolic surfaces because the other surfaces are well known: $\widehat{\mathbb C}$, $\mathbb C$, $S^1\times S^1$, and $S^1\times\mathbb R$. This follows by checking fixed-point-free automorphisms of $\widehat{\mathbb C}$ and discrete subgroups of $\operatorname{Aut}(\mathbb C)$; their quotients give all spherical and Euclidean surfaces. They all have abelian fundamental group. Thus a surface with nonabelian fundamental group is immediately hyperbolic: hyperbolic surfaces abound.
 \setcounter{theorem}{28}\begin{lemma}\label{cd7:three-punctures}
 The surface $\widehat{\mathbb C}\setminus\{p,q,r\}$ is hyperbolic.
@@ -173,8 +183,10 @@ If $f$ omits $a,b$, it maps $\mathbb C$ to the hyperbolic surface $\mathbb C\set
 Liouville's theorem makes $\widetilde f$ constant. Here we regard $\mathbb D\subset\mathbb C$ without giving it its Poincar\'e metric.
 \end{proof}
 % Source page 10
+% BLOG-PASSAGE: hyperbolic-geometry:p0011
 In fact, hyperbolic surfaces are embedded as submanifolds in every Riemann surface. If $\mathbb C$ or $\widehat{\mathbb C}$ covers $S$, it only remains to consider the cylinder and torus. Removing one point there removes infinitely many points in $\mathbb C$; the resulting cover sits in $\mathbb C\setminus\{p,q\}$, or in $\widehat{\mathbb C}\setminus\{p,q,r\}$.
 
+% BLOG-PASSAGE: hyperbolic-geometry:p0012
 The following theorem makes hyperbolic surfaces special.
 \setcounter{theorem}{30}\begin{theorem}[Schwarz--Pick theorem]\label{cd7:pick}
 Let $f\colon S\to S'$ be holomorphic between hyperbolic surfaces. Then $\|df_p\|\le1$ for every $p\in S$. If equality holds at one point, $f$ is a covering map. Otherwise, for every compact $K\subset S$, there is a constant $c_K<1$ such that $\|df_p\|\le c_K$ for every $p\in K$.
@@ -191,7 +203,7 @@ Schwarz's lemma gives $|F'(0)|\le1$, hence $\|DF_0\|\le1$. Indeed,
 \|DF_0\|=\sup_{\|v\|=1}\|DF_0(v)\|
 =\sup_{\|a+ib\|=1}\|F'(0)(a+ib)\|=|F'(0)|.
 \]
-Here $F'(z)$ is a real-linear map $\mathbb R^2\to\mathbb R^2$, identified with a complex-linear map $\mathbb C\to\mathbb C$. Therefore $\|Df_p\|\le1$. If $F$ is a conformal isomorphism, $\pi_2\circ F$ is a covering map, so $f$ is a covering map and $\|Df_p\|=1$. Thus $f$ is a local isometry; if $\pi_1,\pi_2$ are biholomorphisms, it is a global isometry.
+Here $F'(z)$ is a real-linear map $\mathbb R^2\to\mathbb R^2$, identified with a complex-linear map $\mathbb C\to\mathbb C$. Therefore, $\|Df_p\|\le1$. If $F$ is a conformal isomorphism, $\pi_2\circ F$ is a covering map, so $f$ is a covering map and $\|Df_p\|=1$. Thus $f$ is a local isometry; if $\pi_1,\pi_2$ are biholomorphisms, it is a global isometry.
 
 If $f$ is not a covering map, then $\|df_p\|<1$. The ratio $\|df_p(v)\|/\|v\|$ is continuous in $p,v$, being locally smooth in $p$ and bounded linear in $v$. Thus
 \[
@@ -206,6 +218,7 @@ Enlarge $K$ if necessary, for example to $\overline{B_{2\diam(K)}(z_0)}$. For a 
 Hence $\dist_{S'}(f(p),f(q))\le c_K\dist_S(p,q)$.
 \end{proof}
 % Source page 12
+% BLOG-PASSAGE: hyperbolic-geometry:p0013
 Hyperbolic surfaces matter in complex dynamics because they help identify spaces on which a family of functions is stable. More precisely:
 \setcounter{theorem}{31}\begin{lemma}
 If $T$ is a hyperbolic Riemann surface, every sequence in $\Hol(S,T)$ has a subsequence that either converges locally uniformly or diverges compactly.

@@ -5,9 +5,11 @@
 \begin{document}
 \section*{Circle Geometry: Inversion, Radical Axes, and Special Circles}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0001
 \subsection{Geometry and problem-solving strategies}
 % Source page 10 - left
-\setcounter{theorem}{29}\begin{lemma}[Inversion]
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0002
+\setcounter{theorem}{29}\begin{lemma}[Inversion]\label{lemma:circle-inversion}
 Inversion is a powerful technique for geometry problems. With the right centre and radius, it can turn a complicated configuration into an elementary one.
 \end{lemma}
 Let $C_1,C_2,C_3,C_4$ be four circles in the plane.
@@ -21,6 +23,7 @@ Show that, if $P_1,P_2,P_3,P_4$ lie on a line or circle, then $Q_1,Q_2,Q_3,Q_4$ 
 This can be solved using coordinates, but inversion exposes the geometry more clearly.
 The decisive step is inversion.
 % Source page 10 - right
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0003
 Apply $I(P_1,R)$.
 \begin{figure}[H]\centering
 \includegraphics[width=.58\linewidth]{lb1-fig-02.pdf}
@@ -35,6 +38,7 @@ It remains to chase three angles:
 \]
 This implies that $Q_1Q_2Q_3Q_4$ is concyclic.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0004
 \setcounter{theorem}{30}\begin{lemma}[Distance formula for inversion]
 If segment $AB$ inverts to $A_1B_1$ under $I(O,r)$, then
 $A_1B_1=\dfrac{AB\,r^2}{OA\cdot OB}$.
@@ -45,6 +49,7 @@ This is helpful: it gives a two-line proof of Ptolemy's theorem.
 \FigureTag{LB1.3}{fig:lb1-03}
 \end{figure}
 % Source page 11 - left
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0005
 From $A_1C_1=A_1B_1+B_1C_1$, inversion about $D$ gives
 \[
 \frac{AB\,r^2}{DA\cdot DB}+\frac{BC\,r^2}{DB\cdot DC}
@@ -57,20 +62,23 @@ Cancelling $r^2$ and multiplying through,
 \Longrightarrow AB\cdot CD+BC\cdot AD=AC\cdot BD.
 \]
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0006
 \setcounter{theorem}{31}\begin{lemma}[Similar triangles and concyclicity]\label{lemma:lb1-37}
 If triangles $ABC$ and $A'B'C$ are directly similar, with the displayed
 order giving the vertex correspondence, then $A,B,B',A'$ are concyclic.
 \end{lemma}
-The notebook records this as: ``If triangles $ABC$ and $AB'C'$ are similar, then $BB'CC'$ is concyclic.'' The shared-vertex formulation above makes the vertex correspondence used below explicit. This is an obvious geometric fact; a simple angle chase yields the result.
+The original formulation is: ``If triangles $ABC$ and $AB'C'$ are similar, then $BB'CC'$ is concyclic.'' The shared-vertex formulation above makes the vertex correspondence used below explicit. This is an obvious geometric fact; a simple angle chase yields the result.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0007
 \setcounter{theorem}{32}\begin{lemma}[Converse of the alternate-segment theorem]
 An Olympiad student knows the alternate-segment theorem, but its converse is a powerful tool: the ``CAST lemma''.
 \end{lemma}
 The IMO jury loves posing problems where one is expected to show that a segment is tangent to a circle.
-Instead of drawing the circle, if a simple angle chase establishes the converse of the alternate-segment theorem, ``that would be it!''
+If, instead of drawing the circle, a simple angle chase establishes the converse of the alternate-segment theorem, ``that would be it!''
 Let me show a lovely IMO problem resolved by a clever application of the above two lemmas.
 In fact, I checked the competition papers: more than a dozen problems are of this type, and one appeared in IMO 2014!
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0008
 % Source page 11 - right
 \begin{figure}[H]\centering
 \includegraphics[width=.72\linewidth]{lb1-fig-04.pdf}
@@ -81,6 +89,7 @@ The tangents to $\omega_1$ at $C$ and to $\omega_2$ at $D$ meet at $M$.
 Let $AM\cap CD=X$. Through $X$, a line parallel to $CM$ meets $AC$ at $K$.
 Prove that $BK$ is tangent to the second circle.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0009
 We have $\angle BCM=\angle CAB$ and $\angle BDM=\angle BAD$.
 Hence $\angle CAD=\angle BCM+\angle BDM=180^\circ-\angle CMD$, so $ACMD$ is concyclic.
 Also $\angle DXK=\angle DCM=\angle CAB=\angle KXB$, giving
@@ -90,6 +99,7 @@ Further, $\angle XCM=\angle KAB$ and $\angle CXM=\angle BKA$, so
 $\triangle BKA\sim\triangle MXC$ (AAA).
 Thus $\angle CMX=\angle KBA=\angle BDA$, and the CAST lemma gives the result.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0010
 \subsection{Radical-axis theorem}
 Let us begin by defining what is meant by the power of a point.
 The idea was discovered by the ancient Greeks; Euclid recorded it in his \textit{Elements}.
@@ -112,6 +122,7 @@ Let $ABC$ be a triangle, and draw isosceles triangles $DBC$, $AEC$, and $ABF$ ex
 Prove that the lines through $A,B,C$ perpendicular to $EF,FD,DE$, respectively, are concurrent.
 (There are 25 solutions to this problem!)
 % Source page 43 - left
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0011
 \begin{figure}[H]\centering
 \includegraphics[width=.73\linewidth]{lb1-fig-21.pdf}
 \FigureTag{LB1.21}{fig:lb1-21}
@@ -121,6 +132,7 @@ We have $\ell\perp EF$. To realize $\ell$ as a radical axis, construct circles w
 Use the fact that $FA=FB$ and $EA=EC$ by erecting circles with centres $F,E$ and radii $FA,EA$, respectively.
 Repeating the construction at $D$ produces the third circle, and the three perpendiculars become its radical axes. Their concurrence follows from the radical-axis theorem.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0012
 \paragraph{W.A.L.L.: What a Lovely Locus problem (I. F. Sharygin).}
 Given a point $A\ne O$ inside a circle with centre $O$, construct a
 nondiameter chord $XY$ passing through $A$.
@@ -128,6 +140,7 @@ Draw tangents at $X,Y$, and let their intersection be $P$. Find the locus of $P$
 Let $\omega$ be our circle, with centre $O$ and radius $r$, and let $A$ be a point inside it.
 Construct a circle with diameter $AO$.
 % Source page 44 - right
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0013
 Given any chord $XY$ passing through $A$, its midpoint lies on this circle, since $\angle OBA=\angle OBX=90^\circ$ and $O$ is the centre.
 \begin{figure}[H]\centering
 \includegraphics[width=.74\linewidth]{lb1-fig-22.pdf}
@@ -138,6 +151,7 @@ Since a circle through the centre of inversion inverts to a line, that line
 is precisely the finite locus---W.A.L.L.---of $P$.
 Q.E.D.!
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0014
 \setcounter{theorem}{88}\begin{lemma}[Simson's line]\label{lemma:lb1-91}
 The feet of the perpendiculars drawn from any point on the circumcircle of a triangle to its sides are collinear.
 The converse is also true.
@@ -147,6 +161,7 @@ The sides $AB,BC,AC$ of $\triangle ABC$ are cut by a transversal at $Q,R,S$, res
 The circumcircles of $\triangle ABC$ and $\triangle SCR$ intersect at $P$.
 Prove that $ASPQ$ is cyclic.
 % Source page 51 - left
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0015
 \begin{figure}[H]\centering
 \includegraphics[width=.74\linewidth]{lb1-fig-27.pdf}
 \FigureTag{LB1.27}{fig:lb1-27}
@@ -160,15 +175,17 @@ Q.E.D.
 The midpoints of the sides, the feet of the altitudes, and the midpoints of the segments joining the orthocentre to the vertices all lie on a circle, called the nine-point circle.
 \end{lemma}
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0016
 \paragraph{Application: Proofathon geometry contest (2014).}
 In $\triangle ABC$, with orthocentre $H$, let $BH,CH$ intersect $AC,AB$ at $E,F$, respectively.
 The tangent to the circumcircle of $\triangle ABC$ at $A$ intersects $BC$ at $P$.
 Let $M$ be the midpoint of $AH$, and let $EF$ intersect $BC$ at $G$.
 Prove that $PM\parallel GH$. Draw the figure for yourself!
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0017
 By the nine-point-circle theorem, $DFME$ is cyclic, so $FX\cdot XE=DX\cdot MX$.
 Also $HEAF$ is cyclic, since $\angle AFC=\angle AEH=90^\circ$, so $FX\cdot XE=XH\cdot XA$.
-Therefore
+Therefore,
 \[
 \frac{FX\cdot XE}{FX\cdot XE}=\frac{DX\cdot MX}{XH\cdot HA}
 \quad\Longrightarrow\quad\frac{DX}{XA}=\frac{XH}{MX}
@@ -187,8 +204,10 @@ Now $\angle PAC=\angle GEC$, so $GE\parallel PA$, and
 giving $GH\parallel PM$.
 Q.B.D.: Quite Boringly Done!
 
-\emph{Source note.} In the surviving proof, $D$ and $X$ are used without being defined, and the displayed denominator alternates between $HA$ and $XA$; the argument is retained here as written rather than silently completed from an absent figure.
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0018
+\emph{Unresolved point.} Here $D$ and $X$ are used without being defined, and the displayed denominator alternates between $HA$ and $XA$. The argument remains incomplete without the missing figure.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0019
 \setcounter{theorem}{90}\begin{lemma}[Excentre]\label{lemma:lb1-93}
 The external bisectors of two angles and the internal bisector of the third concur at a point, called the excentre.
 \end{lemma}
@@ -196,6 +215,7 @@ The external bisectors of two angles and the internal bisector of the third conc
 In a triangle $ABC$, the lines formed by reflecting $BC$ across $AB$ and $AC$ intersect at $D$.
 Prove that the circumcentre of $\triangle ABC$ lies on the circumcircle of $\triangle BCD$.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0020
 \begin{figure}[H]\centering
 \includegraphics[width=.73\linewidth]{lb1-fig-28.pdf}
 \FigureTag{LB1.28}{fig:lb1-28}
@@ -209,16 +229,18 @@ From I, $\angle BDO=\angle CDO=x/2$, so $\angle OBC=\angle ODC=x/2$ and $\angle 
 Thus $\triangle BOC$ is isosceles, and $BO=OC$.
 \paragraph{Crucial angle chase.}
 We have $\angle ABC=90^\circ-\angle DBC/2$ and $\angle ACB=90^\circ-\angle DCB/2$.
-Therefore
+Therefore,
 \[\angle BAC=180^\circ-\left(180^\circ-\frac{\angle DBC+\angle DCB}{2}\right)
 =\frac{\angle DBC+\angle DCB}{2}=\frac{180^\circ-x}{2}=90^\circ-\frac x2.\]
-Call this II. From II, $\angle BOC=2\angle BAC$, and also $OB=OC$.
-Therefore $O$ is the circumcentre of $\triangle ABC$. Q.E.D.
+Call this II\@. From II, $\angle BOC=2\angle BAC$, and also $OB=OC$.
+Therefore, $O$ is the circumcentre of $\triangle ABC$. Q.E.D.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0021
 There is one more problem: take this one as an application of Ravi substitutions.
 The bisector of $\angle A$ intersects $BC$ and the circumcircle of $\triangle ABC$ at $D,E$.
 Show that $\triangle BDE$ and $\triangle CDE$ have the same circumradius.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0022
 % Source page 52 - left (rotated notebook page: Proofathon problem 3)
 % Source page 52 - right (rotated notebook page: Proofathon problem 4)
 \paragraph{Proofathon, problem 4.}\leavevmode\par
@@ -240,19 +262,21 @@ Since $BE=CE$, this reduces to $BD/[BDE]=CD/[CDE]$, or $BD/CD=[BDE]/[CDE]$.
 Now
 \[[BDE]=\tfrac12BD\cdot DE\sin\angle BDE,
 \qquad[CDE]=\tfrac12DE\cdot CD\sin\angle CDE.\]
-Consequently
+Consequently,
 \[\frac{[BDE]}{[CDE]}=
 \frac{\tfrac12BD\cdot DE\sin\angle BDE}{\tfrac12DE\cdot CD\sin\angle CDE}
 =\frac{BD}{CD},\]
 because $\angle BDE=180^\circ-\angle CDE$.
 This establishes I, hence $R(\triangle BDE)=R(\triangle CDE)$.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0023
 \paragraph{An application of the nine-point circle: INMO (2012).}
 Let $ABC$ be acute, and take $D,E,F$ on $BC,CA,AB$ so that $AD$ is a median,
 $BE$ is the internal angle bisector, and $CF$ is an altitude.
 Suppose $\angle FDE=\angle C$, $\angle DEF=\angle A$, and $\angle EFD=\angle B$.
 Prove that $ABC$ is equilateral.
 % Source page 7 - right
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0024
 \paragraph{Step 1.}
 \begin{figure}[H]\centering
 \includegraphics[width=.82\linewidth]{lb2-fig-05.pdf}
@@ -285,6 +309,7 @@ In triangle $FDB$, $\angle B+\angle B+\angle A=180^\circ$.
 In triangle $ABC$, $\angle B+\angle A+\angle A=180^\circ$.
 Thus $2\angle B+\angle A=2\angle A+\angle B$ and $A=B=C=60^\circ$.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0025
 % Source page 8 - left
 Here is another problem.
 In triangle $ABC$, altitudes $BE,CF$ meet at $H$. Let $AM$ be a median and $HP\perp AM$.
@@ -301,6 +326,7 @@ $HP$ is the radical axis of the first and second circles;
 $DM$ is the radical axis of the second and the nine-point circle.
 In the nondegenerate configuration shown, the radical-axis theorem gives the conclusion.
 
+% BLOG-PASSAGE: lemma-book-circle-geometry:p0026
 \setcounter{theorem}{106}\begin{lemma}[The arc midpoint and the incentre]
 In the configuration of Figure~\ref{fig:lb2-14}, $MI=MB=MC$.
 \end{lemma}

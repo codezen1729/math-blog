@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Rational Dynamics on the Riemann Sphere}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0001
 Given a rational map $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$, one studies the iterates of $f$ \cite{milnor2011dynamics}. It is true that the poles and zeros of a rational map determine the nature of $f$ to a large extent, in the following sense.
 \begin{figure}[H]\centering
 \includegraphics[width=.70\textwidth]{cd1-fig-01.pdf}
@@ -18,13 +19,15 @@ Let dots denote zeros and crosses denote poles. Then $f$ has a power-series expa
 \]
 Zeros and poles are, after all, two points on $\widehat{\mathbb C}$: change coordinates via a M\"obius transformation, and $0,\infty$ go to other points.
 % Source page 2
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0002
 Thus one must look for an invariant of $f$ that is preserved even after a suitable change of coordinates.
 \begin{figure}[H]\centering
 \includegraphics[width=.31\textwidth]{cd1-fig-02.pdf}
 \FigureTag{CD1.2}{fig:cd1-02}
 \end{figure}
-Here $\varphi$ changes coordinates, i.e. it biholomorphically changes the base space. One naturally expects the dynamics to be preserved. Investigation along these lines leads us to two natural invariants: fixed points and critical points.
+Here $\varphi$ changes coordinates, i.e., it biholomorphically changes the base space. One naturally expects the dynamics to be preserved. Investigation along these lines leads us to two natural invariants: fixed points and critical points.
 
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0003
 We shall base our study entirely on these invariants. Dynamics is essentially the study of taming the iterates of $f$ on sets where minor changes in points lead to major changes in their iterated images. More precisely:
 \setcounter{definition}{0}\begin{definition}[Fatou set]
 Let $f\colon S\to S$ be a holomorphic function on a Riemann surface $S$. A point $z$ belongs to the Fatou set $F$ of $f$ if there is a neighbourhood $U$ of $z$ such that $\{f^{\circ n}|_U\}_n$ is normal.
@@ -33,6 +36,7 @@ Let $f\colon S\to S$ be a holomorphic function on a Riemann surface $S$. A point
 The set $J=S\setminus F$ is defined to be the Julia set.
 \end{definition}
 % Source page 3
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0004
 Motivations aside, when we say that we want to study the dynamics of $f$ on $S$, we essentially want to study the structure of the Fatou and Julia sets of $f$. We propose to do this by studying the invariants mentioned above.
 \setcounter{definition}{2}\begin{definition}[Classification of fixed points]
 A fixed point $f(\widehat p)=\widehat p$ is
@@ -74,6 +78,7 @@ By the previous lemma, it suffices to show $F(f^{\circ n})=F(f)$. Certainly $z\i
 and this finite union is again compact.
 \end{proof}
 % Source page 5
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0005
 It therefore does not matter which iterate of $f$ one chooses to work with: the dynamics loses no information, so there is no compromise. What does it mean to work with fixed points of $f^{\circ m}$?
 \setcounter{definition}{3}\begin{definition}[Periodic orbits]
 Let $f\colon S\to S$ be holomorphic. An orbit
@@ -86,6 +91,7 @@ often called the multiplier of the orbit.
 \end{definition}
 In this post we shall not deal separately with periodic orbits of different periods. We shall prove theorems for fixed points and expect the reader to extend the argument to their favourite iterate of $f$. As far as we are concerned, our study, as proposed, will be complete by looking at period-$1$ orbits (fixed points) and critical points. Before proceeding further, we explain the classification topologically.
 % Source page 6
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0006
 \subsection{Attraction, repulsion, and indifference}
 \paragraph{Attraction: multiplier $|\lambda|<1$.}
 This is usually called topological attraction. Let us first state explicitly the intuitive idea of attraction to a point $\widehat p$. A point $\widehat p\in S$ is said to be attracting if there is a neighbourhood $U$ of $\widehat p$ such that $\{f^{\circ n}|_U\}_n$ converges locally uniformly on $U$ to the constant map $z\mapsto\widehat p$.
@@ -109,6 +115,7 @@ Conversely, if $\widehat p$ is attracting, there is $\varepsilon>0$ and an $n\ge
 \end{proof}
 Notice that we need holomorphicity of $f$ to conclude that $|\lambda|<1$ is geometrically attracting.
 
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0007
 \paragraph{Repulsion: multiplier $|\lambda|>1$.}
 This is usually called topological repulsion. Let $f(\widehat p)=\widehat p$. The point $\widehat p$ is repelling if there is a neighbourhood $U$ of $\widehat p$ such that, for every $p\in U\setminus\{\widehat p\}$, there is $N_p$ with $f^{\circ n}(p)\notin U$ for some $n\ge N_p$. Equivalently, $f$ is locally invertible at $\widehat p$ and $\widehat p$ is attracting for the local inverse fixing $\widehat p$. In other words, all orbits except that of $\widehat p$ eventually escape $U$.
 \begin{figure}[H]\centering
@@ -119,6 +126,7 @@ This is usually called topological repulsion. Let $f(\widehat p)=\widehat p$. Th
 $|f'(\widehat p)|>1$ if and only if $\widehat p$ is repelling.
 \end{lemma}
 % Source page 8
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0008
 \begin{proof}
 If $|\lambda|=|f'(\widehat p)|>1$, then $f$ has a local inverse fixing $\widehat p$ whose multiplier has modulus $|f'(\widehat p)|^{-1}<1$. Thus, for the corresponding open set in $S$, the orbits of its elements eventually escape.
 
@@ -131,18 +139,23 @@ This is the set of all points whose iterates up to $k$ do not escape $N$. By our
 Let $U_k$ be the component of $N_k$ containing $\widehat p$. Then $f^{-1}\colon U_{k-1}\to U_k$ is a biholomorphism. Clearly $U_k,U_{k-1}$ are hyperbolic, so by Pick's theorem $f^{-1}$ is a contraction mapping. Thus $\widehat p$ is attracting for $f^{-1}$, giving $|\lambda^{-1}|<1$, and hence $|\lambda|>1$.
 \end{proof}
 % Source page 9
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0009
 \paragraph{Indifference: $|\lambda|=1$.}
 This does not have an easy-to-visualise topological picture. The indifferent case is treated in \BlogPost{parabolic-fixed-points-and-the-flower-theorem}{\emph{Parabolic Fixed Points and the Flower Theorem}}.
 
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0010
 Having seen this, let us collect all points $z\in S$ such that $\{f^{\circ n}(z)\}_n$ converges to an attracting point $\widehat p$. This set is called the \emph{basin of attraction} of $\widehat p$. Such basins belong to the Fatou set; repelling points belong to the Julia set, as do indifferent points of certain kinds. The verification that a basin of attraction lies in the Fatou set is standard.
 
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0011
 If $z\in\mathcal A(\widehat p)$, the basin of attraction, then $\{f^{\circ n}(z)\}_n\to z_0$. There is a neighbourhood $U$ of $z_0$ with $U\subset F(f)$, and some $N$ such that $f^{\circ N}(z)\in U$. Hence $f^{\circ N}(z)\in F(f)$, and the invariance lemma gives $z\in F(f)$.
 
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0012
 Repelling points lie in the Julia set. Let us introduce a subclass of fixed points, to be taken up in detail later.
 \setcounter{definition}{4}\begin{definition}[Parabolic fixed point]
 A fixed point $f(\widehat p)=\widehat p$ is parabolic if $f'(\widehat p)$ is a root of unity and $f^{\circ n}\ne\id$ for every $n$.
 \end{definition}
 % Source page 10
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0013
 \setcounter{theorem}{4}\begin{lemma}\label{cd1:parabolic}
 Parabolic points belong to the Julia set.
 \end{lemma}
@@ -155,12 +168,14 @@ Locally, $f(w)=w+a_qw^q+a_{q+1}w^{q+1}+\cdots$, so $f^{\circ k}(w)=w+ka_qw^q+\cd
 \]
 Thus $\{f^{\circ n}\}_n$ cannot converge locally uniformly, for then the sequence of $q$th derivatives at $0$ would also converge.
 \end{proof}
-Therefore attracting basins lie in the Fatou set, while repelling and parabolic points belong to the Julia set.
+Therefore, attracting basins lie in the Fatou set, while repelling and parabolic points belong to the Julia set.
 
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0014
 In the next few posts we shall see our initial proposal---studying dynamics through fixed and critical points---in action. For now, let us briefly illustrate it when $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ is rational with $\deg(f)\ge2$.
 \subsection{Dynamics of rational maps on the Riemann sphere}
 We shall see how the Julia set spreads across the sphere, its topological structure, and more.
 % Source page 11
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0015
 First things first: is $J$ nonempty?
 \setcounter{theorem}{5}\begin{proposition}[Nonemptiness]\label{cd1:nonempty}
 $J(f)\ne\varnothing$.
@@ -189,6 +204,7 @@ The reason for calling $\mathcal E(f)$ grand-orbit-finite is evident. We now sta
 $|\mathcal E(f)|\le2$. All exceptional points are superattracting.
 \end{lemma}
 
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0016
 \begin{proof}
 For $z\in\mathcal E(f)$, $\operatorname{GO}(z,f)$ is a single periodic orbit; otherwise one can keep tracing back. For any $\widehat z\in\widehat{\mathbb C}$, $f^{-1}(\widehat z)$ has $d$ preimages counted with multiplicity, since
 \[
@@ -200,6 +216,7 @@ has $d$ zeros counted with multiplicity. If the multiplicity of $z_j\in f^{-1}(\
 Write $\operatorname{GO}(z,f)=\{a_0\mapsto a_1\mapsto\cdots\mapsto a_m=a_0\}$. Clearly all $a_i$ are superattracting, so $a_i\in F(f)$ and $\mathcal E(f)\subset F(f)$. If $|\mathcal E(f)|\ge3$, let $U=\widehat{\mathbb C}\setminus\mathcal E(f)$. Then $U$ is hyperbolic and $f(U)=U$, so $\{f^{\circ n}|_U\}_n$ is normal. This gives $U\subset F(f)$ and $J(f)=\varnothing$, a contradiction.
 \end{proof}
 % Source page 13
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0017
 \setcounter{theorem}{7}\begin{proposition}[Expansion]\label{cd1:expansion}
 Let $z\in J$. If $N$ is a neighbourhood of $z$, then
 \[
@@ -218,6 +235,7 @@ If $\operatorname{Int}(J)\ne\varnothing$, there is a point $z$ with a neighbourh
 $J\supseteq\overline{\widehat{\mathbb C}\setminus\mathcal E(f)}=\widehat{\mathbb C}$, giving the assertion.
 \end{proof}
 % Source page 14
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0018
 Recall that basins belong to the Fatou set: there open sets shrink, whereas for the Julia set, open sets expand to fill almost all of $\widehat{\mathbb C}$. Let us put these two concepts together.
 \setcounter{theorem}{9}\begin{proposition}[Basin boundary equals Julia set]\label{cd1:boundary}
 If $\mathcal A$ is an attracting basin, then $\partial\mathcal A=J$.
@@ -231,6 +249,7 @@ Now let $z\in\partial\mathcal A$. Every neighbourhood $N$ of $z$ meets both $\ma
 This property essentially spells out the nature of the dynamics of $f$. An attracting basin has connected components, or islands, separated by a thin set $J$ (it has no interior). The connected components of the Fatou set are called the Fatou components of $f$.
 \end{remark}
 % Source page 15
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0019
 Let us analyse the topological structure of $J$ further, for the nature of a boundary also reveals what it bounds.
 \subsection{Dense subsets of the Julia set}
 \begin{itemize}
@@ -243,6 +262,7 @@ $\overline{\bigcup_n f^{-n}(z_0)}\supseteq J(f)$. The reverse inclusion follows 
 \item $J(f)$ has no isolated points. If $J(f)$ were finite, then every point of $J(f)$ would have a finite backwards orbit and hence belong to $\mathcal E(f)\subset F(f)$, which is impossible. Thus $J(f)$ is infinite and, being compact, has a limit point $z_0$. The set $\bigcup_{n\ge0}f^{-n}(z_0)$ is dense in $J(f)$. If $w\in J(f)$ were isolated, this density would give $f^{\circ n}(w)=z_0$ for some $n$. Choose distinct points $z_k\in J(f)$ with $z_k\to z_0$. Since $f^{\circ n}$ is open, every neighbourhood $U$ of $w$ has $f^{\circ n}(U)$ as a neighbourhood of $z_0$; hence, for all large $k$, there is $w_k\in U\cap J(f)$ with $f^{\circ n}(w_k)=z_k$. This contradicts the isolation of $w$.
 \end{itemize}
 % Source page 16
+% BLOG-PASSAGE: rational-dynamics-on-the-riemann-sphere:p0020
 \begin{remark}
 Since $\bigcup_n f^{-n}(z_0)$ is dense in $J(f)$, for a neighbourhood $N$ of $z_0$ the set $V=\bigcup_n f^{-n}(N)$ is dense and open. For each $j\ge1$, compactness of $J(f)$ gives a finite open cover $\{N_{ij}\}_{i=1}^{M_j}$ by sets of diameter less than $1/j$. Set $V_{ij}=\bigcup_n f^{-n}(N_{ij})$; these sets are dense and open. By the Baire category theorem,
 \[

@@ -5,8 +5,9 @@
 \begin{document}
 \section*{Dense Subsets of Julia Sets}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: dense-subsets-of-julia-sets:p0001
 % Source page 15
-Let us analyse the topological structure of $J$ further, for the nature of a boundary also reveals what it bounds.
+Let us analyse the topological structure of the \BlogPost{rational-dynamics-on-the-riemann-sphere}{Julia set $J$} further, for the nature of a boundary also reveals what it bounds.
 \subsection{Backward orbits and self-similarity}
 \begin{itemize}
 \item For $z_0\in J$,
@@ -17,6 +18,7 @@ Let $N$ be a neighbourhood of a point $z\in J$. Expand $N$ until it hits a point
 \item $J$ has no isolated points. If $J$ were finite, then $J\subseteq\mathcal E(f)$, which is impossible since exceptional points are superattracting. If it is infinite, take a limit point $z_0$. The set $\bigcup_{n\ge0}f^{-n}(z_0)$ is dense in $J$, hence $J$ has no isolated points. Indeed, if $w\in J$ were isolated, choose $z_0\in J$ outside the forward orbit $\{f^n(w)\}_n$. Density of the backward orbit of $z_0$ gives points of $f^{-n}(z_0)$ arbitrarily close to $w$, and none of them is $w$, a contradiction.
 \end{itemize}
 % Source page 16
+% BLOG-PASSAGE: dense-subsets-of-julia-sets:p0002
 \begin{remark}
 Since $\bigcup_n f^{-n}(z_0)$ is dense in $J$, for a neighbourhood $N$ of $z_0$ the set $V=\bigcup_n f^{-n}(N)$ is dense and open. As the closed set $J\subseteq\widehat{\mathbb C}$ is compact, choose a finite open cover $\{N_{ij}\}_{i=1}^{M_j}$. Set $V_{ij}=\bigcup_n f^{-n}(N_{ij})$; these sets are dense and open. Then $\bigl(\bigcap_{i=1}^{M_j}V_{ij}\bigr)\cap J$ is a dense open subset of $J$. Choose the sets $N_{ij}$ with diameter less than $1/j$. If
 \[
@@ -33,6 +35,7 @@ By density of the preimages of any $z_0\in J$, the set of $z$ such that $(J,z)\c
 $J(f)$ is either connected or has uncountably many components.
 \end{proposition}
 
+% BLOG-PASSAGE: dense-subsets-of-julia-sets:p0003
 \subsection{Periodic cycles}
 In this short post we ask how many periodic points there are for a rational map $f=P/Q\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ with $\deg(f)=d\ge2$. It turns out that
 \begin{enumerate}
@@ -56,7 +59,7 @@ The number of indifferent cycles whose multiplier is not a root of unity is at m
 We separate the proof into two stages.
 \emph{Perturbation.} We will holomorphically deform $f(z)=P(z)/Q(z)$ into the polynomial $z^d$, the simplest rational map of degree $d$.
 % Source page 2
-We do this for two important reasons (revisit them):
+We do this for two important reasons:
 \begin{enumerate}
 \setcounter{enumi}{0}\item If $\{z_j\}_j$ is an indifferent cycle, deform the $z_j$ holomorphically, along with their multipliers $\lambda_j$. We plan to convert them into attracting cycles and use the bound on attracting cycles.
 \setcounter{enumi}{1}\item Deforming to $z^d$ helps ensure that this conversion happens for a ``large proportion'' of indifferent cycles.
@@ -98,6 +101,7 @@ Clearly $(2\pi)^{-1}\int_0^{2\pi}\sigma_j(\theta)\,d\theta=0$. Let $\ell$ be odd
 For some $\theta$, at least $(\ell+1)/2$ multipliers have modulus less than one. Hence, for $t=re^{i\theta}$, the map $f_t$ has at least $(\ell+1)/2$ attracting cycles. Since $(\ell+1)/2\le2d-2$, the number of indifferent cycles is finite and at most $4d-4$.
 \end{proof}
 % Source page 5
+% BLOG-PASSAGE: dense-subsets-of-julia-sets:p0004
 \begin{remark}
 Parabolic points may be included with attracting cycles, because their basins also contain critical points, or accommodated in the list of indifferent cycles.
 \end{remark}
@@ -118,7 +122,7 @@ For some $n$ and some $z\in N$, $f^{\circ n}(z)\in\{z,\varphi_1(z),\varphi_2(z)\
 g_n(z)=\left(\frac{f^{\circ n}(z)-\varphi_1(z)}{f^{\circ n}(z)-\varphi_2(z)}\right)
 \left(\frac{z-\varphi_2(z)}{z-\varphi_1(z)}\right).
 \]
-Then $g_n\colon N\to\widehat{\mathbb C}\setminus\{0,1,\infty\}$ is a normal family. A subsequence $g_{n_j}$ converges to $g$ on compact subsets $K\subset N$. Rearranging,
+Then the maps $g_n\colon N\to\widehat{\mathbb C}\setminus\{0,1,\infty\}$ form a normal family. A subsequence $g_{n_j}$ converges to $g$ on compact subsets $K\subset N$. Rearranging,
 \[
 \frac{f^{\circ n}(z)-\varphi_1(z)}{f^{\circ n}(z)-\varphi_2(z)}
 =g_n(z)\frac{z-\varphi_1(z)}{z-\varphi_2(z)},
@@ -128,7 +132,7 @@ and hence
 f^{\circ n_j}(z)\longrightarrow
 \frac{\varphi_2(z)-\varphi_1(z)}{g(z)\dfrac{z-\varphi_1(z)}{z-\varphi_2(z)}-1}+\varphi_2(z).
 \]
-Thus $\{f^{\circ n}|_N\}$ is normal, contradicting $z_0\in J(f)$. Therefore some $z\in N$ satisfies either $f^{\circ n}(z)=z$ or $f^{\circ n}(z)=\varphi_j(z)$; in the latter case, $f^{\circ(n+1)}(z)=f(\varphi_j(z))=z$. Thus $z$ is periodic, of period $n$ or $n+1$.
+Thus $\{f^{\circ n}|_N\}$ is normal, contradicting $z_0\in J(f)$. Therefore, some $z\in N$ satisfies either $f^{\circ n}(z)=z$ or $f^{\circ n}(z)=\varphi_j(z)$; in the latter case, $f^{\circ(n+1)}(z)=f(\varphi_j(z))=z$. Thus $z$ is periodic, of period $n$ or $n+1$.
 
 Periodic points are dense in the Julia set: since $J(f)$ has no isolated points, density away from the fixed points and critical values gives density in all of $J(f)$.
 % Source page 7

@@ -6,6 +6,7 @@
 \begin{document}
 \section*{The Quadratic Family}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: the-quadratic-family:p0001
 % Source page 1
 \section{Normalization and the Mandelbrot set}
 Starting with $f(z)=az^2+bz+c$, conjugation by a dilation gives
@@ -23,11 +24,13 @@ We then conjugate by a translation:
 \]
 Taking $d=-\alpha/2$, the critical point, gives the normal form $z^2+c$, denoted by $P_c$.
 
-Suppose that an affine map $\varphi(z)=\lambda z+d$ satisfies $\varphi^{-1}\circ P_c\circ\varphi=P_{c'}$. Comparing the quadratic, linear, and constant coefficients gives $\lambda=1$, $d=0$, and $c=c'$. Thus every affine-conjugacy class of quadratic polynomials has a unique representative $P_c$. Thus
+% BLOG-PASSAGE: the-quadratic-family:p0002
+Suppose that an affine map $\varphi(z)=\lambda z+d$ satisfies $\varphi^{-1}\circ P_c\circ\varphi=P_{c'}$. Comparing the quadratic, linear, and constant coefficients gives $\lambda=1$, $d=0$, and $c=c'$. Thus every affine-conjugacy class of quadratic polynomials has a unique representative $P_c$.
 \[
 \Moduli(\text{quadratic polynomials})\cong\C.
 \]
 
+% BLOG-PASSAGE: the-quadratic-family:p0003
 \setcounter{definition}{0}\begin{definition}[Mandelbrot set]
 The \emph{Mandelbrot set} is
 \[
@@ -35,8 +38,10 @@ The \emph{Mandelbrot set} is
 \]
 \end{definition}
 
+% BLOG-PASSAGE: the-quadratic-family:p0004
 % Source page 2
 \subsection{Critical points and connectedness}
+The following is the \BlogPostAt{critical-points-and-julia-set-connectivity}{cd5:connectedness}{critical-point connectivity criterion} in the present notation.
 \setcounter{theorem}{0}\begin{theorem}[Connected and Cantor filled Julia sets]\label{thm:critical-connectedness}
 Let $P$ be any polynomial, and let $K_P$ be its filled Julia set. Then:
 \begin{enumerate}[label=(\roman*)]
@@ -45,6 +50,7 @@ Let $P$ be any polynomial, and let $K_P$ be its filled Julia set. Then:
 \end{enumerate}
 \end{theorem}
 
+% BLOG-PASSAGE: the-quadratic-family:p0005
 \begin{proof}
 Write $P(z)=a_dz^d+a_{d-1}z^{d-1}+\cdots+a_0$, and set
 \[
@@ -71,7 +77,7 @@ Set $U_0=\Chat\setminus\overline{D_R(0)}$ and $U_n=P^{-1}(U_{n-1})$. We have $U_
 \[
 \chi(U_n)=d\chi(U_{n-1})-(d-1)=1
 \]
-by induction. Therefore $U_n$ is a hyperbolic Riemann surface with $U_n\cong\D$.
+by induction. Therefore, $U_n$ is a hyperbolic Riemann surface with $U_n\cong\D$.
 
 % Source page 3
 If $\Crit(P)\not\subset K_P$, then $P\colon U_n\to U_{n-1}$ has other points where it is ramified. Thus $\chi(U_n)<1$, so $U_n$ is not simply connected. Its complement $U_n^c$ has more than two components, and $K_P$ is not connected.
@@ -91,6 +97,7 @@ and
 Let $M=\max\{\diam(\text{components of }V)\}$. The maximum diameter of a component of $P^{-n}(V)$ is $MC^{-n}$, which tends to zero as $n\to\infty$. Hence $K_P=\bigcap_{n=0}^{\infty}P^{-n}(V)$ is a Cantor set.
 \end{proof}
 
+% BLOG-PASSAGE: the-quadratic-family:p0006
 \setcounter{theorem}{1}\begin{corollary}[Connected Julia sets]
 \[
 \M=\{c\mid K(P_c)\text{ is connected}\}
@@ -98,6 +105,7 @@ Let $M=\max\{\diam(\text{components of }V)\}$. The maximum diameter of a compone
 \]
 \end{corollary}
 
+% BLOG-PASSAGE: the-quadratic-family:p0007
 % Source page 4
 \subsection{Escape bounds and the real slice}
 \setcounter{theorem}{2}\begin{theorem}[Basic properties of the Mandelbrot set]\label{thm:basic-properties}
@@ -108,6 +116,7 @@ Let $M=\max\{\diam(\text{components of }V)\}$. The maximum diameter of a compone
 \end{enumerate}
 \end{theorem}
 
+% BLOG-PASSAGE: the-quadratic-family:p0008
 \begin{proof}
 \textit{(i)} If $|c|>2$, put $z_n=P_c^{\circ n}(0)$. Then $|z_1|=|c|$, and whenever $|z_n|\ge |c|$,
 \[
@@ -134,15 +143,17 @@ For $|x|\le a$, we have
 \[
 -a\le c\le x^2+c\le a^2+c=a.
 \]
-Therefore $|P_c(x)|\le a$, and induction shows that $|P_c^{\circ n}(0)|\le a$ for every $n$. The sequence $\{P_c^{\circ n}(0)\}_n$ is bounded, and $\M\cap\mathbb R=[-2,1/4]$.
+Therefore, $|P_c(x)|\le a$, and induction shows that $|P_c^{\circ n}(0)|\le a$ for every $n$. The sequence $\{P_c^{\circ n}(0)\}_n$ is bounded, and $\M\cap\mathbb R=[-2,1/4]$.
 \end{proof}
 
+% BLOG-PASSAGE: the-quadratic-family:p0009
 \Needspace{10\baselineskip}
 \subsection{Attracting cycles and stability}
 \setcounter{theorem}{3}\begin{theorem}[Continuation of attracting cycles]\label{thm:attracting-continuation}
 Let $a\in\Int(\M)$, and suppose $P_a$ has an attracting cycle of length $m$. Let $W$ be the component of $\Int(\M)$ containing $a$. Then, for every $c\in W$, $P_c$ has an attracting cycle $\{z_1(c),\ldots,z_m(c)\}$ of length $m$, and $c\mapsto z_i(c)$ is holomorphic for every $1\le i\le m$.
 \end{theorem}
 
+% BLOG-PASSAGE: the-quadratic-family:p0010
 \begin{proof}
 Consider $P_c^{\circ m}(z)-z$. By the implicit function theorem, we obtain an attracting periodic point of period $m$, say $z_1(c)$, in a small neighbourhood of $a$. The sequence $\{P_c^{\circ jm}(0)\}$ is bounded. Hence all subsequences of this sequence converge to an analytic continuation of $z_1(c)$ over $W$.
 
@@ -150,6 +161,7 @@ Consider $P_c^{\circ m}(z)-z$. By the implicit function theorem, we obtain an at
 Thus $|(P_c^{\circ m})'(z_1(c))|\le1$. By the maximum modulus principle, $z_1(c)$ is an attracting fixed point on all of $W$. The other functions are $\{P_c^{\circ i}(z_1(c))\}_{0\le i<m}$.
 \end{proof}
 
+% BLOG-PASSAGE: the-quadratic-family:p0011
 \setcounter{theorem}{4}\begin{theorem}[Density of the interior]\label{thm:interior-dense}
 $\Int(\M)$ is dense in $\M$.
 \end{theorem}
@@ -171,6 +183,7 @@ since either of the latter two equalities would give $P_c^{\circ(n+1)}(0)=0$. Co
 omits $0,1,-1$ and is normal on $U$. Choose a convergent subsequence. On the nonempty open set $U\cap\Ext(\M)$ it tends to $\infty$, so its limit is identically $\infty$. But $U$ also contains a parameter of $\M$, at which the critical orbit, and hence this subsequence, is bounded. This contradiction proves that $U$ contains a parameter for which $0$ is periodic.
 \end{proof}
 
+% BLOG-PASSAGE: the-quadratic-family:p0012
 \setcounter{theorem}{5}\begin{corollary}[$J$-stability]
 \[
 \{c\mid P_c\text{ is }J\text{-stable}\}=\C\setminus\partial\M.
@@ -180,6 +193,7 @@ omits $0,1,-1$ and is normal on $U$. Choose a convergent subsequence. On the non
 By definition, if $c\in\Int(\M)$, the sequence $\{P_c^{\circ n}(0)\}_n$ is bounded and hence forms a normal family, so $c$ is $J$-stable. If $c\in\Ext(\M)$, then $P_c^{\circ n}(0)\to\infty$, again giving normality and $J$-stability. As in the preceding theorem, normality fails exactly on the boundary.
 \end{proof}
 
+% BLOG-PASSAGE: the-quadratic-family:p0013
 % Source page 7
 \Needspace{13\baselineskip}
 \section{Components and invariant line fields}
@@ -192,6 +206,7 @@ By definition, if $c\in\Int(\M)$, the sequence $\{P_c^{\circ n}(0)\}_n$ is bound
 \setcounter{enumi}{4}\item $\M=\{c\mid J(P_c)\text{ is connected}\}$.
 \end{enumerate}
 
+% BLOG-PASSAGE: the-quadratic-family:p0014
 \subsection{Non-hyperbolic components}
 \setcounter{theorem}{6}\begin{theorem}[Invariant line fields]\label{thm:line-fields}
 If $c\in\Int(\M)$, then the component of $\Int(\M)$ containing $c$ is non-hyperbolic if and only if $J(P_c)$ has positive measure and carries an invariant line field.
@@ -231,16 +246,20 @@ to obtain a holomorphic family of quasiconformal maps $\phi_t\colon\C\to\C$, wit
 We prove that $c(t)$ is injective. If $c(t_1)=c(t_2)$ and $\phi_{t_1},\phi_{t_2}$ are conformal on $\C\setminus J(P_c)$, then, by continuity, $\phi_{t_1}=\phi_{t_2}$ on $J(P_c)$. Hence $t_1\mu=t_2\mu$. By the open mapping theorem, $\{c(t)\mid t\in\D\}$ is an open set in $\M$ containing $c$.
 \end{proof}
 
+% BLOG-PASSAGE: the-quadratic-family:p0015
 % Source page 9
 \subsection{MLC and a few corrections}
 \paragraph{MLC conjecture.} $\partial\M$ is locally connected.
 
+% BLOG-PASSAGE: the-quadratic-family:p0016
 \textit{(i) Correction to Theorem~\ref{thm:attracting-continuation}.}
 Suppose that $z_1(c)$ were repelling for uncountably many $c$. Then there is a $j$ such that $P_c^{\circ jm}(0)=z_1(c)$ for uncountably many $c$. By the identity theorem, $z_1(c)$ is a polynomial in $c$, and $P_c^{\circ m}(z_1(c))=z_1(c)$ can have only finitely many solutions. Hence $z_1(c)$ is repelling only at countably many points.
 
+% BLOG-PASSAGE: the-quadratic-family:p0017
 \textit{(ii) Indifferent points lie on $\partial\M$.}
 Here the parameters in question are $\{c\mid P_c\text{ has an indifferent point}\}$. Consider the variety $P_c^{\circ m}(z)-z=0$ in $\C^2$, of dimension one. It has finitely many singular points. Away from these finitely many points, we have a Riemann surface $V$, and $V\to\C$, $(z,c)\mapsto c$, is a $2^m$-sheeted branched cover.
 
+% BLOG-PASSAGE: the-quadratic-family:p0018
 Consider an indifferent point in $\Int(\M)$, say $a$. Let $V_0$ be an irreducible component of $V$ containing $a$. The map
 \[
 V_0\longrightarrow\C,
@@ -248,6 +267,7 @@ V_0\longrightarrow\C,
 \]
 would be locally constant around $a$, hence constant on $V_0$ (but $V_0$ projects onto $\C$).
 
+% BLOG-PASSAGE: the-quadratic-family:p0019
 % The surviving source ends this correction at this point; no completion is invented.
 
 % Source page 10
@@ -307,14 +327,16 @@ Similarly, produce $\mu_2$ for $D_2$, and set
 \qquad
 g=\begin{cases}g_i&\text{on }D_i,\\0&\text{elsewhere}.\end{cases}
 \]
-By the measurable Riemann mapping theorem, there is a straightening map $\varphi$ such that $R_0:=\varphi\circ g\circ\varphi^{-1}$ is analytic. The map $R_0$ has critical fixed points of degree $d-1$ each at $0$ and $\infty$, since $g_1,g_2$ have the same. Thus $R_0\equiv z^d$, so $J(R)=\varphi(S^1)$, which is a quasicircle.
+By the \BlogPostAt{the-mapping-theorem-and-invariant-complex-structures}{thm:measurable-riemann-mapping}{measurable Riemann mapping theorem}, there is a straightening map $\varphi$ such that $R_0:=\varphi\circ g\circ\varphi^{-1}$ is analytic. The map $R_0$ has critical fixed points of degree $d-1$ each at $0$ and $\infty$, since $g_1,g_2$ have the same. Thus $R_0\equiv z^d$, so $J(R)=\varphi(S^1)$, which is a quasicircle.
 \end{proof}
 
+% BLOG-PASSAGE: the-quadratic-family:p0020
 \subsection{Uniformisation of the complement of the Mandelbrot set}
 \setcounter{theorem}{8}\begin{theorem}[Uniformisation of $\C\setminus\M$]
 Recall that, if $c\in\M^c$, then $A_c(\infty)$ is the only Fatou component, and the Julia set is totally disconnected.
 \end{theorem}
 
+% BLOG-PASSAGE: the-quadratic-family:p0021
 % Source page 12
 For the map $P_c$, we have $A_c(\infty)\subseteq\widetilde A_c(\infty)$, the basin of the superattracting point.
 \begin{figure}[H]
@@ -345,6 +367,7 @@ Hence, if defined,
 \]
 which has a simple pole at $\infty$.
 
+% BLOG-PASSAGE: the-quadratic-family:p0022
 Using $\varphi_c(P_c(z))=\varphi_c(z)^2$, we can extend $\varphi_c$ conformally until we hit a critical point of $P_c$, namely $0$. Set $G_c(z)=\log|\varphi_c(z)|$. Then
 \begin{equation}\label{eq:green-functional}
 G_c(P_c(z))=2G_c(z).
@@ -352,6 +375,7 @@ G_c(P_c(z))=2G_c(z).
 \end{equation}
 The Green function $G_c$ extends to all of $A_c(\infty)$.
 
+% BLOG-PASSAGE: the-quadratic-family:p0023
 For $G_c(z)>G_c(0)$, the map $\varphi_c(z)$ is analytic and maps that set conformally to $\{\zeta\mid |\zeta|>e^{G_c(0)}\}$. Also,
 \[
 K(P_c)=\bigcap_{n=1}^{\infty}
@@ -359,6 +383,7 @@ P_c^{-n}\bigl(\{z\mid G_c(z)\le G_c(0)\}\bigr).
 \]
 By \eqref{eq:green-functional}, as $z\to\partial A_c(\infty)$, that is, $J(P_c)$, we have $G_c(z)\to0$. Extend $G_c$ to the whole plane by defining it to be zero elsewhere.
 
+% BLOG-PASSAGE: the-quadratic-family:p0024
 % Source page 13
 The function $G_c(z)$ is jointly continuous in $c$ and $z$. Notice that
 \[

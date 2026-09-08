@@ -4,38 +4,47 @@
 \begin{document}
 \section*{Separation by a Polygonal Path/Arc and Holomorphic Lifting}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0001
 \textit{Following the framework of T. Tao.}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0002
 \subsection*{Separation by a Polygonal Path/Arc}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0003
 Let $U$ be a bounded domain in $\mathbb C$. Then $U$ is simply connected if and only if $\mathbb C\setminus U$ is connected.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0004
 \paragraph{Polygonal-separation sketch.}
 Let $z_0\in\mathbb C\setminus U$, and say that $z_0$ is separated from $\infty$ by $U$. First note that $\mathbb C\setminus U$ cannot have two unbounded components. Let $z_0$ be in one of the bounded components, say $z_0\in V$. Choose $R$ such that $\overline{B_R(z_0)}$ contains $U$ and the bounded component $V$. Let $x\in\partial\overline{B_R(z_0)}$. The segment $\overline{xz_0}$ intersects $U$ nontrivially. Choose a point of this intersection and a small closed ball $K_x\subset U$ that the nearby segments $\overline{x'z_0}$ continue to meet. The corresponding neighbourhoods of $x$ cover $\partial\overline{B_R(z_0)}$, so a finite subcover gives a compact set
 \[
   F:=K_{x_1}\cup\cdots\cup K_{x_m}\subset U
 \]
 that meets every segment $\overline{xz_0}$, for $x\in\partial\overline{B_R(z_0)}$, and has only finitely many components. In the domain $U$, join those components by polygonal paths, using the fact that $U$ is path-connected, and let this set be $S$. The set $S$ is again compact. Consider a finite cover of $S$ by balls in $U$, say $\{B_n\}_{n=1}^k$, such that $\bigcup_nB_n$ is connected. Use the decomposition theorem proved for $\partial(\bigcup_nB_n)$, and let $\gamma$ be the polygonal arc that contains the other arcs. Then \(z_0\in\operatorname{int}(\gamma),\)
-because $\overline{z_0x}$ cuts $\gamma$ too many times. Hence
+because $\overline{z_0x}$ cuts $\gamma$ too many times. Hence, in the \BlogPost{winding-number}{winding-number notation},
 \[
   W_\gamma(z_0)\ne0,
 \]
 so $U$ is not simply connected. The following figure illustrates the construction.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0005
 
 \subsubsection*{Construction of the Separating Curve $\gamma$}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0006
 \begin{figure}[H]
   \centering
   \includegraphics[width=.60\textwidth]{note8-fig-01.pdf}
 
 \end{figure}
 
-This is the technique of separation by polygonal arcs. Refer to Tao's Notes 13, proof of the Jordan curve theorem, to see another instance. ``Store this image in your mind!''
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0007
+This is the technique of separation by polygonal arcs. Refer to Tao's Notes 13 and to \BlogPostAt{homotopy-paths-and-jordan-curves}{tool:jordan-curve}{the Jordan curve theorem} to see another instance. ``Store this image in your mind!''
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0008
 
 The converse is relatively simple. Let $\mathbb C\setminus U$ be connected, where $U$ is a bounded domain. Then $U$ is simply connected. Let us prove the contrapositive.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0009
 
 If $U$ is not simply connected, then there exists a closed curve $\gamma$ in $U$ that is not null-homotopic there. Let $H$ be a straight-line homotopy from $\gamma$ to a point in $\mathbb C$. Since it is not a homotopy in $U$, one has $H^*\cap U^c\ne\varnothing$. In fact, $H^*\cap\partial U\ne\varnothing$: otherwise the connected set $H^*$ would have the separation
 \[
@@ -45,16 +54,19 @@ If $U$ is not simply connected, then there exists a closed curve $\gamma$ in $U$
   =H^*.
 \]
 Note that the images of $H$ and $\partial U$ are both compact.
-By the complex tube lemma, one may replace $\gamma$ by a polygonal curve, and then by one of the simple closed polygons in its decomposition that is not null-homotopic. If the interior of this simple polygon were contained in $U$, the polygon would be null-homotopic in $U$. Therefore
+By the complex tube lemma, one may replace $\gamma$ by a polygonal curve, and then by one of the simple closed polygons in its decomposition that is not null-homotopic. If the interior of this simple polygon were contained in $U$, the polygon would be null-homotopic in $U$. Therefore,
 \[
   \operatorname{int}(\gamma)\cap U^c\ne\varnothing.
 \]
 Let $x\in\operatorname{int}(\gamma)\cap U^c$. The component of $U^c$ containing $x$ cannot also meet $\operatorname{ext}(\gamma)$, since a connected subset meeting both sides would meet $\gamma\subset U$. Thus $x$ belongs to a bounded component of $U^c$.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0010
 \textbf{Remark.} By the complex tube lemma, $U$ is simply connected if all simple closed curves in $U$ are null-homotopic. So one can circumvent weird curves, such as space-filling curves, and use simple geometry.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0011
 \textbf{Exercise.} Use this construction to prove the Jordan arc theorem.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0012
 \paragraph{Sketch.} First establish that if $\gamma_0$ is a Jordan arc and $\delta>0$, then for $\varepsilon>0$ there is an arc \(\gamma_\varepsilon^*\subset N_\delta(\gamma_0)\)
 with
 \[
@@ -74,6 +86,7 @@ Then prove that
 \]
 Take any bounded component of $(\gamma_0^*)^c$ and, using the separation-via-arc technique, contradict the fact that $W_{\gamma_0}(z_0)=0$.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0013
 
 
 First note, very quickly, that a continuous branch of the logarithm on a domain \(U\subset\mathbb C\setminus\{0\}\) is a continuous function \(f:U\to\mathbb C\) such that
@@ -82,6 +95,7 @@ First note, very quickly, that a continuous branch of the logarithm on a domain 
 \]
 This continuity directly implies holomorphicity, since $\exp'(z)=\exp(z)\ne0$ for every $z\in\mathbb C$. In fact, one has the following. Let $f:U\to V$ be continuous, let $g:V\to\mathbb C$ satisfy $g\in H(V)$ and $g'\ne0$, and suppose $g\circ f\in H(U)$. Then $f\in H(U)$.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0014
 \paragraph{Quick proof.} The limit
 \[
   \lim_{w\to w_0}
@@ -98,6 +112,7 @@ exists. Let $f(w_0)=z_0$ and let $f(w_0+h')=z_0+h$. Then
 \end{align*}
 The first limit exists and equals some $c$. Consequently,
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0015
 \[
   \lim_{h'\to0}
   \frac{f(w_0+h')-f(w_0)}{h'}
@@ -105,20 +120,26 @@ The first limit exists and equals some $c$. Consequently,
 \]
 exists, since $g'\ne0$. Thus $f\in H(U)$, so a continuous branch is a holomorphic branch.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0016
 
 \subsection*{Claim}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0017
 There exists a continuous branch of the logarithm $(f,U)$ if and only if $0$ and $\infty$ lie in the same connected component of
 \[
   (\mathbb C\cup\{\infty\})\setminus U.
 \]
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0018
 The existence of a continuous branch on $U$ certainly implies that $0$ and $\infty$ are not separated by $U$, since $1/z$ has a primitive---it is conservative in $U$---because any simple closed curve in $U$ cannot contain $0$ in its interior.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0019
 For the converse, apply the same construction on the Riemann sphere, using the corresponding form of the Jordan Curve Theorem. Instead of the segments $\overline{xz_0}$, take longitudes joining the North and South poles, $0$ and $\infty$, and then project them back to $\mathbb C$.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0020
 \subsection*{Counting the Number of Crossings (Parity Argument)}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0021
 Let
 \[
   \gamma:[0,+\infty)\to\mathbb C
@@ -133,6 +154,7 @@ Then
 \]
 is nonempty and simply connected. The image $\gamma([0,+\infty))$ is a branch cut: removing it produces a nonempty simply connected domain on which a single-valued logarithm can be defined.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0022
 
 Since $\lim_{t\to\infty}\gamma(t)=\infty$, we have $|\gamma(t)|>M$ whenever $t>b$. Consider $\gamma([a,b])$, and let $\gamma(b)=z_1$. Choose coordinates so that $\gamma(b)=i$; this can be ensured by an appropriate rotation and dilation. Let $c\in(a,b)$ be such that
 \[
@@ -153,6 +175,7 @@ whenever
   |\operatorname{Re}(\gamma_2(t_2))|\le\frac12.
 \]
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0023
 Let $\gamma^{(N)}$ be a polygonal path approximating
 \[
   \gamma:[a,b]\to\mathbb C
@@ -189,7 +212,7 @@ such that
   \le\operatorname{dist}\bigl(x_*^{(N)},\gamma([a,c])\bigr)
   =\operatorname{dist}\bigl(x_*^{(N)},\gamma([c,b])\bigr).
 \]
-Therefore
+Therefore,
 \[
   \operatorname{dist}\bigl(x_*^{(N)},\gamma([a,b])\bigr)
   \ge\frac{\delta'}2,
@@ -204,16 +227,22 @@ so
 \]
 To prove that it is simply connected, take any simple closed curve in $\mathbb C$ and note that the interior of that curve cannot meet $\gamma([0,\infty))$; otherwise, as $\gamma$ runs to infinity, it would have to cross the curve. Thus all simple closed curves in $\gamma([0,\infty))^c$ are contractible, so $\gamma([0,\infty))^c$ is simply connected.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0024
 \textbf{Remark.} The crucial facts that we exploited are the injectivity of $\gamma$ and the fact that it does not turn back eventually; that is, $\gamma(t)\to\infty$ as $t\to\infty$. The idea is to break the image of $\gamma$ into two compact sets and look at their approximations on a segment. The chosen polygonal approximations meet the transverse segment in finitely many points; hence we can find points that are distant from the broken pieces by looking at their approximations. The Bolzano--Weierstrass theorem then completes the proof.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0025
 \subsection*{Holomorphic Lifting}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0026
 One way to construct a logarithm is by looking at appropriate domains where $1/z$ can have a primitive, once we make sure it is conservative. There is yet another slick way to do that, via the construction of holomorphic lifts, exploiting concepts in covering-space theory.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0027
 \subsection*{Definition: Covering Spaces and Covering Maps}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0028
 Refer to Tao. But here is an image to remember!
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0029
 The map $f:M\to N$ is a covering map if, for every $x\in N$, there exists $U\subseteq N$ such that
 \[
   f^{-1}(U)=\bigsqcup_\alpha V_\alpha,
@@ -224,12 +253,14 @@ and
 \]
 is a homeomorphism.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0030
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.62\textwidth]{note8-fig-02.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0031
 
 \begin{figure}[htbp]
   \centering
@@ -237,19 +268,24 @@ is a homeomorphism.
 
 \end{figure}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0032
 Given this setup, we have the lifting lemma, whose proof again is in Tao. Let us merely state it. Refer to Munkres for a more visual proof.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0033
 \subsection*{Tool 29 — Lifting Lemma}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0034
 Let $M,N$ be Riemann surfaces, let $f:M\to N$ be a covering map, with $M,N$ connected, and let $U$ be a simply connected, path-connected Riemann surface. Let $g:U\to N$ be holomorphic, let $z_0\in U$ and $p\in M$, and suppose \(f(p)=g(z_0).\)
 Then there exists a unique holomorphic map $h:U\to M$ such that $h(z_0)=p$ and
 \[
   g=f\circ h.
 \]
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0035
 
 \subsection*{Construction of the Logarithm}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0036
 Let \(z:U\to\mathbb C\setminus\{0\},\)
 where $U$ is a simply connected domain and $0\notin U$. The map
 \[
@@ -258,6 +294,7 @@ where $U$ is a simply connected domain and $0\notin U$. The map
 is a covering map. (Exercise.) Hence there exists a holomorphic function $f:U\to\mathbb C$ such that \(\exp(f)=z.\)
 Done!
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0037
 
 More generally, if $h$ is holomorphic and nonvanishing on the simply connected domain $U$, then there exists a holomorphic $g$ such that \(e^{g(z)}=h(z).\)
 If we look at
@@ -272,14 +309,18 @@ If $h$ has a zero of order $n$ at $0$, one writes
 where $w$ is nonvanishing near $0$. Taking a local $n$th root $w(z)=g(z)^n$ gives \(h(z)=z^ng(z)^n=(zg(z))^n,\)
 a restatement of the local factorization theorem.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0038
 \subsection*{Little Picard's Theorem}
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0039
 Here is a slick proof of Little Picard's theorem.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0040
 
 Let $f(\mathbb C)$ avoid $0$ and $1$, WLOG. Then \(f=e^{2\pi i g}.\)
 The set $g(\mathbb C)$ avoids the integers.
 
+% BLOG-PASSAGE: separation-and-holomorphic-lifting:p0041
 The function $\cos z:\mathbb C\setminus\{\pi j\}\to\mathbb C$ is a local diffeomorphism; hence
 \[
   g=\cos(h).
@@ -307,6 +348,6 @@ Let $c''=c/c'$. Then
   |h'(z_0)|<\frac{c''}{R}
   \qquad(\forall R>0).
 \]
-Therefore $h$ is constant, so $g$ is constant and $f$ is constant.
+Therefore, $h$ is constant, so $g$ is constant and $f$ is constant.
 % BLOG-CONTENT-END
 \end{document}

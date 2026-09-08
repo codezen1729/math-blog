@@ -5,11 +5,14 @@
 \begin{document}
 \section*{Modules, Tensor Products, and the Determinant Trick}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: modules-tensor-products-and-the-determinant-trick:p0001
 \subsection{Modules}
+With \BlogPost{rings-ideals-and-prime-ideals}{rings and ideals} in place, let us turn to modules.
 \setcounter{definition}{3}\begin{definition}
 $M$ is an \emph{$A$-module} if $M\in\Ob(\mathsf{AbGps})$ is equipped with a unital ring homomorphism $A\to\End_{\Ab}(M)$. If $M'<M$ is an additive subgroup stable under this action, then $M'$ is an \emph{$A$-submodule} of $M$.
 \end{definition}
 % Source page 11
+% BLOG-PASSAGE: modules-tensor-products-and-the-determinant-trick:p0002
 \begin{remark}
 Unwrapping the second condition, say $f:A\to\End(M)$ is a ring homomorphism, gives
 \[
@@ -53,6 +56,7 @@ and
 One similarly defines right exactness.
 \end{remark}
 % Source page 13
+% BLOG-PASSAGE: modules-tensor-products-and-the-determinant-trick:p0003
 \subsection{Tensor products}
 If $M,N$ are $A$-modules, there is a universal object among all $A$-bilinear maps from $M\times N$ to $P$, denoted $M\otimes N$. Thus $f:M\times N\to P$ factors through an $A$-linear map $\widetilde f$, as shown.
 \begin{figure}[H]\centering
@@ -68,6 +72,7 @@ Consider the direct sum $\bigoplus_{i\in M\times N}A$. Let $C$ be the submodule 
 \]
 Then $M\otimes N:=\bigl(\bigoplus_{i\in M\times N}A\bigr)/C$.
 % The quotient is handwritten above the tensor-product paragraph; the later repeated definition is blank.
+% BLOG-PASSAGE: modules-tensor-products-and-the-determinant-trick:p0004
 It is easy to check that $-\otimes N:\AMod\to\AMod$ and $N\otimes-:\AMod\to\AMod$ are functors. Define $\Psi(f):(x,y)\mapsto f(x)(y)$.
 \begin{claim}
 \[\Hom(M\otimes N,P)\cong\Hom(M,\Hom(N,P)).\]
@@ -146,7 +151,7 @@ Cayley--Hamilton for $\varphi=\id$ yields, for $x=1+a_1+\cdots+a_n\equiv1\pmod\a
 \ \Longrightarrow\ (1-x)\in\mm\ \text{for every maximal }\mm
 \ \Longrightarrow\ x\in\mm^c\ \text{for every maximal }\mm.
 \]
-Hence $x$ is a unit. Therefore $M=x^{-1}(xM)=0$.
+Hence $x$ is a unit. Therefore, $M=x^{-1}(xM)=0$.
 \end{proof}
 
 % BLOG-CONTENT-END

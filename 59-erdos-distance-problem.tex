@@ -5,11 +5,13 @@
 \begin{document}
 \section*{Erdős Distance Problem}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: erdos-distance-problem:p0001
 % Source page 1
 According to Paul Erd\H{o}s, his most important contribution to geometry is
 his distance conjecture. The formulation of the problem is quite innocuous
 and recreational in nature. Let me begin by stating the problem explicitly.
 
+% BLOG-PASSAGE: erdos-distance-problem:p0002
 Let $P$ be a set of $n$ points in $\mathbb R^2$, and let
 $\Delta(P):=\{|p-p'|:p,p'\in P,\ p\ne p'\}$. Thus $\Delta(P)$ is essentially
 the set of possible distinct distances between distinct points.
@@ -25,11 +27,13 @@ equilateral triangle and the fourth one is at a distance $10$?
 If you think about it for a minute, it is immediate that such a
 configuration is impossible, for the fourth point $p_4$ must be the
 % Source page 2
+% BLOG-PASSAGE: erdos-distance-problem:p0003
 centroid of $\triangle p_1p_2p_3$, so $|p_4-p_i|<2$ for every $1\le i\le3$.
 If you think about it a bit more, you will realise that all configurations
 of four points in $\mathbb R^2$ must have at least two distinct distances.
 Why? Set $P=\{p_1,p_2,p_3,p_4\}$.
 
+% BLOG-PASSAGE: erdos-distance-problem:p0004
 Given four points $p_1,p_2,p_3,p_4$, we have $\binom42=6$ nonzero distances.
 If $|\Delta(P)|=1$, any three of the points form an equilateral triangle;
 the fourth point would have to be a second point at the same distance from
@@ -37,6 +41,7 @@ all three vertices, which is impossible in the plane.
 This argument just showed us that the plane is rigid: it does not allow
 points on it to float around with an arbitrary set of distinct distances.
 
+% BLOG-PASSAGE: erdos-distance-problem:p0005
 As interesting as it may be to ask which sets of distances can be realised
 in $\mathbb R^2$, let us begin by asking the following.
 \begin{question}
@@ -49,6 +54,7 @@ Erd\H{o}s was particularly interested in trying to find bounds for $g(n)$,
 both upper and lower bounds; he was not optimistic enough to look for
 asymptotes.
 
+% BLOG-PASSAGE: erdos-distance-problem:p0006
 % Source page 3
 He believed that $g(n)$ must roughly behave like $n$ for large $n$.
 It is firstly easy to see that, mostly, $|\Delta(P)|$ will be like $|P|^2$,
@@ -78,6 +84,7 @@ $P=\{0,1,\ldots,m-1\}^2$, as shown below.
  \FigureTag{M2.2}{fig:m2-fig-02}
 \end{figure}
 
+% BLOG-PASSAGE: erdos-distance-problem:p0007
 % Source page 4
 We have
 \[
@@ -86,7 +93,7 @@ We have
 \]
 Notice that $|\Delta(P)|$ is at most the number of positive integers below
 $2N$ that are sums of two squares.
-Therefore
+Therefore,
 \[
  g(N)\le\bigl|\{1\le k<2N:k\text{ is a sum of two squares}\}\bigr|.
 \]
@@ -100,6 +107,7 @@ We shall not digress and give a proof, for it can be found in many standard
 texts in number theory. Instead, we shall use the theorem to roughly
 sketch an estimate for $\pi_2(M)$.
 
+% BLOG-PASSAGE: erdos-distance-problem:p0008
 From the integers up to $M$, we must remove all odd powers of $p$ and their
 multiples, where $p\equiv-1\pmod4$. Note that this is equivalent to combining
 all the even powers of $p$ and their multiples, where
@@ -114,7 +122,8 @@ which the exponent of $p$ is even is
  =\frac p{p+1}.
 \]
 % Source page 5
-The notebook first extends the inclusion--exclusion principle and writes
+% BLOG-PASSAGE: erdos-distance-problem:p0009
+A first attempt extends the inclusion--exclusion principle and writes
 \[
  M-\frac Mp+\frac M{p^2}-\frac M{p^3}+\frac M{p^4}-\frac M{p^5}+\cdots
  \approx M\left(1-\frac1p\right)\left(1+\frac1{p^2}\right)
@@ -122,10 +131,11 @@ The notebook first extends the inclusion--exclusion principle and writes
 \]
 The correction sum will be something of the form
 $\sum_{2\nmid k}P(k)/p^k$, where $P(k)$ is the partition function.
-But let us ignore that, says the notebook, for $P(k)<k^2$ and
+But let us ignore that for the moment, for $P(k)<k^2$ and
 $\sum_k k^2/p^k$ converges. This is only a heuristic: the displayed infinite
 product is not an identity, and $P(k)<k^2$ does not hold for all $k$.
 
+% BLOG-PASSAGE: erdos-distance-problem:p0010
 The exact local density used to clarify that heuristic is $p/(p+1)$, as
 computed above. Extending it over the primes $p\equiv-1\pmod4$ and ignoring
 the error terms from the integer parts, one obtains
@@ -166,6 +176,7 @@ Now, as primes are equidistributed modulo $4$ between $1$ and $-1$,
  \approx\frac1{\sqrt{\log M}}.
 \]
 % Source page 6
+% BLOG-PASSAGE: erdos-distance-problem:p0011
 Anyway, coming back to our problem, we now roughly know that
 \[
  g(N)\le \pi_2(2N)\approx\frac{2N}{\sqrt{\log(2N)}}
@@ -178,6 +189,7 @@ number-theoretic in nature. We now have a strong reason to believe that a
 lower bound roughly of order $n^{1-\varepsilon}$ must exist for every
 $\varepsilon>0$. This conviction led him to conjecture the following.
 
+% BLOG-PASSAGE: erdos-distance-problem:p0012
 \setcounter{theorem}{2}\begin{conjecture}[Erd\H{o}s Distance Conjecture]
 For every $c<1$, $g(n)=\Omega(n^c)$. This means that
 \[
@@ -190,18 +202,20 @@ logarithmic decay.
 \begin{remark}
 This slick observation of Erd\H{o}s fails when you go to, say, $\mathbb R^4$,
 for, by Lagrange's Four-Square Theorem, every number is a sum of four
-squares. There number theory will not give you a logarithmic decay.
+squares. There, number theory will not give you a logarithmic decay.
 \end{remark}
 Getting an upper bound is easy; we just did it:
 $g(n)\le cn/\sqrt{\log n}$. What proved to be extremely difficult was to
 get a lower bound, because that must use the dimension of the manifold
 one is dealing with very crucially: $g(4)=1$ in $\mathbb R^3$ (a tetrahedron).
 % Source page 7
+% BLOG-PASSAGE: erdos-distance-problem:p0013
 The arguments must crucially use the fact that the dimension is $2$ and
 the manifold is $\mathbb R^2$, for even on a sphere a tetrahedron can be
 arranged, forcing $g(4)=1$. We must use the fact that the points are not
 only in a two-dimensional manifold: they are in $\mathbb R^2$.
 
+% BLOG-PASSAGE: erdos-distance-problem:p0014
 The best lower bound one expects for $g(n)$ is $cn/\sqrt{\log n}$ for
 some $c$ and large $n$. People do not try to prove $g(n)=\Omega(n^c)$,
 for the arguments are not yet structural. What they instead do is get
@@ -224,7 +238,7 @@ By the pigeonhole principle, at least one circle must have at least $(n-1)/t$
 points of $P$. Again by the pigeonhole principle, at least one of the
 semicircles must have $(n-1)/(2t)$ points. Pick the rightmost point to see that
 it will have at least $(n-1)/(2t)$ distinct distances to points of $P$ on that
-semicircle. Therefore
+semicircle. Therefore,
 \[
  |\Delta(P)|\ge\max\left(t,\frac {n-1}{2t}\right)
  \ge\sqrt{\frac {n-1}2}.
@@ -242,7 +256,7 @@ $g(n)\ge cn^{2/3}$ for some $c>0$.
 \end{theorem}
 \begin{proof}
 Let $P$ be a configuration such that $|P|=n$. Choose $x,y\in P$ such that
-$|x-y|$ is minimal. Let $O$ be the midpoint; centred at $O$, draw annuli of
+$|x-y|$ is minimal. Let $O$ be the midpoint. Draw annuli centred at $O$ of
 % Source page 9
 thickness $|x-y|$. Call these annuli $\widetilde A_1,\widetilde A_2,\ldots,
 \widetilde A_\ell$, as illustrated below.
@@ -273,7 +287,7 @@ there will be $k$ of them. Let
 Then $A_i=\bigcup_{k'}(A_i\cap B_{k'})$, since every point in
 $\widetilde A_{3j}$ at distance $d_i$ from $x$ is at some distance from $y$.
 % Source page 10
-Consequently $\bigcup_i A_i=\bigcup_{i,k'}(A_i\cap B_{k'})$.
+Consequently, $\bigcup_i A_i=\bigcup_{i,k'}(A_i\cap B_{k'})$.
 Let $|\bigcup_{i=1}^kA_i|=n_j$. We have
 \[
  \left|\bigcup_{i,k'}(A_i\cap B_{k'})\right|
@@ -295,7 +309,7 @@ above $L$, we have $n/6\le\sum_jn_j$. Thus
  \le\sqrt{\max_j n_j}\sum_j\sqrt{n_j}
  \le\sqrt{\max_j n_j}\,|\Delta(P)|.
 \]
-The source next claims $|\Delta(P)|\ge\max_j n_j$ by choosing the rightmost
+The next claimed estimate is $|\Delta(P)|\ge\max_j n_j$, obtained by choosing the rightmost
 point in an annulus of maximum occupancy. The earlier rightmost-point argument,
 however, applies to points on one semicircle: within an annulus the radii vary,
 and two other points can be at the same distance from the chosen point. Thus the
@@ -305,7 +319,7 @@ written argument does not establish the first estimate below:
  |\Delta(P)|\ge\frac n{6\sqrt{\max_j n_j}}.
 \]
 % Source page 11
-If the missing first estimate is supplied by an additional geometric argument,
+If this first estimate is supplied by an additional geometric argument,
 then it follows that
 \[
  |\Delta(P)|^2\,|\Delta(P)|
@@ -324,6 +338,7 @@ of foliated annuli, many joined the race to get to the bound $cn/\sqrt{\log n}$.
  \FigureTag{M2.4}{fig:m2-fig-04}
 \end{figure}
 % Source page 12
+% BLOG-PASSAGE: erdos-distance-problem:p0015
 Tools from Fourier analysis, number theory, graph theory, and even information
 theory have gone into the formulation and resolution of this conjecture,
 culminating in Guth's near-optimal result! We are just $1/\sqrt{\log n}$

@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Sheaves, Stalks, and Ringed Spaces}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: sheaves-stalks-and-ringed-spaces:p0001
 \subsection{Sheaves}
 \setcounter{definition}{17}\begin{definition}
 Let $X$ be a topological space. A \emph{presheaf} $\mathcal F$ consists of:
@@ -45,12 +46,14 @@ A nonempty poset $(S,\ge)$ is \emph{filtered} if, for every $x,y\in S$, there ex
 \end{definition}
 Suppose $\mathcal I$ is a filtered indexing category. Any diagram indexed by $\mathcal I$ has the following colimit:
 % Source page 6
+% BLOG-PASSAGE: sheaves-stalks-and-ringed-spaces:p0002
 \[
 \varinjlim_{i\in\mathcal I}A_i
 =\left\{(a_i,i)\in\coprod_{i\in\mathcal I}A_i\right\}/{\sim},
 \]
 where $(a_i,i)\sim(a_j,j)$ if there exist $f:A_i\to A_k$ and $g:A_j\to A_k$ with $f(a_i)=g(a_j)$. Thus \mbox{$\mathcal F_p=\varinjlim_{p\in U}\mathcal F(U)$}.
 % The source repeats f(a_j); corrected to g(a_j), matching the displayed domains.
+% BLOG-PASSAGE: sheaves-stalks-and-ringed-spaces:p0003
 For a sheaf $\mathcal F$, one has $\mathcal F(U)\to\mathcal F_p$, $s\mapsto s_p$, for $p\in U$.
 \setcounter{theorem}{31}\begin{lemma}
 If $s,t\in\mathcal F(X)$ and $s_x=t_x$ for every $x\in X$, then $s=t$.
@@ -75,6 +78,7 @@ f(x)\in\mathcal F_x\text{ for every }x\in U;\\
 \end{array}\right\}.
 \]
 % Source page 7
+% BLOG-PASSAGE: sheaves-stalks-and-ringed-spaces:p0004
 \subsection{Ringed topological spaces}
 \setcounter{definition}{21}\begin{definition}[Ringed and locally ringed spaces]
 \begin{enumerate}[label=(\roman*)]
@@ -87,13 +91,14 @@ is a local homomorphism, that is, $f_x^{\#}(\mm_{f(x)})\subseteq\mm_x$.
 \setcounter{enumi}{2}\item $(f,f^{\#})$ is an \emph{open immersion} if $f$ is an open embedding and $f_x^{\#}$ is an isomorphism for every $x\in X$. It is a \emph{closed immersion} if $f$ is a closed embedding and $\mathcal O_Y\to f_*\mathcal O_X$ is surjective.
 \end{enumerate}
 \end{definition}
-For $X=\Spec(A)$, define $\mathcal O_X(D(f)):=A_f$. On the left, $D(f)$ is the locus where $f$ does not vanish; on the right, $A_f$ is the ring in which $f$ is invertible.
+We now equip \BlogPost{the-spectrum-of-a-ring}{the spectrum of a ring} with its structure sheaf. For $X=\Spec(A)$, define $\mathcal O_X(D(f)):=A_f$. On the left, $D(f)$ is the locus where $f$ does not vanish; on the right, $A_f$ is the ring in which $f$ is invertible.
 \setcounter{theorem}{32}\begin{lemma}
 $V(I)\subseteq V(J)$ if and only if $J\subseteq\sqrt I$.
 \end{lemma}
 Also, $D(g)\subseteq D(f)$ implies $g\in\sqrt{(f)}$, so there exist $m\ge1$ and $b\in A$ with $g^m=fb$.
 % Source page 8
-Thus $f$ is invertible in $A_g$, giving a map $A_f\to A_g$. These restriction maps define a sheaf on the basis of distinguished open sets and extend uniquely to the structure sheaf $\mathcal O_X$. Note that $\mathcal O_X(X)=A$, and for every $\pp\in X$, $\mathcal O_{X,\pp}:=A_{\pp}$ is local. Therefore $(X,\mathcal O_X)$ is a locally ringed topological space.
+% BLOG-PASSAGE: sheaves-stalks-and-ringed-spaces:p0005
+Thus $f$ is invertible in $A_g$, giving a map $A_f\to A_g$. These restriction maps define a sheaf on the basis of distinguished open sets and extend uniquely to the structure sheaf $\mathcal O_X$. Note that $\mathcal O_X(X)=A$, and for every $\pp\in X$, $\mathcal O_{X,\pp}:=A_{\pp}$ is local. Therefore, $(X,\mathcal O_X)$ is a locally ringed topological space.
 \setcounter{definition}{22}\begin{definition}
 \begin{enumerate}[label=(\roman*)]
 \setcounter{enumi}{0}\item An \emph{affine scheme} is a locally ringed topological space isomorphic to some $(X,\mathcal O_X)$ as above.

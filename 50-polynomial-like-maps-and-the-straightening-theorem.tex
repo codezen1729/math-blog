@@ -5,8 +5,10 @@
 \begin{document}
 \section*{Polynomial-Like Maps and the Straightening Theorem}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0001
 \subsection{Cut and Paste Surgery}
 % Source page 1
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0002
 Given $f\colon S\to S$, the following are the analytic parameters of the
 dynamics of $f$ on $S$, locally speaking. In almost all our treatments,
 $S=\mathbb C$ or $\widehat{\mathbb C}$, $f$ is rational, and $\deg(f)\ge2$.
@@ -18,13 +20,14 @@ $S=\mathbb C$ or $\widehat{\mathbb C}$, $f$ is rational, and $\deg(f)\ge2$.
  \item Rate of expansion, if $f$ is hyperbolic.
  \item Holomorphic degree of $f$, if $f$ is a branched covering.
 \end{itemize}
-\emph{Cut and paste surgery} is essentially a way to alter these parameters
+\BlogPost{shishikuras-surgery-principles}{\emph{Cut and paste surgery}} is essentially a way to alter these parameters
 by gluing together two maps with different dynamical parameters after
 cutting off certain sets from their domains of definition. In this short
 post we shall illustrate a surgery of the aforementioned kind by
 proving what is called the \emph{Straightening Theorem}.
 So, what does the theorem say?
 
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0003
 % Source page 2
 Let $f\colon U\to V$, with $f\in\Hol(U)$. Locally around critical points,
 $f$ behaves like a polynomial. There is an easy way to see this. Let
@@ -38,8 +41,9 @@ Then $\widehat z$ is a superattracting fixed point and thus admits a
 B\"ottcher coordinate change. One can extend this polynomial behaviour
 until $\widetilde f$ hits the nearest other critical point.
 
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0004
 Such local behaviours, clubbed together, can either explain $f$ totally
-on $U$ or may not, depending entirely on the domain covered by the
+on $U$ or not, depending entirely on the domain covered by the
 collective union of B\"ottcher domains. Regardless, holomorphic maps,
 in particular rational maps $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$,
 may locally behave like polynomials. This led Douady and Hubbard on a
@@ -48,6 +52,7 @@ and polynomials. For us, this venture shall culminate with the
 Straightening Theorem. But before we proceed, let us make certain things
 precise.
 
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0005
 \setcounter{definition}{26}\begin{definition}[Polynomial-like map]
 Let $U,V$ be bounded simply connected domains of $\mathbb C$ such that
 $\partial U,\partial V$ are analytic curves and
@@ -56,6 +61,7 @@ A map $f\colon U\to V$ is said to be \emph{polynomial-like} if it is a
 proper branched holomorphic covering of degree $d$.
 \end{definition}
 
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0006
 % Source page 3
 \begin{remark}[1]
 With this definition we are trying to study $f$ locally around its
@@ -74,12 +80,14 @@ Let $U=f^{-1}(V)$; then $\partial U$ and $\partial V$ are piecewise
 analytic. One can replace the polygon by a nearby real-analytic Jordan curve separating $\overline{U'}$ from $\partial V'$. Since our goal is local behaviour, studying $f|_U$ is no compromise.
 \end{remark}
 
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0007
 Here
 \[
 K_f:=\bigcap_{n\ge0}f^{-n}(V)
 \]
 is the filled set of the polynomial-like map.
 
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0008
 \setcounter{theorem}{51}\begin{theorem}[Straightening Theorem]
 \label{thm:cd13-straightening}
 Every polynomial-like map $f\colon U\to V$ of degree $d$ is
@@ -92,6 +100,7 @@ We shall prove this by cutting open polynomial-like maps and gluing on
 some extra stuff, which we shall then use to pull the ellipse field
 back to a circle field.
 % Source page 4 (continuation of the previous sentence).
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0009
 
 \begin{proof}
 Let $\rho>1$, and let
@@ -175,6 +184,7 @@ Beltrami coefficient of $\phi$ vanishes almost everywhere there.
 Thus $f$ and $P$ are hybrid equivalent.
 \end{proof}
 
+% BLOG-PASSAGE: polynomial-like-maps-and-the-straightening-theorem:p0010
 The theorem in fact says something more. The set $K_f$ is the right analogue of the filled Julia set for polynomials:
 it is the set of points in $U$ that never escape $U$.
 Note that $f$ and

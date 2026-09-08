@@ -4,8 +4,10 @@
 \begin{document}
 \section*{Liouville and Morera}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: liouville-and-morera:p0001
 \subsection*{Tool 14 — Schwarz Lemma}
 
+% BLOG-PASSAGE: liouville-and-morera:p0002
 Let \(f\colon B_1(0)\to B_1(0)\)
 be holomorphic, with $f(0)=0$. Then:
 \begin{enumerate}
@@ -14,6 +16,7 @@ be holomorphic, with $f(0)=0$. Then:
   \item[(iii)] $|f'(0)|\leq1$, and if equality holds, then $f$ is a rotation.
 \end{enumerate}
 
+% BLOG-PASSAGE: liouville-and-morera:p0003
 
 \textit{Proof.}
 We have
@@ -25,7 +28,7 @@ and hence
   \frac{f(z)}{z}\in H(B_1(0)).
 \]
 Now, for $|z|=r<1$, \(\left|\frac{f(z)}{z}\right|\leq\frac1r.\)
-Therefore
+Therefore,
 \[
   \left|\frac{f(z)}{z}\right|
   \leq\inf_r\frac1r=1,
@@ -38,10 +41,12 @@ and thus
 \]
 If $|f(z_0)|=|z_0|$, then
 
+% BLOG-PASSAGE: liouville-and-morera:p0004
 
 $f(z)/z$ attains a maximum in the interior, so $f(z)=cz$. But, as
-$|f(z_0)|=|z_0|$, we have $|c|=1$. Therefore $f$ is a rotation.
+$|f(z_0)|=|z_0|$, we have $|c|=1$. Therefore, $f$ is a rotation.
 
+% BLOG-PASSAGE: liouville-and-morera:p0005
 Let
 \[
   \frac{f(z)}{z}=g(z),
@@ -62,24 +67,30 @@ constant. Hence
   \qquad |c|=1.
 \]
 
+% BLOG-PASSAGE: liouville-and-morera:p0006
 \subsection*{Tool 15 — Morera's Theorem}
 If $f$ is continuous on a domain $\Omega$ and $\int_P f(z)\,dz=0$ for every closed polygonal path $P\subset\Omega$, then $f$ is holomorphic.
 
+% BLOG-PASSAGE: liouville-and-morera:p0007
 
 \subsection*{Tool 16 — Liouville's Theorem}
 An entire bounded function is constant.
 
+% BLOG-PASSAGE: liouville-and-morera:p0008
 
 \subsubsection*{Application — Liouville and Morera}
 The next examples apply Liouville's theorem and Morera's theorem.
 
+% BLOG-PASSAGE: liouville-and-morera:p0009
 \subsection*{Fundamental Theorem of Algebra}
 
+% BLOG-PASSAGE: liouville-and-morera:p0010
 \textit{Proof.}
 Let $p(z)$ be a polynomial. Since $|p(z)|\to\infty$ as $|z|\to\infty$, we
 have $1/p(z)$ bounded and entire if $p$ never vanishes. Hence $p$ is a
 constant, a contradiction.
 
+% BLOG-PASSAGE: liouville-and-morera:p0011
 \subsection*{Casorati--Weierstrass}
 Let
 \[
@@ -91,6 +102,7 @@ and suppose that $f$ has an essential singularity at $z_0$. Then
 \]
 is dense in $\mathbb C$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0012
 
 \textit{Proof.}
 Suppose there exists $w\in\mathbb C$ such that
@@ -105,14 +117,17 @@ so $g$ has a removable singularity at $z_0$. Hence $f-w$ either has a
 removable singularity at $z_0$ or a pole at $z_0$, depending on whether
 $g(z_0)\neq0$ or $g(z_0)=0$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0013
 \subsection*{Tool 17 — Weierstrass Convergence Theorem}
 Let $\{f_n\}_n$ be such that $f_n\in H(\Omega)$ and $f_n\to f$ uniformly on
 compact sets. Then $f\in H(\Omega)$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0014
 
 \textbf{Note.}
 This result is intended to be shown as an instance of Morera's Theorem, but it turns out to be a technique in itself. So we prove it to serve our purpose.
 
+% BLOG-PASSAGE: liouville-and-morera:p0015
 \textit{Proof.}
 Let $D$ be a disc in $\Omega$, and let $\gamma$ be a polygonal path in $D$.
 We know
@@ -126,12 +141,15 @@ As $f_n\to f$ uniformly in $\overline D$,
 so $\int_\gamma f=0$. Also, $f$ is continuous, and hence $f\in H(D)$. This is
 true for all $D$ in $\Omega$, so $f\in H(\Omega)$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0016
 Let us see two instances of Tool 17 before we show another instance of Morera in action.
 
+% BLOG-PASSAGE: liouville-and-morera:p0017
 \subsubsection*{Application — Convergence of derivatives}
 Under the hypotheses of Tool 17, \(f_n'\to f'\)
 uniformly on all compact sets of $\Omega$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0018
 \textit{Proof.}
 Set
 \[
@@ -139,6 +157,7 @@ Set
   :=\bigl\{z\in\Omega\mid \overline{D_\delta(z)}\subset\Omega\bigr\}.
 \]
 
+% BLOG-PASSAGE: liouville-and-morera:p0019
 
 Given any compact set $K$, there exists $r$ such that $B_r(z)$, for $z$ in that
 compact set, is in $\Omega$. Thus $K$ is contained in
@@ -149,7 +168,7 @@ Set $F=f_n-f$. We have
   F'(z)=\frac1{2\pi i}\int_{C_\delta(z)}\frac{F(t)}{(t-z)^2}\,dt,
 \]
 where $C_\delta(z)$ is the circle of radius $\delta$, for $z\in\Omega_\delta$.
-Therefore
+Therefore,
 \[
   |F'(z)|
   \leq\frac1{2\pi}\sup_{t\in C_\delta(z)}|F(t)|\frac1{\delta^2}(2\pi\delta)
@@ -162,6 +181,7 @@ and hence
 \]
 Thus $f_n'\to f'$ uniformly on all compact sets.
 
+% BLOG-PASSAGE: liouville-and-morera:p0020
 \subsubsection*{Application — Holomorphic parameter integrals}
 Let $F$ be continuous on $\Omega\times[0,1]$, and
 suppose that, for every $s\in[0,1]$, the function $z\mapsto F(z,s)$ belongs to $H(\Omega)$. Let
@@ -170,6 +190,7 @@ suppose that, for every $s\in[0,1]$, the function $z\mapsto F(z,s)$ belongs to $
 \]
 Then $f\in H(\Omega)$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0021
 \textit{Proof.}
 Define
 \[
@@ -197,10 +218,12 @@ Set $1/n<\delta$. Then
 \end{align*}
 Thus, on $\overline D$, $f_n\to f$ uniformly, and hence $f\in H(\Omega)$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0022
 \textbf{Remark.}
 Using these two results, one can construct elements in $H(\Omega)$ such as
 $\sum_{n\geq0}f_n(z)$, provided the series converges uniformly on compact sets.
 
+% BLOG-PASSAGE: liouville-and-morera:p0023
 
 \subsection*{Tool 18 — Schwarz Reflection Principle}
 Let $U$ be a domain in $\mathbb C$ such that \(\bar z\in U\iff z\in U.\)
@@ -214,11 +237,13 @@ Suppose $f_+$ and $f_-$ extend continuously to
 $\{z\in U\mid\operatorname{Im}(z)=0\}$ and agree there. Then $f_+$ and $f_-$
 are restrictions of a single holomorphic function $f\in H(U)$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0024
 
 \textit{Proof.}
 By the pasting lemma, we see that $f$ is continuous on $U$. Let $T$ be a
 triangle in $U$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0025
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.82\textwidth]{note4-fig-01.pdf}
@@ -226,6 +251,7 @@ triangle in $U$.
 \end{figure}
 \emph{Annotation:} ``Pardon the asymmetry!''
 
+% BLOG-PASSAGE: liouville-and-morera:p0026
 Set
 \[
   f=
@@ -247,6 +273,7 @@ As $\varepsilon\to0$, we see that
 Morera gives the result. The only subtlety is to justify that
 the integrals of these triangles vary continuously as $\varepsilon\to0$; this follows by writing the parametrizations explicitly.
 
+% BLOG-PASSAGE: liouville-and-morera:p0027
 
 \textbf{Remark.}
 In this way, a function $f\in H(U^+)$ that extends continuously to
@@ -256,13 +283,16 @@ $\overline{U^+}$ can be extended to $U$ once we set
   \qquad\text{on }U^-.
 \]
 
+% BLOG-PASSAGE: liouville-and-morera:p0028
 Here is an interesting instance of the Schwarz Reflection Principle.
 
+% BLOG-PASSAGE: liouville-and-morera:p0029
 \subsubsection*{Application}
 Suppose $f$ is continuous and nonvanishing on $\overline D$ and
 $f\in H(D)$, and \(|f(z)|=1\iff |z|=1.\)
 Then $f$ is a constant.
 
+% BLOG-PASSAGE: liouville-and-morera:p0030
 \textit{Proof.}
 If one can mimic Schwarz's proof here with the extension
 \[
@@ -280,12 +310,14 @@ have to make sure that its integral on triangles vanishes. As before, set
 \]
 We shall exploit the convexity of $D$. Let $T$ be a triangle in $\mathbb C$.
 
+% BLOG-PASSAGE: liouville-and-morera:p0031
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.62\textwidth]{note4-fig-02.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: liouville-and-morera:p0032
 Deform $T_\varepsilon$ to $T_1$ within the domain; then
 \[
   \int_{T_\varepsilon}f(z)\,dz
@@ -294,6 +326,7 @@ Deform $T_\varepsilon$ to $T_1$ within the domain; then
 \]
 We now approximate the relevant arcs by polygons.
 
+% BLOG-PASSAGE: liouville-and-morera:p0033
 
 \begin{figure}[htbp]
   \centering
@@ -301,6 +334,7 @@ We now approximate the relevant arcs by polygons.
 
 \end{figure}
 
+% BLOG-PASSAGE: liouville-and-morera:p0034
 By pushing down as before, we see that
 \[
   \int_{T_1}f(z)\,dz
@@ -308,13 +342,14 @@ By pushing down as before, we see that
   =\int_{T_3}f(z)\,dz
   =0.
 \]
-Therefore
+Therefore,
 \[
   \int_{\gamma_{a\to b\to c\to d\to e\to a}}f(z)\,dz
   =\sum_{i=1}^{2}\int_{T_i}f(z)\,dz
   =0.
 \]
 
+% BLOG-PASSAGE: liouville-and-morera:p0035
 Approximating the arc by polygons gives
 \[
   \int_\gamma f(z)\,dz=0.
@@ -324,25 +359,30 @@ Similarly, one can prove
   \int_{\gamma'}f(z)\,dz=0.
 \]
 
+% BLOG-PASSAGE: liouville-and-morera:p0036
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.94\textwidth]{note4-fig-04.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: liouville-and-morera:p0037
 Hence
 \[
   \int_T f(z)\,dz=0,
 \]
 so $f\in H(\mathbb C)$. But $f$ is bounded, and therefore $f$ is constant.
 
+% BLOG-PASSAGE: liouville-and-morera:p0038
 \textbf{Exercise.}
 Make this geometric argument analytic. Do it!
 
+% BLOG-PASSAGE: liouville-and-morera:p0039
 
 The following is not a standard technique, but it is a useful tool to have in
 one's arsenal.
 
+% BLOG-PASSAGE: liouville-and-morera:p0040
 \subsection*{Tool 19 — Reverse Triangle Inequality}
 Given $\{z_i\}_{i=1}^N$, with $z_i\in\mathbb C$, there exists
 $S\subseteq\{1,2,\ldots,N\}$ such that
@@ -352,6 +392,7 @@ $S\subseteq\{1,2,\ldots,N\}$ such that
 \]
 (Reverse Triangle Inequality.)
 
+% BLOG-PASSAGE: liouville-and-morera:p0041
 
 \textit{Proof.}
 Set \(z_k=|z_k|e^{i\alpha_k}.\)
@@ -361,6 +402,7 @@ For $-\pi\leq\theta\leq\pi$, let $S(\theta)$ be the set of all $k$ such that
 \]
 Then
 
+% BLOG-PASSAGE: liouville-and-morera:p0042
 \[
   \left|\sum_{S(\theta)}z_k\right|
   =\left|\sum_{S(\theta)}e^{-i\theta}z_k\right|

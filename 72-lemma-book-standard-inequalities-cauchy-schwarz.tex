@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Standard Inequalities and Ingenious Cauchy–Schwarz Applications}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0001
 \subsection{A motivating inequality}
 Let $a,b,c>0$ satisfy
 $0<\sqrt a+\sqrt b+\sqrt c\leq3\sqrt2$, and establish
@@ -15,12 +16,13 @@ $0<\sqrt a+\sqrt b+\sqrt c\leq3\sqrt2$, and establish
 As written, the challenge is false: $a=1/4$, $b=1$, and $c=729/100$
 satisfy the hypothesis, while the left-hand side is approximately $12.652$.
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0002
 \setcounter{theorem}{70}\begin{lemma}[Arithmetic--geometric mean inequality]\label{lemma:lb1-74}
 For all positive reals $a_1,a_2,\ldots,a_n$,
 \[\frac{a_1+a_2+\cdots+a_n}{n}\geq\sqrt[n]{a_1a_2\cdots a_n},\]
 with equality if $a_1=a_2=\cdots=a_n$.
 \end{lemma}
-$(1,0,0,\ldots,0)\succ(1/n,1/n,\ldots,1/n)$: direct Muirhead!
+$(1,0,0,\ldots,0)\succ(1/n,1/n,\ldots,1/n)$: direct \BlogPostAt{lemma-book-inequality-toolkit}{lemma:muirhead-majorization}{Muirhead}!
 Alternatively, consider the constraint $\sum_{i=1}^n a_i=S$ and employ Lagrange's method to prove it.
 \paragraph{Application: Nesbitt's inequality.}
 For positive $a,b,c$, prove
@@ -43,6 +45,7 @@ For positive reals $a_1,\ldots,a_n$ and nonnegative weights $x_1,\ldots,x_n$, no
 \geq\sqrt[x_1+x_2+\cdots+x_n]{a_1^{x_1}a_2^{x_2}\cdots a_n^{x_n}}.\]
 \end{lemma}
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0003
 % Source page 32 - left
 \paragraph{Application: RMO (1989).}
 Let $a,b,c$ be the side lengths of a triangle. Prove that
@@ -69,9 +72,10 @@ We have $x^2/(x-1)\geq4\Longleftrightarrow(x-2)^2\geq0$. Hence
 \left(\frac{y^2}{y-1}\right)^2\left(\frac{z^2}{z-1}\right)^2}
 =\sqrt[3]{4^2\cdot4^2\cdot4^2}.
 \]
-Therefore $\sum_{\mathrm{cyc}}x^4/(y^2-2y+1)\geq3\cdot4^2=48$. Q.E.D.!
+Therefore, $\sum_{\mathrm{cyc}}x^4/(y^2-2y+1)\geq3\cdot4^2=48$. Q.E.D.!
 This solution was communicated to me by Vedant. ``Thanks to him!''
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0004
 \subsection{Standard inequalities}
 The following inequalities are useful enough to record as standard lemmas.
 \setcounter{theorem}{72}\begin{lemma}[Standard inequalities]\label{lemma:lb1-76}
@@ -118,6 +122,7 @@ Since $(a^2+b^2)/2\geq((a+b)/2)^2$ and $ab\leq(a^2+b^2)/2$,
 \]
 The last step uses RMS $\geq$ AM.
 % Source page 34 - right
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0005
 The power-mean inequality organizes several familiar comparisons between means.
 \setcounter{theorem}{73}\begin{lemma}[Power-mean inequality]\label{lemma:lb1-77}
 For positive $a_1,\ldots,a_n$ and $r\geq s>0$,
@@ -155,6 +160,7 @@ d(a+b+c)\leq\sqrt3d\sqrt{a^2+b^2+c^2}
 \]
 and $8\sqrt3<18$.
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0006
 % Source page 35 - left
 Also,
 \[\frac8{bc+ac}\geq\frac8{a^2+b^2+c^2},\qquad
@@ -170,6 +176,7 @@ In fact, P. K. Hung thought of a generalization and conjectured that
 \geq\frac1{a_1^2}+\frac4{a_1^2+a_2^2}+\cdots+
 \frac{n^2}{a_1^2+a_2^2+\cdots+a_n^2}.\]
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0007
 \begin{lemma}[Reverse Cauchy]
 The best way to apply Cauchy's inequality is what I call the strategy of reverse Cauchy.
 Every Olympiad student knows old and modern Cauchy; its modified form is
@@ -197,6 +204,7 @@ Before employing this divine technique of reverse Cauchy, let us jot down some t
 \end{lemma}
 These are the most celebrated lemmas in the IMO.
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0008
 \subsection{Q.E.D.s using Cauchy--Schwarz}
 \paragraph{Iran (1998).}
 Prove that if $x,y,z\geq1$ satisfy $1/x+1/y+1/z=2$, then
@@ -212,6 +220,7 @@ In fact, if we make the following adjustment, there is some hope:
 \]
 Now comes the crucial move: take $a=x$, $b=y$, $c=z$. Q.E.D.!
 % Source page 36 - right
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0009
 \paragraph{Kvant: Vasile C\^irtoaje.}
 Prove that for any real numbers $a,b,c,x,y,z$,
 \[ax+by+cz+\sqrt{(a^2+b^2+c^2)(x^2+y^2+z^2)}
@@ -230,6 +239,7 @@ You know what? We have thus reached an unusual fact. Look below!
 \[\sum_{\mathrm{cyc}}\left(\frac{2x+2y-z}{3}\right)^2=\sum x^2.\]
 Wow! A.T.: always true. Q.E.D.!
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0010
 \paragraph{A problem that took Titu Andreescu several weeks to resolve.}
 For positive reals $x,y,z,a,b,c$ such that $xy+yz+zx=3$, prove that
 \[\frac a{b+c}(y+z)+\frac b{c+a}(z+x)+\frac c{a+b}(x+y)\geq3.\]
@@ -280,11 +290,13 @@ ab(a+b)+bc(b+c)+ca(c+a)\geq6abc,
 \]
 which follows from AM--GM applied to the six terms. True! W$^5$; Q.E.D.
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0011
 ``Did you notice that if $x+y+z=1$, then $(x+y+z)^2=1$?
 Thus $x^2+y^2+z^2+2(xy+yz+zx)=1$, so
 $x^2+y^2+z^2=-5$, but $\sum x^2>0$.
-Therefore we conclude that Titu lost his mind!'' Or\ldots
+Therefore, we conclude that Titu lost his mind!'' Or\ldots
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0012
 A close inspection justifies the normalization above.
 We have $xy+yz+zx=3$. Let $x+y+z=k$, and put
 $X=x/k$, $Y=y/k$, and $Z=z/k$. Then $X+Y+Z=1$.
@@ -297,6 +309,7 @@ It does not matter whether you use capital or small letters: finally, we intend 
 Nowhere in the proof do we use both $x+y+z=1$ and $xy+yz+zx=3$.
 Thus the move is perfectly justified!
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0013
 
 \paragraph{A square-root heuristic: China (1982).}
 Let $n\geq2$ and let $a_1,a_2,\ldots,a_n$ be positive numbers such that $a_1+\cdots+a_n=1$.
@@ -311,7 +324,7 @@ Chebyshev's inequality gives
 \[\sum_{\mathrm{cyc}}\frac{a_i}{\sqrt{1-a_i}}
 \geq\frac1n\sum a_i\sum\frac1{\sqrt{1-a_i}}
 =\frac1n\sum\frac1{\sqrt{1-a_i}}.\]
-Therefore it is sufficient to prove
+Therefore, it is sufficient to prove
 $\frac1n\sum1/\sqrt{1-a_i}\geq\sqrt{n/(n-1)}$.
 By Cauchy--Schwarz,
 \[\sum\frac1{\sqrt{1-a_i}}\geq\frac{n^2}{\sum\sqrt{1-a_i}}
@@ -333,9 +346,10 @@ x^2+y^2+z^2&=y^2+\left(\sqrt{x^2+z^2}\right)^2
 \end{aligned}
 \]
 If $x\sqrt{y^2+z^2}\geq y\sqrt{x^2+z^2}$, substitute in I and the result follows.
-But that inequality need not hold: if $y\sqrt{x^2+z^2}\geq x\sqrt{y^2+z^2}$, substitute in II.
+But that inequality need not hold: if $y\sqrt{x^2+z^2}\geq x\sqrt{y^2+z^2}$, substitute in II\@.
 The conclusion follows.
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0014
 Vedant and I created the following problem.
 Define $x_k=(a^k+b^k+c^k)/3$, where $a,b,c>0$.
 Given $abc\geq3\sqrt3$, prove that
@@ -347,6 +361,7 @@ x_1^6\left(\frac{x_1^2-x_1+1}{x_1^2+1}\right)
 The problem is really nice from an application point of view. Take it as
 a challenge from my side!
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0015
 % Source page 5 - left
 I recently made an inequality that is really awesome. Take this as another challenge!
 \paragraph{Mission impossible.}
@@ -359,6 +374,7 @@ equality cannot be achieved? Anyway, it is very difficult. It is beautiful
 because my date of birth is 10-4-1999; also, $abc\geq e/\pi$ has nothing
 to do with $e$, $\pi$, or any of their high-tech properties. Just chill!
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0016
 Vedant proposed the following problem.
 Given $2a^2+4b^3+8c^4=1$ and $a,b,c>0$, prove
 \[
@@ -370,6 +386,7 @@ Let $A,B,C\in[0,\pi/2)$ satisfy $\tan^2A+\tan^2B+\tan^2C=9$.
 If $A,B,C$ are the angles of a triangle, prove that it is equilateral.
 As an additional constraint, use only RMS $\geq$ AM $\geq$ HM.
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0017
 % Source page 7 - left
 The same ideas suggest two further challenges.
 \paragraph{A stronger inequality.}
@@ -381,6 +398,7 @@ $\sum_{\mathrm{cyc}}\dfrac{a_i^2}{a_i^4+1}>\dfrac{n}{n^3+1}$.
 \end{enumerate}
 The second problem is the more difficult of the two.
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0018
 \paragraph{Clever AM--GM: AMTI inter-final.}
 Let $a,b,c,d>0$ satisfy
 $\dfrac1{1+a^4}+\dfrac1{1+b^4}+\dfrac1{1+c^4}+\dfrac1{1+d^4}=1$.
@@ -393,6 +411,7 @@ Prove $abcd\geq3$.
 \]
 Applying the analogous inequalities cyclically and multiplying them gives $(abcd)^4\geq3^4$, hence $abcd\geq3$.
 % Source page 14 - right
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0019
 \paragraph{Solution 2, due to the author.}
 Put $A=1/(1+a^4)$, $B=1/(1+b^4)$, $C=1/(1+c^4)$, $D=1/(1+d^4)$.
 Then $a^4=(1-A)/A$, and similarly for the others.
@@ -405,6 +424,7 @@ Using $A+B+C+D=1$,
 \end{align*}
 Thus $abcd\geq3$.
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0020
 \subsection{Right or wrong: who cares!}
 For positive $a,b,c$, prove
 \[
@@ -424,6 +444,7 @@ $\sum c^3/(a^2b)\geq3$, in the opposite direction from what this estimate
 would need. Thus the displayed calculation does not prove the claim.
 Was that correct!
 
+% BLOG-PASSAGE: lemma-book-standard-inequalities-cauchy-schwarz:p0021
 \paragraph{An inequality from the constraint.}
 For real nonzero $a,b,c$ satisfying
 \[

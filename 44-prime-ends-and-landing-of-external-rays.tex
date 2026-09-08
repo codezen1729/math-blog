@@ -5,14 +5,16 @@
 \begin{document}
 \section*{Prime Ends and Landing of External Rays}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: prime-ends-and-landing-of-external-rays:p0001
 Recall the Riemann mapping theorem.
 \setcounter{theorem}{32}\begin{theorem}[Riemann mapping theorem]
 For a simply connected domain $U\subset\mathbb C$, there is a biholomorphism $\varphi\colon U\to\mathbb D$, unique after prescribing suitable initial values, namely $\varphi^{-1}(0)$ and $(\varphi^{-1})'(0)$.
 \end{theorem}
-Nothing in this theorem says that the map extends homeomorphically to $\overline U$. We first sketch Carath\'eodory's work on extension, then interpret it for a monic polynomial $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ of degree $d\geq2$, with $J=\partial K$ connected. Equivalently, $\mathcal A(\infty)$ contains no finite critical point of $f$.
+Nothing in this theorem says that the map extends homeomorphically to $\overline U$. We first sketch Carath\'eodory's work on extension, then interpret it for a monic polynomial $f\colon\widehat{\mathbb C}\to\widehat{\mathbb C}$ of degree $d\geq2$, with the \BlogPost{critical-points-and-julia-set-connectivity}{Julia set $J=\partial K$ connected}. Equivalently, $\mathcal A(\infty)$ contains no finite critical point of $f$.
 \subsection{A sketch of Carath\'eodory's work}
 Let $\varphi\colon U\to\mathbb D$ be a conformal isomorphism. For now we avoid hyperbolic geometry: the spherical metric $\rho(z)|dz|$ on $\widehat{\mathbb C}$ captures Carath\'eodory's strategy. Equip both $\mathbb D$ and $U$ with the spherical metric.
 % Source page 2
+% BLOG-PASSAGE: prime-ends-and-landing-of-external-rays:p0002
 For a square $I^2\subset\widehat{\mathbb C}$, its area is $\iint_{I^2}\rho(x+iy)^2\,dx\,dy$, and the length of a horizontal segment $y=C$ is $\int_I\rho(x+iC)\,dx$. Cauchy--Schwarz gives
 \[
 \left(\int_I\rho(x+iy)\,dx\right)^2
@@ -25,8 +27,10 @@ Hence $\int_I L(y)^2\,dy=O(\operatorname{Area}(I^2))$. Thinking of $I^2\cong\mat
 \end{figure}
 For almost every $\theta\in(0,2\pi]$, this gives a candidate for $\varphi^{-1}(e^{i\theta})$. To ensure continuous extension to the boundary, every sequence $z_j\to e^{i\theta}$ must satisfy $\varphi^{-1}(z_j)\to\varphi^{-1}(e^{i\theta})$.
 
+% BLOG-PASSAGE: prime-ends-and-landing-of-external-rays:p0003
 The idea is to divide $U$ by crosscuts $A\subset U$, with $A\cong(0,1)$, $\overline A\cong[0,1]$, and $|\overline A\cap\partial U|=2$.
 % Source page 3
+% BLOG-PASSAGE: prime-ends-and-landing-of-external-rays:p0004
 For example, a crosscut $A$ joins boundary points $x,y$. Since $U\cong\mathbb D$, for every sequence $x_i\in U$ tending to $\partial U$, the sequence $\varphi(x_i)$ accumulates on $\partial\mathbb D$. The image $\varphi(A)$ is a crosscut of $\mathbb D$. By the Jordan curve theorem it separates $\mathbb D$ into two components, and pulling these components back by $\varphi$ separates $U$ into two crosscut neighbourhoods $U^+$ and $U^-$.
 \begin{figure}[H]\centering
 \includegraphics[width=.51\textwidth]{cd8-fig-02.pdf}
@@ -34,6 +38,7 @@ For example, a crosscut $A$ joins boundary points $x,y$. Since $U\cong\mathbb D$
 \end{figure}
 The signs depend on the orientation of $A$.
 
+% BLOG-PASSAGE: prime-ends-and-landing-of-external-rays:p0005
 To prevent failure of boundary continuity of $\varphi$ or $\varphi^{-1}$, use nested crosscut neighbourhoods around boundary points: a fundamental chain $\mathcal N=\{N_j\}_j$ of crosscut neighbourhoods with $N_1\supset N_2\supset\cdots$. If $A_j$ are the corresponding crosscuts, require $\overline A_j\cap\overline A_i=\varnothing$ for $i\ne j$, and $\diam(\overline A_j)\to0$.
 \begin{figure}[H]\centering
 \includegraphics[width=.52\textwidth]{cd8-fig-03.pdf}
@@ -47,6 +52,7 @@ Two fundamental chains $\{N_j\}$ and $\{N_j'\}$ are equivalent if each eventuall
 \]
 \end{definition}
 % Source page 4
+% BLOG-PASSAGE: prime-ends-and-landing-of-external-rays:p0006
 Clearly $\overline{\mathbb D}\cong\widehat{\mathbb D}\cong\widehat U$. To extend $\varphi$ continuously, it remains to compare the topologies of $\widehat U$ and $\overline U$. Thus Carath\'eodory shows that extension is independent of the particular map and depends entirely on the topology of the domain.
 \setcounter{theorem}{33}\begin{theorem}[Carath\'eodory]
 A conformal isomorphism $\psi\colon\mathbb D\to U$ extends continuously to a map $\widetilde\psi\colon\overline{\mathbb D}\to\overline U$ if and only if $\partial U$ is locally connected.
@@ -57,6 +63,7 @@ In our setting the conformal isomorphism is the B\"ottcher map $\phi\colon\mathb
 \]
 If this exists, we say that $R_t$ lands at $\gamma(t)\in\partial K=J$. Let us translate Carath\'eodory's work into this setting.
 % Source page 5
+% BLOG-PASSAGE: prime-ends-and-landing-of-external-rays:p0007
 \setcounter{theorem}{34}\begin{theorem}[Landing criterion]\label{cd8:landing}
 The following are equivalent:
 \begin{itemize}
@@ -82,13 +89,14 @@ Suppose $p\colon[0,\infty)\to V\setminus\{0\}$, $p(t)\to0$ as $t\to\infty$, and 
 \end{itemize}
 \end{lemma}
 % Source page 6
+% BLOG-PASSAGE: prime-ends-and-landing-of-external-rays:p0008
 \setcounter{theorem}{37}\begin{lemma}[Preparatory lemma]\label{cd8:preparatory}
 If $R_t=f(R_t)$ lands at $z_0$, then $z_0$ is a repelling or parabolic fixed point.
 \end{lemma}
 \begin{proof}
 Parametrise the ray by $p\colon\mathbb R\to\mathbb C\setminus K$, where $p(s)=z$ is determined by $\log\log|\phi(z)|=s$. This $z$ is unique: the argument is fixed by $R_t$, and the modulus is fixed by $|\phi(z)|=e^{e^s}$. Also $z_0=\gamma(t)=\lim_{s\to-\infty}p(s)$.
 
-Since $\phi(f(z))=\phi(z)^d$, we have $\log|\phi(f(z))|=d\log|\phi(z)|$, and $\log\log|\phi(f(z))|=\log d+\log\log|\phi(z)|$. Therefore $f(p(s))=p(s+\log d)$. The landing point is fixed, and the snail lemma gives $|\lambda|>1$ or $\lambda=1$.
+Since $\phi(f(z))=\phi(z)^d$, we have $\log|\phi(f(z))|=d\log|\phi(z)|$, and $\log\log|\phi(f(z))|=\log d+\log\log|\phi(z)|$. Therefore, $f(p(s))=p(s+\log d)$. The landing point is fixed, and the snail lemma gives $|\lambda|>1$ or $\lambda=1$.
 \end{proof}
 \begin{proof}[Proof of Theorem~\ref{cd8:rational-rays}]
 First suppose that $t$ is periodic under multiplication by $d$. Choose $q\ge1$ with $d^qt\equiv t\pmod1$, and put
@@ -108,7 +116,7 @@ R_t=p(\mathbb R)=\bigcup_{k\in\mathbb Z}I_k
 \]
 with $g(I_k)=I_{k+1}$. All the segments $I_k$ have the same finite Poincar\'e length. Also $G(p(s))=e^s\to0$ as $s\to-\infty$. Thus any limit point $\widehat z$ of $p(s)$ has $\log|\phi(\widehat z)|=0$, so $\phi(\widehat z)\in\partial\mathbb D$ and $\widehat z\in\partial K=J$. Such a limit point exists because $\overline{\mathbb C\setminus K}$ is compact in $\widehat{\mathbb C}$. The limit-point configuration is illustrated below; once fixedness is established, the preparatory lemma applies.
 
-As $k\to-\infty$, the segments $I_k$ approach the boundary $J$; the comparison between the Poincar\'e metric and the spherical distance to the boundary therefore gives
+As $k\to-\infty$, the segments $I_k$ approach the boundary $J$. The comparison between the Poincar\'e metric and the spherical distance to the boundary therefore gives
 \[
 \operatorname{diam}_{\mathrm{sph}}(I_k)\longrightarrow0.
 \]
@@ -120,7 +128,7 @@ be the cluster set of the ray at the Julia set. It is nonempty, compact, and con
 \[
 L_t\subseteq\operatorname{Fix}(g).
 \]
-The fixed-point set of $g$ is finite, whereas $L_t$ is connected, so $L_t$ is a single point. Therefore $R_t$ lands. The preparatory lemma, applied to $g$, shows that the landing point is repelling or parabolic for $g$, and hence periodic for $f$.
+The fixed-point set of $g$ is finite, whereas $L_t$ is connected, so $L_t$ is a single point. Therefore, $R_t$ lands. The preparatory lemma, applied to $g$, shows that the landing point is repelling or parabolic for $g$, and hence periodic for $f$.
 \begin{figure}[H]\centering
 \includegraphics[width=.65\textwidth]{cd8-fig-05.pdf}
 \FigureTag{CD8.5}{fig:cd8-05}

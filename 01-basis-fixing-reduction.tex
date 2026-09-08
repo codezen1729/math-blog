@@ -4,8 +4,10 @@
 \begin{document}
 \section*{The Complex Plane}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: basis-fixing-reduction:p0001
 \textit{Following the framework of T. Tao.}
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0002
 \subsection*{Tool 1 — Basis-Fixing Reduction}
 Given a linear transformation,
 \[
@@ -13,6 +15,7 @@ T\left(\sum_{i=1}^{n}a_i e_i\right)=\sum_{i=1}^{n}a_iT(e_i).
 \]
 If $T$ fixes the basis $\{e_i\}$, then $T$ is the identity. Thus, compose $T$ with linear transformations so that the composition fixes $\{e_i\}$; then one can trace one's steps back.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0003
 It follows that any isometry $T\colon\mathbb C\to\mathbb C$ is of the form
 \[
 T(z)=z_0+\omega z
@@ -21,6 +24,7 @@ T(z)=z_0+\omega\overline z,
 \]
 where $|\omega|=1$.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0004
 
 \textit{Proof.}
 Without loss of generality, let $T$ fix $0$; otherwise consider $T(z)-T(0)$. Then
@@ -65,7 +69,7 @@ The map $\varphi\circ T$ is again an isometry that preserves $0$ (observe here t
 \langle(\varphi\circ T)(e_2),(\varphi\circ T)(e_2)\rangle
 =\langle e_2,e_2\rangle=1.
 \]
-Therefore \((\varphi\circ T)(e_2)=\pm e_2,\)
+Therefore, \((\varphi\circ T)(e_2)=\pm e_2,\)
 and hence
 \[
 (\varphi\circ T)(z)=z\qquad\text{or}\qquad
@@ -83,20 +87,26 @@ T(z)=z_0+\omega z
 T(z)=z_0+\omega\overline z.
 \]
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0005
 \textbf{Remark.}
 The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice,'' and one can trace one's steps back after reaching that ``nice'' place. We will see another illustration of this in the same theme. Before that, note that what we essentially found is that the complex plane is rigid: if two points of a plane are connected by a rubber band, there are only two ways to deform it so that the lengths of the rubber bands remain the same in the end -- reflections and rotations. If you stretch the rubber band, then you cannot undo it later.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0006
 In other words, it will break. This rigidity can be extended to all of $\mathbb R^n$ with a very similar idea, yielding the following.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0007
 \subsubsection*{General version}
 Any origin-fixing isometry from $\mathbb R^n$ to $\mathbb R^n$ is a composition of at most $n$ reflections along hyperplanes.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0008
 \textit{Proof.}
 Exercise. Refer to Beardon's \emph{The Geometry of Discrete Groups}, or any text on M\"obius transformations on $\mathbb R^n$.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0009
 \subsubsection*{The dihedral group}
 Now let us look at another application of Tool $1$. To be sincere, we shall not deviate from the theme of reflections and rotations. Let us try to study the structure of $D_n$, the dihedral group. \(D_n\cong\operatorname{Aut}(C_n),\) where $C_n$ is the cyclic graph on $n$ vertices having exactly one $n$-cycle.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0010
 \textit{Proof.}
 It is easy to check that $D_n$ acts on $C_n$, since rotations and reflections preserve edges. Thus there is a group homomorphism
 \[
@@ -104,6 +114,7 @@ It is easy to check that $D_n$ acts on $C_n$, since rotations and reflections pr
 \]
 We only have to show that $\varphi$ is surjective; it is clearly injective, since the kernel is the identity in $D_n$.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0011
 Label the vertices $\{1,2,3,4,\ldots,n\}$. Without loss of generality, for a given $T\in\operatorname{Aut}(C_n)$ assume $T(1)=1$; otherwise compose it with $\varphi(T')$, where $T'$ is a rotation. Write the cycle as
 \[
 1\longrightarrow2\longrightarrow3\longrightarrow\cdots
@@ -112,12 +123,15 @@ Label the vertices $\{1,2,3,4,\ldots,n\}$. Without loss of generality, for a giv
 \]
 If $T(1)=1$, then $T(2)$ must be adjacent to $1$, so $T(2)=2$ or $n$. If $T(2)=2$, then $T(3)$ must be adjacent to $2$ and cannot be $1$. Inductively, $T(i)=i$ for every $i$. If $T(2)=n$, then $T(3)$ must be adjacent to $n$ but not to $1$. Again, inductively, we conclude that $T$ is a reflection. From this ``nice'' place, trace back to conclude that $T\in\varphi(D_n)$. Hence $\varphi$ is an isomorphism.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0012
 \textbf{Remark.}
 This is a good place to ask the following. We have just seen the rigidity of the complex plane, geometrically speaking. Now consider the isometries that fix $0$ and $1$.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0013
 \textbf{Exercise.}
 Such an isometry is a \emph{field homomorphism} (hence a linear map) that fixes $\mathbb R$, from $\mathbb C$ to $\mathbb C$, with $\mathbb C$ viewed as $\mathbb R^2$.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0014
 The very geometric notion of rigidity has led us to an algebraic question, namely the exercise above. Suppose we have a field extension of $\mathbb R$, say $\mathbb C'$, such that
 \[
 \operatorname{Aut}_{\mathbb R}(\mathbb C')
@@ -126,6 +140,7 @@ The very geometric notion of rigidity has led us to an algebraic question, namel
 \]
 Then is $\mathbb C'\cong\mathbb C$? Here $\operatorname{Aut}_{\mathbb R}(\mathbb C')$ denotes the field homomorphisms that fix $\mathbb R$.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0015
 Here the group $D_2$, seen as $\operatorname{Aut}(C_2)$ with vertices $\pm e_2$, is of relevance, because then we are asking
 \[
 \operatorname{Aut}_{\mathbb R}(\mathbb C')
@@ -135,8 +150,10 @@ Here the group $D_2$, seen as $\operatorname{Aut}(C_2)$ with vertices $\pm e_2$,
 \]
 This is an infant version of the inverse Galois problem.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0016
 The algebraic construction of $\mathbb C$ is thus significant: it shows us that rigidity is a consequence of an algebraic structure, and vice versa.
 
+% BLOG-PASSAGE: basis-fixing-reduction:p0017
 This finally brings us to the statement made by Sophie Germain: ``Algebra is written geometry and geometry is figured algebra.'' One can regard the construction of $\mathbb C$ via geometry and, independently, via algebra as an illustration of Sophie's comment.
 % BLOG-CONTENT-END
 \end{document}

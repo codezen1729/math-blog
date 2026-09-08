@@ -1,0 +1,1947 @@
+{
+  "schema": 1,
+  "auditOnly": true,
+  "method": "Equations and diagram source are masked. Sentences with at least two prose words are matched against one-to-three-sentence windows at similarity 0.62, so local punctuation, spelling, splitting, merging, and grammar edits are not misreported as deletion/replacement. Findings are review prompts, not authorship judgements.",
+  "posts": [
+    {
+      "slug": "basis-fixing-reduction",
+      "title": "The Complex Plane",
+      "file": "01-basis-fixing-reduction.tex",
+      "changedProseRatio": 0.000602,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 16,
+        "after": 16,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "connectedness-and-compactness",
+      "title": "Connectedness and Compactness",
+      "file": "02-connectedness-and-compactness.tex",
+      "changedProseRatio": 0.000986,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 8,
+        "after": 8,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "complex-differentiation",
+      "title": "Complex Differentiation",
+      "file": "03-complex-differentiation.tex",
+      "changedProseRatio": 0.001152,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 12,
+        "after": 12,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 3,
+        "after": 3,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "harmonic-functions-and-rectifiable-curves",
+      "title": "Harmonic Functions and Rectifiable Curves",
+      "file": "04-harmonic-functions-and-rectifiable-curves.tex",
+      "changedProseRatio": 0.002688,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 12,
+        "after": 12,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "continuous-induction",
+      "title": "Continuous Induction",
+      "file": "05-continuous-induction.tex",
+      "changedProseRatio": 0.001729,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 17,
+        "after": 17,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "goursat-cauchy",
+      "title": "Goursat's Theorem and Cauchy's Theorem",
+      "file": "06-goursat-cauchy.tex",
+      "changedProseRatio": 0.00156,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 16,
+        "after": 16,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "liouville-and-morera",
+      "title": "Liouville and Morera",
+      "file": "07-liouville-and-morera.tex",
+      "changedProseRatio": 0.001892,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 17,
+        "after": 17,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "winding-number",
+      "title": "Winding Number",
+      "file": "08-winding-number.tex",
+      "changedProseRatio": 0.000621,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 49,
+        "after": 49,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "homotopy-paths-and-jordan-curves",
+      "title": "Homotopy–Path Correspondence and the Jordan Curve Theorem",
+      "file": "09-homotopy-paths-and-jordan-curves.tex",
+      "changedProseRatio": 0.0,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 37,
+        "after": 37,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 4,
+        "after": 4,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "keyhole-contour-construction",
+      "title": "Keyhole Contour Construction",
+      "file": "10-keyhole-contour-construction.tex",
+      "changedProseRatio": 0.002149,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 37,
+        "after": 37,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "rouche-and-bloch",
+      "title": "Rouché's Theorem and Bloch's Theorem",
+      "file": "11-rouche-and-bloch.tex",
+      "changedProseRatio": 0.017312,
+      "deletedSentences": [
+        {
+          "passageId": "rouche-and-bloch:p0033",
+          "text": "With this we conclude our compilation of standard techniques in complex analysis."
+        }
+      ],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 5,
+        "after": 3,
+        "delta": -2
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 1,
+        "delta": 1
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "separation-and-holomorphic-lifting",
+      "title": "Separation by a Polygonal Path/Arc and Holomorphic Lifting",
+      "file": "12-separation-and-holomorphic-lifting.tex",
+      "changedProseRatio": 0.004495,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 11,
+        "after": 11,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "smooth-covering-manifolds",
+      "title": "Smooth Covering Manifolds",
+      "file": "83-smooth-covering-manifolds.tex",
+      "changedProseRatio": 0.003969,
+      "deletedSentences": [
+        {
+          "passageId": "smooth-covering-manifolds:p0014",
+          "text": "Therefore, mathematics is smooth."
+        }
+      ],
+      "newSentences": [
+        {
+          "passageId": "smooth-covering-manifolds:p0033",
+          "text": "The orientation consequences of these smooth coverings continue in Orientation and Covering Maps ."
+        }
+      ],
+      "firstPerson": {
+        "before": 41,
+        "after": 42,
+        "delta": 1
+      },
+      "rhetoricalQuestions": {
+        "before": 3,
+        "after": 3,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "orientation-and-covering-maps",
+      "title": "Orientation and Covering Maps",
+      "file": "61-orientation-and-covering-maps.tex",
+      "changedProseRatio": 0.002601,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 15,
+        "after": 15,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "topology-of-surfaces",
+      "title": "Topology of Surfaces",
+      "file": "13-topology-of-surfaces.tex",
+      "changedProseRatio": 0.0156,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 31,
+        "after": 31,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 4,
+        "after": 4,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "elliptic-curves-geometric",
+      "title": "Elliptic Curves — Geometric Perspective",
+      "file": "14-elliptic-curves-geometric.tex",
+      "changedProseRatio": 0.017921,
+      "deletedSentences": [],
+      "newSentences": [
+        {
+          "passageId": "elliptic-curves-geometric:p0019",
+          "text": "Now suppose mathematics ."
+        },
+        {
+          "passageId": "elliptic-curves-geometric:p0020",
+          "text": "Then we have mathematics"
+        }
+      ],
+      "firstPerson": {
+        "before": 12,
+        "after": 12,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "elliptic-curves-algebraic",
+      "title": "Elliptic Curves — Algebraic Perspective",
+      "file": "15-elliptic-curves-algebraic.tex",
+      "changedProseRatio": 0.018205,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 10,
+        "after": 10,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "elliptic-curves-harmonic",
+      "title": "Elliptic Curves — Harmonic Perspective",
+      "file": "16-elliptic-curves-harmonic.tex",
+      "changedProseRatio": 0.022328,
+      "deletedSentences": [
+        {
+          "passageId": "elliptic-curves-harmonic:p0026",
+          "text": "Now as, mathematics"
+        }
+      ],
+      "newSentences": [
+        {
+          "passageId": "elliptic-curves-harmonic:p0011",
+          "text": "Note that mathematics ."
+        },
+        {
+          "passageId": "elliptic-curves-harmonic:p0028",
+          "text": "Note that mathematics"
+        }
+      ],
+      "firstPerson": {
+        "before": 14,
+        "after": 14,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "abels-theorem",
+      "title": "Abel's Theorem",
+      "file": "17-abels-theorem.tex",
+      "changedProseRatio": 0.047705,
+      "deletedSentences": [
+        {
+          "passageId": "abels-theorem:p0037",
+          "text": "a mathematics -dimensional complex torus."
+        },
+        {
+          "passageId": "abels-theorem:p0052",
+          "text": "thereby proving (i)."
+        },
+        {
+          "passageId": "abels-theorem:p0083",
+          "text": "and similarly, mathematics"
+        }
+      ],
+      "newSentences": [
+        {
+          "passageId": "abels-theorem:p0015",
+          "text": "Also, if mathematics , mathematics , then mathematics is non-trivial."
+        },
+        {
+          "passageId": "abels-theorem:p0020",
+          "text": "Note that"
+        },
+        {
+          "passageId": "abels-theorem:p0036",
+          "text": "Define the mathematics -dimensional complex torus mathematics"
+        },
+        {
+          "passageId": "abels-theorem:p0052",
+          "text": "This proves (i)."
+        },
+        {
+          "passageId": "abels-theorem:p0053",
+          "text": "Proof of (ii)."
+        }
+      ],
+      "firstPerson": {
+        "before": 38,
+        "after": 38,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "flat-structures-and-teichmuller-curves",
+      "title": "Flat Structures and Teichmüller Curves",
+      "file": "60-flat-structures-and-teichmuller-curves.tex",
+      "changedProseRatio": 0.002308,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 21,
+        "after": 21,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 2,
+        "after": 2,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "locally-trivial-bundles",
+      "title": "Locally Trivial Bundles",
+      "file": "18-locally-trivial-bundles.tex",
+      "changedProseRatio": 0.017696,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 64,
+        "after": 61,
+        "delta": -3
+      },
+      "rhetoricalQuestions": {
+        "before": 2,
+        "after": 2,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "vector-bundles",
+      "title": "Vector Bundles",
+      "file": "19-vector-bundles.tex",
+      "changedProseRatio": 0.0249,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 28,
+        "after": 27,
+        "delta": -1
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "classification-vector-bundles",
+      "title": "Classification of Vector Bundles",
+      "file": "20-classification-vector-bundles.tex",
+      "changedProseRatio": 0.021474,
+      "deletedSentences": [],
+      "newSentences": [
+        {
+          "passageId": "classification-vector-bundles:p0002",
+          "text": "Note that mathematics ."
+        }
+      ],
+      "firstPerson": {
+        "before": 15,
+        "after": 15,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "stable-isomorphism-vector-bundles",
+      "title": "Stable Isomorphism Classes of Vector Bundles",
+      "file": "21-stable-isomorphism-vector-bundles.tex",
+      "changedProseRatio": 0.033776,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 19,
+        "after": 17,
+        "delta": -2
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "bott-periodicity-k-theory",
+      "title": "Bott Periodicity and the Genesis of K-Theory",
+      "file": "22-bott-periodicity-k-theory.tex",
+      "changedProseRatio": 0.014979,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 20,
+        "after": 19,
+        "delta": -1
+      },
+      "rhetoricalQuestions": {
+        "before": 6,
+        "after": 6,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "rings-ideals-and-prime-ideals",
+      "title": "Rings, Ideals, and Prime Ideals",
+      "file": "29-rings-ideals-and-prime-ideals.tex",
+      "changedProseRatio": 0.000794,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 2,
+        "after": 2,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "modules-tensor-products-and-the-determinant-trick",
+      "title": "Modules, Tensor Products, and the Determinant Trick",
+      "file": "30-modules-tensor-products-and-the-determinant-trick.tex",
+      "changedProseRatio": 0.011364,
+      "deletedSentences": [],
+      "newSentences": [
+        {
+          "passageId": "modules-tensor-products-and-the-determinant-trick:p0001",
+          "text": "Modules With rings and ideals in place, let us turn to modules."
+        }
+      ],
+      "firstPerson": {
+        "before": 1,
+        "after": 2,
+        "delta": 1
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "localization-rings-modules-and-prime-ideals",
+      "title": "Localization: Rings, Modules, and Prime Ideals",
+      "file": "31-localization-rings-modules-and-prime-ideals.tex",
+      "changedProseRatio": 0.002522,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 4,
+        "after": 4,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "primary-decomposition-and-uniqueness",
+      "title": "Primary Decomposition and Uniqueness",
+      "file": "32-primary-decomposition-and-uniqueness.tex",
+      "changedProseRatio": 0.006053,
+      "deletedSentences": [],
+      "newSentences": [
+        {
+          "passageId": "primary-decomposition-and-uniqueness:p0004",
+          "text": "We now apply localization to primary ideals."
+        }
+      ],
+      "firstPerson": {
+        "before": 8,
+        "after": 9,
+        "delta": 1
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "noetherian-and-artinian-rings",
+      "title": "Noetherian and Artinian Rings",
+      "file": "33-noetherian-and-artinian-rings.tex",
+      "changedProseRatio": 0.006436,
+      "deletedSentences": [],
+      "newSentences": [
+        {
+          "passageId": "noetherian-and-artinian-rings:p0001",
+          "text": "Noetherian modules We now develop the chain conditions that arose in primary decomposition ."
+        }
+      ],
+      "firstPerson": {
+        "before": 4,
+        "after": 5,
+        "delta": 1
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "integral-dependence",
+      "title": "Integral Dependence",
+      "file": "34-integral-dependence.tex",
+      "changedProseRatio": 0.0,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 14,
+        "after": 14,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "the-nullstellensatz-and-affine-geometry",
+      "title": "The Nullstellensatz and Affine Geometry",
+      "file": "35-the-nullstellensatz-and-affine-geometry.tex",
+      "changedProseRatio": 0.002995,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 6,
+        "after": 6,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "the-spectrum-of-a-ring",
+      "title": "The Spectrum of a Ring",
+      "file": "36-the-spectrum-of-a-ring.tex",
+      "changedProseRatio": 0.001159,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "sheaves-stalks-and-ringed-spaces",
+      "title": "Sheaves, Stalks, and Ringed Spaces",
+      "file": "37-sheaves-stalks-and-ringed-spaces.tex",
+      "changedProseRatio": 0.010786,
+      "deletedSentences": [],
+      "newSentences": [
+        {
+          "passageId": "sheaves-stalks-and-ringed-spaces:p0004",
+          "text": "We now equip the spectrum of a ring with its structure sheaf."
+        }
+      ],
+      "firstPerson": {
+        "before": 0,
+        "after": 1,
+        "delta": 1
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "hyperbolic-geometry",
+      "title": "Hyperbolic Geometry",
+      "file": "38-hyperbolic-geometry.tex",
+      "changedProseRatio": 0.000601,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 12,
+        "after": 12,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 4,
+        "after": 4,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "rational-dynamics-on-the-riemann-sphere",
+      "title": "Rational Dynamics on the Riemann Sphere",
+      "file": "39-rational-dynamics-on-the-riemann-sphere.tex",
+      "changedProseRatio": 0.000361,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 31,
+        "after": 31,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 3,
+        "after": 3,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "attracting-and-repelling-fixed-points",
+      "title": "Attracting and Repelling Fixed Points",
+      "file": "40-attracting-and-repelling-fixed-points.tex",
+      "changedProseRatio": 0.00803,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 20,
+        "after": 21,
+        "delta": 1
+      },
+      "rhetoricalQuestions": {
+        "before": 2,
+        "after": 2,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "parabolic-fixed-points-and-the-flower-theorem",
+      "title": "Parabolic Fixed Points and the Flower Theorem",
+      "file": "41-parabolic-fixed-points-and-the-flower-theorem.tex",
+      "changedProseRatio": 0.001475,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 23,
+        "after": 23,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "dense-subsets-of-julia-sets",
+      "title": "Dense Subsets of Julia Sets",
+      "file": "42-dense-subsets-of-julia-sets.tex",
+      "changedProseRatio": 0.004858,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 11,
+        "after": 11,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "critical-points-and-julia-set-connectivity",
+      "title": "Critical Points and Julia-Set Connectivity",
+      "file": "43-critical-points-and-julia-set-connectivity.tex",
+      "changedProseRatio": 0.000603,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "prime-ends-and-landing-of-external-rays",
+      "title": "Prime Ends and Landing of External Rays",
+      "file": "44-prime-ends-and-landing-of-external-rays.tex",
+      "changedProseRatio": 0.003423,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 11,
+        "after": 11,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "classification-fatou-components",
+      "title": "Classification of Non-Wandering Fatou Components",
+      "file": "23-classification-fatou-components.tex",
+      "changedProseRatio": 0.017591,
+      "deletedSentences": [],
+      "newSentences": [
+        {
+          "passageId": "classification-fatou-components:p0089",
+          "text": "Then we have mathematics"
+        }
+      ],
+      "firstPerson": {
+        "before": 86,
+        "after": 87,
+        "delta": 1
+      },
+      "rhetoricalQuestions": {
+        "before": 6,
+        "after": 6,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "the-chain-rule-and-a-family-of-complex-planes",
+      "title": "The Chain Rule and a Family of Complex Planes",
+      "file": "45-the-chain-rule-and-a-family-of-complex-planes.tex",
+      "changedProseRatio": 0.000534,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 13,
+        "after": 13,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "quasiconformal-mappings",
+      "title": "Quasiconformal Mappings",
+      "file": "46-quasiconformal-mappings.tex",
+      "changedProseRatio": 0.002276,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 20,
+        "after": 20,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 2,
+        "after": 2,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "the-mapping-theorem-and-invariant-complex-structures",
+      "title": "The Mapping Theorem and Invariant Complex Structures",
+      "file": "47-the-mapping-theorem-and-invariant-complex-structures.tex",
+      "changedProseRatio": 0.00043,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 12,
+        "after": 12,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "boundary-behaviour-of-quasiconformal-maps",
+      "title": "Boundary Behaviour of Quasiconformal Maps",
+      "file": "48-boundary-behaviour-of-quasiconformal-maps.tex",
+      "changedProseRatio": 0.004804,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 9,
+        "after": 9,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 2,
+        "after": 2,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "the-quadratic-family",
+      "title": "The Quadratic Family",
+      "file": "81-the-quadratic-family.tex",
+      "changedProseRatio": 0.003783,
+      "deletedSentences": [],
+      "newSentences": [
+        {
+          "passageId": "the-quadratic-family:p0004",
+          "text": "Critical points and connectedness The following is the critical-point connectivity criterion in the present notation."
+        }
+      ],
+      "firstPerson": {
+        "before": 18,
+        "after": 18,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "conformal-welding",
+      "title": "Conformal Welding",
+      "file": "82-conformal-welding.tex",
+      "changedProseRatio": 0.0,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "shishikuras-surgery-principles",
+      "title": "Shishikura's Surgery Principles",
+      "file": "49-shishikuras-surgery-principles.tex",
+      "changedProseRatio": 0.0,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 3,
+        "after": 3,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "polynomial-like-maps-and-the-straightening-theorem",
+      "title": "Polynomial-Like Maps and the Straightening Theorem",
+      "file": "50-polynomial-like-maps-and-the-straightening-theorem.tex",
+      "changedProseRatio": 0.000935,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 16,
+        "after": 16,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "surgical-tools",
+      "title": "Scalpel, Forceps, and other Surgical Tools",
+      "file": "24-surgical-tools.tex",
+      "changedProseRatio": 0.021168,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 52,
+        "after": 52,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 3,
+        "after": 3,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "first-surgery",
+      "title": "Sullivan's No Wandering Theorem",
+      "file": "25-first-surgery.tex",
+      "changedProseRatio": 0.008986,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 23,
+        "after": 23,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "second-surgery",
+      "title": "The Multiplier Map",
+      "file": "26-second-surgery.tex",
+      "changedProseRatio": 0.005111,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 13,
+        "after": 13,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "third-surgery",
+      "title": "McMullen's Surgery I: Ideal Boundaries and the Gluing Lemma",
+      "file": "27-third-surgery.tex",
+      "changedProseRatio": 0.008159,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 29,
+        "after": 29,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "mcmullens-surgery",
+      "title": "McMullen's Surgery II: Rigid Models and a Julia Component",
+      "file": "80-mcmullens-surgery.tex",
+      "changedProseRatio": 0.01546,
+      "deletedSentences": [
+        {
+          "passageId": "mcmullens-surgery:p0004",
+          "text": "The composition in the notes is correctly read as mathematics ."
+        }
+      ],
+      "newSentences": [
+        {
+          "passageId": "mcmullens-surgery:p0004",
+          "text": "The composition is mathematics ."
+        },
+        {
+          "passageId": "mcmullens-surgery:p0006",
+          "text": "This implies mathematics ."
+        },
+        {
+          "passageId": "mcmullens-surgery:p0025",
+          "text": "Choose an arbitrary map mathematics on one side and its lift mathematics on the other."
+        }
+      ],
+      "firstPerson": {
+        "before": 45,
+        "after": 45,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "mcmullens-surgery-finite-symmetry",
+      "title": "McMullen's Surgery III: Commuting Deformations and Finite Symmetry",
+      "file": "84-mcmullens-surgery-finite-symmetry.tex",
+      "changedProseRatio": 0.003891,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 9,
+        "after": 9,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "from-complex-dynamics-to-measure-preserving-systems",
+      "title": "Measure-Preserving Systems",
+      "file": "51-from-complex-dynamics-to-measure-preserving-systems.tex",
+      "changedProseRatio": 0.005327,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 20,
+        "after": 20,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "recurrence-and-three-views-of-ergodicity",
+      "title": "Recurrence and Three Views of Ergodicity",
+      "file": "52-recurrence-and-three-views-of-ergodicity.tex",
+      "changedProseRatio": 0.001439,
+      "deletedSentences": [
+        {
+          "passageId": "recurrence-and-three-views-of-ergodicity:p0021",
+          "text": "Set mathematics Then mathematics , i.e."
+        }
+      ],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 42,
+        "after": 42,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "mean-maximal-and-pointwise-ergodic-theorems",
+      "title": "Mean, Maximal, and Pointwise Ergodic Theorems",
+      "file": "53-mean-maximal-and-pointwise-ergodic-theorems.tex",
+      "changedProseRatio": 0.003288,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 24,
+        "after": 24,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "mixing-products-and-spectral-criteria",
+      "title": "Mixing, Products, and Spectral Criteria",
+      "file": "54-mixing-products-and-spectral-criteria.tex",
+      "changedProseRatio": 0.008453,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 25,
+        "after": 25,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "return-times-kakutani-skyscrapers-and-rokhlin-towers",
+      "title": "Return Times, Kakutani Skyscrapers, and Rokhlin Towers",
+      "file": "55-return-times-kakutani-skyscrapers-and-rokhlin-towers.tex",
+      "changedProseRatio": 0.033399,
+      "deletedSentences": [
+        {
+          "passageId": "return-times-kakutani-skyscrapers-and-rokhlin-towers:p0012",
+          "text": "mathematics is nonatomic."
+        },
+        {
+          "passageId": "return-times-kakutani-skyscrapers-and-rokhlin-towers:p0016",
+          "text": "This sort of brings us to the end of our discussion on measure-preserving systems."
+        },
+        {
+          "passageId": "return-times-kakutani-skyscrapers-and-rokhlin-towers:p0016",
+          "text": "Let us stop by stating things to look forward to."
+        }
+      ],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 23,
+        "after": 17,
+        "delta": -6
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "invariant-measures-and-the-geometry-of-ergodicity",
+      "title": "Invariant Measures and the Geometry of Ergodicity",
+      "file": "56-invariant-measures-and-the-geometry-of-ergodicity.tex",
+      "changedProseRatio": 0.002306,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 22,
+        "after": 22,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 2,
+        "after": 2,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "unique-ergodicity-and-equidistribution",
+      "title": "Unique Ergodicity and Equidistribution",
+      "file": "57-unique-ergodicity-and-equidistribution.tex",
+      "changedProseRatio": 0.000556,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 23,
+        "after": 23,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "thermodynamical-formalism-hausdorff-dimension",
+      "title": "Thermodynamical Formalism and Hausdorff Dimension",
+      "file": "28-thermodynamical-formalism-hausdorff-dimension.tex",
+      "changedProseRatio": 0.009028,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 82,
+        "after": 82,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 7,
+        "after": 7,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-elementary-number-theory",
+      "title": "Elementary Number Theory",
+      "file": "63-lemma-book-elementary-number-theory.tex",
+      "changedProseRatio": 0.002096,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 5,
+        "after": 5,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-induction-contradiction-pigeonholes",
+      "title": "Proof Strategies: Induction, Contradiction, and Pigeonholes",
+      "file": "69-lemma-book-induction-contradiction-pigeonholes.tex",
+      "changedProseRatio": 0.002217,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 12,
+        "after": 12,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-polynomial-roots-identities-systems",
+      "title": "Polynomial Roots, Identities, and Algebraic Systems",
+      "file": "70-lemma-book-polynomial-roots-identities-systems.tex",
+      "changedProseRatio": 0.007048,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 8,
+        "after": 8,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-congruences-diophantine-equations-descent",
+      "title": "Congruences, Diophantine Equations, and Infinite Descent",
+      "file": "71-lemma-book-congruences-diophantine-equations-descent.tex",
+      "changedProseRatio": 0.003113,
+      "deletedSentences": [
+        {
+          "passageId": "lemma-book-congruences-diophantine-equations-descent:p0006",
+          "text": "The notes write mathematics Guess: mathematics ."
+        }
+      ],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 20,
+        "after": 20,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "lemma-book-standard-inequalities-cauchy-schwarz",
+      "title": "Standard Inequalities and Ingenious Cauchy–Schwarz Applications",
+      "file": "72-lemma-book-standard-inequalities-cauchy-schwarz.tex",
+      "changedProseRatio": 0.000873,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 30,
+        "after": 30,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 3,
+        "after": 3,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-inequality-toolkit",
+      "title": "An Inequality Toolkit: Jensen, Muirhead, and Schur",
+      "file": "64-lemma-book-inequality-toolkit.tex",
+      "changedProseRatio": 0.003972,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 8,
+        "after": 8,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-rearrangement-convexity-power-means",
+      "title": "Rearrangement, Convexity, and Power Means",
+      "file": "73-lemma-book-rearrangement-convexity-power-means.tex",
+      "changedProseRatio": 0.006772,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 6,
+        "after": 6,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-lagrange-multipliers-boundary-analysis",
+      "title": "Lagrange Multipliers and Boundary Analysis",
+      "file": "67-lemma-book-lagrange-multipliers-boundary-analysis.tex",
+      "changedProseRatio": 0.004096,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 37,
+        "after": 36,
+        "delta": -1
+      },
+      "rhetoricalQuestions": {
+        "before": 3,
+        "after": 3,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "lemma-book-circle-geometry",
+      "title": "Circle Geometry: Inversion, Radical Axes, and Special Circles",
+      "file": "65-lemma-book-circle-geometry.tex",
+      "changedProseRatio": 0.010897,
+      "deletedSentences": [
+        {
+          "passageId": "lemma-book-circle-geometry:p0018",
+          "text": "Source note."
+        }
+      ],
+      "newSentences": [
+        {
+          "passageId": "lemma-book-circle-geometry:p0018",
+          "text": "Unresolved point."
+        },
+        {
+          "passageId": "lemma-book-circle-geometry:p0018",
+          "text": "The argument remains incomplete without the missing figure."
+        }
+      ],
+      "firstPerson": {
+        "before": 18,
+        "after": 18,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "lemma-book-working-backwards-area-ratios",
+      "title": "Working Backwards, Area Ratios, and Geometric Constructions",
+      "file": "66-lemma-book-working-backwards-area-ratios.tex",
+      "changedProseRatio": 0.008757,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 12,
+        "after": 12,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-triangle-inequalities-trigonometric-substitutions",
+      "title": "Triangle Inequalities and Trigonometric Substitutions",
+      "file": "68-lemma-book-triangle-inequalities-trigonometric-substitutions.tex",
+      "changedProseRatio": 0.001146,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 15,
+        "after": 15,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-isogonal-conjugates-pole-polar",
+      "title": "Isogonal Conjugates and Pole–Polar Geometry",
+      "file": "75-lemma-book-isogonal-conjugates-pole-polar.tex",
+      "changedProseRatio": 0.000651,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 3,
+        "after": 3,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-transformations",
+      "title": "Transformations: Rotating, Reflecting, and Cutting Figures",
+      "file": "74-lemma-book-transformations.tex",
+      "changedProseRatio": 0.0,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 4,
+        "after": 4,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-puzzles-multiplication",
+      "title": "Puzzles, Surprises, and Marvellous Methods of Multiplication",
+      "file": "76-lemma-book-puzzles-multiplication.tex",
+      "changedProseRatio": 0.000334,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 15,
+        "after": 15,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 8,
+        "after": 8,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-ramanujan-problems",
+      "title": "Problems Proposed by S. Ramanujan",
+      "file": "77-lemma-book-ramanujan-problems.tex",
+      "changedProseRatio": 0.021858,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "lemma-book-problems-for-anant-mudgal",
+      "title": "Problems for Anant Mudgal",
+      "file": "78-lemma-book-problems-for-anant-mudgal.tex",
+      "changedProseRatio": 0.011287,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 1,
+        "after": 0,
+        "delta": -1
+      },
+      "rhetoricalQuestions": {
+        "before": 0,
+        "after": 0,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "lemma-book-thrilling-thirty-surviving-problems",
+      "title": "Thrilling Thirty: The Surviving Problems",
+      "file": "79-lemma-book-thrilling-thirty-surviving-problems.tex",
+      "changedProseRatio": 0.003015,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 30,
+        "after": 30,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 4,
+        "after": 4,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "the-language-of-category-theory-in-algebraic-topology",
+      "title": "The Language of Category Theory (in Algebraic Topology)",
+      "file": "58-the-language-of-category-theory-in-algebraic-topology.tex",
+      "changedProseRatio": 0.001269,
+      "deletedSentences": [
+        {
+          "passageId": "the-language-of-category-theory-in-algebraic-topology:p0021",
+          "text": "an mathematics -space."
+        }
+      ],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 17,
+        "after": 17,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": true
+    },
+    {
+      "slug": "erdos-distance-problem",
+      "title": "Erdős Distance Problem",
+      "file": "59-erdos-distance-problem.tex",
+      "changedProseRatio": 0.007653,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 29,
+        "after": 29,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 4,
+        "after": 4,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    },
+    {
+      "slug": "small-gaps-between-primes",
+      "title": "Small Gaps between Primes",
+      "file": "62-small-gaps-between-primes.tex",
+      "changedProseRatio": 0.002069,
+      "deletedSentences": [],
+      "newSentences": [],
+      "firstPerson": {
+        "before": 10,
+        "after": 10,
+        "delta": 0
+      },
+      "rhetoricalQuestions": {
+        "before": 1,
+        "after": 1,
+        "delta": 0
+      },
+      "britishToAmerican": [],
+      "genericReplacementSentences": [],
+      "needsReview": false
+    }
+  ],
+  "summary": {
+    "posts": 84,
+    "postsNeedingReview": 24,
+    "deletedSentences": 14,
+    "newSentences": 22,
+    "britishToAmericanConversions": 0,
+    "genericReplacementSentences": 0
+  },
+  "sha256": "d556d39ed63bb1cc4a0105a2026c945271036e3c1ae10f652c412f103798f857"
+}

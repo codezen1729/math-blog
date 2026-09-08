@@ -4,13 +4,15 @@
 \begin{document}
 \section*{Goursat's Theorem and Cauchy's Theorem}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: goursat-cauchy:p0001
 \subsection*{Tool 8 — Linear Approximation}
-If $f$ is differentiable at $z_0$, then we have
+If \BlogPost{complex-differentiation}{$f$ is differentiable at $z_0$}, then we have
 \[
   f(z)=f(z_0)+f'(z_0)(z-z_0)+\psi(z),
   \qquad \psi(z)=o(z-z_0).
 \]
 
+% BLOG-PASSAGE: goursat-cauchy:p0002
 
 \subsection*{Goursat's Theorem}
 Let $T\subset U$ be the convex hull of $z_1,z_2,z_3$.
@@ -21,20 +23,24 @@ Then, if $f\colon U\to\mathbb C$ is holomorphic,
 where $\partial T$ is the polygonal path
 $\gamma_{z_1\to z_2\to z_3\to z_1}$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0003
 \textit{Proof.}
 
+% BLOG-PASSAGE: goursat-cauchy:p0004
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.58\textwidth]{note3-fig-01.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: goursat-cauchy:p0005
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.56\textwidth]{note3-fig-02.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: goursat-cauchy:p0006
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.64\textwidth]{note3-fig-03.pdf}
@@ -42,6 +48,7 @@ $\gamma_{z_1\to z_2\to z_3\to z_1}$.
 
 \end{figure}
 
+% BLOG-PASSAGE: goursat-cauchy:p0007
 
 As the picture suggests,
 \[
@@ -103,11 +110,13 @@ Let $n\to\infty$. Since $\varepsilon_n\to0$,
   \int_{T_0}f(z)\,dz=0.
 \]
 
+% BLOG-PASSAGE: goursat-cauchy:p0008
 \textbf{Remark.}
 Holomorphicity at every point is unnecessary here. Suppose that $f$ is merely
 bounded near a point $z_0$ in the solid triangle. By subdividing the triangle
 as illustrated below, one may reduce to the case in which $z_0$ is a vertex.
 
+% BLOG-PASSAGE: goursat-cauchy:p0009
 \begin{figure}[H]
   \begin{minipage}[t]{.48\textwidth}
     If $z_0$ is in the interior of $T_0$,\par
@@ -129,6 +138,7 @@ as illustrated below, one may reduce to the case in which $z_0$ is a vertex.
   \end{minipage}
 \end{figure}
 
+% BLOG-PASSAGE: goursat-cauchy:p0010
 Now we know that $z_0$ is a vertex:
 \begin{figure}[H]
   \begin{minipage}[b]{.48\textwidth}
@@ -147,7 +157,8 @@ Now we know that $z_0$ is a vertex:
   \end{minipage}
 \end{figure}
 
-For all $a,b\neq z_0$, on $T_1$ and $T_2$ the integral will vanish; and, since
+% BLOG-PASSAGE: goursat-cauchy:p0011
+For all $a,b\neq z_0$, on $T_1$ and $T_2$ the integral will vanish, and since
 $f$ is bounded near $z_0$, the integral on $T_3$ can be made arbitrarily small,
 as the perimeter can be made very small. Also note that what we essentially
 need to prove Goursat's Theorem is a linear form as given below. For every
@@ -158,28 +169,33 @@ $z_0$,
 \]
 where $\psi_{z_0}(z)\to0$ as $z\to z_0$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0012
 Observe immediately that holomorphic functions except on a discrete set, where
 they have removable discontinuities, are candidates. Thus Goursat's Theorem
 works for a wider class of functions than merely holomorphic functions.
 
+% BLOG-PASSAGE: goursat-cauchy:p0013
 
 \subsubsection*{Application — Holomorphic primitives on convex domains}
 Let $f$ be holomorphic on an open, connected, convex set.
 Then $f$ has a primitive; that is, there exists $F$, holomorphic on the same
 convex domain, such that $F'=f$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0014
 \textit{Proof.}
 Let $\Omega$ be the domain, and fix $z_0\in\Omega$. Define
 \[
   F(z):=\int_{\gamma_{z_0\to z}}f(w)\,dw.
 \]
 
+% BLOG-PASSAGE: goursat-cauchy:p0015
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.64\textwidth]{note3-fig-08.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: goursat-cauchy:p0016
 By Goursat's Theorem, we have
 \[
   F(z+h)-F(z)=\int_{\gamma_{z\to z+h}}f(w)\,dw.
@@ -214,11 +230,13 @@ which goes to $0$ as $h\to0$. Hence
   \lim_{h\to0}\frac{F(z+h)-F(z)}{h}=f(z).
 \]
 
+% BLOG-PASSAGE: goursat-cauchy:p0017
 
 \subsection*{Tool 9 — Complex Tube Lemma}
 Given any continuous curve in a domain $\Omega$, there exists a polygonal path
 ``close'' to the curve.
 
+% BLOG-PASSAGE: goursat-cauchy:p0018
 
 \textbf{Note.}
 These polygons are useful, for one can invoke Goursat's Theorem. In fact, we can
@@ -233,12 +251,14 @@ moreover, we demand that $\gamma$ be rectifiable, then
 where $P$ is the polygonal path. This is because $f$ has a primitive in $U$, as
 was seen previously.
 
+% BLOG-PASSAGE: goursat-cauchy:p0019
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.68\textwidth]{note3-fig-09.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: goursat-cauchy:p0020
 \textit{Proof.}
 Let $\gamma\colon[0,1]\to\Omega$ be the curve. Then
 $\gamma|_{[0,1]}$ is compact. For every $z\in\gamma|_{[0,1]}$, there exists
@@ -250,6 +270,7 @@ This has a finite cover. Let $\{U_j\}_{j=1}^n$ be the finite balls that cover
 $\gamma|_{[0,1]}$. If it is not already present, add the ball
 $B_{\varepsilon_{\gamma(0)}}(\gamma(0))$ to the finite collection.
 
+% BLOG-PASSAGE: goursat-cauchy:p0021
 Here is a first attempt at arranging those balls. As $[0,1]$ is connected, every open set in the finite cover will have nonempty intersection with at least one open set other than itself in the finite cover. Let $B_{\varepsilon_{\gamma(i)}}(\gamma(i))$ be such that
 \[
   B_{\varepsilon_{\gamma(i)}}(\gamma(i))
@@ -279,11 +300,13 @@ $U_{i_m}=B_{\varepsilon_{\gamma(i_m)}}(\gamma(i_m))$ so that minimality is deman
 where $\{i_m\}$ partitions $[0,1]$. Again, if
 $B_{\varepsilon_{\gamma(1)}}(\gamma(1))$ does not belong to $\{U_j\}$, just add it. Now $\gamma_{\gamma(0)\to\gamma(i_1)\to\cdots\to\gamma(1)}$ is the required polygonal path. The following figure illustrates the idea in the proof.
 
+% BLOG-PASSAGE: goursat-cauchy:p0022
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.70\textwidth]{note3-fig-10.pdf}
 \end{figure}
 
+% BLOG-PASSAGE: goursat-cauchy:p0023
 Thus there exists
 $B_{\varepsilon_{\gamma(j)}}(\gamma(j))$, with $j<i$, such that
 \[
@@ -297,6 +320,7 @@ One can ``see'' the polygonal paths here. After some stage we will have
 \]
 We stop there, piecewise. One can observe here that, by construction, $\gamma_p$ and $\gamma$ are piecewise homotopic.
 
+% BLOG-PASSAGE: goursat-cauchy:p0024
 \textbf{Correction to the preceding minimality argument.}
 The minimality argument as presented will not work. One must tweak it.
 Let
@@ -340,11 +364,13 @@ contradicting minimality. Now we have
 \]
 Proceed.
 
+% BLOG-PASSAGE: goursat-cauchy:p0025
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.92\textwidth]{note3-fig-11.pdf}
 \end{figure}
 
+% BLOG-PASSAGE: goursat-cauchy:p0026
 Now it is an easy exercise to note that, if $\gamma$ is rectifiable, the
 polygonal path we obtained (denote it by $\gamma_p$) yields
 \[
@@ -356,10 +382,12 @@ above. Denote by $\operatorname{Tube}(\gamma)$ the quantity
   \min_i|a_i-b_i|.
 \]
 
+% BLOG-PASSAGE: goursat-cauchy:p0027
 \textbf{Exercise.}
 Construct a ``tube'' of ``width'' $\operatorname{Tube}(\gamma)$ around
 $\gamma$ in $\Omega$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0028
 \subsection*{Cauchy's Theorem}
 Let $f\in H(U)$, where $U$ is a domain, and let $\gamma_0$ and $\gamma_1$ be
 rectifiable and homotopic in $U$. Then
@@ -367,6 +395,7 @@ rectifiable and homotopic in $U$. Then
   \int_{\gamma_0}f(z)\,dz=\int_{\gamma_1}f(z)\,dz.
 \]
 
+% BLOG-PASSAGE: goursat-cauchy:p0029
 \textit{Proof.}
 By compactness of the homotopy
 $\gamma\colon[0,1]\times[0,1]\to U$, there exists $r>0$ such that
@@ -378,11 +407,13 @@ The map $\gamma$ is also uniformly continuous. Hence, whenever
 $|s-s'|<\delta$ and $|t-t'|<\delta$, \(|\gamma(s',t')-\gamma(s,t)|<\frac r4.\)
 With these two observations, the proof is in pictures.
 
+% BLOG-PASSAGE: goursat-cauchy:p0030
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.96\textwidth]{note3-fig-12.pdf}
 \end{figure}
 
+% BLOG-PASSAGE: goursat-cauchy:p0031
 Let
 \[
   C_{ij}:=
@@ -396,12 +427,15 @@ paths are all in $\Omega$; that is, one can find an ``approximate'' homotopy or
 deformation and carry $\int_{\gamma_0}f(z)\,dz$ via convex sets to
 $\int_{\gamma_1}f(z)\,dz$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0032
 \textbf{Exercise.}
 Fill in the details.
 
+% BLOG-PASSAGE: goursat-cauchy:p0033
 It is worth mentioning two important corollaries of Cauchy's Theorem, which are
 more useful than the theorem itself.
 
+% BLOG-PASSAGE: goursat-cauchy:p0034
 \subsection*{Tool 10 — Cauchy Integral Formula}
 \[
   f(z_0)=\frac{1}{2\pi i}\int_{C_R}\frac{f(z)}{z-z_0}\,dz.
@@ -409,6 +443,7 @@ more useful than the theorem itself.
 Here $f\in H(\Omega)$, and $C_R$ is a circle of radius $R$ such that
 $\operatorname{int}C_R\cup C_R\subset\Omega$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0035
 
 \subsection*{Tool 11 — Higher-Order Cauchy Integral Formula}
 \[
@@ -416,6 +451,7 @@ $\operatorname{int}C_R\cup C_R\subset\Omega$.
   \int_{C_R}\frac{f(z)}{(z-z_0)^{n+1}}\,dz.
 \]
 
+% BLOG-PASSAGE: goursat-cauchy:p0036
 
 \subsection*{Tool 12 — Local Analyticity}
 \[
@@ -423,18 +459,22 @@ $\operatorname{int}C_R\cup C_R\subset\Omega$.
   \qquad\bigl(\forall z_0, z\in\operatorname{int}C_R\bigr).
 \]
 
+% BLOG-PASSAGE: goursat-cauchy:p0037
 Tool 12 follows from Cauchy's integral formulas, Tools 10 and 11.
 \subsubsection*{Application — Consequences of Cauchy's formulas}
 The following applications of Tools 10, 11, and 12 may seem
 standard, but they record useful consequences worth
 recalling.
 
+% BLOG-PASSAGE: goursat-cauchy:p0038
 
 \subsection*{Tool 13 — Identity Theorem}
 
+% BLOG-PASSAGE: goursat-cauchy:p0039
 Let $f\in H(\Omega)$. If $z_n\to z_0$ in $\Omega$ and $f(z_n)=0$, then
 $f\equiv0$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0040
 
 \textit{Proof.}
 Locally around $z_0$,
@@ -447,7 +487,7 @@ Thus
 \]
 where $m$ is the least index such that $a_m\neq0$. Since
 $g(z-z_0)\to0$ as $z\to z_0$, there exists $K$ such that, for every $k\geq K$, \(|g(z_k-z_0)|<1.\)
-Therefore
+Therefore,
 \[
   a_m(z_k-z_0)^m\neq0
   \quad\text{and}\quad
@@ -458,6 +498,7 @@ $f(z)\equiv0$ locally. Now note that the set of points
 $\{z\mid f(z)=0\}$ is closed. Hence the continuity method would force
 $f\equiv0$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0041
 \subsection*{Morera's Theorem}
 Let $f$ be a continuous function on $\Omega$, and suppose that, for every
 closed polygonal path $P$,
@@ -466,26 +507,30 @@ closed polygonal path $P$,
 \]
 Then $f\in H(\Omega)$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0042
 \textit{Proof.}
 Modify the ``existence of a primitive on a convex set'' proof and construct a
 primitive for $f$. Let $F'=f$. Since $F\in H(\Omega)$ is locally analytic,
 $f$ is locally analytic, and hence $f\in H(\Omega)$.
 
+% BLOG-PASSAGE: goursat-cauchy:p0043
 \textbf{Remark.}
 Compare this with the Looman--Menchoff Theorem, which just demands the
 Cauchy--Riemann equations along with continuity. Which is stronger?
 
+% BLOG-PASSAGE: goursat-cauchy:p0044
 
 \subsubsection*{Application — Polynomial characterization}
 Let $f$ be entire such that, for each $z_0$,
 $f^{(n)}(z_0)=0$ for some $n$. Then $f$ is a polynomial.
 
+% BLOG-PASSAGE: goursat-cauchy:p0045
 \textit{Proof.}
 For every $z_0\in\mathbb C$, $f^{(n)}(z_0)=0$ for some $n$. By the
 Pigeonhole Principle, for a fixed $n$, $f^{(n)}(z_0)=0$ for uncountably many
 $z_0$. Thus the zero set of $f^{(n)}$ has a limit point in some disc, and
 hence \(f^{(n)}(z)\equiv0.\)
-Therefore $f$ is a polynomial, because
+Therefore, $f$ is a polynomial, because
 \[
   f(z)=\sum_{n=0}^{\infty}c_n(z-z_0)^n,
   \qquad
@@ -495,6 +540,7 @@ where $z_0$ is a zero of $f$. Hence, for every $m\geq n$, \(\frac{f^{(m)}(z_0)}{
 Thus $f$ is locally a polynomial, and, by the Identity Theorem, $f$ is globally
 a polynomial.
 
+% BLOG-PASSAGE: goursat-cauchy:p0046
 \textbf{Remark.}
 The local power-series expansion about a point converges up to the
 nearest point of singularity.

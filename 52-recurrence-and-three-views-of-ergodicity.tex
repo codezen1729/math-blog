@@ -5,12 +5,15 @@
 \begin{document}
 \section*{Recurrence and Three Views of Ergodicity}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0001
 \subsection{Recurrence Theorems}
-Of all the impositions on a measure-preserving system, the one that is perhaps
+Of all the impositions on a \BlogPost{from-complex-dynamics-to-measure-preserving-systems}{measure-preserving system}, the one that is perhaps
 ill-motivated is the demand that $\mu(X)<\infty$. We shall address that in
 this section.
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0002
 \setcounter{theorem}{3}\begin{theorem}[Poincar\'e recurrence]
+\label{thm:poincare-recurrence}
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system and let
 $E\in\mathcal B$. Then there exists $F\subseteq E$, $F\in\mathcal B$, such that
 $\mu(F)=\mu(E)$ and, for every $x\in F$, $T^n(x)\in E$ for infinitely many
@@ -57,6 +60,7 @@ $n_2>n_1$ such that $T^{n_2}(x)\in E$, and so on. Hence $T^nx\in E$ for
 infinitely many $n$, for almost every $x\in E$.
 \end{proof}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0003
 \begin{remark}
 Notice that this implies the pigeonhole principle if $X=\{1,2,3,\ldots,n\}$,
 $\mu$ is the uniform probability measure on $2^X$, and $T$ is any bijective
@@ -65,6 +69,7 @@ category of sets to that of measure-preserving systems. Here, we do not call
 such results PHP (pigeonhole principle); we call them recurrence theorems.
 \end{remark}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0004
 % Source page 3
 \begin{remark}
 We crucially used the fact that $\mu$ is a finite measure. This turns out to
@@ -75,6 +80,7 @@ system. Thus $\mu$ being a probability measure ensures that no information is
 lost under the transformation $T$ of $X$.
 \end{remark}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0005
 \begin{remark}
 Define $T\colon\mathbb R^2\to\mathbb R^2$ by $T(x,y):=(x+1,y)$. Then $T$ is
 $m$-invariant, where $m$ is Lebesgue measure on $\mathbb R^2$. But notice that
@@ -85,11 +91,13 @@ measure-preserving system in our sense. The example shows exactly where the
 finiteness of the measure enters the recurrence theorem.
 \end{remark}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0006
 \begin{remark}
 Finite measure need not mean that the set $X$ is bounded, as shall be
 illustrated now.
 \end{remark}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0007
 \setcounter{theorem}{4}\begin{lemma}[Another litmus test for measure-preserving systems]
 $(X,T,\mu)$ is a measure-preserving system if and only if
 \[
@@ -98,6 +106,7 @@ $(X,T,\mu)$ is a measure-preserving system if and only if
 \]
 \end{lemma}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0008
 % Source page 4
 \begin{proof}
 Let $f=\chi_B$. Then
@@ -116,6 +125,7 @@ $f_n\to f$ pointwise and $|f_n|\leq\|f\|_\infty$. The dominated convergence theo
 \]
 \end{proof}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0009
 Now define the following measure on $\mathbb R$:
 \[
   \mu([a,b]):=\int_a^b\frac{dx}{\pi(1+x^2)}.
@@ -143,6 +153,7 @@ But $\mathbb R$ is by no means bounded. Thus a measure-preserving system
 ensures that transformations do not blow points off to infinity, and that is
 why it can accommodate unbounded sets in its realm as well.
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0010
 % Source page 5
 \subsection{Ergodicity}
 As far as the behaviour of orbits goes, we know that if $E$ is measurable in
@@ -151,23 +162,28 @@ infinitely often. Let us extend this madness further. Say $x\in X$ and
 $E\subset X$ is measurable: can we have some sort of recurrence for the orbit
 of $x$, $\{T^{\circ n}(x)\}_n$, if $x\notin E$?
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0011
 There are some set-theoretic obstructions to such a recurrence, because if
 $T^{-1}(E)=E$, the orbit of $x$ shall not intersect $E$. So let us replace
 $X$ by $E$ and $E$ by some measurable $F\subseteq E$. Notice immediately that
 we are looking for some sort of irreducibility criterion here.
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0012
 \setcounter{definition}{4}\begin{definition}[Ergodicity]
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. We say $T$ is
 \emph{ergodic} if, for every $B\in\mathcal B$ such that $T^{-1}(B)=B$, we have
 $\mu(B)=0$ or $\mu(B)=1$.
 \end{definition}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0013
 We shall now try to understand ergodicity from three essentially distinct
 perspectives, each revealing an interconnection.
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0014
 \Needspace{14\baselineskip}
 \subsubsection{Measure-Theoretic Ergodicity}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0015
 % Source page 6
 \setcounter{theorem}{5}\begin{proposition}\label{prop:ergodicity-measure}
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. The following are
@@ -188,7 +204,7 @@ equivalent:
 \[
   C=\bigcap_{N=0}^{\infty}\bigcup_{n=N}^{\infty}T^{-n}(B).
 \]
-The idea is to pick $B$ such that $T^{-1}(B)=B$ almost everywhere, i.e.
+The idea is to pick $B$ such that $T^{-1}(B)=B$ almost everywhere, i.e.,
 $\mu(T^{-1}(B)\mathbin\triangle B)=0$, and construct a $C$ out of $B$ such that
 $T^{-1}C=C$ and $\mu(C)=\mu(B)$. Note that
 \[
@@ -225,7 +241,7 @@ $\mu(C)=\mu(B)$. Also,
   T^{-1}(C)=\bigcap_{N=0}^{\infty}\bigcup_{n=N}^{\infty}T^{-n-1}(B)
   =\bigcap_{N\geq1}C_N=\bigcap_{N\geq0}C_N=C.
 \]
-Therefore $\mu(C)=\mu(B)\in\{0,1\}$, by the ergodicity of $T$.
+Therefore, $\mu(C)=\mu(B)\in\{0,1\}$, by the ergodicity of $T$.
 
 \emph{$(2)\Rightarrow(3)$.} Let $\mu(A)>0$ and set
 $B=\bigcup_{n=1}^{\infty}T^{-n}(A)$. Then $T^{-1}(B)\subseteq B$.
@@ -248,8 +264,8 @@ Since the $T^{-n}(A)$ cover $X$ almost everywhere, we have
   \leq\sum_{n=1}^{\infty}\mu(B\cap T^{-n}(A)).
 \]
 Hence there exists $n\geq1$ such that $\mu(B\cap T^{-n}(A))>0$.
-We shall see the relevance of such statements when we introduce the notion
-of mixing systems.
+We see the relevance of such statements when we introduce the notion of
+\BlogPost{mixing-products-and-spectral-criteria}{mixing systems}.
 
 \emph{$(4)\Rightarrow(1)$.} If $T^{-1}(A)=A$, then
 \[
@@ -260,6 +276,7 @@ Hence $\mu(A)=0$ or $\mu(X\setminus A)=0$, so $\mu(A)\in\{0,1\}$ and $T$ is
 ergodic.
 \end{proof}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0016
 \subsubsection{Operator-Theoretic Ergodicity}
 Let us begin by associating an operator $U_T$ to $T$ as follows:
 \[
@@ -280,6 +297,7 @@ $\langle f_1,U_T^*U_Tf_2\rangle=\langle f_1,f_2\rangle$, so
 \]
 A standard argument
 % Source page 9
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0017
 would tell you that
 \[
   \sup_{\substack{\|f_1\|\leq1\\\|f_2\|\leq1}}
@@ -289,6 +307,7 @@ would tell you that
 Thus $U_T$ is an isometry, which goes by the name \emph{Koopman operator}. If
 $T$ is invertible modulo null sets, then $U_T$ is unitary.
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0018
 \setcounter{theorem}{6}\begin{proposition}\label{prop:ergodicity-operator}
 $T$ is ergodic if and only if the eigenvectors of $U_T$ associated to $1$ are
 constants in $L^2_\mu(X)$.
@@ -320,11 +339,13 @@ For every $n$,
 Letting $n\to\infty$ shows that $f$ is a constant almost everywhere.
 \end{proof}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0019
 \begin{remark}
 Thus ergodicity can be rephrased in operator theory too. Properties possessing
 such translations are called \emph{unitary properties}.
 \end{remark}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0020
 % Source page 10
 \subsubsection{Fourier-Analytic Ergodicity}
 Here we impose a compact abelian group structure on $X$. Then it has a unique
@@ -336,10 +357,11 @@ given $f\in L^2_{m_X}(X)$, we have the following character-theoretic expansion:
   \qquad \sum_{\chi\in\widehat X}|c_\chi|^2=\|f\|^2.
 \]
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0021
 \setcounter{theorem}{7}\begin{proposition}\label{prop:ergodicity-fourier}
 In the setup above, a continuous surjective homomorphism $T\colon X\to X$
 is ergodic if and only if, for every character $\chi\in\widehat X$ and every
-$n\geq1$, $\chi\circ T^n=\chi$ implies that $\chi$ is trivial, i.e.
+$n\geq1$, $\chi\circ T^n=\chi$ implies that $\chi$ is trivial, i.e.,
 $\chi\equiv1$.
 \end{proposition}
 \begin{proof}
@@ -348,7 +370,7 @@ $\chi\circ T^n=\chi$, with $n$ the least such integer. Set
 \[
   \widetilde\chi:=\chi+\chi\circ T+\cdots+\chi\circ T^{n-1}.
 \]
-Then $\widetilde\chi\circ T=\widetilde\chi$, i.e.
+Then $\widetilde\chi\circ T=\widetilde\chi$, i.e.,
 $U_T\widetilde\chi=\widetilde\chi$. From the operator-theoretic setting,
 we see that $\widetilde\chi$ is constant. But
 $\langle\widetilde\chi,\chi\rangle_X\neq0$, so $\widetilde\chi$ is not trivial.
@@ -364,6 +386,7 @@ Since the dual map is injective, this makes $\chi$ periodic. The hypothesis
 then implies $\chi\equiv1$. Hence $f$ is a constant, so $T$ is ergodic.
 \end{proof}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0022
 \begin{remark}
 Having seen ergodicity, it is natural to ask whether we can reduce a
 measure-preserving system into ``ergodic components''. Given any $E\subset X$
@@ -379,6 +402,7 @@ decomposing measure-preserving systems into ergodic components is natural. We
 shall deal with it later.
 \end{remark}
 
+% BLOG-PASSAGE: recurrence-and-three-views-of-ergodicity:p0023
 \begin{remark}
 Using Proposition~\ref{prop:ergodicity-fourier}---I mean the ideas in it---one
 can prove that the circle-doubling map and every irrational rotation map are

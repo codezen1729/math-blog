@@ -5,8 +5,9 @@
 \begin{document}
 \section*{Mean, Maximal, and Pointwise Ergodic Theorems}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0001
 In our attempt to get a hold on the nature of $\{T^{\circ n}(x)\}_n$ or
-$\{T^{\circ n}(E)\}_n$, we saw that $\{T^{\circ n}(x)\}_n$ is recurrent.
+$\{T^{\circ n}(E)\}_n$, we saw in \BlogPost{recurrence-and-three-views-of-ergodicity}{the recurrence theorems} that $\{T^{\circ n}(x)\}_n$ is recurrent.
 Further, if $T$ is ergodic, then $\{T^{\circ n}(x)\}_n$ is recurrent on all
 positive-measure subsets of $X$ for almost every $x\in X$. The next natural
 question to ask is: how recurrent are they? Mathematically speaking, we ask
@@ -23,7 +24,9 @@ In answering what happens to $\frac1{N+1}\sum_{n=0}^{N}U_T^n f$ as
 $N\to\infty$, ergodic theorems will, in some sense, establish a duality
 between space and time. We plan to prove the following.
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0002
 \setcounter{theorem}{8}\begin{theorem}[Birkhoff]
+\label{thm:birkhoff}
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system, with $T$ ergodic.
 If $f\in L^1_\mu$, then
 \[
@@ -32,6 +35,7 @@ If $f\in L^1_\mu$, then
 \]
 \end{theorem}
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0003
 % Source page 2
 The left-hand side is an average over time, and the right-hand side, being
 an integral, is an average over space. If $f=\chi_B$, then the ergodic
@@ -43,6 +47,7 @@ $T^n(x)\notin B$ for all $n\geq1$. But as soon as you remove that
 set-theoretic hindrance, recurrence of orbits is governed by the sizes of
 sets. Now let me explain the duality.
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0004
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{lecture3-fig-01.pdf}
@@ -53,14 +58,17 @@ For a positive-measure set $B$, ergodicity gives
  \bigcup_{n\geq0}T^{-n}(B)=X\qquad\text{almost everywhere}.
 \]
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0005
 Thus certain spatial information can be translated into temporal information,
 and vice versa.
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0006
 % Source page 3
 In this post we shall give a complete proof of Birkhoff's ergodic theorem
 (often also called the pointwise ergodic theorem). We must emphasise that
 ergodic theorems are unitary properties.
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0007
 \setcounter{theorem}{9}\begin{theorem}[von Neumann's mean ergodic theorem: $L^2_\mu$ version]
 \label{thm:l3-mean-l2}
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. Let $P_T$ be the
@@ -75,7 +83,7 @@ Then, for every $f\in L^2_\mu$,
 \]
 \end{theorem}
 \begin{proof}
-Let us first begin by finding $I^\perp$. Set
+Let us begin by finding $I^\perp$. Set
 $B=\{U_Tg-g:g\in L^2_\mu\}$, and claim that $B^\perp=I$.
 If $f\in I$, then $U_Tf=f$. Hence
 \[
@@ -89,7 +97,7 @@ so $f\in B^\perp$. If $f\in B^\perp$, then
  \ \Longrightarrow\ \langle g,(U_T^*-\id)f\rangle=0
  \qquad(g\in L^2_\mu).
 \]
-Therefore
+Therefore,
 \[
  \sup_{\|g\|\leq1}|\langle g,(U_T^*-\id)f\rangle|
  =0=\|(U_T^*-\id)f\|.
@@ -105,7 +113,7 @@ For $h=U_Tg-g$, with $g\in L^2_\mu$, the telescoping series gives
  =\frac1N\|U_T^Ng-g\|_2
  \leq\frac{2\|g\|_2}{N}.
 \]
-Here $U_T$, being an isometry, must have norm $1$. Therefore
+Here $U_T$, being an isometry, must have norm $1$. Therefore,
 $\frac1N\sum_{n=0}^{N-1}U_T^nh\to0$ in $L^2_\mu$ for $h\in B$, since
 $2\|g\|_2/N\to0$ as $N\to\infty$. If $h\in\overline B$, choose $b\in B$
 with $\|h-b\|_2<\varepsilon$. Since every $U_T^n$ is an isometry,
@@ -117,6 +125,7 @@ with $\|h-b\|_2<\varepsilon$. Since every $U_T^n$ is an isometry,
 Letting first $N\to\infty$ and then $\varepsilon\to0$ completes the proof.
 \end{proof}
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0008
 \setcounter{theorem}{10}\begin{theorem}[von Neumann's mean ergodic theorem: $L^1_\mu$ version]
 \label{thm:l3-mean-l1}
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system. For every
@@ -178,6 +187,7 @@ As $N\to\infty$, $\|f'\circ T-f'\|_1=0$, so $f'\circ T=f'$ almost
 everywhere.
 \end{proof}
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0009
 % Source page 6
 \begin{remark}
 \label{rem:l3-frequency}
@@ -191,7 +201,7 @@ As $T$ is $\mu$-invariant,
  \int_X\chi_B\circ T\,d\mu=\int_X\chi_B\,d\mu=\mu(B)
  \qquad\text{(by Litmus Test 2).}
 \]
-Therefore
+Therefore,
 \[
  \int_X A_N^{\chi_B}\,d\mu=\mu(B)
  \geq\sqrt{\mu(B)}\,
@@ -208,6 +218,7 @@ $\sqrt{\mu(B)}$ of the time in $B$ is at most $\mu(B)^{1/2}$.
 In light of the quantitative remark above, we have a more quantitative
 version of the ergodic theorem.
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0010
 \setcounter{theorem}{11}\begin{theorem}[Maximal ergodic theorem]
 \label{thm:l3-maximal}
 Let $(X,\mathcal B,\mu,T)$ be a measure-preserving system, and let
@@ -225,6 +236,7 @@ Then
 \]
 \end{theorem}
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0011
 % Source page 7
 We shall first prove a technical lemma and derive the theorem from it in a
 snap.
@@ -257,7 +269,7 @@ $F_N(x)\geq0$. It follows that
  =\int_XF_N\,d\mu-\int_PUF_N\,d\mu,
 \]
 % Source page 8
-because $F_N(x)=0$ if $x\notin P$. Therefore
+because $F_N(x)=0$ if $x\notin P$. Therefore,
 \[
  \int_Pf\,d\mu\geq\int_XF_N\,d\mu-\int_XUF_N\,d\mu
  =\|F_N\|_1-\|UF_N\|_1\geq0.
@@ -265,6 +277,7 @@ because $F_N(x)=0$ if $x\notin P$. Therefore
 Here the equality uses positivity, and the last inequality uses $\|U\|\leq1$.
 \end{proof}
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0012
 
 \begin{proof}[Proof of the maximal ergodic theorem]
 Set $f=g-\alpha$ and $Uf:=f\circ T$. This is a positive isometry, so
@@ -289,12 +302,14 @@ the same argument to $(g-\alpha)\chi_A$ when $T^{-1}(A)=A$. Its positive
 maximal set is $E_\alpha\cap A$, which gives the result.
 \end{proof}
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0013
 \begin{remark}
 This theorem has essentially removed the dependence on $N$ in the
 statement made in the quantitative remark above.
 \end{remark}
 Let us finally prove our desired theorem.
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0014
 \setcounter{theorem}{13}\begin{theorem}[Birkhoff's ergodic theorem]
 \label{thm:l3-birkhoff}
 If $f\in L^1_\mu$, then
@@ -304,6 +319,7 @@ If $f\in L^1_\mu$, then
 The function $f^*$ is $T$-invariant, and $\int f^*\,d\mu=\int f\,d\mu$.
 \end{theorem}
 % Source page 9
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0015
 \begin{proof}
 Of course, the measure-preserving system $(X,\mathcal B,\mu,T)$ is lurking
 in the background. Since the nature of the result is purely additive, we
@@ -375,6 +391,7 @@ give
 \]
 \end{proof}
 
+% BLOG-PASSAGE: mean-maximal-and-pointwise-ergodic-theorems:p0016
 
 
 \begin{remark}[Final remark]

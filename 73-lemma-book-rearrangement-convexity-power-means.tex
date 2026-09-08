@@ -5,6 +5,7 @@
 \begin{document}
 \section*{Rearrangement, Convexity, and Power Means}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: lemma-book-rearrangement-convexity-power-means:p0001
 \setcounter{theorem}{54}\begin{lemma}[Popoviciu's theorem]
 Let $f:\mathbb R\to\mathbb R$ be convex on an interval $I$, and let $x_1,x_2,x_3\in I$.
 Then
@@ -26,6 +27,7 @@ By Popoviciu's theorem,
 \]
 This is exactly the desired inequality.
 
+% BLOG-PASSAGE: lemma-book-rearrangement-convexity-power-means:p0002
 \subsection{Rearrangement and convexity}
 \setcounter{theorem}{84}\begin{lemma}[Rearrangement inequality]\label{lemma:lb1-87}
 Consider two collections of real numbers in increasing order,
@@ -56,14 +58,16 @@ Another proof uses AM--GM.
 Add all three to obtain $a/b+b/c+c/a\geq a+b+c$.
 The third solution follows from Muirhead's theorem.
 % Source page 46 - right
+% BLOG-PASSAGE: lemma-book-rearrangement-convexity-power-means:p0003
 \paragraph{Solution 3.}
 \[\frac ab+\frac bc+\frac ca=a^2c+b^2a+c^2b
 \mathrel{\stackrel{?}{\geq}}(abc)^{2/3}(a+b+c)
 =\sum_{\mathrm{cyc}}a^{5/3}b^{2/3}c^{2/3}.\]
-Since $(2,1,0)\succ(5/3,2/3,2/3)$, the notes conclude that the result follows. Q.E.D.!
+Since $(2,1,0)\succ(5/3,2/3,2/3)$, the proposed third solution concludes that the result follows. Q.E.D.!
 Muirhead, however, compares symmetric sums, while the displayed sums are cyclic;
 the second solution above supplies the valid proof.
 
+% BLOG-PASSAGE: lemma-book-rearrangement-convexity-power-means:p0004
 \paragraph{A two-line proof of the AM--GM inequality.}
 Let $x_i>0$, let $t_i\geq0$, and suppose $t_1+\cdots+t_n=1$.
 We have $x_i^{t_i}=e^{t_i\log x_i}$. Since $e^x$ is convex, we can deduce
@@ -80,6 +84,7 @@ P.S. This problem has a two-line solution, so don't think that it is complicated
 So far, so good. By the way, did you figure out how to resolve the challenge?
 Hold on: here comes that two-line solution!
 % Source page 49 - left
+% BLOG-PASSAGE: lemma-book-rearrangement-convexity-power-means:p0005
 \[
 \begin{aligned}
 x_3^2\geq x_2^3\geq x_1^6
@@ -96,9 +101,11 @@ W$^5$. Q.E.D.! You see, we are done in just two steps!
 The first comparison has the wrong direction. In fact, $(a,b,c)=(4,3,1)$
 gives a left-hand sum of approximately $2.753<3$, so the challenge as written needs correction.
 
+% BLOG-PASSAGE: lemma-book-rearrangement-convexity-power-means:p0006
 Now let us proceed on our eternal journey. Let me show you the magic of
 convexity--concavity arguments: problems get resolved in seconds!!
 
+% BLOG-PASSAGE: lemma-book-rearrangement-convexity-power-means:p0007
 For $a,b,c>0$ with $abc=1$, prove $\sqrt{a+3}+\sqrt{b+3}+\sqrt{c+3}\geq6$.
 Since $ab+bc+ca\geq3$ and $a+b+c\geq3$ by AM--GM,
 \[
@@ -107,6 +114,7 @@ Since $ab+bc+ca\geq3$ and $a+b+c\geq3$ by AM--GM,
 \geq3\sqrt[6]{28+9+27}=6.
 \]
 
+% BLOG-PASSAGE: lemma-book-rearrangement-convexity-power-means:p0008
 For positive $x,y,z$, prove
 $\sqrt{x+y+z}\left(\sum_{\mathrm{cyc}}\dfrac{\sqrt y}{z+x}\right)\geq3\sqrt3/2$.
 Normalize $x+y+z=1$. For $0<t<1$,

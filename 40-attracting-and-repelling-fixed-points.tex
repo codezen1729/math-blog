@@ -5,14 +5,17 @@
 \begin{document}
 \section*{Attracting and Repelling Fixed Points}
 % BLOG-CONTENT-BEGIN
-In this post we are interested only in the local behaviour of a holomorphic map $f\colon S\to S$, where $S$ is a Riemann surface. For this, it would ``suffice'' to study the local behaviour at fixed points of $f$. Recall that $S$ decomposes into components of basins with fractal-like boundaries (elements of the Julia set). Our goal is to describe the dynamics of $f$ locally in certain such basins. The underlying phenomenon governing these dynamics is the distribution of the critical points of $f$, especially for rational maps on $\widehat{\mathbb C}$. We shall explain this phenomenon.
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0001
+In this post we are interested only in the local behaviour of a holomorphic map $f\colon S\to S$, where $S$ is a Riemann surface. For this, it would ``suffice'' to study the local behaviour at \BlogPost{rational-dynamics-on-the-riemann-sphere}{fixed points} of $f$. Recall that $S$ decomposes into components of basins with fractal-like boundaries (elements of the Julia set). Our goal is to describe the dynamics of $f$ locally in certain such basins. The underlying phenomenon governing these dynamics is the distribution of the critical points of $f$, especially for rational maps on $\widehat{\mathbb C}$. We shall explain this phenomenon.
 
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0002
 Understanding the dynamics near fixed points amounts to finding a change of coordinates in which the orbits of $f$ are easy to describe, as expected. A general technique is to construct a local biholomorphism $\phi$ such that the following diagram commutes.
 \begin{figure}[H]\centering
 \includegraphics[width=.32\textwidth]{cd2-fig-01.pdf}
 \FigureTag{CD2.1}{fig:cd2-01}
 \end{figure}
 % Source page 2
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0003
 That is, $\phi\circ f\circ\phi^{-1}=g$ locally around $0$, where $g$ is preferably a polynomial. One begins by finding maps $\{\phi_k\}_k$ such that $\phi_k\circ f=g\circ\phi_{k+1}$, then proves that $\phi_k\to\phi$ uniformly. Consequently,
 \[
 \lim_{k\to\infty}(\phi_k\circ f)=\lim_{k\to\infty}(g\circ\phi_{k+1}),
@@ -26,6 +29,7 @@ We deal with all fixed points except those for which $\lambda\in S^1$. First let
 \subsection{Geometrically attracting and repelling points}
 For $f\in\Hol(S,S)$, let $\varphi\circ f\circ\varphi^{-1}=\widehat f$ be its coordinate representation in a chart centred at a fixed point. Here $|\widehat f'(0)|\notin\{0,1\}$. On sufficiently small domains, $\widehat f$ behaves like $\widehat f'(0)z=\lambda z$. If $|\lambda|<1$, $f$ pulls; if $|\lambda|>1$, $f$ pushes. More precisely:
 % Source page 3
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0004
 \Needspace{18\baselineskip}
 \setcounter{theorem}{10}\begin{theorem}[Koenigs linearisation]\label{cd2:koenigs}
 If the multiplier satisfies $|\lambda|\notin\{0,1\}$, there is a map $\phi$, unique up to multiplication by a nonzero constant, such that the following diagram commutes.
@@ -66,6 +70,7 @@ If $0$ is a superattracting fixed point of $f$, with a zero of order $n$ at $0$,
 \end{figure}
 \end{theorem}
 % Source page 6
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0005
 \begin{proof}
 Locally around $0$, write $f(z)=b_0z^n+b_1z^{n+1}+b_2z^{n+2}+\cdots$. Since $cf(z/c)=b_0z^n/c^{n-1}+\cdots$, choosing $c^{n-1}=b_0$ allows us to assume that the leading coefficient is $1$.
 
@@ -102,6 +107,7 @@ Thus $\{\phi_k\}_k$ has a uniform limit $\phi$. Uniqueness again follows because
 A crucial fact is that $f(z)\ne0$ for $z\in\mathbb D_r\setminus\{0\}$, so $\log f(e^z)$ makes sense. This is a useful technique for bounding quantities: shift one's domain to another hyperbolic surface and demand the luxuries of Pick's theorem.
 \end{remark}
 % Source page 8
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0006
 Now that we understand the local dynamics near geometrically attracting, repelling, and superattracting points, to what extent can we extend this knowledge? In other words, on how large a domain is the nature of $f$ near these fixed points as we asserted? Let us globalise this local behaviour as far as nature allows, primarily for rational maps on $\widehat{\mathbb C}$.
 \subsection{Global linearisation}
 Koenigs' function $\phi$ extends holomorphically to the basin of attraction $\mathcal A$ of the fixed point $\widehat p$.
@@ -133,6 +139,7 @@ while $\psi\circ\lambda(w)=f^{\circ N}\bigl(\phi^{-1}(w/\lambda^{N-1})\bigr)$.
 Such an extension is not possible for B\"ottcher coordinates: to make the diagram commute one must deal with $p\mapsto\sqrt[n^k]{\phi(f^{\circ k}(p))}$, but the root is not well-defined. One can, however, extend $|\phi|$, since roots in $\mathbb R_+$ are well-defined.
 \end{remark}
 % Source page 10
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0007
 \subsection{The phenomenon of critical points: analytic aspects}
 Critical points govern rational dynamics in three significant ways:
 \begin{enumerate}
@@ -149,6 +156,7 @@ Given an attracting fixed point $\widehat p$ of a map $f\colon S\to S$, let $\ma
 There is a maximal $r$ such that $\psi\colon\mathbb D_r\to\mathcal A_0$ is a holomorphic inverse of the Koenigs coordinate $\phi$. The closed disc $\overline{\mathbb D_r}$ and $\psi(\overline{\mathbb D_r})$ are homeomorphic, and $\psi(\partial\mathbb D_r)$ contains a critical point of $f$.
 \end{theorem}
 % Source page 11
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0008
 \begin{proof}
 Suppose $\phi^{-1}$ extends biholomorphically to an entire function. We would then have the following commutative diagram, implying that $f|_{\psi(\mathbb C)}$ is injective.
 \begin{figure}[H]\centering
@@ -176,6 +184,7 @@ Do this at every point. The identity theorem patches the local pieces over the c
 \end{proof}
 Thus critical points form the obstruction that stops, or contains, biholomorphic extension within a domain in $\mathcal A$.
 % Source page 13
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0009
 \setcounter{theorem}{13}\begin{theorem}\label{cd2:maximal-bottcher}
 There is a maximal $0<r\le1$ such that the B\"ottcher coordinate $\phi$ has a biholomorphic inverse on $\mathbb D_r$. If $r=1$, then $\mathbb D\cong\mathcal A_0$, and the superattracting point $\widehat p$ is the only critical point in $\mathcal A_0$. Otherwise there is another critical point in $\mathcal A_0$, on $\partial\psi(\mathbb D_r)$.
 \end{theorem}
@@ -192,7 +201,8 @@ $nw^{n-1}\psi'(w^n)=(f\circ\psi)'(w)=f'(\psi(w))\psi'(w)=0$.
 Thus $w^n$, and all $w^{n^k}$, would be critical points, which is impossible by the identity theorem. Hence $\psi$ is locally injective (biholomorphic).
 
 The set $\{(w_1,w_2)\in\mathbb D_r\times\mathbb D_r:\psi(w_1)=\psi(w_2)\}$ is closed. Thus choose $|w_1|=|w_2|$ minimal with $\psi(w_1)=\psi(w_2)$.
-% Source page 14 Since $|\phi|$ extends to $\mathcal A$, we have $|\phi(\psi(w))|=|w|$ for all $w\in\mathbb D_\varepsilon$, the domain of biholomorphy. By the identity theorem, $|\phi(\psi(w))|=|w|$ for every $w\in\mathbb D_r$. Consequently $\psi(w_1)=\psi(w_2)$ implies $|w_1|=|w_2|$.
+% Source page 14
+Since $|\phi|$ extends to $\mathcal A$, we have $|\phi(\psi(w))|=|w|$ for all $w\in\mathbb D_\varepsilon$, the domain of biholomorphy. By the identity theorem, $|\phi(\psi(w))|=|w|$ for every $w\in\mathbb D_r$. Consequently, $\psi(w_1)=\psi(w_2)$ implies $|w_1|=|w_2|$.
 
 Let $w_1'\in B_\varepsilon(w_1)$. The set $\psi^{-1}(\psi(B_\varepsilon(w_1)))$ contains $w_2$, so $\psi(B_\varepsilon(w_1))\cap\psi(B_\varepsilon(w_2))\ne\varnothing$. There are therefore $w_1',w_2'$ with $|w_1'|<|w_1|$ and $\psi(w_1')=\psi(w_2')$, a contradiction. Thus $\psi$ is injective, hence biholomorphic onto $\psi(\mathbb D_r)$.
 
@@ -205,6 +215,7 @@ We defer the homeomorphism part to \BlogPost{parabolic-fixed-points-and-the-flow
 \end{remark}
 \subsubsection{The number of attracting periodic points}
 % Source page 15
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0010
 \setcounter{theorem}{14}\begin{theorem}\label{cd2:finite-attractors}
 There are finitely many attracting periodic orbits.
 \end{theorem}
@@ -222,6 +233,7 @@ For $f\colon S\to S'$, a \emph{critical value} is the image under $f$ of a criti
 If there is a curve $\gamma\colon[0,1)\to S$ that eventually leaves compact sets, but $\lim_{t\to1}f(\gamma(t))=v$, then $v$ is an \emph{asymptotic value}.
 \end{definition}
 % Source page 16
+% BLOG-PASSAGE: attracting-and-repelling-fixed-points:p0011
 \setcounter{theorem}{15}\begin{theorem}
 Every proper holomorphic self-map $f\colon S\to S$ has a critical value in every immediate basin of an attracting orbit.
 \end{theorem}

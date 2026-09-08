@@ -4,12 +4,15 @@
 \begin{document}
 \section*{Homotopy–Path Correspondence and the Jordan Curve Theorem}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0001
 \subsection*{Tool 21 — Homotopy--Path Correspondence}
 Paths give rise to a homotopy, and a homotopy gives rise to paths.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0002
 Let \(\gamma_0,\gamma_1\) be closed curves with the same initial point. Then \(\gamma_0\sim\gamma_1\), as closed curves, if and only if \(\gamma_0\sim\gamma_2+\gamma_1+(-\gamma_2)\)
 with fixed endpoints, for some closed curve \(\gamma_2\).
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0003
 
 \textit{Proof.}
 Let all domains be \([0,1]\) or \([0,1]\times[0,1]\). Note that we only need to find a closed curve \(\gamma_2\) for both cases. Let \(H(t,s)\) be the homotopy between \(\gamma_0\) and \(\gamma_1\), and set \(\gamma_2:=H(t,0)\). Define
@@ -28,6 +31,7 @@ with homotopy \(H'(t,s)\). As suggested, consider
   =H''(t,s).
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0004
 
 Then
 \[
@@ -45,14 +49,17 @@ is a homotopy from
 \]
 Set \(H(t,s):=H''(t,s)+H_0(t,s).\)
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0005
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.52\linewidth]{note6-fig-01.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0006
 Therefore, \(\gamma_0\sim\gamma_1\), with fixed endpoints, if and only if \(\gamma_0+(-\gamma_1)\) is homotopic to a point.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0007
 \textit{Proof.}
 Let \(H(t,s)\) be the deformation between \(\gamma_0\) and \(\gamma_1\). Then
 \[
@@ -71,9 +78,11 @@ Then \(H'\) shrinks \(\gamma_0+(-\gamma_1)\) to a point at one endpoint of the h
 Thus, \(H''\) deforms \(\gamma_0\) to \(\gamma_0+(-\gamma_1)+(\gamma_1)\). We know \(\gamma_0+(-\gamma_1)\) deforms to a point, so \(\gamma_0+(-\gamma_1)+\gamma_1\sim\gamma_1,\)
 and hence \(\gamma_0\sim\gamma_1\).
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0008
 
 The following figures illustrate these deformations.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0009
 \[
   \gamma_0\sim\gamma_1
   \quad\Longleftrightarrow\quad
@@ -81,23 +90,27 @@ The following figures illustrate these deformations.
   \qquad\text{for some }\gamma_2.
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0010
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.66\linewidth]{note6-fig-02.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0011
 Here, \(\gamma_2\) is the curve formed by initial points in the family of curves belonging to the homotopy between \(\gamma_0\) and \(\gamma_1\), and
 \[
   \gamma_2=H(t,0).
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0012
 \textbf{Remark.}
 With this, if \(\gamma_0\sim\gamma_1\), as closed curves, then
 \[
   \int_{\gamma_0}f=\int_{\gamma_1}f.
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0013
 Also,
 \[
   \gamma_0\sim\gamma_1
@@ -105,18 +118,21 @@ Also,
   \gamma_0+(-\gamma_1)\sim\gamma_0(0).
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0014
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.58\linewidth]{note6-fig-03.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0015
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.62\linewidth]{note6-fig-04.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0016
 Here,
 \[
   H'(t,s):=
@@ -125,12 +141,15 @@ Here,
   +\left.(-\gamma_1(s))\right|_{[t,1]}.
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0017
 \textbf{Remark.}
 We write a homotopy as \(H(t,s)\), with \(t\) as the homotopy parameter. Also, one must keep in mind the ways we collected curves from a homotopy and used curves to create a homotopy, thus justifying the
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0018
 
 wording of Tool 21.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0019
 If \(U\) is a domain and \(\gamma_0,\gamma_1:[a,b]\to U\) are two continuous curves, then there exists a continuous map
 \[
   \gamma:[0,1]\times[a,b]\to U
@@ -143,6 +162,7 @@ such that
   \qquad t\in[a,b].
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0020
 \textit{Proof.}
 The set \(U\) is path-connected. Let \(\gamma_2\) be the path from \(\gamma_0(0)\) to \(\gamma_1(1)\). Consider the curve
 \[
@@ -164,12 +184,15 @@ and define
 \]
 After suitable normalization, one obtains what is needed.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0021
 \textbf{Remark.}
 Because unrestricted sliding gives a weak notion of deformation, we impose conditions such as \(H(s,0)=H(s,1)\qquad(\forall s),\) which give the notion of a homotopy through closed curves, or the stronger condition that \(H(s,0)\) and \(H(s,1)\) are constants.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0022
 \subsection*{Tool 22 — Morera Technique}
 We have seen two instances of this, one in the Schwarz Reflection Principle and the other in a variant of it. So, we shall briefly expound on it.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0023
 Suppose you are given a ``free'' homotopy \(H(t,s)\), a collection of curves \(\gamma_t(s):=H(t,s)\) for a given \(t\). Let
 \[
   H:[0,1]\times[0,1]\to\Omega,
@@ -194,6 +217,7 @@ Now note that
 \]
 where \(P\) is a partition of \([0,1]\). The restriction \(\left.f\right|_{H([0,1]\times[0,1])}\) is also uniformly continuous, and so are \(\gamma_t(s)\) and \(\gamma_{t'}(s)\).
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0024
 Given \(\varepsilon\),
 \begin{align*}
   \left|\sum_{j=1}^n f(\gamma_t(s_j^*))
@@ -234,18 +258,23 @@ Thus,
 \]
 In particular, if one is \(0\), the other too is bound to be \(0\).
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0025
 The technique is this: if \(f\in H(\Omega)\) and \(f\in C(\partial\Omega)\), then one can, as in the Reflection Principle, ``push down'' triangles past \(\partial\Omega\) and conclude that \(f\) can be extended.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0026
 \textbf{Exercise.}
 Fill in the gaps, and remove the modulus.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0027
 \subsection*{Tool 23 — Two-Ears Theorem}
 Two-Ears Theorem (or the existence of a triangulation of any polygon).
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0028
 
 \subsection*{Alexander Numbering Rule}
 Refer to the statement in Tool 23. Draw the proof!
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0029
 We first note that simple smooth curves locally look like rotated graphs. Let \(\gamma\) be a simple smooth curve, with
 \[
   \gamma'(t_0)=re^{i\theta},
@@ -283,8 +312,10 @@ Thus, locally, for \(\varepsilon\) small enough,
   \mid s\in(-c_\varepsilon,d_\varepsilon)\right\}.
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0030
 An important consequence, when the contour has only finitely many transverse self-intersections, is that it can be written as a finite concatenation of simple smooth curves: away from the intersection points it is locally like a rotated graph, as ``non-loopy'' as an interval. Corollary: every polygon is a sum of simple polygons.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0031
 Let \(\gamma\) be the closed contour and \(\sigma\) the contour that has smooth transverse intersections with \(\gamma\) at the points
 \[
   \{w_\ell\}_{\ell=1}^k.
@@ -296,6 +327,7 @@ Notice that, to establish
 \]
 if one replaces \(\gamma\) and \(\sigma\) with approximate polygons \(\gamma_P\) and \(\sigma_P\), with the quantities \(W_\gamma(z_0)\), \(W_\gamma(z_1)\), the number of left crossings, and the number of right crossings preserved, then establishing the equality will complete the proof.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0032
 Let
 \[
   \operatorname{dist}(\gamma,z_0)=\inf_t|\gamma(t)-z_0|=d_0,
@@ -313,6 +345,7 @@ Denote this open set by \(\Omega\). Let \(\gamma^*\) and \(\sigma^*\) denote the
 choose \(\varepsilon_{t_0}\) such that \(B_{\varepsilon_{t_0}}(\gamma(t_0))\subset(\sigma^*)^c.\)
 Similarly for \(\sigma(t_0)\). For \(\{w_\ell\}_{\ell=1}^k\), choose \(\varepsilon_{w_\ell}\) so that in \(B_{\varepsilon_{w_\ell}}(w_\ell)\) the contours \(\gamma\) and \(\sigma\) look like rotated graphs. Note that the axioms of transverse intersection guarantee such an \(\varepsilon_{w_\ell}\) for every \(\ell\). Ensure all these balls lie in \(\Omega\).
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0033
 Since \(\gamma^*\cup\sigma^*\) is compact, it has a finite cover. Let the balls covering \(\sigma^*\setminus\{w_\ell\}\) be \(\{\Sigma_i\}\), and those covering \(\gamma^*\setminus\{w_\ell\}\) be \(\{T_i\}\). The balls \(B_{\varepsilon_{w_\ell}}(w_\ell)=:B(w_\ell)\) belong to the finite cover by construction. Repeat the argument from the complex tube lemma to arrange that the balls are successive. That is, there exists a partition
 \[
   P=\{0=t_0<t_1<\cdots<t_n=1\}
@@ -324,8 +357,10 @@ such that
   \cup B_{\varepsilon_{t_{i+1}}}(\gamma(t_{i+1})).
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0034
 One can similarly do so for \(\sigma\). Let us assume \(\{\Sigma_i\}\) and \(\{T_j\}\) are such consecutive balls. Using the \(C^1\) regularity of \(\sigma\) and \(\gamma\), arrange matters so that
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0035
 \[
   \arg\bigl(\gamma'_{\sigma(t)\to\sigma(t_i)}\bigr)
   =\arg\bigl(\sigma'(s_j)\bigr)+\varepsilon,
@@ -334,6 +369,7 @@ One can similarly do so for \(\sigma\). Let us assume \(\{\Sigma_i\}\) and \(\{T
 Similarly for \(\sigma\). Let \(\Sigma_i\) and \(\Sigma_{i+1}\) be the balls adjacent to \(B(w_\ell)\) along \(\sigma\), and let \(T_i\) and \(T_{i+1}\) be the balls adjacent to it along \(\gamma\). Pick \(\sigma(t')\in\sigma^*\cap\partial B(w_\ell)\cap\Sigma_{i+1}\)
 and, similarly, a point for \(\gamma\), and complete the polygonal paths. By construction, all those quantities will be preserved.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0036
 \textbf{Exercise.}
 Finish the proof! Induct on the number of edges for a polygon via the invocation of the Two-Ears Theorem, as we did before, which would split
 \[
@@ -341,6 +377,7 @@ Finish the proof! Induct on the number of edges for a polygon via the invocation
 \]
 Let the common edge be \(\gamma_{a\to b}\). If \(\sigma\) crosses \(+\gamma_{a\to b}\), every left crossing with \(\gamma_{P_1}\) is a right crossing with \(\gamma_{P_2}\), as the orientation reverses too. For a general closed polygon, simply write it as a finite concatenation of simple closed polygons, with the angle of the tangent varying smoothly.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0037
 \textbf{Remark.}
 One reason this numbering rule is useful is that it tells us in which direction the interior lies. Recall the local description of a simple smooth curve. We have, as seen before,
 \[
@@ -348,12 +385,15 @@ One reason this numbering rule is useful is that it tells us in which direction 
   =\left\{z_0+e^{i\theta}(s+if(s))\mid s\in I_\varepsilon\right\}.
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0038
 
 There is one small thing that one must ensure, and that is that \(\gamma_P\) and \(\sigma_P\) preserve the crossing. For that, notice that once one obtains \(B(w_\ell)\), the set \((\gamma^*\cup\sigma^*)\setminus B(w_\ell)\)
 is still compact.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0039
 Thus, the corresponding parts of \(\gamma^*\) and \(\sigma^*\) outside \(B(w_\ell)\) can be separated by \(T\) and \(\Sigma\). Now consider \(T\cap\Omega\) and \(\Sigma\cap\Omega\).
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0040
 
 Perform suitable translations and rotations to get the graph as we know it. Let the \(x\)-axis be the line containing the derivative at \(t_0\) of \(\gamma\). Notice that the \(y\)-axis is perpendicular to the tangent at \(t_0\). Since the \(y\)-axis is unbounded, we know it contains both the interior and the exterior of \(\gamma\). Consider \(i\varepsilon\) and \(-i\varepsilon\). Let \(\gamma_{-i\varepsilon\to i\varepsilon}\) be the joining curve; clearly, \(\gamma_{-i\varepsilon\to i\varepsilon}\) is connected. Let \(\gamma\) be oriented anticlockwise. A simple connectedness argument tells us that \(i\varepsilon\) and \(-i\varepsilon\) lie in different components for all sufficiently small \(\varepsilon\). Just divide
 \[
@@ -377,13 +417,17 @@ where \(\gamma'(t_0)=re^{i\theta}\). This is true for all close translates of th
 \]
 Draw!
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0041
 \textbf{Remark.}
 The previous remark essentially says that, if you traverse along the closed contour that is oriented anticlockwise, then the interior is to its left and the exterior is to the right. A symmetric statement can be made for clockwise orientation. Draw!
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0042
 \subsection*{Tool 24 — Jordan Curve Theorem}
+\label{tool:jordan-curve}
 The Jordan Curve Theorem states that the complement of a simple closed curve has exactly two components. It also implies that if \(\operatorname{int}(\gamma)\subset U,\)
 where \(U\) is some open set, then \(\gamma\) is null-homotopic in \(U\).
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0043
 Here \(U\) is a domain. Therefore,
 \[
   U\text{ is simply connected}
@@ -391,6 +435,7 @@ Here \(U\) is a domain. Therefore,
   \text{every }f\in H(U)\text{ is conservative}.
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0044
 \textit{Proof.}
 Let \(z_0\in\operatorname{int}(\gamma)\), with \(\gamma^*\subset U\). If \(z_0\notin U\), then \(\frac{1}{z-z_0}\in H(U),\)
 so
@@ -400,33 +445,42 @@ so
 But \(z_0\) is in the interior, so \(W_\gamma(z_0)\ne0\), a contradiction. Therefore, \(z_0\in U\), so \(\operatorname{int}(\gamma)\subseteq U.\)
 Hence \(\gamma\) is contractible in \(U\), and \(U\) is simply connected.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0045
 \textbf{Remark.}
 These singularity spikes ensure that there are no holes in the domain, for if there is one, they shall explode with a residue. So, if all holomorphic functions are conservative, in the sense that they have no residue, then ``there are no holes in \(U\).''
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0046
 \paragraph{Observation.}
 As in every star-shaped region, \(f\) has a primitive and is conservative; therefore, star-shaped regions are simply connected.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0047
 \textbf{Exercise.}
 Using the ideas expounded in the remark following Alexander's Numbering Rule and the facts about \(W_\gamma(z)\), prove the Jordan Curve Theorem for polygonal paths, closed and simple. ``All the hard work has been done for this; one must merely connect the dots.''
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0048
 \textbf{Remark.}
 We do not need to invoke the Two-Ears Theorem to induct on the number of edges. If \(\gamma_P\) is a concave polygon oriented anticlockwise, let \(v\) be a vertex that has angle greater than \(\pi\) to the left of \(\gamma_P\), as in, towards the interior. Let the adjacent edges be \(e\) and \(f\), and extend
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0049
 
 them until they meet some other point on the polygon \(\gamma_P\). This will split the polygon into two.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0050
 \[
   \gamma_1+\gamma_2=\gamma.
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0051
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.62\linewidth]{note6-fig-05.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0052
 Regardless, it is worthy that we explore the proof of the Two-Ears Theorem. But, for our silly purposes, there is no need for any black boxes.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0053
 \textbf{Remark.}
 One nice consequence of the above remark is the following. Now that we know how to define angles of a polygonal path, simple and closed, how do we do it? Pick a vertex, without loss of generality assume it is a base vertex, and let the edges meeting at \(v\) be \(e\) and \(f\). Let \(z_0\in e\), with \(z_0=\gamma(i)\), and \(z_1\in f\), with \(z_1=\gamma(j)\), where \(j>i\). Then separate \(v\) and \(\gamma|_{[i,j]}\). Let \(B_\varepsilon(v)\) be such that \(B_\varepsilon(v)\cap\gamma|_{[i,j]}=\varnothing.\)
 Therefore, there exists a cone whose boundary is just a wedge of the polygon. Pick \(z_0\in e\) and \(z_1\in f\) such that \(|v-z_i|<\varepsilon\). If \(\gamma_{z_0\to z_1}\) is the canonical straight path, with \(\gamma_{z_0\to z_1}:[0,1]\to\mathbb C\), then
@@ -436,8 +490,10 @@ Therefore, there exists a cone whose boundary is just a wedge of the polygon. Pi
 \]
 Thus, \(\left.\gamma_{z_0\to z_1}\right|_{(0,1)}\) lies entirely in the interior or the exterior. Based on that, define the angle to be \(\theta\) or \(2\pi-\theta\). Good.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0054
 Suppose all angles of the polygon are at most \(\pi\). We claim that the interior is convex. The argument to establish this is not that complicated. Consider translates
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0055
 
 of the \(x\)-axis, \(i\alpha+\mathbb R\). Look at
 \[
@@ -449,6 +505,7 @@ We intend to show that
 \]
 is a union of at most one interval. Thus, the same will be true, by suitable rotations, for any \(\alpha+e^{i\theta}\mathbb R\), which would yield that the segment joining two interior points is in the interior.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0056
 Without loss of generality, assume \(\operatorname{int}(\gamma)\cap\mathbb R\ne\varnothing\), and let \(\{I_j\}_{j\ge1}\) be its components, which are intervals. Pick two ``consecutive ones.'' Denote them by \(I_0\) and \(I_1\), with
 \[
   I_0=(a_0,b_0),
@@ -458,12 +515,14 @@ Without loss of generality, assume \(\operatorname{int}(\gamma)\cap\mathbb R\ne\
 \]
 Note that \([b_0,a_1]\) is not in \(\operatorname{int}(\gamma)\). Two configurations are possible:
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0057
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.90\linewidth]{note6-fig-06.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0058
 Using the meaning of angle which we just mentioned, one can conclude that the angle at \(c\) is greater than \(\pi\). This gives a topological description of convexity. We say that \(\gamma\), a simple closed curve, is convex if, for all \(z_0,z_1\in\operatorname{int}(\gamma)\), there exists a convex polygon \(\gamma_P\) such that
 \[
   \gamma_P\cap\operatorname{ext}(\gamma)=\varnothing,
@@ -471,6 +530,7 @@ Using the meaning of angle which we just mentioned, one can conclude that the an
   z_0,z_1\in\operatorname{int}(\gamma_P).
 \]
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0059
 \paragraph{Digression.}
 We claimed in the proof of Alexander's Numbering Rule that, by exploiting the \(C^1\)-ness of the curve, we can locally find a segment whose angle, with respect to slope, is the argument of the derivative of the point on the curve. Let us briefly justify it for the sake of completeness. Let \(\gamma(t_0)\) be in the interior of \([a,b]\), where \(\gamma:[a,b]\to\mathbb C\) is a smooth curve. Let \(\gamma'(t_0)=re^{i\theta}.\)
 We know \(\gamma\) is locally a rotated graph, so, after using the graph coordinate as parameter, the real mean-value theorem gives a point \(t'\in(a,b)\) such that
@@ -489,12 +549,14 @@ is continuous, so
 \]
 is continuous. Therefore, \(\arg(\gamma'(t))\) is continuous near \(t_0\), which is precisely what we need.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0060
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.62\linewidth]{note6-fig-07.pdf}
 
 \end{figure}
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0061
 \subsection*{Jordan Curve Theorem (for simple closed polygonal paths)}
 \textit{Proof.}
 If \(\gamma_P\) is a simple smooth polygonal path, then \((\gamma_P^*)^c\) is a union of at least two components where \(W_{\gamma_P}\) is constant. Let \(\Omega\) be a region in \((\gamma_P^*)^c\). The function \(W_{\gamma_P}(z)\) is constant for \(z\in\Omega\). If \(W_{\gamma_P}(z)=k\), then \(W_{\gamma_P}\) attains \(k\) near \(\partial\Omega\), and hence \(W_{\gamma_P}\) attains \(k\) near \(\gamma_P\). Now, as was done in the argument of the remark following Alexander's Rule, conclude that, as \(z\) crosses the polygon, the winding number shifts by \(\pm1\). Hence, near \(\gamma_P([a,b])\), \(W_{\gamma_P}(z)\in\{k,k+1\}\)
@@ -504,6 +566,7 @@ in a neighborhood of \(z\) on \(\gamma_P\). Use the construction in the tube lem
 \]
 in a neighborhood of \(\gamma_P\).
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0062
 
 Now we know that \(W_\gamma(z)=0\) in the unbounded region, so \(W_\gamma(z)\in\{0,\pm1\}.\)
 Two disjoint regions cannot have the same winding number, for near the boundary they switch by \(\pm1\). Therefore,
@@ -515,10 +578,12 @@ Two disjoint regions cannot have the same winding number, for near the boundary 
 \]
 are connected. Now the claim of contractibility is already dealt with. QED.
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0063
 
 \subsection*{Problems}
 \emph{The motto of a problem is that it should make your life problematic.}
 
+% BLOG-PASSAGE: homotopy-paths-and-jordan-curves:p0064
 \begin{enumerate}
   \item Can you cover \(\mathbb R^2\) with curves joining \(z_1,z_2\in\mathbb R^2\) that are mutually disjoint, except that they have common endpoints?
 

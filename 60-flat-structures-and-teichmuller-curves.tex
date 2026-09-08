@@ -5,12 +5,14 @@
 \begin{document}
 \section*{Flat Structures and Teichmüller Curves}
 % BLOG-CONTENT-BEGIN
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0001
 \subsection{Teichm\"uller Curves}
 % Source page 1
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0002
 Let $T_g$ denote the Teichm\"uller space of closed genus-$g$ surfaces, where $g\geq2$.
 We have the well-known identification $M_g\approx T_g/\MCG(g)$.
 The action $\MCG(g)\curvearrowright T_g$ is properly discontinuous.
-Consequently $M_g$ is a complex orbifold of dimension $3g-3$.
+Consequently, $M_g$ is a complex orbifold of dimension $3g-3$.
 \setcounter{definition}{3}\begin{definition}[Teichm\"uller curve]
 We say that $V\subset M_g$ is a Teichm\"uller curve if the inclusion
 $(V\cong\mathbb H/\Gamma)\hookrightarrow M_g$ is an isometry for the Teichm\"uller metric. Its image lies in the regular locus. On $V$ we have the usual hyperbolic
@@ -25,11 +27,13 @@ How do we get a metric on $M_g$?
 \end{figure}
 Here $\sigma\in\Deck(\mathbb H/S)<\Aut(\mathbb H)$.
 % Source page 2
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0003
 One obtains a metric on $M_g$ in a similar fashion.
 \begin{figure}[H]
  \centering\includegraphics[width=0.92\textwidth]{m3-fig-02.pdf}
 \end{figure}
 
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0004
 For $x=(S,f_1)$ and $y=(S,f_2)$, the Teichm\"uller distance is
 \[
  d_T(x,y)=\inf_{f\in[f_2\circ f_1^{-1}]}\ln K(f).
@@ -45,6 +49,7 @@ Let $\sigma\in\MCG(g)$. We have
 \end{figure}
 Thus $\sigma$ is distance-preserving and bijective, so the Teichm\"uller metric descends to $M_g$.
 
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0005
 On $T_g$ one has the Weil--Petersson metric $\omega_{\mathrm{WP}}$.
 \begin{enumerate}
  \setcounter{enumi}{0}\item The symplectic form is
@@ -71,11 +76,13 @@ In particular, the mapping-class group preserves
 $\operatorname{Re}(\widetilde\omega_{\mathrm{WP}})$, so the
 Weil--Petersson metric descends to $M_g$.
 
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0006
 \setcounter{definition}{4}\begin{definition}[Complex geodesic]
 If $f\colon\mathbb H\to T_g$ is an isometric embedding, then its image
 $f(\mathbb H)$ is called a complex geodesic in $T_g$.
 \end{definition}
 
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0007
 % Source page 4
 \subsection{Translation Structure}
 Let $X\in M_g$ be a Riemann surface and $\omega\in\Omega X$ a holomorphic
@@ -91,7 +98,7 @@ with the pairing $(\eta,f)$. By Riemann--Roch,
  \underbrace{\dim I(0)}_{g}-\underbrace{\dim L(0)}_{1}
  =\deg D+1-g.
 \]
-Therefore $\deg(\omega)=2g-2$. Let $\Sigma$ be the zeros of $\omega$;
+Therefore, $\deg(\omega)=2g-2$. Let $\Sigma$ be the zeros of $\omega$;
 then
 \[
  \sum_{p\in\Sigma}\operatorname{ord}_p(\omega)=2g-2.
@@ -108,6 +115,7 @@ Since $\pi_1(U_p)=0$, the map $z_p\circ x_p$ is well-defined.
  \centering\includegraphics[width=0.58\textwidth]{m3-fig-05.pdf}
 \end{figure}
 % Source page 5
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0008
 By the Fundamental Theorem of Calculus,
 $\frac{dz_p}{dx_p}(x_p(q))=\phi_{x_p}(x_p(q))$.
 Define $\widetilde z_p:=z_p\circ x_p$. Then $\omega=d\widetilde z_p$.
@@ -123,6 +131,7 @@ But we notice that
  \centering\includegraphics[width=.94\linewidth]{m3-fig-06.pdf}
 \end{figure}
 
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0009
 Let $p\in\Sigma$ and look at the chart $(U_p,x_p)$:
 $\omega=\phi_{x_p}\,dx_p=x_p^ng(x_p)\,dx_p$.
 Define
@@ -145,7 +154,7 @@ Set $\widetilde w(x_p(q)):=(n+1)^{1/(n+1)}h(x_p(q))^{1/(n+1)}$. Then
  \end{aligned}
 \]
 We have $\phi_{x_p}=x_p^ng(x_p)$ and
-$\widetilde w(x_p)=(n+1)^{1/(n+1)}h(x_p)^{1/(n+1)}$. Therefore
+$\widetilde w(x_p)=(n+1)^{1/(n+1)}h(x_p)^{1/(n+1)}$. Therefore,
 \[
  \begin{aligned}
  \widetilde w(x_p(q))^{-n}\phi_{x_p}
@@ -172,6 +181,7 @@ coordinate.
  \centering\includegraphics[width=0.64\textwidth]{m3-fig-12.pdf}
 \end{figure}
 
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0010
 On a triple overlap, write the three translation-coordinate changes as
 $\phi_1,\phi_2,\phi_3$. They satisfy $\phi_3=\phi_2\circ\phi_1$ and
 \[
@@ -182,6 +192,7 @@ Thus the coordinate changes, and their compositions, are translations.
  \centering\includegraphics[width=0.68\textwidth]{m3-fig-07.pdf}
 \end{figure}
 
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0011
 
 % Source page 7
 Now consider the space
@@ -206,6 +217,7 @@ $A\cdot(X,\omega):=(U_p,A\circ\widetilde z_p)$. Then
 Thus $\SL_2(\mathbb R)\curvearrowright\Omega M_g$ by stretching and
 rotating the translation structure.
 % Source page 8
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0012
 \begin{remark}
 $(M_g,\operatorname{Re}(\widetilde\omega_{\mathrm{WP}}))$ is generally
 inhomogeneous: its isometry group does not act transitively, and there is no
@@ -228,6 +240,7 @@ linear transformations, with
 $\operatorname{Stab}(i)=\operatorname{SO}_2(\mathbb R)$ and
 $\operatorname{Orb}(i)=\mathbb H$.
 % Source page 9
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0013
 Denote the map induced by $\pi\circ F$ by $f\colon\mathbb H\to M_g$.
 After choosing a marking of $X$, this construction lifts to a map
 $\widetilde f\colon\mathbb H\to T_g$.
@@ -253,8 +266,8 @@ Thus
  \qquad a^2+b^2=1,\quad(a,b)\in S^1.
 \]
 We have $\widetilde f(it)=(U_p,A(t)\circ\widetilde z_p)$. The
-Teichm"uller extremal theorem shows that this affine map realizes the
-infimum in the Teichm"uller distance. Finally,
+Teichm\"uller extremal theorem shows that this affine map realizes the
+infimum in the Teichm\"uller distance. Finally,
 \[
  d_{T_g}(\widetilde f(i),\widetilde f(it))
  =\log(\text{dilatation of }A(t))=\log t,
@@ -265,7 +278,8 @@ sending $x\mapsto i$ and $y\mapsto it$ for some $t\geq1$.
 The map $A(t)$ is linear, and computing its dilatation is standard.
 \end{proof}
 
-\paragraph{Projected Teichm"uller geodesic rays.}
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0014
+\paragraph{Projected Teichm\"uller geodesic rays.}
 For fixed $(X,\omega)$, the projection to $M_g$ of a real geodesic in
 $T_g$ is
 \[
@@ -287,6 +301,7 @@ normalisation map
 $V\cong\mathbb H/\SL(X,\omega)\longrightarrow M_g$
 would define a Teichm\"uller curve in $M_g$ generated by $(X,\omega)$.
 % Source page 10
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0015
 
 % Source page 11
 \setcounter{theorem}{8}\begin{proposition}
@@ -372,12 +387,13 @@ compact.
 
 \end{enumerate}
 % Source page 16
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0016
 \subsection{Summary}
 \begin{enumerate}
  \setcounter{enumi}{0}\item The Teichm\"uller metric descends to $M_g$.
  \setcounter{enumi}{1}\item Every $(X,\omega)\in\Omega M_g$ gives a translation structure.
  \setcounter{enumi}{2}\item $\SL_2(\mathbb R)\curvearrowright\Omega M_g$ stretches the translation structure.
- \setcounter{enumi}{3}\item Fix $(X,\omega)\in\Omega M_g$. We have the following diagram:
+ \setcounter{enumi}{3}\item Fix $(X,\omega)\in\Omega M_g$. We have the following diagram,
  where $F(A)=A\cdot(X,\omega)$ and $f$ is an isometric immersion.
  \begin{figure}[H]
   \centering\includegraphics[width=0.76\textwidth]{m3-fig-14.pdf}
@@ -392,6 +408,7 @@ compact.
  symmetry group for $g>1$.
 \end{enumerate}
 % Source page 17
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0017
 \begin{enumerate}[start=9]
  \setcounter{enumi}{8}\item Define the \emph{trace field}
  $K:=\mathbb Q\{\operatorname{tr}(A):A\in\SL(X,\omega)\}\subset\mathbb R$.
@@ -415,6 +432,7 @@ compact.
  \setcounter{enumi}{2}\item Understand the geometry of the strata of $\Omega M_g$.
 \end{enumerate}
 
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0018
 % Source page 18
 \subsection{Billiards and Teichm\"uller Curves}
 Let $P$ be a polygon with angles in $\mathbb Q\pi$, that is, rational
@@ -423,6 +441,7 @@ multiples of $\pi$, such that every edge is paired with another parallel edge of
  \centering\includegraphics[width=0.96\textwidth]{m3-fig-15.pdf}
 \end{figure}
 % Source page 19
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0019
 This immediately gives a translation structure on $P/{\sim}$ because the
 charts are given by translations away from singular points.
 \begin{figure}[H]
@@ -438,6 +457,7 @@ Thus $2-2g=f-\frac32f+v$, giving $f=(4g-4)+2v$.
 The angle sum of each triangle is $\pi$, so the total angle sum is
 $\pi f=(4g-4)\pi+2\pi v$.
 % Source page 20
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0020
 \setcounter{theorem}{9}\begin{proposition}
 The angle at a cone singularity is a multiple of $2\pi$.
 \end{proposition}
@@ -446,7 +466,7 @@ The cone angles of $P/{\sim}$ can be computed from the edge identifications.
 \begin{figure}[H]
  \centering\includegraphics[width=0.94\textwidth]{m3-fig-17.pdf}
 \end{figure}
-The cone angle at $e$ is $\sum_{i=1}^n\theta_i$. For every edge vector $v_i$ around the identified vertex, there is a parallel partner $v_j$. Returning to $v_1$ requires an integral number of full turns. Consequently
+The cone angle at $e$ is $\sum_{i=1}^n\theta_i$. For every edge vector $v_i$ around the identified vertex, there is a parallel partner $v_j$. Returning to $v_1$ requires an integral number of full turns. Consequently,
 $\sum_{i=1}^n\theta_i\in2\pi\mathbb Z$.
 \end{proof}
 Let the cone angles be $2\pi(n_i+1)$ at $p_i$ in $P/{\sim}$. Then
@@ -456,6 +476,7 @@ Let the cone angles be $2\pi(n_i+1)$ at $p_i$ in $P/{\sim}$. Then
 \]
 Hence $\boxed{\sum_{i=1}^k n_i=2g-2}$.
 % Source page 21
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0021
 \subsection{From Translation Structure to Polygon}
 \setcounter{theorem}{10}\begin{proposition}
 Between any two singular points of a translation structure on $X$, there
@@ -475,8 +496,9 @@ Now inductively straighten the polygonal path to a geodesic.
 This proves the proposition.
 \end{proof}
 % Source page 22
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0022
 This shows that we can triangulate the surface $X$ by joining singular
-points. Therefore one obtains a polygonal representation.
+points. Therefore, one obtains a polygonal representation.
 \subsection{Billiards and Polygons}
 \begin{figure}[H]
  \centering\includegraphics[width=0.94\textwidth]{m3-fig-19.pdf}
@@ -490,6 +512,7 @@ Consider $N$ copies of $Q$. Pick a side $s$ of $Q_i$ and reflect
 $\theta_i$ along $s$; it is $\theta_j$ for some $j\in\{1,\ldots,N\}$.
 Glue the identical sides $s$ in $Q_i$ and $Q_j$.
 % Source page 23
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0023
 The resulting object is a genus-$g$ surface with a flat metric having
 cone singularities. We have
 \[
@@ -520,6 +543,7 @@ is a lattice, we call $P$ a polygonal lattice.
  \Longrightarrow\text{topologically optimal}.
 \]
 % Source page 24
+% BLOG-PASSAGE: flat-structures-and-teichmuller-curves:p0024
 
 Thus billiard dynamics gives us curves in $M_g$.
 In genus $2$, examples arise from the pentagon, octagon, and decagon.

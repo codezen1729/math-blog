@@ -4,7 +4,17 @@ from pathlib import Path
 import re
 import unittest
 
-from render import expand_blog_post_links, extract_post_title, opening_excerpt
+from render import (
+    PREVIEW_SENTINEL,
+    archived_figure_descriptions,
+    expand_blog_post_links,
+    extract_post_title,
+    opening_excerpt,
+    normalize_heading_hierarchy,
+    prepare_preview_marker,
+    split_rendered_preview,
+)
+from latex_to_web import clean_tex
 
 
 class PostTitleTests(unittest.TestCase):
@@ -62,8 +72,31 @@ class PostTitleTests(unittest.TestCase):
                 self.assertTrue(title.strip())
 
 
+class WebTypesettingTests(unittest.TestCase):
+    def test_original_mathematical_caption_survives_as_a_description(self):
+        posts = [{"html": '<figure><img src="figures/polygon.svg"><figcaption>'
+                  '<span class="math inline">\\(P\\)</span> represents the surface.'
+                  '</figcaption></figure>'}]
+        self.assertEqual(archived_figure_descriptions(posts), {
+            'figures/polygon.svg': r'\(P\) represents the surface.',
+        })
+
+    def test_bare_qed_is_kept_as_math_for_browser_rendering(self):
+        source = "Proof complete.\n\\qed\n\nAlready inline: $\\qed$.\nInside math: $x=1.\\qedhere$"
+        cleaned = clean_tex(source)
+        self.assertIn("Proof complete.\n$\\qed$\n\n", cleaned)
+        self.assertIn("Already inline: $\\qed$.", cleaned)
+        self.assertIn("Inside math: $x=1.\\qedhere$", cleaned)
+
+
 class BlogPostLinkTests(unittest.TestCase):
     slugs = {"complex-differentiation", "goursat-cauchy"}
+    targets = {
+        ("goursat-cauchy", "thm:cauchy"): {
+            "id": "tex-1234567890abcdef", "slug": "goursat-cauchy",
+            "label": "thm:cauchy", "value": "4",
+        }
+    }
 
     def test_expands_a_valid_link_and_preserves_nested_label_markup(self):
         source = (
@@ -98,8 +131,50 @@ class BlogPostLinkTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, message):
                     expand_blog_post_links(source, "example.tex", self.slugs)
 
+    def test_expands_an_exact_labelled_post_link(self):
+        source = r"Use \BlogPostAt{goursat-cauchy}{thm:cauchy}{Cauchy's theorem}."
+        self.assertEqual(
+            expand_blog_post_links(source, "example.tex", self.slugs, self.targets),
+            r"Use \href{\#/post/goursat-cauchy?ref=tex-1234567890abcdef}{Cauchy's theorem}.",
+        )
+
+    def test_rejects_an_unknown_exact_target(self):
+        with self.assertRaisesRegex(ValueError, "Unknown labelled blog-post target"):
+            expand_blog_post_links(
+                r"\BlogPostAt{goursat-cauchy}{missing}{result}",
+                "example.tex", self.slugs, self.targets,
+            )
+
 
 class OpeningExcerptTests(unittest.TestCase):
+    def test_heading_normalization_only_lowers_skipped_levels(self):
+        fragment = '<h1 id="z">Z</h1><h2 id="a">A</h2><h4 id="b">B</h4><h3 id="c">C</h3><h2 id="d">D</h2>'
+        self.assertEqual(
+            normalize_heading_hierarchy(fragment),
+            '<h2 id="z">Z</h2><h2 id="a">A</h2><h3 id="b">B</h3><h3 id="c">C</h3><h2 id="d">D</h2>',
+        )
+
+    def test_source_preview_marker_is_singular_and_block_bounded(self):
+        source = "First paragraph.\n\n\\BlogPreviewEnd\n\nSecond paragraph.\n"
+        prepared, marked = prepare_preview_marker(source, "example.tex")
+        self.assertTrue(marked)
+        self.assertIn(PREVIEW_SENTINEL, prepared)
+        self.assertNotIn(r"\BlogPreviewEnd", prepared)
+        with self.assertRaisesRegex(ValueError, "at most one"):
+            prepare_preview_marker(source + "\n\\BlogPreviewEnd\n", "twice.tex")
+        with self.assertRaisesRegex(ValueError, "alone on a line"):
+            prepare_preview_marker("Text \\BlogPreviewEnd here", "inline.tex")
+
+    def test_rendered_preview_boundary_is_removed_without_changing_article_blocks(self):
+        fragment = (
+            '<p>The exact opening.</p>'
+            f'<p>{PREVIEW_SENTINEL}</p>'
+            '<p>The rest of the article.</p>'
+        )
+        article, excerpt = split_rendered_preview(fragment, "example.tex")
+        self.assertEqual(article, '<p>The exact opening.</p><p>The rest of the article.</p>')
+        self.assertEqual(excerpt, '<p>The exact opening.</p>')
+
     def test_uses_the_first_three_readable_paragraphs_in_order(self):
         fragment = (
             '<p>A short but genuine opening paragraph.</p>'

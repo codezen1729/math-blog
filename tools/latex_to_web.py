@@ -36,6 +36,9 @@ def unwrap_layout_commands(text: str) -> str:
 def clean_tex(text: str) -> str:
     text = unwrap_layout_commands(text)
     text = re.sub(r"(?m)^\s*%.*$", "", text)
+    # A bare amsthm proof terminator is expanded by Pandoc into a stray control
+    # character.  Keep it as TeX math so KaTeX renders the intended square.
+    text = re.sub(r"(?m)^[ \t]*\\qed[ \t]*$", r"$\\qed$", text)
     # Preserve the one prose use of this math-only command in the bundle source.
     text = text.replace(r"\text{replacing points }", "replacing points ")
     text = text.replace("\\cross", "\\times")

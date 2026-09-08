@@ -46,4 +46,33 @@ The numbered posts include the mathematical content of the supplied `main.tex` d
 
 Equation and theorem labels retain the numbering from the source manuscripts; they are not automatically renumbered between posts. References and citations link to their exact destinations in the blog. For new notation, put definitions in the post body so both converters see them. Dependencies and bundled figures/fonts retain their existing rights and licences.
 
+## Conservation-first editing
+
+Every published passage now begins with an invisible comment of the form
+`% BLOG-PASSAGE: …`. These comments do not appear in the PDF or on the website.
+Keep each marker with the paragraph, theorem, proof, list, or figure that follows
+it when material is moved.
+
+`tools/editorial-baseline.json` is the frozen record of the complete blog before
+the present polishing pass. **Do not regenerate it after editing.** The local
+review may contain passage-level changes marked as pending in
+`tools/editorial-ledger.json`; the public build refuses to run until every one of
+those exact changes has been approved. A removed formula, proof, figure,
+citation, label, cross-reference, or footnote therefore stops the build instead
+of disappearing silently.
+
+Use `python3 tools/editorial_conservation.py --review` to check a working draft.
+The strict public check is deliberately reserved for the approval-and-publish
+step.
+
+For a readable overview of every changed passage, internal link, and unresolved
+author-only mathematical question, open `tools/editorial-review/report.md`.
+The report is regenerated from the manuscripts and checked before deployment;
+it is an audit aid, not permission to invent a missing mathematical argument.
+
+The website source is kept in `website/` and packaged reproducibly into
+`site-source.zip` by `python3 tools/package-site.py`. The deploy workflow rejects
+a stale archive, so the locally reviewed application is exactly the application
+GitHub rebuilds.
+
 Existing external figure files are protected by a source-hash check. Changing an uploaded PDF/PNG/JPEG requires re-exporting its matching website figure; the build stops rather than publishing a stale illustration. Inline TikZ diagrams in the posts are rebuilt automatically.

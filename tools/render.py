@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib.parse import quote
 import latex_to_web as converter
 from references import reference_index, prepare_references, restore_anchors, link_numbered_references
+from editorial_conservation import audit_project
 
 
 SHARED_MATH_MACROS = json.loads((Path(__file__).resolve().parent / "shared-macros.json").read_text())
@@ -81,8 +82,40 @@ def _inside_tex_comment(text: str, index: int) -> bool:
     return any(char == "%" and not _is_escaped(text, position) for position, char in enumerate(text[line_start:index], line_start))
 
 
-def expand_blog_post_links(text: str, filename: str, slugs: set[str]) -> str:
-    """Validate and expand author-friendly links to another blog post."""
+def expand_blog_post_links(text: str, filename: str, slugs: set[str], exact_targets: dict[tuple[str, str], dict] | None = None) -> str:
+    """Validate and expand author-friendly links to posts and labelled passages."""
+    exact_targets = exact_targets or {}
+    exact_command = re.compile(r"\\BlogPostAt(?![A-Za-z@])")
+    cursor = 0
+    while match := exact_command.search(text, cursor):
+        if _is_escaped(text, match.start()) or _inside_tex_comment(text, match.start()):
+            cursor = match.end()
+            continue
+        argument_start = match.end()
+        while argument_start < len(text) and text[argument_start].isspace():
+            argument_start += 1
+        slug, after_slug = _braced_argument(text, argument_start, f"\\BlogPostAt in {filename}")
+        label_start = after_slug
+        while label_start < len(text) and text[label_start].isspace():
+            label_start += 1
+        source_label, after_source_label = _braced_argument(text, label_start, f"\\BlogPostAt in {filename}")
+        visible_start = after_source_label
+        while visible_start < len(text) and text[visible_start].isspace():
+            visible_start += 1
+        visible, end = _braced_argument(text, visible_start, f"\\BlogPostAt in {filename}")
+        slug, source_label = slug.strip(), source_label.strip()
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug) or slug not in slugs:
+            raise ValueError(f"Unknown blog-post slug in {filename}: {slug}")
+        target = exact_targets.get((slug, source_label))
+        if not source_label or not target:
+            raise ValueError(f"Unknown labelled blog-post target in {filename}: {slug} / {source_label}")
+        if not visible.strip():
+            raise ValueError(f"Blank \\BlogPostAt label in {filename}: {slug} / {source_label}")
+        href = r"\#/post/" + slug + "?ref=" + target["id"]
+        replacement = r"\href{" + href + "}{" + visible + "}"
+        text = text[:match.start()] + replacement + text[end:]
+        cursor = match.start() + len(replacement)
+
     command = re.compile(r"\\BlogPost(?![A-Za-z@])")
     cursor = 0
     while match := command.search(text, cursor):
@@ -242,7 +275,83 @@ def opening_excerpt(fragment: str, paragraph_limit: int = 3) -> str:
             break
     return "".join(selected)
 
+
+PREVIEW_SENTINEL = "BLOGPREVIEWENDMARKER91C78C"
+
+
+def prepare_preview_marker(source: str, filename: str) -> tuple[str, bool]:
+    """Replace one source-only preview boundary with an unambiguous sentinel."""
+    count = source.count(r"\BlogPreviewEnd")
+    if count > 1:
+        raise ValueError(f"{filename}: use at most one \\BlogPreviewEnd marker")
+    if not count:
+        return source, False
+    match = re.search(r"(?m)^[ \t]*\\BlogPreviewEnd[ \t]*(?:%[^\n]*)?$", source)
+    if not match:
+        raise ValueError(f"{filename}: put \\BlogPreviewEnd alone on a line between complete blocks")
+    before, after = source[:match.start()], source[match.end():]
+    if before and not before.endswith("\n\n"):
+        raise ValueError(f"{filename}: \\BlogPreviewEnd must follow a complete top-level block")
+    if after.startswith("\n"):
+        after = after[1:]
+    return before + f"\n\n{PREVIEW_SENTINEL}\n\n" + after, True
+
+
+def split_rendered_preview(fragment: str, filename: str) -> tuple[str, str | None]:
+    """Remove the rendered marker and return its exact opening HTML prefix."""
+    if PREVIEW_SENTINEL not in fragment:
+        return fragment, None
+    pattern = re.compile(rf"\s*<p(?:\s[^>]*)?>\s*{PREVIEW_SENTINEL}\s*</p>\s*", re.I)
+    match = pattern.search(fragment)
+    if not match or pattern.search(fragment, match.end()):
+        raise ValueError(f"{filename}: the preview boundary did not render at one block boundary")
+    return fragment[:match.start()] + fragment[match.end():], fragment[:match.start()]
+
+
+def plain_text(fragment: str) -> str:
+    value = re.sub(r"<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>", " ", fragment, flags=re.S | re.I)
+    value = html.unescape(re.sub(r"<[^>]+>", " ", value))
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def archived_figure_descriptions(posts: list[dict]) -> dict[str, str]:
+    """Retain the author's original captions when visible titles were removed."""
+    descriptions = {}
+    for post in posts:
+        for figure in re.findall(r"<figure\b[^>]*>.*?</figure>", post["html"], flags=re.S | re.I):
+            caption = re.search(r"<figcaption\b[^>]*>(.*?)</figcaption>", figure, flags=re.S | re.I)
+            if not caption or not plain_text(caption[1]):
+                continue
+            for src in re.findall(r'<img\b[^>]*src="([^"]+)"', figure, flags=re.I):
+                descriptions.setdefault(html.unescape(src), plain_text(caption[1]))
+    return descriptions
+
+
+def normalize_heading_hierarchy(fragment: str) -> str:
+    """Keep source heading order while preventing skipped HTML levels.
+
+    The page title is the sole h1.  LaTeX paragraph headings may otherwise
+    arrive from Pandoc as h4 immediately after an h2; lowering only such a
+    skipped level preserves the authored hierarchy and accessible outline.
+    """
+    previous = 1
+
+    def replace(match: re.Match[str]) -> str:
+        nonlocal previous
+        source_level = int(match.group(1))
+        # Any further LaTeX chapter/section after the page title is content,
+        # so even a Pandoc h1 becomes h2 within the article.
+        desired_level = max(2, source_level)
+        level = min(desired_level, previous + 1)
+        previous = level
+        return f"<h{level}{match.group(2)}>{match.group(3)}</h{level}>"
+
+    return re.sub(r"<h([1-6])(\b[^>]*)>(.*?)</h\1>", replace, fragment, flags=re.S | re.I)
+
 def render(project: Path, site: Path):
+    conservation = audit_project("review")
+    if conservation["errors"]:
+        raise RuntimeError("The manuscript conservation review failed; no website was rendered.")
     manifest = json.loads((project / "tools/manifest.json").read_text())
     baseline_posts = json.loads((project / "tools/baseline-posts.json").read_text())
     posts_by_slug = {post["slug"]: post for post in baseline_posts}
@@ -284,6 +393,7 @@ def render(project: Path, site: Path):
         source = document.split("% BLOG-CONTENT-BEGIN\n", 1)[1].split("% BLOG-CONTENT-END", 1)[0]
         documents.append((item, source, extract_post_title(document, file.name)))
     references = reference_index([(item, source) for item, source, _ in documents])
+    exact_targets = {(target['slug'], target['label']): target for target in references.values()}
     slugs = {item["slug"] for item in manifest}
     for (item, source, title_source), post in zip(documents, posts):
         assert item['slug'] == post['slug']
@@ -291,8 +401,9 @@ def render(project: Path, site: Path):
         profile = converter.SOURCE / collection
         mapping = {(collection, k): v for k,v in json.loads((profile / "assets.json").read_text()).items()}
         # PDF wrappers use bare original figure filenames, whose aliases are in the profile.
-        linked, markers = prepare_references(source.replace('\n% BLOG-PART\n', '\n\n'), item, references)
-        linked = expand_blog_post_links(linked, item["file"], slugs)
+        preview_source, has_preview_marker = prepare_preview_marker(source.replace('\n% BLOG-PART\n', '\n\n'), item["file"])
+        linked, markers = prepare_references(preview_source, item, references)
+        linked = expand_blog_post_links(linked, item["file"], slugs, exact_targets)
         fragment = restore_anchors(converter.convert_fragment(r"\section*{" + title_source + "}\n\n" + linked, collection, mapping, pandoc), markers)
         fragment = fragment.replace('href="https://codezen1729.github.io/math-blog/#/post/', 'href="#/post/')
         # The page template supplies the single h1. The source's outer section
@@ -305,16 +416,21 @@ def render(project: Path, site: Path):
         if not title:
             raise ValueError(f"The rendered post title is blank in {item['file']}")
         item['title'] = title
-        fragment = fragment[first_heading.end():].lstrip()
-        fragment = re.sub(r'<(/?)h([1-5])\b', lambda m: '<' + m[1] + 'h' + str(int(m[2])+1), fragment)
+        fragment = normalize_heading_hierarchy(fragment[first_heading.end():].lstrip())
+        # The page supplies h1. Pandoc's remaining h2/h3/h4 hierarchy is
+        # already subordinate and should not be shifted into skipped levels.
+        fragment, marked_excerpt = split_rendered_preview(fragment, item["file"])
+        if has_preview_marker and marked_excerpt is None:
+            raise ValueError(f"{item['file']}: \\BlogPreviewEnd disappeared during conversion")
         plain = html.unescape(re.sub(r"<[^>]+>", " ", fragment))
         count = len(re.findall(r"\b[\w'-]+\b", plain))
-        excerpt = opening_excerpt(fragment)
+        excerpt = marked_excerpt if marked_excerpt is not None else opening_excerpt(fragment)
         profile_macros = json.loads((profile / 'macros.json').read_text())
         post.update(
             title=title,
             html=fragment,
             excerptHtml=excerpt,
+            _previewBlockCount=len(_top_level_blocks(marked_excerpt)) if marked_excerpt is not None else None,
             wordCount=count,
             minutes=max(1, math.ceil(count / 210)),
             mathMacros={**profile_macros, **SHARED_MATH_MACROS},
@@ -328,8 +444,58 @@ def render(project: Path, site: Path):
         post['html'] = re.sub(r'href="#(?!/)([^"]+)"', lambda m: 'href="#/post/' + post['slug'] + '?ref=' + quote(html.unescape(m[1]), safe='') + '"', post['html'])
     # Reference linking can also affect the opening excerpt.
     for post in posts:
-        post['excerptHtml'] = opening_excerpt(post['html'])
+        marked_blocks = post.pop('_previewBlockCount', None)
+        post['excerptHtml'] = (
+            "".join(_top_level_blocks(post['html'])[:marked_blocks])
+            if marked_blocks is not None else opening_excerpt(post['html'])
+        )
     (site / "lib/generated-posts.json").write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n")
+    post_dir = site / "lib/posts"
+    post_dir.mkdir(parents=True, exist_ok=True)
+    for stale in post_dir.glob("*.json"):
+        stale.unlink()
+    index_posts = []
+    search_posts = []
+    for post in posts:
+        (post_dir / f"{post['slug']}.json").write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n")
+        # The archive page needs only these fields.  Source/audit metadata and
+        # complete article bodies remain in the per-post lazy modules.
+        index_fields = {
+            "order", "slug", "title", "excerptHtml", "phase", "phaseLabel",
+            "track", "minutes", "prerequisites", "background",
+        }
+        index_posts.append({key: post[key] for key in index_fields if key in post})
+        headings = [plain_text(value) for value in re.findall(r"<h[2-4]\b[^>]*>(.*?)</h[2-4]>", post["html"], flags=re.S | re.I)]
+        theorem_names = [plain_text(value) for value in re.findall(r"<(?:div|p)\b[^>]*class=\"[^\"]*(?:theorem|lemma|proposition|corollary|definition|claim|example)[^\"]*\"[^>]*>(.*?)</(?:div|p)>", post["html"], flags=re.S | re.I)]
+        search_posts.append({
+            "slug": post["slug"], "title": post["title"], "series": post["phaseLabel"],
+            "headings": headings, "theoremNames": theorem_names,
+            "text": plain_text(post["html"]),
+        })
+    (site / "lib/generated-post-index.json").write_text(json.dumps(index_posts, ensure_ascii=False, indent=2) + "\n")
+    (site / "public/search-index.json").write_text(json.dumps(search_posts, ensure_ascii=False, separators=(",", ":")) + "\n")
+    original_descriptions = archived_figure_descriptions(baseline_posts)
+    figure_descriptions: dict[str, str] = {}
+    for post in posts:
+        current_heading = post["title"]
+        for token in re.findall(r"<h[2-4]\b[^>]*>.*?</h[2-4]>|<figure\b[^>]*>.*?</figure>|<img\b[^>]*>", post["html"], flags=re.S | re.I):
+            if re.match(r"<h[2-4]\b", token, flags=re.I):
+                current_heading = plain_text(token) or post["title"]
+                continue
+            for image in re.findall(r"<img\b[^>]*>", token, flags=re.S | re.I):
+                src_match = re.search(r'src="([^"]+)"', image)
+                if not src_match:
+                    continue
+                src = html.unescape(src_match.group(1))
+                alt_match = re.search(r'alt="([^"]*)"', image)
+                authored_alt = html.unescape(alt_match.group(1)).strip() if alt_match else ""
+                caption_match = re.search(r"<figcaption\b[^>]*>(.*?)</figcaption>", token, flags=re.S | re.I)
+                caption = plain_text(caption_match.group(1)) if caption_match else ""
+                description = authored_alt or caption or original_descriptions.get(src, "")
+                if not description or re.fullmatch(r"(?:image|figure)(?:\s+\w+)?", description, flags=re.I):
+                    description = f"Mathematical diagram accompanying {current_heading} in {post['title']}."
+                figure_descriptions.setdefault(src, description)
+    (site / "lib/figure-descriptions.json").write_text(json.dumps(figure_descriptions, ensure_ascii=False, indent=2) + "\n")
     metadata = json.loads((site / "lib/figure-metadata.json").read_text())
     for post in posts:
         for name in re.findall(r'src="([^"]+\.svg)"', post["html"]):
