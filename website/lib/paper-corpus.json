@@ -1,6 +1,7 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "paper": {
+    "id": "hyperelliptic-correspondences",
     "title": "Correspondences on hyperelliptic surfaces, combination theorems, and Hurwitz spaces",
     "authors": [
       "Sabyasachi Mukherjee",
@@ -828,7 +829,20 @@
       "page_start": 2,
       "page_end": 2,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=2",
-      "context_end_offset": 8706
+      "context_end_offset": 8706,
+      "text": "\\begin{thmx}\\label{mating_thm_intro}\nGiven hyperbolic Blaschke products $\\{B_j\\}_{j=1}^r$, and Fuchsian groups $\\{G_i\\}_{i=1}^l$, with $\\D/G_i\\in \\mathcal{F}$. There exists a compact Riemann surface $\\Sigma$ equipped with a hyperelliptic involution $\\eta$, and a meromorphic map $\\cR:\\Sigma\\rightarrow\\widehat{\\C}$, such that the algebraic correspondence $\\mathfrak{C}\\in \\Sigma\\times\\Sigma$, defined by,  \n\\begin{equation}\\label{intro_corr_eq}\n    (z, w) \\in \\mathfrak{C} \\iff \\cR(w) = \\cR(\\eta(z)),\\ w \\neq \\eta(z),\n\\end{equation}\ncombines the dynamics of $\\{G_i\\}_{i=1}^l$ and $\\{B_j\\}_{j=1}^r$ in the following sense. There exist $\\eta-$symmetric subsets $\\{\\dT_{i}\\}_{i=1}^l$ and $\\{\\widetilde{\\cV}_j\\}_{j=1}^r$ of $\\Sigma$, such that the following hold.\n\\begin{enumerate}[leftmargin=8mm]\n    \\item On $\\dT_i$, the action of the correspondence $\\mathfrak{C}$ is orbit-equivalent to the action of the group $G_i$ on $\\D$. Further, the orbifold $\\dT_i/\\mathfrak{C}$ is isomorphic to $\\D/G_i$.\n    \\item $\\widetilde{\\cV}_j$ has two components, and $\\mathfrak{C}$ has a forward branch carrying one of the components of $\\widetilde{\\cV}_j$ onto itself such that this branch is conformally conjugate to the Blaschke product $B_j$.\n\\end{enumerate}\n\\end{thmx}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 2,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=2",
+      "start_bbox": [
+        118.31,
+        429.938,
+        369.729,
+        441.241
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 2; exact printed heading match"
     },
     {
       "id": "statement-B",
@@ -842,7 +856,20 @@
       "page_start": 3,
       "page_end": 3,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=3",
-      "context_end_offset": 12385
+      "context_end_offset": 12385,
+      "text": "\\begin{thmx}\\label{hurwitz_thm_intro}\n    Given a collection of Fuchsian groups $\\{G_i\\}_{i=1}^l$ with $\\D/G_i\\in\\cF$, and hyperbolic Blaschke products $\\{B_j\\}_{j=1}^r$. There exists an injective map $\\mathfrak{B}$ from \n    $$\n    \\text{Teich}(\\D/G_1)\\times\\cdots\\times\\text{Teich}(\\D/G_l)\\times\\mathcal{B}_{d_1}\\times\\cdots\\times\\mathcal{B}_{d_r}\n    $$ \n to an appropriate Hurwitz space $\\mathcal{H}_{g, d, q}^{\\text{hyp}}$; such that for any $(\\Sigma,\\cR)$ in the image, the correspondence on $\\Sigma$ defined by Equation~\\eqref{intro_corr_eq} combines the groups $\\{G_i\\}_{i=1}^l$ and the Blaschke products $\\{B_j\\}_{j=1}^r$ as conformal dynamical systems. \n\\end{thmx}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 3,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=3",
+      "start_bbox": [
+        118.31,
+        403.388,
+        374.454,
+        414.691
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 3; exact printed heading match"
     },
     {
       "id": "statement-1.1",
@@ -856,7 +883,20 @@
       "page_start": 7,
       "page_end": 7,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=7",
-      "context_end_offset": 28246
+      "context_end_offset": 28246,
+      "text": "\\begin{question}\nLet $G_1$ be the modular group, $G_2$ be a Fuchsian group uniformizing a sphere with two punctures and two order $2$ orbifold points, and $g_c(z):=z^2+~c$. Does there exist a topological embedding $\\Psi$ of the Mandelbrot set $\\mathbb{M}$ into an appropriate moduli space of pairs $(\\Sigma, \\cR)$ such that\n\\begin{enumerate}[leftmargin=8mm]\n    \\item $\\Sigma$ is a marked torus,\n    \\item $\\cR:\\Sigma\\to\\widehat{\\C}$ is a degree $4$ elliptic function, and\n    \\item if $\\Psi(c)=(\\Sigma, \\cR)$, for $c\\in\\mathbb{M}$, then the correspondence $\\cR(w)=\\cR(-z)$ on the torus $\\Sigma$ combines $G_1$, $G_2$, and $g_c$?\n\\end{enumerate}\n\\end{question}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 7,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=7",
+      "start_bbox": [
+        118.31,
+        163.114,
+        476.998,
+        173.455
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 7; exact printed heading match"
     },
     {
       "id": "statement-1.2",
@@ -870,7 +910,20 @@
       "page_start": 7,
       "page_end": 7,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=7",
-      "context_end_offset": 30310
+      "context_end_offset": 30310,
+      "text": "\\begin{question}\n        Fix all but one of the coordinates in the product of Teichm\\\"uller spaces and Blaschke product spaces, and consider its image under $\\mathfrak{B}$. Is this restricted image relatively compact in an appropriate topology on the Hurwitz space?\n    \\end{question}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 7,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=7",
+      "start_bbox": [
+        118.31,
+        349.104,
+        477.016,
+        357.951
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 7; exact printed heading match"
     },
     {
       "id": "statement-1.3",
@@ -884,7 +937,20 @@
       "page_start": 7,
       "page_end": 7,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=7",
-      "context_end_offset": 31059
+      "context_end_offset": 31059,
+      "text": "\\begin{task}\\label{degen_task}\nDevelop a theory of degenerations for correspondences on genus $g$ compact Riemann surfaces given by Formula~\\eqref{intro_corr_eq}. Specifically, study when such correspondences degenerate to algebraic correspondences defined on trees of compact Riemann surfaces (possibly of lower genera) as the pair of $(\\Sigma,\\cR)$ degenerates.\n\\end{task}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 7,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=7",
+      "start_bbox": [
+        118.31,
+        602.437,
+        476.954,
+        611.284
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 7; exact printed heading match"
     },
     {
       "id": "statement-1.4",
@@ -898,7 +964,20 @@
       "page_start": 8,
       "page_end": 8,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=8",
-      "context_end_offset": 31509
+      "context_end_offset": 31509,
+      "text": "\\begin{question}\n    Can we characterize such tuples $(\\Sigma, \\cR)$? In other words, can we determine when such tuples appear as matings of groups and maps? \n    \\end{question}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 8,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=8",
+      "start_bbox": [
+        118.31,
+        119.575,
+        476.964,
+        129.538
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 8; exact printed heading match"
     },
     {
       "id": "statement-2.1",
@@ -912,7 +991,20 @@
       "page_start": 8,
       "page_end": 8,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=8",
-      "context_end_offset": 33913
+      "context_end_offset": 33913,
+      "text": "\\begin{theorem}[\\cite{pilgrim15}]\\label{kevin}\n    Let $m_1, m_2, \\cdots, m_n, d$ be positive integers such that \n    \\begin{itemize}\n        \\item $m_i \\leq d-1$, $i\\in\\{1,\\cdots,n\\}$, and\n        \\item $\\displaystyle\\sum_{i = 1}^n m_i = 2d-2$.\n    \\end{itemize}\n    Then, there exists a critically fixed rational map $R$ of degree $d$, such that\n    \\begin{itemize}\n        \\item $\\mathrm{Crit}(R)=\\{c_1, c_2, \\cdots, c_n\\}$, with\n        \\item $m_i$ being the multiplicity of the critical point $c_i$, $i\\in\\{1,\\cdots,n\\}$,\n    \\end{itemize}\n    if and only if $n \\leq d$.\n\\end{theorem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 8,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=8",
+      "start_bbox": [
+        118.31,
+        413.711,
+        476.71,
+        423.472
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 8; exact printed heading match"
     },
     {
       "id": "statement-2.2",
@@ -926,7 +1018,20 @@
       "page_start": 8,
       "page_end": 8,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=8",
-      "context_end_offset": 34956
+      "context_end_offset": 34956,
+      "text": "\\begin{lem}\\label{combi_lem}\n    Given positive integers $m_1, m_2, \\cdots, m_n$, there exists a critically fixed polynomial $P$ and a subset $\\{c_i\\}_{i=1}^n$ of $\\text{Crit}(P)$ such that the multiplicity of the critical point $c_i$ is $m_i$, $i\\in\\{1,\\cdots,n\\}$.\n\\end{lem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 8,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=8",
+      "start_bbox": [
+        118.31,
+        579.834,
+        476.988,
+        589.596
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 8; exact printed heading match"
     },
     {
       "id": "statement-2.3",
@@ -940,7 +1045,20 @@
       "page_start": 10,
       "page_end": 10,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=10",
-      "context_end_offset": 42258
+      "context_end_offset": 42258,
+      "text": "\\begin{definition}\n    For each representation $(\\rho: \\Gamma_{1, p}\\rightarrow \\Gamma) \\in \\text{Teich}(\\Gamma_{1, p})$, the \\textbf{Bowen-Series map} $A_{\\Gamma}^{\\text{BS}}:\\overline{\\cU_{\\Gamma}}\\rightarrow\\overline{\\mathbb{D}}$ associated to the representation $\\rho$ is given by $\\psi_{\\rho}\\circ A_{\\Gamma_{1, p}}^{\\text{BS}}\\circ \\psi_{\\rho}^{-1}$, where, $\\cU_{\\Gamma}:=\\psi_\\rho\\big(\\cU_{\\Gamma_{1, p}}\\big)$.\n\\end{definition}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 10,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=10",
+      "start_bbox": [
+        118.31,
+        555.406,
+        476.965,
+        566.305
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 10; exact printed heading match"
     },
     {
       "id": "statement-2.4",
@@ -954,7 +1072,20 @@
       "page_start": 13,
       "page_end": 13,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=13",
-      "context_end_offset": 53262
+      "context_end_offset": 53262,
+      "text": "\\begin{definition}\n    For a given representation $(\\rho:\\Gamma_{n, p} \\rightarrow \\Gamma) \\in \\text{Teich}^{\\omega}(\\Gamma_{n, p})$, the \\textbf{factor Bowen-Series map} $A_{\\Gamma}^{\\text{fBS}}: \\overline{\\mathcal{U}}_{\\Gamma} \\rightarrow \\overline{\\mathbb{D}}$, associated with the representation $\\rho$, is given by $\\psi_{\\rho}\\circ A_{\\Gamma_{n, p}}^{\\text{fBS}}\\circ \\psi_{\\rho}^{-1}$, where $\\mathcal{U}_{\\Gamma}:= \\psi_{\\rho}\\big(\\mathcal{U}_{\\Gamma_{n, p}}\\big)$. \n\\end{definition}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 13,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=13",
+      "start_bbox": [
+        118.31,
+        665.33,
+        476.969,
+        678.611
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 13; exact printed heading match"
     },
     {
       "id": "statement-2.5",
@@ -968,7 +1099,20 @@
       "page_start": 14,
       "page_end": 14,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=14",
-      "context_end_offset": 53642
+      "context_end_offset": 53642,
+      "text": "\\begin{remark}\n     Notice that the side-pairing constructions in Sections~\\ref{cBS_subsec} and~\\ref{fBS_subsec} are identical when $n=1$. In this case, we use the convention that $\\widehat{\\Gamma}_{n,p} = \\Gamma_{n,p}$, $\\widehat{\\Gamma}=\\Gamma$, $\\widehat{\\Pi} = \\Pi$, $\\widehat{\\rho}=\\rho$, and $\\text{Teich}^{\\omega}(\\Gamma_{n, p})=\\text{Teich}(\\Gamma_{n, p})$.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 14,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=14",
+      "start_bbox": [
+        118.31,
+        203.444,
+        476.997,
+        212.291
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 14; exact printed heading match"
     },
     {
       "id": "statement-2.6",
@@ -982,7 +1126,20 @@
       "page_start": 14,
       "page_end": 14,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=14",
-      "context_end_offset": 55047
+      "context_end_offset": 55047,
+      "text": "\\begin{remark}\n     The key difference between the constructions in Sections~\\ref{cBS_subsec} and~\\ref{fBS_subsec} is the emergence of an order $n\\geq 3$ orbifold point in the quotient surface of the latter. This particular feature is accommodated for by \n    {\\upshape\n    \\begin{enumerate}[leftmargin=8mm,label=\\alph*)]\n        \\item taking $n$ sectors of angle $\\frac{2\\pi}{n}$ each, and fitting geodesics appearing in Section~\\ref{cBS_subsec} in every sector, and\n        \\item preserving the identifications among the geodesics in one sector, and transferring the identifications to the geodesics in the other sectors via maps $M_{\\omega}^{r-1}$, for $r\\in\\{1,\\cdots, n\\}$. (See Figure~\\ref{remark_2.5_fig}.)\n    \\end{enumerate}\n    }\n    Therefore, as the groups in Section~\\ref{cBS_subsec} are associated with orbifolds that have any number of punctures and at most $2$ order two orbifold points; the groups in Section~\\ref{fBS_subsec} are associated with orbifolds that admit an arbitrary number of punctures, at most $2$ order two orbifold points, and exactly $1$ order $n\\geq 3$ orbifold point. The maps in Section~\\ref{fBS_subsec} were first introduced in \\cite{mj2023matings} to present an alternate way of combining modular groups with quadratic maps, thus bringing to attention a different perspective on the Bullett-Penrose family of correspondences \\cite{bullett1994mating}.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 14,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=14",
+      "start_bbox": [
+        118.31,
+        249.273,
+        485.103,
+        258.12
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 14; exact printed heading match"
     },
     {
       "id": "statement-2.7",
@@ -996,7 +1153,20 @@
       "page_start": 14,
       "page_end": 14,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=14",
-      "context_end_offset": 56702
+      "context_end_offset": 56702,
+      "text": "\\begin{remark}\\label{BSmap_domain_rem}\nThe domain of definition of the (factor) Bowen-Series map $A$ can be split into three parts, \n    $$\n    \\overline{\\mathcal{U}}_{\\Gamma} = \\mathbb{S}^1\\cup \\cU_{\\Gamma} \\cup \\big(\\partial \\mathcal{U}_{\\Gamma}\\backslash\\mathbb{S}^1\\big).\n    $$\n    {\\upshape\n\\begin{enumerate}[leftmargin=8mm,label=(\\roman*)]\n        \\item On the ``outer boundary\", $\\mathbb{S}^1$, the map $A$ is topologically equivalent to $z^d$, enabling boundary compatibility with Blaschke products. In Section~\\ref{conf_mating_sec}, this will be used to construct conformal matings of Fuchsian groups (uniformizing orbifolds in $\\mathcal{F}$) with Blaschke products.\n        \\item On the ``inner boundary\", $\\partial \\mathcal{U}_{\\Gamma}\\backslash\\mathbb{S}^1$, the map $A$ is an orientation-reversing analytic involution. This aspect of the map is imperative in the welding construction of Section~\\ref{b_involutions_sec}, leading us to an explicit algebraic description of the conformal mating. It also underpins the construction of correspondences on higher genus hyperelliptic Riemann surfaces in Section~\\ref{correspondences_sec}.\n        \\item  And finally, the map $A\\big|_{\\mathcal{U}_{\\Gamma}}$ is parametrized by the Teichm\\\"uller space of an appropriate group. This allows us to quasiconformally deform the map $A$ and study its parameter space consequences in Section~\\ref{Hurwitz_sec}. \n    \\end{enumerate}\n    }\n    In summary, the three different ways the map behaves on three different parts of its domain of definition - spans four different sections of this paper encapsulating its core narrative in totality. \n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 14,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=14",
+      "start_bbox": [
+        118.31,
+        455.364,
+        476.964,
+        464.211
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 14; exact printed heading match"
     },
     {
       "id": "statement-2.8",
@@ -1010,7 +1180,20 @@
       "page_start": 15,
       "page_end": 15,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=15",
-      "context_end_offset": 58077
+      "context_end_offset": 58077,
+      "text": "\\begin{definition}\n    An orientation-preserving homeomorphism $H: U\\rightarrow V$ between domains in the Riemann sphere is called a \\textbf{David homeomorphism} if $H\\in W_{\\text{loc}}^{1, 1}(U)$, and there exist constants $C, \\alpha, K_0 >0$ such that, \n    $$\n    \\sigma (\\{z\\in U: K_H(z) \\geq K\\}) \\leq Ce^{-\\alpha K}, \\hspace{2mm} K\\geq K_0,\n    $$\n    where $\\sigma$ is the spherical measure, and $K_H$ is the dilatation of $H$ given by, \n    $$\n    K_H(z) = \\frac{1+|\\mu_H(z)|}{1 - |\\mu_H(z)|},\n    $$\n    where $\\mu_H(z) = \\frac{\\partial H/\\partial\\overline{z}}{\\partial H/\\partial z}$ is the Beltrami coefficient of $H$. In addition, a measurable function $\\mu: U \\rightarrow \\mathbb{D}$ that satisfies the above condition will be called a \\textbf{David coefficient}. \n\\end{definition}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 15,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=15",
+      "start_bbox": [
+        118.31,
+        120.133,
+        476.957,
+        129.538
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 15; exact printed heading match"
     },
     {
       "id": "statement-2.9",
@@ -1024,7 +1207,20 @@
       "page_start": 15,
       "page_end": 15,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=15",
-      "context_end_offset": 58938
+      "context_end_offset": 58938,
+      "text": "\\begin{theorem}[David Integrability Theorem]\n    Let $\\mu: \\widehat{\\mathbb{C}} \\rightarrow \\mathbb{D}$ be a David coefficient. Then there exists a David homeomorphism $H:\\widehat{\\mathbb{C}} \\rightarrow \\widehat{\\mathbb{C}}$ in $W_{\\text{loc}}^{1,1}(\\widehat{\\mathbb{C}})$ that solves the Beltrami equation\n    $$\n    \\frac{\\partial H}{\\partial\\overline{z}} = \\mu\\frac{\\partial H}{\\partial z}.\n    $$\n    Moreover, $H$ is unique up to post-composition with M{\\\"o}bius transformations.\n\\end{theorem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 15,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=15",
+      "start_bbox": [
+        118.31,
+        324.637,
+        476.967,
+        334.042
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 15; exact printed heading match"
     },
     {
       "id": "statement-2.10",
@@ -1038,7 +1234,20 @@
       "page_start": 15,
       "page_end": 15,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=15",
-      "context_end_offset": 59485
+      "context_end_offset": 59485,
+      "text": "\\begin{theorem}\n    Let $U\\subset \\widehat{\\mathbb{C}}$ be open and let $f, g: U \\rightarrow \\widehat{\\mathbb{C}}$ be David homeomorphisms with\n    $$\n    \\mu_f = \\mu_g\n    $$\n    almost everywhere. Then $f\\circ g^{-1}$ is a conformal map on $g(U)$.\n\\end{theorem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 15,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=15",
+      "start_bbox": [
+        118.31,
+        484.165,
+        476.973,
+        493.57
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 15; exact printed heading match"
     },
     {
       "id": "statement-2.11",
@@ -1052,7 +1261,20 @@
       "page_start": 15,
       "page_end": 15,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=15",
-      "context_end_offset": 60737
+      "context_end_offset": 60737,
+      "text": "\\begin{lem}\\label{david_ext_lem}\nThe circle homeomorphism $h_\\Gamma:\\mathbb{S}^1\\rightarrow \\mathbb{S}^1$ continuously extends to a David homeomorphism $h_\\Gamma$ of $\\mathbb{D}$. \n\nMore generally, if $B$ is a degree $d$ Blaschke product with an attracting fixed point in $\\D$, then there exists a circle homeomorphism $h_{B,\\Gamma}$ that conjugates $B$ to $A_\\Gamma^{\\text{fBS}}$ (respectively, $A_{\\Gamma}^{\\text{BS}}$), and extends continuously to a David homeomorphism of $\\D$.\n\\end{lem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 15,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=15",
+      "start_bbox": [
+        118.31,
+        594.788,
+        476.966,
+        608.745
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 15; exact printed heading match"
     },
     {
       "id": "statement-3.1",
@@ -1066,7 +1288,20 @@
       "page_start": 17,
       "page_end": 18,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=17",
-      "context_end_offset": 69347
+      "context_end_offset": 69347,
+      "text": "\\begin{theorem}\\label{conf_mating_thm}\n    There exists a conformal mating $S$ of $R$, $\\{A_{\\Gamma_i}\\}_{i=1}^l$, and $\\{B_j\\}_{j=1}^r$.\n\\end{theorem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 17,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=17",
+      "start_bbox": [
+        118.31,
+        317.149,
+        397.805,
+        329.061
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 17; exact printed heading match"
     },
     {
       "id": "statement-3.2",
@@ -1080,7 +1315,20 @@
       "page_start": 18,
       "page_end": 18,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=18",
-      "context_end_offset": 70240
+      "context_end_offset": 70240,
+      "text": "\\begin{remark}\\label{invariant_subset_rem}\\upshape\nDefine $\\cT_i:=H(U_i)$, $i\\in\\{1,\\cdots,l\\}$, and $\\mathcal{V}_j:=H(U_{l+j})$, $j\\in\\{1,\\cdots,r\\}$. Let $\\mathcal{W}_i$ stand for the grand orbit of $\\cT_i$ under $S$, for $i\\in\\{1,\\cdots,l\\}$, and the grand orbit of $\\mathcal{V}_{i-l}$ under $S$, for $i\\in\\{l+1,\\cdots,l+r\\}$. Finally, let $\\cK := \\widehat{\\mathbb{C}}\\backslash \\bigcup_{i=1}^{l} \\mathcal{W}_i$.\n    \n    The tessellation induced by the group dynamics of $\\Gamma_i$ on $\\mathbb{D}$ can be transferred via appropriate conjugacies to $\\cT_i \\subset \\mathcal{W}_i$, $i\\in\\{1,\\cdots,l\\}$. The totally invariant sets $\\displaystyle\\bigcup_{i = 1}^{l} \\mathcal{W}_i$ and $\\cK$, which are the \\emph{escaping} and \\emph{non-escaping} sets of $S$ (respectively), partition the Riemann sphere. This partition will be of importance in Section~\\ref{correspondences_sec}.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 18,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=18",
+      "start_bbox": [
+        118.31,
+        246.715,
+        476.967,
+        257.614
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 18; exact printed heading match"
     },
     {
       "id": "statement-4.1",
@@ -1094,7 +1342,20 @@
       "page_start": 18,
       "page_end": 18,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=18",
-      "context_end_offset": 72211
+      "context_end_offset": 72211,
+      "text": "\\begin{definition}\\label{weak_b_inv_def}\n    Let $\\{\\Omega_1, \\cdots, \\Omega_k\\}$ be disjoint finitely connected proper subdomains of $\\widehat{\\mathbb{C}}$ with $\\text{int}(\\overline{\\Omega_i}) = \\Omega_i$ for $i\\in \\{1, 2, \\cdots, k\\}$. Set $\\mathcal{D}:= \\bigsqcup_{i=1}^k \\Omega_i$. Further, let $X\\subset \\partial \\cD$ be a finite set such that $\\partial^0\\cD := \\partial\\cD\\backslash X$ is a finite union of disjoint non-singular real analytic curves. For notational convenience, let us also set $\\partial^0 \\Omega_i:= \\partial^0\\cD \\cap \\overline{\\Omega}_i$. We call $\\cD$ an \\textbf{inversive multi-domain} if there exists a continuous map $S: \\overline{\\cD} \\rightarrow \\widehat{\\C}$ satisfying the following:\n    \\begin{enumerate}\n        \\item\\label{cond_mero} $S$ is meromorphic on $\\cD$,\n        \\item\\label{cond_inv} $S:(\\partial\\cD,X)\\to (\\partial\\cD,X)$ is an involution, and\n        \\item\\label{cond_or} $S: \\partial^0 \\cD \\rightarrow \\partial^0 \\cD$ is orientation-reversing.\n    \\end{enumerate}\n    The map $S$ is called a \\textbf{weak B-involution} of the inversive multi-domain $\\cD$. If $k= 1$, the domain $\\cD$ is called an \\textbf{inversive domain}. Set $T:= \\widehat{\\C}\\backslash \\cD$ and $T^{0}:= T\\backslash X$.\n\\end{definition}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 18,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=18",
+      "start_bbox": [
+        118.31,
+        486.43,
+        476.998,
+        496.191
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 18; exact printed heading match"
     },
     {
       "id": "statement-4.2",
@@ -1108,7 +1369,20 @@
       "page_start": 18,
       "page_end": 18,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=18",
-      "context_end_offset": 73332
+      "context_end_offset": 73332,
+      "text": "\\begin{remark}\\label{B_involution_rem}\n\\upshape\nDefinition~\\ref{weak_b_inv_def} generalizes the class of maps called \\emph{B-involutions}, which were introduced and studied in \\cite[\\S 14]{luo2024general}.\nThe key difference between B-involutions a la \\cite{luo2024general} and our notion of weak B-involutions lies in the subtle fact that Definition~\\ref{weak_b_inv_def} only requires $S$ to be orientation-reversing on the desingularized boundary $\\partial^0\\cD$ of its domain of definition; while a B-involution in the sense of \\cite{luo2024general}\nis also required to reverse the cyclic order of the local real-analytic arcs of $\\partial^0\\cD$ meeting at a singular point in $X$. Further, we drop the requirement that $S$ carries the boundary of some component $\\Omega_i$ to that of some component $\\Omega_{i'}$, allowing for richer boundary behavior. Finally, we relax the condition that each $\\Omega_i$ is simply connected. \n\nAll of the above relaxations are dictated by our general combination procedure for multiple Fuchsian groups with multiple Blaschke products (see Section~\\ref{examples_sec}).\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 18,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=18",
+      "start_bbox": [
+        118.31,
+        632.213,
+        476.968,
+        641.06
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 18; exact printed heading match"
     },
     {
       "id": "statement-4.3",
@@ -1122,7 +1396,20 @@
       "page_start": 19,
       "page_end": 19,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=19",
-      "context_end_offset": 74027
+      "context_end_offset": 74027,
+      "text": "\\begin{remark}\n    A conformal mating $S$ in the sense of Theorem~\\ref{conf_mating_thm} is meromorphic on the interior $\\cD$ of its domain of definition. Note that by Remark~\\hyperref[BSmap_domain_rem]{\\ref*{BSmap_domain_rem}~{\\upshape(ii)}}, a (factor) Bowen-Series map is an orientation-reversing involution on (the closure of) its inner boundary, fixing the set of ideal vertices. And since $S$ is conjugate to the dynamics of (factor) Bowen-Series maps on appropriate regions, $S$ satisfies Conditions~\\eqref{cond_inv} and~\\eqref{cond_or} in Definition~\\ref{weak_b_inv_def}. Therefore, such maps readily show up as instances of weak B-involutions on inversive multi-domains. \n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 19,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=19",
+      "start_bbox": [
+        118.31,
+        150.422,
+        476.955,
+        159.269
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 19; exact printed heading match"
     },
     {
       "id": "statement-4.4",
@@ -1136,7 +1423,20 @@
       "page_start": 19,
       "page_end": 21,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=19",
-      "context_end_offset": 75077
+      "context_end_offset": 75077,
+      "text": "\\begin{theorem}\\label{alg_weak_b_inv_thm}\n    Let $\\cD$ be an inversive multi-domain with a weak B-involution $S:\\overline{\\cD} \\rightarrow \\widehat{\\C}$. Then there exist\n    \\begin{itemize}\n        \\item $\\Sigma$, a finite union of compact Riemann surfaces,\n        \\item $\\mathfrak{D}\\subset\\Sigma$, a disjoint union of finitely connected domains with a piecewise non-singular real-analytic boundary,\n        \\item a conformal involution $\\eta: \\Sigma\\rightarrow\\Sigma$ with $\\eta(\\mathfrak{D})=\\Sigma\\backslash\\overline{\\mathfrak{D}}$, and\n        \\item a holomorphic map $\\mathcal{R}:\\Sigma \\rightarrow \\widehat{\\C}$ that carries $\\mathfrak{D}$ conformally onto $\\cD$,        \n    \\end{itemize}\n    such that \n    \\begin{equation}\\label{alg_char_eq}\n        S\\big|_{\\cD} \\equiv \\mathcal{R}\\circ \\eta\\circ \\big(\\mathcal{R}\\big|_{\\mathfrak{D}}\\big)^{-1}.\n    \\end{equation}\n\\end{theorem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 19,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=19",
+      "start_bbox": [
+        118.31,
+        270.217,
+        476.968,
+        279.622
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 19; exact printed heading match"
     },
     {
       "id": "statement-4.5",
@@ -1150,7 +1450,20 @@
       "page_start": 19,
       "page_end": 19,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=19",
-      "context_end_offset": 82264
+      "context_end_offset": 82264,
+      "text": "\\begin{remark}\\upshape\n\n1) For the restricted class of weak B-involutions considered in \\cite{luo2024general}, an analogous algebraic description was given in \\cite[Theorem~14.5]{luo2024general}, where the surface $\\Sigma$ turned out to be a disjoint union of Riemann spheres. On the other hand, in our relaxed setting, the surface $\\Sigma$ can have arbitrary genus even if $\\cD$ is connected and simply connected (see Section~\\ref{examples_sec}).\n\n2) Let us also point out that an analogous construction exists in the antiholomorphic setting; namely, the Schwarz reflection map of a quadrature domain (an anti-meromorphic map of a domain that extends as the identity map on the boundary) admits an algebraic description in terms of a reflection map and a meromorphic function on a compact Riemann surface \\cite{Gus83}. However, the antiholomorphic setting is somewhat restricted: for a Schwarz reflection map on a simply connected quadrature domain, the associated meromorphic function is always defined on $\\widehat{\\C}$.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 19,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=19",
+      "start_bbox": [
+        118.31,
+        396.318,
+        483.887,
+        405.165
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 19; exact printed heading match"
     },
     {
       "id": "statement-4.6",
@@ -1164,7 +1477,20 @@
       "page_start": 21,
       "page_end": 21,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=21",
-      "context_end_offset": 82834
+      "context_end_offset": 82834,
+      "text": "\\begin{cor}\\label{b_inv_fin_deg_cor}\nWith the setup as in Theorem~\\ref{alg_weak_b_inv_thm}, we have that $S: S^{-1}(\\cD) \\rightarrow \\cD$ is a branched covering of degree $d_{\\mathcal{R}}-1$, and  $S: S^{-1}(\\text{int}(T)) \\rightarrow \\text{int}(T)$ is a branched covering of degree $d_{\\mathcal{R}}$, where $d_{\\mathcal{R}}$ is the degree of the meromorphic map $\\mathcal{R}:\\Sigma\\to\\widehat{\\C}$.\n\\end{cor}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 21,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=21",
+      "start_bbox": [
+        118.31,
+        470.113,
+        476.684,
+        481.06
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 21; exact printed heading match"
     },
     {
       "id": "statement-4.7",
@@ -1178,7 +1504,20 @@
       "page_start": 21,
       "page_end": 21,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=21",
-      "context_end_offset": 84127
+      "context_end_offset": 84127,
+      "text": "\\begin{cor}\\label{crit_points_cor}\n    Let the weak B-involution $S:\\overline{\\cD}\\to\\widehat{\\C}$ be a conformal mating of a sub-hyperbolic map $R$, the Blaschke products $\\{B_j\\}_{j=1}^r$ and the (factor) Bowen-Series maps $\\{A_{\\Gamma_i}\\}_{i=1}^l$ associated with the representations $\\rho:\\Gamma_{n_i, p_i}\\rightarrow \\Gamma_i$ (constructed in Theorem~\\ref{conf_mating_thm}). Let $\\cT_i$ be as in Remark~\\ref{invariant_subset_rem}. \n        For indices $i \\in \\{1, 2, \\cdots, l\\}$ with $n_i\\geq 3$, the map $\\cR$ has a critical value in $\\cT_i$. Moreover, that critical value admits at least $p_i$ distinct pre-images under $\\mathcal{R}$, each with multiplicity $n_i-1$.\n\\end{cor}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 21,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=21",
+      "start_bbox": [
+        118.31,
+        548.342,
+        476.97,
+        558.305
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 21; exact printed heading match"
     },
     {
       "id": "statement-4.8",
@@ -1192,7 +1531,20 @@
       "page_start": 21,
       "page_end": 21,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=21",
-      "context_end_offset": 84663
+      "context_end_offset": 84663,
+      "text": "\\begin{remark}\nIt is easy to see that $(\\Sigma,\\mathfrak{D},\\eta,\\mathcal{R})$ satisfying the conditions of Theorem~\\ref{alg_weak_b_inv_thm} gives rise to a weak B-involution $S:\\overline{\\cD}\\to\\widehat{\\C}$, where $\\cD=\\mathcal{R}(\\mathfrak{D})$ and $S\\big|_{\\cD} \\equiv \\mathcal{R}\\circ \\eta\\circ \\big(\\mathcal{R}\\big|_{\\mathfrak{D}}\\big)^{-1}$. In fact, one can check that the quadruples $(\\Sigma,\\mathfrak{D},\\eta,\\mathcal{R})$ and the pairs $(S,\\cD)$ are in bijective correspondence, up to appropriate equivalences.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 21,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=21",
+      "start_bbox": [
+        118.31,
+        699.56,
+        476.982,
+        709.523
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 21; exact printed heading match"
     },
     {
       "id": "statement-4.9",
@@ -1206,7 +1558,20 @@
       "page_start": 22,
       "page_end": 22,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=22",
-      "context_end_offset": 85094
+      "context_end_offset": 85094,
+      "text": "\\begin{definition}\n    For a weak B-involution $S:\\overline{\\cD}\\to\\widehat{\\C}$ arising from the conformal mating construction of Theorem~\\ref{conf_mating_thm}, the associated welded Riemann surface $\\Sigma$ (defined in Theorem~\\ref{alg_weak_b_inv_thm}) will be called the \\emph{blender surface}. We call the map $\\cR$, also defined in Theorem~\\ref{alg_weak_b_inv_thm}, the \\emph{uniformizing meromorphic map}.\n\\end{definition}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 22,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=22",
+      "start_bbox": [
+        118.31,
+        119.575,
+        476.981,
+        129.538
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 22; exact printed heading match"
     },
     {
       "id": "statement-4.10",
@@ -1220,7 +1585,20 @@
       "page_start": 22,
       "page_end": 22,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=22",
-      "context_end_offset": 85842
+      "context_end_offset": 85842,
+      "text": "\\begin{definition}\\label{weld_graph_defn}\n    Given a weak B-involution $S:\\overline{\\cD}\\to\\widehat{\\C}$, with $\\cD:= \\bigsqcup_{i=1}^k \\Omega_i$, let $\\mathcal{G}$ be a graph with vertices $\\{v_i^\\pm\\}_{i=1}^k$, where $v_{i_1}^-$, $v_{i_2}^+$ share an edge iff $S(\\partial^0\\Omega_{i_1})\\cap\\partial^0\\Omega_{i_2} \\neq \\emptyset$. The graph $\\mathcal{G}$ will be called the \\textbf{welding graph} for $S:\\overline{\\cD}\\to\\widehat{\\C}$.\n\\end{definition}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 22,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=22",
+      "start_bbox": [
+        118.31,
+        217.718,
+        429.082,
+        230.058
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 22; exact printed heading match"
     },
     {
       "id": "statement-4.11",
@@ -1234,7 +1612,20 @@
       "page_start": 22,
       "page_end": 22,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=22",
-      "context_end_offset": 86740
+      "context_end_offset": 86740,
+      "text": "\\begin{lem}\\label{graph_symm_lem}\nThere exists an edge between $v_{i_1}^-$ and $v_{i_2}^+$ if and only if there exists an edge between $v_{i_1}^+$ and $v_{i_2}^-$. \n\\end{lem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 22,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=22",
+      "start_bbox": [
+        118.31,
+        286.007,
+        327.989,
+        296.397
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 22; exact printed heading match"
     },
     {
       "id": "statement-4.12",
@@ -1248,7 +1639,20 @@
       "page_start": 22,
       "page_end": 22,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=22",
-      "context_end_offset": 88326
+      "context_end_offset": 88326,
+      "text": "\\begin{lem}\\label{graph_conn_lem}\nThe connected components of $\\Sigma$ are in bijective correspondence with those of $\\cG$.   \n\\end{lem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 22,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=22",
+      "start_bbox": [
+        118.31,
+        457.188,
+        476.975,
+        466.035
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 22; exact printed heading match"
     },
     {
       "id": "statement-4.13",
@@ -1262,7 +1666,20 @@
       "page_start": 23,
       "page_end": 23,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=23",
-      "context_end_offset": 90075
+      "context_end_offset": 90075,
+      "text": "\\begin{lem}\\label{graph_eta_lem}\nWith notation as above, we have \n\\begin{align*}\n& \\eta(\\mathcal{C}_\\Sigma)=\\mathcal{C}_\\Sigma\\\\\n\\iff & \\widehat{\\eta}(\\mathcal{C}_\\cG)=\\mathcal{C}_\\cG\\\\\n\\iff & \\{i_1,\\cdots,i_\\alpha\\}=\\{j_1\\cdots,j_\\beta\\}\\\\\n\\iff &\\{i_1,\\cdots,i_\\alpha\\}\\cap\\{j_1\\cdots,j_\\beta\\}\\neq\\emptyset.\n\\end{align*}\n\\end{lem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 23,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=23",
+      "start_bbox": [
+        118.31,
+        120.133,
+        329.036,
+        128.98
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 23; exact printed heading match"
     },
     {
       "id": "statement-4.14",
@@ -1276,7 +1693,20 @@
       "page_start": 23,
       "page_end": 24,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=23",
-      "context_end_offset": 94285
+      "context_end_offset": 94285,
+      "text": "\\begin{theorem}\\label{zipped_surface_thm}\n    Let $(\\Sigma, \\widecheck{\\Sigma}^0, \\eta)$ be as above. Then the following hold.\n    \\begin{enumerate}\\upshape\n        \\item $\\widecheck{\\Sigma}^0$ is a finite type surface.\n        \\item $\\widecheck{\\Sigma} \\cong \\Sigma/\\langle\\eta\\rangle$, where $\\widecheck{\\Sigma}$ is the compactification of the surface $\\widecheck{\\Sigma}^0$ (obtained by filling in the punctures). In particular, the components of $\\widecheck{\\Sigma}$ correspond bijectively to the $\\eta-$orbits of the components of $\\Sigma$.\n    \\end{enumerate}\n\\end{theorem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 23,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=23",
+      "start_bbox": [
+        118.31,
+        684.39,
+        418.703,
+        695.337
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 23; exact printed heading match"
     },
     {
       "id": "statement-4.15",
@@ -1290,7 +1720,20 @@
       "page_start": 24,
       "page_end": 24,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=24",
-      "context_end_offset": 94672
+      "context_end_offset": 94672,
+      "text": "\\begin{remark}\nIf $\\cD$ is an inversive domain (i.e., it is connected), then the associated welding graph $\\cG$ and hence the welded surface $\\Sigma$ as well as the auxiliary surface $\\widecheck{\\Sigma}$ are also connected. However, in general, the surfaces $\\widecheck{\\Sigma}$ and $\\Sigma$ can be connected even if $\\cD$ is disconnected (see Section~\\ref{examples_sec}).\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 24,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=24",
+      "start_bbox": [
+        118.31,
+        387.776,
+        476.984,
+        397.181
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 24; exact printed heading match"
     },
     {
       "id": "statement-4.16",
@@ -1304,7 +1747,20 @@
       "page_start": 24,
       "page_end": 25,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=24",
-      "context_end_offset": 99466
+      "context_end_offset": 99466,
+      "text": "\\begin{theorem}\n\\noindent\\begin{enumerate}[leftmargin=8mm]\\upshape\n    \\item For weak B-involutions arising from the conformal mating construction of Theorem~\\ref{conf_mating_thm}, the surface $\\widecheck{\\Sigma}$ is a disjoint union of  Riemann spheres $\\widehat{\\C}$.\n    \\item Each component of the blender surface $\\Sigma$ is either\n    \\begin{enumerate}\n        \\item a copy of the Riemann sphere that is mapped conformally to $\\widehat{\\C}$ by $\\mathcal{Q}$, or\n        \\item a hyperelliptic Riemann surface (possibly the Riemann sphere) that is mapped as a degree $2$ branched covering to $\\widehat{\\C}$ by $\\mathcal{Q}$.\n    \\end{enumerate} \n\\end{enumerate}\n\\label{hyperelliptic_thm}\n\\end{theorem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 24,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=24",
+      "start_bbox": [
+        118.31,
+        561.009,
+        190.499,
+        569.856
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 24; exact printed heading match"
     },
     {
       "id": "statement-4.17",
@@ -1318,7 +1774,20 @@
       "page_start": 25,
       "page_end": 25,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=25",
-      "context_end_offset": 99726
+      "context_end_offset": 99726,
+      "text": "\\begin{definition}\\label{zipped_def}\nFor a weak B-involution $S$ arising from the conformal mating construction of Theorem~\\ref{conf_mating_thm}, the surface $\\widecheck{\\Sigma}$ will be called the \\emph{zipped surface} associated with $S$.\n\\end{definition}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 25,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=25",
+      "start_bbox": [
+        118.31,
+        417.96,
+        476.986,
+        426.807
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 25; exact printed heading match"
     },
     {
       "id": "statement-4.18",
@@ -1332,7 +1801,20 @@
       "page_start": 25,
       "page_end": 25,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=25",
-      "context_end_offset": 101034
+      "context_end_offset": 101034,
+      "text": "\\begin{prop}\\label{genus_prop}\nLet $\\displaystyle S:\\overline{\\cD} \\to\\widehat{\\C}$, where $\\cD:= \\bigsqcup_{i=1}^k \\Omega_i$, be a conformal mating produced in Theorem~\\ref{conf_mating_thm} such that the associated welding graph $\\cG$ is connected. Then $\\Sigma$ is a compact Riemann surface of genus $g=\\frac{\\#\\mathrm{Fix}(\\eta)-2}{2}$, where $\\mathrm{Fix}(\\eta)$ denotes the set of fixed points of $\\eta$. In particular, under the above assumptions, if $S$ has at least three fixed points on $\\partial^0\\cD$, then $g\\geq 1$.\n\\end{prop}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 25,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=25",
+      "start_bbox": [
+        118.31,
+        458.108,
+        350.112,
+        470.448
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 25; exact printed heading match"
     },
     {
       "id": "statement-4.19",
@@ -1346,7 +1828,20 @@
       "page_start": 25,
       "page_end": 26,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=25",
-      "context_end_offset": 103948
+      "context_end_offset": 103948,
+      "text": "\\begin{prop}\\label{mating_surf_exists_prop}\n    Let $\\{\\Gamma_i\\}_{i=1}^l$ be Fuchsian groups (introduced in Section~\\ref{mateable_maps_subsec}), with $A_{\\Gamma_i}$ the associated (factor) Bowen-Series map for $\\Gamma_i$, $i\\in\\{1,\\cdots, l\\}$. Let $\\{B_j\\}_{j=1}^r$ be hyperbolic Blaschke products. Then there exists a critically fixed polynomial $P$ with the following properties.\n    {\\upshape\n    \\begin{enumerate}[leftmargin=8mm]\n        \\item $P$, $\\{A_{\\Gamma_i}\\}_{i=1}^l$, and $\\{B_j\\}_{j=1}^r$ can be conformally mated.\n        \\item Let $S$ be the conformal mating of $P$, $\\{A_{\\Gamma_i}\\}_{i=1}^l$, and $\\{B_j\\}_{j=1}^r$.\n        Then the corresponding blender surface $\\Sigma$ is connected.\n    \\end{enumerate}\n    }\n\\end{prop}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 25,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=25",
+      "start_bbox": [
+        118.31,
+        662.516,
+        243.718,
+        673.819
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 25; exact printed heading match"
     },
     {
       "id": "statement-4.20",
@@ -1360,7 +1855,20 @@
       "page_start": 26,
       "page_end": 26,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=26",
-      "context_end_offset": 104822
+      "context_end_offset": 104822,
+      "text": "\\begin{cor}\\label{orbifold_genus_cor}\n   Given $\\{\\Gamma_i\\}_{i = 1}^l$ and $\\{B_j\\}_{j=1}^r$, consider the weak B-involution $S: \\overline{\\mathcal{D}}\\rightarrow \\widehat{\\mathbb{C}}$ and the blender surface $\\Sigma$ constructed in Proposition~\\ref{mating_surf_exists_prop}. Let $b$ be the number of orbifold points of order $2$ in $\\displaystyle\\bigsqcup_{i = 1}^l \\mathbb{D}/\\widehat{\\Gamma}_i$, and $g$ the genus of the surface $\\Sigma$. If $b\\geq 3$, then $g\\geq 1$.\n\\end{cor}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 26,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=26",
+      "start_bbox": [
+        118.31,
+        357.224,
+        249.002,
+        368.527
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 26; exact printed heading match"
     },
     {
       "id": "statement-5.1",
@@ -1374,7 +1882,20 @@
       "page_start": 26,
       "page_end": 27,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=26",
-      "context_end_offset": 107867
+      "context_end_offset": 107867,
+      "text": "\\begin{example}[\\textbf{Disconnected blender and zipped surfaces}]\\label{000_ex}\n    The map $R(z) = z^3$ has two completely invariant Fatou components. Let $S:\\overline{\\cD}\\rightarrow\\widehat{\\mathbb{C}}$ be the conformal mating of $R$, and $\\{A_{\\Gamma_i}^{\\text{BS}}\\}_{i=1}^{2}$, where $\\Gamma_1 = \\Gamma_2 = \\Gamma_{1, 4}$.\n    The domain $\\overline{\\cD}$ is a union of four closed topological disks, and the corresponding welding graph has four connected components as shown in Figure~\\ref{000_fig}. It is, in fact, not hard to see that $S$ is a piecewise M{\\\"o}bius map. The blender surface $\\Sigma$ is a disjoint union of four spheres, and since the action of the group $\\langle\\eta\\rangle$ partitions $\\Sigma$ into two orbits; the zipped surface $\\widecheck{\\Sigma} \\cong \\Sigma/\\langle\\eta\\rangle$ is a disjoint union of two spheres.\n\\end{example}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 26,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=26",
+      "start_bbox": [
+        118.31,
+        654.132,
+        476.974,
+        663.537
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 26; exact printed heading match"
     },
     {
       "id": "statement-5.2",
@@ -1388,7 +1909,20 @@
       "page_start": 27,
       "page_end": 28,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=27",
-      "context_end_offset": 109769
+      "context_end_offset": 109769,
+      "text": "\\begin{example}[\\textbf{Disconnected blender and connected zipped surfaces}]\\label{001_ex}\n    Let $R$ be the critically fixed polynomial given by $R(z) =  z^3 + \\frac{3z}{2}$. Borrowing notation from Section~\\ref{crit_fixed_rat_subsec}, note that, $\\text{Fix}(R) \\supsetneq \\text{Crit}(R) = \\{\\frac{i}{\\sqrt{2}}, -\\frac{i}{\\sqrt{2}}, \\infty\\}$. The point $\\infty$ is a critical point with multiplicity $2$, while the other two critical points have multiplicities $1$. \n\\begin{figure}[h!]\n    \\captionsetup{width=0.98\\linewidth}\n    \\begin{tikzpicture}\n    \\node[anchor=south west,inner sep=0] at (0,0) {\\includegraphics[width=0.4\\textwidth]{s_plane_example_2.png}}; \n    \\end{tikzpicture}\n    \\caption{Shown here is a cartoon of the dynamical plane of $S$ of Example~\\ref{001_ex}. The map $S$ takes the boundary of the topological disk $\\Omega_1$ to that of $\\Omega_2$, and vice versa, as indicated.}\n    \\label{001_fig}\n    \\end{figure}    \n    \n     We replace the dynamics of $R$ on the basin of infinity with the Bowen-Series map $A_{\\Gamma_{1, 4}}^{\\text{BS}}$; and on the other two immediate basins corresponding to the fixed-points $\\frac{i}{\\sqrt{2}}$ and $-\\frac{i}{\\sqrt{2}}$; we replace the dynamics of $R$ by $\\{B_j\\}_{j=1}^{2}$, where $B_j$ is a quadratic Blaschke product with an attracting fixed point in $\\D$, for $j\\in \\{1, 2\\}$. Let $S$ denote a conformal mating that realizes this construction.  \n\n    The domain of definition of the conformal mating $S$ is a disjoint union of two closed topological disks touching at a point (see Figure~\\ref{001_fig}). The welding graph associated with $S$ would have two components, and the blender surface $\\Sigma$ in this case would turn out to be a disjoint union of two Riemann spheres. The group $\\langle\\eta\\rangle$ acts transitively on $\\Sigma$; as a result, the zipped surface $\\widecheck{\\Sigma}$ is a single sphere.    \n\\end{example}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 27,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=27",
+      "start_bbox": [
+        118.31,
+        495.162,
+        476.961,
+        504.009
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 27; exact printed heading match"
     },
     {
       "id": "statement-5.3",
@@ -1402,7 +1936,20 @@
       "page_start": 27,
       "page_end": 29,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=27",
-      "context_end_offset": 111915
+      "context_end_offset": 111915,
+      "text": "\\begin{example}[\\textbf{A connected blender surface from an inversive multi-domain}]\\label{011_ex}\n    Let $R(z) = z^3 +\\frac{3z}{2}$ (as in Example~\\ref{001_ex}). We now set $S$ to be a conformal mating of $R$, and $\\{A_{\\Gamma_i}\\}_{i=1}^3$, where $\\Gamma_1 = \\Gamma_{1, 4}$, and $\\Gamma_2 = \\Gamma_3 = \\Gamma_{3, 1}$. The map $S$ replaces the dynamics of $R$ on the basin of infinity with that of $A_{\\Gamma_1}=A_{\\Gamma_1}^{\\mathrm{BS}}$, and on the other two immediate basins with that of $A_{\\Gamma_2}=A_{\\Gamma_2}^{\\mathrm{fBS}}$ and $A_{\\Gamma_3}=A_{\\Gamma_3}^{\\mathrm{BS}}$.\n \\begin{figure}[h!]\n    \\captionsetup{width=0.98\\linewidth}\n    \\begin{tikzpicture}\n    \\node[anchor=south west,inner sep=0] at (0,0) {\\includegraphics[width=0.38\\textwidth]{s_plane_example_3.png}}; \n    \\node[anchor=south west,inner sep=0] at (6,0) {\\includegraphics[width=0.36\\textwidth]{welding_example_3.png}}; \n    \\end{tikzpicture}\n    \\caption{Left: Here we see the dynamical plane of the conformal mating $S$ of Example~\\ref{011_ex}, with arrows indicating the action of $S$ on $\\partial\\cD$. Top Right: The two triangles on the left each map to $\\Omega_1$ and $\\Omega_2$ under appropriate Riemann maps, and the two triangles on the right are their copies. The induced action of $S$ on the boundaries of the four triangles is indicated. Bottom Right: The blender surface $\\Sigma$, topologically speaking, is obtained by gluing the two cones via an orientation-reversing identification of the blue curves, as~shown.}\n    \\label{011_fig}\n    \\end{figure}\n\n    The set $\\cD$ is a disjoint union of two open topological disks, call them $\\Omega_1$ and $\\Omega_2$. Each $\\partial\\Omega_i$ is a wedge of two circles, and $\\partial\\Omega_1\\cap\\partial\\Omega_2$ is a single point (see Figure~\\ref{011_fig}). The welding graph associated with $S$ is connected, and the blender surface $\\Sigma$ is a single sphere; forcing $\\widecheck{\\Sigma}\\cong \\Sigma/\\langle\\eta\\rangle$ to also be a sphere. By Proposition~\\ref{genus_prop}, $\\eta$ is a M\\\"obius map of order $2$ with two fixed points, therefore $\\eta$ is equivalent to the map~$z\\mapsto 1/z$. \n\\end{example}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 27,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=27",
+      "start_bbox": [
+        118.31,
+        689.891,
+        476.945,
+        698.738
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 27; exact printed heading match"
     },
     {
       "id": "statement-5.4",
@@ -1416,7 +1963,20 @@
       "page_start": 29,
       "page_end": 29,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=29",
-      "context_end_offset": 114317
+      "context_end_offset": 114317,
+      "text": "\\begin{example}[\\textbf{Elliptic blender surfaces}]\\label{111_ex}\n    Let $R(z) = z^3 + \\frac{3z}{2}$ (as in Example~\\ref{001_ex}). Let $A_{\\Gamma}=A_{\\Gamma}^{\\mathrm{BS}}$ be the continuous Bowen-Series map associated with a representation $(\\rho: \\Gamma_{1, 4}^2\\rightarrow\\Gamma)\\in \\text{Teich}(\\Gamma_{1,4}^2)$, and let $B$ be a quadratic Blaschke product with an attracting fixed point in $\\mathbb{D}$. The conformal mating $S$ is such that it replaces the dynamics of $R$ on the basin of infinity with that of $A_{\\Gamma}$, on the immediate basin of the fixed point $\\frac{i}{\\sqrt{2}}$ with that of $A_{\\Gamma_{3,1}}^{\\text{fBS}}$, and on the immediate basin of the fixed point $-\\frac{i}{\\sqrt{2}}$ with that of $B$. \n\n    \n    Note that the domain $\\cD$ is an annulus bound by the two connected components of $\\partial \\cD$ (see Figure~\\ref{111_fig}). The welding construction that gives us the blender surface $\\Sigma$, topologically speaking, doubles the annulus to a torus. By Theorem~\\ref{hyperelliptic_thm} the zipped surface $\\widecheck{\\Sigma}$ would be a single sphere. \n    \\begin{figure}[h!]\n    \\captionsetup{width=0.98\\linewidth}\n    \\begin{tikzpicture}\n    \\node[anchor=south west,inner sep=0] at (0,0) {\\includegraphics[width=0.66\\textwidth]{s_plane_example_4.png}}; \n    \\end{tikzpicture}\n    \\caption{The domain of definition $\\overline{\\cD}$ of the weak B-involution $S$ of Example~\\ref{111_ex} is bound by the red quadrilateral and the blue Jordan curve. The map $S$ permutes the components of $\\partial^0\\cD$ as depicted in the figure.}\n    \\label{111_fig}\n    \\end{figure}\n    The group $\\Gamma_{1,4}^2$ uniformizes a genus $0$ surface with two punctures and two order $2$ orbifold points. Therefore, unlike all the previous examples, the space $\\text{Teich}(\\Gamma_{1,4}^2)$ is non-trivial, in fact a $1-$dimensional complex manifold. Let $\\mathcal{B}_2$ parametrize the quadratic Blaschke products with an attracting fixed point in $\\mathbb{D}$, so $B\\in\\mathcal{B}_2$. Now note that for every parameter $t\\in \\text{Teich}(\\Gamma_{1,4}^2)\\times\\mathcal{B}_2$, this specific construction would give us an elliptic curve $\\Sigma_t$ (i.e., the blender surface), along with a degree $4$ elliptic function $\\cR_t:\\Sigma_t\\rightarrow\\widehat{\\mathbb{C}}$ (i.e., the uniformizing meromorphic map)  with $6$ simple critical points and a double critical~point.\n\\end{example}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 29,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=29",
+      "start_bbox": [
+        118.31,
+        172.144,
+        413.049,
+        184.048
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 29; exact printed heading match"
     },
     {
       "id": "statement-5.5",
@@ -1430,7 +1990,20 @@
       "page_start": 29,
       "page_end": 30,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=29",
-      "context_end_offset": 116145
+      "context_end_offset": 116145,
+      "text": "\\begin{example}[\\textbf{Genus $2$ blender surfaces from triply connected inversive domains}]\\label{111''_ex}\n    Let $R(z) = z^4 + \\frac{4z^3}{\\sqrt[3]{9}}$, and let $A_{\\Gamma}$ be as in Example~\\ref{111_ex}. One can check that $R$ is a critically fixed polynomial with $\\text{Fix}(R) \\supsetneq \\text{Crit}(R) = \\{-\\sqrt[3]{3}, 0, \\infty\\}$. The critical points at $\\infty, 0,$ and $-\\sqrt[3]{3}$ have multiplicity $3$, $2$, and $1$, respectively. We let the conformal mating $S$ be the one that replaces the dynamics of $R$ on the basin of infinity with that of $A_{\\Gamma_{5, 1}}^{\\text{fBS}}$ (such that the fixed point $1$ of $A_{\\Gamma_{5, 1}}^{\\text{fBS}}$ is identified with the unique non-separating fixed point of $R$ on $\\mathcal{J}(R)$); on the basin of the fixed point $0$ with that of $A_{\\Gamma}$, and on the basin of the fixed point $-\\sqrt[3]{3}$ with that of $A_{\\Gamma_{1,3}}^{\\text{BS}}$. Further, we conjugate $S$ via an appropriate  M\\\"obius map to ensure that it has a unique pole.\n    \\begin{figure}[h!]\n    \\captionsetup{width=0.98\\linewidth}\n    \\begin{tikzpicture}\n    \\node[anchor=south west,inner sep=0] at (0,0) {\\includegraphics[width=0.72\\textwidth]{s_plane_example_6.png}}; \n    \\end{tikzpicture}\n    \\caption{The domain of definition $\\overline{\\cD}$ of the conformal mating $S$ of Example~\\ref{111''_ex} is the region bound by the cardioid, the triangle, and the quadrilateral.}\n    \\label{111''_fig}\n    \\end{figure}  \n    \n    The domain $\\overline{\\cD}$ is topologically a pair of pants (see Figure~\\ref{111''_fig}), and the blender surface is obtained by gluing $\\overline{\\cD}$ to itself. Therefore, $\\Sigma$ is a genus $2$ hyperelliptic Riemann surface, and the uniformizing meromorphic map $\\cR:\\Sigma\\rightarrow\\widehat{\\mathbb{C}}$ has degree $5$ with a unique pole. \n\\end{example}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 29,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=29",
+      "start_bbox": [
+        118.31,
+        710.795,
+        476.96,
+        719.642
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 29; exact printed heading match"
     },
     {
       "id": "statement-5.6",
@@ -1444,7 +2017,20 @@
       "page_start": 30,
       "page_end": 31,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=30",
-      "context_end_offset": 120477
+      "context_end_offset": 120477,
+      "text": "\\begin{example}[\\textbf{Rigid Newton examples}]\\label{111'''_ex}\n    Consider the polynomial $P(z) = z^n-1$, $n\\geq 3$, and let $R(z):= z - \\frac{P(z)}{P'(z)}$ be the Newton map for the polynomial $P(z)$. Note that, \n    $$\n    R(z) = z - \\frac{z^n - 1}{nz^{n-1}} = z - \\frac{z}{n} + \\frac{1}{nz^{n-1}}, \\hspace{2mm}\\text{and}\\hspace{2mm}R'(z)= \\Bigg(\\frac{n-1}{n}\\Bigg)\\cdot\\Bigg(1-\\frac{1}{z^n}\\Bigg).\n    $$\n    As $R$ maps the point $0$ to the point $\\infty$ with local degree $n-1$, we conclude that $\\text{Crit}(R) = \\{0\\}\\cup\\{e^{\\frac{2\\pi ik}{n}}\\}_{k\\in\\{1,\\cdots, n\\}}$, where $0$ is a critical point of multiplicity $n-2$, while all the $n$-th roots of unity are simple critical points of $R$. Let $S$ be the conformal mating of $R$, and $n$ copies of $A_{\\Gamma_{3, 1}}^{\\text{fBS}}$, one for each immediate basin of attraction of~$R$.\n\n    The domain $\\cD$ is a topological disk whose boundary is a wedge of $n$ Jordan curves. Since $\\cD$ is connected, the associated blender surface $\\Sigma$ is also connected (see Figure~\\ref{111'''_fig}). The involution $\\eta$ has $2g + 2$ fixed points, where $g$ denotes the genus of $\\Sigma$. \n       \\begin{figure}[h!]\n    \\captionsetup{width=0.98\\linewidth}\n    \\begin{tikzpicture}\n    \\node[anchor=south west,inner sep=0] at (0,0) {\\includegraphics[width=0.48\\textwidth]{s_plane_example_7_1.png}}; \n    \\node[anchor=south west,inner sep=0] at (6.2,0) {\\includegraphics[width=0.48\\textwidth]{s_plane_example_7_2.png}}; \n    \\end{tikzpicture}\n    \\caption{Illustrated here are instances of the dynamical plane of $S$ from Example~\\ref{111'''_ex}, for $n =3$ and $n=6$. Left: The three colored regions represent the immediate basins of the Newton map for the polynomial $z^3-1$, along with their pre-images. In each immediate basin, the original dynamics has been replaced by that of $A_{\\Gamma_{3, 1}}^{\\text{fBS}}$. Right: This image is based on the Newton map for the polynomial $z^6 - 1$, with modifications: in each of the six immediate basins, centered at the sixth roots of unity, the Newton dynamics has been surgically replaced by $A_{\\Gamma_{3,1}}^{\\text{fBS}}$. The conformal mating $S$ is defined in the exterior of the six red Jordan curves meeting at the central marked point; this corresponds to the point at infinity where all the immediate basins of the Newton map meet.}\n    \\label{111'''_fig}\n    \\end{figure}  \n    \n    We shall now attempt to arrive at a formula for $g$. Note that $A_{\\Gamma_{3, 1}}^{\\text{fBS}}$ has a fixed point on $l\\cap C_{1,1}$ (see Section~\\ref{fBS_subsec}). Under a conformal conjugation, this fixed point is carried to a fixed point of the map $S$. In addition, the map $R$ has a fixed point at $\\infty$, and via a topological conjugation to the dynamical plane of $S$, the fixed point at $\\infty$ maps to the intersection point of the $n$ Jordan curves forming $\\partial\\mathcal{D}$. We denote this point by $z_{\\infty}$ (see the proof of Theorem~\\ref{conf_mating_thm} for an explicit description of these conjugations). Thus, the map $S$ has a total of $n+1$ fixed points on $\\partial\\cD$: one arising from each copy of $A_{\\Gamma_{3, 1}}^{\\text{fBS}}$, and one corresponding to the point at $\\infty$. \n    \n    Note that the action of $S$ on $\\partial^0\\cD$ is topologically conjugate via the map $\\cR$ to the involution $\\eta$ on $\\partial\\mathfrak{D}\\setminus\\cR^{-1}(z_\\infty)$ (see Equation~\\ref{alg_char_eq}). Therefore, $\\eta$ has exactly $n$ fixed points on $\\partial\\mathfrak{D}\\setminus\\cR^{-1}(z_\\infty)$. Since all fixed points of $\\eta$ lie on $\\partial\\mathfrak{D}$, it remains to study the action of $\\eta$ on $\\cR^{-1}(z_{\\infty})\\cap\\partial\\mathfrak{D}$. Observe that the quadratic map $\\cQ:\\Sigma\\rightarrow\\widecheck{\\Sigma}$ maps $\\cR^{-1}(z_{\\infty})\\cap\\partial\\mathfrak{D}$ to the point corresponding to $z_{\\infty}$ in $\\widecheck{\\Sigma}$. Therefore, $\\cR^{-1}(z_{\\infty})\\cap\\partial\\mathfrak{D}$ must either consist of a fixed point of $\\eta$ or form a 2-cycle under $\\eta$. Applying Proposition~\\ref{genus_prop} and accounting for parity considerations, we arrive at the following conclusion:\n    \\begin{equation*}\n        g = \\begin{cases*}\n            \\frac{n}{2} - 1, & \\text{if }$n$ is even,\\\\\n            \\frac{n - 1}{2}, & if $n$ is odd.\n        \\end{cases*}\n    \\end{equation*}\n\\end{example}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 30,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=30",
+      "start_bbox": [
+        118.31,
+        564.617,
+        476.972,
+        574.022
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 30; exact printed heading match"
     },
     {
       "id": "statement-5.7",
@@ -1458,7 +2044,20 @@
       "page_start": 31,
       "page_end": 32,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=31",
-      "context_end_offset": 123414
+      "context_end_offset": 123414,
+      "text": "\\begin{example}[\\textbf{Genus two blender surfaces from doubly connected inversive domains}]\\label{final_ex}\n    Consider the critically fixed polynomial \n    $$\n    R(z) = z^7 - \\frac{7}{5}(\\alpha^2 + \\overline{\\alpha}^2)z^5 + \\frac{7}{3}|\\alpha|^4z^3,\n    $$ \n    where, $\\alpha$ is a complex number in the first quadrant satisfying \n$$\n15\\alpha+6\\alpha^7-14\\alpha^5\\overline{\\alpha}^2=0.\n$$    \n    Since $R$ is symmetric about the real and imaginary axes; one can check that $\\text{Fix}(R) \\supsetneq \\text{Crit}(R) = \\{0, \\alpha, \\overline{\\alpha}, -\\alpha, -\\overline{\\alpha}, \\infty\\}$. The point $0$ is a critical point with multiplicity $2$, and all other finite critical points are simple. Let $B\\in\\mathcal{B}_2$ be as in Example~\\ref{111_ex}. We let the conformal mating $S:\\overline{\\cD}\\rightarrow\\widehat{\\C}$ be such that it replaces the dynamics of $R$ on the basin of the fixed point $0$ with that of $A_{\\Gamma_{4,1}}^{\\text{fBS}}$; on the basins of fixed points $\\{\\alpha, -\\alpha, -\\overline{\\alpha}\\}$ with that of $A_{\\Gamma_{3,1}}^{\\text{fBS}}$; and on the basin of the fixed point $\\overline{\\alpha}$ with that of $B$. \n    \\begin{figure}[h!]\n    \\captionsetup{width=0.98\\linewidth}\n    \\begin{tikzpicture}\n    \\node[anchor=south west,inner sep=0] at (0,0) {\\includegraphics[width=0.8\\textwidth]{s_plane_example_5.png}}; \n    \\end{tikzpicture}\n    \\caption{Shown here is the dynamical plane of the conformal mating $S$ of Example~\\ref{final_ex}. The two marked points correspond to the two repelling fixed points of the polynomial $R$.}\n    \\label{final_fig}\n    \\end{figure}  \n    \n    The domain $\\cD$ is an annulus bound by the red and blue curves as shown in Figure~\\ref{final_fig}. Let us denote the red curve by $\\gamma_1$, and the blue curve by $\\gamma_2$. Observe that welding two copies of $\\cD$ along $\\gamma_1$ via the map $S|_{\\gamma_1}$ yields a genus $1$ surface with two boundary components; we call them $C_1$ and $C_2$ (cf. Figure~\\ref{top_weld_surf_1_fig}). By construction, both $C_1$ and $C_2$ can be identified with $\\gamma_2$, and the conformal involution $S|_{\\gamma_2}$ induces an orientation-reversing analytic map $\\widecheck{S}:C_1\\rightarrow C_2$. Finally, gluing the two boundary components $C_1$ and $C_2$ via the map $\\widecheck{S}$ would conclude the welding procedure by giving us a closed genus $2$ blender surface $\\Sigma$. The uniformizing meromorphic map $\\cR:\\Sigma\\rightarrow\\widehat{\\C}$ in this case has degree $8$ with a pole of order $7$ and a simple pole. Further, $\\cR$ has a critical point of multiplicity $6$ (namely, the order $7$ pole),  a critical point of multiplicity $3$ (coming from $A_{\\Gamma_{4,1}}^{\\text{fBS}}$), three critical points of multiplicity $2$ each (coming from $A_{\\Gamma_{3,1}}^{\\text{fBS}}$), and three simple critical points (one from the Blaschke product $B$, and the other two from the singular points on $\\partial\\cD$). \n\\end{example}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 31,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=31",
+      "start_bbox": [
+        118.31,
+        670.968,
+        476.971,
+        679.815
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 31; exact printed heading match"
     },
     {
       "id": "statement-5.8",
@@ -1472,7 +2071,20 @@
       "page_start": 32,
       "page_end": 32,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=32",
-      "context_end_offset": 123928
+      "context_end_offset": 123928,
+      "text": "\\begin{remark} Observe that if $\\cD$ is connected, then both the surfaces $\\Sigma$ and $\\widecheck{\\Sigma}$ are connected. On the other hand if $\\cD$ is disconnected but $\\Sigma$ is connected, then $\\widecheck{\\Sigma}\\cong \\Sigma/\\langle\\eta\\rangle$ is also connected. Thus, with respect to connectedness of $\\cD$, $\\Sigma$, and $\\widecheck{\\Sigma}$, there are four distinct possibilities. We have demonstrated the occurrence of all four possibilities through Examples~\\ref{000_ex} to \\ref{111_ex}.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 32,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=32",
+      "start_bbox": [
+        118.31,
+        589.324,
+        476.963,
+        598.729
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 32; exact printed heading match"
     },
     {
       "id": "statement-6.1",
@@ -1486,7 +2098,20 @@
       "page_start": 33,
       "page_end": 33,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=33",
-      "context_end_offset": 127253
+      "context_end_offset": 127253,
+      "text": "\\begin{remark}\n    The brief discussion above shows that a forward branch of the correspondence $\\mathfrak{C}$ sends $z$ to $w$ if and only if either the conformal mating $S$ or one of its inverse branches sends $R(z)$ to $R(w)$. In other words, the meromorphic map $\\cR$ lifts the dynamics of $S$ to the correspondence $\\mathfrak{C}$.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 33,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=33",
+      "start_bbox": [
+        118.31,
+        522.864,
+        476.996,
+        531.711
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 33; exact printed heading match"
     },
     {
       "id": "statement-6.2",
@@ -1500,7 +2125,20 @@
       "page_start": 33,
       "page_end": 34,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=33",
-      "context_end_offset": 131355
+      "context_end_offset": 131355,
+      "text": "\\begin{prop}\\label{invariance_prop}\\upshape \nThe following statements hold for $i \\in \\{1, \\cdots, l\\}$.\n\n\\begin{enumerate}\n    \\item $\\eta(\\widetilde{\\mathcal{W}_i}) = \\widetilde{\\mathcal{W}_i}$, and $\\eta(\\widetilde{\\cK}) = \\widetilde{\\cK}$.\n    \\item Given a point $(z, w) \\in \\mathfrak{C}$, we have $z\\in \\widetilde{\\mathcal{W}}_i$ (respectively, $z\\in \\widetilde{\\cK}$) if and only if $w\\in \\widetilde{\\mathcal{W}}_i$ (respectively, $w\\in \\widetilde{\\cK}$).\n\\end{enumerate} \n\\end{prop}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 33,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=33",
+      "start_bbox": [
+        118.31,
+        696.5,
+        410.981,
+        705.905
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 33; exact printed heading match"
     },
     {
       "id": "statement-6.3",
@@ -1514,7 +2152,20 @@
       "page_start": 34,
       "page_end": 34,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=34",
-      "context_end_offset": 132406
+      "context_end_offset": 132406,
+      "text": "\\begin{remark}\\label{tesselation_rem}\n    The tessellation of the unit disk $\\mathbb{D}$ by the group $\\Gamma_i$ can be transferred to the domain $\\cT_i$. Define the rank zero tile as $\\cT^0_i = \\cT_i \\setminus \\cD$. The rank $m$ tiles are the connected components of the pre-image $S^{-m}(\\cT^0_i)$. Every point in $\\cT_i$ lies in a rank $m$ tile for some $m \\geq 0$, and the action of $S$ maps each rank $m\\geq 1$ tile to a rank $m-1$ tile. Therefore, all points in $\\cT_i \\cap \\overline{\\cD}$ eventually escape to the “hole” (i.e., the rank zero tile).\n\nThis dynamical tessellation can be lifted via the map $\\cR|_{\\widetilde{\\cT}_i}$ to obtain a similar tiling structure in $\\widetilde{\\cT}_i$. A rank $m$ tile in $\\widetilde{\\cT}_i$ is defined as a connected component of the pre-image under $\\cR|_{\\widetilde{\\cT}_i}$ of a rank $m$ tile in $\\cT_i$. We denote the rank zero tile(s) in $\\widetilde{\\cT}_i$ by $\\widetilde{\\cT}_i^0$; these are the $p_i$ disjoint pre-images of $\\cT^0_i$, one in each component of $\\widetilde{\\cT}_i$.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 34,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=34",
+      "start_bbox": [
+        118.31,
+        520.247,
+        476.975,
+        530.588
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 34; exact printed heading match"
     },
     {
       "id": "statement-6.4",
@@ -1528,7 +2179,20 @@
       "page_start": 34,
       "page_end": 34,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=34",
-      "context_end_offset": 134861
+      "context_end_offset": 134861,
+      "text": "\\begin{remark}\\label{esc_inv_rem}\nThe set $\\widetilde{\\cT_i}$ is invariant under $\\eta$, which brings to attention a stark difference between the dynamics of the correspondence $\\mathfrak{C}$ and the conformal mating $S$. While the points of $\\cW_i$ eventually escape $\\cD$ under the iterates of $S$; points in $\\widetilde{\\cW}_i$ ``eventually\" map to $\\widetilde{\\cT_i}$, after which they remain  in $\\widetilde{\\cT_i}$ under $\\eta$ as well as under suitable local deck transformations of $\\cR$. In other words, by lifting the dynamics of the conformal mating $S$ to that of the correspondence $\\mathfrak{C}$, we managed to suppress the escaping behavior exhibited by the former. Broadly speaking, we shall employ this philosophy to recover from $\\mathfrak{C}$ the groups $\\{\\widehat{\\Gamma}_i\\}_{i=1}^l$. \n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 34,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=34",
+      "start_bbox": [
+        118.31,
+        653.906,
+        476.995,
+        664.806
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 34; exact printed heading match"
     },
     {
       "id": "statement-6.5",
@@ -1542,7 +2206,20 @@
       "page_start": 35,
       "page_end": 35,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=35",
-      "context_end_offset": 136353
+      "context_end_offset": 136353,
+      "text": "\\begin{theorem}\\label{corr_recover_thm}\n    The correspondence $\\mathfrak{C}$ is a mating of the groups $\\{\\widehat{\\Gamma}_i\\}_{i=1}^l$, and the Blaschke products $\\{B_j\\}_{j=1}^r$, in the following sense.\n    \\begin{enumerate}[leftmargin=8mm]\n        \\item The action of $\\mathfrak{C}_i$ on $\\widetilde{\\cT_i}$ is equivalent to the action of a group $\\langle\\eta, \\tau_i\\rangle$ of conformal automorphisms of $\\widetilde{\\cT_i}$, $i\\in\\{1,\\cdots, l\\}$. Moreover, the above group acts properly discontinuously, and the quotient orbifold $\\widetilde{\\cT_i}/\\mathfrak{C}_i$ is biholomorphic to~$\\mathbb{D}/\\widehat{\\Gamma}_i$.\n       \n        \\item The correspondence $\\mathfrak{C}$ has a forward branch (respectively, a backward branch) carrying $\\widetilde{\\cV}_j\\cap \\mathfrak{D}$ (respectively, $\\widetilde{\\cV}_j\\setminus \\overline{\\mathfrak{D}}$) onto itself, and this branch is conformally conjugate to the Blaschke product $B_j$, $j\\in\\{1,\\cdots,r\\}$.\n    \\end{enumerate}\n\\end{theorem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 35,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=35",
+      "start_bbox": [
+        118.31,
+        344.801,
+        426.182,
+        356.104
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 35; exact printed heading match"
     },
     {
       "id": "statement-6.6",
@@ -1556,7 +2233,20 @@
       "page_start": 35,
       "page_end": 36,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=35",
-      "context_end_offset": 139292
+      "context_end_offset": 139292,
+      "text": "\\begin{lem}\\label{aut_corr_lem}\n    The open set $\\widetilde{\\cT_i}$ admits a biholomorphism $\\tau_i$ such that\n    $$\\tau^{n_ip_i}_i\\equiv \\text{id}, \\hspace{2mm} and \\hspace{2mm}\\Big(\\cR\\big|_{\\widetilde{\\cT}_i}\\Big)^{-1}\\bigg(\\Big(\\cR\\big|_{\\widetilde{\\cT}_i}\\Big)(z)\\bigg) = \\{z, \\tau_i(z), \\cdots, \\tau_i^{n_ip_i-1}(z)\\} \\hspace{2mm}\\forall z\\in \\widetilde{\\cT_i}.$$\n\\end{lem}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 35,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=35",
+      "start_bbox": [
+        118.31,
+        663.448,
+        416.981,
+        674.348
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 35; exact printed heading match"
     },
     {
       "id": "statement-6.7",
@@ -1570,7 +2260,20 @@
       "page_start": 36,
       "page_end": 36,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=36",
-      "context_end_offset": 139976
+      "context_end_offset": 139976,
+      "text": "\\begin{cor}\\label{group_action_corr}\n    The dynamics of $\\mathfrak{C}_i$ on $\\widetilde{\\cT}_i$ is equivalent to the action of the group $\\langle\\eta, \\tau_i\\rangle$ of conformal automorphisms of $\\widetilde{\\cT}_i$.\n\\end{cor}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 36,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=36",
+      "start_bbox": [
+        118.31,
+        270.916,
+        476.968,
+        281.815
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 36; exact printed heading match"
     },
     {
       "id": "statement-6.8",
@@ -1584,7 +2287,20 @@
       "page_start": 36,
       "page_end": 37,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=36",
-      "context_end_offset": 146375
+      "context_end_offset": 146375,
+      "text": "\\begin{prop}\\label{orbifold_isom_prop}\n    The group $\\langle\\eta, \\tau_i\\rangle$ acts properly discontinuously on $\\widetilde{\\cT_i}$, and the quotient orbifold $\\widetilde{\\cT_i}/\\langle\\eta, \\tau_i\\rangle$ is biholomorphic to $\\mathbb{D}/\\widehat{\\Gamma}_i$. \n\\end{prop}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 36,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=36",
+      "start_bbox": [
+        118.31,
+        372.986,
+        476.964,
+        383.305
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 36; exact printed heading match"
     },
     {
       "id": "statement-6.9",
@@ -1598,7 +2314,20 @@
       "page_start": 37,
       "page_end": 37,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=37",
-      "context_end_offset": 147820
+      "context_end_offset": 147820,
+      "text": "\\begin{remark}\\label{recover_rep_rem}\n       The involution $\\eta$ permutes the $p_i$ components of $\\widetilde{\\cT}_i$, as the set $\\widetilde{\\cT}_i$ is $\\eta$-invariant. Let us denote this permutation by $\\sigma_i$. Notably, $\\sigma_i$ coincides with the permutation of the bi-infinite geodesics $\\{\\psi_{\\rho_i}(C_{1,j})\\}_{j=1}^{p_i}$, induced by the side-pairing transformations of $\\Gamma_i$ on $\\partial\\psi_{\\rho_i}(\\Pi)$. By Lemma~\\ref{aut_corr_lem}, the map $f_j$ in the proof of Proposition~\\ref{orbifold_isom_prop} is of the form $\\tau_i^{k_j}\\circ\\eta$, for some $1\\leq k_j\\leq p_i$, where $k_j$ is dictated by the permutation $\\sigma_i$. Now note that by Equation~\\ref{generators_eq}, the representation $(\\widehat{\\rho}_i:\\widehat{\\Gamma}_{n_i,p_i}\\rightarrow\\widehat{\\Gamma}_i)\\in \\text{Teich}(\\widehat{\\Gamma}_{n_i,p_i})$ can be equivalently defined as follows:\n       \\begin{equation*}\n           \\widehat{\\rho}_i(g_{1,j}):= \\Phi_1^{-1}\\circ\\tau_i^{-(j-1)}\\circ (\\tau_i^{k_j}\\circ\\eta)\\circ \\tau_i^{j-1}\\circ\\Phi_1,\\hspace{2mm}\\text{and}\\hspace{2mm}\\widehat{\\rho}_i(M_{\\omega_i}):= \\Phi_1^{-1}\\circ\\tau_i^{p_i}\\circ\\Phi_1 = M_{\\omega_i}.\n       \\end{equation*}\n       Therefore, the action of the multi-valued map $\\mathfrak{C}_i$ on $\\widetilde{\\cT}_i$, helps us recover not only the group $\\widehat{\\Gamma}_i$, but also the representation $\\widehat{\\rho}_i$ in $\\text{Teich}^{\\omega_i}(\\Gamma_{n_i,p_i})$.   \n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 37,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=37",
+      "start_bbox": [
+        118.31,
+        611.025,
+        476.465,
+        621.925
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 37; exact printed heading match"
     },
     {
       "id": "statement-6.10",
@@ -1612,7 +2341,20 @@
       "page_start": 38,
       "page_end": 38,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=38",
-      "context_end_offset": 149265
+      "context_end_offset": 149265,
+      "text": "\\begin{prop}\\label{recover_Blaschke_prop}\n    There exists a forward branch (respectively, a backward branch) of $\\mathfrak{C}$ carrying $\\widetilde{\\cV}_j\\cap \\mathfrak{D}$ (respectively, $\\widetilde{\\cV}_j\\setminus \\overline{\\mathfrak{D}}$) onto itself, and this branch is conformally conjugate to the Blaschke product $B_j$.\n\\end{prop}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 38,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=38",
+      "start_bbox": [
+        118.31,
+        150.666,
+        476.989,
+        159.513
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 38; exact printed heading match"
     },
     {
       "id": "statement-6.11",
@@ -1626,7 +2368,20 @@
       "page_start": 38,
       "page_end": 38,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=38",
-      "context_end_offset": 150236
+      "context_end_offset": 150236,
+      "text": "\\begin{remark}\n    Let $\\mathcal{Z}:=\\Sigma\\setminus\\bigcup_{i=1}^{l+r} \\widetilde{\\cW}_i$. Suppose that $\\cR$ is injective on $\\overline{\\mathfrak{D}}$. Then, by replacing $\\widetilde{\\cV}_j\\cap \\mathfrak{D}$ (respectively, $\\widetilde{\\cV}_j\\setminus \\overline{\\mathfrak{D}}$) with $\\mathcal{Z}\\cap \\overline{\\mathfrak{D}}$ (respectively, $\\mathcal{Z}\\setminus \\mathfrak{D}$) in Proposition~\\ref{recover_Blaschke_prop}, we obtain a topological conjugacy between $R$ and a forward branch (respectively, a backward branch) of the correspondence $\\mathfrak{C}$, carrying $\\mathcal{Z}\\cap \\overline{\\mathfrak{D}}$ (respectively, $\\mathcal{Z}\\setminus \\mathfrak{D}$) onto itself. Otherwise, one needs to pass to a nodal surface where the map $\\cR$ descends to an injective map. This is precisely why a nodal surface was constructed in \\cite[\\S 5.2]{mj2023matings} to describe matings of Fuchsian groups with polynomials whose Julia sets are not Jordan curves.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 38,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=38",
+      "start_bbox": [
+        118.31,
+        334.819,
+        270.165,
+        347.159
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 38; exact printed heading match"
     },
     {
       "id": "statement-7.1",
@@ -1640,7 +2395,20 @@
       "page_start": 39,
       "page_end": 40,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=39",
-      "context_end_offset": 159025
+      "context_end_offset": 159025,
+      "text": "\\begin{prop}\\label{uniqueness_standard_mating_prop}\n    Let $S:\\overline{\\cD}\\rightarrow\\widehat{\\C}$ and $S':\\overline{\\cD'}\\rightarrow\\widehat{\\C}$ be two standard conformal matings associated with the collections $\\{\\Gamma_i\\}_{i=1}^l$ and $\\{B_j\\}_{j=1}^r$. Then there exists a M{\\\"o}bius map $M$ such that $S_1 = M\\circ S_2\\circ M^{-1}$.\n\\end{prop}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 39,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=39",
+      "start_bbox": [
+        118.31,
+        711.184,
+        476.964,
+        724.204
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 39; exact printed heading match"
     },
     {
       "id": "statement-7.2",
@@ -1654,7 +2422,20 @@
       "page_start": 40,
       "page_end": 40,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=40",
-      "context_end_offset": 161201
+      "context_end_offset": 161201,
+      "text": "\\begin{prop}\\label{uniqeness_of_mero_prop}\n    Suppose there exist $4$-tuples $(\\Sigma_1, \\cR_1, \\mathfrak{D}_1, \\eta_1)$, $(\\Sigma_2, \\cR_2, \\mathfrak{D}_2, \\eta_2)$ satisfying:\n    \\begin{enumerate}\n        \\item $\\eta_i$ is an involution of $\\Sigma_i$, with $\\eta_i(\\partial\\mathfrak{D}_i) = \\partial\\mathfrak{D}_i$,\n        \\item $\\cR_i|_{\\mathfrak{D}_i}$ is injective,\n        \\item $\\cR_i(\\overline{\\mathfrak{D}_i}) = \\overline{\\cD}$, and,\n        \\item $S|_{\\overline{\\cD}} = \\cR_i\\circ\\eta_i\\circ(\\cR_i|_{\\overline{\\mathfrak{D}}_i})^{-1}$,\n    \\end{enumerate}\n    for $i\\in\\{1, 2\\}$. Then, there exists a biholomorphism $M: \\Sigma_1 \\rightarrow\\Sigma_2$, such that $\\eta_2\\circ M = M\\circ \\eta_1$, $M(\\mathfrak{D}_1) = \\mathfrak{D}_2$, and $\\cR_1 = \\cR_2\\circ M$.\n\\end{prop}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 40,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=40",
+      "start_bbox": [
+        118.31,
+        348.454,
+        476.967,
+        358.773
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 40; exact printed heading match"
     },
     {
       "id": "statement-7.3",
@@ -1668,7 +2449,20 @@
       "page_start": 41,
       "page_end": 41,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=41",
-      "context_end_offset": 167636
+      "context_end_offset": 167636,
+      "text": "\\begin{prop}\\label{qc_lift_prop}\n    There exists a quasiconformal map $\\widetilde{\\varphi}:\\Sigma\\rightarrow\\Sigma'$, such that $\\cR'\\equiv \\varphi\\circ\\cR\\circ\\widetilde{\\varphi}^{-1}$ outside $\\widetilde{\\phi}\\left(\\eta\\left(\\left(\\cR\\vert_{\\mathfrak{D}}\\right)^{-1}\\left(\\bigcup_{j=1}^r\\cV_j\\right)\\right)\\right)$, and $\\widetilde{\\varphi}\\circ\\eta\\circ\\widetilde{\\varphi}^{-1} = \\eta'$.\n\\end{prop}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 41,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=41",
+      "start_bbox": [
+        118.31,
+        312.113,
+        476.969,
+        324.017
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 41; exact printed heading match"
     },
     {
       "id": "statement-7.4",
@@ -1682,7 +2476,20 @@
       "page_start": 42,
       "page_end": 42,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=42",
-      "context_end_offset": 169437
+      "context_end_offset": 169437,
+      "text": "\\begin{cor}\\label{equiv_limit_sets_cor}\n    The map $\\widetilde{\\varphi}$ conjugates the action of $\\mathfrak{C}$ on $\\Lambda(\\mathfrak{C})$ to the action of $\\mathfrak{C}'$ on $\\Lambda(\\mathfrak{C}')$.\n\\end{cor}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 42,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=42",
+      "start_bbox": [
+        118.31,
+        119.178,
+        476.465,
+        129.538
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 42; exact printed heading match"
     },
     {
       "id": "statement-7.5",
@@ -1696,7 +2503,20 @@
       "page_start": 43,
       "page_end": 43,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=43",
-      "context_end_offset": 172822
+      "context_end_offset": 172822,
+      "text": "\\begin{remark}\\label{markings_preserved_rem}\n    If the tuples $(\\Sigma_1, \\cR_1)$, $(\\Sigma_2, \\cR_2)$ were both associated with the conformal mating $S$, that is, they satisfied Conditions $(1)$-$(4)$ of Proposition~\\ref{uniqeness_of_mero_prop}; then $M$ would take the marked points on $\\Sigma_1$ to the marked points on $\\Sigma_2$ bijectively, as an ordered set. \n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 43,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=43",
+      "start_bbox": [
+        118.31,
+        119.575,
+        476.965,
+        129.895
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 43; exact printed heading match"
     },
     {
       "id": "statement-7.6",
@@ -1710,7 +2530,522 @@
       "page_start": 46,
       "page_end": 46,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=46",
-      "context_end_offset": 186886
+      "context_end_offset": 186886,
+      "text": "\\begin{remark}\n    Recall that in Example~\\ref{111_ex}, each parameter $t \\in \\text{Teich}(\\Gamma^2_{1,4})\\times \\mathcal{B}_2$ gives rise to a marked tuple $(\\Sigma_t, \\cR_t)$, where $\\Sigma_t$ is an elliptic curve, and $\\cR_t:\\Sigma_t\\rightarrow\\widehat{\\C}$ is a degree $4$ elliptic function with $6$ simple critical points and a double critical point. Therefore, by Theorem~\\ref{hurwitz_thm_intro}, we get an injective map from $\\text{Teich}(\\Gamma^2_{1,4})\\times \\mathcal{B}_2$ into the Hurwitz space $\\mathcal{H}_{1, 4, 11}^{\\text{hyp}}$.\n\\end{remark}",
+      "format": "author-tex",
+      "page_range_scope": "statement-and-associated-context",
+      "start_page": 46,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=46",
+      "start_bbox": [
+        118.31,
+        190.32,
+        422.708,
+        201.266
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 46; exact printed heading match"
+    }
+  ],
+  "proofs": [
+    {
+      "id": "proof-statement-2.2",
+      "statement_id": "statement-2.2",
+      "title": "Proof of Lemma 2.2",
+      "section_id": "2.1",
+      "text": "\\begin{proof}\n    Set $m_{n+1} := \\sum_{i = 1}^nm_i$ and $d := m_{n+1} + 1$. The following observations are immediate.\n    \\begin{itemize}\n        \\item $m_i \\leq d -1$ for $i\\in\\{1,\\cdots, n+1\\}$.\n        \\item $\\sum_{i = 1}^{n+1}m_i = 2d-2$.\n        \\item $n+1\\leq \\sum_{i = 1}^nm_i + 1 = d$.\n    \\end{itemize}\n    By Theorem~\\ref{kevin}, there exist a critically fixed rational map $P$ such that  $\\text{Crit}(P)=\\{c_1,\\cdots,c_{n+1}\\}$ and the multiplicity of the critical point $c_i$ is $m_i$, $i\\in\\{1,\\cdots,n+1\\}$. As the critical point $c_{n+1}$ of the degree $d$ rational map $P$ has multiplicity $m_{n+1}=d-1$ (i.e., $c_{n+1}$ is a fully ramified critical point), the map $P$ can be chosen to be a polynomial, up to M{\\\"o}bius conjugation.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 34191,
+      "end_offset": 34953,
+      "start_page": 8,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=8",
+      "start_bbox": [
+        118.31,
+        620.661,
+        222.993,
+        633.937
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 8; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-2.11",
+      "statement_id": "statement-2.11",
+      "title": "Proof of Lemma 2.11",
+      "section_id": "2.3",
+      "text": "\\begin{proof}\nThe first statement is the content of \\cite[Lemma~3.4]{mj2023matings}, and \\cite[Proposition~2.7]{mj2023combining}. For the second statement, let $\\theta_{B}: \\mathbb{S}^1\\rightarrow\\mathbb{S}^1$ be a quasisymmetric conjugacy from $B$ to $z^d$. The map $\\theta_{B}$ can be extended continuously as a quasiconformal homeomorphism of $\\mathbb{D}$. And by the first statement, the map $h_{\\Gamma}$ can be extended continuously to $\\mathbb{D}$ as a David homeomorphism. Using the same notation for the extensions of $\\theta_B$ and  $h_{\\Gamma}$ to the unit disk $\\mathbb{D}$, define $h_{B, \\Gamma}:= h_{\\Gamma}\\circ \\theta_{B}$. By \\cite[Proposition~2.5 (iv)]{lyubich2020david}, $h_{B, \\Gamma}$ is a David homeomorphism of $\\mathbb{D}$.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 59977,
+      "end_offset": 60735,
+      "start_page": 15,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=15",
+      "start_bbox": [
+        118.31,
+        668.078,
+        476.997,
+        676.925
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 15; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-3.1",
+      "statement_id": "statement-3.1",
+      "title": "Proof of Theorem 3.1",
+      "section_id": "3",
+      "text": "\\begin{proof}\n    Simply connected Fatou components of subhyperbolic rational maps are John domains \\cite[Chapter~7, Theorem~3.1]{carleson1996complex}. In particular, $\\{U_i\\}_{i=1}^{l+r}$ are all John domains, which implies $\\partial U_i$ is removable for $W^{1, 1}$ functions \\cite{jones2000removability}. \n    \n    \n  Now define the following topological dynamical system:\n    \\begin{equation*}\n        \\widetilde{S} = \\begin{cases*}\n      R & on\\ $\\ \\widehat{\\mathbb{C}}\\backslash \\displaystyle\\bigsqcup_{i=1}^{l+r}U_i$ \\\\\n      \\zeta_i^{-1}\\circ A_{\\Gamma_i}\\circ \\zeta_i  & on $\\ \\zeta_i^{-1}(\\overline{\\cU}_{\\Gamma_i})\\subseteq \\overline{U_i},\\ i\\in\\{1,\\cdots,l\\}$\\\\\n      \\zeta_{l+j}^{-1}\\circ B_{j}\\circ \\zeta_{l+j} & on $\\ \\zeta_{l+j}^{-1}(\\overline{\\D}_{l+j})=\\overline{U_{l+j}},\\ j\\in\\{1,\\cdots,r\\}$.\n    \\end{cases*}\n    \\end{equation*}\n    To upgrade $\\widetilde{S}$ to a conformal dynamical system, we construct an invariant Beltrami coefficient. Let $\\mu_i$ be the pullback of the standard complex structure on $\\mathbb{D}_i$ under the map $\\zeta_i$, $i\\in\\{1,\\cdots,l+r\\}$. Use the dynamics of $R$ to spread $\\mu_i$ on all pre-images of $U_i$, and everywhere else put the standard complex structure. It is now evident that the Beltrami coefficient $\\mu$ so defined is $\\widetilde{S}$ invariant. By applying arguments in \\cite[Lemma~7.1]{lyubich2020david} (as is) one can prove that $\\mu$ is a David coefficient. Hence, by David Integrability Theorem \\cite[Theorem~20.6.2]{astala2008elliptic}, there exists a David homeomorphism \n    $$\n    H:\\widehat{\\mathbb{C}}\\rightarrow \\widehat{\\mathbb{C}}\n    $$\n    that straightens the coefficient $\\mu$. Set, \n    $$\n    S:= H\\circ \\widetilde{S}\\circ H^{-1}\n    $$\n    As $\\partial U_i$ is $W^{1, 1}$ removable, by \\cite[Theorem~2.7]{lyubich2020david}, the set $H(\\partial U_i)$ is conformally removable for $i\\in \\{1, 2, \\cdots, l+r\\}$. It is therefore sufficient to check that $S$ is conformal on $\\displaystyle\\text{Dom}(S)\\backslash \\bigcup_{i=1}^{l+r} H(\\partial U_i)$. \n    \n    \n    The maps $\\zeta_i$ and $H$ are David homeomorphisms on $U_i$ straightening $\\mu$, therefore by \\cite[Theorem~20.4.19]{astala2008elliptic}, the map $\\zeta_i\\circ H^{-1}$ is conformal on $H(U_i)\\cap \\text{Dom}(S)$, $i\\in \\{1, 2, \\cdots, l+r\\}$. This implies that $S$ is holomorphic on $H(U_i)\\cap\\mathrm{Dom}(S)$, $i\\in \\{1, 2, \\cdots, l+r\\}$. Further, the maps $H\\circ R$ and $H$ restricted to $\\displaystyle\\widehat{\\mathbb{C}}\\backslash \\bigsqcup_{i=1}^{l+r} U_i$ again straighten $\\mu$. Therefore, the map $S$ is holomorphic on $\\displaystyle H\\big(\\widehat{\\mathbb{C}}\\backslash \\bigsqcup_{i=1}^{l+r} U_i\\big)$ as well. This concludes the proof of the fact that $S$ is holomorphic in the interior of its domain of definition. Evidently,\n    \\begin{enumerate}[leftmargin=6mm]\n        \\item $\\mathfrak{X}_R:= H$ is a conformal conjugacy from $R$ to $S$ outside the grand orbit of~$\\displaystyle\\bigsqcup_{i=1}^{l+r} U_i$,\n    \n        \\item $\\mathfrak{X}_i := H\\circ\\zeta_i^{-1}$ is a conformal conjugacy from $A_{\\Gamma_i}$ to $S$ on $\\D_i$, $i\\in\\{1,\\cdots,l\\}$, and\n\n         \\item $\\mathfrak{X}_{l+j}:= H\\circ\\zeta_{l+j}^{-1}$ is a conformal conjugacy from $B_{j}$ to $S$ on $\\D_{l+j}$, for indices $j\\in\\{1,\\cdots,r\\}$.\n    \\end{enumerate}\n    Thus, $S$ is the desired conformal mating of the dynamical systems under consideration.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 65947,
+      "end_offset": 69345,
+      "start_page": 17,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=17",
+      "start_bbox": [
+        118.31,
+        335.789,
+        477.007,
+        344.636
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 17; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.4",
+      "statement_id": "statement-4.4",
+      "title": "Proof of Theorem 4.4",
+      "section_id": "4.2",
+      "text": "\\begin{proof}\nWe shall prove this statement in steps (cf. \\cite[Lemma~14.3]{luo2024general}).\n\\medskip\n    \n\\noindent\\textbf{Step 1: Welding a Riemann Surface.}    \n    Observe that $S:\\partial \\cD\\rightarrow \\partial \\cD$ is a homeomorphism that is orientation-reversing on $\\partial^0\\cD$. Further, $S$ is meromorphic on $\\cD$ and extends continuously to $\\partial^0\\cD$ preserving $\\partial^0\\cD$ . Hence, by Schwarz reflection principle $S$ extends to a holomorphic map in a neighborhood of $\\partial^0 \\cD$. As $S^{\\circ 2}\\big|_{\\partial^0\\cD} = \\mathrm{id}$, by the Identity Theorem, $S$ is a conformal involution in a neighborhood of $\\partial^0 \\cD$. We now weld $\\cD \\cup \\partial^0 \\cD$ with a copy of itself via the conformal involution $S: \\partial^0 \\cD\\rightarrow \\partial^0 \\cD$ (cf. \\cite[Chapter~2, Page~117]{ahlfors2015riemann}). The resulting object is a finite union of bordered Riemann surfaces of finite genus (see Figure~\\ref{top_weld_surf_1_fig}). We denote this surface by $\\Sigma^0$.\n\\begin{figure}\n\\captionsetup{width=0.98\\linewidth}\n    \\centering\n    \\includegraphics[width=0.88\\linewidth]{topology_welded_surface.png}\n    \\caption{A domain whose boundary is a wedge of three circles is uniformized by the disk (above). The single meeting point of the three circles opens up to three points drawn in black. The disks are then welded via the lift of the conformal involution near the boundary of the original domain. Finally, the topology of the surface one gets from such a welding procedure is illustrated.}\n    \\label{top_weld_surf_1_fig}\n\\end{figure}\n\\medskip\n\n\\noindent\\textbf{Step 2: Conformal Involution $\\eta$ on $\\Sigma^0$.}   \nThe welding of $\\cD\\cup \\partial^0\\cD$ with a copy of itself to get $\\Sigma^0$ comes with maps $\\psi_1$, $\\psi_2: \\cD\\cup \\partial^0\\cD \\rightarrow \\Sigma^0$, such that, \n\\begin{itemize}\n    \\item $\\psi_i$ is conformal in $\\cD$ and a homeomorphism on $\\cD\\cup \\partial^0 \\cD$, $i\\in\\{1,2\\}$, \n    \\item $\\psi_1(\\cD)\\cap \\psi_2(\\cD) = \\emptyset$,\n    \\item $\\psi_1(\\partial^0 \\cD) = \\psi_2(\\partial^0 \\cD)$ is a union of non-singular real analytic curves,\n    \\item $\\psi_2^{-1}\\circ\\psi_1 \\equiv S$ on $\\partial^0\\cD$, and\n    \\item $\\Sigma^0 = \\psi_1(\\cD\\cup \\partial^0\\cD) \\cup \\psi_2 (\\cD)$.\n\\end{itemize}\n\\vspace{1mm}\nDefine $\\eta: \\Sigma^0\\rightarrow \\Sigma^0$ as\n\\begin{equation*}\n    \\eta:= \\begin{cases*}\n      \\psi_2\\circ \\psi_1^{-1} & on $\\psi_1(\\cD\\cup \\partial^0\\cD)$ \\\\\n      \\psi_1\\circ \\psi_2^{-1}        & on $\\psi_2(\\cD)$.\n    \\end{cases*}\n\\end{equation*}\nSince $\\psi_1 = \\psi_2\\circ S$ on $\\partial^0\\cD$ and $S^{\\circ 2} \\equiv \\mathrm{id}$ on $\\partial^0\\cD$, we have that $\\eta$ is a conformal involution on $\\Sigma^0$.\n\\medskip\n\n\\noindent\\textbf{Step 3: $\\Sigma^0$ is a finite type surface.}\nDefine the meromorphic map, \n$$\\mathcal{R}: \\Sigma^0\\backslash \\psi_2((S\\vert_{\\cD})^{-1}(X)) \\rightarrow \\widehat{\\mathbb{C}}\\backslash X$$\nas follows, \n\\begin{equation*}\n    \\mathcal{R}:= \\begin{cases*}\n        \\psi_1^{-1} & on $\\psi_1(\\cD\\cup \\partial^0\\cD)$ \\\\\n        S\\circ \\psi_1^{-1}\\circ \\eta = S\\circ \\psi_2^{-1} & on $\\psi_2(\\cD\\backslash (S\\vert_\\cD)^{-1}(X))$\n    \\end{cases*}\n\\end{equation*}\nWe first claim that $\\mathcal{R}$ is a proper mapping. Indeed, $\\psi_1$, $\\psi_2$ being homeomorphisms are proper maps. As $S$ is continuous on $\\mathcal{D}$, for any sequence of points $\\{x_n\\}_n$ converging to $\\psi_2((S\\vert_{\\cD})^{-1}(X))$, the image sequence $\\mathcal{R}(x_n)$ converges to $X$. Now suppose that the sequence $\\{x_n\\}_n$ escapes to a boundary component of $\\Sigma^0$, then $\\psi_2^{-1}(x_n)$ converges to a point in $X$. Since $S\\vert_{\\overline{\\cD}}$ is continuous carrying $X$ to itself, it follows that $\\mathcal{R}(x_n) = S(\\psi_2^{-1}(x_n))$ converges to a point in $S(X) = X$.\nThis shows that $\\mathcal{R}$ is a proper holomorphic map. \n\nSuppose that $\\text{deg}(\\mathcal{R}) = \\infty$. Then, for points $z\\in \\widehat{\\mathbb{C}}\\backslash X$, the pre-image $\\mathcal{R}^{-1}(z)$ is an infinite set in $\\Sigma^0\\backslash \\psi_2((S\\vert_{\\cD})^{-1}(X))$. By the Identity Theorem, as $\\mathcal{R}$ is non-constant, $\\mathcal{R}^{-1}(z)$ accumulates either on $\\psi_2((S\\vert_{\\cD})^{-1}(X))$ or on $\\partial \\Sigma^0$ which violates the fact that $\\mathcal{R}$ is proper. Hence, $\\mathcal{R}$ is a finite degree branched cover from $\\Sigma^0\\backslash \\psi_2((S\\vert_{\\cD})^{-1}(X))$ to $\\widehat{\\mathbb{C}}\\backslash X$. \n\nWe make further punctures in $\\widehat{\\mathbb{C}}\\backslash X$ (if necessary) to ensure that $\\mathcal{R}$ is a covering map over the resulting punctured sphere. We then triangulate this punctured sphere, and lift the triangulation via the covering map $\\mathcal{R}$ to a triangulation upstairs. This would yield a finite triangulation on the surface $\\Sigma^0\\backslash \\psi_2((S\\vert_{\\cD})^{-1}(X))$, with finitely many points removed. This would force $\\Sigma^0\\backslash \\psi_2((S\\vert_{\\cD})^{-1}(X))$ to be a surface of finite type. This implies that $(S\\vert_{\\cD})^{-1}(X)$ is a finite set, and hence $\\Sigma^0$ is a finite union of punctured surfaces of finite genus. We will denote the compactification of $\\Sigma^0$ (which is obtained by filling in the finitely many punctures) by $\\Sigma$.\n\\medskip\n\n\\noindent\\textbf{Step 4: Explicit Algebraic Description of $S$.}\nBy the Riemann Removability Theorem, the maps $\\mathcal{R}$ and $\\eta$ extend holomorphically to the compact Riemann surface $\\Sigma$. We remark that if $\\Sigma$ is the Riemann sphere, one can after a change of coordinates assume that $\\eta(z)= 1/z$. Set $\\mathfrak{D} = \\psi_1(\\cD)$. Then from the definition of $\\mathcal{R}$ one obtains, \n$$\n\\mathcal{R}\\Big|_{\\Sigma\\backslash \\overline{\\mathfrak{D}}} \\equiv S\\Big|_{\\cD}\\circ \\mathcal{R}\\Big|_{\\mathfrak{D}}\\circ \\eta\\Big|_{\\Sigma\\backslash \\overline{\\mathfrak{D}}}\n$$\nwhich yields, \n$$\nS\\Big|_{\\cD} = \\mathcal{R}\\circ \\eta\\circ \\Big(\\mathcal{R}\\Big|_{\\mathfrak{D}}\\Big)^{-1}.\n$$\nThe facts that $\\eta(\\mathfrak{D})=\\Sigma\\backslash\\overline{\\mathfrak{D}}$ and\n $\\mathcal{R}:\\mathfrak{D}\\to\\cD$ is a conformal isomorphism follow directly from the construction. \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 76116,
+      "end_offset": 82261,
+      "start_page": 19,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=19",
+      "start_bbox": [
+        118.31,
+        546.905,
+        440.832,
+        555.752
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 19; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.6",
+      "statement_id": "statement-4.6",
+      "title": "Proof of Corollary 4.6",
+      "section_id": "4.2",
+      "text": "\\begin{proof}\nThe statements follow from the relation $S\\Big|_{\\cD} = \\mathcal{R}\\circ \\eta\\circ \\Big(\\mathcal{R}\\Big|_{\\mathfrak{D}}\\Big)^{-1}$. \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 82674,
+      "end_offset": 82832,
+      "start_page": 21,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=21",
+      "start_bbox": [
+        118.31,
+        520.956,
+        332.36,
+        529.803
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 21; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.7",
+      "statement_id": "statement-4.7",
+      "title": "Proof of Corollary 4.7",
+      "section_id": "4.2",
+      "text": "\\begin{proof}\n    Note that for indices $i \\in \\{1, 2, \\cdots, l\\}$ with $n_i\\geq 3$, the factor Bowen-Series map $A_{\\Gamma_{n_i, p_i}}$  has a unique critical value in $\\mathbb{D}$ at $0$ with $p_i$ distinct pre-images each of multiplicity $n_i$; and hence so does $A_{\\Gamma_i}$. Recall from Theorem~\\ref{conf_mating_thm} that the map $S:\\cT_i\\cap\\overline{\\cD}\\to\\cT_i$  is conjugate to $A_{\\Gamma_i}:\\overline{\\cU}_{\\Gamma_i}\\cap\\D\\to\\D$, for all $i\\in \\{1, 2, \\cdots, l\\}$. The result now follows directly from Relation~\\eqref{alg_char_eq}  (cf. \\cite[Proposition~4.14]{mj2023matings}). \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 83520,
+      "end_offset": 84125,
+      "start_page": 21,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=21",
+      "start_bbox": [
+        118.31,
+        629.749,
+        476.965,
+        640.648
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 21; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.11",
+      "statement_id": "statement-4.11",
+      "title": "Proof of Lemma 4.11",
+      "section_id": "4.3",
+      "text": "\\begin{proof}\nSince $S:\\partial\\cD\\to\\partial\\cD$ is an involution, we have that \n\\begin{align*}\n&S(\\partial^0\\Omega_{i_1})\\cap\\partial^0\\Omega_{i_2}\\neq\\emptyset\\\\\n\\iff & S(\\partial^0\\Omega_{i_2})\\cap\\partial^0\\Omega_{i_1}\\neq\\emptyset .\n\\end{align*}\nThe result now follows from the definition of $\\cG$.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 86017,
+      "end_offset": 86333,
+      "start_page": 22,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=22",
+      "start_bbox": [
+        118.31,
+        320.177,
+        365.034,
+        330.14
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 22; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.13",
+      "statement_id": "statement-4.13",
+      "title": "Proof of Lemma 4.13",
+      "section_id": "4.3",
+      "text": "\\begin{proof}\nThe equivalence of the first two statements is obvious from the definition of $\\cG$ and the induced map $\\widehat{\\eta}$.\n\nSuppose that $\\widehat{\\eta}(\\mathcal{C}_\\cG)=\\mathcal{C}_\\cG$. Since $\\widehat{\\eta}(v_i^\\pm)=v_i^\\mp$, it follows that $v_i^\\pm\\in V(\\mathcal{C}_\\cG)$ if and only if $v_i^\\mp\\in V(\\mathcal{C}_\\cG)$. Thus, $\\{i_1,\\cdots,i_\\alpha\\}=\\{j_1\\cdots,j_\\beta\\}$.\n\nThe third statement trivially implies the fourth.\n\nFinally, let $i\\in\\{i_1,\\cdots,i_\\alpha\\}\\cap\\{j_1\\cdots,j_\\beta\\}$. Then $\\Omega_i^-, \\Omega_i^+\\subset\\mathcal{C}_\\Sigma$. As $\\eta$ carries $\\Omega_i^-$ to $\\Omega_i^+$, we have $\\eta(\\mathcal{C}_\\Sigma)\\cap\\mathcal{C}_\\Sigma\\neq\\emptyset$. But the homeomorphism $\\eta$ must carry a component of $\\Sigma$ to a component of $\\Sigma$, and hence $\\eta(\\mathcal{C}_\\Sigma)=\\mathcal{C}_\\Sigma$.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 89220,
+      "end_offset": 90069,
+      "start_page": 23,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=23",
+      "start_bbox": [
+        118.31,
+        422.433,
+        476.987,
+        431.28
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 23; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.14",
+      "statement_id": "statement-4.14",
+      "title": "Proof of Theorem 4.14",
+      "section_id": "4.4.1",
+      "text": "\\begin{proof}\nRecall that $\\Sigma^0$ stands for the finite type surface obtained by gluing two copies of $\\cD\\cup\\partial^0\\cD$ via the boundary involution $S$, and $\\Sigma$ is its compactification. Recall also the welding maps $\\psi_1$ and $\\psi_2$; the conformal embeddings of $\\mathcal{D}\\cup\\partial^0\\cD$ into $\\Sigma$. Further, we have $\\mathfrak{D}=\\psi_1(\\cD)$ and $\\eta(\\mathfrak{D})=\\psi_2(\\cD)$.\nWe will denote the boundary of $\\mathfrak{D}$ in the punctured surface $\\Sigma^0$ by $\\partial^0\\mathfrak{D}$, so that $\\psi_1(\\partial^0\\cD)=\\psi_2(\\partial^0\\cD)=\\partial^0\\mathfrak{D}$. The boundary of $\\mathfrak{D}$ in the compact surface $\\Sigma$ will be denoted by the usual notation $\\partial\\mathfrak{D}$. Then, we have $\\Sigma = \\mathfrak{D} \\cup \\eta(\\mathfrak{D})\\cup \\partial\\mathfrak{D}$, and $\\Sigma^0 = \\mathfrak{D} \\cup \\eta(\\mathfrak{D})\\cup \\partial^0\\mathfrak{D}$.\n\n1) Let $\\phi$ be the quotient map from $\\mathcal{D}\\cup \\partial^0\\mathcal{D}$ onto $\\widecheck{\\Sigma}^0$, coming from the welding construction of $\\widecheck{\\Sigma}^0$. It is evident that the map $\\phi|_{\\mathcal{D}}$ is a conformal embedding. \nDefine the map $\\mathcal{Q}: \\Sigma^0 \\rightarrow \\widecheck{\\Sigma}^0$ as\n    \\begin{equation*}\n    \\mathcal{Q}\\equiv \\begin{cases*}\n      \\phi\\circ \\psi_1^{-1} & on $\\mathfrak{D}\\cup \\partial^0\\mathfrak{D}$, \\\\\n      \\phi\\circ \\psi_2^{-1}        & on $\\eta(\\mathfrak{D})$.\n    \\end{cases*}\n\\end{equation*}\nThe map $\\mathcal{Q}$ is clearly continuous on the (real-analytic) common boundary $\\partial^0\\mathfrak{D}$ because $\\phi\\equiv \\phi\\circ S$ on $\\partial^0\\cD$. This shows that $\\mathcal{Q}$ is a degree $2$ holomorphic map from the finite type surface $\\Sigma^0$ onto $\\widecheck{\\Sigma}^0$, and hence $\\widecheck{\\Sigma}^0$ is a finite type surface. \n\n2) By continuity of $\\mathcal{Q}$, punctures in $\\Sigma^0$ go to punctures in $\\widecheck{\\Sigma}^0$. This gives us an extended map $\\mathcal{Q}:\\Sigma \\rightarrow \\widecheck{\\Sigma}$, where $\\widecheck{\\Sigma}$ is the compactification of $\\widecheck{\\Sigma}^0$ (by abuse of notation, we shall reuse the name $\\mathcal{Q}$). Note that $\\mathcal{Q}\\circ\\eta \\equiv \\mathcal{Q}$. In other words, the involution $\\eta$ generates the group of deck transformations for $\\mathcal{Q}$. Therefore, $\\widecheck{\\Sigma} \\cong \\Sigma/\\langle\\eta\\rangle$.    \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 91923,
+      "end_offset": 94283,
+      "start_page": 24,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=24",
+      "start_bbox": [
+        118.31,
+        116.518,
+        477.015,
+        128.98
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 24; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.16",
+      "statement_id": "statement-4.16",
+      "title": "Proof of Theorem 4.16",
+      "section_id": "4.4.2",
+      "text": "\\begin{proof} \n1) Let $S:\\overline{\\cD}\\to\\widehat{\\C}$ be a weak B-involution on an inversive multi-domain $\\mathcal{D}$ realizing a conformal mating in the sense of Theorem~\\ref{conf_mating_thm}. Let $V_1, V_2, \\cdots, V_l$ be the components of $\\widehat{\\mathbb{C}}\\setminus\\overline{\\cD}$. In other words, $\\displaystyle T = \\bigcup_{i = 1}^l\\overline{V_i}$. \n\nWe will now show that the process of passing from $\\cD\\cup\\partial^0\\cD$ to $\\widecheck{\\Sigma}^0$ amounts to zipping the holes $V_i$.\nBy the very nature of the (factor) Bowen-Series map construction, we see that $\\partial V_i$ comes equipped with a line of symmetry, and $S\\vert_{\\partial V_i}$ is a topological reflection with respect to this line of symmetry. This line of symmetry connects (the projections of) two parabolic fixed points or order $2$ orbifold points of the corresponding Fuchsian group. Further, this line of symmetry divides $\\partial V_i$ into $\\partial V_i^+$ and $\\partial V_i^-$. We define as follows an equivalence relation $\\sim_{\\text{zip}}$ on  $\\widehat{\\mathbb{C}}\\setminus X$, where $X$ is the set of singular points on $\\partial\\Omega$. For $\\displaystyle x, y \\in \\widehat{\\mathbb{C}}\\setminus X=\\big(\\mathcal{D}\\cup\\partial^0\\mathcal{D}\\big) \\bigcup \\big(\\bigcup_{i = 1}^lV_i\\big)$, we say that $x \\sim_{\\text{zip}} y$, if and only if for some $i\\in \\{1, 2, \\cdots, l\\}$, $x$ and $y$ belong to the closure of a hyperbolic geodesic of $V_i$ connecting some point $p \\in \\partial V_i^-\\setminus X$ to $S(p)\\in \\partial V_i^+\\setminus X$. Clearly, $\\widecheck{\\Sigma}^0 \\cong \\big(\\widehat{\\mathbb{C}}\\backslash X\\big)/\\sim_{\\text{zip}}$. It also follows from the above zipping constructing that for each $i\\in\\{1,\\cdots,l\\}$, the image of $\\overline{V_i}\\setminus X$ in $\\big(\\widehat{\\mathbb{C}}\\backslash X\\big)/\\sim_{\\text{zip}}$ is the union of finitely many disjoint (possibly a single) simple arcs. This implies that $\\big(\\widehat{\\mathbb{C}}\\backslash X\\big)/\\sim_{\\text{zip}}$ is a finite union of punctured spheres. Hence, its compactification $\\widecheck{\\Sigma}$ is a disjoint union of finitely many copies of Riemann spheres.\n\n\n2) Recall from the discussion in Section~\\ref{weld_graph_subsec} that there are two types of components of $\\Sigma$: those that are preserved by the involution $\\eta$, and those that lie in a $2-$cycle under $\\eta$. If $\\mathcal{C}_\\Sigma$ is a component that lies in a $2-$cycle under $\\eta$, then by definition, $\\mathcal{Q}$ maps $\\mathcal{C}_\\Sigma \\sqcup \\eta(\\mathcal{C}_\\Sigma)$ to a component of $\\widecheck{\\Sigma}$, a Riemann sphere. Note that the degree of the map $\\mathcal{Q}\\big|_{\\mathcal{C}_\\Sigma}$ is $1$. This implies that both $\\mathcal{C}_\\Sigma$ and $\\eta(\\mathcal{C}_\\Sigma)$ are Riemann spheres. Now let $\\mathcal{C}_\\Sigma$ be an $\\eta$-invariant component of $\\Sigma$. Then $\\mathcal{Q}\\big|_{\\mathcal{C}_\\Sigma}$ maps $\\mathcal{C}_\\Sigma$ to a component of $\\widecheck{\\Sigma}$, a Riemann sphere. This gives rise to a degree two meromorphic function on $\\mathcal{C}_\\Sigma$, forcing $\\mathcal{C}_\\Sigma$ to be hyperelliptic (possibly the Riemann sphere). \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 96199,
+      "end_offset": 99333,
+      "start_page": 24,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=24",
+      "start_bbox": [
+        118.31,
+        659.696,
+        476.684,
+        669.659
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 24; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.18",
+      "statement_id": "statement-4.18",
+      "title": "Proof of Proposition 4.18",
+      "section_id": "4.4.2",
+      "text": "\\begin{proof}\nBy Theorems~\\ref{zipped_surface_thm} and~\\ref{hyperelliptic_thm}, the surface $\\widecheck{\\Sigma}$ is the Riemann sphere. Further, the critical points of the degree $2$ holomorphic map $\\mathcal{Q}:\\Sigma\\to\\Sigma/\\langle\\eta\\rangle\\cong\\widecheck{\\Sigma}\\cong\\widehat{\\C}$ are precisely the fixed points of $\\eta$. The result now follows from the Riemann-Hurwitz formula.\n\nRecall that $\\mathcal{R}:\\partial^0\\mathfrak{D}\\to\\partial^0\\mathfrak{\\cD}$ conjugates $\\eta\\vert_{\\partial^0\\mathfrak{D}}$ to $S\\vert_{\\partial^0\\cD}$. Thus, if $S$ has at least three fixed points on $\\partial^0\\cD$, then $\\eta$ has at least three fixed points on $\\partial^0\\mathfrak{D}$. The second statement now follows from this observation and the first part.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 100266,
+      "end_offset": 101031,
+      "start_page": 25,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=25",
+      "start_bbox": [
+        118.31,
+        529.136,
+        476.975,
+        537.983
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 25; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.19",
+      "statement_id": "statement-4.19",
+      "title": "Proof of Proposition 4.19",
+      "section_id": "4.4.3",
+      "text": "\\begin{proof}\n    1) Applying Lemma~\\ref{combi_lem} to the set of positive integers \n    $$\n   \\displaystyle \\{\\text{deg}(A_{\\Gamma_i})\\vert_{\\mathbb{S}^1}-1\\}_{i=1}^l \\bigcup \\{\\text{deg}(B_j)-1\\}_{j=1}^r,\n    $$ \n    we get a critically fixed polynomial $P$, whose $l+r$ finite critical points have the given multiplicities. By Theorem~\\ref{conf_mating_thm}, $P$, $\\{A_{\\Gamma_i}\\}_{i=1}^l$, and $\\{B_j\\}_{j=1}^r$ can be conformally mated. \n\n    2) Let $S: \\overline{\\mathcal{D}} \\rightarrow \\widehat{\\mathbb{C}}$ be the associated weak $B$-involution, with $X$ the set of singular points on $\\partial\\cD$, and let $\\widehat{\\C}\\setminus\\overline{\\mathcal{D}} = \\bigcup_{i=1}^lV_i$.  We shall show that the corresponding blender surface $\\Sigma$ is connected by showing that $\\mathcal{D}$ is connected.\n    Recall the David homeomorphism $H:\\widehat{\\C}\\to\\widehat{\\C}$ from Theorem~\\ref{conf_mating_thm}. By construction of $S$, each $V_i$ is contained in a Jordan domain $\\mathfrak{U}_i:=H(U_i)$, where $U_i$ is a bounded Fatou component of $P$. Further, $\\mathfrak{U}_i\\cap\\mathfrak{U}_j=\\emptyset$ for $i\\neq j$. It also follows from the construction of $S$ that each $V_i$ is a Jordan domain and $\\partial V_i\\cap\\partial \\mathfrak{U}_i$ is a subset of $X$. \n    By way of contradiction, suppose that $\\mathcal{D}$ is disconnected. Then, there exist $k>1$ and a chain $V_{i_0}, V_{i_1}, \\cdots, V_{i_{k-1}}$, such that $\\partial V_{i_j}$ meets $\\partial V_{i_{j+1}}$ at a point in $X$ for all $j\\in\\{0,\\cdots,k-1\\}$ (where $j+1$ is taken mod $k$). This implies that $\\partial\\mathfrak{U}_{i_j}$ touches $\\partial\\mathfrak{U}_{i_{j+1}}$ at a point in $X$ for all $j\\in\\{0,\\cdots,k-1\\}$ (where $j+1$ is taken mod $k$). But this contradicts the fact that the filled Julia set $K(P)$ of the polynomial $P$ is a full compact set and hence so is $H(K(P))$. Therefore, $\\cD$ is connected.    \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 102042,
+      "end_offset": 103946,
+      "start_page": 26,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=26",
+      "start_bbox": [
+        118.31,
+        120.133,
+        383.159,
+        128.98
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 26; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-4.20",
+      "statement_id": "statement-4.20",
+      "title": "Proof of Corollary 4.20",
+      "section_id": "4.4.3",
+      "text": "\\begin{proof}\n    By Proposition~\\ref{genus_prop}, we see that if $S$ has at least three fixed points on $\\partial^0\\mathcal{D}$, then $g\\geq 1$. Every orbifold point of order $2$ in $\\mathbb{D}/\\widehat{\\Gamma}_i$, $i\\in\\{1,\\cdots,l\\}$, corresponds to a unique fixed point of $S$ on $\\partial^0\\mathcal{D}$. The corollary now follows from the assumption that~$b\\geq 3$.  \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 104432,
+      "end_offset": 104816,
+      "start_page": 26,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=26",
+      "start_bbox": [
+        118.31,
+        431.521,
+        476.968,
+        442.467
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 26; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-6.2",
+      "statement_id": "statement-6.2",
+      "title": "Proof of Proposition 6.2",
+      "section_id": "6.1",
+      "text": "\\begin{proof} Let $\\mathcal{X}$ be a stand-in notation for the sets $\\{\\widetilde{\\mathcal{W}_i}\\}_{i=1}^{l}$, and $\\widetilde{\\cK}$. Clearly, by Relation~\\eqref{alg_char_cd}, one of the following holds for $z\\in \\mathcal{X}$,\n    $$\n    \\eta(z) \\in \\cR^{-1}(S(\\cR(z))), \\hspace{2mm}\\text{or}\\hspace{1.5mm} \\eta(z) \\in \\cR^{-1}(S^{-1}(\\cR(z))), \n    $$\n\\noindent depending on whether $z\\in \\mathcal{X}\\cap\\overline{\\mathfrak{D}}$ or $z\\in \\mathcal{X}\\backslash\\mathfrak{D}$. By definition, $\\cR(\\mathcal{X})$ is completely invariant under the conformal mating $S$, therefore, $\\eta(\\mathcal{X}) = \\mathcal{X}$. A similar reasoning applies to the second claim of the proposition.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 128400,
+      "end_offset": 129090,
+      "start_page": 34,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=34",
+      "start_bbox": [
+        118.31,
+        119.602,
+        360.672,
+        129.565
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 34; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-6.6",
+      "statement_id": "statement-6.6",
+      "title": "Proof of Lemma 6.6",
+      "section_id": "6.2",
+      "text": "\\begin{proof}\n    Enumerate the $p_i$ components of $\\widetilde{\\cT_i}$ by the index set $\\cI:=\\{1,\\cdots,p_i\\}$. Let $\\Phi: \\mathbb{D}\\times\\cI\\rightarrow \\widetilde{\\cT_i}$ be a biholomorphism such that for each $j\\in \\cI$, the map $\\Phi$ sends $(0, j)$ to the unique pre-image of the distinguished point (of $\\cT_i$) in the $j$-th component of $\\widetilde{\\cT_i}$. Therefore, after possibly pre-composing $\\Phi$ with a rotation on each $\\mathbb{D}\\times\\{j\\}$, we can write $\\widetilde{\\cR}:= \\mathfrak{X}_i^{-1}\\circ \\cR\\circ \\Phi:\\mathbb{D}\\times\\cI\\rightarrow \\D$ as\n\\begin{equation}\\label{auxillary_cover_eq}\n    (w, j) \\mapsto w^{n_i}, \\hspace{2mm}w\\in \\mathbb{D}, \\hspace{1mm}j\\in \\cI.\n    \\end{equation}\n    Now define the map $\\widetilde{\\tau}_i:\\mathbb{D}\\times\\cI\\rightarrow\\mathbb{D}\\times\\cI$ as follows,\n\\begin{equation}\\label{auxillary_aut_eq}\n    \\widetilde{\\tau}_i(w, j):= \\begin{cases*}\n        (w, j+1), & $\\text{for } j \\in \\{1, \\cdots, p_i-1\\}$\\\\\n        (e^{\\frac{2i\\pi}{n_i}}w, 1), & $\\text{for } j = p_i$.\n    \\end{cases*}\n    \\end{equation}\n    One can check using Formulas~\\eqref{auxillary_cover_eq} and~\\eqref{auxillary_aut_eq} that, \n    $$\n    \\widetilde{\\tau}_i^{n_ip_i} = \\text{id}, \\hspace{2mm} \\text{and  }\\widetilde{\\cR}^{-1}(\\widetilde{\\cR}(w, j)) = \\{(w, j), \\widetilde{\\tau}(w, j), \\cdots, \\widetilde{\\tau}^{n_ip_i-1}(w, j)\\},\n    $$\n    for $(w, j) \\in \\mathbb{D}\\times\\cI$. The required automorphism $\\tau_i$ is given by $\\Phi\\circ\\widetilde{\\tau}_i\\circ\\Phi^{-1}$.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 137772,
+      "end_offset": 139290,
+      "start_page": 35,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=35",
+      "start_bbox": [
+        118.31,
+        714.097,
+        476.963,
+        724.996
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 35; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-6.7",
+      "statement_id": "statement-6.7",
+      "title": "Proof of Corollary 6.7",
+      "section_id": "6.2",
+      "text": "\\begin{proof}\n    By Lemma~\\ref{aut_corr_lem} it is clear that the forward branches of $\\mathfrak{C}_i$ on $\\widetilde{\\cT}_i$ are given by $\\tau_i\\circ\\eta, \\cdots, \\tau^{n_ip_i-1}_i\\circ\\eta$. Thanks to the relation $\\tau_i = (\\tau_i^2\\circ\\eta)\\circ(\\tau_i\\circ\\eta)^{-1}$, we conclude that\n    $$\n    \\langle\\tau_i\\circ\\eta, \\cdots, \\tau^{n_ip_i-1}_i\\circ\\eta\\rangle = \\langle\\eta, \\tau_i\\rangle.\n    $$\n    Hence, the corollary follows.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 139521,
+      "end_offset": 139974,
+      "start_page": 36,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=36",
+      "start_bbox": [
+        118.31,
+        302.946,
+        476.972,
+        313.846
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 36; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-6.8",
+      "statement_id": "statement-6.8",
+      "title": "Proof of Proposition 6.8",
+      "section_id": "6.2",
+      "text": "\\begin{proof}\nLet $\\Phi$ be as in the proof of Lemma~\\ref{aut_corr_lem}. Recall that $\\widetilde{\\cT}_i$ has $p_i$ components $\\dT_{i,1}, \\dT_{i,2}, \\cdots, \\dT_{i, p_i}$, where $\\dT_{i,j} := \\Phi(\\mathbb{D}\\times\\{j\\})$, for $1\\leq j\\leq p_i$. The interiors of these $p_i$ components divide $\\partial\\mathfrak{D}\\cap\\widetilde{\\cT}_i$ into $p_i$ open arcs. We shall refer to the collection of these $p_i$ open arcs as the collection of \\emph{welding lines}. \n    \nNote that $\\Phi\\vert_{\\D\\times\\{j\\}}$ maps $\\text{int}(\\psi_{\\rho_i}(\\Pi))\\times\\{j\\})$ conformally onto $\\dT_{i,j}\\cap\\text{int}\\widetilde{\\cT}^0_i$, and extends homeomorphically to the boundary (in $\\mathbb{D}\\times\\{j\\}$).  After possibly pre-composing the maps $\\Phi|_{\\D\\times\\{j\\}}$ with suitable powers of $M_{\\omega_i}$, we can assume that $\\Phi\\vert_{\\D\\times\\{j\\}}$ takes the bi-infinite geodesic $\\psi_{\\rho_i}(C_{1,j})\\times\\{j\\}\\subset \\partial\\psi_{\\rho_i}(\\Pi)\\times\\{j\\}$ to the welding line in $\\dT_{i,j}$, for $1\\leq j\\leq p_i$. Let \n    $$\n    G_j:= \\{f\\in \\langle\\eta, \\tau_i\\rangle: f(\\dT_{i,j}) = \\dT_{i,j}\\}\n    $$\n    be the stabilizer of $\\dT_{i,j}$ under the action of $\\langle\\eta, \\tau_i\\rangle$. \nNote that by definition, the cyclic group $\\langle\\tau_i\\rangle$ generated by the conformal automorphism $\\tau_i$ acts transitively on the components of $\\widetilde{\\cT}_i$. Therefore, it is enough to show that $G_1$ acts properly discontinuously on $\\dT_{i,1}$, and that the quotient orbifold $\\dT_{i,1}/G_1$ is biholomorphic to $\\mathbb{D}/\\widehat{\\Gamma}_i$. Observe that from the proof of Lemma~\\ref{aut_corr_lem}, we have the following commutative diagram.\n    \\begin{equation}\\label{prop6.8_comm_eq}\n        \\begin{tikzcd}\n\t   {\\mathbb{D}\\times\\{j\\}} && \\dT_{i,j} \\\\\n\t\\\\\n\t{\\mathbb{D}} && {\\mathcal{T}_i}\n\t\\arrow[\"{\\Phi|_{\\mathbb{D}\\times\\{j\\}}}\", from=1-1, to=1-3]\n\t\\arrow[\"{\\widetilde{\\mathcal{R}}|_{\\mathbb{D}\\times\\{j\\}}}\"', from=1-1, to=3-1]\n\t\\arrow[\"{\\mathcal{R}}\", from=1-3, to=3-3]\n\t\\arrow[\"{\\mathfrak{X}_i}\"', from=3-1, to=3-3]\n\\end{tikzcd}\n    \\end{equation}\n\n\\noindent For the sake of brevity, for $1\\leq j\\leq p_i$, we denote $\\widetilde{\\cR}|_{\\mathbb{D} \\times \\{j\\}}$ simply by $\\widetilde{\\cR}_j$, the restriction $\\cR|_{\\dT_{i,j}}$ by $\\cR_j$, and $\\Phi|_{\\mathbb{D} \\times \\{j\\}}$ by $\\Phi_j$.  By definition of (factor) Bowen-Series maps (see Section~\\ref{fBS_subsec}), we have, \n\\begin{equation}\\label{fbS_def_eq}\n    \\widetilde{\\cR}_j\\circ A^{\\text{BS}}_{\\Gamma_i} = A^{\\text{fBS}}_{\\Gamma_i}\\circ \\widetilde{\\cR}_j,\\ \\mathrm{on}\\ \\left( \\D\\setminus\\Int{\\psi_{\\rho_i}(\\Pi)} \\right)\\times\\{j\\},\n\\end{equation}\nwhere by $A^{\\text{BS}}_{\\Gamma_i}$ we mean the possibly discontinuous Bowen-Series map that descends down to $A^{\\text{fBS}}_{\\Gamma_i}$ under the $n_i$-fold branched cover $w\\mapsto w^{n_i}$. In addition, by the definition of $\\widetilde{\\tau}_i$ and $\\tau_i$, we see that the following holds,\n\\begin{equation}\\label{uniformising_maps_eq}\n    \\tau_i^{j-1}\\circ\\Phi_1\\circ\\widetilde{\\tau}_i^{-(j-1)} = \\Phi_j,\\ \\mathrm{on}\\ \\D\\times\\{j\\}.\n\\end{equation}\nNow by Relation~\\ref{prop6.8_comm_eq}, there exists a local inverse branch of $\\cR_j$ for which the following identity holds between the germs of functions near $\\partial \\psi_{\\rho_i}(C_{1,j})\\times\\{j\\}$, for $1\\leq j\\leq p_i$.\n\n\\begin{equation}\\label{long_derivation_eq}\n    \\begin{split}\n        \\Phi_j\\circ A_{\\Gamma_i}^{\\text{BS}} &= (\\cR^{-1}_j\\circ\\mathfrak{X}_i\\circ\\widetilde{\\cR}_j)\\circ A_{\\Gamma_i}^{\\text{BS}}\\\\\n        &= \\cR^{-1}_j\\circ\\mathfrak{X}_i\\circ A_{\\Gamma_i}^{\\text{fBS}}\\circ \\widetilde{\\cR}_j \\hspace{2mm}\\text{        (by \\ref{fbS_def_eq})}\\\\\n        &= \\cR^{-1}_j\\circ S\\circ\\mathfrak{X}_i\\circ\\widetilde{\\cR}_j\\hspace{2mm}\\text{        (by \\ref{fBS_conj_eq})}\\\\\n        &= \\cR^{-1}_j\\circ S\\circ\\mathfrak{X}_i\\circ(\\mathfrak{X}_i^{-1}\\circ \\cR_j\\circ \\Phi_j)\\hspace{2mm}\\text{        (by definition of }\\widetilde{\\cR})\\\\\n        &= \\cR^{-1}_j\\circ S\\circ\\cR_j\\circ \\Phi_j\\\\\n        &= \\cR^{-1}_j\\circ\\cR_j\\circ\\eta\\circ \\Phi_j\\hspace{2mm}\\text{        (by \\ref{alg_char_cd})}\\\\ \n        &= f_j\\circ\\Phi_j,\\hspace{2mm}\\text{  \n        (for some }f_j\\in G_j).\n    \\end{split}\n\\end{equation}\nNote that the local germ of $\\Phi_j\\circ A_{\\Gamma_i}^{\\text{BS}}\\circ \\Phi^{-1}_j$, near $\\Phi_j\\left(\\partial \\psi_{\\rho_i}(C_{1,j})\\times\\{j\\}\\right)$, is precisely the local germ of the generator $\\rho_i(g_{1,j})$ of $\\Gamma_i$, conjugated by $\\Phi_j$. \nWe denote by $\\gamma_j\\in G_1$ the element $\\tau_i^{-(j-1)}\\circ f_j\\circ \\tau_i^{j-1}$, and note that\nby Equations~\\eqref{uniformising_maps_eq} and~\\eqref{long_derivation_eq}, we have the relation\n\\begin{equation}\\label{generators_eq}\n    \\widetilde{\\tau}_i^{-(j-1)}\\circ A_{\\Gamma_i}^{\\text{BS}}\\circ\\widetilde{\\tau}_i^{j-1} = \\Phi_1^{-1}\\circ\\tau_i^{-(j-1)}\\circ f_j\\circ \\tau_i^{j-1}\\circ \\Phi_1=\\Phi_1^{-1}\\circ\\gamma_j\\circ \\Phi_1,  \n\\end{equation}\nnear $\\partial \\psi_{\\rho_i}(C_{1,j})\\times\\{1\\}$.\n\nFurther, by construction, $\\tau_i^{p_i}$ restricts to an order $n_i$ automorphism of $\\dT_{i,1}$, and $\\Phi_1$ conjugates $M_{\\omega_i}$ to $\\tau_i^{p_i}$. Therefore, it follows by the Identity Theorem and Equations~\\eqref{long_derivation_eq} and~\\eqref{generators_eq} that the generators of $\\widehat{\\Gamma}_i$, under conjugation by $\\Phi_1$, generate $G_1$. Set \n$$\n\\mathfrak{S}:= \\Phi_1(\\psi_{\\rho_i}(\\widehat{\\Pi})),\n$$\n\\noindent where $\\widehat{\\Pi}$ is the fundamental domain of $\\widehat{\\Gamma}_{n_i, p_i}$ (see Section~\\ref{fBS_subsec}). The maps $\\{\\gamma_j\\}_{j\\in \\cI}$ and $\\tau_i^{p_i}$ furnish the closed fundamental domain $\\mathfrak{S}$ with side-pairings that are conjugate to the preferred side-pairing transformations of $\\widehat{\\Gamma}_i$.\n\n\n It now follows that the group $\\langle\\eta, \\tau_i\\rangle$ acts properly discontinuously on $\\widetilde{\\cT}_i$, admitting $\\mathfrak{S}$ as its closed fundamental domain. And finally, the map $\\Phi$ would descend down the quotient to give an explicit biholomorphism between the orbifolds $\\widetilde{\\cT_i}/\\langle\\eta, \\tau_i\\rangle$ and $\\mathbb{D}/\\widehat{\\Gamma}_i$.  \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 140251,
+      "end_offset": 146372,
+      "start_page": 36,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=36",
+      "start_bbox": [
+        118.31,
+        405.569,
+        476.962,
+        416.468
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 36; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-6.10",
+      "statement_id": "statement-6.10",
+      "title": "Proof of Proposition 6.10",
+      "section_id": "6.3",
+      "text": "\\begin{proof}\n    The map\n    $$\n    \\Big(\\cR\\big|_{\\mathfrak{D}}\\Big)^{-1}\\circ R\\circ \\eta: \\widetilde{\\cV}_j\\cap \\mathfrak{D}\\rightarrow\\widetilde{\\cV}_j\\cap \\mathfrak{D}\n    $$\n    is a forward branch of the correspondence $\\mathfrak{C}$, and clearly it is conformally conjugate to $S\\big|_{\\cV_j}$ via the univalent map $\\cR: \\widetilde{\\cV}_j\\cap \\mathfrak{D}\\rightarrow \\cV_j$. Further, it is easy to see that the map \n    $$\n    \\eta\\circ \\Big(\\cR\\big|_{\\mathfrak{D}}\\Big)^{-1}\\circ R: \\widetilde{\\cV}_j\\setminus \\overline{\\mathfrak{D}} \\rightarrow \\widetilde{\\cV}_j\\setminus \\overline{\\mathfrak{D}}\n    $$\n    is a backward branch of $\\mathfrak{C}$. The involution $\\eta$ restricts to a conformal conjugacy between the backward and forward branches of the correspondence $\\mathfrak{C}$. Now, since $S\\big|_{\\cV_j}$ is conformally conjugate to $B_j$, the result follows.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 148372,
+      "end_offset": 149262,
+      "start_page": 38,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=38",
+      "start_bbox": [
+        118.31,
+        194.398,
+        188.818,
+        203.245
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 38; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-6.5",
+      "statement_id": "statement-6.5",
+      "title": "Proof of Theorem 6.5",
+      "section_id": "6.4",
+      "text": "\\begin{proof}[Proof of Theorem~\\ref{corr_recover_thm}]\nThe first item is the content of Corollary~\\ref{group_action_corr} and Proposition~\\ref{orbifold_isom_prop}, while the second item follows from Proposition~\\ref{recover_Blaschke_prop}.  \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 150730,
+      "end_offset": 150983,
+      "start_page": 38,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=38",
+      "start_bbox": [
+        118.31,
+        509.125,
+        476.997,
+        517.972
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 38; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-A",
+      "statement_id": "statement-A",
+      "title": "Proof of Theorem A",
+      "section_id": "6.4.2",
+      "text": "\\subsubsection{Proof of Theorem~\\ref{mating_thm_intro}}\\label{mating_thm_intro_proof_subsec}\n\nBy Proposition~\\ref{mating_surf_exists_prop}, we know that the groups $\\{\\widehat{\\Gamma}_i\\}_{i=1}^l$ and the Blaschke products $\\{B_j\\}_{j=1}^r$ can be conformally mated, and that the associated blender surface is hyperelliptic. The conclusion now follows directly from Theorem~\\ref{corr_recover_thm}.\n\n",
+      "format": "author-tex",
+      "source_offset": 152971,
+      "end_offset": 153370,
+      "start_page": 39,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=39",
+      "start_bbox": [
+        118.31,
+        154.23,
+        466.081,
+        165.533
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 39; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-7.1",
+      "statement_id": "statement-7.1",
+      "title": "Proof of Proposition 7.1",
+      "section_id": "7.1",
+      "text": "\\begin{proof}\n    Let us denote by $\\{\\mathfrak{X}_i\\}_{i=1}^{l+r},\\ \\mathfrak{X}_P$, and by $\\{\\mathfrak{X}'_i\\}_{i=1}^{l+r},\\ \\mathfrak{X}'_P$, the conformal conjugacies associated with the maps $S$ and $S'$, respectively (see the proof of Theorem~\\ref{conf_mating_thm}). For $1 \\leq i \\leq l$, the map $S$ is univalent on every component of $\\mathcal{W}_i$ except $\\mathcal{T}_i$. Similarly, for $1 \\leq j \\leq r$, $S$ is univalent on every component of $\\mathcal{W}_{l+j}$ except $\\mathcal{V}_j$. An analogous statement holds for $S'$ in its domain of definition $\\overline{\\mathcal{D}'}$. Therefore, for each $1\\leq i\\leq l+r$, the maps, $\\mathfrak{X}_P'\\circ\\mathfrak{X}_P^{-1}$, $\\mathfrak{X}_i'\\circ\\mathfrak{X}_i^{-1}$, and,\n    $$\n    (S')^{-n}\\circ\\mathfrak{X}_i'\\circ\\mathfrak{X}_i^{-1}\\circ S^{\\circ n},\n    $$ \n    defined on the pre-images $\\left\\{S^{-n}\\left(\\overline{\\cT}_i\\right)\\right\\}_{i=1}^l$ and $\\left\\{S^{-n}\\left(\\overline{\\cV_j}\\right)\\right\\}_{j=1}^r$, for $n\\geq 1$, patch together to give a homeomorphism $M:\\widehat{\\C}\\rightarrow\\widehat{\\C}$, that is conformal away from $\\mathfrak{X}_P(\\mathcal{J}(P))$. The basin of infinity of $P$ is a John domain \\cite[Chapter~7, Theorem~3.1]{carleson1996complex}; hence $\\mathcal{J}(P)$ is $W^{1,1}-$removable \\cite{jones2000removability}. By \\cite[Theorem~2.7]{lyubich2020david}, the set $\\mathfrak{X}_P(\\mathcal{J}(P))$ is conformally removable. Thus, the map $M$ extends conformally to all of $\\widehat{\\C}$ giving the desired M\\\"obius map. \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 157214,
+      "end_offset": 158743,
+      "start_page": 40,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=40",
+      "start_bbox": [
+        118.31,
+        118.005,
+        256.662,
+        129.895
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 40; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-7.2",
+      "statement_id": "statement-7.2",
+      "title": "Proof of Proposition 7.2",
+      "section_id": "7.1",
+      "text": "\\begin{proof}\n    Set $\\Sigma_i^0:= \\Sigma\\setminus(\\cR_i|_{\\partial\\mathfrak{D}_i})^{-1}(X)$, $i\\in\\{1,2\\}$, where $X$ is the set of singular points on $\\partial\\cD$. Define $M:\\Sigma_1^0\\rightarrow\\Sigma_2$ as follows,\n    \\begin{equation*}\n        M(z):= \\begin{cases*}\n        \\big(\\cR_2\\big|_{\\mathfrak{\\overline{\\mathfrak{D}}_2}}\\big)^{-1}\\circ \\cR_1(z), & if $z\\in \\Sigma_1^0\\cap\\overline{\\mathfrak{D}}_1$,\\\\\n        \\eta_2\\circ\\big(\\cR_2\\big|_{\\mathfrak{\\overline{\\mathfrak{D}}_2}}\\big)^{-1}\\circ \\cR_1\\circ\\eta_1, &if $z\\in \\Sigma_1^0\\setminus\\overline{\\mathfrak{D}}_1$.\n        \\end{cases*}\n    \\end{equation*}\n    Note that the function $\\big(\\cR_2|_{\\mathfrak{\\partial\\mathfrak{D}_2}}\\big)^{-1}\\circ \\cR_1(z)$ conjugates $\\eta_1|_{\\partial\\mathfrak{D}_1\\cap\\Sigma_1^0}$ to $\\eta_2|_{\\partial\\mathfrak{D}_2\\cap\\Sigma_2^0}$. Therefore, $M$ is continuous on $\\Sigma_1^0$ and conformal away from $\\Sigma_1^0\\cap\\partial\\mathfrak{D}_1$. Further, $\\Sigma_1^0\\cap\\partial\\mathfrak{D}_1$ is a disjoint union of non-singular analytic curves, and is hence conformally removable. Therefore, $M$ is an injective holomorphic map on $\\Sigma_1^0$. Finally, by the Riemann Removability Theorem, $M$ extends to $\\Sigma_1$ univalently. From the definition of $M$, it now follows that $\\eta_2\\circ M = M\\circ \\eta_1$, $M(\\mathfrak{D}_1) = \\mathfrak{D}_2$, and $\\cR_1 = \\cR_2\\circ M$.  \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 159808,
+      "end_offset": 161198,
+      "start_page": 40,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=40",
+      "start_bbox": [
+        118.31,
+        456.918,
+        177.629,
+        467.307
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 40; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-7.3",
+      "statement_id": "statement-7.3",
+      "title": "Proof of Proposition 7.3",
+      "section_id": "7.2",
+      "text": "\\begin{proof}(cf. \\cite[\\S 5.3]{luo2025}.)\n    Define a map, \n    \\begin{equation*}\n        \\widecheck{\\cR}:\\Sigma\\rightarrow\\widehat{\\C}, \\hspace{6mm}\\widecheck{\\cR}:= \\begin{cases*}\n        \\varphi\\circ\\cR, & on $\\overline{\\mathfrak{D}}$\\\\\n        S'\\circ\\varphi\\circ\\cR\\circ\\eta, & on $\\Sigma\\setminus\\mathfrak{D}$.\n    \\end{cases*}\n    \\end{equation*}\n    The piecewise definitions patch up continuously because we have, $S\\circ \\cR\\circ\\eta = \\cR$ on $\\partial\\mathfrak{D}$, and $\\varphi\\circ S = S'\\circ \\varphi$ on $\\partial\\cD$. As a result, $\\widecheck{\\cR}$ is quasi-regular. Let $\\mu$ be the Beltrami coefficient on $\\Sigma$ defined as the pull-back of the standard complex structure on $\\widehat{\\C}$ under the map $\\widecheck{\\cR}$. By construction, \n    $$\n    S' = \\widecheck{\\cR}\\circ\\eta\\circ\\left(\\widecheck{\\cR}\\big|_{\\mathfrak{D}}\\right)^{-1},\n    $$\n    which implies that $\\mu$ is $\\eta-$invariant. Let $\\widecheck{\\varphi}$ be the quasiconformal straightening map for $\\mu$; i.e., $\\widecheck{\\varphi}:\\Sigma\\to\\widetilde{\\Sigma}$ is a quasiconformal homeomorphism that pulls back the standard complex structure on some Riemann surface $\\widetilde{\\Sigma}$ (not necessarily biholomorphic to $\\Sigma)$ to the complex structure given by $\\mu$ on $\\Sigma$. Define the map, \n    $$\n    \\widetilde{\\cR}:\\widetilde{\\Sigma}\\rightarrow\\widehat{\\C}, \\hspace{6mm} \\widetilde{\\cR}:=\\widecheck{\\cR}\\circ\\widecheck{\\varphi}^{-1}.  \n    $$\n    Since $\\varphi$ conjugates the action of $S$ to that of $S'$ away from $\\bigcup_{j=1}^r\\cV_j$, we conclude that the holomorphic branched cover $\\widetilde{\\cR}$ satisfies \n    $$\n    \\widetilde{\\cR} \\equiv \\varphi\\circ\\cR\\circ\\widecheck{\\varphi}^{-1}\n    $$ \n    outside $\\widetilde{\\phi}\\left(\\eta\\left(\\left(\\cR\\vert_{\\mathfrak{D}}\\right)^{-1}\\left(\\bigcup_{j=1}^r\\cV_j\\right)\\right)\\right)$\n    Further, the map $\\widecheck{\\varphi}\\circ\\eta\\circ\\widecheck{\\varphi}^{-1}$ is an involution on $\\widetilde{\\Sigma}$ with $2g+2$ fixed points, where $g$ is the genus of the surface $\\Sigma$. Therefore, $\\widecheck{\\varphi}\\circ\\eta\\circ\\widecheck{\\varphi}^{-1} = \\widetilde{\\eta}$, where $\\widetilde{\\eta}$ is a hyperelliptic involution on $\\widetilde{\\Sigma}$. Now set, $\\widetilde{\\mathfrak{D}}:= \\widecheck{\\varphi}(\\mathfrak{D})$, and observe that,\n    $$\n    S'\\big|_{\\cD'} = \\widetilde{\\cR}\\circ\\widetilde{\\eta}\\circ\\left(\\widetilde{\\cR}\\big|_{\\widetilde{\\mathfrak{D}}}\\right)^{-1}.\n    $$\n    Therefore, the $4-$tuples $(\\widetilde{\\Sigma}, \\widetilde{\\cR}, \\widetilde{\\mathfrak{D}}, \\widetilde{\\eta})$ and $(\\Sigma', \\cR', \\mathfrak{D}', \\eta')$ both satisfy the hypotheses of Proposition~\\ref{uniqeness_of_mero_prop} for the standard conformal mating $S':\\overline{\\mathcal{D}'}\\rightarrow\\widehat{\\C}$. This gives us a biholomorphism $M:\\widetilde{\\Sigma}\\rightarrow\\Sigma'$ satisfying $\\eta'\\circ M = M\\circ \\widetilde{\\eta}$, $M(\\widetilde{\\mathfrak{D}}) = \\mathfrak{D}'$, and $\\widetilde{\\cR} = \\cR'\\circ M$. It is now immediately checked that the map $\\widetilde{\\varphi}:= M\\circ\\widecheck{\\varphi}$ is the desired quasiconformal map with $\\cR'\\equiv \\widecheck{\\cR}\\circ\\widetilde{\\phi}^{-1}$ and $\\widetilde{\\phi}\\circ\\eta\\circ\\widetilde{\\phi}^{-1}\\equiv \\eta'$.\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 164391,
+      "end_offset": 167634,
+      "start_page": 41,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=41",
+      "start_bbox": [
+        118.31,
+        349.518,
+        303.126,
+        359.48
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 41; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-7.4",
+      "statement_id": "statement-7.4",
+      "title": "Proof of Corollary 7.4",
+      "section_id": "7.2",
+      "text": "\\begin{proof}\n   We continue to use the notation introduced in Proposition~\\ref{qc_lift_prop}. Also recall from Section~\\ref{inv_partition_corr_subsec} that $\\Lambda(\\mathfrak{C})=\\cR^{-1}(\\partial\\cK)$ and $\\Lambda(\\mathfrak{C}')=(\\cR')^{-1}(\\partial\\cK')$, where $\\cK, \\cK'$ are the non-escaping sets of $S, S'$, respectively. \n   \n   Note that since $\\phi$ is a conjugacy between $S$ and $S'$ away from $\\bigcup_{j=1}^r\\cV_j$, it carries $\\partial\\cK$ onto $\\partial\\cK'$. This fact, and the definition of the quasi-regular map $\\widecheck{\\cR}$, together show that $\\widecheck{\\cR}^{-1}(\\partial\\cK')=\\Lambda(\\mathfrak{C})$. \n   Taking the relation $\\cR'\\equiv \\widecheck{\\cR}\\circ\\widetilde{\\phi}^{-1}$ into consideration, we now have that\n   $$\n   \\Lambda(\\mathfrak{C}')= (\\cR')^{-1}(\\partial\\cK')=\\widetilde{\\phi}\\left(\\widecheck{\\cR}^{-1}(\\partial\\cK')\\right)=\\widetilde{\\phi}(\\Lambda(\\mathfrak{C})).\n   $$\n   Finally, as $\\cR'=\\phi\\circ\\cR\\circ\\widetilde{\\phi}^{-1}$ on $\\widetilde{\\phi}(\\Lambda(\\mathfrak{C}))=\\Lambda(\\mathfrak{C}')$, and $\\widetilde{\\phi}\\circ\\eta=\\eta'\\circ\\widetilde{\\phi}$, the following conjugacy relation holds between the local branches of $\\mathfrak{C}\\vert_{\\Lambda(\\mathfrak{C})}$ and $\\mathfrak{C}'\\vert_{\\Lambda(\\mathfrak{C}')}$:\n   \\begin{align*}\n\\widetilde{\\phi}\\circ\\left(\\cR^{-1}\\circ\\cR\\circ\\eta\\right)\\circ\\widetilde{\\phi}^{-1}&=(\\widetilde{\\phi}\\circ\\cR^{-1}\\circ\\phi^{-1})\\circ(\\phi\\circ\\cR\\circ\\widetilde{\\phi}^{-1})\\circ(\\widetilde{\\phi}\\circ\\eta\\circ\\widetilde{\\phi}^{-1})\\\\\n&=(\\cR')^{-1}\\circ\\cR'\\circ\\eta'.\n   \\end{align*}\n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 167849,
+      "end_offset": 169435,
+      "start_page": 42,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=42",
+      "start_bbox": [
+        118.31,
+        150.499,
+        477.016,
+        159.346
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 42; exact printed heading match"
+    },
+    {
+      "id": "proof-statement-B",
+      "statement_id": "statement-B",
+      "title": "Proof of Theorem B",
+      "section_id": "7.6",
+      "text": "\\begin{proof}[Proof of Theorem~\\ref{hurwitz_thm_intro}]\n    The maps $\\mathfrak{B}$, $\\mathfrak{B}'$, constructed in Sections~\\ref{equivalence_of_corr_subsec} and~\\ref{injectivity_subsec}, show the existence of an injective map from $\\mathcal{M}$ into the Hurwitz space $\\mathcal{H}_{g, d, q}^{\\text{hyp}}$. \n\\end{proof}",
+      "format": "author-tex",
+      "source_offset": 186004,
+      "end_offset": 186324,
+      "start_page": 46,
+      "start_source_url": "https://arxiv.org/pdf/2508.18711v1#page=46",
+      "start_bbox": [
+        118.31,
+        153.981,
+        476.988,
+        163.784
+      ],
+      "start_page_scope": "verified-starting-page",
+      "locator_evidence": "reviewed PDF page 46; exact printed heading match"
     }
   ],
   "figures": [
@@ -1721,7 +3056,26 @@
       "caption_tex": "Left: Depicted is a side-pairing of the first kind. The quotient surface for the group generated by these side-pairings has three cusps and no orbifold points. Right: A side-pairing of the second kind is shown here. The corresponding quotient surface has two order $2$ orbifold points and two cusps.",
       "page": 10,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=10",
-      "skill_asset": "assets/figure/figure-1.jpg"
+      "skill_asset": "assets/figure/figure-1.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-1.jpg",
+      "heading": "Side-pairings and quotient surfaces",
+      "caption": "Two disk diagrams show side-pairings. The left quotient has three cusps; the right has two cusps and two orbifold points of order two.",
+      "alt": "Figure 1. Two disk diagrams show side-pairings. The left quotient has three cusps; the right has two cusps and two orbifold points of order two.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 1086,
+      "height": 511,
+      "sha256": "75b5c16f895737a69f391da429061c3cc2de98851ff497ec28a238c143606572",
+      "byte_length": 92325,
+      "crop_bbox": [
+        120,
+        112,
+        475,
+        279
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 1 crop on PDF page 10",
+      "source_offset": 39618,
+      "end_offset": 39927
     },
     {
       "number": 2,
@@ -1730,7 +3084,26 @@
       "caption_tex": "Illustrated above is the construction for $n = 3$, $p = 1$. The side pairing $g_1$ is defined to be reflection along the geodesic $C_{1, 1}$ followed by the reflection along the perpendicular bisector of $C_{1,1}$ (drawn in green). The map $A_{\\Gamma_{3, 1}}$ is defined on the three orange pockets as shown. And finally, by taking the quotient under a $\\mathbb{Z}/3\\mathbb{Z}$ action, we end up with a factor of $A_{\\Gamma_{3, 1}}^{\\text{BS}}$, shown on the top right.",
       "page": 11,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=11",
-      "skill_asset": "assets/figure/figure-2.jpg"
+      "skill_asset": "assets/figure/figure-2.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-2.jpg",
+      "heading": "Constructing a factor Bowen–Series map",
+      "caption": "Three diagrams illustrate the n = 3, p = 1 construction: a side-pairing, three orange pockets, and the quotient by a three-fold rotation.",
+      "alt": "Figure 2. Three diagrams illustrate the n = 3, p = 1 construction: a side-pairing, three orange pockets, and the quotient by a three-fold rotation.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 911,
+      "height": 744,
+      "sha256": "524252f74649649e731f6b3ce306de09925d1ba0e2a68cbbb4f99da2106ad8f7",
+      "byte_length": 108660,
+      "crop_bbox": [
+        149,
+        395,
+        447,
+        638
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 2 crop on PDF page 11",
+      "source_offset": 44952,
+      "end_offset": 45431
     },
     {
       "number": 3,
@@ -1739,7 +3112,26 @@
       "caption_tex": "Top: Shown are the side-pairings for a fundamental domain of a group that uniformizes a surface with two cusps and two order $2$ orbifold points, and no other orbifold points. Bottom left: The side pairings in the first quadrant here are combinatorially identical to the ones shown in the top figure. Those pairings are transferred to the other three sectors via the iterates of the map $z\\mapsto iz$. The resulting quotient surface has two cusps, two order $2$ orbifold points, and one order $4$ orbifold point. Bottom right: The (classical) Bowen-Series map associated to the side-parings illustrated in the bottom left, descends under $z\\mapsto z^4$ to a continuous map. The region shaded in orange is the domain where the said factor map is~defined.",
       "page": 13,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=13",
-      "skill_asset": "assets/figure/figure-3.jpg"
+      "skill_asset": "assets/figure/figure-3.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-3.jpg",
+      "heading": "Symmetry and the factor map",
+      "caption": "Three disk diagrams show side-pairings, their transfer to four sectors, and the orange domain of the resulting factor Bowen–Series map.",
+      "alt": "Figure 3. Three disk diagrams show side-pairings, their transfer to four sectors, and the orange domain of the resulting factor Bowen–Series map.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 1116,
+      "height": 1165,
+      "sha256": "c737e5cfdbc5c16146df8fb90bac822b17ac98fcc8842c716b9792a973ed5e3f",
+      "byte_length": 210139,
+      "crop_bbox": [
+        115,
+        138,
+        480,
+        519
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 3 crop on PDF page 13",
+      "source_offset": 50996,
+      "end_offset": 51759
     },
     {
       "number": 4,
@@ -1748,7 +3140,26 @@
       "caption_tex": "A domain whose boundary is a wedge of three circles is uniformized by the disk (above). The single meeting point of the three circles opens up to three points drawn in black. The disks are then welded via the lift of the conformal involution near the boundary of the original domain. Finally, the topology of the surface one gets from such a welding procedure is illustrated.",
       "page": 20,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=20",
-      "skill_asset": "assets/figure/figure-4.jpg"
+      "skill_asset": "assets/figure/figure-4.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-4.jpg",
+      "heading": "Welding a surface",
+      "caption": "A sequence of disk and surface diagrams shows a domain bounded by three circles, the three opened boundary points, the disk welding, and the resulting surface.",
+      "alt": "Figure 4. A sequence of disk and surface diagrams shows a domain bounded by three circles, the three opened boundary points, the disk welding, and the resulting surface.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 1024,
+      "height": 1000,
+      "sha256": "76417c9f93e211ab867c2f972137dcfef15d899c159f5af0bac8ba57a1a277c2",
+      "byte_length": 89002,
+      "crop_bbox": [
+        130,
+        110,
+        465,
+        437
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 4 crop on PDF page 20",
+      "source_offset": 77269,
+      "end_offset": 77654
     },
     {
       "number": 5,
@@ -1757,7 +3168,26 @@
       "caption_tex": "Left: Depicted are two disjoint, symmetric components $\\mathcal{C}_\\cG, \\mathcal{C}_\\cG'$ of a welding graph $\\cG$. The vertices of $\\mathcal{C}_\\cG$ are mapped to those of $\\mathcal{C}_\\cG'$ under the involution $\\widehat{\\eta}$. Right: Depicted is a self-symmetric component $\\mathcal{C}_\\cG$ of a welding graph $\\cG$. The induced map $\\widehat{\\eta}$ preserves the vertex set of $\\mathcal{C}_\\cG$.",
       "page": 23,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=23",
-      "skill_asset": "assets/figure/figure-5.jpg"
+      "skill_asset": "assets/figure/figure-5.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-5.jpg",
+      "heading": "Symmetries of a welding graph",
+      "caption": "On the left, the involution exchanges two disjoint components of a welding graph. On the right, it preserves a self-symmetric component.",
+      "alt": "Figure 5. On the left, the involution exchanges two disjoint components of a welding graph. On the right, it preserves a self-symmetric component.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 1098,
+      "height": 441,
+      "sha256": "8cd33a84d13e81f452120de4ea9c72e5124a48f171af730df5a6e0af0b5b6229",
+      "byte_length": 78059,
+      "crop_bbox": [
+        118,
+        206,
+        477,
+        350
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 5 crop on PDF page 23",
+      "source_offset": 88773,
+      "end_offset": 89183
     },
     {
       "number": 6,
@@ -1766,7 +3196,26 @@
       "caption_tex": "Left: The boundary identifications that set up the welding construction of the blender surface of Example~\\ref{000_ex} is shown here. The arrows indicate how the map $S$ take the boundary components of the top copy of the domain $\\cD = \\bigcup_{i=1}^4\\Omega_i$ to its bottom copy. Right: The welding graph associated with the conformal mating $S$ is shown here. The four connected components of the welding graph would correspond to the four components of the blender surface $\\Sigma$. Further, each connected component of $\\Sigma$ is obtained by capping a disk off by a disk. So, $\\Sigma$ is a disjoint union of four Riemann spheres.",
       "page": 27,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=27",
-      "skill_asset": "assets/figure/figure-6.jpg"
+      "skill_asset": "assets/figure/figure-6.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-6.jpg",
+      "heading": "Four components, four spheres",
+      "caption": "Boundary identifications and a welding graph for Example 5.1. Arrows join the top and bottom domain copies; four graph components correspond to four Riemann spheres.",
+      "alt": "Figure 6. Boundary identifications and a welding graph for Example 5.1. Arrows join the top and bottom domain copies; four graph components correspond to four Riemann spheres.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 982,
+      "height": 804,
+      "sha256": "e6629093198cf93a22a700794e0094f68a8a7812770945d9d66377ef771101b3",
+      "byte_length": 113971,
+      "crop_bbox": [
+        137,
+        110,
+        458,
+        373
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 6 crop on PDF page 27",
+      "source_offset": 106325,
+      "end_offset": 106969
     },
     {
       "number": 7,
@@ -1775,7 +3224,26 @@
       "caption_tex": "Shown here is a cartoon of the dynamical plane of $S$ of Example~\\ref{001_ex}. The map $S$ takes the boundary of the topological disk $\\Omega_1$ to that of $\\Omega_2$, and vice versa, as indicated.",
       "page": 28,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=28",
-      "skill_asset": "assets/figure/figure-7.jpg"
+      "skill_asset": "assets/figure/figure-7.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-7.jpg",
+      "heading": "A mating exchanges two boundaries",
+      "caption": "The dynamical plane in Example 5.2, with arrows showing the map exchanging the boundaries of two topological disks.",
+      "alt": "Figure 7. The dynamical plane in Example 5.2, with arrows showing the map exchanging the boundaries of two topological disks.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 499,
+      "height": 709,
+      "sha256": "a1a67843c1e5b5306177e18f4f62d033a70a32382484a3e0335450c9a8f1fef1",
+      "byte_length": 58835,
+      "crop_bbox": [
+        216,
+        110,
+        379,
+        342
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 7 crop on PDF page 28",
+      "source_offset": 108561,
+      "end_offset": 108768
     },
     {
       "number": 8,
@@ -1784,7 +3252,26 @@
       "caption_tex": "Left: Here we see the dynamical plane of the conformal mating $S$ of Example~\\ref{011_ex}, with arrows indicating the action of $S$ on $\\partial\\cD$. Top Right: The two triangles on the left each map to $\\Omega_1$ and $\\Omega_2$ under appropriate Riemann maps, and the two triangles on the right are their copies. The induced action of $S$ on the boundaries of the four triangles is indicated. Bottom Right: The blender surface $\\Sigma$, topologically speaking, is obtained by gluing the two cones via an orientation-reversing identification of the blue curves, as~shown.",
       "page": 28,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=28",
-      "skill_asset": "assets/figure/figure-8.jpg"
+      "skill_asset": "assets/figure/figure-8.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-8.jpg",
+      "heading": "From a dynamical plane to a blender surface",
+      "caption": "Three panels for Example 5.3 show the dynamical plane, boundary identifications on four triangles, and the gluing of two cones along blue curves.",
+      "alt": "Figure 8. Three panels for Example 5.3 show the dynamical plane, boundary identifications on four triangles, and the gluing of two cones along blue curves.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 973,
+      "height": 722,
+      "sha256": "928f08012ad44febea4ce61ed8ef9d7d35fb4814058c199f505e49c3ecc01c58",
+      "byte_length": 132911,
+      "crop_bbox": [
+        139,
+        386,
+        457,
+        622
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 8 crop on PDF page 28",
+      "source_offset": 110695,
+      "end_offset": 111276
     },
     {
       "number": 9,
@@ -1793,7 +3280,26 @@
       "caption_tex": "The domain of definition $\\overline{\\cD}$ of the weak B-involution $S$ of Example~\\ref{111_ex} is bound by the red quadrilateral and the blue Jordan curve. The map $S$ permutes the components of $\\partial^0\\cD$ as depicted in the figure.",
       "page": 29,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=29",
-      "skill_asset": "assets/figure/figure-9.jpg"
+      "skill_asset": "assets/figure/figure-9.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-9.jpg",
+      "heading": "An elliptic blender surface",
+      "caption": "The domain in Example 5.4 lies between a red quadrilateral and a blue Jordan curve. Arrows show the boundary action of the weak B-involution.",
+      "alt": "Figure 9. The domain in Example 5.4 lies between a red quadrilateral and a blue Jordan curve. Arrows show the boundary action of the weak B-involution.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 780,
+      "height": 728,
+      "sha256": "e03b9f8f12855aeee801743267724d4a4b8db49fb2005f0ed9630fb0268076a0",
+      "byte_length": 75863,
+      "crop_bbox": [
+        170,
+        315,
+        425,
+        553
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 9 crop on PDF page 29",
+      "source_offset": 113234,
+      "end_offset": 113481
     },
     {
       "number": 10,
@@ -1802,7 +3308,26 @@
       "caption_tex": "The domain of definition $\\overline{\\cD}$ of the conformal mating $S$ of Example~\\ref{111''_ex} is the region bound by the cardioid, the triangle, and the quadrilateral.",
       "page": 30,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=30",
-      "skill_asset": "assets/figure/figure-10.jpg"
+      "skill_asset": "assets/figure/figure-10.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-10.jpg",
+      "heading": "A genus-two construction",
+      "caption": "The conformal mating domain in Example 5.5 is bounded by a cardioid, a triangle, and a quadrilateral.",
+      "alt": "Figure 10. The conformal mating domain in Example 5.5 is bounded by a cardioid, a triangle, and a quadrilateral.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 848,
+      "height": 789,
+      "sha256": "8b5e705c1aabf8ee37859210719e067106279ab13b21400c2b6acf0960c2cd13",
+      "byte_length": 90027,
+      "crop_bbox": [
+        159,
+        208,
+        436,
+        466
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 10 crop on PDF page 30",
+      "source_offset": 115552,
+      "end_offset": 115731
     },
     {
       "number": 11,
@@ -1811,7 +3336,26 @@
       "caption_tex": "Illustrated here are instances of the dynamical plane of $S$ from Example~\\ref{111'''_ex}, for $n =3$ and $n=6$. Left: The three colored regions represent the immediate basins of the Newton map for the polynomial $z^3-1$, along with their pre-images. In each immediate basin, the original dynamics has been replaced by that of $A_{\\Gamma_{3, 1}}^{\\text{fBS}}$. Right: This image is based on the Newton map for the polynomial $z^6 - 1$, with modifications: in each of the six immediate basins, centered at the sixth roots of unity, the Newton dynamics has been surgically replaced by $A_{\\Gamma_{3,1}}^{\\text{fBS}}$. The conformal mating $S$ is defined in the exterior of the six red Jordan curves meeting at the central marked point; this corresponds to the point at infinity where all the immediate basins of the Newton map meet.",
       "page": 31,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=31",
-      "skill_asset": "assets/figure/figure-11.jpg"
+      "skill_asset": "assets/figure/figure-11.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-11.jpg",
+      "heading": "Newton maps and conformal matings",
+      "caption": "Two colored dynamical planes show the n = 3 and n = 6 examples. Newton dynamics in the immediate basins is replaced by factor Bowen–Series dynamics; the right panel has six red boundary curves.",
+      "alt": "Figure 11. Two colored dynamical planes show the n = 3 and n = 6 examples. Newton dynamics in the immediate basins is replaced by factor Bowen–Series dynamics; the right panel has six red boundary curves.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 1110,
+      "height": 566,
+      "sha256": "9d0372fba5e6ef5da3a82a349ac41fdbc159f8b64eb69451b4ddd77cc5a3566d",
+      "byte_length": 207625,
+      "crop_bbox": [
+        116,
+        110,
+        479,
+        295
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 11 crop on PDF page 31",
+      "source_offset": 117646,
+      "end_offset": 118486
     },
     {
       "number": 12,
@@ -1820,7 +3364,26 @@
       "caption_tex": "Shown here is the dynamical plane of the conformal mating $S$ of Example~\\ref{final_ex}. The two marked points correspond to the two repelling fixed points of the polynomial $R$.",
       "page": 32,
       "source_url": "https://arxiv.org/pdf/2508.18711v1#page=32",
-      "skill_asset": "assets/figure/figure-12.jpg"
+      "skill_asset": "assets/figure/figure-12.jpg",
+      "asset_path": "/papers/2508.18711v1/figure-12.jpg",
+      "heading": "A doubly connected inversive domain",
+      "caption": "The dynamical plane of the conformal mating in Example 5.7. Two marked points correspond to the polynomial's two repelling fixed points.",
+      "alt": "Figure 12. The dynamical plane of the conformal mating in Example 5.7. Two marked points correspond to the polynomial's two repelling fixed points.",
+      "description_provenance": "Curated accessible description of the reviewed figure; caption_tex is the verbatim author caption.",
+      "width": 936,
+      "height": 487,
+      "sha256": "eb8c9456507f3e327272e1d14f0e021fcf7f26331bbee4e31a937ff22489153d",
+      "byte_length": 69880,
+      "crop_bbox": [
+        145,
+        206,
+        451,
+        365
+      ],
+      "page_scope": "verified-figure-page",
+      "locator_evidence": "Reviewed complete Figure 12 crop on PDF page 32",
+      "source_offset": 121850,
+      "end_offset": 122038
     }
   ],
   "label_index": {
@@ -5483,7 +7046,9 @@
     "All TeX line comments and comment environments are excluded, including the unpublished example 111'_ex.",
     "Chunk page ranges locate the containing section or subsection; they are not exact excerpt pagination.",
     "Statement page ranges are reviewed locators and may include proofs. Use the PDF to verify numbered equations and visual detail.",
-    "Figures are represented by active captions and PDF page links; image files must be copied separately for image display.",
+    "Statement and proof start_page values are exact printed starting-page locators checked against preserved PDF headings. They do not locate the end of the statement or proof.",
+    "Complete statement and proof text is copied exactly from active author TeX; named proof entries distinguish final proofs from introductory sketches and surrounding remarks.",
+    "Figure asset bytes are the original reviewed JPEGs; alt text and short captions are curated descriptions, while caption_tex is verbatim author source.",
     "Custom TeX macros and source cross-reference labels are preserved. Unresolved labels must not be assigned invented printed numbers.",
     "Questions, tasks, remarks, theorem statements, proofs, and cited prior work remain distinct source content.",
     "This corpus supports answers grounded in the paper; it is not a formal verification of its mathematics."
@@ -5499,6 +7064,7 @@
       "work/review-17-32.md",
       "work/review-33-48.md"
     ],
+    "exact_start_evidence": "Preserved per-page native PDF heading evidence plus reviewed page plans; mathematical extraction is not used as source text.",
     "line_comments_removed": 6,
     "comment_environments_removed": 1,
     "comment_environment_characters_removed": 2369

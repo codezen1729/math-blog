@@ -591,7 +591,7 @@ export function SiteApp() {
     const group = series.find(item => page === `blog/${item.slug}` || (item.slug === 'k-theory' && page === 'blog/structures'));
     const titles: Record<string, string> = {vita: 'Personal webpage', research: 'Personal webpage', lab: 'Laboratory'};
     const title = post?.title ?? group?.title ?? titles[page];
-    const description = post ? `${post.title}. A post in ${seriesFor(post)?.title ?? 'Mathematics'} by S. Viswanathan.` : group ? `${group.title}: a series of mathematical blog posts by S. Viswanathan.` : page === 'lab' ? 'Explore complex dynamics and ask questions about correspondences on hyperelliptic surfaces.' : undefined;
+    const description = post ? `${post.title}. A post in ${seriesFor(post)?.title ?? 'Mathematics'} by S. Viswanathan.` : group ? `${group.title}: a series of mathematical blog posts by S. Viswanathan.` : page === 'lab' ? 'Explore complex dynamics and use Math Chatbox to search the papers of S. Viswanathan.' : undefined;
     const metadata = blogPageMetadata(title, description, Boolean(post));
     document.title = metadata.title;
     const setMeta = (attribute: 'name' | 'property', key: string, value?: string) => {

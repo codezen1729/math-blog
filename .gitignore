@@ -46,3 +46,9 @@ __pycache__/
 *.fls
 *.fdb_latexmk
 .DS_Store
+
+# Reviewed paper figures used by Math Chatbox.
+!website/public/
+website/public/*
+!website/public/papers/
+!website/public/papers/**
