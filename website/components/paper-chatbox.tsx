@@ -100,8 +100,14 @@ export function PaperChatbox() {
     if (!corpus || !q || busy) return;
     const lastQuestion = messages.filter(message => message.role === 'user').at(-1)?.content;
     // Short follow-ups need the preceding topic; standalone questions search on their own.
-    const query = lastQuestion && /^(why|how so|what about|can you explain|explain that|and |does it|what does (it|that)|tell me more)/i.test(q) ? `${lastQuestion} ${q}` : q;
-    const hits = searchPaper(corpus, query, 4);
+    const contextual = /^(?:why|how so|tell me more|explain that|explain this)\??$/i.test(q)
+      || /\b(?:it|that|this|here|above|earlier|previous|condition \d+|hypothesis \d+)\b/i.test(q)
+      || /^(?:and|what about|what if)\b/i.test(q)
+      || /^what (?:is|does) [A-Za-z]\b(?: (?:mean|denote))?\??$/i.test(q);
+    const query = lastQuestion && contextual ? `${lastQuestion} ${q}` : q;
+    const retrieved = searchPaper(corpus, query, 4);
+    const previousHits = messages.findLast(message => message.role === 'assistant' && message.hits?.length)?.hits;
+    const hits = retrieved.length ? retrieved : contextual && previousHits ? previousHits : [];
     const user: Message = { id: ++counter.current, role: 'user', content: q };
     const reply: Message = { id: ++counter.current, role: 'assistant', content: '', hits, ai: isAi };
     setQuestion(''); setCopied(false);
