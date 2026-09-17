@@ -16,6 +16,7 @@ website/*
 !website/lib/
 website/lib/*
 !website/lib/*.ts
+!website/lib/paper-corpus.json
 !website/pages/
 !website/pages/**
 !website/scripts/
