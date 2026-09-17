@@ -9,7 +9,7 @@
     "dev": "vinext dev",
     "dev:pages": "vite --config vite.pages.config.ts",
     "build": "vinext build",
-    "build:pages": "node scripts/tighten-figures.mjs && node scripts/tighten-figures.mjs --check && node --experimental-strip-types --test scripts/paper-chat.test.mjs scripts/blog-routes.test.mjs scripts/laboratory.test.mjs scripts/dynamics.test.mjs scripts/correspondence.test.mjs scripts/correspondence-algebraic.test.mjs scripts/references.test.mjs scripts/figure-presentation.test.mjs && vite build --config vite.pages.config.ts && node scripts/generate-static-pages.mjs && node --test scripts/static-output.test.mjs",
+    "build:pages": "node scripts/tighten-figures.mjs && node scripts/tighten-figures.mjs --check && node --experimental-strip-types --test scripts/paper-chat.test.mjs scripts/paper-library-integrity.test.mjs scripts/blog-routes.test.mjs scripts/laboratory.test.mjs scripts/dynamics.test.mjs scripts/correspondence.test.mjs scripts/correspondence-algebraic.test.mjs scripts/references.test.mjs scripts/figure-presentation.test.mjs && vite build --config vite.pages.config.ts && node scripts/generate-static-pages.mjs && node --test scripts/static-output.test.mjs",
     "preview:pages": "vite preview --config vite.pages.config.ts",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
