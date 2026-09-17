@@ -7,6 +7,7 @@
  * https://webllm.mlc.ai/docs/user/advanced_usage.html#using-web-workers
  */
 import type { ChatCompletionChunk } from '@mlc-ai/web-llm';
+import { buildRefinementMessages, parseRefinedQuery } from './paper-chat.ts';
 
 export const PAPER_MODEL_ID = 'Qwen3-4B-q4f16_1-MLC';
 export const PAPER_MODEL_LABEL = 'Qwen3 4B';
@@ -25,7 +26,9 @@ export interface PaperEngine {
   /** Becomes false after unloading, a crashed worker, or a forced cancellation. */
   readonly loaded: boolean;
   /** Yields text deltas, not the accumulated answer. Aborting throws AbortError. */
-  answer(messages: PaperChatMessage[], signal?: AbortSignal): AsyncIterable<string>;
+  answer(messages: PaperChatMessage[], signal?: AbortSignal, purpose?: 'answer' | 'refinement'): AsyncIterable<string>;
+  /** Selects existing catalog phrases; malformed/unsupported suggestions become []. */
+  refineQuery(question: string, concepts: string[], signal?: AbortSignal): Promise<string[]>;
   interrupt(): void;
   /** Releases the model and terminates its worker; cached downloads are retained. */
   unload(): Promise<void>;
@@ -118,7 +121,7 @@ export async function loadPaperEngine(
   return {
     modelId,
     get loaded() { return !disposed && !unloading; },
-    async *answer(messages, answerSignal) {
+    async *answer(messages, answerSignal, purpose = 'answer') {
       checkAborted(answerSignal);
       if (disposed || unloading) throw new Error('Enable browser AI again before asking for an AI explanation.');
       if (activeStop) throw new Error('Wait for the current answer to finish, or stop it first.');
@@ -152,8 +155,8 @@ export async function loadPaperEngine(
         const chunks = await live(engine.chat.completions.create({
           messages,
           stream: true,
-          max_tokens: PAPER_OUTPUT_TOKENS,
-          temperature: 0.2,
+          max_tokens: purpose === 'refinement' ? 100 : PAPER_OUTPUT_TOKENS,
+          temperature: purpose === 'refinement' ? 0 : 0.2,
           top_p: 0.9,
           // Supported for Qwen3 by the pinned WebLLM request API. This is the
           // hard switch, independent of any /think text in a reader's question.
@@ -214,6 +217,17 @@ export async function loadPaperEngine(
         if (stopTimer !== undefined) clearTimeout(stopTimer);
         activeStop = undefined;
       }
+    },
+    async refineQuery(this: PaperEngine, question, concepts, refinementSignal) {
+      checkAborted(refinementSignal);
+      if (!concepts.length || !question.trim()) return [];
+      let output = '';
+      for await (const delta of this.answer(buildRefinementMessages(question, concepts), refinementSignal, 'refinement')) {
+        output += delta;
+        if (output.length > 800) return [];
+      }
+      checkAborted(refinementSignal);
+      return parseRefinedQuery(output, concepts);
     },
     interrupt() { activeStop?.(); },
     async unload() {
