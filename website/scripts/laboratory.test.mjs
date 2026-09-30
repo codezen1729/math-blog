@@ -12,6 +12,16 @@ const near = (a, b, epsilon = 1e-10) => assert.ok(Math.abs(a - b) < epsilon, `${
 const samePoint = (a, b) => { near(a.re, b.re); near(a.im, b.im); };
 const preset = (id) => JULIA_PRESETS.find((p) => p.id === id);
 
+test('Laboratory keeps all three simulations without a math chatbox', () => {
+  const source = readFileSync(new URL('../components/lab-page.tsx', import.meta.url), 'utf8');
+  for (const component of ['MandelbrotJuliaExplorer', 'MandelbrotMotion', 'CorrespondenceExplorer']) {
+    assert.ok(source.includes(`<${component} />`), component);
+  }
+  assert.doesNotMatch(source, /PaperChatbox|paper-chat|chatbox/i);
+  const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.ok(!Object.hasOwn(pkg.dependencies, '@mlc-ai/web-llm'));
+});
+
 test('thirteen distinct named presets with precise parameters', () => {
   assert.equal(JULIA_PRESETS.length, 13);
   assert.equal(new Set(JULIA_PRESETS.map(p => p.id)).size, 13);

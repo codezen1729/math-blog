@@ -128,6 +128,16 @@ test('legacy hashes are redirected by every static shell', () => {
   }
 });
 
+test('Math Chatbox and its AI and paper assets are absent from the public build', () => {
+  const removed = /Math Chatbox|PaperChatbox|paper-chat(?:box|\.worker)?|paper-corpus|paper-library|@mlc-ai\/web-llm/i;
+  assert.doesNotMatch(page('lab'), removed);
+  for (const file of readdirSync(join(root, 'assets')).filter(name => /\.(?:js|css)$/.test(name))) {
+    assert.doesNotMatch(file, removed);
+    assert.doesNotMatch(readFileSync(join(root, 'assets', file), 'utf8'), removed, file);
+  }
+  assert.ok(!existsSync(join(root, 'papers', '2508.18711v1')), 'chat-only paper gallery must not be shipped');
+});
+
 test('CSS generation uses explicit application sources in both local and packaged builds', () => {
   const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
   assert.match(css, /@import 'tailwindcss' source\(none\);/);
