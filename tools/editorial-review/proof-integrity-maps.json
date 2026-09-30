@@ -3466,7 +3466,7 @@
           "environment": "lemma",
           "title": "Lemma 6.22",
           "passageId": "mcmullens-surgery:p0040",
-          "line": 227,
+          "line": 233,
           "labels": [],
           "statementExcerpt": "\\subsection*{Lemma 6.22}: If $V$ is a fixed Siegel disk or a fixed Herman ring of rotation number $\\theta \\in \\mathbb{R}\\backslash\\mathbb{Q}$, then $\\hat{f}$ is real analytically conjugate to the rigid rotation $R_{\\the…",
           "sourceSlice": "\\subsection*{Lemma 6.22}: If $V$ is a fixed Siegel disk or a fixed Herman ring of rotation number $\\theta \\in \\mathbb{R}\\backslash\\mathbb{Q}$, then $\\hat{f}$ is real analytically conjugate to the rigid rotation $R_{\\theta} = e^{2\\pi i \\theta}z$.\n\n",
@@ -3497,7 +3497,7 @@
           "environment": "lemma",
           "title": "Lemma 6.23",
           "passageId": "mcmullens-surgery:p0043",
-          "line": 240,
+          "line": 246,
           "labels": [],
           "statementExcerpt": "\\subsection*{Lemma 6.23}: If $V$ is an immediate basin of (super)attraction, or a parabolic basin whose parabolic fixed point is not on $\\partial U$, then $\\hat{f}$ is quasisymmetrically conjugate to $z\\rightarrow z^d$…",
           "sourceSlice": "\\subsection*{Lemma 6.23}: If $V$ is an immediate basin of (super)attraction, or a parabolic basin whose parabolic fixed point is not on $\\partial U$, then $\\hat{f}$ is quasisymmetrically conjugate to $z\\rightarrow z^d$ for some $d>1$.\n\n",
@@ -3528,7 +3528,7 @@
           "environment": "lemma",
           "title": "Lemma 6.24",
           "passageId": "mcmullens-surgery:p0047",
-          "line": 262,
+          "line": 268,
           "labels": [],
           "statementExcerpt": "\\subsection*{Lemma 6.24}: If $V$ belongs to a parabolic basin, with a parabolic fixed point on $\\partial U$, then $\\hat{f}$ on $I(U)$ is quasisymmetrically conjugate to $P_d(z)$ for some $d>1$.",
           "sourceSlice": "\\subsection*{Lemma 6.24}: If $V$ belongs to a parabolic basin, with a parabolic fixed point on $\\partial U$, then $\\hat{f}$ on $I(U)$ is quasisymmetrically conjugate to $P_d(z)$ for some $d>1$.\n\n",
@@ -3568,7 +3568,7 @@
         },
         {
           "passageId": "mcmullens-surgery:p0057",
-          "line": 318,
+          "line": 324,
           "excerpt": "Proof of Main Theorem. Suppose $I(U)$ is periodic of period $p\\geq 1$. Following Proposition $6.17$, let $\\hat{\\phi}:I(U)\\rightarrow \\mathbb{S}^1$ be a quasisymmetric map so that $\\hat{\\phi}\\circ \\hat{f}^p\\circ \\hat{\\ph…"
         }
       ],
@@ -3635,7 +3635,13 @@
           "offsetWithinPassage": 3,
           "proofEvidencePassages": [],
           "hypotheses": [],
-          "intermediateClaims": [],
+          "intermediateClaims": [
+            {
+              "type": "cite",
+              "target": "MR505549",
+              "classification": "cited"
+            }
+          ],
           "conclusion": {
             "text": "\\subsection*{Proposition 6.27}: Let $f(z) = z^2 + \\frac{\\lambda}{z^3}$. For all non-zero $\\lambda$ sufficiently small, \\begin{enumerate} \\item $J(f)$ has uncountably many buried components. \\item $J(f)$ has a unique for…",
             "source": "theorem statement"
@@ -3656,7 +3662,7 @@
           "environment": "theorem",
           "title": "Theorem 6.29 (Strebel's Theorem)",
           "passageId": "mcmullens-surgery-finite-symmetry:p0012",
-          "line": 54,
+          "line": 48,
           "labels": [],
           "statementExcerpt": "\\subsection*{Theorem 6.29 (Strebel's Theorem)} Let $U$ be a finitely connected domain in $\\hat{\\mathbb{C}}$, and let $\\phi:\\overline{U} \\rightarrow \\overline{U}$ be a quasiconformal homeomorphism which is the identity o…",
           "sourceSlice": "\\subsection*{Theorem 6.29 (Strebel's Theorem)} Let $U$ be a finitely connected domain in $\\hat{\\mathbb{C}}$, and let $\\phi:\\overline{U} \\rightarrow \\overline{U}$ be a quasiconformal homeomorphism which is the identity on $\\partial U$. Then there is a unique quasiconformal map $\\psi$ of minimal dilatation among those isotopic to $\\phi$ (relative to $\\partial U$). The absolute value of the Beltrami differential $|\\psi_{\\bar{z}}/\\psi_z|$ is constant on $U$ (in fact, $\\psi$ is a Teichm\\\"uller mapping of finite norm).\n\n",
@@ -3696,7 +3702,7 @@
           "environment": "theorem",
           "title": "Theorem 6.30",
           "passageId": "mcmullens-surgery-finite-symmetry:p0014",
-          "line": 62,
+          "line": 56,
           "labels": [],
           "statementExcerpt": "\\subsection*{Theorem 6.30}: If $J(f)$ is connected and $f$ has exposed critical points, then $\\text{Mod}(J(f), f)$ is a finite group \\cite{mcmullen1988automorphisms}.",
           "sourceSlice": "\\subsection*{Theorem 6.30}: If $J(f)$ is connected and $f$ has exposed critical points, then $\\text{Mod}(J(f), f)$ is a finite group \\cite{mcmullen1988automorphisms}.\n\n",
@@ -7645,5 +7651,5 @@
       }
     }
   ],
-  "sha256": "c071a1277ea10d2a04ecbf659767d53e25cd66b279b4fca30b8d0fbc48b9181c"
+  "sha256": "4d581ffc778ce1f0403cc3a75c4230b2c62326fb40491997358bddb6b60515ef"
 }

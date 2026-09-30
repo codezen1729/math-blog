@@ -2,15 +2,252 @@
   "schema": 2,
   "mode": "public",
   "baselineCommit": "e9cb6cf7657fe9ee32ec94db28b6d31fa282d824",
-  "currentCommit": "e9cb6cf7657fe9ee32ec94db28b6d31fa282d824",
-  "sourceSetSha256": "d5450a8de66ba95949e68b37d908ead0cd69d34673a8f418403a7c49b502a9a4",
+  "currentCommit": "1294b643d1627af4466f6fab304f6f1db58ea0be",
+  "sourceSetSha256": "8f8e03ab48ea9ec7c3801b24bae0472c19368e5df954c7242c471d37808fb47e",
   "postsChecked": 84,
-  "passagesChecked": 2080,
-  "changedPassages": 663,
+  "passagesChecked": 2069,
+  "changedPassages": 680,
   "pendingApprovals": 0,
+  "authorVersions": [
+    {
+      "slug": "basis-fixing-reduction",
+      "file": "01-basis-fixing-reduction.tex",
+      "baselineBodySha256": "34ebbc56a38947b5363a15580e184f8cc6a6d152ac77086244d47f0777de489c",
+      "snapshotFile": "tools/editorial-author-versions/basis-fixing-reduction-2026-09-04.tex",
+      "snapshotSha256": "a35a9c99590985b983460d35536636fa81c261ad9fc188865d2598b75155c8f6",
+      "sourceCommit": "d4e896fac3b13b0b6c9ec34259ee1b6142d42f2d",
+      "sourceGitBlobSha1": "33d8681940eb5a1d1cbe634d64abf5d9ddcabc2a",
+      "reason": "Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.",
+      "evidence": "The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.",
+      "approval": {
+        "state": "approved",
+        "approvedBy": "S. Viswanathan",
+        "approvedAt": "2026-09-30",
+        "evidence": "Asked: ‘Should I restore that September 4 author-edited version of The Complex Plane, leaving all other posts unchanged?’ Author replied: ‘yes’. This approves the exact source restoration, not publication. Author additionally requested: ‘change the overleaf too........’"
+      }
+    }
+  ],
   "errors": [],
   "warnings": [],
   "passages": [
+    {
+      "passageId": "basis-fixing-reduction:p0001",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 1,
+      "currentOrdinal": null,
+      "payloadChanges": {},
+      "diff": "--- baseline/basis-fixing-reduction:p0001\n+++ candidate/basis-fixing-reduction:p0001\n@@ -1,2 +0,0 @@\n-\\textit{Following the framework of T. Tao.}\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0006",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 6,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u000006dbad814f334066b5eeb0bab4d38db711ab12b5725e10d7da441c021dca6a34"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0006\n+++ candidate/basis-fixing-reduction:p0006\n@@ -1,2 +0,0 @@\n-In other words, it will break. This rigidity can be extended to all of $\\mathbb R^n$ with a very similar idea, yielding the following.\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0007",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 7,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u000006dbad814f334066b5eeb0bab4d38db711ab12b5725e10d7da441c021dca6a34",
+            "inline\u000006dbad814f334066b5eeb0bab4d38db711ab12b5725e10d7da441c021dca6a34",
+            "inline\u00001b16b1df538ba12dc3f97edbb85caa7050d46c148134290feba80f8236c83db9"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0007\n+++ candidate/basis-fixing-reduction:p0007\n@@ -1,3 +0,0 @@\n-\\subsubsection*{General version}\n-Any origin-fixing isometry from $\\mathbb R^n$ to $\\mathbb R^n$ is a composition of at most $n$ reflections along hyperplanes.\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0008",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 8,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u000006dbad814f334066b5eeb0bab4d38db711ab12b5725e10d7da441c021dca6a34"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0008\n+++ candidate/basis-fixing-reduction:p0008\n@@ -1,3 +0,0 @@\n-\\textit{Proof.}\n-Exercise. Refer to Beardon's \\emph{The Geometry of Discrete Groups}, or any text on M\\\"obius transformations on $\\mathbb R^n$.\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0011",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 11,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u0000ea28c2a957be311b1e162d7783abe23598b9d9fa981c78ac06a575d08a51996d",
+            "inline\u0000bf49ff376dd681929339e27e2c1eb73e9524a45c2a6ffe61fdcce0d81fa5fd65",
+            "inline\u000081f43c4460a9872f9b1d938d80a146601f5ed2081baffca5964312d4072c5c2a",
+            "inline\u000081f43c4460a9872f9b1d938d80a146601f5ed2081baffca5964312d4072c5c2a",
+            "inline\u000014a77e78c159ba430b590188ff279fa3642655642e7cdebdc8470e397dbda0cb",
+            "inline\u00006da3583735a2a7a0a53cea3f07b3d108c740c51413ed5bde7e59cb66b89d601b",
+            "display\u0000eb9b450525fbee2b20bd8f9ae5bb3594a8a1cf3d3c8b78440222ade7939962bc",
+            "inline\u0000118971b841a04c63a09a5e560b032e3d076dd6e8a84a2dd2e4122ac86bb3a310",
+            "inline\u00006b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+            "inline\u00006b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+            "inline\u00006b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+            "inline\u0000b1d9aefe6744b5265fddd27a21b1f716b3e232d80254eb146be9c8e6bb6e59b3",
+            "inline\u0000b1d9aefe6744b5265fddd27a21b1f716b3e232d80254eb146be9c8e6bb6e59b3",
+            "inline\u00001b16b1df538ba12dc3f97edbb85caa7050d46c148134290feba80f8236c83db9",
+            "inline\u00001b16b1df538ba12dc3f97edbb85caa7050d46c148134290feba80f8236c83db9",
+            "inline\u00009c2f91fb49666825fca61e0aa597712787755505297907104705021d5ea7cfc2",
+            "inline\u00009c2f91fb49666825fca61e0aa597712787755505297907104705021d5ea7cfc2",
+            "inline\u0000d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+            "inline\u000098842088e2d16b44bca6b510e678fdec5f551ac62cf272a52072ebecd9db188c",
+            "inline\u0000de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7",
+            "inline\u0000a15823ee1ad5455efed3bc8c16f639e51591707f0fb3b816cab129775fb9db6e",
+            "inline\u0000e632b7095b0bf32c260fa4c539e9fd7b852d0de454e9be26f24d0d6f91d069d3",
+            "inline\u000011a39a255c1e1fa74b94331e1be20a20ebc5840e7c3c0b27c9cf37554fe8f2c2",
+            "inline\u0000959f488598ceedf44cf203da9022bbd83509805891a8286cb0fbfcbe8a41f932"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0011\n+++ candidate/basis-fixing-reduction:p0011\n@@ -1,8 +0,0 @@\n-Label the vertices $\\{1,2,3,4,\\ldots,n\\}$. Without loss of generality, for a given $T\\in\\operatorname{Aut}(C_n)$ assume $T(1)=1$; otherwise compose it with $\\varphi(T')$, where $T'$ is a rotation. Write the cycle as\n-\\[\n-1\\longrightarrow2\\longrightarrow3\\longrightarrow\\cdots\n-\\longrightarrow n\\longrightarrow1\n-\\qquad\\text{(not a directed graph).}\n-\\]\n-If $T(1)=1$, then $T(2)$ must be adjacent to $1$, so $T(2)=2$ or $n$. If $T(2)=2$, then $T(3)$ must be adjacent to $2$ and cannot be $1$. Inductively, $T(i)=i$ for every $i$. If $T(2)=n$, then $T(3)$ must be adjacent to $n$ but not to $1$. Again, inductively, we conclude that $T$ is a reflection. From this ``nice'' place, trace back to conclude that $T\\in\\varphi(D_n)$. Hence $\\varphi$ is an isomorphism.\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0012",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 12,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u00005feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "inline\u00006b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0012\n+++ candidate/basis-fixing-reduction:p0012\n@@ -1,3 +0,0 @@\n-\\textbf{Remark.}\n-This is a good place to ask the following. We have just seen the rigidity of the complex plane, geometrically speaking. Now consider the isometries that fix $0$ and $1$.\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0013",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 13,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u00005f0f337c297ecc58cab1caa6b376daa6b2001ce67e7fd3c97e8d391f7e4974c9",
+            "inline\u00003a73dec75f911c9177cb0d23677080c7f757c16504b098ac6a8183fb820abbd1",
+            "inline\u00003a73dec75f911c9177cb0d23677080c7f757c16504b098ac6a8183fb820abbd1",
+            "inline\u00003a73dec75f911c9177cb0d23677080c7f757c16504b098ac6a8183fb820abbd1",
+            "inline\u0000e59123a2ac0d546ca13c6dbecd03c2526acc3ce8a28a405678ff96f458d235c5"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0013\n+++ candidate/basis-fixing-reduction:p0013\n@@ -1,3 +0,0 @@\n-\\textbf{Exercise.}\n-Such an isometry is a \\emph{field homomorphism} (hence a linear map) that fixes $\\mathbb R$, from $\\mathbb C$ to $\\mathbb C$, with $\\mathbb C$ viewed as $\\mathbb R^2$.\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0014",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 14,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u00005f0f337c297ecc58cab1caa6b376daa6b2001ce67e7fd3c97e8d391f7e4974c9",
+            "inline\u00005f0f337c297ecc58cab1caa6b376daa6b2001ce67e7fd3c97e8d391f7e4974c9",
+            "inline\u00006d482215d22bc8dc4c12990093d9285b7e68748948299ff9cd9d7fa36c6aebd8",
+            "display\u00003d82eb38daa4c064c907b53deb62362a9ed51b2901a4b9488fa337d841009b49",
+            "inline\u0000da9c04cc65c72a8af9091a309d412b4ad3230679de1f2a67a33229bced3d3e4b",
+            "inline\u0000a284186a4e9aedd03a9a4f0c51c39ebea1b3802de679611d6bea1855f852476b"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0014\n+++ candidate/basis-fixing-reduction:p0014\n@@ -1,8 +0,0 @@\n-The very geometric notion of rigidity has led us to an algebraic question, namely the exercise above. Suppose we have a field extension of $\\mathbb R$, say $\\mathbb C'$, such that\n-\\[\n-\\operatorname{Aut}_{\\mathbb R}(\\mathbb C')\n-\\cong\n-\\{\\text{isometries of $\\mathbb C$ that fix $\\mathbb R$}\\}.\n-\\]\n-Then is $\\mathbb C'\\cong\\mathbb C$? Here $\\operatorname{Aut}_{\\mathbb R}(\\mathbb C')$ denotes the field homomorphisms that fix $\\mathbb R$.\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0015",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 15,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u00003d6380742c628b382607d38959648db17eaf460ddc1ec88daefe21f9e4890ac8",
+            "inline\u0000848124ce92c3f1d3c909324148ae38d83cd3dd1b9fe07908d15098d325bbf9ad",
+            "inline\u00002a1e44d7eb432827206b987a0f2a9a60b84406a0b8cdae50821b69e7aa11cba0",
+            "display\u0000d65092ffe3e4821b95397e7395e4ff57c14560ebf2586cbbd195de08da29c274"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0015\n+++ candidate/basis-fixing-reduction:p0015\n@@ -1,9 +0,0 @@\n-Here the group $D_2$, seen as $\\operatorname{Aut}(C_2)$ with vertices $\\pm e_2$, is of relevance, because then we are asking\n-\\[\n-\\operatorname{Aut}_{\\mathbb R}(\\mathbb C')\n-\\cong\\operatorname{Aut}(C_2)\n-\\cong\\mathbb Z/2\\mathbb Z:\n-\\qquad\\text{does this force $\\mathbb C'=\\mathbb C$?}\n-\\]\n-This is an infant version of the inverse Galois problem.\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0016",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 16,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u00003a73dec75f911c9177cb0d23677080c7f757c16504b098ac6a8183fb820abbd1"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0016\n+++ candidate/basis-fixing-reduction:p0016\n@@ -1,2 +0,0 @@\n-The algebraic construction of $\\mathbb C$ is thus significant: it shows us that rigidity is a consequence of an algebraic structure, and vice versa.\n-\n"
+    },
+    {
+      "passageId": "basis-fixing-reduction:p0017",
+      "status": "superseded-by-approved-author-version",
+      "originalFile": "01-basis-fixing-reduction.tex",
+      "currentFile": null,
+      "originalOrdinal": 17,
+      "currentOrdinal": null,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u00003a73dec75f911c9177cb0d23677080c7f757c16504b098ac6a8183fb820abbd1"
+          ],
+          "added": []
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0017\n+++ candidate/basis-fixing-reduction:p0017\n@@ -1 +0,0 @@\n-This finally brings us to the statement made by Sophie Germain: ``Algebra is written geometry and geometry is figured algebra.'' One can regard the construction of $\\mathbb C$ via geometry and, independently, via algebra as an illustration of Sophie's comment.\n"
+    },
     {
       "passageId": "abels-theorem:p0001",
       "status": "unchanged",
@@ -1283,174 +1520,138 @@
       "diff": ""
     },
     {
-      "passageId": "basis-fixing-reduction:p0001",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 1,
-      "currentOrdinal": 1,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
       "passageId": "basis-fixing-reduction:p0002",
-      "status": "unchanged",
+      "status": "restored-approved-author-version",
       "originalFile": "01-basis-fixing-reduction.tex",
       "currentFile": "01-basis-fixing-reduction.tex",
       "originalOrdinal": 2,
-      "currentOrdinal": 2,
-      "payloadChanges": {},
-      "diff": ""
+      "currentOrdinal": 1,
+      "payloadChanges": {
+        "math": {
+          "removed": [],
+          "added": [
+            "inline\u0000e632b7095b0bf32c260fa4c539e9fd7b852d0de454e9be26f24d0d6f91d069d3"
+          ]
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0002\n+++ candidate/basis-fixing-reduction:p0002\n@@ -1,7 +1,9 @@\n+% Overleaf publishing connection verified.\n+\n \\subsection*{Tool 1 — Basis-Fixing Reduction}\n-Given a linear transformation,\n+Consider a linear transformation,\n \\[\n T\\left(\\sum_{i=1}^{n}a_i e_i\\right)=\\sum_{i=1}^{n}a_iT(e_i).\n \\]\n-If $T$ fixes the basis $\\{e_i\\}$, then $T$ is the identity. Thus, compose $T$ with linear transformations so that the composition fixes $\\{e_i\\}$; then one can trace one's steps back.\n+Observe that if $T$ fixes the basis $\\{e_i\\}$, then $T$ is the identity map. Thus, compose $T$ with linear transformations so that the composition fixes $\\{e_i\\}$; then one can trace the steps back to recover $T$.\n \n"
     },
     {
       "passageId": "basis-fixing-reduction:p0003",
-      "status": "unchanged",
+      "status": "restored-approved-author-version",
       "originalFile": "01-basis-fixing-reduction.tex",
       "currentFile": "01-basis-fixing-reduction.tex",
       "originalOrdinal": 3,
-      "currentOrdinal": 3,
-      "payloadChanges": {},
-      "diff": ""
+      "currentOrdinal": 2,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "display\u0000a4274e8ae0af9568258a0150824ccb98befb7d3171857b0ac36f16bd0d21f697",
+            "inline\u0000fa29c5d446ce17a16895c26c6afc0f9dcd208cfcae3a4c55f6a5b9969dfbbb4e"
+          ],
+          "added": [
+            "display\u00002b4efef5fe1fd798c64743e717d7c2c3411cda60a636418a404936354bed2c2f"
+          ]
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0003\n+++ candidate/basis-fixing-reduction:p0003\n@@ -1,8 +1,8 @@\n-It follows that any isometry $T\\colon\\mathbb C\\to\\mathbb C$ is of the form\n+A simple application of the aforementioned tool goes into showing that any isometry $T\\colon\\mathbb C\\to\\mathbb C$ is of the form\n \\[\n T(z)=z_0+\\omega z\n \\qquad\\text{or}\\qquad\n-T(z)=z_0+\\omega\\overline z,\n+T(z)=z_0+\\omega\\overline z.\n \\]\n-where $|\\omega|=1$.\n \n+\n"
     },
     {
       "passageId": "basis-fixing-reduction:p0004",
-      "status": "reframed-retained",
+      "status": "restored-approved-author-version",
       "originalFile": "01-basis-fixing-reduction.tex",
       "currentFile": "01-basis-fixing-reduction.tex",
       "originalOrdinal": 4,
-      "currentOrdinal": 4,
-      "payloadChanges": {},
-      "diff": "--- baseline/basis-fixing-reduction:p0004\n+++ candidate/basis-fixing-reduction:p0004\n@@ -41,7 +41,7 @@\n \\langle(\\varphi\\circ T)(e_2),(\\varphi\\circ T)(e_2)\\rangle\n =\\langle e_2,e_2\\rangle=1.\n \\]\n-Therefore \\((\\varphi\\circ T)(e_2)=\\pm e_2,\\)\n+Therefore, \\((\\varphi\\circ T)(e_2)=\\pm e_2,\\)\n and hence\n \\[\n (\\varphi\\circ T)(z)=z\\qquad\\text{or}\\qquad\n"
+      "currentOrdinal": 3,
+      "payloadChanges": {
+        "math": {
+          "removed": [],
+          "added": [
+            "inline\u00006b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          ]
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0004\n+++ candidate/basis-fixing-reduction:p0004\n@@ -23,11 +23,11 @@\n \\[\n \\langle T(v),T(e_i)\\rangle=\\langle v,e_i\\rangle,\n \\]\n-we get $a_i=b_i$ for every $i$, $1\\leq i\\leq n$. Now is the right time to remind ourselves of Tool 1. We know that\n+we get $a_i=b_i$ for every $i$, $1\\leq i\\leq n$. We know that\n \\[\n T\\left(\\sum_{i=1}^{n}a_ie_i\\right)=\\sum_{i=1}^{n}a_iT(e_i).\n \\]\n-Compose $T$ with a rotation $\\varphi$ such that\n+We apply Tool $1$ by composing $T$ with a rotation $\\varphi$ so that\n \\[\n (\\varphi\\circ T)(e_1)=e_1.\n \\]\n"
     },
     {
       "passageId": "basis-fixing-reduction:p0005",
-      "status": "unchanged",
+      "status": "restored-approved-author-version",
       "originalFile": "01-basis-fixing-reduction.tex",
       "currentFile": "01-basis-fixing-reduction.tex",
       "originalOrdinal": 5,
-      "currentOrdinal": 5,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0006",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 6,
-      "currentOrdinal": 6,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0007",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 7,
-      "currentOrdinal": 7,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0008",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 8,
-      "currentOrdinal": 8,
-      "payloadChanges": {},
-      "diff": ""
+      "currentOrdinal": 4,
+      "payloadChanges": {
+        "math": {
+          "removed": [],
+          "added": [
+            "inline\u000006dbad814f334066b5eeb0bab4d38db711ab12b5725e10d7da441c021dca6a34",
+            "inline\u00007ccb2e28e80a74dffdd8801fd90b0fcbd108aad0558f6053d7ae801a8be14980"
+          ]
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0005\n+++ candidate/basis-fixing-reduction:p0005\n@@ -1,3 +1,3 @@\n \\textbf{Remark.}\n-The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice,'' and one can trace one's steps back after reaching that ``nice'' place. We will see another illustration of this in the same theme. Before that, note that what we essentially found is that the complex plane is rigid: if two points of a plane are connected by a rubber band, there are only two ways to deform it so that the lengths of the rubber bands remain the same in the end -- reflections and rotations. If you stretch the rubber band, then you cannot undo it later.\n+The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice''. We shall see another application of this soon. Before that, it is worth emphasizing the rigidity of the complex plane: if two points of the plane are connected by a rubber band, there are essentially two ways to deform it preserving lengths -- reflections and rotations. This rigidity feature can be extended to all Euclidean spaces $\\mathbb R^n$. However, there are instances of non-Euclidean spaces, for which the doubling map $z\\mapsto 2z$ is an isometry. \n \n"
     },
     {
       "passageId": "basis-fixing-reduction:p0009",
-      "status": "unchanged",
+      "status": "restored-approved-author-version",
       "originalFile": "01-basis-fixing-reduction.tex",
       "currentFile": "01-basis-fixing-reduction.tex",
       "originalOrdinal": 9,
-      "currentOrdinal": 9,
-      "payloadChanges": {},
-      "diff": ""
+      "currentOrdinal": 5,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u00008ef7dfc004eb25620875dcd6ded2827aef3fbcbc4859601035b0cd18ed630f04",
+            "inline\u00001b16b1df538ba12dc3f97edbb85caa7050d46c148134290feba80f8236c83db9"
+          ],
+          "added": [
+            "inline\u0000d08e98c35b03518820520d32c48a8cd08c0a0fbf6b2dd1a3356d300871db238c"
+          ]
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0009\n+++ candidate/basis-fixing-reduction:p0009\n@@ -1,3 +1,3 @@\n \\subsubsection*{The dihedral group}\n-Now let us look at another application of Tool $1$. To be sincere, we shall not deviate from the theme of reflections and rotations. Let us try to study the structure of $D_n$, the dihedral group. \\(D_n\\cong\\operatorname{Aut}(C_n),\\) where $C_n$ is the cyclic graph on $n$ vertices having exactly one $n$-cycle.\n+Now let us illustrate another application of Tool $1$ by proving that the dihedral group \\(D_n\\) is isomorphic to \\(\\operatorname{Aut}(C_n),\\) where $C_n$ is the cyclic graph on $n$ vertices.\n \n"
     },
     {
       "passageId": "basis-fixing-reduction:p0010",
-      "status": "unchanged",
+      "status": "restored-approved-author-version",
       "originalFile": "01-basis-fixing-reduction.tex",
       "currentFile": "01-basis-fixing-reduction.tex",
       "originalOrdinal": 10,
-      "currentOrdinal": 10,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0011",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 11,
-      "currentOrdinal": 11,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0012",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 12,
-      "currentOrdinal": 12,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0013",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 13,
-      "currentOrdinal": 13,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0014",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 14,
-      "currentOrdinal": 14,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0015",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 15,
-      "currentOrdinal": 15,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0016",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 16,
-      "currentOrdinal": 16,
-      "payloadChanges": {},
-      "diff": ""
-    },
-    {
-      "passageId": "basis-fixing-reduction:p0017",
-      "status": "unchanged",
-      "originalFile": "01-basis-fixing-reduction.tex",
-      "currentFile": "01-basis-fixing-reduction.tex",
-      "originalOrdinal": 17,
-      "currentOrdinal": 17,
-      "payloadChanges": {},
-      "diff": ""
+      "currentOrdinal": 6,
+      "payloadChanges": {
+        "math": {
+          "removed": [
+            "inline\u0000d3405c1cc6903854841046c3b03515f62cd30457a70b89f4aa6dd85e87df99f7"
+          ],
+          "added": [
+            "inline\u0000959f488598ceedf44cf203da9022bbd83509805891a8286cb0fbfcbe8a41f932",
+            "inline\u0000ea28c2a957be311b1e162d7783abe23598b9d9fa981c78ac06a575d08a51996d",
+            "inline\u0000bf49ff376dd681929339e27e2c1eb73e9524a45c2a6ffe61fdcce0d81fa5fd65",
+            "inline\u000081f43c4460a9872f9b1d938d80a146601f5ed2081baffca5964312d4072c5c2a",
+            "inline\u000081f43c4460a9872f9b1d938d80a146601f5ed2081baffca5964312d4072c5c2a",
+            "inline\u000014a77e78c159ba430b590188ff279fa3642655642e7cdebdc8470e397dbda0cb",
+            "inline\u00006da3583735a2a7a0a53cea3f07b3d108c740c51413ed5bde7e59cb66b89d601b",
+            "display\u00006761869cceb9459ed4f44f282076c00b346ca5d9895b18386bf02d002b4242c6",
+            "inline\u0000118971b841a04c63a09a5e560b032e3d076dd6e8a84a2dd2e4122ac86bb3a310",
+            "inline\u00006b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+            "inline\u00006b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+            "inline\u00006b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+            "inline\u0000b1d9aefe6744b5265fddd27a21b1f716b3e232d80254eb146be9c8e6bb6e59b3",
+            "inline\u0000b1d9aefe6744b5265fddd27a21b1f716b3e232d80254eb146be9c8e6bb6e59b3",
+            "inline\u00001b16b1df538ba12dc3f97edbb85caa7050d46c148134290feba80f8236c83db9",
+            "inline\u00001b16b1df538ba12dc3f97edbb85caa7050d46c148134290feba80f8236c83db9",
+            "inline\u00009c2f91fb49666825fca61e0aa597712787755505297907104705021d5ea7cfc2",
+            "inline\u00009c2f91fb49666825fca61e0aa597712787755505297907104705021d5ea7cfc2",
+            "inline\u0000d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+            "inline\u000098842088e2d16b44bca6b510e678fdec5f551ac62cf272a52072ebecd9db188c",
+            "inline\u0000de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7",
+            "inline\u0000a15823ee1ad5455efed3bc8c16f639e51591707f0fb3b816cab129775fb9db6e",
+            "inline\u0000e632b7095b0bf32c260fa4c539e9fd7b852d0de454e9be26f24d0d6f91d069d3",
+            "inline\u000011a39a255c1e1fa74b94331e1be20a20ebc5840e7c3c0b27c9cf37554fe8f2c2"
+          ]
+        }
+      },
+      "diff": "--- baseline/basis-fixing-reduction:p0010\n+++ candidate/basis-fixing-reduction:p0010\n@@ -3,5 +3,9 @@\n \\[\n \\varphi\\colon D_n\\longrightarrow\\operatorname{Aut}(C_n).\n \\]\n-We only have to show that $\\varphi$ is surjective; it is clearly injective, since the kernel is the identity in $D_n$.\n-\n+The map $\\varphi$ is clearly injective. We have to prove that it is also surjective. To that end, label the vertices $\\{1,2,3,4,\\ldots,n\\}$. Without loss of generality, for a given $T\\in\\operatorname{Aut}(C_n)$ assume $T(1)=1$; otherwise compose it with $\\varphi(T')$, where $T'$ is a rotation. Write the cycle as\n+\\[\n+1\\longrightarrow2\\longrightarrow3\\longrightarrow\\cdots\n+\\longrightarrow n\\longrightarrow1.\n+\\]\n+If $T(1)=1$, then $T(2)$ must be adjacent to $1$, so $T(2)=2$ or $n$. If $T(2)=2$, then $T(3)$ must be adjacent to $2$ and cannot be $1$. Inductively, $T(i)=i$ for every $i$. If $T(2)=n$, then $T(3)$ must be adjacent to $n$ but not to $1$. Again, inductively, we conclude that $T$ is a reflection. Now, tracing back, we conclude that $T\\in\\varphi(D_n)$. Hence $\\varphi$ is an isomorphism.\n"
     },
     {
       "passageId": "bott-periodicity-k-theory:p0001",
@@ -12375,11 +12576,11 @@
     },
     {
       "passageId": "mcmullens-surgery-finite-symmetry:p0009",
-      "status": "unchanged",
+      "status": "moved-intact",
       "originalFile": "84-mcmullens-surgery-finite-symmetry.tex",
-      "currentFile": "84-mcmullens-surgery-finite-symmetry.tex",
+      "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 9,
-      "currentOrdinal": 9,
+      "currentOrdinal": 35,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12389,7 +12590,7 @@
       "originalFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "currentFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "originalOrdinal": 10,
-      "currentOrdinal": 10,
+      "currentOrdinal": 9,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery-finite-symmetry:p0010\n+++ candidate/mcmullens-surgery-finite-symmetry:p0010\n@@ -1,2 +1,2 @@\n-   \\subsection*{Definition 6.28}{(Exposed Critical Points)}: We say $f(z)$ has exposed critical points if every critical point lies in the Fatou set $F(f)$ or on the boundary of a component of $F(f)$.\n+   \\subsection*{Definition 6.28 (Exposed Critical Points)} We say $f(z)$ has exposed critical points if every critical point lies in the Fatou set $F(f)$ or on the boundary of a component of $F(f)$.\n \n"
     },
@@ -12399,7 +12600,7 @@
       "originalFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "currentFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "originalOrdinal": 11,
-      "currentOrdinal": 11,
+      "currentOrdinal": 10,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery-finite-symmetry:p0011\n+++ candidate/mcmullens-surgery-finite-symmetry:p0011\n@@ -1,2 +1,2 @@\n-   In proving the special case of Conjecture $6.4$ the following special case of a result of Strebel found in \\cite{MR505549} was used. We shall state the special case here.\n+   In proving the special case of Conjecture $6.4$, the following special case of a result of Strebel found in \\cite{MR505549} was used. We shall state the special case here.\n \n"
     },
@@ -12409,7 +12610,7 @@
       "originalFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "currentFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "originalOrdinal": 12,
-      "currentOrdinal": 12,
+      "currentOrdinal": 11,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery-finite-symmetry:p0012\n+++ candidate/mcmullens-surgery-finite-symmetry:p0012\n@@ -1,2 +1,2 @@\n-   \\subsection*{Theorem 6.29}{(Strebel's Theorem)}: Let $U$ be a finitely connected domain in $\\hat{\\mathbb{C}}$, and let $\\phi:\\overline{U} \\rightarrow \\overline{U}$ be a quasiconformal homeomorphism which is identity on $\\partial U$. Then there is a unique quasiconformal map $\\psi$ of minimal dilatation among those isotopic to $\\phi$ (relative to $\\partial U$). The absolute value of the Beltrami differential $|\\psi_{\\bar{z}}/\\psi_z|$ is constant on $U$ (in fact, $\\psi$ is a Teichm\\\"uller mapping of finite norm).\n+   \\subsection*{Theorem 6.29 (Strebel's Theorem)} Let $U$ be a finitely connected domain in $\\hat{\\mathbb{C}}$, and let $\\phi:\\overline{U} \\rightarrow \\overline{U}$ be a quasiconformal homeomorphism which is the identity on $\\partial U$. Then there is a unique quasiconformal map $\\psi$ of minimal dilatation among those isotopic to $\\phi$ (relative to $\\partial U$). The absolute value of the Beltrami differential $|\\psi_{\\bar{z}}/\\psi_z|$ is constant on $U$ (in fact, $\\psi$ is a Teichm\\\"uller mapping of finite norm).\n \n"
     },
@@ -12419,7 +12620,7 @@
       "originalFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "currentFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "originalOrdinal": 13,
-      "currentOrdinal": 13,
+      "currentOrdinal": 12,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12429,7 +12630,7 @@
       "originalFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "currentFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "originalOrdinal": 14,
-      "currentOrdinal": 14,
+      "currentOrdinal": 13,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12439,7 +12640,7 @@
       "originalFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "currentFile": "84-mcmullens-surgery-finite-symmetry.tex",
       "originalOrdinal": 15,
-      "currentOrdinal": 15,
+      "currentOrdinal": 14,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12807,7 +13008,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 35,
-      "currentOrdinal": 35,
+      "currentOrdinal": 36,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12817,7 +13018,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 36,
-      "currentOrdinal": 36,
+      "currentOrdinal": 37,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12827,7 +13028,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 37,
-      "currentOrdinal": 37,
+      "currentOrdinal": 38,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12837,7 +13038,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 38,
-      "currentOrdinal": 38,
+      "currentOrdinal": 39,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12847,7 +13048,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 39,
-      "currentOrdinal": 39,
+      "currentOrdinal": 40,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12857,7 +13058,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 40,
-      "currentOrdinal": 40,
+      "currentOrdinal": 41,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0040\n+++ candidate/mcmullens-surgery:p0040\n@@ -1,2 +1,2 @@\n-    \\subsection*{Lemma 6.22}: If $V$ is fixed Siegel disk or a fixed Herman ring of rotation number $\\theta \\in \\mathbb{R}\\backslash\\mathbb{Q}$, then $\\hat{f}$ is real analytically conjugate to the rigid rotation $R_{\\theta} = e^{2\\pi i \\theta}z$\n+    \\subsection*{Lemma 6.22}: If $V$ is a fixed Siegel disk or a fixed Herman ring of rotation number $\\theta \\in \\mathbb{R}\\backslash\\mathbb{Q}$, then $\\hat{f}$ is real analytically conjugate to the rigid rotation $R_{\\theta} = e^{2\\pi i \\theta}z$.\n \n"
     },
@@ -12867,7 +13068,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 41,
-      "currentOrdinal": 41,
+      "currentOrdinal": 42,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0041\n+++ candidate/mcmullens-surgery:p0041\n@@ -1,2 +1,2 @@\n-    \\textit{Proof.}: If $V$ is a Siegel disk then $U=V$ and a Riemann mapping $R_U$, which maps the indifferent fixed point to $0$, conjugates $f$ to the rigid rotation on $\\mathbb{D}$. Hence $\\hat{f}$ on $\\mathbb{S}^1$ is actually equal to $R_{\\theta}$. If $V$ is a Herman ring, then there is a conformal map $\\phi:V \\rightarrow \\mathbb{A}_r$ conjugating $f$ to $R_{\\theta}$. In this case, arguing as we did in Proposition $6.16$, we obtain that $\\hat{f}$ on $I(U)$ is real analytically conjugate to $R_{\\theta}$.\n+    \\textit{Proof.} If $V$ is a Siegel disk, then $U=V$ and a Riemann mapping $R_U$, which maps the indifferent fixed point to $0$, conjugates $f$ to the rigid rotation on $\\mathbb{D}$. Hence $\\hat{f}$ on $\\mathbb{S}^1$ is actually equal to $R_{\\theta}$. If $V$ is a Herman ring, then there is a conformal map $\\phi:V \\rightarrow \\mathbb{A}_r$ conjugating $f$ to $R_{\\theta}$. In this case, arguing as we did in Proposition $6.16$, we obtain that $\\hat{f}$ on $I(U)$ is real analytically conjugate to $R_{\\theta}$.\n \n"
     },
@@ -12877,7 +13078,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 42,
-      "currentOrdinal": 42,
+      "currentOrdinal": 43,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12887,7 +13088,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 43,
-      "currentOrdinal": 43,
+      "currentOrdinal": 44,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12897,7 +13098,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 44,
-      "currentOrdinal": 44,
+      "currentOrdinal": 45,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0044\n+++ candidate/mcmullens-surgery:p0044\n@@ -1,5 +1,5 @@\n-    \\textit{Proof.}: Let $W \\subset V$ be a Jordan domain, for which $f(W)$ is a proper subset of $W$ and $\\overline{W}$ does not intersect $\\partial U$. In the (super)attraction case $W$ may be chosen as disk surrounding the (super)attracting fixed point and mapping inside itself. In the parabolic case $W$ may be chosen as an attracting petal in the parabolic basin so that $\\overline{W}$ intersects $\\partial V$ at the parabolic fixed point.\\\\\n-    Let $W_n$ be the component of $f^{\\circ (-n)}(W)$ containing $W$, then\n+    \\textit{Proof.} Let $W \\subset V$ be a Jordan domain, for which $f(W)$ is a proper subset of $W$ and $\\overline{W}$ does not intersect $\\partial U$. In the (super)attraction case $W$ may be chosen as a disk surrounding the (super)attracting fixed point and mapping inside itself. In the parabolic case $W$ may be chosen as an attracting petal in the parabolic basin so that $\\overline{W}$ intersects $\\partial V$ at the parabolic fixed point.\\\\\n+    Let $W_n$ be the component of $f^{\\circ (-n)}(W)$ containing $W$. Then\n     $$\\overline{W} \\subset \\overline{W_1} \\subset \\overline{W_2} \\subset \\ldots\n     $$\n \n"
     },
@@ -12907,7 +13108,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 45,
-      "currentOrdinal": 45,
+      "currentOrdinal": 46,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0045\n+++ candidate/mcmullens-surgery:p0045\n@@ -1,4 +1,4 @@\n     and $\\bigcup_{n}{W_n} = V$. In the parabolic case, $\\partial U$ cannot contain any point in the grand orbit of the parabolic point since $f(\\partial U) = \\partial U$, so $W_n \\cap \\partial U = \\emptyset$ for all $n>0$. Observe that, if $V$ is not simply connected, $W_n$ will become multiply connected after a certain $n_0$, since the union of all the $W_n$'s must account for all of $V$.\\\\\n-    For every $n$, there is a component of $\\partial W_n$ which together with $\\partial U$ bounds an annulus $A_n$ disjoint from $W_n$. In general, $A_n$ may contain infinitely many different components of the Julia set. Each annulus lies in an $\\epsilon_n$-neighbourhood of $\\partial U$, where $\\epsilon_n \\rightarrow 0$ as $n\\rightarrow \\infty$. Otherwise there is a continuum in $\\partial V$ which lies in $U$ and meets $\\partial U$, contradicting the fact that $C$ is a component of the Julia set.\\\\\n+    For every $n$, there is a component of $\\partial W_n$ which together with $\\partial U$ bounds an annulus $A_n$ disjoint from $W_n$. In general, $A_n$ may contain infinitely many different components of the Julia set. Each annulus lies in an $\\epsilon_n$-neighbourhood of $\\partial U$, where $\\epsilon_n \\rightarrow 0$ as $n\\rightarrow \\infty$. Otherwise, there is a continuum in $\\partial V$ which lies in $U$ and meets $\\partial U$, contradicting the fact that $C$ is a component of the Julia set.\\\\\n     Choose $n$ sufficiently large so that $A_n$ contains no critical values. The component of $\\partial W_n$ which, together with $\\partial U$, bounds $A_n$ is essentially the component that hits rays from $\\partial U$ to $W_n$ first. This fact, along with $f(W_{n+1}) = W_n$, ensures that $A_{n+1}$ is a component of $f^{-1}(A_n)$ and a proper subset of $A_n$. Lemma $6.18$ now applies.\n \n"
     },
@@ -12917,7 +13118,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 46,
-      "currentOrdinal": 46,
+      "currentOrdinal": 47,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12927,7 +13128,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 47,
-      "currentOrdinal": 47,
+      "currentOrdinal": 48,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12937,7 +13138,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 48,
-      "currentOrdinal": 48,
+      "currentOrdinal": 49,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0048\n+++ candidate/mcmullens-surgery:p0048\n@@ -1,2 +1,2 @@\n-    \\textit{Proof.}: Let $R_U:U\\rightarrow \\mathbb{D}$ be a Riemann map, normalized so that the parabolic fixed prime end corresponds to $z=1$. Then the coordinate form of $f$, together with $V$, carries over to $\\mathbb{D}$, where we continue to denote them by $f$ and $V$. Observe that this coordinate form of $f$ is defined only on a subset of the disk, and that its domain contains $V$ and a one-sided neighbourhood of $\\mathbb{S}^1$. By the Schwarz Reflection Principle, it can be extended to a holomorphic map on a neighbourhood of $\\mathbb{S}^1$ having a parabolic fixed point at $z=1$. The restriction to the unit circle is precisely $\\hat{f}$. We construct by hand a quasisymmetric conjugacy between $\\hat{f}$ and $P_d$, where $d$ is the degree of $\\hat{f}$ on $\\mathbb{S}^1$.\\\\\n+    \\textit{Proof.} Let $R_U:U\\rightarrow \\mathbb{D}$ be a Riemann map, normalized so that the parabolic fixed prime end corresponds to $z=1$. Then the coordinate form of $f$, together with $V$, carries over to $\\mathbb{D}$, where we continue to denote them by $f$ and $V$. Observe that this coordinate form of $f$ is defined only on a subset of the disk, and that its domain contains $V$ and a one-sided neighbourhood of $\\mathbb{S}^1$. By the Schwarz Reflection Principle, it can be extended to a holomorphic map on a neighbourhood of $\\mathbb{S}^1$ having a parabolic fixed point at $z=1$. The restriction to the unit circle is precisely $\\hat{f}$. We construct by hand a quasisymmetric conjugacy between $\\hat{f}$ and $P_d$, where $d$ is the degree of $\\hat{f}$ on $\\mathbb{S}^1$.\\\\\n \n"
     },
@@ -12947,7 +13148,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 49,
-      "currentOrdinal": 49,
+      "currentOrdinal": 50,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0049\n+++ candidate/mcmullens-surgery:p0049\n@@ -2,6 +2,6 @@\n     \\includegraphics[width=.95\\linewidth]{ms-fig-37.pdf}\n     \\FigureTag{MS37}{fig:ms-37}\n     \\end{figure}\n-    Consider an attracting petal $W$, containing $z=1$ on its boundary. For simplicity choose $W$ so that $\\partial W$ is a $C^{\\infty}$ curve avoiding the grand orbits of the critical points. As before, let $W_n$ denote the component of $f^{\\circ (-n)}(W)$ containing $W$. For $n$ sufficiently large, there is a unique component $\\gamma_n$ of $\\partial W_n$, lying between $\\partial U$ and $W_n$, and touching $\\mathbb{S}^1$ at the $n$-th preimages of $z=1$. This curve $\\gamma_n$ is contained in the annulus where $f$ is a covering.\\\\\n+    Consider an attracting petal $W$, containing $z=1$ on its boundary. For simplicity, choose $W$ so that $\\partial W$ is a $C^{\\infty}$ curve avoiding the grand orbits of the critical points. As before, let $W_n$ denote the component of $f^{\\circ (-n)}(W)$ containing $W$. For $n$ sufficiently large, there is a unique component $\\gamma_n$ of $\\partial W_n$, lying between $\\partial U$ and $W_n$, and touching $\\mathbb{S}^1$ at the $n$-th preimages of $z=1$. This curve $\\gamma_n$ is contained in the annulus where $f$ is a covering.\\\\\n     The curves $\\gamma_n$ and $\\gamma_{n+1}$ bound a pinched annulus $A_n$ with several components. This pinched annulus is, in a sense, a fundamental domain, since all forward orbits of points in between $\\mathbb{S}^1$ and $\\gamma_{n+1}$ must pass once and only once through $A_n \\cup \\gamma_n$.\\\\\n \n"
     },
@@ -12957,7 +13158,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 50,
-      "currentOrdinal": 50,
+      "currentOrdinal": 51,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0050\n+++ candidate/mcmullens-surgery:p0050\n@@ -3,5 +3,5 @@\n     \\FigureTag{MS38}{fig:ms-38}\n     \\end{figure}\n     We may carry out the same discussion on another copy of the unit disk for the map $P_d$, obtaining analogous sets $W'_n$, $\\gamma_n'$, $A'_n$, etc.\\\\\n-    To construct the conjugacy, we start by fixing $n$ sufficiently large and by choosing a $C^1$-diffeomorphism $\\phi$ from the curve $\\gamma_n$ onto $\\gamma_n'$, fixing $z=1$, and sending preimages of $z=1$ to their analogues in an appropriate fashion (To do this one basically has to construct a smooth graph joining points $(x_i, x_i')$). Using the map $f$, we define $\\phi$ on $\\gamma_{n+1}$ so that $P_d\\circ \\phi = \\phi \\circ f$. We then extend $\\phi$ quasiconformally to the different components of $A_n$ sending them to their analogues $A_n'$. Using the dynamics of $f$ and $P_d$ we extend recursively to the whole pinched annulus in between $\\mathbb{S}^1$ and $\\gamma_n$, so that it conjugates $f$ and $P_d$. Such a map extends quasiconformally to the whole unit disk, and quasisymmetrically to $\\mathbb{S}^1$, conjugating $\\hat{f}$ and $P_d$ as required.\n+    To construct the conjugacy, we start by fixing $n$ sufficiently large and by choosing a $C^1$-diffeomorphism $\\phi$ from the curve $\\gamma_n$ onto $\\gamma_n'$, fixing $z=1$, and sending preimages of $z=1$ to their analogues in an appropriate fashion (To do this, one basically has to construct a smooth graph joining points $(x_i, x_i')$). Using the map $f$, we define $\\phi$ on $\\gamma_{n+1}$ so that $P_d\\circ \\phi = \\phi \\circ f$. We then extend $\\phi$ quasiconformally to the different components of $A_n$ sending them to their analogues $A_n'$. Using the dynamics of $f$ and $P_d$ we extend recursively to the whole pinched annulus in between $\\mathbb{S}^1$ and $\\gamma_n$, so that it conjugates $f$ and $P_d$. Such a map extends quasiconformally to the whole unit disk, and quasisymmetrically to $\\mathbb{S}^1$, conjugating $\\hat{f}$ and $P_d$ as required.\n \n"
     },
@@ -12967,7 +13168,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 51,
-      "currentOrdinal": 51,
+      "currentOrdinal": 52,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12977,7 +13178,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 52,
-      "currentOrdinal": 52,
+      "currentOrdinal": 53,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12987,7 +13188,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 53,
-      "currentOrdinal": 53,
+      "currentOrdinal": 54,
       "payloadChanges": {},
       "diff": ""
     },
@@ -12997,7 +13198,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 54,
-      "currentOrdinal": 54,
+      "currentOrdinal": 55,
       "payloadChanges": {},
       "diff": ""
     },
@@ -13007,7 +13208,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 55,
-      "currentOrdinal": 55,
+      "currentOrdinal": 56,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0055\n+++ candidate/mcmullens-surgery:p0055\n@@ -1,2 +1,2 @@\n-    The final notebook page proposes the following rigour step: first extend $\\Psi_n$ smoothly to the rest of the annulus bounded by $\\mathbb S^1$ and $\\gamma_n$, obtaining $\\widehat\\Psi_n$, and then claim $\\widehat\\Psi_n\\to\\Psi$ because $H^1(\\widetilde U)$ is Cauchy complete. Completeness alone does not show that $\\langle\\widehat\\Psi_n\\rangle$ is Cauchy, and the notes supply no uniform quasiconformal or $H^1$ estimate. Thus the recursive parabolic construction above faithfully records the source, but its limiting-extension step remains a localized gap unless that standard uniform estimate is supplied.\n+    A final proposed rigour step is to extend $\\Psi_n$ smoothly to the rest of the annulus bounded by $\\mathbb S^1$ and $\\gamma_n$, obtaining $\\widehat\\Psi_n$, and then claim $\\widehat\\Psi_n\\to\\Psi$ because $H^1(\\widetilde U)$ is Cauchy complete. Completeness alone does not show that $\\langle\\widehat\\Psi_n\\rangle$ is Cauchy, and there is no uniform quasiconformal or $H^1$ estimate. Thus the recursive parabolic construction above is retained, but its limiting-extension step remains a localized gap unless that standard uniform estimate is supplied.\n \n"
     },
@@ -13017,7 +13218,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 56,
-      "currentOrdinal": 56,
+      "currentOrdinal": 57,
       "payloadChanges": {},
       "diff": ""
     },
@@ -13027,7 +13228,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 57,
-      "currentOrdinal": 57,
+      "currentOrdinal": 58,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0057\n+++ candidate/mcmullens-surgery:p0057\n@@ -1,2 +1,2 @@\n-    Proof of Main Theorem. Suppose $I(U)$ is periodic of period $p\\geq 1$. Following Proposition $6.17$, let $\\hat{\\phi}:I(U)\\rightarrow \\mathbb{S}^1$ be a quasisymmetric map so that $\\hat{\\phi}\\circ \\hat{f}^p\\circ \\hat{\\phi}^{-1}$ equals exactly one of the rigid models, say $B_U$. Choose a Riemann mapping $R_U:U \\rightarrow \\mathbb{D}$. The ideal boundary values of $R_U$ identify $I(U)$ with $\\mathbb{S}^1$, so $\\hat{\\phi}$ determines a quasisymmetric self-map of the circle. Extend this self-map quasiconformally over $\\mathbb{D}$ and compose it with $R_U$ to obtain $\\phi:U\\rightarrow\\mathbb{D}$. It follows that $f^{\\circ p}$ and $B_U$ are compatible on the ideal boundary via $\\phi$. If $p=1$ this periodic component is dealt with: replacing $f$ on $U$ by the map $\\phi^{-1}\\circ B_U\\circ \\phi$ and keeping $f$ outside $U$, it follows from the \\BlogPost{third-surgery}{Gluing Lemma} that we obtain a new quasirational map. If $p>1$ then we have to replace $f$ on the disc components $U_j$ where $I(U_j):= \\hat{f}^j(I(U))$ for $0\\leq j\\leq p-1$ with maps that are compatible with $\\hat{f}$ along the ideal boundaries and whose composition agrees with $\\phi^{-1}\\circ B_U\\circ \\phi$ on $U$. Set $U_0=U$ and $U_p=U_0$. Let $d_j\\geq 1$ denote the degree of $\\hat{f}:I(U_j)\\rightarrow I(U_{j+1})$ for $0\\leq j\\leq p-1$. Then the product $\\prod_{j=0}^{p-1}{d_j} = d$, where $d=1$ in the elliptic case. From Proposition $6.16$ $(3)$ we know that there exists a pair of quasisymmetric maps mapping $I(U_j)$ and $I(U_{j+1})$ respectively to $\\mathbb{S}^1$ and providing an equivalence between $\\hat{f}$ and $B_j(z):= z^{d_j}$ for $0\\leq j\\leq p-2$. From what we noted in Proposition $6.16$ we know that we may choose one of the quasisymmetric maps arbitrarily. Let $\\hat{\\phi}_0 = \\hat{\\phi}:I(U_0)\\rightarrow \\mathbb{S}^1$ from above and let $\\phi_0=\\phi$. For $j = 1,\\ldots, p-1$ establish recursively $\\hat{\\phi}_j:I(U_j)\\rightarrow \\mathbb{S}^1$ such that $\\hat{\\phi}_j\\circ \\hat{f} = B_{j-1}\\circ \\hat{\\phi}_{j-1}$. Extend $\\hat{\\phi}_1,\\ldots,\\hat{\\phi}_{p-1}$ quasiconformally over their disks and denote the extensions by $\\phi_1,\\ldots,\\phi_{p-1}$. Finally set $\\phi_p=\\phi_0$. Depending on the case we choose $B_{p-1}$ to be the Blaschke product defined as\n+    Proof of Main Theorem. Suppose $I(U)$ is periodic of period $p\\geq 1$. Following Proposition $6.17$, let $\\hat{\\phi}:I(U)\\rightarrow \\mathbb{S}^1$ be a quasisymmetric map so that $\\hat{\\phi}\\circ \\hat{f}^p\\circ \\hat{\\phi}^{-1}$ equals exactly one of the rigid models, say $B_U$. Choose a Riemann mapping $R_U:U \\rightarrow \\mathbb{D}$. The ideal boundary values of $R_U$ identify $I(U)$ with $\\mathbb{S}^1$, so $\\hat{\\phi}$ determines a quasisymmetric self-map of the circle. Extend this self-map quasiconformally over $\\mathbb{D}$ and compose it with $R_U$ to obtain $\\phi:U\\rightarrow\\mathbb{D}$. It follows that $f^{\\circ p}$ and $B_U$ are compatible on the ideal boundary via $\\phi$. If $p=1$, this periodic component is dealt with: replacing $f$ on $U$ by the map $\\phi^{-1}\\circ B_U\\circ \\phi$ and keeping $f$ outside $U$, it follows from the \\BlogPost{third-surgery}{Gluing Lemma} that we obtain a new quasirational map. If $p>1$, then we have to replace $f$ on the disc components $U_j$ where $I(U_j):= \\hat{f}^j(I(U))$ for $0\\leq j\\leq p-1$ with maps that are compatible with $\\hat{f}$ along the ideal boundaries and whose composition agrees with $\\phi^{-1}\\circ B_U\\circ \\phi$ on $U$. Set $U_0=U$ and $U_p=U_0$. Let $d_j\\geq 1$ denote the degree of $\\hat{f}:I(U_j)\\rightarrow I(U_{j+1})$ for $0\\leq j\\leq p-1$. Then the product $\\prod_{j=0}^{p-1}{d_j} = d$, where $d=1$ in the elliptic case. From Proposition $6.16$ $(3)$ we know that there exists a pair of quasisymmetric maps mapping $I(U_j)$ and $I(U_{j+1})$ respectively to $\\mathbb{S}^1$ and providing an equivalence between $\\hat{f}$ and $B_j(z):= z^{d_j}$ for $0\\leq j\\leq p-2$. From what we noted in Proposition $6.16$ we know that we may choose one of the quasisymmetric maps arbitrarily. Let $\\hat{\\phi}_0 = \\hat{\\phi}:I(U_0)\\rightarrow \\mathbb{S}^1$ from above and let $\\phi_0=\\phi$. For $j = 1,\\ldots, p-1$, establish recursively $\\hat{\\phi}_j:I(U_j)\\rightarrow \\mathbb{S}^1$ such that $\\hat{\\phi}_j\\circ \\hat{f} = B_{j-1}\\circ \\hat{\\phi}_{j-1}$. Extend $\\hat{\\phi}_1,\\ldots,\\hat{\\phi}_{p-1}$ quasiconformally over their disks and denote the extensions by $\\phi_1,\\ldots,\\phi_{p-1}$. Finally, set $\\phi_p=\\phi_0$. Depending on the case, we choose $B_{p-1}$ to be the Blaschke product defined as\n \n"
     },
@@ -13037,7 +13238,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 58,
-      "currentOrdinal": 58,
+      "currentOrdinal": 59,
       "payloadChanges": {},
       "diff": ""
     },
@@ -13047,7 +13248,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 59,
-      "currentOrdinal": 59,
+      "currentOrdinal": 60,
       "payloadChanges": {},
       "diff": ""
     },
@@ -13057,7 +13258,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 60,
-      "currentOrdinal": 60,
+      "currentOrdinal": 61,
       "payloadChanges": {
         "math": {
           "removed": [
@@ -13078,7 +13279,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 61,
-      "currentOrdinal": 61,
+      "currentOrdinal": 62,
       "payloadChanges": {},
       "diff": "--- baseline/mcmullens-surgery:p0061\n+++ candidate/mcmullens-surgery:p0061\n@@ -1,3 +1,3 @@\n-    The conditions in \\BlogPost{third-surgery}{Corollary $6.13$} are therefore satisfied. Hence, by replacing $f$ on $U_j$ by the map $\\phi_{j+1}^{-1}\\circ B_j\\circ \\phi_j$ for $j = 0, 1, \\ldots, p-1$ and keeping $f$ outside $\\bigcup_{j=0}^{p-1}{U_j}$ we obtain a new quasirational map.\\\\\n-    After having dealt with all the periodic components of $I(C)$ we work backwards along the preimages of each of them. If $I(V)$ is one of them, and $\\hat{f}(I(V)) = I(W)$, then $\\hat{f}$ is quasisymmetrically equivalent to $z\\rightarrow z^d$ for some $d\\geq 1$. If $d=1$ we keep the conformal isomorphism $f\\big|_V:V\\rightarrow W$. Only if $d>1$ shall we replace the map. Suppose this has been done up to $V$. We construct as before gluing maps $\\phi_1$ and $\\phi_2$ using Riemann mappings $R_V$ and $R_W$, and define the new map on $V$ by $\\phi_2^{-1}\\circ z^d\\circ \\phi_1$. The new critical point $c$ equals $\\phi_1^{-1}(0) \\in V$, with critical value equal to $\\phi_2^{-1}(0)$. The orbit of $c$ satisfies one of the conditions in the main theorem if the orbit of its critical value does. We choose the Riemann mapping $R_W$ so that $\\phi_2^{-1}(0)$ has the correct orbital behaviour. Keep repeating this. By Proposition $6.16$ (1), after a finite number of steps we have constructed a quasirational map $q$ satisfying the conditions of the main theorem. After integration, let $\\Phi$ be a quasiconformal map such that $\\Phi\\circ q=g\\circ\\Phi$ for the desired rational map $g$.\\\\\n+    The conditions in \\BlogPost{third-surgery}{Corollary $6.13$} are therefore satisfied. Hence, by replacing $f$ on $U_j$ by the map $\\phi_{j+1}^{-1}\\circ B_j\\circ \\phi_j$ for $j = 0, 1, \\ldots, p-1$ and keeping $f$ outside $\\bigcup_{j=0}^{p-1}{U_j}$, we obtain a new quasirational map.\\\\\n+    After having dealt with all the periodic components of $I(C)$, we work backwards along the preimages of each of them. If $I(V)$ is one of them, and $\\hat{f}(I(V)) = I(W)$, then $\\hat{f}$ is quasisymmetrically equivalent to $z\\rightarrow z^d$ for some $d\\geq 1$. If $d=1$, we keep the conformal isomorphism $f\\big|_V:V\\rightarrow W$. Only if $d>1$ shall we replace the map. Suppose this has been done up to $V$. We construct as before gluing maps $\\phi_1$ and $\\phi_2$ using Riemann mappings $R_V$ and $R_W$, and define the new map on $V$ by $\\phi_2^{-1}\\circ z^d\\circ \\phi_1$. The new critical point $c$ equals $\\phi_1^{-1}(0) \\in V$, with critical value equal to $\\phi_2^{-1}(0)$. The orbit of $c$ satisfies one of the conditions in the main theorem if the orbit of its critical value does. We choose the Riemann mapping $R_W$ so that $\\phi_2^{-1}(0)$ has the correct orbital behaviour. Keep repeating this. By Proposition $6.16$ (1), after a finite number of steps we have constructed a quasirational map $q$ satisfying the conditions of the main theorem. After integration, let $\\Phi$ be a quasiconformal map such that $\\Phi\\circ q=g\\circ\\Phi$ for the desired rational map $g$.\\\\\n \n"
     },
@@ -13088,7 +13289,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 62,
-      "currentOrdinal": 62,
+      "currentOrdinal": 63,
       "payloadChanges": {},
       "diff": ""
     },
@@ -13098,7 +13299,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 63,
-      "currentOrdinal": 63,
+      "currentOrdinal": 64,
       "payloadChanges": {},
       "diff": ""
     },
@@ -13108,7 +13309,7 @@
       "originalFile": "80-mcmullens-surgery.tex",
       "currentFile": "80-mcmullens-surgery.tex",
       "originalOrdinal": 64,
-      "currentOrdinal": 64,
+      "currentOrdinal": 65,
       "payloadChanges": {},
       "diff": ""
     },
@@ -15096,7 +15297,7 @@
           ]
         }
       },
-      "diff": "--- baseline/rouche-and-bloch:p0033\n+++ candidate/rouche-and-bloch:p0033\n@@ -1,4 +1,4 @@\n-\\paragraph{Final remark.} With this we conclude our compilation of standard techniques in complex analysis. We end this by presenting some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.\n+\\paragraph{Final remark.} We continue in \\BlogPost{separation-and-holomorphic-lifting}{Separation by a Polygonal Path/Arc and Holomorphic Lifting} with some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.\n \\begin{figure}[htbp]\n   \\centering\n   \\includegraphics[width=0.72\\textwidth]{note7-fig-05.pdf}\n"
+      "diff": "--- baseline/rouche-and-bloch:p0033\n+++ candidate/rouche-and-bloch:p0033\n@@ -1,5 +1,5 @@\n-\\paragraph{Final remark.} With this we conclude our compilation of standard techniques in complex analysis. We end this by presenting some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.\n \\begin{figure}[htbp]\n   \\centering\n   \\includegraphics[width=0.72\\textwidth]{note7-fig-05.pdf}\n \\end{figure}\n+\\paragraph{Final remark.} We continue in \\BlogPost{separation-and-holomorphic-lifting}{Separation by a Polygonal Path/Arc and Holomorphic Lifting} with some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.\n"
     },
     {
       "passageId": "second-surgery:p0001",
@@ -15685,7 +15886,7 @@
       "originalFile": "12-separation-and-holomorphic-lifting.tex",
       "currentFile": "12-separation-and-holomorphic-lifting.tex",
       "originalOrdinal": 24,
-      "currentOrdinal": 24,
+      "currentOrdinal": 25,
       "payloadChanges": {},
       "diff": ""
     },
@@ -15695,7 +15896,7 @@
       "originalFile": "12-separation-and-holomorphic-lifting.tex",
       "currentFile": "12-separation-and-holomorphic-lifting.tex",
       "originalOrdinal": 25,
-      "currentOrdinal": 25,
+      "currentOrdinal": 26,
       "payloadChanges": {},
       "diff": ""
     },
@@ -15705,7 +15906,7 @@
       "originalFile": "12-separation-and-holomorphic-lifting.tex",
       "currentFile": "12-separation-and-holomorphic-lifting.tex",
       "originalOrdinal": 26,
-      "currentOrdinal": 26,
+      "currentOrdinal": 27,
       "payloadChanges": {},
       "diff": ""
     },
@@ -15715,7 +15916,7 @@
       "originalFile": "12-separation-and-holomorphic-lifting.tex",
       "currentFile": "12-separation-and-holomorphic-lifting.tex",
       "originalOrdinal": 27,
-      "currentOrdinal": 27,
+      "currentOrdinal": 28,
       "payloadChanges": {},
       "diff": ""
     },
@@ -15725,7 +15926,7 @@
       "originalFile": "12-separation-and-holomorphic-lifting.tex",
       "currentFile": "12-separation-and-holomorphic-lifting.tex",
       "originalOrdinal": 28,
-      "currentOrdinal": 28,
+      "currentOrdinal": 29,
       "payloadChanges": {},
       "diff": ""
     },
@@ -15735,7 +15936,7 @@
       "originalFile": "12-separation-and-holomorphic-lifting.tex",
       "currentFile": "12-separation-and-holomorphic-lifting.tex",
       "originalOrdinal": 29,
-      "currentOrdinal": 29,
+      "currentOrdinal": 30,
       "payloadChanges": {},
       "diff": ""
     },
@@ -15745,7 +15946,7 @@
       "originalFile": "12-separation-and-holomorphic-lifting.tex",
       "currentFile": "12-separation-and-holomorphic-lifting.tex",
       "originalOrdinal": 30,
-      "currentOrdinal": 30,
+      "currentOrdinal": 31,
       "payloadChanges": {},
       "diff": ""
     },
@@ -15755,7 +15956,7 @@
       "originalFile": "12-separation-and-holomorphic-lifting.tex",
       "currentFile": "12-separation-and-holomorphic-lifting.tex",
       "originalOrdinal": 31,
-      "currentOrdinal": 31,
+      "currentOrdinal": 24,
       "payloadChanges": {},
       "diff": ""
     },
@@ -16984,13 +17185,13 @@
     },
     {
       "passageId": "surgical-tools:p0042",
-      "status": "unchanged",
+      "status": "mechanically-corrected",
       "originalFile": "24-surgical-tools.tex",
       "currentFile": "24-surgical-tools.tex",
       "originalOrdinal": 42,
       "currentOrdinal": 42,
       "payloadChanges": {},
-      "diff": ""
+      "diff": "--- baseline/surgical-tools:p0042\n+++ candidate/surgical-tools:p0042\n@@ -1,7 +1,7 @@\n         \\begin{figure}[ht!]\n-        \\begin{tikzpicture}\n+        \\begin{tikzpicture}[line width=0.7pt]\n         \\draw (0,0) ellipse (8cm and 4cm);\n-        \\draw (0,0) ellipse (6cm and 3cm)[fill = gray];\n+        \\draw (0,0) ellipse (6cm and 3cm)[fill = gray!15];\n         \\draw (0,0) ellipse (2cm and 1cm)[fill = white];\n         \\node[text width=3cm] at (-0.3,0) {$\\hat{f_1}$};\n         \\node[text width=3cm] at (-5.9,0) {$f_2$};\n"
     },
     {
       "passageId": "surgical-tools:p0043",

@@ -1,0 +1,31 @@
+\documentclass[tikz,border=7pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,newtxtext,newtxmath}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\definecolor{ink}{HTML}{20364D}
+\definecolor{accent}{HTML}{356A89}
+\definecolor{green}{HTML}{39745C}
+\newcommand{\id}{\mathrm{id}}
+\tikzset{every picture/.style={color=ink},>=Stealth}
+\tikzcdset{arrow style=tikz,arrows={-Stealth,draw=accent},labels={font=\small}}
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm,every node/.style={inner sep=4pt}]
+\node (c) at (-4,3.2) {$C$};
+\foreach \n/\x/\y in {1/-5.7/1.2,2/-6.3/-.3,3/-4.5/-1.25,4/-2.7/-.55,5/-2.4/1.25}
+ \node (a\n) at (\x,\y) {$\chi(\n)$};
+\foreach \u/\v in {1/2,2/3,3/4,4/5,5/1}
+ \draw[->,accent] (a\u)--(a\v);
+\draw[->,accent] (a3) to[bend left=18] (a1);
+\foreach \n in {1,2,3,4,5}
+ \draw[->,green,densely dashed] (c)--(a\n);
+\node at (-4.35,-2.0) {$\mathrm{Cone}(\chi)$};
+\foreach \n/\x/\y in {1/2.1/1.2,2/1.5/-.3,3/3.3/-1.25,4/5.1/-.55,5/5.4/1.25}
+ \node (b\n) at (\x,\y) {$\n$};
+\foreach \u/\v in {1/2,2/3,3/4,4/5,5/1}
+ \draw[->,accent] (b\u)--(b\v);
+\draw[->,accent] (b3) to[bend left=18] (b1);
+\node at (3.5,-2.0) {$J$};
+\draw[-{Stealth[length=3mm]},very thick,accent] (1.05,.5)--node[above] {$\chi$} (-1.3,.5);
+\end{tikzpicture}
+\end{document}

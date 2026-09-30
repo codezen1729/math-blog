@@ -21,6 +21,7 @@ from editorial_conservation import (
     BASELINE_PATH,
     LEDGER_PATH,
     ROOT,
+    approved_author_versions,
     baseline_records,
     canonical_math,
     command_arguments,
@@ -735,6 +736,9 @@ def build_review_model(
 ) -> dict:
     before_by_id = baseline_records(baseline)
     ledger_by_id = {entry["passageId"]: entry for entry in ledger.get("entries", [])}
+    author_versions, author_errors = approved_author_versions(baseline, current, ledger)
+    if author_errors:
+        raise ValueError("Cannot review unauthenticated author versions:\n- " + "\n- ".join(author_errors))
     item_by_file = {item["file"]: item for item in manifest}
     slug_by_file = {item["file"]: item["slug"] for item in manifest}
     passage_reviews = []
@@ -743,7 +747,8 @@ def build_review_model(
         pair[1].get("currentOrdinal", 0), pair[0],
     )):
         before = before_by_id.get(identifier)
-        ledger_entry = ledger_by_id.get(identifier)
+        author_version = author_versions.get(after["currentFile"])
+        ledger_entry = author_version or ledger_by_id.get(identifier)
         changed = before is None or before["canonicalSha256"] != after["canonicalSha256"]
         moved = bool(before and (
             before["originalFile"] != after["currentFile"]
@@ -760,7 +765,9 @@ def build_review_model(
             "originalOrdinal": before.get("originalOrdinal") if before else None,
             "currentFile": after["currentFile"],
             "currentOrdinal": after["currentOrdinal"],
-            "status": ledger_entry.get("status") if ledger_entry else ("new-unledgered" if changed else "unchanged"),
+            "status": ("restored-approved-author-version" if changed else "unchanged") if author_version else (
+                ledger_entry.get("status") if ledger_entry else ("new-unledgered" if changed else "unchanged")
+            ),
             "approval": ledger_entry.get("approval", {}).get("state") if ledger_entry else None,
             "reason": ledger_entry.get("reason") if ledger_entry else None,
             "evidence": ledger_entry.get("evidence") if ledger_entry else None,
@@ -770,6 +777,25 @@ def build_review_model(
             "before": before["source"] if before else "",
             "after": after["source"],
             "diff": unified_diff(before["source"] if before else "", after["source"], identifier) if changed else "",
+        })
+    for identifier in sorted(before_by_id.keys() - current.keys()):
+        before = before_by_id[identifier]
+        version = author_versions.get(before["originalFile"])
+        if not version:
+            continue  # The conservation guard rejects all other missing passages.
+        filename = before["originalFile"]
+        passage_reviews.append({
+            "passageId": identifier, "post": slug_by_file[filename],
+            "title": item_by_file[filename]["title"], "changed": True, "moved": False,
+            "superseded": True, "originalFile": filename,
+            "originalOrdinal": before["originalOrdinal"], "currentFile": filename,
+            "currentOrdinal": before["originalOrdinal"],
+            "status": "superseded-by-approved-author-version", "approval": "approved",
+            "reason": version["reason"], "evidence": version["evidence"],
+            "tokenChange": token_change(before["source"], "").as_dict(),
+            "payloadChanges": readable_payload_changes(before, {"source": ""}),
+            "addedBlogPostLinks": [], "before": before["source"], "after": "",
+            "diff": unified_diff(before["source"], "", identifier),
         })
     findings = placeholder_findings(current, slug_by_file) + literal_formula_placeholders(current, slug_by_file)
     per_post = []
@@ -785,7 +811,7 @@ def build_review_model(
         denominator = before_tokens + after_tokens
         per_post.append({
             "slug": item["slug"], "title": item["title"], "file": item["file"],
-            "passages": len(reviews),
+            "passages": sum(not review.get("superseded") for review in reviews),
             "changedPassages": sum(review["changed"] for review in reviews),
             "movedPassages": sum(review["moved"] for review in reviews),
             "pendingApprovals": sum(review["changed"] and review["approval"] != "approved" for review in reviews),
@@ -800,6 +826,7 @@ def build_review_model(
         "passages": passage_reviews,
         "unresolvedFindings": findings,
         "perPost": per_post,
+        "authorVersions": list(author_versions.values()),
     }
 
 
@@ -826,7 +853,7 @@ def render_report(model: dict, link_graph: dict, proof_maps: dict, voice_drift: 
         "## Corpus summary", "",
         f"- Baseline commit: `{model.get('baselineCommit')}`",
         f"- Posts: **{len(model['perPost'])}**",
-        f"- Current passages: **{len(model['passages'])}**",
+        f"- Current passages: **{sum(not review.get('superseded') for review in model['passages'])}**",
         f"- Changed passages: **{len(changed)}**",
         f"- Moved passages: **{len(moved)}**",
         f"- Passages with mathematical payload changes: **{len(math_changed)}**",
@@ -845,6 +872,17 @@ def render_report(model: dict, link_graph: dict, proof_maps: dict, voice_drift: 
             f"{post['mathPayloadChanges']} | {post['addedBlogPostLinks']} | "
             f"{post['pendingApprovals']} | {post['unresolvedFindings']} |"
         )
+    if model.get("authorVersions"):
+        lines.extend(["", "## Author-selected historical versions", ""])
+        for version in model["authorVersions"]:
+            lines.extend([
+                f"- `{version['slug']}`: exact source at `{version['sourceCommit']}`, "
+                f"SHA-256 `{version['snapshotSha256']}`.",
+                f"  Author decision: {_md(version['approval']['evidence'])}",
+            ])
+        lines.extend(["", "Superseded baseline passages remain below as explicit before/after diffs. "
+                      "This records an author-selected version, not an assertion that no material differs. "
+                      "Release approval remains a separate requirement.", ""])
     lines.extend(["", "## Authorial-voice drift screening", ""])
     if voice_drift["posts"]:
         lines.extend([

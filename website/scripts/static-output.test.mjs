@@ -2,17 +2,67 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { articleFigureWidth } from '../lib/figure-sizing.ts';
+import { prepareFigureGalleries } from '../lib/figure-galleries.mjs';
 
 const root = new URL('../dist-pages/', import.meta.url).pathname;
 const posts = JSON.parse(readFileSync(new URL('../lib/generated-posts.json', import.meta.url), 'utf8'));
 const indexPosts = JSON.parse(readFileSync(new URL('../lib/generated-post-index.json', import.meta.url), 'utf8'));
 const search = JSON.parse(readFileSync(new URL('../public/search-index.json', import.meta.url), 'utf8'));
 const figureDescriptions = JSON.parse(readFileSync(new URL('../lib/figure-descriptions.json', import.meta.url), 'utf8'));
+const figureMetadata = JSON.parse(readFileSync(new URL('../lib/figure-metadata.json', import.meta.url), 'utf8'));
 const series = ['k-theory','dynamics','surfaces-and-curves','standard-tools','commutative-algebra','ergodic-theory','lemma-book','miscellaneous'];
 const page = relative => readFileSync(join(root, relative, 'index.html'), 'utf8');
 const decode = value => value.replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'").replace(/&#x([0-9a-f]+);/gi,(_,n)=>String.fromCodePoint(Number.parseInt(n,16))).replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Number.parseInt(n,10)));
 const plain = value => decode(value.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 const countTag = (value, tag) => (value.match(new RegExp(`<${tag}\\b`, 'gi')) ?? []).length;
+const attribute = (tag, name) => tag.match(new RegExp(`\\s${name}="([^"]*)"`, 'i'))?.[1];
+
+test('every static article image uses the same dimensions and scroll wrappers as the interactive article', () => {
+  let total=0;
+  let vectors=0;
+  for(const post of posts){
+    const article=page(`post/${post.slug}`).match(/<div class="article-prose">([\s\S]*?)<\/div><\/div><nav class="article-next-prev"/)?.[1];
+    assert.ok(article,post.slug);
+    const originals=[...post.html.matchAll(/<img\b[^>]*>/gi)].map(match=>match[0]);
+    const rendered=[...article.matchAll(/<img\b[^>]*>/gi)].map(match=>match[0]);
+    assert.equal(rendered.length,originals.length,post.slug);
+    const scrollers=[...article.matchAll(/<span class="figure-scroll"[^>]*><a class="figure-zoom"[^>]*>(<img\b[^>]*>)<\/a><\/span>/g)].map(match=>decode(attribute(match[1],'src')));
+    const gallerySources=new Set([...article.matchAll(/<figure\b[^>]*data-gallery="(?:julia-examples|multibrot-examples)"[^>]*>([\s\S]*?)<\/figure>/g)].flatMap(match=>[...match[1].matchAll(/<img\b[^>]*>/g)].map(image=>decode(attribute(image[0],'src')))));
+    const expectedScrollers=[];
+    for(let index=0;index<originals.length;index++){
+      const src=decode(attribute(originals[index],'src'));
+      const image=rendered[index];
+      const info=figureMetadata[src];
+      assert.ok(info,`${post.slug}: no metadata for ${src}`);
+      const vector=info.kind==='vector'||src.endsWith('.svg');
+      assert.equal(decode(attribute(image,'src')),src,`${post.slug}: changed figure ordering`);
+      assert.equal(Number(attribute(image,'width')),Math.round(info.width),src);
+      assert.equal(Number(attribute(image,'height')),Math.round(info.height),src);
+      assert.equal(attribute(image,'style'),gallerySources.has(src)?'width:100%;max-width:100%;height:auto':`width:${articleFigureWidth(info,vector,src)}px;max-width:${vector?'none':'100%'};height:auto`,src);
+      assert.equal((image.match(/\s(?:width|height|style)=/gi)||[]).length,3,`${src}: duplicate dimensions`);
+      assert.doesNotMatch(image,/\s\/\s+\w+=/,`${src}: attributes appended after a self-closing slash`);
+      const authoredAlt=attribute(originals[index],'alt');
+      if(authoredAlt!==undefined&&!/^(?:image|figure)$/i.test(decode(authoredAlt).trim())){
+        assert.equal(decode(attribute(image,'alt')),decode(authoredAlt),`${src}: authored alternative text was overwritten`);
+      }
+      if(vector){expectedScrollers.push(src);vectors++;}
+      total++;
+    }
+    assert.deepEqual(scrollers,expectedScrollers,`${post.slug}: missing or unexpected scroll wrappers`);
+    assert.equal((article.match(/class="figure-zoom"/g)||[]).length,originals.length,`${post.slug}: every figure must have an enlargement link`);
+  }
+  assert.ok(total>300,'the full figure collection was checked');
+  assert.ok(vectors>250,'all SVG placements were checked');
+});
+
+test('figure spacing stays centered on phones without compounding image margins', () => {
+  const css=readFileSync(new URL('../app/globals.css',import.meta.url),'utf8');
+  assert.match(css,/\.article-prose \.figure-scroll img\s*\{[^}]*margin:\s*0\s*;/);
+  assert.match(css,/\.article-prose \.figure-scroll \.figure-zoom\s*\{[^}]*margin-inline:\s*auto\s*;/);
+  assert.doesNotMatch(css,/\.article-prose \.figure-scroll \.figure-zoom\s*\{[^}]*margin-inline:\s*0\s*;/);
+  assert.match(css,/\.article-prose \.figure-scroll\s*\{[^}]*overflow-x:\s*auto\s*;/);
+});
 
 test('every post and series has a real static path with canonical metadata', () => {
   assert.equal(indexPosts.length, posts.length);
@@ -33,7 +83,9 @@ test('every post and series has a real static path with canonical metadata', () 
     assert.match(html, /<meta property="og:type" content="article"/);
     const article = html.match(/<div class="article-prose">([\s\S]*?)<\/div><\/div><nav class="article-next-prev"/)?.[1];
     assert.ok(article, `${post.slug}: static article body is missing`);
-    for (const tag of ['p','figure','img','h2','h3','h4']) assert.equal(countTag(article, tag), countTag(post.html, tag), `${post.slug}: incomplete ${tag} structure`);
+    // Known triptychs discard only image-only paragraph wrappers, not prose.
+    const presentationSource=prepareFigureGalleries(post.html);
+    for (const tag of ['p','figure','img','h2','h3','h4']) assert.equal(countTag(article, tag), countTag(presentationSource, tag), `${post.slug}: incomplete ${tag} structure`);
     for (const id of [...post.html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1])) assert.ok(article.includes(`id="${id}"`), `${post.slug}: missing #${id}`);
   }
 });

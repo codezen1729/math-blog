@@ -7,22 +7,172 @@
       "slug": "basis-fixing-reduction",
       "title": "The Complex Plane",
       "file": "01-basis-fixing-reduction.tex",
-      "changedProseRatio": 0.000602,
-      "deletedSentences": [],
-      "newSentences": [],
+      "changedProseRatio": 0.409437,
+      "deletedSentences": [
+        {
+          "passageId": "basis-fixing-reduction:p0001",
+          "text": "Following the framework of T."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0004",
+          "text": "Now is the right time to remind ourselves of Tool 1."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0005",
+          "text": "If you stretch the rubber band, then you cannot undo it later."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0009",
+          "text": "To be sincere, we shall not deviate from the theme of reflections and rotations."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0006",
+          "text": "In other words, it will break."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0006",
+          "text": "This rigidity can be extended to all of mathematics with a very similar idea, yielding the following."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0007",
+          "text": "General version Any origin-fixing isometry from mathematics to mathematics is a composition of at most mathematics reflections along hyperplanes."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0008",
+          "text": "Refer to Beardon's The Geometry of Discrete Groups , or any text on M\\\"obius transformations on mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0011",
+          "text": "Label the vertices mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0011",
+          "text": "Without loss of generality, for a given mathematics assume mathematics ; otherwise compose it with mathematics , where mathematics is a rotation."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0011",
+          "text": "Write the cycle as mathematics If mathematics , then mathematics must be adjacent to mathematics , so mathematics or mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0011",
+          "text": "If mathematics , then mathematics must be adjacent to mathematics and cannot be mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0011",
+          "text": "If mathematics , then mathematics must be adjacent to mathematics but not to mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0011",
+          "text": "Again, inductively, we conclude that mathematics is a reflection."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0011",
+          "text": "From this “nice” place, trace back to conclude that mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0011",
+          "text": "Hence mathematics is an isomorphism."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0012",
+          "text": "This is a good place to ask the following."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0012",
+          "text": "We have just seen the rigidity of the complex plane, geometrically speaking."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0012",
+          "text": "Now consider the isometries that fix mathematics and mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0013",
+          "text": "Such an isometry is a field homomorphism (hence a linear map) that fixes mathematics , from mathematics to mathematics , with mathematics viewed as mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0014",
+          "text": "The very geometric notion of rigidity has led us to an algebraic question, namely the exercise above."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0014",
+          "text": "Suppose we have a field extension of mathematics , say mathematics , such that mathematics Then is mathematics ?"
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0014",
+          "text": "Here mathematics denotes the field homomorphisms that fix mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0015",
+          "text": "Here the group mathematics , seen as mathematics with vertices mathematics , is of relevance, because then we are asking mathematics This is an infant version of the inverse Galois problem."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0016",
+          "text": "The algebraic construction of mathematics is thus significant: it shows us that rigidity is a consequence of an algebraic structure, and vice versa."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0017",
+          "text": "This finally brings us to the statement made by Sophie Germain: “Algebra is written geometry and geometry is figured algebra."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0017",
+          "text": "One can regard the construction of mathematics via geometry and, independently, via algebra as an illustration of Sophie's comment."
+        }
+      ],
+      "newSentences": [
+        {
+          "passageId": "basis-fixing-reduction:p0005",
+          "text": "This rigidity feature can be extended to all Euclidean spaces mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0005",
+          "text": "However, there are instances of non-Euclidean spaces, for which the doubling map mathematics is an isometry."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0010",
+          "text": "To that end, label the vertices mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0010",
+          "text": "Without loss of generality, for a given mathematics assume mathematics ; otherwise compose it with mathematics , where mathematics is a rotation."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0010",
+          "text": "Write the cycle as mathematics If mathematics , then mathematics must be adjacent to mathematics , so mathematics or mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0010",
+          "text": "If mathematics , then mathematics must be adjacent to mathematics and cannot be mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0010",
+          "text": "If mathematics , then mathematics must be adjacent to mathematics but not to mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0010",
+          "text": "Again, inductively, we conclude that mathematics is a reflection."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0010",
+          "text": "Now, tracing back, we conclude that mathematics ."
+        },
+        {
+          "passageId": "basis-fixing-reduction:p0010",
+          "text": "Hence mathematics is an isomorphism."
+        }
+      ],
       "firstPerson": {
         "before": 16,
-        "after": 16,
-        "delta": 0
+        "after": 9,
+        "delta": -7
       },
       "rhetoricalQuestions": {
         "before": 1,
-        "after": 1,
-        "delta": 0
+        "after": 0,
+        "delta": -1
       },
       "britishToAmerican": [],
       "genericReplacementSentences": [],
-      "needsReview": false
+      "needsReview": true
     },
     {
       "slug": "connectedness-and-compactness",
@@ -217,7 +367,7 @@
       "slug": "rouche-and-bloch",
       "title": "Rouché's Theorem and Bloch's Theorem",
       "file": "11-rouche-and-bloch.tex",
-      "changedProseRatio": 0.017312,
+      "changedProseRatio": 0.020367,
       "deletedSentences": [
         {
           "passageId": "rouche-and-bloch:p0033",
@@ -1248,7 +1398,7 @@
       "slug": "mcmullens-surgery",
       "title": "McMullen's Surgery II: Rigid Models and a Julia Component",
       "file": "80-mcmullens-surgery.tex",
-      "changedProseRatio": 0.01546,
+      "changedProseRatio": 0.015449,
       "deletedSentences": [
         {
           "passageId": "mcmullens-surgery:p0004",
@@ -1287,7 +1437,7 @@
       "slug": "mcmullens-surgery-finite-symmetry",
       "title": "McMullen's Surgery III: Commuting Deformations and Finite Symmetry",
       "file": "84-mcmullens-surgery-finite-symmetry.tex",
-      "changedProseRatio": 0.003891,
+      "changedProseRatio": 0.003904,
       "deletedSentences": [],
       "newSentences": [],
       "firstPerson": {
@@ -1937,11 +2087,11 @@
   ],
   "summary": {
     "posts": 84,
-    "postsNeedingReview": 24,
-    "deletedSentences": 14,
-    "newSentences": 22,
+    "postsNeedingReview": 25,
+    "deletedSentences": 41,
+    "newSentences": 32,
     "britishToAmericanConversions": 0,
     "genericReplacementSentences": 0
   },
-  "sha256": "d556d39ed63bb1cc4a0105a2026c945271036e3c1ae10f652c412f103798f857"
+  "sha256": "5fd53c9ec2a7c4a8609c2ef0ebb3903b6233333344fbed82c8d766c2eeb05445"
 }

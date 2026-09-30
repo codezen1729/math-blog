@@ -4,7 +4,6 @@
 \begin{document}
 \section*{The Complex Plane}
 % BLOG-CONTENT-BEGIN
-% BLOG-PASSAGE: basis-fixing-reduction:p0002
 % Overleaf publishing connection verified.
 
 \subsection*{Tool 1 — Basis-Fixing Reduction}
@@ -14,7 +13,6 @@ T\left(\sum_{i=1}^{n}a_i e_i\right)=\sum_{i=1}^{n}a_iT(e_i).
 \]
 Observe that if $T$ fixes the basis $\{e_i\}$, then $T$ is the identity map. Thus, compose $T$ with linear transformations so that the composition fixes $\{e_i\}$; then one can trace the steps back to recover $T$.
 
-% BLOG-PASSAGE: basis-fixing-reduction:p0003
 A simple application of the aforementioned tool goes into showing that any isometry $T\colon\mathbb C\to\mathbb C$ is of the form
 \[
 T(z)=z_0+\omega z
@@ -23,7 +21,6 @@ T(z)=z_0+\omega\overline z.
 \]
 
 
-% BLOG-PASSAGE: basis-fixing-reduction:p0004
 \textit{Proof.}
 Without loss of generality, let $T$ fix $0$; otherwise consider $T(z)-T(0)$. Then
 \begin{align*}
@@ -85,15 +82,12 @@ T(z)=z_0+\omega z
 T(z)=z_0+\omega\overline z.
 \]
 
-% BLOG-PASSAGE: basis-fixing-reduction:p0005
 \textbf{Remark.}
 The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice''. We shall see another application of this soon. Before that, it is worth emphasizing the rigidity of the complex plane: if two points of the plane are connected by a rubber band, there are essentially two ways to deform it preserving lengths -- reflections and rotations. This rigidity feature can be extended to all Euclidean spaces $\mathbb R^n$. However, there are instances of non-Euclidean spaces, for which the doubling map $z\mapsto 2z$ is an isometry. 
 
-% BLOG-PASSAGE: basis-fixing-reduction:p0009
 \subsubsection*{The dihedral group}
 Now let us illustrate another application of Tool $1$ by proving that the dihedral group \(D_n\) is isomorphic to \(\operatorname{Aut}(C_n),\) where $C_n$ is the cyclic graph on $n$ vertices.
 
-% BLOG-PASSAGE: basis-fixing-reduction:p0010
 \textit{Proof.}
 It is easy to check that $D_n$ acts on $C_n$, since rotations and reflections preserve edges. Thus there is a group homomorphism
 \[

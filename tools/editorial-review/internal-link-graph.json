@@ -681,6 +681,7 @@
         "fig:ms-28",
         "fig:ms-29",
         "fig:ms-30",
+        "fig:ms-31",
         "fig:ms-32",
         "fig:ms-33",
         "fig:ms-34",
@@ -701,9 +702,7 @@
       "collection": "surgeries",
       "phase": 4,
       "order": 56,
-      "labels": [
-        "fig:ms-31"
-      ]
+      "labels": []
     },
     {
       "slug": "from-complex-dynamics-to-measure-preserving-systems",
@@ -2301,7 +2300,7 @@
       "sourceSlug": "mcmullens-surgery",
       "sourceFile": "80-mcmullens-surgery.tex",
       "sourcePassageId": "mcmullens-surgery:p0057",
-      "sourceOrdinal": 57,
+      "sourceOrdinal": 58,
       "type": "post",
       "linkedText": "Gluing Lemma",
       "targetSlug": "third-surgery",
@@ -2317,7 +2316,7 @@
       "sourceSlug": "mcmullens-surgery",
       "sourceFile": "80-mcmullens-surgery.tex",
       "sourcePassageId": "mcmullens-surgery:p0061",
-      "sourceOrdinal": 61,
+      "sourceOrdinal": 62,
       "type": "post",
       "linkedText": "Corollary $6.13$",
       "targetSlug": "third-surgery",
@@ -2333,7 +2332,7 @@
       "sourceSlug": "mcmullens-surgery",
       "sourceFile": "80-mcmullens-surgery.tex",
       "sourcePassageId": "mcmullens-surgery:p0064",
-      "sourceOrdinal": 64,
+      "sourceOrdinal": 65,
       "type": "post",
       "linkedText": "Continue to Part III: Commuting Deformations and Finite Symmetry",
       "targetSlug": "mcmullens-surgery-finite-symmetry",
@@ -2752,5 +2751,5 @@
       "link-6c60153a7b9e99b9"
     ]
   },
-  "sha256": "bf6b1bf25f2106f36b2b8925453271a1c4c1b5eec92400ee30f8f2f1046f9c7c"
+  "sha256": "695fe809f348bde44e645120a29a272c37fe47d4888480952faae12ee0bcc990"
 }

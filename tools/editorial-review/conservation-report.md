@@ -3,11 +3,165 @@
 - Mode: **public**
 - Baseline commit: `e9cb6cf7657fe9ee32ec94db28b6d31fa282d824`
 - Posts checked: **84**
-- Passages checked: **2080**
-- Changed passages: **663**
+- Passages checked: **2069**
+- Changed passages: **680**
 - Pending approvals: **0**
 
 ## Passage-level changes
+
+### `basis-fixing-reduction:p0001` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0001
++++ candidate/basis-fixing-reduction:p0001
+@@ -1,2 +0,0 @@
+-\textit{Following the framework of T. Tao.}
+-
+```
+
+### `basis-fixing-reduction:p0006` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0006
++++ candidate/basis-fixing-reduction:p0006
+@@ -1,2 +0,0 @@
+-In other words, it will break. This rigidity can be extended to all of $\mathbb R^n$ with a very similar idea, yielding the following.
+-
+```
+
+### `basis-fixing-reduction:p0007` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0007
++++ candidate/basis-fixing-reduction:p0007
+@@ -1,3 +0,0 @@
+-\subsubsection*{General version}
+-Any origin-fixing isometry from $\mathbb R^n$ to $\mathbb R^n$ is a composition of at most $n$ reflections along hyperplanes.
+-
+```
+
+### `basis-fixing-reduction:p0008` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0008
++++ candidate/basis-fixing-reduction:p0008
+@@ -1,3 +0,0 @@
+-\textit{Proof.}
+-Exercise. Refer to Beardon's \emph{The Geometry of Discrete Groups}, or any text on M\"obius transformations on $\mathbb R^n$.
+-
+```
+
+### `basis-fixing-reduction:p0011` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0011
++++ candidate/basis-fixing-reduction:p0011
+@@ -1,8 +0,0 @@
+-Label the vertices $\{1,2,3,4,\ldots,n\}$. Without loss of generality, for a given $T\in\operatorname{Aut}(C_n)$ assume $T(1)=1$; otherwise compose it with $\varphi(T')$, where $T'$ is a rotation. Write the cycle as
+-\[
+-1\longrightarrow2\longrightarrow3\longrightarrow\cdots
+-\longrightarrow n\longrightarrow1
+-\qquad\text{(not a directed graph).}
+-\]
+-If $T(1)=1$, then $T(2)$ must be adjacent to $1$, so $T(2)=2$ or $n$. If $T(2)=2$, then $T(3)$ must be adjacent to $2$ and cannot be $1$. Inductively, $T(i)=i$ for every $i$. If $T(2)=n$, then $T(3)$ must be adjacent to $n$ but not to $1$. Again, inductively, we conclude that $T$ is a reflection. From this ``nice'' place, trace back to conclude that $T\in\varphi(D_n)$. Hence $\varphi$ is an isomorphism.
+-
+```
+
+### `basis-fixing-reduction:p0012` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0012
++++ candidate/basis-fixing-reduction:p0012
+@@ -1,3 +0,0 @@
+-\textbf{Remark.}
+-This is a good place to ask the following. We have just seen the rigidity of the complex plane, geometrically speaking. Now consider the isometries that fix $0$ and $1$.
+-
+```
+
+### `basis-fixing-reduction:p0013` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0013
++++ candidate/basis-fixing-reduction:p0013
+@@ -1,3 +0,0 @@
+-\textbf{Exercise.}
+-Such an isometry is a \emph{field homomorphism} (hence a linear map) that fixes $\mathbb R$, from $\mathbb C$ to $\mathbb C$, with $\mathbb C$ viewed as $\mathbb R^2$.
+-
+```
+
+### `basis-fixing-reduction:p0014` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0014
++++ candidate/basis-fixing-reduction:p0014
+@@ -1,8 +0,0 @@
+-The very geometric notion of rigidity has led us to an algebraic question, namely the exercise above. Suppose we have a field extension of $\mathbb R$, say $\mathbb C'$, such that
+-\[
+-\operatorname{Aut}_{\mathbb R}(\mathbb C')
+-\cong
+-\{\text{isometries of $\mathbb C$ that fix $\mathbb R$}\}.
+-\]
+-Then is $\mathbb C'\cong\mathbb C$? Here $\operatorname{Aut}_{\mathbb R}(\mathbb C')$ denotes the field homomorphisms that fix $\mathbb R$.
+-
+```
+
+### `basis-fixing-reduction:p0015` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0015
++++ candidate/basis-fixing-reduction:p0015
+@@ -1,9 +0,0 @@
+-Here the group $D_2$, seen as $\operatorname{Aut}(C_2)$ with vertices $\pm e_2$, is of relevance, because then we are asking
+-\[
+-\operatorname{Aut}_{\mathbb R}(\mathbb C')
+-\cong\operatorname{Aut}(C_2)
+-\cong\mathbb Z/2\mathbb Z:
+-\qquad\text{does this force $\mathbb C'=\mathbb C$?}
+-\]
+-This is an infant version of the inverse Galois problem.
+-
+```
+
+### `basis-fixing-reduction:p0016` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0016
++++ candidate/basis-fixing-reduction:p0016
+@@ -1,2 +0,0 @@
+-The algebraic construction of $\mathbb C$ is thus significant: it shows us that rigidity is a consequence of an algebraic structure, and vice versa.
+-
+```
+
+### `basis-fixing-reduction:p0017` — superseded-by-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `None`
+
+```diff
+--- baseline/basis-fixing-reduction:p0017
++++ candidate/basis-fixing-reduction:p0017
+@@ -1 +0,0 @@
+-This finally brings us to the statement made by Sophie Germain: ``Algebra is written geometry and geometry is figured algebra.'' One can regard the construction of $\mathbb C$ via geometry and, independently, via algebra as an illustration of Sophie's comment.
+```
 
 ### `abels-theorem:p0002` — reframed-retained
 
@@ -1010,22 +1164,115 @@
  Let $w_1'\in B_\varepsilon(w_1)$. The set $\psi^{-1}(\psi(B_\varepsilon(w_1)))$ contains $w_2$, so $\psi(B_\varepsilon(w_1))\cap\psi(B_\varepsilon(w_2))\ne\varnothing$. There are therefore $w_1',w_2'$ with $|w_1'|<|w_1|$ and $\psi(w_1')=\psi(w_2')$, a contradiction. Thus $\psi$ is injective, hence biholomorphic onto $\psi(\mathbb D_r)$.
 ```
 
-### `basis-fixing-reduction:p0004` — reframed-retained
+### `basis-fixing-reduction:p0002` — restored-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `01-basis-fixing-reduction.tex`
+
+```diff
+--- baseline/basis-fixing-reduction:p0002
++++ candidate/basis-fixing-reduction:p0002
+@@ -1,7 +1,9 @@
++% Overleaf publishing connection verified.
++
+ \subsection*{Tool 1 — Basis-Fixing Reduction}
+-Given a linear transformation,
++Consider a linear transformation,
+ \[
+ T\left(\sum_{i=1}^{n}a_i e_i\right)=\sum_{i=1}^{n}a_iT(e_i).
+ \]
+-If $T$ fixes the basis $\{e_i\}$, then $T$ is the identity. Thus, compose $T$ with linear transformations so that the composition fixes $\{e_i\}$; then one can trace one's steps back.
++Observe that if $T$ fixes the basis $\{e_i\}$, then $T$ is the identity map. Thus, compose $T$ with linear transformations so that the composition fixes $\{e_i\}$; then one can trace the steps back to recover $T$.
+```
+
+### `basis-fixing-reduction:p0003` — restored-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `01-basis-fixing-reduction.tex`
+
+```diff
+--- baseline/basis-fixing-reduction:p0003
++++ candidate/basis-fixing-reduction:p0003
+@@ -1,8 +1,8 @@
+-It follows that any isometry $T\colon\mathbb C\to\mathbb C$ is of the form
++A simple application of the aforementioned tool goes into showing that any isometry $T\colon\mathbb C\to\mathbb C$ is of the form
+ \[
+ T(z)=z_0+\omega z
+ \qquad\text{or}\qquad
+-T(z)=z_0+\omega\overline z,
++T(z)=z_0+\omega\overline z.
+ \]
+-where $|\omega|=1$.
+ 
++
+```
+
+### `basis-fixing-reduction:p0004` — restored-approved-author-version
 
 `01-basis-fixing-reduction.tex` → `01-basis-fixing-reduction.tex`
 
 ```diff
 --- baseline/basis-fixing-reduction:p0004
 +++ candidate/basis-fixing-reduction:p0004
-@@ -41,7 +41,7 @@
- \langle(\varphi\circ T)(e_2),(\varphi\circ T)(e_2)\rangle
- =\langle e_2,e_2\rangle=1.
- \]
--Therefore \((\varphi\circ T)(e_2)=\pm e_2,\)
-+Therefore, \((\varphi\circ T)(e_2)=\pm e_2,\)
- and hence
+@@ -23,11 +23,11 @@
  \[
- (\varphi\circ T)(z)=z\qquad\text{or}\qquad
+ \langle T(v),T(e_i)\rangle=\langle v,e_i\rangle,
+ \]
+-we get $a_i=b_i$ for every $i$, $1\leq i\leq n$. Now is the right time to remind ourselves of Tool 1. We know that
++we get $a_i=b_i$ for every $i$, $1\leq i\leq n$. We know that
+ \[
+ T\left(\sum_{i=1}^{n}a_ie_i\right)=\sum_{i=1}^{n}a_iT(e_i).
+ \]
+-Compose $T$ with a rotation $\varphi$ such that
++We apply Tool $1$ by composing $T$ with a rotation $\varphi$ so that
+ \[
+ (\varphi\circ T)(e_1)=e_1.
+ \]
+```
+
+### `basis-fixing-reduction:p0005` — restored-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `01-basis-fixing-reduction.tex`
+
+```diff
+--- baseline/basis-fixing-reduction:p0005
++++ candidate/basis-fixing-reduction:p0005
+@@ -1,3 +1,3 @@
+ \textbf{Remark.}
+-The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice,'' and one can trace one's steps back after reaching that ``nice'' place. We will see another illustration of this in the same theme. Before that, note that what we essentially found is that the complex plane is rigid: if two points of a plane are connected by a rubber band, there are only two ways to deform it so that the lengths of the rubber bands remain the same in the end -- reflections and rotations. If you stretch the rubber band, then you cannot undo it later.
++The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice''. We shall see another application of this soon. Before that, it is worth emphasizing the rigidity of the complex plane: if two points of the plane are connected by a rubber band, there are essentially two ways to deform it preserving lengths -- reflections and rotations. This rigidity feature can be extended to all Euclidean spaces $\mathbb R^n$. However, there are instances of non-Euclidean spaces, for which the doubling map $z\mapsto 2z$ is an isometry.
+```
+
+### `basis-fixing-reduction:p0009` — restored-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `01-basis-fixing-reduction.tex`
+
+```diff
+--- baseline/basis-fixing-reduction:p0009
++++ candidate/basis-fixing-reduction:p0009
+@@ -1,3 +1,3 @@
+ \subsubsection*{The dihedral group}
+-Now let us look at another application of Tool $1$. To be sincere, we shall not deviate from the theme of reflections and rotations. Let us try to study the structure of $D_n$, the dihedral group. \(D_n\cong\operatorname{Aut}(C_n),\) where $C_n$ is the cyclic graph on $n$ vertices having exactly one $n$-cycle.
++Now let us illustrate another application of Tool $1$ by proving that the dihedral group \(D_n\) is isomorphic to \(\operatorname{Aut}(C_n),\) where $C_n$ is the cyclic graph on $n$ vertices.
+```
+
+### `basis-fixing-reduction:p0010` — restored-approved-author-version
+
+`01-basis-fixing-reduction.tex` → `01-basis-fixing-reduction.tex`
+
+```diff
+--- baseline/basis-fixing-reduction:p0010
++++ candidate/basis-fixing-reduction:p0010
+@@ -3,5 +3,9 @@
+ \[
+ \varphi\colon D_n\longrightarrow\operatorname{Aut}(C_n).
+ \]
+-We only have to show that $\varphi$ is surjective; it is clearly injective, since the kernel is the identity in $D_n$.
+-
++The map $\varphi$ is clearly injective. We have to prove that it is also surjective. To that end, label the vertices $\{1,2,3,4,\ldots,n\}$. Without loss of generality, for a given $T\in\operatorname{Aut}(C_n)$ assume $T(1)=1$; otherwise compose it with $\varphi(T')$, where $T'$ is a rotation. Write the cycle as
++\[
++1\longrightarrow2\longrightarrow3\longrightarrow\cdots
++\longrightarrow n\longrightarrow1.
++\]
++If $T(1)=1$, then $T(2)$ must be adjacent to $1$, so $T(2)=2$ or $n$. If $T(2)=2$, then $T(3)$ must be adjacent to $2$ and cannot be $1$. Inductively, $T(i)=i$ for every $i$. If $T(2)=n$, then $T(3)$ must be adjacent to $n$ but not to $1$. Again, inductively, we conclude that $T$ is a reflection. Now, tracing back, we conclude that $T\in\varphi(D_n)$. Hence $\varphi$ is an isomorphism.
 ```
 
 ### `bott-periodicity-k-theory:p0001` — reframed-retained
@@ -7397,12 +7644,13 @@
 ```diff
 --- baseline/rouche-and-bloch:p0033
 +++ candidate/rouche-and-bloch:p0033
-@@ -1,4 +1,4 @@
+@@ -1,5 +1,5 @@
 -\paragraph{Final remark.} With this we conclude our compilation of standard techniques in complex analysis. We end this by presenting some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.
-+\paragraph{Final remark.} We continue in \BlogPost{separation-and-holomorphic-lifting}{Separation by a Polygonal Path/Arc and Holomorphic Lifting} with some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.
  \begin{figure}[htbp]
    \centering
    \includegraphics[width=0.72\textwidth]{note7-fig-05.pdf}
+ \end{figure}
++\paragraph{Final remark.} We continue in \BlogPost{separation-and-holomorphic-lifting}{Separation by a Polygonal Path/Arc and Holomorphic Lifting} with some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.
 ```
 
 ### `second-surgery:p0004` — reframed-retained
@@ -8223,6 +8471,25 @@
 -        \mathbb{D}^* \arrow[rr, "z \rightarrow e^vz" description] & & \mathbb{D}^* \arrow[from=uu, crossing over, near start, dashed, "\phi_v" description]\\
 +        \mathbb{D}^* \arrow[rr, "z \rightarrow e^vz" description] & & \mathbb{D}^* \arrow[from=uu, crossing over, near start, dashed, "\phi_v" description]
          \end{tikzcd}$$
+```
+
+### `surgical-tools:p0042` — mechanically-corrected
+
+`24-surgical-tools.tex` → `24-surgical-tools.tex`
+
+```diff
+--- baseline/surgical-tools:p0042
++++ candidate/surgical-tools:p0042
+@@ -1,7 +1,7 @@
+         \begin{figure}[ht!]
+-        \begin{tikzpicture}
++        \begin{tikzpicture}[line width=0.7pt]
+         \draw (0,0) ellipse (8cm and 4cm);
+-        \draw (0,0) ellipse (6cm and 3cm)[fill = gray];
++        \draw (0,0) ellipse (6cm and 3cm)[fill = gray!15];
+         \draw (0,0) ellipse (2cm and 1cm)[fill = white];
+         \node[text width=3cm] at (-0.3,0) {$\hat{f_1}$};
+         \node[text width=3cm] at (-5.9,0) {$f_2$};
 ```
 
 ### `surgical-tools:p0043` — reframed-retained

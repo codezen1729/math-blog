@@ -52,8 +52,8 @@ test('full newest collections retain their closing sections and all source figur
   for (const [slug,count] of Object.entries(expected)) assert.equal([...bySlug.get(slug).html.matchAll(/<img\b/g)].length,count,slug);
   const surgeryFigureCounts = {
     'third-surgery': 17,
-    'mcmullens-surgery': 24,
-    'mcmullens-surgery-finite-symmetry': 1,
+    'mcmullens-surgery': 25,
+    'mcmullens-surgery-finite-symmetry': 0,
   };
   for (const [slug,count] of Object.entries(surgeryFigureCounts)) {
     const sourceFigures = [...bySlug.get(slug).html.matchAll(/src="figures\/mcmullens-surgery\/ms-fig-[^"]+\.svg"/g)];
@@ -64,6 +64,12 @@ test('full newest collections retain their closing sections and all source figur
       .flatMap(slug => [...bySlug.get(slug).html.matchAll(/src="(figures\/mcmullens-surgery\/ms-fig-[^"]+\.svg)"/g)].map(match => match[1]))
   );
   assert.equal(surgeryFigures.size,42,'McMullen surgery external-figure distribution');
+  const rigidModels = bySlug.get('mcmullens-surgery').html;
+  assert.match(rigidModels, /ms-fig-30\.svg[\s\S]*ms-fig-31\.svg[\s\S]*ms-fig-32\.svg/, 'The auxiliary Julia schematic belongs beside the original Zoretti argument.');
+  const bloch = bySlug.get('rouche-and-bloch').html;
+  assert.ok(bloch.indexOf('note7-fig-05.svg') < bloch.indexOf('Final remark'), 'Bloch disks precede the unrelated final remark.');
+  const separation = bySlug.get('separation-and-holomorphic-lifting').html;
+  assert.ok(separation.indexOf('note8-fig-03.svg') < separation.indexOf('note8-fig-02.svg'), 'The branch-cut figure precedes the later covering-space illustration.');
   assert.match(bySlug.get('smooth-covering-manifolds').html,/associativ/i);
   assert.ok(bySlug.get('the-quadratic-family').html.includes('G_c(P_c(z))=2G_c(z)'), 'The Quadratic Family must retain the functional equation from its final section.');
   const straightening = bySlug.get('polynomial-like-maps-and-the-straightening-theorem').html;

@@ -2,6 +2,7 @@
 """Regression tests for the conservation-first manuscript workflow."""
 
 import json
+import hashlib
 from pathlib import Path
 import tempfile
 import unittest
@@ -67,11 +68,18 @@ class EndToEndTests(unittest.TestCase):
         manifest = [{
             "slug": "sample", "file": "01-sample.tex", "title": "Sample",
             "collection": "sample", "phase": 1, "phaseLabel": "Sample",
+        }, {
+            "slug": "other", "file": "02-other.tex", "title": "Other",
+            "collection": "sample", "phase": 1, "phaseLabel": "Sample",
         }]
         (self.root / "tools/manifest.json").write_text(json.dumps(manifest))
         (self.root / "01-sample.tex").write_text(
             "\\documentclass{article}\n\\section*{Sample}\n"
             "% BLOG-CONTENT-BEGIN\nA sentence with $x+1$.\n% BLOG-CONTENT-END\n"
+        )
+        (self.root / "02-other.tex").write_text(
+            "\\documentclass{article}\n% BLOG-CONTENT-BEGIN\n"
+            "Another proof with $y+1$.\n% BLOG-CONTENT-END\n"
         )
         self.baseline = self.root / "tools/editorial-baseline.json"
         self.ledger = self.root / "tools/editorial-ledger.json"
@@ -112,6 +120,108 @@ class EndToEndTests(unittest.TestCase):
         path.write_text(path.read_text().replace("% BLOG-PASSAGE: sample:p0001\nA sentence with $x+1$.\n", ""))
         result = guard.audit_project("review")
         self.assertTrue(any("Missing original passage" in error or "no BLOG-PASSAGE" in error for error in result["errors"]))
+
+    def restore_author_version(self):
+        """An independently pinned fixture replaces a complete original passage."""
+        original = (self.root / "01-sample.tex").read_text()
+        snapshot = guard.remove_markers(original).replace("A sentence with $x+1$.", "Author's version with $x+2$.")
+        snapshot_path = "tools/author-version.tex"
+        (self.root / snapshot_path).write_text(snapshot)
+        pinned = {
+            "file": "01-sample.tex", "snapshotFile": snapshot_path,
+            "snapshotSha256": guard.sha256(snapshot), "sourceCommit": "a" * 40,
+            "sourceGitBlobSha1": hashlib.sha1(
+                b"blob " + str(len(snapshot.encode())).encode() + b"\0" + snapshot.encode()
+            ).hexdigest(),
+        }
+        pin_patch = patch.object(guard, "AUTHOR_VERSION_SNAPSHOTS", {"sample": pinned})
+        pin_patch.start()
+        self.addCleanup(pin_patch.stop)
+        prefix, body, suffix = guard.document_parts(snapshot, pinned["file"])
+        marked = guard.insert_markers(body, "sample").replace("sample:p0001", "sample:n0001")
+        (self.root / pinned["file"]).write_text(prefix + marked + suffix)
+        baseline = json.loads(self.baseline.read_text())
+        entry = {
+            **pinned, "slug": "sample",
+            "baselineBodySha256": baseline["posts"][0]["bodyRawSha256BeforeMarkers"],
+            "reason": "Restore the author's chosen historical version.",
+            "evidence": "Exact historical source was compared before restoration.",
+            "approval": {
+                "state": "approved", "approvedBy": "Author", "approvedAt": "2026-09-30",
+                "evidence": "Author explicitly approved restoring this historical version only.",
+            },
+        }
+        ledger = {"schema": 2, "entries": [], "authorVersions": [entry], "releaseApproval": None}
+        self.ledger.write_text(json.dumps(ledger))
+        return ledger
+
+    def test_exact_author_version_passes_review_keeps_baseline_and_reports_omission(self):
+        before = self.baseline.read_bytes()
+        self.restore_author_version()
+        result = guard.audit_project("review")
+        self.assertFalse(result["errors"])
+        self.assertEqual(self.baseline.read_bytes(), before)
+        withdrawn = [item for item in result["passages"] if item["passageId"] == "sample:p0001"]
+        self.assertEqual(withdrawn[0]["status"], "superseded-by-approved-author-version")
+        self.assertIn("-A sentence with $x+1$.", withdrawn[0]["diff"])
+        self.assertTrue(withdrawn[0]["payloadChanges"]["math"]["removed"])
+        guard.draft_ledger("Unrelated future editorial pass")
+        self.assertFalse(guard.audit_project("review")["errors"])
+
+    def test_author_version_does_not_authorize_publication(self):
+        ledger = self.restore_author_version()
+        result = guard.audit_project("public")
+        self.assertTrue(any("no release approval" in error for error in result["errors"]))
+        ledger["releaseApproval"] = {
+            "state": "approved", "approvedBy": "Author",
+            "sourceSetSha256": result["sourceSetSha256"], "ledgerSha256": guard.ledger_digest(ledger),
+        }
+        self.ledger.write_text(json.dumps(ledger))
+        self.assertFalse(guard.audit_project("public")["errors"])
+
+    def test_author_version_rejects_unapproved_later_edit_including_header(self):
+        self.restore_author_version()
+        path = self.root / "01-sample.tex"
+        source = path.read_text()
+        for changed in (source.replace("$x+2$", "$x$"), source.replace("{Sample}", "{Changed title}")):
+            with self.subTest(changed=changed):
+                path.write_text(changed)
+                result = guard.audit_project("review")
+                self.assertTrue(any("not the exact approved author version" in error for error in result["errors"]))
+
+    def test_author_version_rejects_forged_snapshot_even_if_ledger_hashes_change(self):
+        ledger = self.restore_author_version()
+        snapshot = self.root / "tools/author-version.tex"
+        snapshot.write_text(snapshot.read_text().replace("$x+2$", "$0$"))
+        ledger["authorVersions"][0]["snapshotSha256"] = guard.sha256(snapshot.read_bytes())
+        self.ledger.write_text(json.dumps(ledger))
+        result = guard.audit_project("review")
+        self.assertTrue(any("pinned" in error or "historical Git blob" in error for error in result["errors"]))
+
+    def test_author_version_requires_matching_baseline_hash_and_explicit_approval(self):
+        ledger = self.restore_author_version()
+        for field, replacement in (("baselineBodySha256", "bad"), ("approval", {"state": "pending"})):
+            with self.subTest(field=field):
+                changed = json.loads(json.dumps(ledger))
+                changed["authorVersions"][0][field] = replacement
+                self.ledger.write_text(json.dumps(changed))
+                self.assertTrue(guard.audit_project("review")["errors"])
+
+    def test_author_version_cannot_exempt_other_posts_or_foreign_markers(self):
+        self.restore_author_version()
+        other = self.root / "02-other.tex"
+        other.write_text(other.read_text().replace("Another proof with $y+1$.", "Short replacement."))
+        self.assertTrue(any("no ledger entry" in error for error in guard.audit_project("review")["errors"]))
+        source = self.root / "01-sample.tex"
+        source.write_text(source.read_text().replace("sample:n0001", "other:p0001"))
+        self.assertTrue(any("foreign passage marker" in error for error in guard.audit_project("review")["errors"]))
+
+    def test_unknown_post_cannot_claim_author_version_exemption(self):
+        ledger = self.restore_author_version()
+        ledger["authorVersions"][0]["slug"] = "other"
+        self.ledger.write_text(json.dumps(ledger))
+        result = guard.audit_project("review")
+        self.assertTrue(any("no pinned historical author version" in error for error in result["errors"]))
 
 
 if __name__ == "__main__":

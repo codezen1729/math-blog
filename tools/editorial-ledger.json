@@ -1121,20 +1121,6 @@
       }
     },
     {
-      "passageId": "basis-fixing-reduction:p0004",
-      "status": "reframed-retained",
-      "beforeSha256": "fbb805ce42a2ab421417011d96c9c80133547138e55bece08988bd8047f5aa72",
-      "afterSha256": "181bd9522275972ff08109fb0ba2a80e1941863cf355b42832a1181967e8ab74",
-      "reason": "Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.",
-      "evidence": "Local conservation review; see the generated old/new passage diff.",
-      "approval": {
-        "state": "approved",
-        "approvedBy": "S. Viswanathan",
-        "approvedAt": "2026-09-09",
-        "evidence": "Author requested: “check again, and publish.” Then requested a further compliance check. Approval covers the contract-compliant editorial and presentation release; substantive mathematical questions remain unchanged for separate review."
-      }
-    },
-    {
       "passageId": "bott-periodicity-k-theory:p0001",
       "status": "reframed-retained",
       "beforeSha256": "26724837c7507fd9a949538e4cf208631de3a02fe2257dc0fc7dc2f97f825e56",
@@ -6754,14 +6740,14 @@
       "passageId": "rouche-and-bloch:p0033",
       "status": "reframed-retained",
       "beforeSha256": "aebcd43e7cb757bd2ed94d98860606cff3397f0294677f45aeab227224a85e62",
-      "afterSha256": "d1ff0d28ccf7d0ffce2887ec388582e4100e3f0be24adf9ffae5485e62725f11",
-      "reason": "Remove inherited notebook, lecture, and source-management phrasing while retaining the mathematical passage and the author’s diction.",
-      "evidence": "Local conservation review; see the generated old/new passage diff.",
+      "afterSha256": "38e069dbb6e6e5f69490e713a962ca1d6fcf3d8c299cea16c7e81a1840c99371",
+      "reason": "Retain the previously approved final-remark wording; move the unchanged Bloch nested-disks figure immediately before that remark, beside the proof it illustrates.",
+      "evidence": "The 2026-09-30 figure audit moves the existing figure block only; all sentences and mathematical content are unchanged from the preceding approved wording edit.",
       "approval": {
         "state": "approved",
         "approvedBy": "S. Viswanathan",
-        "approvedAt": "2026-09-09",
-        "evidence": "Author requested: “check again, and publish.” Then requested a further compliance check. Approval covers the contract-compliant editorial and presentation release; substantive mathematical questions remain unchanged for separate review."
+        "approvedAt": "2026-09-30",
+        "evidence": "Author requested multiple agents to check all figures for alignment, purpose, color scheme and positioning, edit the necessary images, and publish the site."
       }
     },
     {
@@ -7554,6 +7540,20 @@
         "added": [
           "display: $$\\begin{tikzcd}[row sep=huge, column sep=huge]\n        & \\mathbb{H}_l \\arrow[dl, \"e^z\" description] \\arrow[rr, \"\\zeta \\rightarrow \\zeta + v_0\" description] \\arrow[dd, near start, \"L_v\" description] & & \\mathbb{H}_l \\arrow[dl, \"e^z\" description] \\arrow[dd, \"L_v\" description] \\\\\n        \\mathbb{D}^* \\arrow[rr, crossing over, near end, \"z\\rightarrow \\lambda_0z\" description] \\arrow[dd, dashed, \"\\phi_v\" description] & & \\mathbb{D}^* \\\\\n        & \\mathbb{H}_l \\arrow[dl, \"e^z\" description] \\arrow[rr, near start, \"\\zeta \\rightarrow \\zeta + v\" description] & & \\mathbb{H}_l \\arrow[dl, \"e^z\" description] \\\\\n        \\mathbb{D}^* \\arrow[rr, \"z \\rightarrow e^vz\" description] & & \\mathbb{D}^* \\arrow[from=uu, crossing over, near start, dashed, \"\\phi_v\" description]\n        \\end{tikzcd}$$"
         ]
+      }
+    },
+    {
+      "passageId": "surgical-tools:p0042",
+      "status": "mechanically-corrected",
+      "beforeSha256": "afd38ca9cb72fbf69ce56f7386944e617f82a83cf7429ebc2015163edb347683",
+      "afterSha256": "5b6a8b888c1140d07b83a18653f23f07552d5344abcff711b03848e073d53a79",
+      "reason": "Improve gluing-annulus contrast by lightening gray fill to gray!15 and increasing line weight to 0.7pt. All geometry, arrows and mathematical labels are unchanged.",
+      "evidence": "Visual audit of the inline TikZ source and matching generated figure; no mathematical payload changes.",
+      "approval": {
+        "state": "approved",
+        "approvedBy": "S. Viswanathan",
+        "approvedAt": "2026-09-30",
+        "evidence": "Author requested a multi-agent figure audit, necessary image edits and publication, with matching Overleaf sources."
       }
     },
     {
@@ -9575,12 +9575,31 @@
       }
     }
   ],
+  "authorVersions": [
+    {
+      "slug": "basis-fixing-reduction",
+      "file": "01-basis-fixing-reduction.tex",
+      "baselineBodySha256": "34ebbc56a38947b5363a15580e184f8cc6a6d152ac77086244d47f0777de489c",
+      "snapshotFile": "tools/editorial-author-versions/basis-fixing-reduction-2026-09-04.tex",
+      "snapshotSha256": "a35a9c99590985b983460d35536636fa81c261ad9fc188865d2598b75155c8f6",
+      "sourceCommit": "d4e896fac3b13b0b6c9ec34259ee1b6142d42f2d",
+      "sourceGitBlobSha1": "33d8681940eb5a1d1cbe634d64abf5d9ddcabc2a",
+      "reason": "Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.",
+      "evidence": "The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.",
+      "approval": {
+        "state": "approved",
+        "approvedBy": "S. Viswanathan",
+        "approvedAt": "2026-09-30",
+        "evidence": "Asked: ‘Should I restore that September 4 author-edited version of The Complex Plane, leaving all other posts unchanged?’ Author replied: ‘yes’. This approves the exact source restoration, not publication. Author additionally requested: ‘change the overleaf too........’"
+      }
+    }
+  ],
   "releaseApproval": {
     "state": "approved",
     "approvedBy": "S. Viswanathan",
-    "approvedAt": "2026-09-09",
-    "evidence": "Author requested: “check again, and publish.” Then requested a further compliance check. Approval covers the contract-compliant editorial and presentation release; substantive mathematical questions remain unchanged for separate review.",
-    "sourceSetSha256": "d5450a8de66ba95949e68b37d908ead0cd69d34673a8f418403a7c49b502a9a4",
-    "ledgerSha256": "1262d13bfb2cabaa888f41fcaebc782d810168ff5306a4199150d461a1cbf67f"
+    "approvedAt": "2026-09-30",
+    "evidence": "Author requested: create multiple agents to check every figure for alignment, purpose, color scheme and positioning, edit necessary images, then publish; also synchronize the changes with Overleaf. This release retains the separately approved September 4 author-version restoration of The Complex Plane and makes no other prose deletions or rewrites.",
+    "sourceSetSha256": "8f8e03ab48ea9ec7c3801b24bae0472c19368e5df954c7242c471d37808fb47e",
+    "ledgerSha256": "0bd24773cf104a1df3c88b5520986ffee568d2f1e2f5f33899dc8dd26ff9b155"
   }
 }

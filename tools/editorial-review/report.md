@@ -8,10 +8,10 @@ The changed-token ratio is `(deleted + inserted) / (baseline tokens + current to
 
 - Baseline commit: `e9cb6cf7657fe9ee32ec94db28b6d31fa282d824`
 - Posts: **84**
-- Current passages: **2080**
-- Changed passages: **663**
-- Moved passages: **0**
-- Passages with mathematical payload changes: **18**
+- Current passages: **2069**
+- Changed passages: **680**
+- Moved passages: **51**
+- Passages with mathematical payload changes: **34**
 - Added `BlogPost`/`BlogPostAt` links: **70**
 - Pending changed-passage approvals: **0**
 - Unresolved/placeholder findings: **29**
@@ -21,7 +21,7 @@ The changed-token ratio is `(deleted + inserted) / (baseline tokens + current to
 
 | Post | Passages | Changed | Moved | Token ratio | Math changes | Added links | Pending | Findings |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| `basis-fixing-reduction` | 17 | 1 | 0 | 0.0003 | 0 | 0 | 0 | 0 |
+| `basis-fixing-reduction` | 6 | 17 | 6 | 0.3952 | 16 | 0 | 0 | 0 |
 | `connectedness-and-compactness` | 33 | 3 | 0 | 0.0015 | 0 | 0 | 0 | 0 |
 | `complex-differentiation` | 16 | 2 | 0 | 0.0004 | 0 | 0 | 0 | 0 |
 | `harmonic-functions-and-rectifiable-curves` | 28 | 8 | 0 | 0.0030 | 0 | 2 | 0 | 0 |
@@ -31,8 +31,8 @@ The changed-token ratio is `(deleted + inserted) / (baseline tokens + current to
 | `winding-number` | 51 | 6 | 0 | 0.0014 | 0 | 3 | 0 | 0 |
 | `homotopy-paths-and-jordan-curves` | 64 | 1 | 0 | 0.0004 | 0 | 0 | 0 | 2 |
 | `keyhole-contour-construction` | 45 | 4 | 0 | 0.0016 | 0 | 1 | 0 | 0 |
-| `rouche-and-bloch` | 33 | 6 | 0 | 0.0075 | 0 | 2 | 0 | 0 |
-| `separation-and-holomorphic-lifting` | 41 | 5 | 0 | 0.0040 | 0 | 2 | 0 | 0 |
+| `rouche-and-bloch` | 33 | 6 | 0 | 0.0171 | 0 | 2 | 0 | 0 |
+| `separation-and-holomorphic-lifting` | 41 | 5 | 8 | 0.0040 | 0 | 2 | 0 | 0 |
 | `smooth-covering-manifolds` | 33 | 5 | 0 | 0.0028 | 0 | 2 | 0 | 1 |
 | `orientation-and-covering-maps` | 6 | 4 | 0 | 0.0032 | 0 | 2 | 0 | 0 |
 | `topology-of-surfaces` | 37 | 14 | 0 | 0.0075 | 0 | 0 | 0 | 0 |
@@ -71,12 +71,12 @@ The changed-token ratio is `(deleted + inserted) / (baseline tokens + current to
 | `conformal-welding` | 6 | 1 | 0 | 0.0069 | 0 | 1 | 0 | 0 |
 | `shishikuras-surgery-principles` | 5 | 1 | 0 | 0.0027 | 0 | 1 | 0 | 0 |
 | `polynomial-like-maps-and-the-straightening-theorem` | 10 | 2 | 0 | 0.0017 | 0 | 1 | 0 | 1 |
-| `surgical-tools` | 87 | 50 | 0 | 0.0144 | 1 | 0 | 0 | 0 |
+| `surgical-tools` | 87 | 51 | 0 | 0.0150 | 1 | 0 | 0 | 0 |
 | `first-surgery` | 48 | 11 | 0 | 0.0038 | 2 | 0 | 0 | 0 |
 | `second-surgery` | 31 | 8 | 0 | 0.0025 | 3 | 0 | 0 | 1 |
 | `third-surgery` | 58 | 23 | 0 | 0.0070 | 1 | 0 | 0 | 0 |
-| `mcmullens-surgery` | 64 | 28 | 0 | 0.0096 | 2 | 1 | 0 | 0 |
-| `mcmullens-surgery-finite-symmetry` | 15 | 6 | 0 | 0.0042 | 0 | 0 | 0 | 0 |
+| `mcmullens-surgery` | 65 | 28 | 31 | 0.0096 | 2 | 1 | 0 | 0 |
+| `mcmullens-surgery-finite-symmetry` | 14 | 6 | 6 | 0.0043 | 0 | 0 | 0 | 0 |
 | `from-complex-dynamics-to-measure-preserving-systems` | 12 | 3 | 0 | 0.0019 | 0 | 0 | 0 | 0 |
 | `recurrence-and-three-views-of-ergodicity` | 23 | 4 | 0 | 0.0022 | 0 | 2 | 0 | 0 |
 | `mean-maximal-and-pointwise-ergodic-theorems` | 16 | 5 | 0 | 0.0022 | 0 | 1 | 0 | 0 |
@@ -106,13 +106,21 @@ The changed-token ratio is `(deleted + inserted) / (baseline tokens + current to
 | `erdos-distance-problem` | 15 | 4 | 0 | 0.0033 | 0 | 0 | 0 | 2 |
 | `small-gaps-between-primes` | 11 | 2 | 0 | 0.0008 | 0 | 0 | 0 | 0 |
 
+## Author-selected historical versions
+
+- `basis-fixing-reduction`: exact source at `d4e896fac3b13b0b6c9ec34259ee1b6142d42f2d`, SHA-256 `a35a9c99590985b983460d35536636fa81c261ad9fc188865d2598b75155c8f6`.
+  Author decision: Asked: ‘Should I restore that September 4 author-edited version of The Complex Plane, leaving all other posts unchanged?’ Author replied: ‘yes’. This approves the exact source restoration, not publication. Author additionally requested: ‘change the overleaf too........’
+
+Superseded baseline passages remain below as explicit before/after diffs. This records an author-selected version, not an assertion that no material differs. Release approval remains a separate requirement.
+
+
 ## Authorial-voice drift screening
 
 This is a conservative review screen: mathematics is masked, and local editorial changes are paired rather than counted as replacement sentences.
 
 | Post | Prose ratio | Deleted sentences | New sentences | First-person delta | Question delta | Spelling conversions |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `basis-fixing-reduction` | 0.0006 | 0 | 0 | +0 | +0 | 0 |
+| `basis-fixing-reduction` | 0.4094 | 27 | 10 | -7 | -1 | 0 |
 | `connectedness-and-compactness` | 0.0010 | 0 | 0 | +0 | +0 | 0 |
 | `complex-differentiation` | 0.0012 | 0 | 0 | +0 | +0 | 0 |
 | `harmonic-functions-and-rectifiable-curves` | 0.0027 | 0 | 0 | +0 | +0 | 0 |
@@ -122,7 +130,7 @@ This is a conservative review screen: mathematics is masked, and local editorial
 | `winding-number` | 0.0006 | 0 | 0 | +0 | +0 | 0 |
 | `homotopy-paths-and-jordan-curves` | 0.0000 | 0 | 0 | +0 | +0 | 0 |
 | `keyhole-contour-construction` | 0.0021 | 0 | 0 | +0 | +0 | 0 |
-| `rouche-and-bloch` | 0.0173 | 1 | 0 | -2 | +1 | 0 |
+| `rouche-and-bloch` | 0.0204 | 1 | 0 | -2 | +1 | 0 |
 | `separation-and-holomorphic-lifting` | 0.0045 | 0 | 0 | +0 | +0 | 0 |
 | `smooth-covering-manifolds` | 0.0040 | 1 | 1 | +1 | +0 | 0 |
 | `orientation-and-covering-maps` | 0.0026 | 0 | 0 | +0 | +0 | 0 |
@@ -166,7 +174,7 @@ This is a conservative review screen: mathematics is masked, and local editorial
 | `first-surgery` | 0.0090 | 0 | 0 | +0 | +0 | 0 |
 | `second-surgery` | 0.0051 | 0 | 0 | +0 | +0 | 0 |
 | `third-surgery` | 0.0082 | 0 | 0 | +0 | +0 | 0 |
-| `mcmullens-surgery` | 0.0155 | 1 | 3 | +0 | +0 | 0 |
+| `mcmullens-surgery` | 0.0154 | 1 | 3 | +0 | +0 | 0 |
 | `mcmullens-surgery-finite-symmetry` | 0.0039 | 0 | 0 | +0 | +0 | 0 |
 | `from-complex-dynamics-to-measure-preserving-systems` | 0.0053 | 0 | 0 | +0 | +0 | 0 |
 | `recurrence-and-three-views-of-ergodicity` | 0.0014 | 1 | 0 | +0 | +0 | 0 |
@@ -197,7 +205,49 @@ This is a conservative review screen: mathematics is masked, and local editorial
 | `erdos-distance-problem` | 0.0077 | 0 | 0 | +0 | +0 | 0 |
 | `small-gaps-between-primes` | 0.0021 | 0 | 0 | +0 | +0 | 0 |
 
-Posts carrying at least one review flag: **24**.
+Posts carrying at least one review flag: **25**.
+
+### Voice check: `basis-fixing-reduction`
+
+- Deleted sentence (`basis-fixing-reduction:p0001`): Following the framework of T.
+- Deleted sentence (`basis-fixing-reduction:p0004`): Now is the right time to remind ourselves of Tool 1.
+- Deleted sentence (`basis-fixing-reduction:p0005`): If you stretch the rubber band, then you cannot undo it later.
+- Deleted sentence (`basis-fixing-reduction:p0009`): To be sincere, we shall not deviate from the theme of reflections and rotations.
+- Deleted sentence (`basis-fixing-reduction:p0006`): In other words, it will break.
+- Deleted sentence (`basis-fixing-reduction:p0006`): This rigidity can be extended to all of mathematics with a very similar idea, yielding the following.
+- Deleted sentence (`basis-fixing-reduction:p0007`): General version Any origin-fixing isometry from mathematics to mathematics is a composition of at most mathematics reflections along hyperplanes.
+- Deleted sentence (`basis-fixing-reduction:p0008`): Refer to Beardon's The Geometry of Discrete Groups , or any text on M\"obius transformations on mathematics .
+- Deleted sentence (`basis-fixing-reduction:p0011`): Label the vertices mathematics .
+- Deleted sentence (`basis-fixing-reduction:p0011`): Without loss of generality, for a given mathematics assume mathematics ; otherwise compose it with mathematics , where mathematics is a rotation.
+- Deleted sentence (`basis-fixing-reduction:p0011`): Write the cycle as mathematics If mathematics , then mathematics must be adjacent to mathematics , so mathematics or mathematics .
+- Deleted sentence (`basis-fixing-reduction:p0011`): If mathematics , then mathematics must be adjacent to mathematics and cannot be mathematics .
+- Deleted sentence (`basis-fixing-reduction:p0011`): If mathematics , then mathematics must be adjacent to mathematics but not to mathematics .
+- Deleted sentence (`basis-fixing-reduction:p0011`): Again, inductively, we conclude that mathematics is a reflection.
+- Deleted sentence (`basis-fixing-reduction:p0011`): From this “nice” place, trace back to conclude that mathematics .
+- Deleted sentence (`basis-fixing-reduction:p0011`): Hence mathematics is an isomorphism.
+- Deleted sentence (`basis-fixing-reduction:p0012`): This is a good place to ask the following.
+- Deleted sentence (`basis-fixing-reduction:p0012`): We have just seen the rigidity of the complex plane, geometrically speaking.
+- Deleted sentence (`basis-fixing-reduction:p0012`): Now consider the isometries that fix mathematics and mathematics .
+- Deleted sentence (`basis-fixing-reduction:p0013`): Such an isometry is a field homomorphism (hence a linear map) that fixes mathematics , from mathematics to mathematics , with mathematics viewed as mathematics .
+- Deleted sentence (`basis-fixing-reduction:p0014`): The very geometric notion of rigidity has led us to an algebraic question, namely the exercise above.
+- Deleted sentence (`basis-fixing-reduction:p0014`): Suppose we have a field extension of mathematics , say mathematics , such that mathematics Then is mathematics ?
+- Deleted sentence (`basis-fixing-reduction:p0014`): Here mathematics denotes the field homomorphisms that fix mathematics .
+- Deleted sentence (`basis-fixing-reduction:p0015`): Here the group mathematics , seen as mathematics with vertices mathematics , is of relevance, because then we are asking mathematics This is an infant version of the inverse Galois problem.
+- Deleted sentence (`basis-fixing-reduction:p0016`): The algebraic construction of mathematics is thus significant: it shows us that rigidity is a consequence of an algebraic structure, and vice versa.
+- Deleted sentence (`basis-fixing-reduction:p0017`): This finally brings us to the statement made by Sophie Germain: “Algebra is written geometry and geometry is figured algebra.
+- Deleted sentence (`basis-fixing-reduction:p0017`): One can regard the construction of mathematics via geometry and, independently, via algebra as an illustration of Sophie's comment.
+- New sentence (`basis-fixing-reduction:p0005`): This rigidity feature can be extended to all Euclidean spaces mathematics .
+- New sentence (`basis-fixing-reduction:p0005`): However, there are instances of non-Euclidean spaces, for which the doubling map mathematics is an isometry.
+- New sentence (`basis-fixing-reduction:p0010`): To that end, label the vertices mathematics .
+- New sentence (`basis-fixing-reduction:p0010`): Without loss of generality, for a given mathematics assume mathematics ; otherwise compose it with mathematics , where mathematics is a rotation.
+- New sentence (`basis-fixing-reduction:p0010`): Write the cycle as mathematics If mathematics , then mathematics must be adjacent to mathematics , so mathematics or mathematics .
+- New sentence (`basis-fixing-reduction:p0010`): If mathematics , then mathematics must be adjacent to mathematics and cannot be mathematics .
+- New sentence (`basis-fixing-reduction:p0010`): If mathematics , then mathematics must be adjacent to mathematics but not to mathematics .
+- New sentence (`basis-fixing-reduction:p0010`): Again, inductively, we conclude that mathematics is a reflection.
+- New sentence (`basis-fixing-reduction:p0010`): Now, tracing back, we conclude that mathematics .
+- New sentence (`basis-fixing-reduction:p0010`): Hence mathematics is an isomorphism.
+- First-person markers fell from 16 to 9.
+- Rhetorical/question sentences fell from 1 to 0.
 
 ### Voice check: `rouche-and-bloch`
 
@@ -318,7 +368,57 @@ Posts carrying at least one review flag: **24**.
 
 ## Moved passages
 
-No moved passages detected.
+- `basis-fixing-reduction:p0002`: `01-basis-fixing-reduction.tex:2` → `01-basis-fixing-reduction.tex:1`
+- `basis-fixing-reduction:p0003`: `01-basis-fixing-reduction.tex:3` → `01-basis-fixing-reduction.tex:2`
+- `basis-fixing-reduction:p0004`: `01-basis-fixing-reduction.tex:4` → `01-basis-fixing-reduction.tex:3`
+- `basis-fixing-reduction:p0005`: `01-basis-fixing-reduction.tex:5` → `01-basis-fixing-reduction.tex:4`
+- `basis-fixing-reduction:p0009`: `01-basis-fixing-reduction.tex:9` → `01-basis-fixing-reduction.tex:5`
+- `basis-fixing-reduction:p0010`: `01-basis-fixing-reduction.tex:10` → `01-basis-fixing-reduction.tex:6`
+- `separation-and-holomorphic-lifting:p0031`: `12-separation-and-holomorphic-lifting.tex:31` → `12-separation-and-holomorphic-lifting.tex:24`
+- `separation-and-holomorphic-lifting:p0024`: `12-separation-and-holomorphic-lifting.tex:24` → `12-separation-and-holomorphic-lifting.tex:25`
+- `separation-and-holomorphic-lifting:p0025`: `12-separation-and-holomorphic-lifting.tex:25` → `12-separation-and-holomorphic-lifting.tex:26`
+- `separation-and-holomorphic-lifting:p0026`: `12-separation-and-holomorphic-lifting.tex:26` → `12-separation-and-holomorphic-lifting.tex:27`
+- `separation-and-holomorphic-lifting:p0027`: `12-separation-and-holomorphic-lifting.tex:27` → `12-separation-and-holomorphic-lifting.tex:28`
+- `separation-and-holomorphic-lifting:p0028`: `12-separation-and-holomorphic-lifting.tex:28` → `12-separation-and-holomorphic-lifting.tex:29`
+- `separation-and-holomorphic-lifting:p0029`: `12-separation-and-holomorphic-lifting.tex:29` → `12-separation-and-holomorphic-lifting.tex:30`
+- `separation-and-holomorphic-lifting:p0030`: `12-separation-and-holomorphic-lifting.tex:30` → `12-separation-and-holomorphic-lifting.tex:31`
+- `mcmullens-surgery-finite-symmetry:p0009`: `84-mcmullens-surgery-finite-symmetry.tex:9` → `80-mcmullens-surgery.tex:35`
+- `mcmullens-surgery:p0035`: `80-mcmullens-surgery.tex:35` → `80-mcmullens-surgery.tex:36`
+- `mcmullens-surgery:p0036`: `80-mcmullens-surgery.tex:36` → `80-mcmullens-surgery.tex:37`
+- `mcmullens-surgery:p0037`: `80-mcmullens-surgery.tex:37` → `80-mcmullens-surgery.tex:38`
+- `mcmullens-surgery:p0038`: `80-mcmullens-surgery.tex:38` → `80-mcmullens-surgery.tex:39`
+- `mcmullens-surgery:p0039`: `80-mcmullens-surgery.tex:39` → `80-mcmullens-surgery.tex:40`
+- `mcmullens-surgery:p0040`: `80-mcmullens-surgery.tex:40` → `80-mcmullens-surgery.tex:41`
+- `mcmullens-surgery:p0041`: `80-mcmullens-surgery.tex:41` → `80-mcmullens-surgery.tex:42`
+- `mcmullens-surgery:p0042`: `80-mcmullens-surgery.tex:42` → `80-mcmullens-surgery.tex:43`
+- `mcmullens-surgery:p0043`: `80-mcmullens-surgery.tex:43` → `80-mcmullens-surgery.tex:44`
+- `mcmullens-surgery:p0044`: `80-mcmullens-surgery.tex:44` → `80-mcmullens-surgery.tex:45`
+- `mcmullens-surgery:p0045`: `80-mcmullens-surgery.tex:45` → `80-mcmullens-surgery.tex:46`
+- `mcmullens-surgery:p0046`: `80-mcmullens-surgery.tex:46` → `80-mcmullens-surgery.tex:47`
+- `mcmullens-surgery:p0047`: `80-mcmullens-surgery.tex:47` → `80-mcmullens-surgery.tex:48`
+- `mcmullens-surgery:p0048`: `80-mcmullens-surgery.tex:48` → `80-mcmullens-surgery.tex:49`
+- `mcmullens-surgery:p0049`: `80-mcmullens-surgery.tex:49` → `80-mcmullens-surgery.tex:50`
+- `mcmullens-surgery:p0050`: `80-mcmullens-surgery.tex:50` → `80-mcmullens-surgery.tex:51`
+- `mcmullens-surgery:p0051`: `80-mcmullens-surgery.tex:51` → `80-mcmullens-surgery.tex:52`
+- `mcmullens-surgery:p0052`: `80-mcmullens-surgery.tex:52` → `80-mcmullens-surgery.tex:53`
+- `mcmullens-surgery:p0053`: `80-mcmullens-surgery.tex:53` → `80-mcmullens-surgery.tex:54`
+- `mcmullens-surgery:p0054`: `80-mcmullens-surgery.tex:54` → `80-mcmullens-surgery.tex:55`
+- `mcmullens-surgery:p0055`: `80-mcmullens-surgery.tex:55` → `80-mcmullens-surgery.tex:56`
+- `mcmullens-surgery:p0056`: `80-mcmullens-surgery.tex:56` → `80-mcmullens-surgery.tex:57`
+- `mcmullens-surgery:p0057`: `80-mcmullens-surgery.tex:57` → `80-mcmullens-surgery.tex:58`
+- `mcmullens-surgery:p0058`: `80-mcmullens-surgery.tex:58` → `80-mcmullens-surgery.tex:59`
+- `mcmullens-surgery:p0059`: `80-mcmullens-surgery.tex:59` → `80-mcmullens-surgery.tex:60`
+- `mcmullens-surgery:p0060`: `80-mcmullens-surgery.tex:60` → `80-mcmullens-surgery.tex:61`
+- `mcmullens-surgery:p0061`: `80-mcmullens-surgery.tex:61` → `80-mcmullens-surgery.tex:62`
+- `mcmullens-surgery:p0062`: `80-mcmullens-surgery.tex:62` → `80-mcmullens-surgery.tex:63`
+- `mcmullens-surgery:p0063`: `80-mcmullens-surgery.tex:63` → `80-mcmullens-surgery.tex:64`
+- `mcmullens-surgery:p0064`: `80-mcmullens-surgery.tex:64` → `80-mcmullens-surgery.tex:65`
+- `mcmullens-surgery-finite-symmetry:p0010`: `84-mcmullens-surgery-finite-symmetry.tex:10` → `84-mcmullens-surgery-finite-symmetry.tex:9`
+- `mcmullens-surgery-finite-symmetry:p0011`: `84-mcmullens-surgery-finite-symmetry.tex:11` → `84-mcmullens-surgery-finite-symmetry.tex:10`
+- `mcmullens-surgery-finite-symmetry:p0012`: `84-mcmullens-surgery-finite-symmetry.tex:12` → `84-mcmullens-surgery-finite-symmetry.tex:11`
+- `mcmullens-surgery-finite-symmetry:p0013`: `84-mcmullens-surgery-finite-symmetry.tex:13` → `84-mcmullens-surgery-finite-symmetry.tex:12`
+- `mcmullens-surgery-finite-symmetry:p0014`: `84-mcmullens-surgery-finite-symmetry.tex:14` → `84-mcmullens-surgery-finite-symmetry.tex:13`
+- `mcmullens-surgery-finite-symmetry:p0015`: `84-mcmullens-surgery-finite-symmetry.tex:15` → `84-mcmullens-surgery-finite-symmetry.tex:14`
 
 ## Added internal links
 
@@ -427,27 +527,204 @@ No moved passages detected.
 
 ## Passage-level before/after review
 
-### `basis-fixing-reduction:p0004` — reframed-retained
+### `basis-fixing-reduction:p0002` — restored-approved-author-version
 
 - Post: `basis-fixing-reduction`
-- Location: `01-basis-fixing-reduction.tex:4` → `01-basis-fixing-reduction.tex:4`
+- Location: `01-basis-fixing-reduction.tex:2` → `01-basis-fixing-reduction.tex:1`
 - Approval: `approved`
-- Changed tokens: 0 deleted, 1 inserted; ratio **0.0008**
-- Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
-- Ledger evidence: Local conservation review; see the generated old/new passage diff.
+- Changed tokens: 3 deleted, 11 inserted; ratio **0.0636**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - added: `inline: $T$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0002
++++ candidate/basis-fixing-reduction:p0002
+@@ -1,7 +1,9 @@
++% Overleaf publishing connection verified.
++
+ \subsection*{Tool 1 — Basis-Fixing Reduction}
+-Given a linear transformation,
++Consider a linear transformation,
+ \[
+ T\left(\sum_{i=1}^{n}a_i e_i\right)=\sum_{i=1}^{n}a_iT(e_i).
+ \]
+-If $T$ fixes the basis $\{e_i\}$, then $T$ is the identity. Thus, compose $T$ with linear transformations so that the composition fixes $\{e_i\}$; then one can trace one's steps back.
++Observe that if $T$ fixes the basis $\{e_i\}$, then $T$ is the identity map. Thus, compose $T$ with linear transformations so that the composition fixes $\{e_i\}$; then one can trace the steps back to recover $T$.
+```
+
+### `basis-fixing-reduction:p0003` — restored-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:3` → `01-basis-fixing-reduction.tex:2`
+- Approval: `approved`
+- Changed tokens: 12 deleted, 11 inserted; ratio **0.2035**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `display: \[ T(z)=z_0+\omega z \qquad\text{or}\qquad T(z)=z_0+\omega\overline z, \]`
+  - removed: `inline: $\|\omega\|=1$`
+  - added: `display: \[ T(z)=z_0+\omega z \qquad\text{or}\qquad T(z)=z_0+\omega\overline z. \]`
+
+```diff
+--- baseline/basis-fixing-reduction:p0003
++++ candidate/basis-fixing-reduction:p0003
+@@ -1,8 +1,8 @@
+-It follows that any isometry $T\colon\mathbb C\to\mathbb C$ is of the form
++A simple application of the aforementioned tool goes into showing that any isometry $T\colon\mathbb C\to\mathbb C$ is of the form
+ \[
+ T(z)=z_0+\omega z
+ \qquad\text{or}\qquad
+-T(z)=z_0+\omega\overline z,
++T(z)=z_0+\omega\overline z.
+ \]
+-where $|\omega|=1$.
+ 
++
+```
+
+### `basis-fixing-reduction:p0004` — restored-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:4` → `01-basis-fixing-reduction.tex:3`
+- Approval: `approved`
+- Changed tokens: 14 deleted, 9 inserted; ratio **0.0177**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - added: `inline: $1$`
 
 ```diff
 --- baseline/basis-fixing-reduction:p0004
 +++ candidate/basis-fixing-reduction:p0004
-@@ -41,7 +41,7 @@
- \langle(\varphi\circ T)(e_2),(\varphi\circ T)(e_2)\rangle
- =\langle e_2,e_2\rangle=1.
- \]
--Therefore \((\varphi\circ T)(e_2)=\pm e_2,\)
-+Therefore, \((\varphi\circ T)(e_2)=\pm e_2,\)
- and hence
+@@ -23,11 +23,11 @@
  \[
- (\varphi\circ T)(z)=z\qquad\text{or}\qquad
+ \langle T(v),T(e_i)\rangle=\langle v,e_i\rangle,
+ \]
+-we get $a_i=b_i$ for every $i$, $1\leq i\leq n$. Now is the right time to remind ourselves of Tool 1. We know that
++we get $a_i=b_i$ for every $i$, $1\leq i\leq n$. We know that
+ \[
+ T\left(\sum_{i=1}^{n}a_ie_i\right)=\sum_{i=1}^{n}a_iT(e_i).
+ \]
+-Compose $T$ with a rotation $\varphi$ such that
++We apply Tool $1$ by composing $T$ with a rotation $\varphi$ so that
+ \[
+ (\varphi\circ T)(e_1)=e_1.
+ \]
+```
+
+### `basis-fixing-reduction:p0005` — restored-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:5` → `01-basis-fixing-reduction.tex:4`
+- Approval: `approved`
+- Changed tokens: 59 deleted, 50 inserted; ratio **0.4208**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - added: `inline: $\mathbb R^n$`
+  - added: `inline: $z\mapsto 2z$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0005
++++ candidate/basis-fixing-reduction:p0005
+@@ -1,3 +1,3 @@
+ \textbf{Remark.}
+-The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice,'' and one can trace one's steps back after reaching that ``nice'' place. We will see another illustration of this in the same theme. Before that, note that what we essentially found is that the complex plane is rigid: if two points of a plane are connected by a rubber band, there are only two ways to deform it so that the lengths of the rubber bands remain the same in the end -- reflections and rotations. If you stretch the rubber band, then you cannot undo it later.
++The power of Tool $1$ goes far beyond this. Maps that fix certain elements often turn out to be ``nice''. We shall see another application of this soon. Before that, it is worth emphasizing the rigidity of the complex plane: if two points of the plane are connected by a rubber band, there are essentially two ways to deform it preserving lengths -- reflections and rotations. This rigidity feature can be extended to all Euclidean spaces $\mathbb R^n$. However, there are instances of non-Euclidean spaces, for which the doubling map $z\mapsto 2z$ is an isometry.
+```
+
+### `basis-fixing-reduction:p0009` — restored-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:9` → `01-basis-fixing-reduction.tex:5`
+- Approval: `approved`
+- Changed tokens: 41 deleted, 11 inserted; ratio **0.3562**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `inline: $n$`
+  - removed: `inline: \(D_n\cong\operatorname{Aut}(C_n),\)`
+  - added: `inline: \(\operatorname{Aut}(C_n),\)`
+
+```diff
+--- baseline/basis-fixing-reduction:p0009
++++ candidate/basis-fixing-reduction:p0009
+@@ -1,3 +1,3 @@
+ \subsubsection*{The dihedral group}
+-Now let us look at another application of Tool $1$. To be sincere, we shall not deviate from the theme of reflections and rotations. Let us try to study the structure of $D_n$, the dihedral group. \(D_n\cong\operatorname{Aut}(C_n),\) where $C_n$ is the cyclic graph on $n$ vertices having exactly one $n$-cycle.
++Now let us illustrate another application of Tool $1$ by proving that the dihedral group \(D_n\) is isomorphic to \(\operatorname{Aut}(C_n),\) where $C_n$ is the cyclic graph on $n$ vertices.
+```
+
+### `basis-fixing-reduction:p0010` — restored-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:10` → `01-basis-fixing-reduction.tex:6`
+- Approval: `approved`
+- Changed tokens: 17 deleted, 259 inserted; ratio **0.6970**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `inline: $D_n$`
+  - added: `display: \[ 1\longrightarrow2\longrightarrow3\longrightarrow\cdots \longrightarrow n\longrightarrow1. \]`
+  - added: `inline: $1$`
+  - added: `inline: $1$`
+  - added: `inline: $1$`
+  - added: `inline: $2$`
+  - added: `inline: $T$`
+  - added: `inline: $T'$`
+  - added: `inline: $T(1)=1$`
+  - added: `inline: $T(1)=1$`
+  - added: `inline: $T(2)$`
+  - added: `inline: $T(2)=2$`
+  - added: `inline: $T(2)=2$`
+  - added: `inline: $T(2)=n$`
+  - added: `inline: $T(3)$`
+  - added: `inline: $T(3)$`
+  - added: `inline: $T(i)=i$`
+  - added: `inline: $T\in\operatorname{Aut}(C_n)$`
+  - added: `inline: $T\in\varphi(D_n)$`
+  - added: `inline: $\varphi$`
+  - added: `inline: $\varphi(T')$`
+  - added: `inline: $\{1,2,3,4,\ldots,n\}$`
+  - added: `inline: $i$`
+  - added: `inline: $n$`
+  - added: `inline: $n$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0010
++++ candidate/basis-fixing-reduction:p0010
+@@ -3,5 +3,9 @@
+ \[
+ \varphi\colon D_n\longrightarrow\operatorname{Aut}(C_n).
+ \]
+-We only have to show that $\varphi$ is surjective; it is clearly injective, since the kernel is the identity in $D_n$.
+-
++The map $\varphi$ is clearly injective. We have to prove that it is also surjective. To that end, label the vertices $\{1,2,3,4,\ldots,n\}$. Without loss of generality, for a given $T\in\operatorname{Aut}(C_n)$ assume $T(1)=1$; otherwise compose it with $\varphi(T')$, where $T'$ is a rotation. Write the cycle as
++\[
++1\longrightarrow2\longrightarrow3\longrightarrow\cdots
++\longrightarrow n\longrightarrow1.
++\]
++If $T(1)=1$, then $T(2)$ must be adjacent to $1$, so $T(2)=2$ or $n$. If $T(2)=2$, then $T(3)$ must be adjacent to $2$ and cannot be $1$. Inductively, $T(i)=i$ for every $i$. If $T(2)=n$, then $T(3)$ must be adjacent to $n$ but not to $1$. Again, inductively, we conclude that $T$ is a reflection. Now, tracing back, we conclude that $T\in\varphi(D_n)$. Hence $\varphi$ is an isomorphism.
 ```
 
 ### `connectedness-and-compactness:p0001` — mechanically-corrected
@@ -1339,9 +1616,9 @@ Protected-payload changes:
 - Post: `rouche-and-bloch`
 - Location: `11-rouche-and-bloch.tex:33` → `11-rouche-and-bloch.tex:33`
 - Approval: `approved`
-- Changed tokens: 16 deleted, 18 inserted; ratio **0.2237**
-- Ledger reason: Remove inherited notebook, lecture, and source-management phrasing while retaining the mathematical passage and the author’s diction.
-- Ledger evidence: Local conservation review; see the generated old/new passage diff.
+- Changed tokens: 49 deleted, 51 inserted; ratio **0.6579**
+- Ledger reason: Retain the previously approved final-remark wording; move the unchanged Bloch nested-disks figure immediately before that remark, beside the proof it illustrates.
+- Ledger evidence: The 2026-09-30 figure audit moves the existing figure block only; all sentences and mathematical content are unchanged from the preceding approved wording edit.
 
 Protected-payload changes:
 
@@ -1351,12 +1628,13 @@ Protected-payload changes:
 ```diff
 --- baseline/rouche-and-bloch:p0033
 +++ candidate/rouche-and-bloch:p0033
-@@ -1,4 +1,4 @@
+@@ -1,5 +1,5 @@
 -\paragraph{Final remark.} With this we conclude our compilation of standard techniques in complex analysis. We end this by presenting some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.
-+\paragraph{Final remark.} We continue in \BlogPost{separation-and-holomorphic-lifting}{Separation by a Polygonal Path/Arc and Holomorphic Lifting} with some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.
  \begin{figure}[htbp]
    \centering
    \includegraphics[width=0.72\textwidth]{note7-fig-05.pdf}
+ \end{figure}
++\paragraph{Final remark.} We continue in \BlogPost{separation-and-holomorphic-lifting}{Separation by a Polygonal Path/Arc and Holomorphic Lifting} with some important constructions: a branch of a logarithm, a lift of a holomorphic map, biholomorphisms, and the Jordan curve theorem.
 ```
 
 ### `separation-and-holomorphic-lifting:p0004` — reframed-retained
@@ -9268,6 +9546,30 @@ Protected-payload changes:
          \end{tikzcd}$$
 ```
 
+### `surgical-tools:p0042` — mechanically-corrected
+
+- Post: `surgical-tools`
+- Location: `24-surgical-tools.tex:42` → `24-surgical-tools.tex:42`
+- Approval: `approved`
+- Changed tokens: 0 deleted, 10 inserted; ratio **0.0151**
+- Ledger reason: Improve gluing-annulus contrast by lightening gray fill to gray!15 and increasing line weight to 0.7pt. All geometry, arrows and mathematical labels are unchanged.
+- Ledger evidence: Visual audit of the inline TikZ source and matching generated figure; no mathematical payload changes.
+
+```diff
+--- baseline/surgical-tools:p0042
++++ candidate/surgical-tools:p0042
+@@ -1,7 +1,7 @@
+         \begin{figure}[ht!]
+-        \begin{tikzpicture}
++        \begin{tikzpicture}[line width=0.7pt]
+         \draw (0,0) ellipse (8cm and 4cm);
+-        \draw (0,0) ellipse (6cm and 3cm)[fill = gray];
++        \draw (0,0) ellipse (6cm and 3cm)[fill = gray!15];
+         \draw (0,0) ellipse (2cm and 1cm)[fill = white];
+         \node[text width=3cm] at (-0.3,0) {$\hat{f_1}$};
+         \node[text width=3cm] at (-5.9,0) {$f_2$};
+```
+
 ### `surgical-tools:p0043` — reframed-retained
 
 - Post: `surgical-tools`
@@ -10921,7 +11223,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0040` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:40` → `80-mcmullens-surgery.tex:40`
+- Location: `80-mcmullens-surgery.tex:40` → `80-mcmullens-surgery.tex:41`
 - Approval: `approved`
 - Changed tokens: 0 deleted, 2 inserted; ratio **0.0141**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -10938,7 +11240,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0041` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:41` → `80-mcmullens-surgery.tex:41`
+- Location: `80-mcmullens-surgery.tex:41` → `80-mcmullens-surgery.tex:42`
 - Approval: `approved`
 - Changed tokens: 1 deleted, 1 inserted; ratio **0.0061**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -10955,7 +11257,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0044` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:44` → `80-mcmullens-surgery.tex:44`
+- Location: `80-mcmullens-surgery.tex:44` → `80-mcmullens-surgery.tex:45`
 - Approval: `approved`
 - Changed tokens: 3 deleted, 3 inserted; ratio **0.0184**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -10976,7 +11278,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0045` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:45` → `80-mcmullens-surgery.tex:45`
+- Location: `80-mcmullens-surgery.tex:45` → `80-mcmullens-surgery.tex:46`
 - Approval: `approved`
 - Changed tokens: 0 deleted, 1 inserted; ratio **0.0014**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -10995,7 +11297,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0048` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:48` → `80-mcmullens-surgery.tex:48`
+- Location: `80-mcmullens-surgery.tex:48` → `80-mcmullens-surgery.tex:49`
 - Approval: `approved`
 - Changed tokens: 1 deleted, 0 inserted; ratio **0.0023**
 - Ledger reason: Conservative local editorial pass; mathematical content is retained unless separately itemized.
@@ -11012,7 +11314,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0049` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:49` → `80-mcmullens-surgery.tex:49`
+- Location: `80-mcmullens-surgery.tex:49` → `80-mcmullens-surgery.tex:50`
 - Approval: `approved`
 - Changed tokens: 0 deleted, 1 inserted; ratio **0.0018**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -11033,7 +11335,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0050` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:50` → `80-mcmullens-surgery.tex:50`
+- Location: `80-mcmullens-surgery.tex:50` → `80-mcmullens-surgery.tex:51`
 - Approval: `approved`
 - Changed tokens: 0 deleted, 1 inserted; ratio **0.0016**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -11053,7 +11355,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0055` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:55` → `80-mcmullens-surgery.tex:55`
+- Location: `80-mcmullens-surgery.tex:55` → `80-mcmullens-surgery.tex:56`
 - Approval: `approved`
 - Changed tokens: 15 deleted, 8 inserted; ratio **0.0939**
 - Ledger reason: Remove inherited notebook, lecture, and source-management phrasing while retaining the mathematical passage and the author’s diction.
@@ -11070,7 +11372,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0057` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:57` → `80-mcmullens-surgery.tex:57`
+- Location: `80-mcmullens-surgery.tex:57` → `80-mcmullens-surgery.tex:58`
 - Approval: `approved`
 - Changed tokens: 0 deleted, 5 inserted; ratio **0.0035**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -11087,7 +11389,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0060` — mathematically-corrected
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:60` → `80-mcmullens-surgery.tex:60`
+- Location: `80-mcmullens-surgery.tex:60` → `80-mcmullens-surgery.tex:61`
 - Approval: `approved`
 - Changed tokens: 10 deleted, 7 inserted; ratio **0.0281**
 - Ledger reason: Retain the previously itemised correction of the telescoping factor table: use the product of component degrees, the correct composition order for P-d, and the consistent B-j index; also add terminal display punctuation.
@@ -11124,7 +11426,7 @@ Protected-payload changes:
 ### `mcmullens-surgery:p0061` — reframed-retained
 
 - Post: `mcmullens-surgery`
-- Location: `80-mcmullens-surgery.tex:61` → `80-mcmullens-surgery.tex:61`
+- Location: `80-mcmullens-surgery.tex:61` → `80-mcmullens-surgery.tex:62`
 - Approval: `approved`
 - Changed tokens: 0 deleted, 3 inserted; ratio **0.0034**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -11201,7 +11503,7 @@ Protected-payload changes:
 ### `mcmullens-surgery-finite-symmetry:p0010` — reframed-retained
 
 - Post: `mcmullens-surgery-finite-symmetry`
-- Location: `84-mcmullens-surgery-finite-symmetry.tex:10` → `84-mcmullens-surgery-finite-symmetry.tex:10`
+- Location: `84-mcmullens-surgery-finite-symmetry.tex:10` → `84-mcmullens-surgery-finite-symmetry.tex:9`
 - Approval: `approved`
 - Changed tokens: 3 deleted, 0 inserted; ratio **0.0265**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -11218,7 +11520,7 @@ Protected-payload changes:
 ### `mcmullens-surgery-finite-symmetry:p0011` — reframed-retained
 
 - Post: `mcmullens-surgery-finite-symmetry`
-- Location: `84-mcmullens-surgery-finite-symmetry.tex:11` → `84-mcmullens-surgery-finite-symmetry.tex:11`
+- Location: `84-mcmullens-surgery-finite-symmetry.tex:11` → `84-mcmullens-surgery-finite-symmetry.tex:10`
 - Approval: `approved`
 - Changed tokens: 0 deleted, 1 inserted; ratio **0.0130**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -11235,7 +11537,7 @@ Protected-payload changes:
 ### `mcmullens-surgery-finite-symmetry:p0012` — reframed-retained
 
 - Post: `mcmullens-surgery-finite-symmetry`
-- Location: `84-mcmullens-surgery-finite-symmetry.tex:12` → `84-mcmullens-surgery-finite-symmetry.tex:12`
+- Location: `84-mcmullens-surgery-finite-symmetry.tex:12` → `84-mcmullens-surgery-finite-symmetry.tex:11`
 - Approval: `approved`
 - Changed tokens: 3 deleted, 1 inserted; ratio **0.0145**
 - Ledger reason: Mechanical punctuation, grammar, source-medium framing, navigation, and typesetting pass under the authorial-voice contract; mathematical content is retained except where the exact ledger item records an objective correction or a rendering-only diagram-row change.
@@ -14793,6 +15095,303 @@ Protected-payload changes:
 +of the \emph{parity obstruction}. Thus, in this language, the
  theory was ``at the moment, stagnant.'' Tao remarks that progress is one or
  two clever ideas away!
+```
+
+### `basis-fixing-reduction:p0001` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:1` → `01-basis-fixing-reduction.tex:1`
+- Approval: `approved`
+- Changed tokens: 11 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+```diff
+--- baseline/basis-fixing-reduction:p0001
++++ candidate/basis-fixing-reduction:p0001
+@@ -1,2 +0,0 @@
+-\textit{Following the framework of T. Tao.}
+-
+```
+
+### `basis-fixing-reduction:p0006` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:6` → `01-basis-fixing-reduction.tex:6`
+- Approval: `approved`
+- Changed tokens: 32 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `inline: $\mathbb R^n$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0006
++++ candidate/basis-fixing-reduction:p0006
+@@ -1,2 +0,0 @@
+-In other words, it will break. This rigidity can be extended to all of $\mathbb R^n$ with a very similar idea, yielding the following.
+-
+```
+
+### `basis-fixing-reduction:p0007` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:7` → `01-basis-fixing-reduction.tex:7`
+- Approval: `approved`
+- Changed tokens: 36 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `inline: $\mathbb R^n$`
+  - removed: `inline: $\mathbb R^n$`
+  - removed: `inline: $n$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0007
++++ candidate/basis-fixing-reduction:p0007
+@@ -1,3 +0,0 @@
+-\subsubsection*{General version}
+-Any origin-fixing isometry from $\mathbb R^n$ to $\mathbb R^n$ is a composition of at most $n$ reflections along hyperplanes.
+-
+```
+
+### `basis-fixing-reduction:p0008` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:8` → `01-basis-fixing-reduction.tex:8`
+- Approval: `approved`
+- Changed tokens: 36 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `inline: $\mathbb R^n$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0008
++++ candidate/basis-fixing-reduction:p0008
+@@ -1,3 +0,0 @@
+-\textit{Proof.}
+-Exercise. Refer to Beardon's \emph{The Geometry of Discrete Groups}, or any text on M\"obius transformations on $\mathbb R^n$.
+-
+```
+
+### `basis-fixing-reduction:p0011` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:11` → `01-basis-fixing-reduction.tex:11`
+- Approval: `approved`
+- Changed tokens: 263 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `display: \[ 1\longrightarrow2\longrightarrow3\longrightarrow\cdots \longrightarrow n\longrightarrow1 \qquad\text{(not a directed graph).} \]`
+  - removed: `inline: $1$`
+  - removed: `inline: $1$`
+  - removed: `inline: $1$`
+  - removed: `inline: $2$`
+  - removed: `inline: $T$`
+  - removed: `inline: $T'$`
+  - removed: `inline: $T(1)=1$`
+  - removed: `inline: $T(1)=1$`
+  - removed: `inline: $T(2)$`
+  - removed: `inline: $T(2)=2$`
+  - removed: `inline: $T(2)=2$`
+  - removed: `inline: $T(2)=n$`
+  - removed: `inline: $T(3)$`
+  - removed: `inline: $T(3)$`
+  - removed: `inline: $T(i)=i$`
+  - removed: `inline: $T\in\operatorname{Aut}(C_n)$`
+  - removed: `inline: $T\in\varphi(D_n)$`
+  - removed: `inline: $\varphi$`
+  - removed: `inline: $\varphi(T')$`
+  - removed: `inline: $\{1,2,3,4,\ldots,n\}$`
+  - removed: `inline: $i$`
+  - removed: `inline: $n$`
+  - removed: `inline: $n$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0011
++++ candidate/basis-fixing-reduction:p0011
+@@ -1,8 +0,0 @@
+-Label the vertices $\{1,2,3,4,\ldots,n\}$. Without loss of generality, for a given $T\in\operatorname{Aut}(C_n)$ assume $T(1)=1$; otherwise compose it with $\varphi(T')$, where $T'$ is a rotation. Write the cycle as
+-\[
+-1\longrightarrow2\longrightarrow3\longrightarrow\cdots
+-\longrightarrow n\longrightarrow1
+-\qquad\text{(not a directed graph).}
+-\]
+-If $T(1)=1$, then $T(2)$ must be adjacent to $1$, so $T(2)=2$ or $n$. If $T(2)=2$, then $T(3)$ must be adjacent to $2$ and cannot be $1$. Inductively, $T(i)=i$ for every $i$. If $T(2)=n$, then $T(3)$ must be adjacent to $n$ but not to $1$. Again, inductively, we conclude that $T$ is a reflection. From this ``nice'' place, trace back to conclude that $T\in\varphi(D_n)$. Hence $\varphi$ is an isomorphism.
+-
+```
+
+### `basis-fixing-reduction:p0012` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:12` → `01-basis-fixing-reduction.tex:12`
+- Approval: `approved`
+- Changed tokens: 43 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `inline: $0$`
+  - removed: `inline: $1$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0012
++++ candidate/basis-fixing-reduction:p0012
+@@ -1,3 +0,0 @@
+-\textbf{Remark.}
+-This is a good place to ask the following. We have just seen the rigidity of the complex plane, geometrically speaking. Now consider the isometries that fix $0$ and $1$.
+-
+```
+
+### `basis-fixing-reduction:p0013` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:13` → `01-basis-fixing-reduction.tex:13`
+- Approval: `approved`
+- Changed tokens: 53 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `inline: $\mathbb C$`
+  - removed: `inline: $\mathbb C$`
+  - removed: `inline: $\mathbb C$`
+  - removed: `inline: $\mathbb R$`
+  - removed: `inline: $\mathbb R^2$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0013
++++ candidate/basis-fixing-reduction:p0013
+@@ -1,3 +0,0 @@
+-\textbf{Exercise.}
+-Such an isometry is a \emph{field homomorphism} (hence a linear map) that fixes $\mathbb R$, from $\mathbb C$ to $\mathbb C$, with $\mathbb C$ viewed as $\mathbb R^2$.
+-
+```
+
+### `basis-fixing-reduction:p0014` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:14` → `01-basis-fixing-reduction.tex:14`
+- Approval: `approved`
+- Changed tokens: 118 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `display: \[ \operatorname{Aut}_{\mathbb R}(\mathbb C') \cong \{\text{isometries of $\mathbb C$ that fix $\mathbb R$}\}. \]`
+  - removed: `inline: $\mathbb C'$`
+  - removed: `inline: $\mathbb C'\cong\mathbb C$`
+  - removed: `inline: $\mathbb R$`
+  - removed: `inline: $\mathbb R$`
+  - removed: `inline: $\operatorname{Aut}_{\mathbb R}(\mathbb C')$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0014
++++ candidate/basis-fixing-reduction:p0014
+@@ -1,8 +0,0 @@
+-The very geometric notion of rigidity has led us to an algebraic question, namely the exercise above. Suppose we have a field extension of $\mathbb R$, say $\mathbb C'$, such that
+-\[
+-\operatorname{Aut}_{\mathbb R}(\mathbb C')
+-\cong
+-\{\text{isometries of $\mathbb C$ that fix $\mathbb R$}\}.
+-\]
+-Then is $\mathbb C'\cong\mathbb C$? Here $\operatorname{Aut}_{\mathbb R}(\mathbb C')$ denotes the field homomorphisms that fix $\mathbb R$.
+-
+```
+
+### `basis-fixing-reduction:p0015` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:15` → `01-basis-fixing-reduction.tex:15`
+- Approval: `approved`
+- Changed tokens: 95 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `display: \[ \operatorname{Aut}_{\mathbb R}(\mathbb C') \cong\operatorname{Aut}(C_2) \cong\mathbb Z/2\mathbb Z: \qquad\text{does this force $\mathbb C'=\mathbb C$?} \]`
+  - removed: `inline: $D_2$`
+  - removed: `inline: $\operatorname{Aut}(C_2)$`
+  - removed: `inline: $\pm e_2$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0015
++++ candidate/basis-fixing-reduction:p0015
+@@ -1,9 +0,0 @@
+-Here the group $D_2$, seen as $\operatorname{Aut}(C_2)$ with vertices $\pm e_2$, is of relevance, because then we are asking
+-\[
+-\operatorname{Aut}_{\mathbb R}(\mathbb C')
+-\cong\operatorname{Aut}(C_2)
+-\cong\mathbb Z/2\mathbb Z:
+-\qquad\text{does this force $\mathbb C'=\mathbb C$?}
+-\]
+-This is an infant version of the inverse Galois problem.
+-
+```
+
+### `basis-fixing-reduction:p0016` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:16` → `01-basis-fixing-reduction.tex:16`
+- Approval: `approved`
+- Changed tokens: 29 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `inline: $\mathbb C$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0016
++++ candidate/basis-fixing-reduction:p0016
+@@ -1,2 +0,0 @@
+-The algebraic construction of $\mathbb C$ is thus significant: it shows us that rigidity is a consequence of an algebraic structure, and vice versa.
+-
+```
+
+### `basis-fixing-reduction:p0017` — superseded-by-approved-author-version
+
+- Post: `basis-fixing-reduction`
+- Location: `01-basis-fixing-reduction.tex:17` → `01-basis-fixing-reduction.tex:17`
+- Approval: `approved`
+- Changed tokens: 51 deleted, 0 inserted; ratio **1.0000**
+- Ledger reason: Restore the author's exact September 4 version of The Complex Plane, which was overwritten during the September 5 restoration. No new prose or mathematical edits; the other 83 posts remain unchanged.
+- Ledger evidence: The author selected the recovered version containing the non-Euclidean doubling-map remark and ending after the dihedral-group proof. The historical source is archived verbatim; only invisible passage markers are added to the active file. Superseded baseline passages remain in the unchanged historical baseline and audit diff.
+
+Protected-payload changes:
+
+- `math`
+  - removed: `inline: $\mathbb C$`
+
+```diff
+--- baseline/basis-fixing-reduction:p0017
++++ candidate/basis-fixing-reduction:p0017
+@@ -1 +0,0 @@
+-This finally brings us to the statement made by Sophie Germain: ``Algebra is written geometry and geometry is figured algebra.'' One can regard the construction of $\mathbb C$ via geometry and, independently, via algebra as an illustration of Sophie's comment.
 ```
 
 ## Proof-integrity screening summary

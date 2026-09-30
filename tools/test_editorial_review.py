@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 import editorial_review as review
 from editorial_conservation import canonicalize_tex, payload, sha256
@@ -49,6 +50,24 @@ def baseline_for(posts: list[dict], records: list[dict]) -> dict:
 
 
 class TokenAndPayloadTests(unittest.TestCase):
+    def test_author_version_keeps_superseded_passage_visible_in_review(self) -> None:
+        manifest = [{"slug": "a", "file": "a.tex", "title": "A"}]
+        old = record("a:p0001", "a.tex", 1, "Original mathematics $x+1$.")
+        new = record("a:n0001", "a.tex", 1, "Author's version $x+2$.")
+        baseline = baseline_for(manifest, [old])
+        version = {
+            "reason": "Author selected an earlier version.", "evidence": "Exact-source comparison.",
+            "approval": {"state": "approved", "evidence": "Yes, restore this version."},
+        }
+        with patch.object(review, "approved_author_versions", return_value=({"a.tex": version}, [])):
+            model = review.build_review_model(baseline, {new["id"]: new}, {"entries": []}, manifest)
+        self.assertEqual(model["perPost"][0]["passages"], 1)
+        self.assertEqual(model["perPost"][0]["pendingApprovals"], 0)
+        omitted = next(item for item in model["passages"] if item["passageId"] == old["id"])
+        self.assertEqual(omitted["status"], "superseded-by-approved-author-version")
+        self.assertEqual(omitted["payloadChanges"]["math"]["removed"], ["inline: $x+1$"])
+        self.assertIn("-Original mathematics", omitted["diff"])
+
     def test_changed_token_ratio_is_symmetric_and_bounded(self) -> None:
         forward = review.token_change("Alpha beta.", "Alpha gamma delta.")
         backward = review.token_change("Alpha gamma delta.", "Alpha beta.")

@@ -1,6 +1,8 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import katex from 'katex';
+import { articleFigureWidth } from '../lib/figure-sizing.ts';
+import { prepareFigureGalleries } from '../lib/figure-galleries.mjs';
 
 const root = new URL('..', import.meta.url).pathname;
 const out = join(root, 'dist-pages');
@@ -8,6 +10,7 @@ const shell = readFileSync(join(out, 'index.html'), 'utf8');
 if (shell.includes('name="blog-route"')) throw new Error('Static pages are already present. Run the Vite build before regenerating them.');
 const posts = JSON.parse(readFileSync(join(root, 'lib/generated-posts.json'), 'utf8'));
 const figureDescriptions = JSON.parse(readFileSync(join(root, 'lib/figure-descriptions.json'), 'utf8'));
+const figureMetadata = JSON.parse(readFileSync(join(root, 'lib/figure-metadata.json'), 'utf8'));
 const canonicalRoot = (process.env.SITE_URL?.trim() || 'https://codezen1729.github.io/math-blog/').replace(/\/+$/, '') + '/';
 
 const series = [
@@ -42,15 +45,28 @@ function renderMath(source, sourceMacros={}) {
 function cleanArticle(post) {
   let html=renderMath(post.html,post.mathMacros);
   html=html.replace(/href="#\/post\/([^?"#]+)(?:\?ref=([^"#]+))?"/g,(_m,slug,ref)=>`href="post/${slug}/${ref?`#${encodeURIComponent(decodeURIComponent(ref))}`:''}"`);
+  const captions=new Map();
+  for(const figure of post.html.matchAll(/<figure\b[^>]*>([\s\S]*?)<\/figure>/g)){
+    const caption=figure[1].match(/<figcaption>([\s\S]*?)<\/figcaption>/)?.[1].replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+    if(caption)for(const picture of figure[1].matchAll(/src="([^"]+)"/g))captions.set(decode(picture[1]),decode(caption));
+  }
   html=html.replace(/<figcaption\b[^>]*>[\s\S]*?<\/figcaption>/gi,'');
   let n=0;
   html=html.replace(/<img\b([^>]*)>/gi,(full,attrs)=>{
     const src=decode(attrs.match(/src="([^"]+)"/)?.[1]||''); if(!src)return full;
-    n++; const description=figureDescriptions[src]||`Mathematical diagram ${n} accompanying ${post.title}.`;
-    const clean=attrs.replace(/\salt="[^"]*"/i,'');
-    return `<a class="figure-zoom" href="${esc(src)}" target="_blank" rel="noreferrer" aria-label="Enlarge: ${esc(description)}"><img${clean} alt="${esc(description)}"></a>`;
+    n++; const description=captions.get(src)||figureDescriptions[src]||`Mathematical diagram ${n} accompanying ${post.title}.`;
+    let clean=attrs.replace(/\s(?:style|width|height)="[^"]*"/gi,'').replace(/\s*\/\s*$/,'');
+    const existingAlt=clean.match(/\salt="([^"]*)"/i);
+    if(!existingAlt||/^(?:image|figure)$/i.test(decode(existingAlt[1]).trim())){
+      clean=clean.replace(/\salt="[^"]*"/i,'')+` alt="${esc(description)}"`;
+    }
+    const info=figureMetadata[src];
+    const vector=info?.kind==='vector'||src.endsWith('.svg');
+    const dimensions=info?` width="${Math.round(info.width)}" height="${Math.round(info.height)}" style="width:${articleFigureWidth(info,vector,src)}px;max-width:${vector?'none':'100%'};height:auto"`:'';
+    const picture=`<a class="figure-zoom" href="${esc(src)}" target="_blank" rel="noreferrer" aria-label="Enlarge: ${esc(description)}"><img${clean}${dimensions}></a>`;
+    return vector?`<span class="figure-scroll" data-scroll-label="Scrollable diagram: ${esc(description)}">${picture}</span>`:picture;
   });
-  return html;
+  return prepareFigureGalleries(html);
 }
 
 const recommendations = [

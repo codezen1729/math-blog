@@ -24,6 +24,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { legacyCleanDestination, normalizeBlogRoute, personalWebpage, blogPageMetadata, blogTitle, blogSubtitle, phaseForLegacyTrack } from '@/lib/blog-routes';
 import { articleFigureWidth, type FigureInfo } from '@/lib/figure-sizing';
+import { prepareFigureGalleries } from '@/lib/figure-galleries.mjs';
 import figureMetadataJson from '@/lib/figure-metadata.json';
 import figureDescriptionsJson from '@/lib/figure-descriptions.json';
 
@@ -397,7 +398,7 @@ function prepareArticleHtml(source: string, sourceMacros: Record<string, string>
     const info = figureMetadata[decodeHtmlEntities(src)];
     imageNumber++;
     const caption = captions.get(src) || figureDescriptions[decodeHtmlEntities(src)] || `Mathematical diagram ${imageNumber} accompanying ${articleTitle}.`;
-    let clean = attributes.replace(/\s(?:style|width|height)="[^"]*"/g, '');
+    let clean = attributes.replace(/\s(?:style|width|height)="[^"]*"/g, '').replace(/\s*\/\s*$/, '');
     const existingAlt = clean.match(/\salt="([^"]*)"/);
     if (!existingAlt || /^(?:image|figure)$/i.test(decodeHtmlEntities(existingAlt[1]).trim())) {
       clean = clean.replace(/\salt="[^"]*"/, '') + ' alt="' + escapeAttribute(caption) + '"';
@@ -407,6 +408,7 @@ function prepareArticleHtml(source: string, sourceMacros: Record<string, string>
     const picture = `<a class="figure-zoom" href="${src}" target="_blank" rel="noreferrer" aria-label="Enlarge: ${escapeAttribute(caption)}"><img${clean}${dimensions}></a>`;
     return vector ? `<span class="figure-scroll" data-scroll-label="Scrollable diagram: ${escapeAttribute(caption)}">${picture}</span>` : picture;
   });
+  html = prepareFigureGalleries(html);
   // The document's <base> points at the site root for shared assets. A bare
   // fragment would consequently leave the article when copied or opened.
   html = html.replace(/href="#(?!\/)([^"]*)"/g, (_full, fragment: string) =>

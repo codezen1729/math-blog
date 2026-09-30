@@ -55,6 +55,18 @@ ALLOWED_STATUSES = {
 PROSE_ONLY_STATUSES = {
     "mechanically-corrected", "reframed-retained", "new-bridge-prose",
 }
+# Deliberately not a generic deletion exemption. This one historical author
+# version was explicitly selected on 2026-09-30; its immutable identity is
+# independent of the editable ledger. The original baseline stays intact.
+AUTHOR_VERSION_SNAPSHOTS = {
+    "basis-fixing-reduction": {
+        "file": "01-basis-fixing-reduction.tex",
+        "snapshotFile": "tools/editorial-author-versions/basis-fixing-reduction-2026-09-04.tex",
+        "snapshotSha256": "a35a9c99590985b983460d35536636fa81c261ad9fc188865d2598b75155c8f6",
+        "sourceCommit": "d4e896fac3b13b0b6c9ec34259ee1b6142d42f2d",
+        "sourceGitBlobSha1": "33d8681940eb5a1d1cbe634d64abf5d9ddcabc2a",
+    },
+}
 
 
 def sha256(value: str | bytes) -> str:
@@ -520,6 +532,79 @@ def load_ledger() -> dict:
     return ledger
 
 
+def approved_author_versions(
+    baseline: dict, current: dict[str, dict], ledger: dict,
+) -> tuple[dict[str, dict], list[str]]:
+    """Authenticate a whole-post restoration without re-freezing the baseline.
+
+    Only the pinned historical document is permitted, byte-for-byte except for
+    invisible passage markers. Subsequent edits, including mathematical loss,
+    invalidate this authorization. It never supplies publication approval.
+    """
+    approved, errors, seen = {}, [], set()
+    posts = {post["slug"]: post for post in baseline["posts"]}
+    originals = baseline_records(baseline)
+    for entry in ledger.get("authorVersions", []):
+        slug = entry.get("slug")
+        label = f"Author version {slug}"
+        if slug in seen:
+            errors.append(f"{label}: duplicate authorization")
+            approved.pop(AUTHOR_VERSION_SNAPSHOTS.get(slug, {}).get("file"), None)
+            continue
+        seen.add(slug)
+        pinned = AUTHOR_VERSION_SNAPSHOTS.get(slug)
+        post = posts.get(slug)
+        if not pinned or not post:
+            errors.append(f"{label}: no pinned historical author version")
+            continue
+        problems = []
+        for key, expected in pinned.items():
+            if entry.get(key) != expected:
+                problems.append(f"{key} differs from the pinned historical source")
+        filename = pinned["file"]
+        if post["file"] != filename:
+            problems.append("file differs from the frozen baseline")
+        if (
+            not re.fullmatch(r"[a-f0-9]{64}", str(entry.get("baselineBodySha256", "")))
+            or entry.get("baselineBodySha256") != post.get("bodyRawSha256BeforeMarkers")
+        ):
+            problems.append("baseline source hash is stale")
+        approval = entry.get("approval", {})
+        if approval.get("state") != "approved" or any(
+            not isinstance(approval.get(key), str) or not approval[key].strip()
+            for key in ("approvedBy", "approvedAt", "evidence")
+        ):
+            problems.append("explicit author approval, date, and evidence are required")
+        if any(not isinstance(entry.get(key), str) or not entry[key].strip() for key in ("reason", "evidence")):
+            problems.append("reason and source evidence are required")
+        try:
+            snapshot = (ROOT / pinned["snapshotFile"]).read_bytes()
+            if sha256(snapshot) != pinned["snapshotSha256"]:
+                problems.append("snapshot bytes differ from the pinned SHA-256")
+            blob = b"blob " + str(len(snapshot)).encode("ascii") + b"\0" + snapshot
+            if hashlib.sha1(blob).hexdigest() != pinned["sourceGitBlobSha1"]:
+                problems.append("snapshot bytes differ from the historical Git blob")
+            document = (ROOT / filename).read_bytes().decode("utf-8")
+            if remove_markers(document).encode("utf-8") != snapshot:
+                problems.append("current document is not the exact approved author version")
+        except (OSError, UnicodeError) as error:
+            problems.append(f"cannot read the author source: {error}")
+        for identifier, record in current.items():
+            old = originals.get(identifier)
+            if record["currentFile"] == filename and (
+                not identifier.startswith(slug + ":")
+                or (old and old["originalFile"] != filename)
+            ):
+                problems.append(f"foreign passage marker {identifier} in the author version")
+            if old and old["originalFile"] == filename and record["currentFile"] != filename:
+                problems.append(f"original passage {identifier} was moved outside the author version")
+        if problems:
+            errors.extend(f"{label}: {problem}" for problem in problems)
+        else:
+            approved[filename] = entry
+    return approved, errors
+
+
 def payload_hashes(record: dict, key: str) -> Counter:
     if key == "math":
         return Counter(entry["kind"] + "\0" + entry["canonicalSha256"] for entry in record[key])
@@ -591,7 +676,12 @@ def draft_ledger(reason: str) -> None:
         raise ValueError("\n".join(scan_errors))
     ledger = load_ledger()
     existing = {entry["passageId"]: entry for entry in ledger.get("entries", [])}
+    author_versions, author_errors = approved_author_versions(baseline, after_by_id, ledger)
+    if author_errors:
+        raise ValueError("\n".join(author_errors))
     for identifier, after in after_by_id.items():
+        if after["currentFile"] in author_versions:
+            continue
         before = before_by_id.get(identifier)
         if before and before["canonicalSha256"] == after["canonicalSha256"]:
             continue
@@ -722,6 +812,8 @@ def audit_project(mode: str = "review", report_json: Path | None = None, report_
     after_by_id, scan_errors = current_records()
     errors.extend(scan_errors)
     ledger = load_ledger()
+    author_versions, author_errors = approved_author_versions(baseline, after_by_id, ledger)
+    errors.extend(author_errors)
     entries = ledger.get("entries", [])
     entries_by_id = {}
     for entry in entries:
@@ -730,15 +822,28 @@ def audit_project(mode: str = "review", report_json: Path | None = None, report_
             errors.append(f"Duplicate ledger entry: {identifier}")
         entries_by_id[identifier] = entry
 
-    for identifier in sorted(before_by_id.keys() - after_by_id.keys()):
-        errors.append(f"Missing original passage: {identifier}")
-
     reviews = []
+    for identifier in sorted(before_by_id.keys() - after_by_id.keys()):
+        before = before_by_id[identifier]
+        if before["originalFile"] not in author_versions:
+            errors.append(f"Missing original passage: {identifier}")
+            continue
+        # Keep every superseded passage and its exact deletion visible in the
+        # report; authorization is a version choice, not a claim of no loss.
+        reviews.append({
+            "passageId": identifier, "status": "superseded-by-approved-author-version",
+            "originalFile": before["originalFile"], "currentFile": None,
+            "originalOrdinal": before["originalOrdinal"], "currentOrdinal": None,
+            "payloadChanges": changed_payloads(before, payload("")),
+            "diff": unified_diff(before["source"], "", identifier),
+        })
     for identifier, after in sorted(after_by_id.items()):
         before = before_by_id.get(identifier)
         changed = before is None or before["canonicalSha256"] != after["canonicalSha256"]
         moved = bool(before and before["originalFile"] != after["currentFile"])
-        if changed:
+        if changed and after["currentFile"] in author_versions:
+            status = "restored-approved-author-version"
+        elif changed:
             entry = entries_by_id.get(identifier)
             if not entry:
                 errors.append(f"{identifier}: changed or new passage has no ledger entry")
@@ -786,6 +891,7 @@ def audit_project(mode: str = "review", report_json: Path | None = None, report_
         "postsChecked": len(items), "passagesChecked": len(after_by_id),
         "changedPassages": sum(review["status"] not in {"unchanged", "moved-intact"} for review in reviews),
         "pendingApprovals": sum(entry.get("approval", {}).get("state") != "approved" for entry in entries),
+        "authorVersions": list(author_versions.values()),
         "errors": errors, "warnings": warnings, "passages": reviews,
     }
     if report_json:
